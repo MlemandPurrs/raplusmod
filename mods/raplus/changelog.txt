@@ -1,0 +1,428 @@
+General changes
+Eliminated individual Nation subfactions, unifying them into Allies and Soviet
+Prequisites for units reset on owner change. Its still possible to build other faction arsenal by capturing their Construction Yard
+Submarines have their own prequisite class, seperate of Ships. They also have their own ^Submarine default unit
+All defenses Stealth detection gets automatically paused when on Low power
+All Artillery units, Allies Cruiser and Soviet Missile Submarine reveal their position for an brief duration when firing their weaponry. Note: Missile Sub doesnt reveal position when engaging Air units using its AA weaponry
+Naval overhaul: Both factions have Ships and Submarines. Soviets have slightly different counterparts
+Major Economy change: Ore Refinery discards excess resources now. Do actually manage your economy!
+Maps are properly categorized now (1v1, 2v2, 3v3, FFA, Naval, Fun, Mini, etc.)
+There is an amazing collection of new maps included with the mod
+Defined clones of existing theatres for porting TD maps to RA and did so
+Giants Ants as map creeps made possible, added checkbox for it(disabled by Default). When enabled mineshafts will periodically spawn Giant Ants that are hostile to all.
+Mine and Gem Mine footprint edited to become ground passable, that means it will no longer block any ground unit's movement.
+
+Graphical changes
+Medium, Heavy and Mammoth Tanks got an new muzzle fx for their main gun cannon attacks
+All building Make anims have Tick: 80
+Added death anims with Tick: 800 for most base buildings
+Added eyecandy smoke to Power Plant, Ore Refinery, Advanced Power Plant and Bio Lab
+Added Building husks for purely decorative usage during mapmaking
+
+Building changes
+Defense buildings can be built at 3c away from base structures, instead of 2c
+Defense buildings get their cloak detection paused when on low power. This does not affect the Pillboxes
+Ship Yard and Sub Pen building requirement radius reduced in half to 4c, down to 4c from 8c
+Fake structures have their own queue, that does not display an progress bar above the Construction Yard
+Fake structures are built consistent at 1/4 of original price, instead 10% of original. The prices are rounded down where applicable(Fake FIX 185 instead 187)
+All Civilian and Tech buildings spawn an husk now, like they do in TD. Restored the distinct names of civilian buildings from TD.
+
+Construction Yard
+ -Now provides +30 Power
+ -Value increased to 3000$ from 2500$
+Power Plant
+ -Provides +75 Power, down from +100
+ -No longer has an bib down infront of
+Advanced Power Plant
+ -Provides +150 Power, down from +200
+ -No longer has an bib down infront of
+ -Cost increased to 600$ from 500$
+Ore Refinery
+ -Does not require an Power Plant anymore
+Ore Silo
+ -Silo name expanded to Ore Silo for consistency
+ -Periodically generates minor income aslong not on low power
+ -Periodically leaks credits and generates Ore when critically damaged
+Barracks
+ -Cost changed to 350$ down from 500$
+ -Additional function: Can heal infantry using credits, in a manner similar to Ships and Shipyard
+ -No longer requires an Power Plant
+ -Can be Powered down(toggled off the Power grid)
+Kennel
+ -Both sides can get Attack dogs
+Weapons Factory
+ -War Factory renamed to Weapons Factory
+ -Can be Powered down(toggled off the Power grid)
+Service Depot
+ -Cost changed to 750$ from 1200$
+ -Provides the Field Repair support power. Field Repair: Repairs vehicles for 30% of their maximum health\nin a small area over time for an short duration
+Naval Yard
+ -Can be built by Soviets too
+ -Renamed to Ship Yard
+ -Prequisite changed to Ore Refinery instead an Power Plant
+ -Repairs only Ships anymore, not Submarines
+ -Does not detect Submarines anymore
+ -Can be Powered down(toggled off the Power grid)
+Sub Pen
+ -Can be built by Allies too
+ -Prequisites to build changed to Shipyard and Techlevel Medium 
+ -Repairs only Submarines anymore, not Ships
+ -Can be Powered down(toggled off the Power grid)
+ -Detects Submarines only at half-radius when low on power
+ -Provides Sonar Pulse power on its own, infiltration no longer necessary
+Radar Dome
+ -Cost reduced to 1500$ from 1800$
+ -Reveals 12c(6c when disabled and for gap generated) instead 10c(5c)
+ -Spy Plane moved to Radar Dome(for Soviet)
+ -Removed the bib infront of
+Airfield
+ -Can be built by Allies too
+ -Cost increased to 750$ from 500$
+ -Now also repairs Airplanes during re-arming
+Helipad
+ -Can be built by Soviet too
+ -Removed the bib infront of
+ -Made the lower 2 cells ground passable
+Allied Tech Center
+ -Now known as Space Program
+ -Can be built by Soviet too
+ -Prequisites Weapons Factory, Airfield, Radar Dome and Tech Center
+ -Removed the bib infront of
+ -Power consumption down to -150 from -200
+ -Maximum one can be built
+Soviet Tech Center
+ -Can be built by Allies too
+ -Cost increased to 2000$ from 1000$
+ -Removed the bib infront of
+ -Maxiumum one can be built
+Gap Generator
+ -Moved to Building queue from Defense
+ -Cost reduced to 700$ from 800$
+ -Power consumption reduced to -40 from -60
+Sandbag and Wire Fence
+ -Prequisite changed to any Barracks instead Ore Refinery
+Concrete Wall
+ -Prequisite changed to Weapons Factory instead Ore Refinery
+Gates
+ -Added and enabled Vertical and Horizontal Gate structures
+Pillbox
+ -Cost reduced to 500$
+ -Can be sold for 300$ instead 400$
+ -Cloak detection range cut in half, 3c from 6c
+ -Can be built by Soviet too
+ -Maximum weight of passenger bumped to 2
+Cloaked Pillbox
+ -Cost reduced to 650$ from 750$
+ -Can be sold for 450$ instead 550$
+ -Cloak detection radius reduced to 1c from 6c (basically cant detect cloaked)
+ -Maximum weight of passenger bumped to 2
+Gun Turret
+ -Requires Weapons Factory instead Ore Refinery
+ -Can be built by Soviet too
+ -Cost reduced to 600$ from 800$
+ -Cloak detection range cut in half, 3c from 6c
+ -Sight radius reduced by one, down to 6c from 7c
+ -Can be Powered down(toggled off the Power grid)
+Tesla Coil
+ -Requires Tech Center instead Weapons Factory
+ -Power consumption decreased to -80 from -100
+Flame Turret
+ -Flame Tower renamed to Flame Turret
+ -Bumped to Techlevel Medium instead only Low
+ -Requires Radar Dome in addition to barracks
+SAM Site
+ - Cost reduced to 650$ from 700$
+ - Transferred to Allies, Soviet cant build
+ - Sight radius decreased by -1, down to 7c from 8c
+Flak Turret
+ -AA Gun renamed to Flak Turret
+ -Transferred to Soviet, Allies cant build
+ -Cost reduced to 700$ from 800$
+ -Power consumption reduced to -40 from -50
+ -Sight radius increased by +1, up to 7c from 6c
+Missile Silo
+ -Cost reduced to 2000$ from 2500$
+ -Explodes violently on death, using MiniNuke
+ -Is now cloaked structure, like camo pillbox
+Communications Center
+ -Got an new model that is more fit for an communications related structure
+ -Line of sight increased to 16c(8c for GAP generated) from 12c(6c for GAP generated)
+Nuclear Reactor
+ -Bio Laboratory repurposed into Nuclear Reactor
+ -Provides 200 Power
+ -Can be overcharged to provide 300 Power at the cost of hitpoints reduction
+ -Explodes violently on death using MiniNuke
+Hospital
+ -Normalized building animation speed, is similar to TD
+Oil Pump
+ -Normalized building animation speed, is similar to TD
+Forward Command
+ -Has new non-soviet appearance, fitting for an neutral building
+ 
+Infantry changes
+Resized all Infantry down to Tiberian Dawn size
+Added Weight for all infantry
+Weight 1: Rifle Infantry, Grenadier, Grenade Launcher, Rocket Soldier
+Weight 2: Engineer, Medic, Mechanic, Dog, Spy, Thief, Machinegunner, Heavy Weapons Trooper, Shock Trooper, Stinger Soldier, RPG Soldier, Flame Trooper, Sniper
+Weight 3: Tanya, Volkov
+internal change: barracks.upgraded renamed to infantry.upgraded
+Added new Infantry: Grenade Launcher (Allies), Machinegunner (Allies), Stinger Soldier (Allies), Sniper (Allies), Heavy Weapons Infantry (Soviet), RPG Trooper (Soviet), Volkov (Soviet)
+
+Grenadier
+ - Cost reduced to 150$ from 160$
+NEW: Grenade Launcher
+ - Allies gained their own variant of Grenadier
+ - Costs 225$, prequisites Power Plant to train
+ - Can attack from further away than Grenadier, reloads slightly slower
+Rocket Soldier
+ - Reduced Movement speed to 42
+ - Prequisites Power Plant now
+ - No longer uses an different weapon versus Aircraft
+ - Weaponry slightly altered
+Engineer
+ - Cost increased to 500$ from 400$
+ - Uses classic Multi-Engineer capturing Logic
+ - Prequisites Ore Refinery now
+ - Movement Speed set to 48
+Medic
+ - Can be trained by both factions now
+ - Cost increased to 250$ from 200$
+ - Passively self-heals out of combat
+ - Speed increased to 56 from 50
+ - Range of Healing decreased to 2c from 4c
+Mechanic
+ - Can be trained by both factions now
+ - Cost reduced to 425$ from 500$
+ - Speed increased to 56 from 50
+ - Range of Repair decreased to 2c from 4c
+NEW: Machine Gunner
+ - Allies gained an new Infantry unit
+ - Is armed with same MachineGun as Jeep
+NEW: Heavy Weapons Infantry
+ - Soviets gained an new Infantry unit
+ - This unit is weak and armed with an Shotgun
+ - It can deploy into an Machine Gun Nest with Light Armor, 10000 Hitpoints that is armed with Vulcan MG(same as Pillbox)
+ - In Pillboxes mans the Machinegun, like Rifle Infantry
+NEW: Stinger Soldier
+ - Allies gained an new Infantry unit
+ - Can target Aircraft only
+ - Transferred seperate AA projectile of Rocket Soldier here
+NEW: RPG Soldier
+ - Soviets gained an new Infantry unit
+ - Is armed with napalm rockets that hit like an weaker Flame Tower attack
+ - Always explodes on death
+Flame Trooper
+ - Flamethrower renamed to Flame Trooper
+ - Hitpoints increased to 7000 from 4000
+ - Price bumped to 400$ from 300$
+ - No longer pisses Napalm. Gained Tiberium Dawn flame weaponry instead
+Sniper
+ -Enabled Sniper for Allies
+ -Its appearance changes dependant on tileset
+ -Can detect cloaked at close range
+ -Cloaked when idle(eg. not moving or firing)
+Tanya
+ -Cost reduced to 1000$ from 1200$
+NEW: Volkov
+ -Added Commando unit for Soviet faction
+ -Is armed with anti-materiel rifle and C4
+Shock Trooper
+ -Price increased to 425$ from 350$
+Thief
+ -Gained an new Icon
+
+Vehicle changes
+Added new vehicles: MRLS (Allies), Phase Tank (Allies), Medium Tank (Soviet), APC (Soviet), Mortar Track (Soviet), Flame Tank (Soviet)
+
+MCV
+ -Cost increased to 3000$ from 2500$
+Ore Truck
+ -Cost increased to 1200$ from 1100$
+Ranger Jeep
+ -Sight radius reduced by -1, down to 7c from 8c
+ -Cost reduced to 350$ from 500$
+ -Maximum Passenger weight bumped to 2, count stays at 1
+Flak Truck
+ -Mobile Flak renamed to Flak Truck
+ -Sight radius increased by +1, up to 7c from 6c
+ -Cost reduced to 425$ from 600$
+ -Can carry up to 2 Infantry, with weight limit of 4
+APC
+ -Transferred to Allies
+ -Cost reduced to 500$ from 850$
+ -Speed reduced to 128 from 142
+ -Maximum carryable Passenger weight bumped to 8 from 5, slot amount remains fixed at 5
+NEW: Soviet APC (BTR)
+ -Costs 650$
+ -Moves faster than Allies APC
+ -Less durable than Allies APC
+ -Same carry capacity as Allies APC
+Light Tank
+ -Cost reduced to 600$ from 700$
+Medium Tank
+ -Cost reduced to 800$ from 850$
+ -Gained an additional weapon to use versus Infantry: An weak machinegun that is equal to Rifle Infantry's weapon
+NEW: Medium Tank (Soviet)
+ -Soviet gets their own version of Medium Tank
+ -Is essentially an single barreled Heavy Tank, sporting an singular cannon version of Heavy Tank's weapon
+ -Moves at same speed as Heavy Tank
+ -Can be built at same price as Allies Medium Tank
+Heavy Tank
+ -No changes
+Artillery
+ -Cost down to 750$ from 850$
+V2 Rocket Launcher
+ -Got bumped to late game tier
+ -Prequisites changed to Radar Dome, Tech Center and Techlevel High from Radar Dome and Techlevel Medium
+NEW: Mortar Track (Soviet)
+ - Soviet gets an new early game siege unit
+ - Costs 650$ as opposed to 850$ of Allies Artillery
+ - Moves at same speed as Allies APC
+ - Has 15000 Hitpoints, 50% more than Allies Artillery
+ - Has same armor type(Light) as the Allies Artillery
+ - 75% chance of UnitExplodes upon Death
+NEW: MRLS (Allies)
+ - Allies gain an late game tier Siege unit, to counter V2RL
+ - Prequisites Radar Dome, Tech Center and Techlevel High
+ - Fires an salvo of 4 missiles
+ - Cannot attack Air
+ - UnitExplodes upon Death
+Mammoth Tank
+ - Price reduced to 1500$ from 2000$
+ - Movespeed increased to 56 from 50
+ - Turnspeed of both Chassis and Turret set to 3
+ - Selfhealing buffed: Healed amount per step increased to 500 from 100. Delay increased to 10 from 3 to compensate
+ - Cloak detection radius cut in Half, down to 3 from 6
+ - Prequisite STEK changed to techcenter
+ - Sight radius reduced by -1, down to 6c from 7c
+NEW: Tank Destroyer (Allies)
+ - Allies get an vehicle destroyer unit for late game, that works best against Tanks
+ - Has 45000 Hitpoints, half the amount an Mammoth Tank has
+ - Packs an 130mm cannon, that has 5 weapon Range and deals 8000 Damage per shot. Long reload of 80s to compensate
+ - Costs 900$ to build
+ - Prequisites Service Depot, Tech Center and Techlevel High
+Mobile Radar Jammer
+ - With the removal of England, can be built by Allies
+ - Cost increased to 1100$ from 1000$
+ - Radar Jamming radius reduced to 15c from 18c
+ - Missile Jamming radius increased by +1, to 6c from 5c
+ - Cloak detection radius cut in half, reduced to 3c from 6c
+ - Prequisite ATEK changed to techcenter
+Tesla Tank
+ - With the removal of Russia, can be built by Soviet
+ - No longer prequisites an Tesla Coil to be built
+ - Prequisite STEK changed to techcenter
+NEW: Flame Tank
+ - Soviets can build an Flame Tank
+ - The Flame Tank can only attack at close-range using dual flamers
+ - Explodes on death in a fiery ball of napalm, not leaving an husk behind
+ - Prequisites Flame Turret and Tech Center
+NEW: Phase Tank
+ - This unit can accompany Phase Transports
+ - Is an cloaking Light Tank armed with an 70mm Cannon, basically
+Phase Transport
+ - With the removal of France, can be built by Allies
+ - Maximum passenger weight increased to 5 from 4
+ - Does not detect cloaked anymore
+ - Sight radius reduced by -2, down to 5c from 7c
+ - Prequisites changed to Barracks, Techcenter, Techlevel High from Allied Tech Center, Techlevel High
+Minelayer
+ - Can only be built by Soviet anymore
+ - Priced reduced to 700$ from 800$
+ - Gets armed with an turreted AA only flak gun (Tiberian Dawn APC's weapon)
+MAD Tank
+ - Price down to 1800$ from 2000$
+ - Prequisite STEK changed to techcenter
+Mobile GAP Generator
+ - With the removal of England, can be built by Allies
+ - Cost changed to 900$ from 1200$
+ - Prequisite ATEK changed to techcenter
+Supply Truck
+ - Prequisites an Ore Refinery to be built
+ - Hitpoints reduced by 1000, down to 10000 from 11000
+Demolition Truck
+ - With the removal of Ukraine, can be built by Soviet
+ - Prequisite STEK changed to techcenter
+
+Naval
+Splitted ^Submarine into its own base class. Submarines can no longer be repaired while being underwater
+Ships can only repair at an Ship Yard, Submarines require an Sub Pen for repairs
+The Sub Pen provides Sonar Pulse power on its own
+Ship Yards can be infiltrated by an spy to gain veterancy on naval units
+
+Gunboat
+ - No longer detects Submarines
+ - Line of Sight reduced by -1, down to 6c from 7c
+ - Has an new turret visual for better readability
+NEW: Gunboat (Soviet)
+ - Is equipped with double the firepower of allies Gunboat, reloads slightly longer
+ - Moves slower
+ - Costs 750$ per unit
+ - Really good versus ships
+Destroyer
+ - Cost reduced to 950$ from 1000$
+ - Line of Sight increased by +1, up to 7c from 6c
+ - Submarine Detection radius increased by +1, up to 5c from 4c
+ - Cannot attack ground units anymore
+NEW: Destroyer (Soviet)
+ - Is equipped with Flak gun versus ground and AA
+ - Otherwise identical to allies Destroyer
+Cruiser
+ - Cost reduced to 2000$ from 2400$
+ - No longer detects Submarines
+ - Weapon range reduced to 11c from 20c. Min range of 2c required
+NEW: Cruiser (Soviet)
+ - Is equipped with two SSM missile turrets, 4 missiles in total
+ - Otherwise identical to allies Cruiser
+Submarine
+ - Cost reduced to 775$ from 900$
+ - Torpedo speed increased to 200 from 85
+ - Does not detect other Submarines(radius of 1c preserved to avoid 'bumping')
+ - Reworked Line of Sight: 3c when under the water, 6c when surfaced(4c if GAP generated)
+Missile Submarine
+ - Cost reduced to 1250$ from 2000$
+ - Does not detect other Submarines(radius of 1c preserved to avoid 'bumping')
+ - Reworked Line of Sight: 3c when under the water, 6c when surfaced(4c if GAP generated)
+LST
+ - Max carry capacity increased to 8 from 5 and maximum weight doubled to 10 from 5
+
+Aircraft
+Seperated veterancy espionage reward for Airplane and Helicopters. That means infiltrating an Airfield will only upgrade Airplanes, while infiltrating an Helipad will grant veterancy for Helicopters
+Seperated aircraft.faction prequisite into airplanes. and helicopters.
+Both Allies and Soviet can use Paratroopers. Paratroopers is charged and stored on the Airfield. Requires Barracks to charge up
+Both Allies and Soviet can use Parabombs. Parabombs is charged and stored on the Tech Center. Requires an functioning Airfield to charge up
+Airplanes do not automatically take-off upon creation.
+
+Apache
+ - Longbow renamed to Apache
+ - Cost reduced to 1500$ from 2000$
+ - Is armed with Chaingun and Multi-purpose rockets
+ - Can attack Air units
+ - Line of Sight reduced to 10c(8c GAP generated) from 12c(10c GAP generated)
+ - Health slightly increased to 12500 from 12000
+Hind
+ - Transferred to Soviets
+ - Is armed with Chaingun and air-to-ground rockets
+ - Cannot attack air units
+ - Health increased to 12500 from 10000 (is same as Apache)
+Yak
+ - Line of Sight reduced to 12c(10c GAP generated) from 13c(11c GAP generated)
+NEW: Spitfire
+ - Allies gained an clone of Yak
+ - Looks and functions the same as Yak for now
+MiG
+ - Line of Sight reduced to 10c(8c GAP generated) from 11c(9c GAP generated)
+ - Can attack Air units. AG and AA attacks use same ammo pool!
+ - Maverick range increased to 11c for both attacks
+ - Speed increased to 260 from 223
+ - Price reduced to 1875$ from 2000$
+NEW: F-16 Interceptor
+ - Allies gained an jet craft
+ - Is primarily armed with AA missiles
+ - Can provide token ground support with bombs
+NEW: B-52
+ - An graphical and name variation of BADR for Allies, is otherwise identical
+
+Known issues
+Gate anim is bugged, shoot the gate once with any rocket or cannon and it will fix itself
+Rarely if Antfestation ticked on there may be Giant Ants that spawn right at game begin despite not supposed to happen before 5 minutes elapsed

@@ -1,0 +1,78 @@
+ss:
+	idle:
+		Facings: 16
+	icon: ssicon
+
+pt:
+	idle:
+		Facings: 16
+	turret: pttur
+		Facings: 32
+	muzzle: gunfire2
+		Length: 5
+	icon: pticon
+
+pt2:
+	idle:
+		Facings: 16
+	turret: hartytur
+		Facings: 32
+	muzzle: gunfire2
+		Length: 5
+	icon: pticon
+
+dd:
+	idle:
+		Facings: 16
+	turret: ssam
+		Facings: 32
+	icon: ddicon
+
+dd2:
+	idle:
+		Facings: 16
+	turret: apctur
+		Facings: 32
+		UseClassicFacingFudge: True
+	muzzle: apcmuz
+		Length: 3
+		Stride: 6
+		Facings: 8
+	icon: dd2icon
+
+ca:
+	idle:
+		Facings: 16
+	turret: turr
+		Facings: 32
+	muzzle: gunfire2
+		Length: 5
+	icon: caicon
+
+ca2:
+	idle:
+		Facings: 16
+	turret: ssm
+		Start: 32
+		Facings: 32
+	icon: ca2icon
+
+lst:
+	idle:
+	open:
+		Start: 1
+		Length: 4
+		Tick: 150
+	close:
+		Frames: 4, 3, 2, 1
+		Length: 4
+		Tick: 150
+	unload:
+		Start: 4
+		ZOffset: -511
+	icon: lsticon
+
+msub:
+	idle:
+		Facings: 16
+	icon: msubicon

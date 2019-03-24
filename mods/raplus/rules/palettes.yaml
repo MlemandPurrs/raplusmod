@@ -1,0 +1,179 @@
+^Palettes:
+	PaletteFromFile@terrain-snow:
+		Name: terrain
+		Tileset: SNOW
+		Filename: snow.pal
+		ShadowIndex: 3, 4
+	PaletteFromFile@terrain-snowTD:
+		Name: terrain
+		Tileset: SNOWTD
+		Filename: snow.pal
+		ShadowIndex: 3, 4
+	PaletteFromFile@terrain-interior:
+		Name: terrain
+		Tileset: INTERIOR
+		Filename: interior.pal
+		ShadowIndex: 3, 4
+	PaletteFromFile@terrain-temperat:
+		Name: terrain
+		Tileset: TEMPERAT
+		Filename: temperat.pal
+		ShadowIndex: 3, 4
+	PaletteFromFile@terrain-temperatTD:
+		Name: terrain
+		Tileset: TEMPERATTD
+		Filename: temperat.pal
+		ShadowIndex: 3, 4
+	PaletteFromFile@terrain-desert:
+		Name: terrain
+		Tileset: DESERT
+		Filename: desert.pal
+		ShadowIndex: 3, 4
+	PaletteFromFile@terrain-desertTD:
+		Name: terrain
+		Tileset: DESERTTD
+		Filename: desert.pal
+		ShadowIndex: 3, 4
+	PaletteFromFile@player:
+		Name: player
+		Filename: temperat.pal
+		ShadowIndex: 4
+	PaletteFromFile@chrome:
+		Name: chrome
+		Filename: temperat.pal
+		ShadowIndex: 3
+		AllowModifiers: false
+	PaletteFromFile@cursor:
+		Name: cursor
+		Filename: temperat.pal
+		AllowModifiers: false
+		CursorPalette: true
+	PaletteFromFile@effect:
+		Name: effect
+		Filename: temperat.pal
+		ShadowIndex: 4
+	PaletteFromFile@colorpicker:
+		Name: colorpicker
+		Filename: temperat.pal
+		ShadowIndex: 4
+		AllowModifiers: false
+	PaletteFromFile@desert:
+		Name: desert
+		Filename: desert.pal
+		ShadowIndex: 4
+	PaletteFromFile@deserttd:
+		Name: deserttd
+		Filename: desert.pal
+		ShadowIndex: 4
+	PaletteFromRGBA@shadow:
+		Name: shadow
+		R: 0
+		G: 0
+		B: 0
+		A: 140
+	PaletteFromRGBA@submerged:
+		Name: submerged
+		R: 0
+		G: 0
+		B: 0
+		A: 140
+	PaletteFromRGBA@highlight:
+		Name: highlight
+		R: 255
+		G: 255
+		B: 255
+		A: 128
+	PaletteFromRGBA@moveflash:
+		Name: moveflash
+		R: 255
+		G: 255
+		B: 255
+		A: 64
+	PaletteFromRGBA@invuln:
+		Name: invuln
+		R: 128
+		G: 0
+		B: 0
+		A: 128
+	PaletteFromRGBA@invuln2:
+		Name: invuln2
+		R: 0
+		G: 0
+		B: 128
+		A: 128
+	PaletteFromRGBA@disabled:
+		Name: disabled
+		R: 0
+		G: 0
+		B: 0
+		A: 180
+	ShroudPalette@shroud:
+		Name: shroud
+	ShroudPalette@fog:
+		Name: fog
+		Fog: true
+	PlayerColorPalette:
+		BasePalette: player
+		RemapIndex: 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95
+	PaletteFromPlayerPaletteWithAlpha@cloak:
+		BaseName: cloak
+		BasePalette: player
+		Alpha: 0.55
+	PlayerHighlightPalette:
+	MenuPaletteEffect:
+	RotationPaletteEffect@defaultwater:
+		Palettes: terrain
+		ExcludeTilesets: DESERT, DESERTTD
+	RotationPaletteEffect@actorswater:
+		Palettes: player, effect
+	RotationPaletteEffect@desertwater:
+		Palettes: terrain
+		Tilesets: DESERT, DESERTTD
+		RotationBase: 32
+	LightPaletteRotator:
+		ExcludePalettes: terrain, effect
+	ChronoshiftPaletteEffect:
+	FlashPaletteEffect@NUKE:
+		Type: Nuke
+	IndexedPlayerPalette@scoutant:
+		BaseName: scoutant
+		BasePalette: player
+		RemapIndex: 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95
+		PlayerIndex:
+			AntMan1: 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 123, 123, 123, 123
+		AllowModifiers: True
+	IndexedPlayerPalette@warriorant:
+		BaseName: warriorant
+		BasePalette: player
+		RemapIndex: 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95
+		PlayerIndex:
+			AntMan2: 229, 230, 231, 232, 233, 234, 235, 8, 236, 237, 238, 239, 221, 222, 223, 223
+		AllowModifiers: True
+	IndexedPlayerPalette@fireant:
+		BaseName: fireant
+		BasePalette: player
+		RemapIndex: 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95
+		PlayerIndex:
+			AntMan3: 158, 158, 159, 159, 229, 229, 216, 216, 217, 217, 218, 218, 221, 222, 223, 223
+		AllowModifiers: True
+	IndexedPlayerPalette@teslaant:
+		BaseName: teslaant
+		BasePalette: player
+		RemapIndex: 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95
+		PlayerIndex:
+			AntMan4: 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175
+		AllowModifiers: True
+	IndexedPlayerPalette@chemant:
+		BaseName: chemant
+		BasePalette: player
+		RemapIndex: 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95
+		PlayerIndex:
+			AntMan5: 144, 145, 146, 147, 148, 149, 150, 151, 151, 152, 153, 153, 154, 154, 155, 155
+		AllowModifiers: True
+	IndexedPlayerPalette@shadowant:
+		BaseName: shadowant
+		BasePalette: player
+		RemapIndex: 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95
+		PlayerIndex:
+			AntMan6: 143, 142, 141, 140, 139, 138, 137, 136, 135, 134, 133, 132, 131, 130, 129, 128
+		AllowModifiers: True

@@ -1,0 +1,214 @@
+Player:
+	ModularBot@aiplayer:
+		Name: AI Player
+		Type: normal
+	GrantConditionOnBotOwner@aiplayer:
+		Condition: enable-ai-player
+		Bots: normal
+	SupportPowerBotModule:
+		RequiresCondition: enable-ai-player
+		Decisions:
+			FieldRepairPower:
+				OrderName: FieldRepairPowerInfoOrder
+				MinimumAttractiveness: 1
+				Consideration@1:
+					Against: Ally
+					Types: Tank, Vehicle, Ship
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 2c0
+			SovietSpyplane:
+				OrderName: SovietSpyPlanePowerInfoOrder
+				MinimumAttractiveness: 1
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 5c0
+			AlliesParatroopers:
+				OrderName: AlliesParatroopersPowerInfoOrder
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
+			SovietParatroopers:
+				OrderName: SovietParatroopersPowerInfoOrder
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
+			AlliesParabombs:
+				OrderName: AlliesParabombsPowerInfoOrder
+				MinimumAttractiveness: 1
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 5c0
+			SovietParabombs:
+				OrderName: SovietParabombsPowerInfoOrder
+				MinimumAttractiveness: 1
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 5c0
+			NuclearMissile:
+				OrderName: NukePowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+	HarvesterBotModule:
+		RequiresCondition: enable-ai-player
+		HarvesterTypes: harv
+		RefineryTypes: proc
+	BaseBuilderBotModule@aiplayer:
+		RequiresCondition: enable-ai-player
+		MinimumExcessPower: 60
+		MaximumExcessPower: 200
+		ExcessPowerIncrement: 40
+		ExcessPowerIncreaseThreshold: 4
+		CheckForWaterRadius: 4
+		ConstructionYardTypes: fact
+		RefineryTypes: proc
+		PowerTypes: powr,apwr
+		BarracksTypes: barr,tent
+		VehiclesFactoryTypes: weap
+		ProductionTypes: barr,tent,weap,afld,hpad
+		NavalProductionTypes: spen,syrd
+		SiloTypes: silo
+		BuildingLimits:
+			proc: 4
+			barr: 1
+			tent: 1
+			dome: 1
+			weap: 1
+			spen: 1
+			syrd: 1
+			hpad: 4
+			afld: 4
+			atek: 1
+			stek: 1
+			spro: 1
+			fix: 1
+		BuildingFractions:
+			proc: 15
+			tent: 1
+			barr: 1
+			kenn: 1
+			dome: 1
+			weap: 6
+			hpad: 4
+			spen: 1
+			syrd: 1
+			afld: 4
+			pbox: 7
+			gun: 7
+			ftur: 10
+			tsla: 5
+			gap: 2
+			fix: 1
+			agun: 5
+			sam: 1
+			atek: 1
+			stek: 1
+			spro: 1
+			mslo: 1
+	BuildingRepairBotModule:
+		RequiresCondition: enable-ai-player
+	McvManagerBotModule:
+		RequiresCondition: enable-ai-player
+		McvTypes: mcv
+		ConstructionYardTypes: fact
+		McvFactoryTypes: weap
+	SquadManagerBotModule@aiplayer:
+		RequiresCondition: enable-ai-player
+		SquadSize: 24
+		SquadSizeRandomBonus: 16
+		RushInterval: 400
+		AttackScanRadius: 16
+		ExcludeFromSquadsTypes: harv, mcv, dog
+		NavalUnitsTypes: ss,msub,dd,ca,lst,pt
+		ConstructionYardTypes: fact
+		NavalProductionTypes: spen,syrd
+	UnitBuilderBotModule@aiplayer:
+		RequiresCondition: enable-ai-player
+		UnitsToBuild:
+			e1: 65
+			e2: 15
+			e3: 30
+			e4: 15
+			dog: 15
+			shok: 15
+			rpg: 10
+			stng: 5
+			mgi: 25
+			shot: 10
+			harv: 15
+			apc: 30
+			jeep: 20
+			arty: 15
+			nona: 20
+			v2rl: 40
+			mrls: 30
+			ftrk: 30
+			1tnk: 40
+			2tnk: 50
+			2tnk.soviet: 45
+			3tnk: 35
+			4tnk: 25
+			tnkd: 15
+			ttnk: 25
+			stnk: 5
+			ptnk: 5
+			mnly: 5
+			heli: 30
+			hind: 30
+			mig: 30
+			f16: 15
+			yak: 30
+			spit: 15
+			ss: 10
+			msub: 10
+			dd: 10
+			dd2: 10
+			ca: 10
+			ca2: 10
+			pt: 10
+			pt2: 10
+		UnitLimits:
+			dog: 4
+			harv: 8
+			jeep: 4
+			ftrk: 4

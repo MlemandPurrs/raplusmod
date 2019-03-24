@@ -1,0 +1,85 @@
+World:
+	MissionData:
+		Briefing: Trees create shroud in a small radius.
+
+^BaseWorld:
+	ShroudRenderer:
+		ShroudPalette: shroudt
+        
+^Palettes:
+	PaletteFromRGBA@shroudt:
+		Name: shroudt
+		R: 0
+		G: 0
+		B: 0
+		A: 0
+
+Player:
+	Shroud:
+		ExploredMapCheckboxEnabled: True
+		ExploredMapCheckboxLocked: True
+		ExploredMapCheckboxVisible: False
+        
+MINE:
+	HiddenUnderShroud:
+		AlwaysVisibleStances: Ally, Enemy, Neutral
+
+^Tree:
+	CreatesShroud:
+		Range: 1c0
+	HiddenUnderShroud:
+		AlwaysVisibleStances: Ally, Enemy, Neutral
+
+^TreeHusk:
+	CreatesShroud:
+		Range: 1c0
+	HiddenUnderShroud:
+		AlwaysVisibleStances: Ally, Enemy, Neutral
+        
+T10:
+	CreatesShroud:
+		Range: 3c0
+
+T11:
+	CreatesShroud:
+		Range: 3c0
+
+T12:
+	CreatesShroud:
+		Range: 3c0
+
+T13:
+	CreatesShroud:
+		Range: 3c0
+
+T14:
+	CreatesShroud:
+		Range: 3c0
+
+T15:
+	CreatesShroud:
+		Range: 3c0
+
+T10.Husk:
+	CreatesShroud:
+		Range: 3c0
+
+T11.Husk:
+	CreatesShroud:
+		Range: 3c0
+
+T12.Husk:
+	CreatesShroud:
+		Range: 3c0
+
+T13.Husk:
+	CreatesShroud:
+		Range: 3c0
+
+T14.Husk:
+	CreatesShroud:
+		Range: 3c0
+
+T15.Husk:
+	CreatesShroud:
+		Range: 3c0
