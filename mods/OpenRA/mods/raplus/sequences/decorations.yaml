@@ -1,0 +1,1568 @@
+tc04:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	idle:
+
+tc04.husk:
+	Defaults: tc04
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: *
+		Tick: 80
+
+tc05:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	idle:
+
+tc05.husk:
+	Defaults: tc05
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: *
+		Tick: 80
+
+tc03:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	idle:
+
+tc03.husk:
+	Defaults: tc03
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: *
+		Tick: 80
+
+tc02:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	idle:
+
+tc02.husk:
+	Defaults: tc02
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: *
+		Tick: 80
+
+tc01:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	idle:
+
+tc01.husk:
+	Defaults: tc01
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: *
+		Tick: 80
+
+t17:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	idle:
+
+t17.husk:
+	Defaults: t17
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: *
+		Tick: 80
+
+t16:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	idle:
+
+t16.husk:
+	Defaults: t16
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: *
+		Tick: 80
+
+t15:
+	Defaults: t15
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	idle:
+
+t15.husk:
+	Defaults: t15
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: *
+		Tick: 80
+
+t14:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+			TROPIC: TEMPERAT
+	idle:
+
+t14.husk:
+	Defaults: t14
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+			TROPIC: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: *
+		Tick: 80
+
+t13:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	idle:
+
+t13.husk:
+	Defaults: t13
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: *
+		Tick: 80
+
+t12:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	idle:
+
+t12.husk:
+	Defaults: t12
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: *
+		Tick: 80
+
+t11:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	idle:
+
+t11.husk:
+	Defaults: t11
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: *
+		Tick: 80
+
+t10:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	idle:
+
+t10.husk:
+	Defaults: t10
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: *
+		Tick: 80
+
+t08:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	idle:
+
+t08.husk:
+	Defaults: t08
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: *
+		Tick: 80
+
+t07:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	idle:
+
+t07.husk:
+	Defaults: t07
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: *
+		Tick: 80
+
+t06:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	idle:
+
+t06.husk:
+	Defaults: t06
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: *
+		Tick: 80
+
+t05:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	idle:
+
+t05.husk:
+	Defaults: t05
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: *
+		Tick: 80
+
+t03:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	idle:
+
+t03.husk:
+	Defaults: t03
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+			TROPIC: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: *
+		Tick: 80
+
+t02:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	idle:
+
+t02.husk:
+	Defaults: t02
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: *
+		Tick: 80
+
+t01:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	idle:
+
+t01.husk:
+	Defaults: t01
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+			TROPIC: TEMPERAT
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: *
+		Tick: 80
+
+ice01:
+	idle: ice01.sno
+		Length: *
+		AddExtension: false
+
+ice02:
+	idle: ice02.sno
+		Length: *
+		AddExtension: false
+
+ice03:
+	idle: ice03.sno
+		Length: *
+		AddExtension: false
+
+ice04:
+	idle: ice04.sno
+		Length: *
+		AddExtension: false
+
+ice05:
+	idle: ice05.sno
+		Length: *
+		AddExtension: false
+
+v01:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+			TROPIC: JUNGLE
+	idle:
+	damaged-idle:
+		Start: 1
+
+v01.husk:
+	idle: v01
+		Start: 1
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+			TROPIC: JUNGLE
+
+v02:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	idle:
+	damaged-idle:
+		Start: 1
+
+v02.husk:
+	idle: v02
+		Start: 1
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+
+v03:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	idle:
+	damaged-idle:
+		Start: 1
+
+v03.husk:
+	idle: v03
+		Start: 1
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+
+v04:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	idle:
+	damaged-idle:
+		Start: 2
+	active:
+		Start: 1
+	damaged-active:
+		Start: 3
+
+v04.husk:
+	idle: v04
+		Start: 2
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+
+v05:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	idle:
+	damaged-idle:
+		Start: 2
+
+v05.husk:
+	idle: v05
+		Start: 2
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+
+v06:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+			TROPIC: JUNGLE
+	idle:
+	damaged-idle:
+		Start: 1
+
+v06.husk:
+	idle: v06
+		Start: 1
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+
+v07:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	idle:
+	damaged-idle:
+		Start: 2
+
+v07.husk:
+	idle: v07
+		Start: 2
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+
+v08:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	idle:
+	damaged-idle:
+		Start: 1
+
+v08.husk:
+	idle: v08
+		Start: 1
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+
+v09:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+			TROPIC: JUNGLE
+	idle:
+	damaged-idle:
+		Start: 1
+
+v09.husk:
+	idle: v09
+		Start: 1
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+			TROPIC: JUNGLE
+
+v10:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	idle:
+	damaged-idle:
+		Start: 1
+
+v10.husk:
+	idle: v10
+		Start: 1
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+
+v11:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	idle:
+	damaged-idle:
+		Start: 1
+
+v11.husk:
+	idle: v11
+		Start: 1
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+
+v12:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+			TROPIC: JUNGLE
+	idle:
+	damaged-idle:
+		Start: 1
+
+v12.husk:
+	idle: v12
+		Start: 1
+		ZOffset: -512
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+			TROPIC: JUNGLE
+
+v13:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+			TROPIC: JUNGLE
+	idle:
+	damaged-idle:
+		Start: 1
+
+v13.husk:
+	idle: v13
+		Start: 1
+		ZOffset: -512
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+			TROPIC: JUNGLE
+
+v14:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+			TROPIC: JUNGLE
+	idle:
+		ZOffset: -512
+	damaged-idle:
+		Start: 1
+		ZOffset: -512
+
+v14.husk:
+	idle: v14
+		Start: 1
+		ZOffset: -512
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+			TROPIC: JUNGLE
+
+v15:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+			TROPIC: JUNGLE
+	idle:
+		ZOffset: -512
+	damaged-idle:
+		Start: 1
+		ZOffset: -512
+
+v15.husk:
+	idle: v15
+		Start: 1
+		ZOffset: -512
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+			TROPIC: JUNGLE
+
+v16:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+			TROPIC: JUNGLE
+	idle:
+		ZOffset: -512
+	damaged-idle:
+		Start: 1
+		ZOffset: -512
+
+v16.husk:
+	idle: v16
+		Start: 1
+		ZOffset: -512
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+			TROPIC: JUNGLE
+
+v17:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+			TROPIC: JUNGLE
+	idle:
+		ZOffset: -512
+	damaged-idle:
+		Start: 1
+		ZOffset: -512
+
+v17.husk:
+	idle: v17
+		Start: 1
+		ZOffset: -512
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+			TROPIC: JUNGLE
+
+v18:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+			TROPIC: JUNGLE
+	idle:
+		ZOffset: -512
+	damaged-idle:
+		Start: 1
+		ZOffset: -512
+
+v18.husk:
+	idle: v18
+		Start: 1
+		ZOffset: -512
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+			TROPIC: JUNGLE
+
+rice:
+	Defaults:
+		AddExtension: false
+	idle: rice.tem
+		ZOffset: -512
+	damaged-idle: rice.tem
+		Start: 1
+		ZOffset: -512
+
+rice.husk:
+	Defaults:
+		AddExtension: false
+	idle: rice.tem
+		Start: 1
+		ZOffset: -512
+
+v19:
+	idle:
+		Length: 14
+		Tick: 120
+	damaged-idle:
+		Start: 14
+		Length: 14
+		Tick: 120
+
+v19.husk:
+	idle: v19
+		Start: 28
+	fire-start: flmspt
+		Length: *
+		Offset: 7,-15
+		ZOffset: 1
+	fire-loop: flmspt
+		Start: 50
+		Length: *
+		Offset: 7,-15
+		ZOffset: 1
+
+arco:
+	idle:
+	damaged-idle:
+		Start: 1
+
+arco.husk:
+	idle: arco
+		Start: 1
+
+utilpol1:
+	idle:
+	damaged-idle:
+		Start: 1
+	dead:
+		Start: 1
+
+utilpol2:
+	idle:
+	damaged-idle:
+		Start: 1
+	dead:
+		Start: 1
+
+ammobox1:
+	idle:
+
+ammobox2:
+	idle:
+
+ammobox3:
+	idle:
+
+tanktrap1:
+	idle:
+
+tanktrap2:
+	idle:
+
+rushouse:
+	idle:
+	damaged-idle:
+		Start: 1
+
+rushouse.husk:
+	idle: rushouse
+		Start: 1
+
+asianhut:
+	idle:
+	damaged-idle:
+		Start: 1
+
+asianhut.husk:
+	idle: asianhut
+		Start: 1
+
+barb:
+	idle:
+		Length: 16
+	damaged-idle:
+		Start: 16
+		Length: 16
+
+wood:
+	idle:
+		Length: 16
+	damaged-idle:
+		Start: 16
+		Length: 16
+
+barl:
+	idle:
+
+brl2:
+	Defaults: barl
+	Inherits: barl
+
+brl3:
+	idle:
+
+# Interior Terrain
+boxes01:
+	idle: boxes01.int
+		AddExtension: false
+
+boxes02:
+	idle: boxes02.int
+		AddExtension: false
+
+boxes03:
+	idle: boxes03.int
+		AddExtension: false
+
+boxes04:
+	idle: boxes04.int
+		AddExtension: false
+
+boxes05:
+	idle: boxes05.int
+		AddExtension: false
+
+boxes06:
+	idle: boxes06.int
+		AddExtension: false
+
+boxes07:
+	idle: boxes07.int
+		AddExtension: false
+
+boxes08:
+	idle: boxes08.int
+		AddExtension: false
+
+boxes09:
+	idle: boxes09.int
+		AddExtension: false
+
+# Desert Terrain Expansion
+rock1:
+	idle: rock1.des
+		AddExtension: false
+
+rock2:
+	idle: rock2.des
+		AddExtension: false
+
+rock3:
+	idle: rock3.des
+		AddExtension: false
+
+rock4:
+	idle: rock4.des
+		AddExtension: false
+
+rock5:
+	idle: rock5.des
+		AddExtension: false
+
+rock6:
+	idle: rock6.des
+		AddExtension: false
+
+rock7:
+	idle: rock7.des
+		AddExtension: false
+
+t04:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			TEMPERAT: DESERT
+			TEMPERATTD: DESERT
+			INTERIOR: DESERT
+			JUNGLE: DESERT
+			SNOW: DESERT
+			SNOWTD: DESERT
+	idle: t04
+
+t04.husk:
+	Defaults: t04
+		UseTilesetExtension: true
+		TilesetOverrides:
+			TEMPERAT: DESERT
+			TEMPERATTD: DESERT
+			INTERIOR: DESERT
+			JUNGLE: DESERT
+			SNOW: DESERT
+			SNOWTD: DESERT
+	idle:
+		Start: 1
+	dead: t04
+		Start: 2
+		Length: *
+		Tick: 80
+
+t09:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: DESERT
+			JUNGLE: DESERT
+			SNOW: DESERT
+			SNOWTD: DESERT
+	idle: t09
+
+t09.husk:
+	Defaults: t09
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: DESERT
+			JUNGLE: DESERT
+			SNOW: DESERT
+			SNOWTD: DESERT
+	idle: t09
+		Start: 1
+	dead: t09
+		Start: 2
+		Length: *
+		Tick: 80
+
+v20:
+	Defaults:
+		UseTilesetExtension: true
+	idle: v20
+		Length: 3
+		Tick: 120
+	damaged-idle: v20
+		Start: 3
+		Length: 3
+		Tick: 120
+
+v20.husk:
+	idle: v20
+		Start: 6
+		UseTilesetExtension: true
+
+v21:
+	Defaults:
+		AddExtension: false
+	idle: v21.des
+		Length: 3
+		Tick: 120
+	damaged-idle: v21.des
+		Start: 3
+		Length: 3
+		Tick: 120
+
+v21.husk:
+	idle: v21.des
+		Start: 6
+		AddExtension: false
+
+v22:
+	Defaults:
+		UseTilesetExtension: true
+	idle:
+		Length: 3
+		Tick: 120
+	damaged-idle:
+		Start: 3
+		Length: 3
+		Tick: 120
+
+v22.husk:
+	idle: v22
+		Start: 6
+		UseTilesetExtension: true
+
+v23:
+	Defaults:
+		AddExtension: false
+	idle: v23.des
+		Length: 3
+		Tick: 120
+	damaged-idle: v23.des
+		Start: 3
+		Length: 3
+		Tick: 120
+
+v23.husk:
+	idle: v23.des
+		Start: 6
+		AddExtension: false
+
+v24:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			TROPIC: JUNGLE
+	idle: v24
+	damaged-idle: v24
+		Start: 1
+
+v24.husk:
+	idle: v24
+		Start: 2
+		UseTilesetExtension: true
+		TilesetOverrides:
+			TROPIC: JUNGLE
+
+v25:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			TROPIC: JUNGLE
+	idle: v25
+	damaged-idle: v25
+		Start: 1
+
+v25.husk:
+	idle: v25
+		Start: 1
+		UseTilesetExtension: true
+		TilesetOverrides:
+			TROPIC: JUNGLE
+
+v26:
+	Defaults:
+		AddExtension: false
+	idle: v26.des
+	damaged-idle: v26.des
+		Start: 1
+
+v26.husk:
+	idle: v26.des
+		Start: 2
+		AddExtension: false
+
+v27:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			TROPIC: JUNGLE
+	idle: v27
+	damaged-idle: v27
+		Start: 1
+
+v27.husk:
+	idle: v27
+		Start: 2
+		UseTilesetExtension: true
+		TilesetOverrides:
+			TROPIC: JUNGLE
+
+v28:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			TROPIC: JUNGLE
+	idle: v28
+	damaged-idle: v28
+		Start: 1
+
+v28.husk:
+	idle: v28
+		Start: 2
+		UseTilesetExtension: true
+		TilesetOverrides:
+			TROPIC: JUNGLE
+
+v29:
+	Defaults:
+		AddExtension: false
+	idle: v29.des
+	damaged-idle: v29.des
+		Start: 1
+
+v29.husk:
+	idle: v29.des
+		Start: 2
+		AddExtension: false
+
+v30:
+	Defaults:
+		AddExtension: false
+	idle: v30.des
+	damaged-idle: v30.des
+		Start: 2
+
+v30.husk:
+	idle: v30.des
+		Start: 2
+		AddExtension: false
+
+v31:
+	Defaults:
+		AddExtension: false
+	idle: v31.des
+	damaged-idle: v31.des
+		Start: 1
+
+v31.husk:
+	idle: v31.des
+		Start: 2
+		AddExtension: false
+
+v32:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			TROPIC: JUNGLE
+	idle: v32
+	damaged-idle: v32
+		Start: 1
+
+v32.husk:
+	idle: v32
+		Start: 2
+		UseTilesetExtension: true
+		TilesetOverrides:
+			TROPIC: JUNGLE
+
+v33:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			TROPIC: JUNGLE
+	idle: v33
+	damaged-idle: v33
+		Start: 1
+
+v33.husk:
+	idle: v33
+		Start: 2
+		UseTilesetExtension: true
+		TilesetOverrides:
+			TROPIC: JUNGLE
+
+v34:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			TROPIC: JUNGLE
+	idle: v34
+	damaged-idle: v34
+		Start: 1
+
+v34.husk:
+	idle: v34
+		Start: 2
+		UseTilesetExtension: true
+		TilesetOverrides:
+			TROPIC: JUNGLE
+
+v35:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			TROPIC: JUNGLE
+	idle: v35
+	damaged-idle: v35
+		Start: 1
+
+v35.husk:
+	idle: v35
+		Start: 2
+		UseTilesetExtension: true
+		TilesetOverrides:
+			TROPIC: JUNGLE
+
+v36:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			TROPIC: JUNGLE
+	idle: v36
+	damaged-idle: v36
+		Start: 1
+
+v36.husk:
+	idle: v36
+		Start: 2
+		UseTilesetExtension: true
+		TilesetOverrides:
+			TROPIC: JUNGLE
+
+v37:
+	Defaults:
+		UseTilesetExtension: true
+	idle: v37
+	damaged-idle: v37
+		Start: 1
+
+v37.husk:
+	idle: v37
+		Start: 2
+		UseTilesetExtension: true
+
+snowhut:
+	Defaults:
+		Offset: 0,-5
+	idle:
+		Length: 3
+		Tick: 360
+	damaged-idle:
+		Start: 3
+		Tick: 120
+
+snowhut.husk:
+	Defaults:
+		Offset: 0,-5
+	idle: snowhut
+		Start: 3
+		Length: 1
+
+lhus:
+	Defaults:
+		Offset: 0,-16
+	idle:
+		Length: 16
+		Tick: 180
+	damaged-idle:
+		Start: 16
+		Tick: 180
+		Length: 8
+
+windmill:
+	Defaults:
+		Offset: 0,-16
+	idle:
+		Length: 8
+		Tick: 80
+	damaged-idle:
+		Start: 8
+		Length: 8
+		Tick: 80
+
+v88:
+	idle: wwi-barr
+		Start: 13
+		Length: 1
+	damaged-idle: wwi-barr
+		Start: 13
+		Length: 1
+	make: wwi-barr
+		Start: 0
+		Length: *
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+
+v88.husk:
+	idle: wwi-barr
+		Start: 13
+		Length: 1
+
+v89:
+	idle: wwi-vfact
+		Start: 8
+		Length: 1
+	damaged-idle: wwi-vfact
+		Start: 8
+		Length: 1
+	make: wwi-vfact
+		Start: 0
+		Length: *
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+
+v89.husk:
+	idle: wwi-vfact
+		Start: 8
+		Length: 1
+
+v90:
+	idle: wwi-tfact
+		Start: 8
+		Length: 1
+	damaged-idle: wwi-tfact
+		Start: 8
+		Length: 1
+	make: wwi-tfact
+		Start: 0
+		Length: *
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+
+v90.husk:
+	idle: wwi-tfact
+		Start: 8
+		Length: 1
+
+v91:
+	idle: wwi-stable
+	damaged-idle: wwi-stable
+	make: wwi-stable
+		Start: 1
+		Length: 8
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+
+v91.husk:
+	idle: wwi-stable
+		Start: 0
+		Length: 1
+
+v92:
+	idle: wwi-tax
+		Start: 9
+		Length: 1
+	damaged-idle: wwi-tax
+		Start: 9
+		Length: 1
+	make: wwi-tax
+		Start: 0
+		Length: *
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+
+v92.husk:
+	idle: wwi-tax
+		Start: 9
+		Length: 1
+
+v93:
+	idle: wwi-house
+		Start: 8
+		Length: 1
+	damaged-idle: wwi-house
+		Start: 8
+		Length: 1
+	make: wwi-house
+		Start: 0
+		Length: *
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+
+v93.husk:
+	idle: wwi-house
+		Start: 8
+		Length: 1
+
+v94:
+	idle: wwi-recon
+		Start: 11
+		Length: 1
+	damaged-idle: wwi-recon
+		Start: 11
+		Length: 1
+	make: wwi-recon
+		Start: 0
+		Length: *
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+
+v94.husk:
+	idle: wwi-recon
+		Start: 11
+		Length: 1
+
+v95:
+	idle: wwi-shipyard
+		Start: 19
+		Length: 1
+	damaged-idle: wwi-shipyard
+		Start: 19
+		Length: 1
+	make: wwi-shipyard
+		Start: 0
+		Length: *
+
+v95.husk:
+	idle: wwi-shipyard
+		Start: 19
+		Length: 1
+
+v96:
+	idle: wwi-otto-hq
+		Start: 8
+		Length: 1
+	damaged-idle: wwi-otto-hq
+		Start: 8
+		Length: 1
+	make: wwi-otto-hq
+		Start: 0
+		Length: *
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+
+v96.husk:
+	idle: wwi-otto-hq
+		Start: 8
+		Length: 1
+
+v97:
+	idle: wwi-ger-hq
+		Start: 8
+		Length: 1
+	damaged-idle: wwi-ger-hq
+		Start: 8
+		Length: 1
+	make: wwi-ger-hq
+		Start: 0
+		Length: *
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+
+v97.husk:
+	idle: wwi-ger-hq
+		Start: 8
+		Length: 1
+
+v98:
+	idle: wwi-ita-hq
+		Start: 23
+		Length: 1
+	damaged-idle: wwi-ita-hq
+		Start: 23
+		Length: 1
+	make: wwi-ita-hq
+		Start: 0
+		Length: *
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+
+v98.husk:
+	idle: wwi-ita-hq
+		Start: 23
+		Length: 1
+
+v99:
+	idle: wwi-uk-hq
+		Start: 8
+		Length: 1
+	damaged-idle: wwi-uk-hq
+		Start: 8
+		Length: 1
+	make: wwi-uk-hq
+		Start: 0
+		Length: *
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+
+v99.husk:
+	idle: wwi-uk-hq
+		Start: 8
+		Length: 1
+
+piraship:
+	Defaults:
+		AddExtension: false
+		Offset: 2, -10
+	idle: piraship.shp
+		Length: 1

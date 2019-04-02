@@ -1,0 +1,230 @@
+<p>This is the changelog for the <strong>next stable release</strong>. The [[changelog for the development branch|Changelog (bleed)]] can be found separately.  Additionally, changes from earlier releases can be found on the <a href="https://github.com/OpenRA/OpenRA/wiki/Historical-Changelogs">historical changelogs</a> page.</p>
+
+<h1>Release 20190314</h1>
+
+<h2>General Improvements</h2>
+
+<ul>
+<li>Added Ctrl modifier to queue units at the front of the production queue instead of the end. [<a href="https://github.com/OpenRA/OpenRA/pull/15764">#15764</a>]</li>
+<li>Added support for asset installation from special-case mountpoints on Linux. [<a href="https://github.com/OpenRA/OpenRA/pull/15883">15883</a>]</li>
+<li>Added target-line display for allied units and for spectators. [<a href="https://github.com/OpenRA/OpenRA/pull/15782">#15782</a>]</li>
+<li>Added an Army Value graph and column to the spectator UI. [<a href="https://github.com/OpenRA/OpenRA/pull/15767">#15767</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15957">#15957</a>]</li>
+<li>Added a Developer section to the advanced game options. [<a href="https://github.com/OpenRA/OpenRA/pull/15942">#15942</a>]</li>
+<li>Added support for the AI to rebuild lost harvesters. [<a href="https://github.com/OpenRA/OpenRA/pull/15991">#15991</a>]</li>
+<li>Added new targeting logic that respects the Fog of War. [<a href="https://github.com/OpenRA/OpenRA/pull/15866">#15866</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15979">#15979</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16051">#16051</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16067">#16067</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16093">#16093</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16101">#16101</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16109">#16109</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16110">#16110</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16119">#16119</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16135">#16135</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16150">#16150</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16152">#16152</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16168">#16168</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16182">#16182</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16194">#16194</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16219">#16219</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16252">#16252</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16271">#16271</a>]</li>
+<li>Added ability of turreted units to acquire and attack targets while moving. [<a href="https://github.com/OpenRA/OpenRA/pull/16112">#16112</a>]</li>
+<li>Fixed download progress display for servers that do not report the total file size. [<a href="https://github.com/OpenRA/OpenRA/pull/15588">#15588</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15611">#15611</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15614">#15614</a>]</li>
+<li>Fixed deploy orders not being queuable from the command bar. [<a href="https://github.com/OpenRA/OpenRA/pull/15596">#15596</a>]</li>
+<li>Fixed incorrect production tooltip background sizes. [<a href="https://github.com/OpenRA/OpenRA/pull/15890">#15890</a>]</li>
+<li>Fixed volume slider sensitivity (now uses logarithmic scaling). [<a href="https://github.com/OpenRA/OpenRA/pull/14875">#14875</a>]</li>
+<li>Fixed player score not updating while game info screen is visible. [<a href="https://github.com/OpenRA/OpenRA/pull/15915">#15915</a>]</li>
+<li>Fixed target lines showing the wrong location for newly-captured units. [<a href="https://github.com/OpenRA/OpenRA/pull/15742">#15742</a>]</li>
+<li>Fixed a typo in lobby tooltip for the Crates checkbox. [<a href="https://github.com/OpenRA/OpenRA/pull/15953">#15953</a>]</li>
+<li>Fixed infantry animations sometimes remaining in the last shooting frame instead of changing to stand. [<a href="https://github.com/OpenRA/OpenRA/pull/15701">#15701</a>]</li>
+<li>Fixed "game is full" error when joining a server with spectators disabled. [<a href="https://github.com/OpenRA/OpenRA/pull/15927">#15927</a>]</li>
+<li>Fixed AI and factions being partially truncated in their selection lists. [<a href="https://github.com/OpenRA/OpenRA/pull/15678">#15678</a>]</li>
+<li>Fixed trees disappearing completely when destroyed below the Fog of War. [<a href="https://github.com/OpenRA/OpenRA/issues/15579">#15579</a>]</li>
+<li>Fixed incorrect "exploit detected" warnings that occasionally occurred after capturing an enemy unit. [<a href="https://github.com/OpenRA/OpenRA/pull/16081">#16081</a>]</li>
+<li>Fixed actors captured by enemy players remaining in the active selection. [<a href="https://github.com/OpenRA/OpenRA/pull/16084">#16084</a>]</li>
+<li>Fixed husks being visible below Fog of War. [<a href="https://github.com/OpenRA/OpenRA/pull/16011">#16011</a>]</li>
+<li>Fixed aircraft circling endlessly when target is too close. [<a href="https://github.com/OpenRA/OpenRA/pull/16054">#16054</a>]</li>
+<li>Fixed "ready" clients who are made a spectator by the server admin not being able to move back to a player slot. [<a href="https://github.com/OpenRA/OpenRA/pull/16043">#16043</a>]</li>
+<li>Changed "Cancel" buttons in map chooser and replay browser to "Back". [<a href="https://github.com/OpenRA/OpenRA/pull/15410">#15410</a>]</li>
+<li>Changed the <code>Return Fire</code> stance so that attacked units will no longer follow their attackers. [<a href="https://github.com/OpenRA/OpenRA/pull/15567">#15567</a>]</li>
+<li>Changed replay percent completion tooltip to show the game progress than the replay progress. [<a href="https://github.com/OpenRA/OpenRA/pull/15704">#15704</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15999">#15999</a>]</li>
+<li>Changed the lobby teamchat selector match the in-game selector. [<a href="https://github.com/OpenRA/OpenRA/pull/15595">#15595</a>]</li>
+<li>Changed "Building"/"Training" notifications to reduce audio overlapping when ordered in quick succession. [<a href="https://github.com/OpenRA/OpenRA/pull/15360">#15360</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16083">#16083</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16220">#16220</a>]</li>
+<li>Improved performance. [<a href="https://github.com/OpenRA/OpenRA/pull/15413">#15413</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15464">#15464</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15479">#15479</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15593">#15593</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15787">#15787</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15629">#15629</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15503">#15503</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15671">#15671</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15859">#15859</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15974">#15974</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16072">#16072</a>]</li>
+</ul>
+
+<h2>Map Editor</h2>
+
+<ul>
+<li>Added an actor property editor. [<a href="https://github.com/OpenRA/OpenRA/pull/15551">#15551</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15881">#15881</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16221">#16221</a>]</li>
+<li>Added multi-category filtering to the tile selector. [<a href="https://github.com/OpenRA/OpenRA/pull/15976">#15976</a>]</li>
+<li>Added multi-category filtering to Copy/Paste. [<a href="https://github.com/OpenRA/OpenRA/pull/15989">#15989</a>]</li>
+<li>Added a hotkey for the Copy/Paste tool. [<a href="https://github.com/OpenRA/OpenRA/pull/16008">#16008</a>]</li>
+<li>Fixed a crash when adding a unit while an invalid owner is selected. [<a href="https://github.com/OpenRA/OpenRA/pull/15628">#15628</a>]</li>
+<li>Removed actors incompatible with direct placement on maps. [<a href="https://github.com/OpenRA/OpenRA/pull/15987">#15987</a>]</li>
+<li>Changed trees and other decoration actors to automatically use the Neutral owner. [<a href="https://github.com/OpenRA/OpenRA/pull/15461">#15461</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15861">#15861</a>]</li>
+</ul>
+
+<h2>Red Alert</h2>
+
+<ul>
+<li>Added the missing Mechanic repair voice clips. [<a href="https://github.com/OpenRA/OpenRA/pull/16299">#16299</a>]</li>
+<li>Added an audio notification ("Unit lost") when a player's unit gets stolen. [<a href="https://github.com/OpenRA/OpenRA/pull/16268">#16268</a>]</li>
+<li>Fixed repair cursor not working on aircraft. [<a href="https://github.com/OpenRA/OpenRA/pull/15543">#15543</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15822">#15822</a>]</li>
+<li>Fixed Mad Tank detonate order not being queueable. [<a href="https://github.com/OpenRA/OpenRA/pull/15893">#15893</a>]</li>
+<li>Fixed Helipad reload animation speed. [<a href="https://github.com/OpenRA/OpenRA/pull/15725">#15725</a>]</li>
+<li>Fixed Refinery not using damaged art when below 50% health. [<a href="https://github.com/OpenRA/OpenRA/pull/15821">#15821</a>]</li>
+<li>Fixed aircraft reloading stopping on the airfield when given a stop order. [<a href="https://github.com/OpenRA/OpenRA/pull/15363">#15363</a>]</li>
+<li>Fixed paradrop/parabomb beacons disappearing if one of the planes is shot down before reaching the target. [<a href="https://github.com/OpenRA/OpenRA/pull/15835">#15835</a>]</li>
+<li>Fixed a rare crash when calculating the bounties of passengers in a killed transport. [<a href="https://github.com/OpenRA/OpenRA/pull/16175">#16175</a>]</li>
+<li>Fixed stolen vehicles displaying wrong stance. [<a href="https://github.com/OpenRA/OpenRA/pull/16156">#16156</a>]</li>
+<li>Fixed camera remaining on the map if paratrooper/parabomb aircraft is destroyed. [<a href="https://github.com/OpenRA/OpenRA/pull/16155">#16155</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16304">#16304</a>]</li>
+<li>Fixed an issue that could cause gps symbols to remaining on the map after a unit is destroyed. [<a href="https://github.com/OpenRA/OpenRA/pull/16222">#16222</a>]</li>
+<li>Fixed uneven volumes of music tracks. [<a href="https://github.com/OpenRA/OpenRA/pull/16161">#16161</a>]</li>
+<li>Fixed helicopters ignoring orders after reloading at the helipad. [<a href="https://github.com/OpenRA/OpenRA/pull/16170">#16170</a>]</li>
+<li>Improved faction colors used for GPS indicators and the Hind. [<a href="https://github.com/OpenRA/OpenRA/pull/15659">#15659</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15836">#15836</a>]</li>
+<li>Improved the AI unit composition and avoid low power situations better. [<a href="https://github.com/OpenRA/OpenRA/pull/15607">#15607</a>]</li>
+<li>Reduced volume of cash tick sounds. [<a href="https://github.com/OpenRA/OpenRA/pull/16034">#16034</a>]</li>
+<li>Campaign/Mission/Map Changes:
+<ul>
+<li>Fixed a scripting error in Infiltration. [<a href="https://github.com/OpenRA/OpenRA/pull/16022">#16022</a>]</li>
+<li>Fixed issues with Monster Tank Madness mission. [<a href="https://github.com/OpenRA/OpenRA/pull/16128">#16128</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16162">#16162</a>]</li>
+<li>Fixed several other minor mission issues. [<a href="https://github.com/OpenRA/OpenRA/pull/16079">#16079</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15584">#15584</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15673">#15673</a>]</li>
+<li>Fixed a scripting error in Soviet 05. [<a href="https://github.com/OpenRA/OpenRA/pull/16238">#16238</a>]</li>
+<li>Fixed errors in the dropzone maps. [<a href="https://github.com/OpenRA/OpenRA/pull/16247">#16247</a>]</li>
+<li>Fixed ore mine placement on 'Pitfall'. [<a href="https://github.com/OpenRA/OpenRA/pull/16211">#16211</a>]</li>
+<li>Added Allies 07: Sunken Treasure. [<a href="https://github.com/OpenRA/OpenRA/pull/15542">#15542</a>]</li>
+<li>Added Allies08 (a and b): Protect the Chronosphere. [<a href="https://github.com/OpenRA/OpenRA/pull/15582">#15582</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15693">#15693</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15583">#15583</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15940">#15940</a>]</li>
+<li>Added Soviet08a: Investigate Elba Island. [<a href="https://github.com/OpenRA/OpenRA/pull/14972">#14972</a>]</li>
+<li>Added Soviet Soldier Volkov &amp; Chitzkoi. [<a href="https://github.com/OpenRA/OpenRA/pull/15549">#15549</a>]</li>
+<li>Added It Came From Red Alert 1: Discovery. [<a href="https://github.com/OpenRA/OpenRA/pull/15396">#15396</a>]</li>
+<li>Added Sarin Gas 1: Crackdown. [<a href="https://github.com/OpenRA/OpenRA/pull/15898">#15898</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16035">#16035</a>]</li>
+<li>Added Aftermath and Counterstrike categories to the mission selector. [<a href="https://github.com/OpenRA/OpenRA/pull/15694">#15694</a>]</li>
+<li>Changed money crate value to $2000 by default in missions. [<a href="https://github.com/OpenRA/OpenRA/pull/15666">#15666</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15730">#15730</a>]</li>
+<li>Improved behaviour in Allies-02 when the soviet base is destroyed. [<a href="https://github.com/OpenRA/OpenRA/pull/16030">#16030</a>]</li>
+</ul></li>
+<li><a name="ra-balance-changes"></a>Game Mechanic / Balance Changes:
+<ul>
+<li>Engineers are now consumed when capturing buildings. [<a href="https://github.com/OpenRA/OpenRA/pull/15661">#15661</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15696">#15696</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15737">#15737</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15810">#15810</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15986">#15986</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16130">#16130</a>]</li>
+<li>Dog attack behaviour overhauled to remove bugs and behave closer to the original game. [<a href="https://github.com/OpenRA/OpenRA/pull/15008">#15008</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15998">#15998</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16005">#16005</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16007">#16007</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16080">#16080</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16236">#16236</a>]</li>
+<li>Replaced Soviet Hijacker with Thief: improved vehicle capturing behaviour, and can now steal funds from enemy refineries. [<a href="https://github.com/OpenRA/OpenRA/pull/15875">#15875</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16130">#16130</a>]</li>
+<li>Mechanics now repair husks owned by allied players instead of capturing them. [<a href="https://github.com/OpenRA/OpenRA/pull/15851">#15851</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15935">#15935</a>]</li>
+<li>Infantry in pillboxes no longer gain experience. [<a href="https://github.com/OpenRA/OpenRA/pull/15907">#15907</a>]</li>
+<li>Increased dog attack damage and vision range. [<a href="https://github.com/OpenRA/OpenRA/pull/16247">#16247</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16244">#16244</a>]</li>
+<li>Increased Hind cost. [<a href="https://github.com/OpenRA/OpenRA/pull/16244">#16244</a>]</li>
+<li>Increased Camo Pillbox cost. [<a href="https://github.com/OpenRA/OpenRA/pull/16244">#16244</a>]</li>
+<li>Increased the turn speed of naval transports. [<a href="https://github.com/OpenRA/OpenRA/pull/16025">#16025</a>]</li>
+<li>Reduced Artillery effectiveness vs. infantry, improved accuracy. [<a href="https://github.com/OpenRA/OpenRA/pull/16244">#16244</a>]</li>
+<li>Reduced MiG missile inaccuracy. [<a href="https://github.com/OpenRA/OpenRA/pull/16244">#16244</a>]</li>
+<li>Reduced Engineer cost, inreased capture delay. [<a href="https://github.com/OpenRA/OpenRA/pull/16244">#16244</a>]</li>
+<li>Reduced speed of Medic and Mechanic. [<a href="https://github.com/OpenRA/OpenRA/pull/16244">#16244</a>]</li>
+<li>Reduced speed and cost of Radar Jammer. [<a href="https://github.com/OpenRA/OpenRA/pull/16244">#16244</a>]</li>
+<li>Reduced speed of Mobile Gap Generator. [<a href="https://github.com/OpenRA/OpenRA/pull/16244">#16244</a>]</li>
+<li>Reduced Chronosphere effect duration. [<a href="https://github.com/OpenRA/OpenRA/pull/16244">#16244</a>]</li>
+<li>Changed fake structure prices to be consistently 10% of their real equivalent. [<a href="https://github.com/OpenRA/OpenRA/pull/16188">#16188</a>]</li>
+</ul></li>
+</ul>
+
+<h2>Tiberian Dawn</h2>
+
+<ul>
+<li>Fixed the menu/exit fade effect for paused replays. [<a href="https://github.com/OpenRA/OpenRA/pull/15597">#15597</a>]</li>
+<li>Fixed waypoints and removed unused actors outside map bounds from several missions. [<a href="https://github.com/OpenRA/OpenRA/pull/15584">#15584</a>]</li>
+<li>Fixed repair cursor not working with aircraft. [<a href="https://github.com/OpenRA/OpenRA/pull/15543">#15543</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15822">#15822</a>]</li>
+<li>Fixed music tracks being hidden/having a wrong name. [<a href="https://github.com/OpenRA/OpenRA/pull/15909">#15909</a>]</li>
+<li>Fixed uneven volumes of music tracks. [<a href="https://github.com/OpenRA/OpenRA/pull/16161">#16161</a>]</li>
+<li>Reduced volume of cash increase tick sound. [<a href="https://github.com/OpenRA/OpenRA/pull/16034">#16034</a>]</li>
+<li>Campaign/Mission Changes:
+<ul>
+<li>Added Nod 10a: Terminate Doctor Wong. [<a href="https://github.com/OpenRA/OpenRA/pull/15870">#15870</a>]</li>
+<li>Added Nod 10b: Destroy the Mammoth Tank Facility. [<a href="https://github.com/OpenRA/OpenRA/pull/15902">#15902</a>]</li>
+</ul></li>
+</ul>
+
+<h2>Dune 2000</h2>
+
+<ul>
+<li>Added concrete damage and destruction. [<a href="https://github.com/OpenRA/OpenRA/pull/15610">#15610</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15784">#15784</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15924">#15924</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15944">#15944</a>]</li>
+<li>Fixed a rare game freeze. [<a href="https://github.com/OpenRA/OpenRA/pull/14838">#14838</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15856">#15856</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16253">#16253</a>]</li>
+<li>Fixed in-game screenshots displaying shrouded areas as transparent pixels. <a href="https://github.com/OpenRA/OpenRA/pull/15978">#15978</a>]</li>
+</ul>
+
+<h2>Engine/Modding</h2>
+
+<ul>
+<li>Added support for PNG sprite sheets and <code>PaletteFromPng</code>. [<a href="https://github.com/OpenRA/OpenRA/pull/15336">#15336</a>]</li>
+<li>Added support for horizontally aligning SupportPowersWidget. [<a href="https://github.com/OpenRA/OpenRA/pull/15471">#15471</a>]</li>
+<li>Added plumbing for performing custom activity code on actor disposal. [<a href="https://github.com/OpenRA/OpenRA/pull/15622">#15622</a>]</li>
+<li>Added dynamic <code>LaunchEffect</code> facing support to <code>LaserZap</code>. [<a href="https://github.com/OpenRA/OpenRA/pull/15173">#15173</a>]</li>
+<li>Added support for parsing custom metadata from sprite files. [<a href="https://github.com/OpenRA/OpenRA/pull/15668">#15668</a>]</li>
+<li>Added support for displaying different actor types in the color picker for each faction. [<a href="https://github.com/OpenRA/OpenRA/pull/15735">#15735</a>]</li>
+<li>Added a world-specific random number source to replace the existing <code>CosmeticRandom</code> in the long term. [<a href="https://github.com/OpenRA/OpenRA/pull/15788">15788</a>]</li>
+<li>Added facing support to <code>GravityBomb</code>. [<a href="https://github.com/OpenRA/OpenRA/pull/15848">#15848</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15895">#15895</a>]</li>
+<li>Added support for per-track volume modifiers for music files. [<a href="https://github.com/OpenRA/OpenRA/pull/16138">#16138</a>]</li>
+<li>Added <code>VolumeModifier</code> for custom voice/notification sound volumes. [<a href="https://github.com/OpenRA/OpenRA/pull/16034">#16034</a>]</li>
+<li>Fixed a crash when multiple <code>INotifyBlockingMove</code> interfaces were used with the <code>EjectOnDeath</code> property of <code>Cargo</code>. [<a href="https://github.com/OpenRA/OpenRA/pull/15510">#15510</a>]</li>
+<li>Fixed compilation on the Raspberry Pi and other ARM-based systems. [<a href="https://github.com/OpenRA/OpenRA/pull/15755">#15755</a>]</li>
+<li>Fixed glitch when a sequence with Start frame higher than 0 is played backwards. [<a href="https://github.com/OpenRA/OpenRA/pull/15451">#15451</a>]</li>
+<li>Fixed game crashes when no maps are available to load. [<a href="https://github.com/OpenRA/OpenRA/pull/15565">#15565</a>]</li>
+<li>Fixed a crash when mods/maps use invalid SubCell references. [<a href="https://github.com/OpenRA/OpenRA/pull/15770">#15770</a>]</li>
+<li>Fixed VGA palettes not making use of the full color range. [<a href="https://github.com/OpenRA/OpenRA/pull/15745">#15745</a>]</li>
+<li>Fixed remote map status remaining in the "Searching" state when multi-map queries fail. [<a href="https://github.com/OpenRA/OpenRA/pull/15933">#15933</a>]</li>
+<li>Fixed custom looping animations in <code>WithSpriteBody</code> not being played in sync with other animation traits. [<a href="https://github.com/OpenRA/OpenRA/pull/15600">#15600</a>]</li>
+<li>Fixed a crash when an actor with both <code>TakeCover</code> and <code>GrantConditionOnDeploy</code> traits undeploys. [<a href="https://github.com/OpenRA/OpenRA/pull/15806">#15806</a>]</li>
+<li>Fixed mission groups not working for SDK-based mods. [<a href="https://github.com/OpenRA/OpenRA/pull/16041">#16041</a>]</li>
+<li>Fixed a crash when using chat commands in a replay where the first player to join the server left before the game started. [<a href="https://github.com/OpenRA/OpenRA/pull/16085">#16085</a>]</li>
+<li>Changed <code>Health</code> look-ups to use <code>IHealth</code>. [<a href="https://github.com/OpenRA/OpenRA/pull/15378">#15378</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15757">#15757</a>]</li>
+<li>Changed placement preview overlay to accept <code>build-valid</code> without tileset suffix. [<a href="https://github.com/OpenRA/OpenRA/pull/15452">#15452</a>]</li>
+<li>Changed hardcoded notification sounds to be configurable and optional. [<a href="https://github.com/OpenRA/OpenRA/pull/15357">#15357</a>]</li>
+<li>Changed UI sounds <code>ClickSound</code>, <code>ClickDisabledSound</code> and <code>ChatLine</code> to be configurable and optional. [<a href="https://github.com/OpenRA/OpenRA/pull/15390">#15390</a>]</li>
+<li>Changed cursors.yaml to use palettes from rules. [<a href="https://github.com/OpenRA/OpenRA/pull/15652">#15652</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16269">#16269</a>]</li>
+<li>Removed <code>INotifyBuildComplete</code>. [<a href="https://github.com/OpenRA/OpenRA/pull/15676">#15676</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15682">#15682</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15884">#15884</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16113">#16113</a>]</li>
+<li>Removed the <code>IExplodeModifier</code> interface and replaced its functionality with conditions. [<a href="https://github.com/OpenRA/OpenRA/pull/15825">#15825</a>]</li>
+<li>Removed hardcoded negative-damage check from damage warheads. [<a href="https://github.com/OpenRA/OpenRA/pull/15751">#15751</a>]</li>
+<li>Removed sync report generation by default and added <code>Server.EnableSyncReports</code> option to re-enable in MP. [<a href="https://github.com/OpenRA/OpenRA/pull/15593">#15593</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15859">#15859</a>]</li>
+<li>Trait Changes:
+<ul>
+<li><code>Aircraft</code>: Replaced <code>TakeoffSound</code> with <code>TakeoffSounds</code> list, <code>LandingSound</code> with <code>LandingSounds</code> list, and added <code>TurnToDock</code> parameter. [<a href="https://github.com/OpenRA/OpenRA/pull/15624">#15624</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15724">#15724</a>]</li>
+<li><code>Aircraft</code>: Fixed issues related to terrain heightmaps. [<a href="https://github.com/OpenRA/OpenRA/pull/15918">#15918</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15459">#15459</a>]</li>
+<li><code>AnnounceOnBuild</code>: Replaced by new <code>VoiceAnnouncement</code> trait. [<a href="https://github.com/OpenRA/OpenRA/pull/15743">#15743</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16158">#16158</a>]</li>
+<li><code>Armament</code>: Changed to call <code>PreparingAttack</code> before calculating <code>Muzzle</code>. [<a href="https://github.com/OpenRA/OpenRA/pull/15656">#15656</a>]</li>
+<li><code>AttackHeli</code>: Replaced by <code>AttackAircraft</code>. [<a href="https://github.com/OpenRA/OpenRA/pull/15781">#15781</a>]</li>
+<li><code>AttackLeap</code>: Rewritten to implement classic dog behaviour. Now used with <code>EdibleByLeap</code>, <code>GrantConditionOnAttack</code>, <code>GrantConditionWhileAiming</code>. [<a href="https://github.com/OpenRA/OpenRA/pull/15008">#15008</a>]</li>
+<li><code>AttackPlane</code> Replaced by <code>AttackAircraft</code>. [<a href="https://github.com/OpenRA/OpenRA/pull/15781">#15781</a>]</li>
+<li><code>AttackSuicides</code>: Removed in favour of using <code>AttackFrontal</code> with a conditional <code>KillsSelf</code>. [<a href="https://github.com/OpenRA/OpenRA/pull/16101">#16101</a>]</li>
+<li><code>Cloak</code>: Changed disabled status to reset cloak timeout, and added <code>PauseOnCondition</code> parameter to maintain the previous behaviour. [<a href="https://github.com/OpenRA/OpenRA/pull/15711">#15711</a>]</li>
+<li><code>CustomTerrainDebugOverlay</code>: Fixed rendered in isometric mods. [<a href="https://github.com/OpenRA/OpenRA/pull/15626">#15626</a>]</li>
+<li><code>CrateSpawner</code>: Fixed one too may crates being spawned if Maximum equalled Minimum. [<a href="https://github.com/OpenRA/OpenRA/pull/15587">#15587</a>]</li>
+<li><code>*CrateAction</code>: Added <code>RequiresCondition</code> support for disabling the action, replaced <code>Effect</code> with the more standard <code>Image</code> and <code>Sequence</code> parameters. [<a href="https://github.com/OpenRA/OpenRA/pull/15690">#15690</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15747">#15747</a>]</li>
+<li><code>*CrateAction</code>: changed <code>Notification</code> field to reference a notification name instead of a sound file. [<a href="https://github.com/OpenRA/OpenRA/pull/15699">#15699</a>]</li>
+<li>New trait: <code>CreatesShroudMultiplier</code>. [<a href="https://github.com/OpenRA/OpenRA/pull/15707">#15707</a>]</li>
+<li><code>Demolition</code>: Added <code>TargetStances</code> and <code>ForceTargetStances</code> parameters. [<a href="https://github.com/OpenRA/OpenRA/pull/15702">#15702</a>]</li>
+<li><code>EditorTilesetFilter</code>: Renamed to <code>MapEditorData</code>. [<a href="https://github.com/OpenRA/OpenRA/pull/15630">#15630</a>]</li>
+<li><code>Exit</code>: Added <code>RequiresCondition</code> support for disabling exits. [<a href="https://github.com/OpenRA/OpenRA/pull/15058">#15058</a>]</li>
+<li>New trait: <code>GrantConditionWhileAiming</code>. [<a href="https://github.com/OpenRA/OpenRA/pull/15008">#15008</a>]</li>
+<li>New trait: <code>GrantConditionOnProduction</code>. [<a href="https://github.com/OpenRA/OpenRA/pull/15303">#15303</a>]</li>
+<li><code>GrantExternalConditionPower</code>: Added <code>ValidStances</code> parameters to support targeting enemy actors. [<a href="https://github.com/OpenRA/OpenRA/pull/15984">#15984</a>]</li>
+<li><code>HackyAI</code>: Replaced by new <code>ModularBot</code> plus <code>HarvesterBotModule</code>, <code>SupportPowerBotModule</code>, <code>BaseBuilderBotModule</code> and <code>BuildingRepairBotModule</code>, <code>McvManagerModule</code>, <code>SquadManagerBotModule</code>, <code>UnitBuilderBotModule</code> traits. [<a href="https://github.com/OpenRA/OpenRA/pull/15750">#15750</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15791">#15791</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15802">#15802</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15830">#15830</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15786">#15786</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15855">#15855</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15857">#15857</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15921">#15921</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15942">#15942</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15922">#15922</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15977">#15977</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15980">#15980</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15982">#15982</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16125">#16125</a>, <a href="https://github.com/OpenRA/OpenRA/pull/16149">#16149</a>]</li>
+<li><code>HitShape</code>: Added <code>ArmorTypes</code> parameter to apply different <code>Armor</code> bonuses to each hitshape (directional armor, etc). [<a href="https://github.com/OpenRA/OpenRA/pull/14991">#14991</a>]</li>
+<li><code>LeaveSmudgeWarhead</code>: Added <code>Chance</code> parameter. [<a href="https://github.com/OpenRA/OpenRA/pull/15815">#15815</a>]</li>
+<li><code>LeavesTrails</code>: Fixed trait being disabled when no <code>TerrainTypes</code> are defined. [<a href="https://github.com/OpenRA/OpenRA/pull/15601">#15601</a>]</li>
+<li><code>Locomotor</code>: Fixed crash when an entry in <code>TerrainSpeeds</code> is set to 0. [<a href="https://github.com/OpenRA/OpenRA/pull/15709">#15709</a>]</li>
+<li><code>MPSpawnUnits</code>: Added <code>BaseActorOffset</code> parameter. [<a href="https://github.com/OpenRA/OpenRA/pull/15753">#15753</a>]</li>
+<li>New trait: <code>ParallelProductionQueue</code>. [<a href="https://github.com/OpenRA/OpenRA/pull/15018">#15018</a>]</li>
+<li><code>Production</code>: Now properly supports <code>RequiresCondition</code>, <code>PauseOnCondition</code>, and multiple instances on an actor. [<a href="https://github.com/OpenRA/OpenRA/pull/14795">#14795</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15045">#15045</a>]</li>
+<li><code>ProductionQueue</code>: Replaced <code>LowPowerSlowdown</code> with <code>LowPowerModifier</code> and added <code>InfiniteBuildLimit</code> parameter. [<a href="https://github.com/OpenRA/OpenRA/pull/14664">#14664</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15021">#15021</a>]</li>
+<li><code>RallyPoint</code>: Fixed crash when <code>Palette</code> isn't defined (even though it's unused when Image is disabled). [<a href="https://github.com/OpenRA/OpenRA/pull/15530">#15530</a>]</li>
+<li>New trait: <code>Rearmable</code> manages unit rearming behaviour. [<a href="https://github.com/OpenRA/OpenRA/pull/14357">#14357</a>]</li>
+<li><code>RenderShroudCircle</code>: Added <code>Color</code> and <code>ContrastColor</code> parameters. [<a href="https://github.com/OpenRA/OpenRA/pull/15419">#15419</a>]</li>
+<li>New trait: <code>RequiresSpecificOwners</code> used to generate warnings when map-placed actors use incorrect owners. [<a href="https://github.com/OpenRA/OpenRA/pull/15461">#15461</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15861">#15861</a>]</li>
+<li>New trait: <code>RevealsShroudMultiplier</code>. [<a href="https://github.com/OpenRA/OpenRA/pull/15707">#15707</a>]</li>
+<li>New trait: <code>TerrainRenderer</code> now manages map terrain rendering. [<a href="https://github.com/OpenRA/OpenRA/pull/15669">#15669</a>]</li>
+<li><code>Turreted</code>: Added <code>RequiresCondition</code> support for disabling the turret and <code>PauseOnCondition</code> support for disabling its movement. [<a href="https://github.com/OpenRA/OpenRA/pull/15811">#15811</a>]</li>
+<li><code>Valued</code>: Trait is now optional, and can be omitted by mods which do not need it. [<a href="https://github.com/OpenRA/OpenRA/pull/15367">#15367</a>]</li>
+<li><code>WithMakeAnimation</code>: <code>Condition</code> is now revoked after other traits have ticked to avoid behaviours toggling too early. [<a href="https://github.com/OpenRA/OpenRA/pull/15748">#15748</a>]</li>
+<li><code>WithRearmAnimation</code> and <code>WithRepairAnimation</code>: Replaced by<code>WithResupplyAnimation</code>. [<a href="https://github.com/OpenRA/OpenRA/pull/15543">#15543</a>, <a href="https://github.com/OpenRA/OpenRA/pull/15822">#15822</a>]</li>
+<li><code>WithResources</code>: Renamed to <code>WithResourceLevelOverlay</code>. [<a href="https://github.com/OpenRA/OpenRA/pull/15906">#15906</a>]</li>
+<li><code>WithSiloAnimation</code>: Replaced by <code>WithResourceLevelSpriteBody</code>. [<a href="https://github.com/OpenRA/OpenRA/pull/15906">#15906</a>]</li>
+<li><code>WithSpriteBody</code>: Added <code>ForceToGround</code> parameter. [<a href="https://github.com/OpenRA/OpenRA/pull/15844">#15844</a>]</li>
+<li><code>WithSpriteTurret</code>: Added <code>Palette</code> and <code>IsPlayerPalette</code> parameters. [<a href="https://github.com/OpenRA/OpenRA/pull/15525">#15525</a>]</li>
+</ul></li>
+<li>Lua API Changes:
+<ul>
+<li>Added <code>player.GetActorsByTypes</code> lua function. [<a href="https://github.com/OpenRA/OpenRA/pull/15446">#15446</a>]</li>
+<li>Added a specific lua error for using <code>Actor.Create()</code> with no or invalid owner. [<a href="https://github.com/OpenRA/OpenRA/pull/15679">#15679</a>]</li>
+<li>Fixed a Lua error when attempting to use the <code>Attack</code> API on actors that have multiple <code>Attack*</code> traits. [<a href="https://github.com/OpenRA/OpenRA/pull/15603">#15603</a>]</li>
+<li>Fixed <code>Trigger.OnAllRemovedFromWorld</code> Lua API not accounting for units being removed and then re-entering the world before the condition triggers. [<a href="https://github.com/OpenRA/OpenRA/pull/15680">#15680</a>]</li>
+</ul></li>
+<li>OpenRA.Utility changes:
+<ul>
+<li>Added a <code>--utility</code> argument to the Linux AppImages to allow calling the OpenRA Utility. [<a href="https://github.com/OpenRA/OpenRA/pull/15894">#15894</a>]</li>
+<li>Added a <code>--check-yaml</code> test for invalid audio notifications. [<a href="https://github.com/OpenRA/OpenRA/pull/15646">#15646</a>]</li>
+<li>Fixed <code>--png</code> crash on Linux/macOS. [<a href="https://github.com/OpenRA/OpenRA/pull/15892">#15892</a>]</li>
+<li>Fixed <code>--check-yaml</code> crash when encountering an <code>Inherits</code> yaml node with children. [<a href="https://github.com/OpenRA/OpenRA/pull/15763">#15763</a>]</li>
+<li>Removed <code>--fix-classic-tilesets</code> utility command along with its obsolete code. [<a href="https://github.com/OpenRA/OpenRA/pull/15828">#15828</a>]</li>
+</ul></li>
+</ul>

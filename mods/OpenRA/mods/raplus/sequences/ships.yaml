@@ -1,0 +1,289 @@
+ss:
+	Inherits: emp-overlay
+	idle:
+		Facings: 16
+	icon: ssicon
+
+pt:
+	Inherits: emp-overlay
+	idle:
+		Facings: 16
+	turret: pttur
+		Facings: 32
+	turret-dc: mgun
+		Facings: 32
+	muzzle: gunfire2
+		Length: 5
+	icon: pticon
+
+pt.discount:
+	Defaults: pt
+	Inherits: pt
+
+pt2:
+	Inherits: emp-overlay
+	idle:
+		Facings: 16
+	turret: hartytur
+		Facings: 32
+	turret-dc: mgun
+		Facings: 32
+	muzzle: gunfire2
+		Length: 5
+	icon: pticon
+
+pt2.discount:
+	Defaults: pt2
+	Inherits: pt2
+
+dd:
+	Inherits: emp-overlay
+	idle:
+		Facings: 16
+	turret-aa: ssam
+		Facings: 32
+	turret-dc: mgun
+		Facings: 32
+	muzzle-aa: samfire
+		Length: 18
+		Facings: 8
+		Offset: -2,-2
+	muzzle-dc: gunfire2
+		Length: 5
+	spinner: mrj
+		Start: 32
+		Length: 32
+	icon: ddicon
+
+dd.discount:
+	Defaults: dd
+	Inherits: dd
+
+dd2:
+	Inherits: emp-overlay
+	idle:
+		Facings: 16
+	turret-aa: apctur
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret-dc: mgun
+		Facings: 32
+	muzzle-aa: apcmuz
+		Length: 3
+		Stride: 6
+		Facings: 8
+	muzzle-dc: gunfire2
+		Length: 5
+	spinner: mrj
+		Start: 32
+		Length: 32
+	icon: dd2icon
+
+dd2.discount:
+	Defaults: dd2
+	Inherits: dd2
+
+ca:
+	Inherits: emp-overlay
+	idle:
+		Facings: 16
+	turret: turr
+		Facings: 32
+	muzzle: gunfire2
+		Length: 5
+	icon: caicon
+
+ca.discount:
+	Defaults: ca
+	Inherits: ca
+
+ca2:
+	Inherits: emp-overlay
+	idle:
+		Facings: 16
+	turret: ssm
+		Start: 32
+		Facings: 32
+	icon: ca2icon
+
+ca2.discount:
+	Defaults: ca2
+		UseTilesetExtension: false
+	Inherits: ca2
+
+lst:
+	Inherits: emp-overlay
+	idle:
+	open:
+		Start: 1
+		Length: 4
+		Tick: 150
+	close:
+		Frames: 4, 3, 2, 1
+		Length: 4
+		Tick: 150
+	unload:
+		Start: 4
+		ZOffset: -511
+	icon: lsticon
+
+lst.discount:
+	Defaults: lst
+	Inherits: lst
+
+msub:
+	Inherits: emp-overlay
+	idle:
+		Facings: 16
+	icon: msubicon
+
+tbt:
+	Inherits: emp-overlay
+	idle: tbt
+		Facings: 16
+	spinner: tbttur
+		Length: 32
+	icon: tbticon
+
+tbt.discount:
+	Defaults: tbt
+	Inherits: tbt
+
+advsub:
+	Inherits: emp-overlay
+	idle:
+		Facings: 16
+	move:
+		Start: 16
+		Length: 8
+		Facings: 16
+	muzzle: gunfire2
+		Length: 2
+	icon: ssicon
+
+advmsub:
+	Inherits: emp-overlay
+	idle:
+		Facings: 16
+	move:
+		Start: 16
+		Length: 8
+		Facings: 16
+	icon: msubicon
+
+ss.discount:
+	Defaults: advsub
+	Inherits: advsub
+
+msub.discount:
+	Defaults: advmsub
+	Inherits: advmsub
+
+scorp:
+	Inherits: emp-overlay
+    idle:
+        Facings: -32
+    turret: scorp
+		Start: 32
+        Facings: -32
+    muzzle: gunfire2
+        Length: 5
+    icon: scorpicon
+
+scorp.discount:
+	Defaults: scorp
+	Inherits: scorp
+
+asub:
+	Inherits: emp-overlay
+	idle:
+		Facings: 16
+	icon: asubicon
+
+carr:
+	Inherits: emp-overlay
+	idle:
+		Start: 0
+		Length: 1
+	icon: carricon
+
+carr.deployed:
+	idle: carr
+		Start: 0
+		Length: 9
+	icon: carricon
+
+carr.discount:
+	Defaults: carr
+	Inherits: carr
+
+carr.discount.deployed:
+	Defaults: carr.deployed
+	Inherits: carr.deployed
+
+srep:
+	Inherits: emp-overlay
+	idle:
+		Facings: 16
+	move:
+		Start: 16
+		Facings: 16
+		Length: 8
+	icon: srepicon
+
+srep.deployed:
+	idle: srep
+		Start: 6
+		Length: 1
+		Facings: 16
+	icon: srepicon
+
+srep.discount:
+	Defaults: srep
+	Inherits: srep
+
+srep.discount.deployed:
+	Defaults: srep.deployed
+	Inherits: srep.deployed
+
+lun:
+	Inherits: emp-overlay
+	idle:
+		Facings: 16
+	move:
+		Start: 16
+		Facings: 16
+		Length: 8
+	muzzle:
+		Combine:
+			lunmuzsmk-n:
+				Length: *
+				Offset: 0,0
+			lunmuzsmk-nw:
+				Length: *
+				Offset: 0,0
+			lunmuzsmk-w:
+				Length: *
+				Offset: 0,0
+			lunmuzsmk-sw:
+				Length: *
+				Offset: 0,0
+			lunmuzsmk-s:
+				Length: *
+				Offset: 0,0
+			lunmuzsmk-se:
+				Length: *
+				Offset: 0,0
+			lunmuzsmk-e:
+				Length: *
+				Offset: 0,0
+			lunmuzsmk-ne:
+				Length: *
+				Offset: 0,0
+		Facings: 8
+		Length: 30
+	icon: lunicon
+
+lun.discount:
+	Defaults: lun
+	Inherits: lun
