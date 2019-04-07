@@ -362,6 +362,8 @@
 	Tooltip:
 		Name: Civilian Vehicle
 		GenericVisibility: None
+	Health:
+		HP: 2500
 	RevealsShroud:
 		Range: 3c0
 	Passenger:
@@ -571,7 +573,7 @@
 	Selectable:
 		Bounds: 24,24
 	Targetable:
-		TargetTypes: Ground, Water, Ship
+		TargetTypes: Ground, Water, Ship, SeaDetonateAttack
 	Targetable@REPAIR:
 		RequiresCondition: damaged
 		TargetTypes: Repair
@@ -586,7 +588,7 @@
 		Types: Ship
 	Chronoshiftable:
 	RepairableNear:
-		Buildings: syrd, srep.deployed
+		Buildings: syrd, srep.deployed, srep.discount.deployed, carr.deployed, carr.discount.deployed
 	GpsDot:
 		String: Ship
 	WithDamageOverlay:
@@ -609,12 +611,12 @@
 ^Submarine
 	Inherits: ^Ship
 	RepairableNear:
-		Buildings: spen, srep.deployed
+		Buildings: spen, srep.deployed, srep.discount.deployed, carr.deployed, carr.discount.deployed
 	Targetable:
-		TargetTypes: Ground, Water, Ship, Submarine
+		TargetTypes: Ground, Water, Ship, Submarine, SeaDetonateAttack
 		RequiresCondition: !underwater
 	Targetable@UNDERWATER:
-		TargetTypes: Underwater, Submarine
+		TargetTypes: Underwater, Submarine, SeaDetonateAttack
 		RequiresCondition: underwater
 	Targetable@REPAIR:
 		RequiresCondition: !underwater && damaged
@@ -680,13 +682,6 @@
 		Notification: AirUnitLost
 	ProximityCaptor:
 		Types: Plane
-	EjectOnDeath:
-		PilotActor: E1
-		SuccessRate: 50
-		EjectOnGround: false
-		EjectInAir: true
-		AllowUnsuitableCell: false
-		ChuteSound: chute1.aud
 	GpsDot:
 		String: Plane
 	Tooltip:
@@ -725,7 +720,7 @@
 		VTOL: true
 		InitialFacing: 224
 	Repairable:
-		RepairBuildings: hpad, srep
+		RepairBuildings: hpad, srep, srep.deployed, srep.discount.deployed, carr.deployed, carr.discount.deployed
 	GpsDot:
 		String: Helicopter
 	Hovers@CRUISING:
@@ -1220,7 +1215,7 @@
 	HiddenUnderShroud:
 	ScriptTriggers:
 	MapEditorData:
-		RequireTilesets: DESERT, DESERTTD
+		RequireTilesets: DESERT, DESERTTD, TEMPERAT, TEMPERATTD
 		Categories: Decoration
 	RequiresSpecificOwners:
 		ValidOwnerNames: Neutral
@@ -1429,3 +1424,63 @@
 		OpeningSound: cashturn.aud
 		ClosingSound: cashturn.aud
 		BlocksProjectilesHeight: 0
+
+^EjectsPilotOnAir:
+	EjectOnDeath@RANK-1:
+		PilotActor: PLOT.R1
+		SuccessRate: 50
+		EjectOnGround: false
+		EjectInAir: true
+		AllowUnsuitableCell: false
+		RequiresCondition: rank-veteran == 1
+	EjectOnDeath@RANK-2:
+		PilotActor: PLOT.R2
+		SuccessRate: 40
+		EjectOnGround: false
+		EjectInAir: true
+		AllowUnsuitableCell: false
+		RequiresCondition: rank-veteran == 2
+	EjectOnDeath@RANK-3:
+		PilotActor: PLOT.R3
+		SuccessRate: 30
+		EjectOnGround: false
+		EjectInAir: true
+		AllowUnsuitableCell: false
+		RequiresCondition: rank-veteran == 3
+	EjectOnDeath@RANK-ELITE:
+		PilotActor: PLOT.RE
+		SuccessRate: 20
+		EjectOnGround: false
+		EjectInAir: true
+		AllowUnsuitableCell: false
+		RequiresCondition: rank-elite
+
+^EjectsPilotOnGround:
+	EjectOnDeath@RANK-1:
+		PilotActor: PLOT.R1
+		SuccessRate: 35
+		EjectOnGround: true
+		EjectInAir: false
+		AllowUnsuitableCell: false
+		RequiresCondition: rank-veteran == 1
+	EjectOnDeath@RANK-2:
+		PilotActor: PLOT.R2
+		SuccessRate: 30
+		EjectOnGround: true
+		EjectInAir: false
+		AllowUnsuitableCell: false
+		RequiresCondition: rank-veteran == 2
+	EjectOnDeath@RANK-3:
+		PilotActor: PLOT.R3
+		SuccessRate: 25
+		EjectOnGround: true
+		EjectInAir: false
+		AllowUnsuitableCell: false
+		RequiresCondition: rank-veteran == 3
+	EjectOnDeath@RANK-ELITE:
+		PilotActor: PLOT.RE
+		SuccessRate: 10
+		EjectOnGround: true
+		EjectInAir: false
+		AllowUnsuitableCell: false
+		RequiresCondition: rank-elite

@@ -251,6 +251,13 @@ DemoTruckTargeting:
 	Warhead@1Dam: TargetDamage
 		ValidTargets: DetonateAttack
 
+SeaMineTargeting:
+	ValidTargets: SeaDetonateAttack
+	Range: 2c0
+	Projectile: InstantHit
+	Warhead@1Dam: TargetDamage
+		ValidTargets: SeaDetonateAttack
+
 MADTankThump:
 	InvalidTargets: MADTank, Infantry
 	Warhead@1Dam: HealthPercentageDamage

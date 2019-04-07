@@ -89,8 +89,9 @@ ca:
 		Facings: 16
 	turret: turr
 		Facings: 32
-	muzzle: gunfire2
-		Length: 5
+	muzzle: cann-muzzle
+		Length: 2
+		Facings: 16
 	icon: caicon
 
 ca.discount:
@@ -198,7 +199,13 @@ asub:
 	Inherits: emp-overlay
 	idle:
 		Facings: 16
+	turret: ssam
+		Facings: 32
 	icon: asubicon
+
+asub.discount:
+	Defaults: asub
+	Inherits: asub
 
 carr:
 	Inherits: emp-overlay
@@ -210,7 +217,13 @@ carr:
 carr.deployed:
 	idle: carr
 		Start: 0
+		Length: 1
+		ZOffset: -1023
+	active: carr
+		Start: 0
 		Length: 9
+		Tick: 100
+		ZOffset: -1023	
 	icon: carricon
 
 carr.discount:
@@ -236,6 +249,7 @@ srep.deployed:
 		Start: 6
 		Length: 1
 		Facings: 16
+		ZOffset: -1023
 	icon: srepicon
 
 srep.discount:
@@ -287,3 +301,17 @@ lun:
 lun.discount:
 	Defaults: lun
 	Inherits: lun
+
+mgnm:
+	Inherits: emp-overlay
+	idle:
+		Facings: 16
+	move:
+		Start: 16
+		Facings: 16
+		Length: 8
+	icon: mgnmicon
+
+mgnm.discount:
+	Defaults: mgnm
+	Inherits: mgnm

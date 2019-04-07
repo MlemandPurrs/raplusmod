@@ -52,6 +52,7 @@ Packages:
 	raplus|bits/snow
 	raplus|bits/snowTD
 	raplus|bits/sounds
+	raplus|bits/subterran
 	raplus|bits/ss
 	raplus|bits/temperat
 	raplus|bits/temperatTD
@@ -102,6 +103,7 @@ TileSets:
 	raplus|tilesets/desertTD.yaml
 	raplus|tilesets/jungle.yaml
 	raplus|tilesets/tropic.yaml
+	raplus|tilesets/subterran.yaml
 
 Cursors:
 	raplus|cursors.yaml
@@ -245,6 +247,7 @@ SpriteSequenceFormat: TilesetSpecificSpriteSequence
 		DESERTTD: .des
 		JUNGLE: .jun
 		TROPIC: .tro
+		SUBTERRAN: .sub
 
 ModelSequenceFormat: PlaceholderModelSequence
 

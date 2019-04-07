@@ -184,6 +184,15 @@ ASMine:
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 		ValidTargets: Ship, Submarine, Underwater
 
+ASMineMagnetic:
+	Inherits: ATMine
+	Warhead@1Dam: SpreadDamage
+		Spread: 1c0
+		Damage: 20000
+		AffectsParent: false
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+		ValidTargets: Ship, Submarine, Underwater
+
 OreExplosion:
 	Warhead@1Dam: SpreadDamage
 		Spread: 9

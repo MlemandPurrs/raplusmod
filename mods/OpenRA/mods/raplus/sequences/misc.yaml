@@ -694,6 +694,31 @@ gmine:
 			SNOWTD: SNOW
 			TEMPERATTD: TEMPERAT
 			JUNGLE: TEMPERAT
+			SUBTERRAN: TEMPERAT
+
+drillmine:
+	Defaults:
+		UseTilesetExtension: false
+		Offset: -1, -16
+	idle:
+		Start: 0
+		Length: 1
+	active:
+		Start: 0
+		Length: 32
+		Tick: 160
+
+deepdrill:
+	Defaults:
+		UseTilesetExtension: false
+		Offset: -1, -16
+	idle:
+		Start: 0
+		Length: 1
+	active:
+		Start: 0
+		Length: 32
+		Tick: 160
 
 railmine:
 	idle:

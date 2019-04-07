@@ -317,6 +317,59 @@ GMINE:
 		ValidOwnerNames: Neutral
 	ActorSpawner:
 
+# generates twice as fast as the normal mine
+DRILLMINE:
+	Inherits@1: ^SpriteActor
+	Interactable:
+	HiddenUnderShroud:
+		AlwaysVisibleStances: Ally, Neutral, Enemy
+	Tooltip:
+		Name: Ore Drill
+	WithSpriteBody:
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+	AppearsOnRadar:
+	RadarColorFromTerrain:
+		Terrain: Ore
+	SeedsResource:
+		Interval: 45
+	WithIdleAnimation:
+		Interval: 175
+	RenderSprites:
+		Palette: player
+	MapEditorData:
+		Categories: Resource spawn
+	RequiresSpecificOwners:
+		ValidOwnerNames: Neutral
+
+# seeds over an 2 tile area around itself per interval, takes twice as long than normal mine
+# oh, nvm this wont work. cant tell radius on SeedsResource
+DEEPDRILL:
+	Inherits@1: ^SpriteActor
+	Interactable:
+	HiddenUnderShroud:
+		AlwaysVisibleStances: Ally, Neutral, Enemy
+	Tooltip:
+		Name: Deep Drill
+	WithSpriteBody:
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+	AppearsOnRadar:
+	RadarColorFromTerrain:
+		Terrain: Ore
+	SeedsResource:
+		Interval: 150
+	WithIdleAnimation:
+		Interval: 225
+	RenderSprites:
+		Palette: player
+	MapEditorData:
+		Categories: Resource spawn
+	RequiresSpecificOwners:
+		ValidOwnerNames: Neutral
+
 RAILMINE:
 	Inherits@1: ^SpriteActor
 	Interactable:

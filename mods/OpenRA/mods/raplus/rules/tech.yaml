@@ -320,7 +320,7 @@ APRT:
 		Footprint: xx xx xx
 		Dimensions: 2,3
 	Health:
-		HP: 100000
+		HP: 50000
 	RevealsShroud:
 		Range: 6c0
 	WithBuildingBib:
@@ -339,11 +339,11 @@ APRT:
 		Prerequisite: airport.soviet
 		ResetOnOwnerChange: True
 	ParatroopersPower@AlliesParatroopers:
-		OrderName: AlliesParatroopersPowerInfoOrder
+		OrderName: StripAlliesParatroopersPowerInfoOrder
 		Prerequisites: ~airport.allies, ~techlevel.unrestricted
 		Icon: paratroopers
 		ChargeInterval: 7500
-		Description: Paratroopers
+		Description: Paratroopers (Airstrip)
 		LongDesc: A B-52 drops a squad of veteran\ninfantry anywhere on the map
 		DropItems: E1R1,E3R1,MGIR1,E3R1,E1R1
 		ReinforcementsArrivedSpeechNotification: ReinforcementsArrived
@@ -358,11 +358,11 @@ APRT:
 		ClockSequence: clock
 		CircleSequence: circles
 	ParatroopersPower@SovietParatroopers:
-		OrderName: SovietParatroopersPowerInfoOrder
+		OrderName: StripSovietParatroopersPowerInfoOrder
 		Prerequisites: ~airport.soviet, ~techlevel.unrestricted
 		Icon: paratroopers
 		ChargeInterval: 7500
-		Description: Paratroopers
+		Description: Paratroopers (Airstrip)
 		LongDesc: A Badger drops a squad of veteran\ninfantry anywhere on the map
 		DropItems: E1R1,E3R1,SHOKR1,E3R1,E1R1
 		ReinforcementsArrivedSpeechNotification: ReinforcementsArrived

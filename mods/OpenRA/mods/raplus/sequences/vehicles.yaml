@@ -667,3 +667,13 @@ prsm:
 prsm.discount:
 	Defaults: prsm
 	Inherits: prsm
+
+ra2.ttnk:
+	Inherits: emp-overlay
+	idle: ra2ttnk
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret: ra2ttnk-tur
+		Facings: 32
+		UseClassicFacingFudge: True
+	icon: ra2ttnkicon

@@ -1068,18 +1068,18 @@ SPEN:
 	RenderDetectionCircle:
 	ProvidesPrerequisite@allies:
 		Factions: allies
-		Prerequisite: subs.allies
+		Prerequisite: submarines.allies
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@soviet:
 		Factions: soviet
-		Prerequisite: subs.soviet
+		Prerequisite: submarines.soviet
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@alliedstructure:
 		RequiresPrerequisites: structures.allies
-		Prerequisite: subs.allies
+		Prerequisite: submarines.allies
 	ProvidesPrerequisite@sovietstructure:
 		RequiresPrerequisites: structures.soviet
-		Prerequisite: subs.soviet
+		Prerequisite: submarines.soviet
 	ProvidesPrerequisite@buildingname:
 	MapEditorData:
 		ExcludeTilesets: INTERIOR
@@ -1107,8 +1107,8 @@ SPEN:
 		Prerequisites: ~techlevel.medium
 		Icon: sonar
 		Description: Sonar Pulse
-		LongDesc: Reveals all submarines in the area for a short time
-		ChargeInterval: 750
+		LongDesc: Reveals all Submarines in the area for a short time
+		ChargeInterval: 1500
 		EndChargeSpeechNotification:
 		SelectTargetSpeechNotification: SelectTarget
 		Actor: sonar
@@ -1540,7 +1540,7 @@ STEK:
 		Queue: Building
 		BuildPaletteOrder: 14
 		BuildLimit: 1
-		Prerequisites: weap, dome, ~!industryplant.on, !enough.techcenter, ~structures.soviet, ~techlevel.high
+		Prerequisites: weap, dome, ~!industryplant.on, !enough.techcenter, ~techlevel.high
 		Description: Provides Advanced technologies\nMaximum 1 can be built\n Special Ability: Parabombs\nA trio of bombers drop parachuted bombs on your target
 	Valued:
 		Cost: 2000
@@ -2209,6 +2209,8 @@ HSAM:
 		BuildPaletteOrder: 12
 		Prerequisites: dome, techcenter, ~structures.allies, ~!industryplant.on, ~techlevel.medium
 		Description: Cloaked Anti-Air base defense\n Strong vs Aircraft\n Weak vs Ground units
+	Tooltip:
+		Name: Camo SAM Site
 	Valued:
 		Cost: 750
 	-AttackTurreted:
@@ -2230,7 +2232,7 @@ HSAM.Husk:
 	Interactable:
 		Bounds: 24,24
 	Tooltip:
-		Name: SAM Site (Destroyed)
+		Name: Camo SAM Site (Destroyed)
 
 AGUN:
 	Inherits: ^Defense
@@ -2301,6 +2303,9 @@ HTUR:
 		Cost: 1500
 	Tooltip:
 		Name: Grand Turret
+	Selectable:
+		DecorationBounds: 34,34
+	SelectionDecorations:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -2312,15 +2317,16 @@ HTUR:
 		Range: 8c0
 		RevealGeneratedShroud: False
 	RevealsShroud@GAPGEN:
-		Range: 5c0
+		Range: 6c0
 	Turreted:
 		TurnSpeed: 2
 		InitialFacing: 0
 		RealignDelay: -1
-	-WithSpriteBody:
-	WithEmbeddedTurretSpriteBody:
+	WithSpriteTurret:
+		RequiresCondition: !build-incomplete
 	AttackTurreted:
 		PauseOnCondition: disabled
+		RequiresCondition: !build-incomplete
 	Armament:
 		Weapon: 203mm
 		MuzzleSequence: muzzle

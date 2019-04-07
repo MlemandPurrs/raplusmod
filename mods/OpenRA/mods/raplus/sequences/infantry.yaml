@@ -68,7 +68,8 @@ e1:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+			INTERIOR: SUBTERRAN
+			TROPIC: JUNGLE
 	die-crushed: corpse1
 		Length: *
 		Tick: 1600
@@ -77,6 +78,9 @@ e1:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
+			JUNGLE: TEMPERAT
+			TROPIC: TEMPERAT
+			SUBTERRAN: TEMPERAT
 	garrison-muzzle: minigun
 		Length: 6
 		Facings: 8
@@ -131,7 +135,8 @@ e2:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+			INTERIOR: SUBTERRAN
+			TROPIC: JUNGLE
 	die-crushed: corpse1
 		Length: 6
 		Tick: 1600
@@ -140,6 +145,9 @@ e2:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
+			JUNGLE: TEMPERAT
+			TROPIC: TEMPERAT
+			SUBTERRAN: TEMPERAT
 	prone-stand:
 		Start: 240
 		Stride: 4
@@ -208,7 +216,8 @@ gren:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+			INTERIOR: SUBTERRAN
+			TROPIC: JUNGLE
 	die-crushed: corpse1
 		Length: 6
 		Tick: 1600
@@ -217,6 +226,9 @@ gren:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
+			JUNGLE: TEMPERAT
+			TROPIC: TEMPERAT
+			SUBTERRAN: TEMPERAT
 	prone-stand:
 		Start: 208
 		Stride: 4
@@ -285,7 +297,8 @@ e3:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+			INTERIOR: SUBTERRAN
+			TROPIC: JUNGLE
 	die-crushed: corpse1
 		Length: 6
 		Tick: 1600
@@ -294,6 +307,9 @@ e3:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
+			JUNGLE: TEMPERAT
+			TROPIC: TEMPERAT
+			SUBTERRAN: TEMPERAT
 	prone-stand:
 		Start: 144
 		Stride: 4
@@ -358,7 +374,8 @@ e6:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+			INTERIOR: SUBTERRAN
+			TROPIC: JUNGLE
 	die-crushed: corpse1
 		Length: 6
 		Tick: 1600
@@ -367,6 +384,9 @@ e6:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
+			JUNGLE: TEMPERAT
+			TROPIC: TEMPERAT
+			SUBTERRAN: TEMPERAT
 	prone-stand:
 		Start: 82
 		Stride: 4
@@ -426,7 +446,8 @@ medi:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+			INTERIOR: SUBTERRAN
+			TROPIC: JUNGLE
 	die-crushed: corpse1
 		Length: 6
 		Tick: 1600
@@ -435,6 +456,9 @@ medi:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
+			JUNGLE: TEMPERAT
+			TROPIC: TEMPERAT
+			SUBTERRAN: TEMPERAT
 	prone-stand:
 		Start: 130
 		Stride: 4
@@ -493,7 +517,8 @@ mech:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+			INTERIOR: SUBTERRAN
+			TROPIC: JUNGLE
 	die-crushed: corpse1
 		Length: 6
 		Tick: 1600
@@ -502,6 +527,9 @@ mech:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
+			JUNGLE: TEMPERAT
+			TROPIC: TEMPERAT
+			SUBTERRAN: TEMPERAT
 	prone-stand:
 		Start: 130
 		Stride: 4
@@ -590,7 +618,8 @@ mgi:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+			INTERIOR: SUBTERRAN
+			TROPIC: JUNGLE
 	die-crushed: corpse1
 		Length: *
 		Tick: 1600
@@ -599,6 +628,9 @@ mgi:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
+			JUNGLE: TEMPERAT
+			TROPIC: TEMPERAT
+			SUBTERRAN: TEMPERAT
 	garrison-muzzle: minigun
 		Length: 6
 		Facings: 8
@@ -678,7 +710,8 @@ shok:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+			INTERIOR: SUBTERRAN
+			TROPIC: JUNGLE
 	die-crushed: corpse1
 		Length: 6
 		Tick: 1600
@@ -687,6 +720,9 @@ shok:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
+			JUNGLE: TEMPERAT
+			TROPIC: TEMPERAT
+			SUBTERRAN: TEMPERAT
 	icon: shokicon
 
 shok.discount:
@@ -771,7 +807,8 @@ stng:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+			INTERIOR: SUBTERRAN
+			TROPIC: JUNGLE
 	die-crushed: corpse1
 		Length: *
 		Tick: 1600
@@ -780,6 +817,9 @@ stng:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
+			JUNGLE: TEMPERAT
+			TROPIC: TEMPERAT
+			SUBTERRAN: TEMPERAT
 	icon: stngicon
 	parachute:
 		Start: 192
@@ -834,7 +874,8 @@ rpg:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+			INTERIOR: SUBTERRAN
+			TROPIC: JUNGLE
 	die-crushed: corpse1
 		Length: 6
 		Tick: 1600
@@ -843,6 +884,9 @@ rpg:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
+			JUNGLE: TEMPERAT
+			TROPIC: TEMPERAT
+			SUBTERRAN: TEMPERAT
 	liedown:
 		Start: 192
 		Length: 2
@@ -952,7 +996,8 @@ sniper:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+			INTERIOR: SUBTERRAN
+			TROPIC: JUNGLE
 	die-crushed: corpse1
 		Length: *
 		Tick: 1600
@@ -961,6 +1006,9 @@ sniper:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
+			JUNGLE: TEMPERAT
+			TROPIC: TEMPERAT
+			SUBTERRAN: TEMPERAT
 	garrison-muzzle: minigun
 		Length: 6
 		UseTilesetExtension: false
@@ -1026,6 +1074,9 @@ dog:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
+			JUNGLE: TEMPERAT
+			TROPIC: TEMPERAT
+			SUBTERRAN: TEMPERAT
 	jump: dogbullt
 		Length: 4
 		Facings: 8
@@ -1081,7 +1132,8 @@ spy:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+			INTERIOR: SUBTERRAN
+			TROPIC: JUNGLE
 	die-crushed: corpse1
 		Length: 6
 		Tick: 1600
@@ -1090,6 +1142,9 @@ spy:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
+			JUNGLE: TEMPERAT
+			TROPIC: TEMPERAT
+			SUBTERRAN: TEMPERAT
 	prone-stand:
 		Start: 144
 		Stride: 4
@@ -1148,7 +1203,8 @@ thf:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+			INTERIOR: SUBTERRAN
+			TROPIC: JUNGLE
 	die-crushed: corpse1
 		Length: 6
 		Tick: 1600
@@ -1157,6 +1213,9 @@ thf:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
+			JUNGLE: TEMPERAT
+			TROPIC: TEMPERAT
+			SUBTERRAN: TEMPERAT
 	prone-stand:
 		Start: 72
 		Stride: 4
@@ -1215,7 +1274,8 @@ e7:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+			INTERIOR: SUBTERRAN
+			TROPIC: JUNGLE
 	die-crushed: corpse1
 		Length: 6
 		Tick: 1600
@@ -1224,6 +1284,9 @@ e7:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
+			JUNGLE: TEMPERAT
+			TROPIC: TEMPERAT
+			SUBTERRAN: TEMPERAT
 	prone-stand:
 		Start: 128
 		Stride: 4
@@ -1345,7 +1408,8 @@ e4:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+			INTERIOR: SUBTERRAN
+			TROPIC: JUNGLE
 	die-crushed: corpse1
 		Length: 6
 		Tick: 1600
@@ -1354,6 +1418,9 @@ e4:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
+			JUNGLE: TEMPERAT
+			TROPIC: TEMPERAT
+			SUBTERRAN: TEMPERAT
 	muzzle:
 		Combine:
 			flame-n:
@@ -1458,7 +1525,8 @@ gnrl:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+			INTERIOR: SUBTERRAN
+			TROPIC: JUNGLE
 	die-crushed: corpse1
 		Length: 6
 		Tick: 1600
@@ -1467,6 +1535,9 @@ gnrl:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
+			JUNGLE: TEMPERAT
+			TROPIC: TEMPERAT
+			SUBTERRAN: TEMPERAT
 	icon: gnrlicon
 	parachute:
 		Start: 98
@@ -1510,7 +1581,8 @@ zombie:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+			INTERIOR: SUBTERRAN
+			TROPIC: JUNGLE
 	die-crushed: corpse1
 		Length: 6
 		Tick: 1600
@@ -1519,6 +1591,9 @@ zombie:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
+			JUNGLE: TEMPERAT
+			TROPIC: TEMPERAT
+			SUBTERRAN: TEMPERAT
 	icon: zombicon
 
 ant:
@@ -1635,3 +1710,123 @@ warriorant:
 
 teslaant:
 	Inherits: ant
+
+tecn:
+	stand:
+		Facings: 8
+	panic-stand:
+		Start: 8
+		Length: 6
+		Facings: 8
+	panic-run:
+		Start: 8
+		Length: 6
+		Facings: 8
+	run:
+		Start: 56
+		Length: 6
+		Facings: 8
+		Tick: 80
+	shoot:
+		Start: 205
+		Length: 4
+		Facings: 8
+	cheer:
+		Start: 200
+		Length: 3
+		Facings: 8
+		Tick: 120
+	die1:
+		Start: 329
+		Length: 8
+		Tick: 80
+	die2:
+		Start: 337
+		Length: 8
+		Tick: 80
+	die3:
+		Start: 337
+		Length: 8
+		Tick: 80
+	die4:
+		Start: 345
+		Length: 12
+		Tick: 80
+	die5:
+		Start: 357
+		Length: 18
+		Tick: 80
+	die6: electro
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	die-crushed: corpse1
+		Length: 6
+		Tick: 1600
+		ZOffset: -511
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+
+plot:
+	stand:
+		Facings: 8
+	panic-stand:
+		Start: 8
+		Length: 6
+		Facings: 8
+	panic-run:
+		Start: 8
+		Length: 6
+		Facings: 8
+	run:
+		Start: 56
+		Length: 6
+		Facings: 8
+		Tick: 80
+	shoot:
+		Start: 205
+		Length: 4
+		Facings: 8
+	cheer:
+		Start: 200
+		Length: 3
+		Facings: 8
+		Tick: 120
+	die1:
+		Start: 329
+		Length: 8
+		Tick: 80
+	die2:
+		Start: 337
+		Length: 8
+		Tick: 80
+	die3:
+		Start: 337
+		Length: 8
+		Tick: 80
+	die4:
+		Start: 345
+		Length: 12
+		Tick: 80
+	die5:
+		Start: 357
+		Length: 18
+		Tick: 80
+	die6: electro
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	die-crushed: corpse1
+		Length: 6
+		Tick: 1600
+		ZOffset: -511
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT

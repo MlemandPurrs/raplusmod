@@ -257,6 +257,10 @@ MortarNapalm:
 		LaunchAngle: 92
 		Inaccuracy: 768
 		Image: BOMB
+		ContrailLength: 10
+		ContrailZOffset: 0
+		ContrailDelay: 0
+		ContrailWidth: 0c064
 	Warhead@1Dam: SpreadDamage
 		Spread: 512
 		Damage: 5500

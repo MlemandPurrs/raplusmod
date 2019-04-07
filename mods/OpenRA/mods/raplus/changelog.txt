@@ -13,8 +13,11 @@ Giants Ants as map creeps made possible, added checkbox for it(disabled by Defau
 Made Giant Ants use predefined colors
 Added three new types of Giant Ant: Tesla Ant(blue) that attacks Tesla Tank weaponry, Toxic Ant(green) that sprays Chemicals at close range, Shadow Ant(black) that is invisible.
 Mine and Gem Mine footprint edited to become ground passable, that means it will no longer block any ground unit's movement.
+Added an extra type of Mine, the Ore Drill mine generates Ore twice as fast, its impassable unlike the shafts.
 Advice intervall for Low Power and Silos Needed audio increased to every 5 min
 Units armed with Tesla weaponry uses power now, -2 Power for each Shock Trooper and -4 for each Tesla Tank and Tesla Boat
+Only Veteran units eject an Pilot, the Pilot can enter any friendly vehicle or aircraft for promoting it, increasing recipient's rank by rank of himself. Air units have more probability of spawning an survivor than ground vehicles, the chance decreases as the rank increases.
+
 
 Graphical changes
 Medium, Heavy and Mammoth Tanks got an new muzzle fx for their main gun cannon attacks
@@ -22,13 +25,17 @@ All building Make anims have Tick: 80
 Added death anims with Tick: 800 for most base buildings
 Added eyecandy smoke to Power Plant, Ore Refinery, Advanced Power Plant and Bio Lab
 Added Building husks for purely decorative usage during mapmaking
+Desert theater gained new trees
+Added Temperate versions of Desert rocks
+
 
 Building changes
 Defense buildings can be built at 3c away from base structures, instead of 2c
 Defense buildings get their cloak detection paused when on low power. This does not affect the Pillboxes
 Ship Yard and Sub Pen building requirement radius reduced in half to 4c, down to 4c from 8c
 Fake structures have their own queue, that does not display an progress bar above the Construction Yard
-Fake structures are built consistent at 1/4 of original price, instead 10% of original. The prices are rounded down where applicable(Fake FIX 185 instead 187)
+Fake structures are built consistent at 1/4 of original price, instead 10% of original. The prices are rounded down where applicable(Fake FIX 185 instead 187, etc.). Fake structures dont get an discount from Industrial Plant
+Fake structures follow the Tech-tree of their real versions, becoming available at same time as their real versions.
 All Civilian and Tech buildings spawn an husk now, like they do in TD. Restored the distinct names of civilian buildings from TD.
 The charging process of ANY Support Power pauses now when Low on Power
 
@@ -168,9 +175,9 @@ Oil Pump
  - Normalized building animation speed, is similar to TD
 Forward Command
  - Has new non-soviet appearance, fitting for an neutral building
-NEW: Industry Plant
+NEW: Industrial Plant
  - Soviets gained an new Science structure
- - Reduces the cost of everything by -25% aslong it stands. Exceptions are: Stalin's Fist, Tanya & Volkov
+ - Reduces the cost of everything by -25% aslong it stands. In case where the number was odd, its got rounded up. Exceptions are: Stalin's Fist, Tanya & Volkov
  - Costs 2500$ to build
 NEW: Command Post
  - Soviets gained an new Production structure
@@ -193,7 +200,7 @@ Weight 2: Engineer, Medic, Mechanic, Dog, Spy, Thief, Machinegunner, Heavy Weapo
 Weight 3: Tanya, Volkov
 internal change: barracks.upgraded renamed to infantry.upgraded
 Added new Infantry: Grenade Launcher (Allies), Machinegunner (Allies), Stinger Soldier (Allies), Sniper (Allies), Heavy Weapons Infantry (Soviet), RPG Trooper (Soviet), Volkov (Soviet)
-
+All Infantry wanders around a bit when idle, exceptions are Tanya, Volkov, Spy and Thief
 Grenadier
  - Cost reduced to 150$ from 160$
 NEW: Grenade Launcher
@@ -334,6 +341,7 @@ Mammoth Tank
  - Cloak detection radius cut in Half, down to 3 from 6
  - Prequisite STEK changed to techcenter
  - Sight radius reduced by -1, down to 6c from 7c
+ - Tusk Missile Range reduced to 6c from 8c
 NEW: Tank Destroyer (Allies)
  - Allies get an vehicle destroyer unit for late game, that works best against Tanks
  - Has 45000 Hitpoints, half the amount an Mammoth Tank has
@@ -403,7 +411,7 @@ NEW: Prism Tank
 Naval
 Splitted ^Submarine into its own base class. Submarines can no longer be repaired while being underwater
 Ships can only repair at an Ship Yard, Submarines require an Sub Pen for repairs
-The Sub Pen provides Sonar Pulse power on its own
+The Sub Pen provides Sonar Pulse power on its own. Sonar pulse charge duration doubled to 1500 from 750
 Ship Yards can be infiltrated by an spy to gain veterancy on naval units
 Ships can pass through shallow muddy bridges at 70% speed, Submarines can too and will become surfaced during transit.
 
@@ -435,15 +443,20 @@ Cruiser
  - Weapon range reduced to 11c from 20c. Min range of 2c required
 NEW: Cruiser (Soviet)
  - Is equipped with two SSM missile turrets, 4 missiles in total
- - Sports higher alpha damage per rocket, balanced out with longer delay between shots and longer reload
+ - Sports higher alpha damage per rocket, balanced out with longer delay between shots and longer reload overall
  - Otherwise identical to allies Cruiser
 Submarine
  - Cost reduced to 775$ from 900$
  - Torpedo speed increased to 170 from 85
  - Is armed with secondary 25mm cannon now, that it uses versus stuff on land
  - Does not detect other Submarines(radius of 1c preserved to avoid 'bumping')
- - Reworked Line of Sight: 3c when under the water, 6c when surfaced(4c if GAP generated)
-Missile Submarine
+ - Reworked Line of Sight: 3c when under the water, 6c when surfaced(4c if GAP generated and on surface)
+NEW: Attack Submarine (Allies)
+ - Allies gained an counterpart to the Soviet submarine 
+ - Uses Torpedoes versus ships, this attack identical to Soviet Submarine
+ - Uses the now removed anti-ground rockets of Destroyer to engage ground targets
+ - Costs 950$ 
+ Missile Submarine
  - Transferred to Allies
  - Cost reduced to 1250$ from 2000$
  - Fires in Bursts of 4 instead 2

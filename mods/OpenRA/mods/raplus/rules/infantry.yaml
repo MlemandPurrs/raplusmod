@@ -742,6 +742,7 @@ SPY:
 	Passenger:
 		PipType: Blue
 		Weight: 2
+	-Wanders:
 
 THF:
 	Inherits: ^Soldier
@@ -794,6 +795,7 @@ THF:
 	Passenger:
 		PipType: Blue
 		Weight: 2
+	-Wanders:
 
 E7:
 	Inherits: ^Soldier
@@ -871,6 +873,7 @@ E7:
 	WithDeathAnimation:
 		RequiresCondition: !swimming
 	-Cloneable:
+	-Wanders:
 
 VOLK:
     Inherits: GNRL
@@ -1180,3 +1183,57 @@ ShadowAnt:
 		ValidDamageStates: Critical
 	RenderSprites:
 		PlayerPalette: shadowant
+
+TECN:
+	Inherits@1: ^CivInfantry
+	Inherits@2: ^ArmedCivilian
+	Tooltip:
+		Name: Technician
+	Passenger:
+		Weight: 1
+
+PLOT:
+	Inherits@1: ^CivInfantry
+	Inherits@2: ^ArmedCivilian
+	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Tooltip:
+		Name: Pilot
+	-ScaredyCat:
+	Passenger:
+		Weight: 1
+
+PLOT.R1:
+	Inherits: PLOT
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	DeliversExperience:
+	RenderSprites:
+		Image: plot
+
+PLOT.R2:
+	Inherits: PLOT
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 2
+	DeliversExperience:
+	RenderSprites:
+		Image: plot
+
+PLOT.R3:
+	Inherits: PLOT
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 3
+	DeliversExperience:
+	RenderSprites:
+		Image: plot
+
+PLOT.RE:
+	Inherits: PLOT
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 4
+	DeliversExperience:
+	RenderSprites:
+		Image: plot

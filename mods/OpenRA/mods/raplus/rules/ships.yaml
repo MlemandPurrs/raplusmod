@@ -459,7 +459,7 @@ TBT:
 	Buildable:
 		Queue: Ship
 		BuildPaletteOrder: 6
-		BuildAtProductionType: Ship
+		BuildAtProductionType: Boat
 		Prerequisites: syrd, techcenter, ~ships.soviet, ~!industryplant.on, ~techlevel.high
 		Description: Ship with mounted Tesla coil\n Immune to EMP\n Strong vs Infantry, Navy\n Weak vs Ground units, Aircraft
 	Valued:
@@ -572,7 +572,7 @@ ASUB:
 		Queue: Ship
 		BuildAtProductionType: Submarine
 		BuildPaletteOrder: 7
-		Prerequisites: ~spen, ~subs.allies, dome, ~!industryplant.on, ~techlevel.medium
+		Prerequisites: ~spen, ~submarines.allies, dome, ~!industryplant.on, ~techlevel.medium
 		Description: Submerged multi-role unit armed\nwith Torpedoes and anti-ground Missiles\n Strong vs Basic Defenses, Naval units\n Weak vs Ground units
 	Valued:
 		Cost: 950
@@ -595,10 +595,14 @@ ASUB:
 	RevealsShroud@UNDERWATER:
 		Range: 3c0
 		RequiresCondition: underwater
+    Turreted:
+        TurnSpeed: 255
+        Offset: -200,0,100
+    WithSpriteTurret:
 	Armament@PRIMARY:
 		Name: primary
 		Weapon: TorpTube
-		LocalOffset: 0,-171,0, 0,171,0
+		LocalOffset: 0,-171,-100, 0,171,-100
 		FireDelay: 2
 		PauseOnCondition: empdisable
 	Armament@SECONDARY:
@@ -624,7 +628,7 @@ SS:
 		Queue: Ship
 		BuildAtProductionType: Submarine
 		BuildPaletteOrder: 7
-		Prerequisites: spen, ~subs.soviet, ~!industryplant.on, ~techlevel.low
+		Prerequisites: spen, ~submarines.soviet, ~!industryplant.on, ~techlevel.low
 		Description: Submerged anti-ship unit\narmed with torpedoes and gun\n Strong vs Naval units\n Weak vs Ground units, Aircraft
 	Valued:
 		Cost: 775
@@ -690,7 +694,7 @@ MSUB:
 		Queue: Ship
 		BuildAtProductionType: Submarine
 		BuildPaletteOrder: 8
-		Prerequisites: spen, techcenter, ~subs.allies, ~!industryplant.on, ~techlevel.high
+		Prerequisites: spen, techcenter, ~submarines.allies, ~!industryplant.on, ~techlevel.high
 		BuildDurationModifier: 50
 		Description: Submerged anti-ground siege unit\n Strong vs Buildings, Ground units, Aircraft\n Weak vs Naval units
 	Valued:
@@ -751,7 +755,7 @@ LUN:
 		Queue: Ship
 		BuildAtProductionType: Submarine
 		BuildPaletteOrder: 8
-		Prerequisites: spen, afld, techcenter, ~subs.soviet, ~!industryplant.on, ~techlevel.medium
+		Prerequisites: spen, afld, techcenter, ~submarines.soviet, ~!industryplant.on, ~techlevel.medium
 		Description: Aeronautical Attack vessel\nArmed with 6 long-range missiles\nHas very long reload\n Strong vs Buildings\n Weak vs Ships
 	Valued:
 		Cost: 2250
@@ -877,7 +881,7 @@ CARR.Deployed:
 	Selectable:
 		DecorationBounds: 48,48
 	Transforms:
-		IntoActor: srep
+		IntoActor: carr
 		Offset: 0,0
 	RepairsUnits:
 		HpPerStep: 1000
@@ -896,6 +900,7 @@ CARR.Deployed:
 		ZOffset: 256
 	Targetable:
 		TargetTypes: Ground, Water, Ship
+	WithResupplyAnimation:
 
 SREP:
 	Inherits: ^Ship
@@ -903,7 +908,7 @@ SREP:
 		Queue: Ship
 		BuildAtProductionType: Submarine
 		BuildPaletteOrder: 9
-		Prerequisites: spen, afld, fix, ~subs.soviet, ~!industryplant.on, ~techlevel.medium
+		Prerequisites: spen, afld, fix, ~submarines.soviet, ~!industryplant.on, ~techlevel.medium
 		Description: Aeronautical Support vessel\n Can externally capture buildings at Sea\n Can be deployed, becoming immobile\n to allow several capabilities:\nOther ships may come near it to Repair\nRearms Helicopters at Sea\nDetects submerged in a wide radius\n Unarmed
 	Valued:
 		Cost: 1275
@@ -1007,3 +1012,79 @@ SREP.Deployed:
 		ZOffset: 256
 	Targetable:
 		TargetTypes: Ground, Water, Ship
+
+MGNM:
+	Inherits: ^Ship
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Ship
+		BuildAtProductionType: Submarine
+		BuildPaletteOrder: 5
+		Prerequisites: spen, fix, ~ships.allies, ~!industryplant.on, ~techlevel.medium
+		Description: Dirigible sea-mine\nCloaked when standing still\n Strong vs Naval units
+	Valued:
+		Cost: 625
+	Tooltip:
+		Name: Magnetic Mine
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 5000
+	Armor:
+		Type: Heavy
+	Mobile:
+		TurnSpeed: 3
+		Speed: 42
+	RevealsShroud:
+		Range: 3c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 1c0
+	Explodes@UNITEXPLODES:
+		Weapon: ASMineMagnetic
+		EmptyWeapon: ASMine
+		DamageSource: Killer
+	AttackFrontal:
+		FacingTolerance: 128
+	Armament@PRIMARY:
+		Weapon: SeaMineTargeting
+	SelectionDecorations:
+	Selectable:
+		DecorationBounds: 36,36
+	GrantConditionOnAttack:
+		Condition: triggered
+	GrantConditionOnDeploy:
+		DeployedCondition: triggered
+		DeploySound: gdembeep.aud
+	-DamageMultiplier@IRONCURTAIN:
+	KillsSelf:
+		RequiresCondition: invulnerability || triggered
+	Chronoshiftable:
+		ExplodeInstead: yes
+	Targetable:
+		TargetTypes: Ground, Water, Ship, Submarine, SeaDetonateAttack
+		RequiresCondition: !underwater
+	Targetable@UNDERWATER:
+		TargetTypes: Underwater, Submarine, SeaDetonateAttack
+		RequiresCondition: underwater
+	Cloak:
+		CloakTypes: Underwater
+		InitialDelay: 50
+		CloakDelay: 50
+		CloakSound: subshow1.aud
+		UncloakSound: subshow1.aud
+		Palette: submerged
+		UncloakOn: Attack, Demolish, Move
+		CloakedCondition: underwater
+		PauseOnCondition: cloak-force-disabled || shallowcrossing || empdisable
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+	GrantConditionOnTerrain@CROSSINGFORD:
+		Condition: shallowcrossing
+		TerrainTypes: Shallow
+	-MustBeDestroyed:
+	WithMoveAnimation:
+		MoveSequence: move
+	Voiced:
+		VoiceSet: RoboticVoice

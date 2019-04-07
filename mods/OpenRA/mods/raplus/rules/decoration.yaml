@@ -306,7 +306,7 @@ ICE01:
 	Tooltip:
 		Name: Ice Floe
 	MapEditorData:
-		RequireTilesets: SNOW
+		RequireTilesets: SNOW, SNOWTD
 		Categories: Decoration
 
 ICE02:
@@ -319,7 +319,7 @@ ICE02:
 	Tooltip:
 		Name: Ice Floe
 	MapEditorData:
-		RequireTilesets: SNOW
+		RequireTilesets: SNOW, SNOWTD
 		Categories: Decoration
 
 ICE03:
@@ -332,7 +332,7 @@ ICE03:
 	Tooltip:
 		Name: Ice Floe
 	MapEditorData:
-		RequireTilesets: SNOW
+		RequireTilesets: SNOW, SNOWTD
 		Categories: Decoration
 
 ICE04:
@@ -342,7 +342,7 @@ ICE04:
 	Tooltip:
 		Name: Ice Floe
 	MapEditorData:
-		RequireTilesets: SNOW
+		RequireTilesets: SNOW, SNOWTD
 		Categories: Decoration
 
 ICE05:
@@ -352,7 +352,7 @@ ICE05:
 	Tooltip:
 		Name: Ice Floe
 	MapEditorData:
-		RequireTilesets: SNOW
+		RequireTilesets: SNOW, SNOWTD
 		Categories: Decoration
 
 ROCK1:

@@ -727,7 +727,7 @@ SS.discount:
 MSUB.discount:
 	Inherits: MSUB
 	Buildable:
-		Prerequisites: ~spen, techcenter, ~subs.allies, ~industryplant.on, ~techlevel.high
+		Prerequisites: ~spen, techcenter, ~submarines.allies, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 940
 	-MapEditorData:
@@ -735,7 +735,7 @@ MSUB.discount:
 ASUB.discount:
 	Inherits: ASUB
 	Buildable:
-		Prerequisites: ~spen, ~subs.allies, dome, ~industryplant.on, ~techlevel.medium
+		Prerequisites: ~spen, ~submarines.allies, dome, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 715
 	-MapEditorData:
@@ -767,7 +767,7 @@ SCRP.discount:
 LUN.discount:
 	Inherits: LUN
 	Buildable:
-		Prerequisites: spen, afld, techcenter, ~subs.soviet, ~industryplant.on, ~techlevel.medium
+		Prerequisites: spen, afld, techcenter, ~submarines.soviet, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 1685
 	-MapEditorData:
@@ -795,7 +795,7 @@ CARR.discount.deployed:
 SREP.discount:
 	Inherits: SREP
 	Buildable:
-		Prerequisites: spen, afld, fix, ~subs.soviet, ~industryplant.on, ~techlevel.medium
+		Prerequisites: spen, afld, fix, ~submarines.soviet, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 960
 	-Transforms:
@@ -810,6 +810,14 @@ SREP.discount.deployed:
 	Transforms:
 		IntoActor: srep.discount
 		Offset: 0,0
+	-MapEditorData:
+
+MGNM.discount:
+	Inherits: MGNM
+	Buildable:
+		Prerequisites: spen, fix, ~ships.allies, ~industryplant.on, ~techlevel.medium
+	Valued:
+		Cost: 470
 	-MapEditorData:
 
 TRAN.discount:

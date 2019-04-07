@@ -40,14 +40,6 @@ C10:
 	Voiced:
 		VoiceSet: CivilianFemaleVoice
 
-TECN:
-	Inherits@1: ^CivInfantry
-	Inherits@2: ^ArmedCivilian
-	Tooltip:
-		Name: Technician
-	RenderSprites:
-		Image: C1
-
 V01:
 	Inherits: ^CivBuilding
 	Building:
@@ -989,7 +981,7 @@ V31:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^2x1Shape
 	MapEditorData:
-		RequireTilesets: DESERT, DESERTTD
+		RequireTilesets: DESERT, DESERTTD, SUBTERRAN
 	Building:
 		Footprint: xx
 		Dimensions: 2,1
@@ -1002,7 +994,7 @@ V31.Husk:
 	Inherits: ^CivBuildingHusk
 	Inherits@shape: ^2x1Shape
 	MapEditorData:
-		RequireTilesets: DESERT, DESERTTD
+		RequireTilesets: DESERT, DESERTTD, SUBTERRAN
 	Building:
 		Footprint: xx
 		Dimensions: 2,1
@@ -1013,7 +1005,7 @@ V32:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^2x1Shape
 	MapEditorData:
-		RequireTilesets: DESERT, DESERTTD, JUNGLE, TROPIC
+		RequireTilesets: DESERT, DESERTTD, JUNGLE, TROPIC, SUBTERRAN
 	Building:
 		Footprint: xx
 		Dimensions: 2,1
@@ -1026,7 +1018,7 @@ V32.Husk:
 	Inherits: ^CivBuildingHusk
 	Inherits@shape: ^2x1Shape
 	MapEditorData:
-		RequireTilesets: DESERT, DESERTTD, JUNGLE, TROPIC
+		RequireTilesets: DESERT, DESERTTD, JUNGLE, TROPIC, SUBTERRAN
 	Building:
 		Footprint: xx
 		Dimensions: 2,1
@@ -1037,7 +1029,7 @@ V33:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^2x1Shape
 	MapEditorData:
-		RequireTilesets: DESERT, DESERTTD, JUNGLE, TROPIC
+		RequireTilesets: DESERT, DESERTTD, JUNGLE, TROPIC, SUBTERRAN
 	Building:
 		Footprint: xx
 		Dimensions: 2,1
@@ -1050,7 +1042,7 @@ V33.Husk:
 	Inherits: ^CivBuildingHusk
 	Inherits@shape: ^2x1Shape
 	MapEditorData:
-		RequireTilesets: DESERT, DESERTTD, JUNGLE, TROPIC
+		RequireTilesets: DESERT, DESERTTD, JUNGLE, TROPIC, SUBTERRAN
 	Building:
 		Footprint: xx
 		Dimensions: 2,1
@@ -1060,7 +1052,7 @@ V33.Husk:
 V34:
 	Inherits: ^CivBuilding
 	MapEditorData:
-		RequireTilesets: DESERT, DESERTTD, JUNGLE, TROPIC
+		RequireTilesets: DESERT, DESERTTD, JUNGLE, TROPIC, SUBTERRAN
 	Tooltip:
 		Name: Mubasa's Hut
 	SpawnActorOnDeath:
@@ -1069,14 +1061,14 @@ V34:
 V34.Husk:
 	Inherits: ^CivBuildingHusk
 	MapEditorData:
-		RequireTilesets: DESERT, DESERTTD, JUNGLE, TROPIC
+		RequireTilesets: DESERT, DESERTTD, JUNGLE, TROPIC, SUBTERRAN
 	Tooltip:
 		Name: Mubasa's Hut (Destroyed)
 
 V35:
 	Inherits: ^CivBuilding
 	MapEditorData:
-		RequireTilesets: DESERT, DESERTTD, JUNGLE, TROPIC
+		RequireTilesets: DESERT, DESERTTD, JUNGLE, TROPIC, SUBTERRAN
 	Tooltip:
 		Name: Aksum's Hut
 	SpawnActorOnDeath:
@@ -1085,14 +1077,14 @@ V35:
 V35.Husk:
 	Inherits: ^CivBuildingHusk
 	MapEditorData:
-		RequireTilesets: DESERT, DESERTTD, JUNGLE, TROPIC
+		RequireTilesets: DESERT, DESERTTD, JUNGLE, TROPIC, SUBTERRAN
 	Tooltip:
 		Name: Aksum's Hut (Destroyed)
 
 V36:
 	Inherits: ^CivBuilding
 	MapEditorData:
-		RequireTilesets: DESERT, DESERTTD, JUNGLE, TROPIC
+		RequireTilesets: DESERT, DESERTTD, JUNGLE, TROPIC, SUBTERRAN
 	Tooltip:
 		Name: Mambo's Hut
 	SpawnActorOnDeath:
@@ -1101,7 +1093,7 @@ V36:
 V36.Husk:
 	Inherits: ^CivBuildingHusk
 	MapEditorData:
-		RequireTilesets: DESERT, DESERTTD, JUNGLE, TROPIC
+		RequireTilesets: DESERT, DESERTTD, JUNGLE, TROPIC, SUBTERRAN
 	Tooltip:
 		Name: Mambo's Hut (Destroyed)
 
@@ -1138,6 +1130,40 @@ V37.Husk:
 			BottomRight: 1536, 597
 	Tooltip:
 		Name: The Studio (Destroyed)
+
+V38:
+	Inherits: ^CivBuilding
+	MapEditorData:
+		RequireTilesets: SUBTERRAN
+	Building:
+		Footprint: __xx_ ___xx
+		Dimensions: 5,2
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 0,1024,0
+		Type: Rectangle
+			TopLeft: -512, -597
+			BottomRight: 1536, 597
+	Tooltip:
+		Name: Pyramid
+	SpawnActorOnDeath:
+		Actor: V38.Husk
+
+V38.Husk:
+	Inherits: ^CivBuildingHusk
+	MapEditorData:
+		RequireTilesets: SUBTERRAN
+	Building:
+		Footprint: __xx_ ___xx
+		Dimensions: 5,2
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 0,1024,0
+		Type: Rectangle
+			TopLeft: -512, -597
+			BottomRight: 1536, 597
+	Tooltip:
+		Name: Pyramid (Destroyed)
 
 RICE:
 	Inherits: ^CivField
@@ -1509,7 +1535,7 @@ V97.Husk:
 		Footprint: xxx xxx xxx
 		Dimensions: 3,3
 	Tooltip:
-		Name: Mosque (Destroyed)
+		Name: Museum (Destroyed)
 
 V98:
 	Inherits: ^CivBuilding

@@ -24,7 +24,7 @@ TRAN:
 	Aircraft:
 		TurnSpeed: 5
 		Speed: 128
-		LandableTerrainTypes: Clear,Rough,Road,Ore,Beach,Gems
+		LandableTerrainTypes: Clear,Rough,Road,Ore,Beach,Gems,Scraps
 		AltitudeVelocity: 0c58
 	WithIdleOverlay@ROTOR1AIR:
 		Offset: 597,0,213
@@ -74,6 +74,7 @@ TRAN.SOVIET:
 IROQ:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EJECTPILOT: ^EjectsPilotOnAir
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Helicopter
@@ -144,11 +145,13 @@ IROQ:
 	Selectable:
 		DecorationBounds: 38,32
 	Rearmable:
-		RearmActors: hpad, srep.deployed, srep.discount.deployed
+		RearmActors: hpad, srep.deployed, srep.discount.deployed, carr.deployed, carr.discount.deployed
+	AcceptsDeliveredExperience:
 
 HELI:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@EJECTPILOT: ^EjectsPilotOnAir
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Helicopter
@@ -199,6 +202,7 @@ HELI:
 		LandWhenIdle: false
 		TurnSpeed: 4
 		Speed: 149
+		LandableTerrainTypes: Clear,Rough,Road,Ore,Beach,Gems,Scraps
 	AutoTarget:
 		InitialStance: ReturnFire
 		InitialStanceAI: AttackAnything
@@ -234,11 +238,13 @@ HELI:
 	Selectable:
 		DecorationBounds: 36,28
 	Rearmable:
-		RearmActors: hpad, srep.deployed, srep.discount.deployed
+		RearmActors: hpad, srep.deployed, srep.discount.deployed, carr.deployed, carr.discount.deployed
+	AcceptsDeliveredExperience:
 
 HIND:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EJECTSPILOT: ^EjectsPilotOnAir
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Helicopter
@@ -285,6 +291,7 @@ HIND:
 		LandWhenIdle: false
 		TurnSpeed: 4
 		Speed: 112
+		LandableTerrainTypes: Clear,Rough,Road,Ore,Beach,Gems,Scraps
 	AutoTarget:
 		InitialStance: ReturnFire
 		InitialStanceAI: AttackAnything
@@ -318,11 +325,13 @@ HIND:
 	Selectable:
 		DecorationBounds: 38,32
 	Rearmable:
-		RearmActors: hpad, srep.deployed, srep.discount.deployed
+		RearmActors: hpad, srep.deployed, srep.discount.deployed, carr.deployed, carr.discount.deployed
+	AcceptsDeliveredExperience:
 
 YAK:
 	Inherits: ^Plane
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EJECTSPILOT: ^EjectsPilotOnAir
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
@@ -389,6 +398,7 @@ YAK:
 		DecorationBounds: 30,28,0,2
 	Rearmable:
 		RearmActors: afld, aprt
+	AcceptsDeliveredExperience:
 
 SPIT:
 	Inherits: YAK
@@ -408,6 +418,7 @@ SPIT:
 F16:
 	Inherits: ^Plane
 	Inherits@AUTOTARGET: ^AutoTargetAir
+	Inherits@EJECTSPILOT: ^EjectsPilotOnAir	
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
@@ -481,10 +492,12 @@ F16:
 		Interval: 2
 	ProducibleWithLevel:
 		Prerequisites: airplanes.upgraded
+	AcceptsDeliveredExperience:
 
 MIG:
 	Inherits: ^Plane
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EJECTSPILOT: ^EjectsPilotOnAir
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
@@ -552,10 +565,12 @@ MIG:
 		Prerequisites: airplanes.upgraded
 	Rearmable:
 		RearmActors: afld
+	AcceptsDeliveredExperience:
 
 SFIG:
 	Inherits: ^Plane
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EJECTSPILOT: ^EjectsPilotOnAir
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
@@ -622,11 +637,12 @@ SFIG:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
+	AcceptsDeliveredExperience:
 
 FROG:
 	Inherits: ^Plane
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Inherits@EJECTSPILOT: ^EjectsPilotOnAir
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
@@ -708,6 +724,7 @@ FROG:
 		RearmActors: afld
 	ProducibleWithLevel:
 		Prerequisites: airplanes.upgraded
+	AcceptsDeliveredExperience:
 
 BADR:
 	Inherits: ^NeutralPlane
@@ -742,7 +759,6 @@ BADR:
 	SmokeTrailWhenDamaged@1:
 		Offset: -432,-560,0
 		Interval: 2
-	-EjectOnDeath:
 	RejectsOrders:
 	GivesExperience:
 		Experience: 1000
@@ -788,7 +804,6 @@ BADR.Bomber:
 	SmokeTrailWhenDamaged@1:
 		Offset: -432,-560,0
 		Interval: 2
-	-EjectOnDeath:
 	-MapEditorData:
 	RejectsOrders:
 	RenderSprites:

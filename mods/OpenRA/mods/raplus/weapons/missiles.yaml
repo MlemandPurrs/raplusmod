@@ -119,17 +119,18 @@ Thermobaric:
 		Explosions: napalm
 		ImpactSounds: firebl3.aud
 		ImpactActors: false
+		ValidTargets: Ground, Air, Ship, Trees
 
 MammothTusk:
 	Inherits: ^AntiGroundMissile
 	ReloadDelay: 60
-	Range: 8c0
+	Range: 6c0
 	Burst: 2
 	ValidTargets: Air, Infantry
 	Projectile: Missile
 		Speed: 341
 		HorizontalRateOfTurn: 15
-		RangeLimit: 9c614
+		RangeLimit: 7c614
 	Warhead@1Dam: SpreadDamage
 		Spread: 256
 		Damage: 5000

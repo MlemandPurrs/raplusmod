@@ -940,32 +940,32 @@ boxes09:
 
 # Desert Terrain Expansion
 rock1:
-	idle: rock1.des
-		AddExtension: false
+	idle: rock1
+		UseTilesetExtension: true
 
 rock2:
-	idle: rock2.des
-		AddExtension: false
+	idle: rock2
+		UseTilesetExtension: true
 
 rock3:
-	idle: rock3.des
-		AddExtension: false
+	idle: rock3
+		UseTilesetExtension: true
 
 rock4:
-	idle: rock4.des
-		AddExtension: false
+	idle: rock4
+		UseTilesetExtension: true
 
 rock5:
-	idle: rock5.des
-		AddExtension: false
+	idle: rock5
+		UseTilesetExtension: true
 
 rock6:
-	idle: rock6.des
-		AddExtension: false
+	idle: rock6
+		UseTilesetExtension: true
 
 rock7:
-	idle: rock7.des
-		AddExtension: false
+	idle: rock7
+		UseTilesetExtension: true
 
 t04:
 	Defaults:
@@ -1071,19 +1071,23 @@ v22.husk:
 
 v23:
 	Defaults:
-		AddExtension: false
-	idle: v23.des
+		UseTilesetExtension: true
+		TilesetOverrides:
+			SUBTERRAN: DESERT
+	idle: v23
 		Length: 3
 		Tick: 120
-	damaged-idle: v23.des
+	damaged-idle: v23
 		Start: 3
 		Length: 3
 		Tick: 120
 
 v23.husk:
-	idle: v23.des
+	idle: v23
 		Start: 6
-		AddExtension: false
+		UseTilesetExtension: true
+		TilesetOverrides:
+			SUBTERRAN: DESERT
 
 v24:
 	Defaults:
@@ -1187,21 +1191,26 @@ v30.husk:
 
 v31:
 	Defaults:
-		AddExtension: false
-	idle: v31.des
-	damaged-idle: v31.des
+		UseTilesetExtension: true
+		TilesetOverrides:
+			SUBTERRAN: DESERT
+	idle: v31
+	damaged-idle: v31
 		Start: 1
 
 v31.husk:
-	idle: v31.des
+	idle: v31
 		Start: 2
-		AddExtension: false
+		UseTilesetExtension: true
+		TilesetOverrides:
+			SUBTERRAN: DESERT
 
 v32:
 	Defaults:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			TROPIC: JUNGLE
+			SUBTERRAN: DESERT
 	idle: v32
 	damaged-idle: v32
 		Start: 1
@@ -1212,12 +1221,14 @@ v32.husk:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			TROPIC: JUNGLE
+			SUBTERRAN: DESERT
 
 v33:
 	Defaults:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			TROPIC: JUNGLE
+			SUBTERRAN: DESERT
 	idle: v33
 	damaged-idle: v33
 		Start: 1
@@ -1228,12 +1239,14 @@ v33.husk:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			TROPIC: JUNGLE
+			SUBTERRAN: DESERT
 
 v34:
 	Defaults:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			TROPIC: JUNGLE
+			SUBTERRAN: DESERT
 	idle: v34
 	damaged-idle: v34
 		Start: 1
@@ -1244,12 +1257,14 @@ v34.husk:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			TROPIC: JUNGLE
+			SUBTERRAN: DESERT
 
 v35:
 	Defaults:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			TROPIC: JUNGLE
+			SUBTERRAN: DESERT
 	idle: v35
 	damaged-idle: v35
 		Start: 1
@@ -1260,12 +1275,14 @@ v35.husk:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			TROPIC: JUNGLE
+			SUBTERRAN: DESERT
 
 v36:
 	Defaults:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			TROPIC: JUNGLE
+			SUBTERRAN: DESERT
 	idle: v36
 	damaged-idle: v36
 		Start: 1
@@ -1276,6 +1293,7 @@ v36.husk:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			TROPIC: JUNGLE
+			SUBTERRAN: DESERT
 
 v37:
 	Defaults:
@@ -1286,6 +1304,18 @@ v37:
 
 v37.husk:
 	idle: v37
+		Start: 2
+		UseTilesetExtension: true
+
+v38:
+	Defaults:
+		UseTilesetExtension: true
+	idle: v38
+	damaged-idle: v38
+		Start: 1
+
+v38.husk:
+	idle: v38
 		Start: 2
 		UseTilesetExtension: true
 

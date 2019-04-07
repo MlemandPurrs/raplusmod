@@ -44,6 +44,11 @@
 		Tileset: TROPIC
 		Filename: tropic.pal
 		ShadowIndex: 3, 4
+	PaletteFromFile@terrain-subterran:
+		Name: terrain
+		Tileset: SUBTERRAN
+		Filename: subterran.pal
+		ShadowIndex: 3, 4
 	PaletteFromFile@player:
 		Name: player
 		Filename: temperat.pal

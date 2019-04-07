@@ -3694,3 +3694,16 @@ Templates:
 		Tiles:
 			0: Rock
 			1: Rock
+	Template@409:
+		Id: 409
+		Images: a10cr.tem
+		Size: 4,2
+		Categories: Debris
+		Tiles:
+			1: Tree
+			2: Tree
+			3: Tree
+			4: Tree
+			5: Tree
+			6: Tree
+			7: Tree

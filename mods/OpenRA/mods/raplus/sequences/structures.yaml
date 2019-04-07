@@ -963,22 +963,25 @@ ftur.discount:
 	Inherits: ftur
 
 htur:
-	idle:
-		Facings: 32
-		UseClassicFacingFudge: True
+	idle: htur-base
+		Start: 0
+		Length: 1
 		Offset: 0,0
 	damaged-idle:
-		Start: 32
+		Start: 1
+		Length: 1
+		Offset: 0,0
+	turret: htur
 		Facings: 32
 		UseClassicFacingFudge: True
-		Offset: 0,0
+		Offset: 0,0		
 	make: hturmake
 		Length: *
 		Offset: 0,0
-		Tick: 75
-	muzzle: cann-muzzle
-		Length: 2
-		Facings: 16
+		Tick: 80
+	muzzle: cruiser-muzzle
+		Length: 20
+		Facings: 8
 	bib: mbSAM
 		Length: *
 		Offset: 0,1
@@ -986,7 +989,7 @@ htur:
 	icon: hturicon
 
 htur.husk:
-	idle: htur
+	idle: hturOLD
 		Start: 38
 		Length: 1
 		Offset: 0,0
