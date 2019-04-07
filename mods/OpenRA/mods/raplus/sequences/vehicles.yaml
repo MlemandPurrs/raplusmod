@@ -193,8 +193,7 @@ btr.discount:
 	idle:
 		Facings: 32
 		UseClassicFacingFudge: True
-	turret:
-		Start: 32
+	turret: 1tnk-tur
 		Facings: 32
 		UseClassicFacingFudge: True
 	muzzle: gunfire2
@@ -209,8 +208,7 @@ btr.discount:
 		Facings: 32
 		UseClassicFacingFudge: True
 		ZOffset: -512
-	turret: 1tnk
-		Start: 32
+	turret: 1tnk-tur
 		Facings: 32
 		UseClassicFacingFudge: True
 		ZOffset: -512

@@ -424,33 +424,33 @@ SHOKR1:
 		InitialLevels: 1
 	-Buildable:
 
-STNG:
+ATGM:
 	Inherits: ^Soldier
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@AUTOTARGET: ^AutoTargetAirAssaultMove
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Valued:
 		Cost: 600
 	Tooltip:
-		Name: Stinger Soldier
+		Name: ATGM Soldier
 	Buildable:
 		BuildPaletteOrder: 8
-		Prerequisites: ~barracks, dome, ~infantry.allies, ~!industryplant.on, ~techlevel.medium
+		Prerequisites: ~barracks, fix, ~infantry.allies, ~!industryplant.on, ~techlevel.medium
 		Queue: Infantry
 		BuildAtProductionType: Soldier
-		Description: Anti-aircraft rocket infantry\nCannot attack Ground units\n Strong vs Aircraft\n Weak vs Ground units
+		Description: Anti-armor rocket infantry\nCannot attack Air units\n Strong vs Tanks\n Weak vs Aircraft, Infantry
 	Mobile:
-		Speed: 56
+		Speed: 42
 	Health:
 		HP: 4500
 	AutoTarget:
 		ScanRadius: 6
 	Armament@PRIMARY:
-		Weapon: RedEye
-		LocalOffset: 256,43,341
-		FireDelay: 5
+		Weapon: Kornet
+		LocalOffset: 226,43,155
+		FireDelay: 10
 	Armament@GARRISONED:
 		Name: garrisoned
-		Weapon: RedEye
+		Weapon: Kornet
 	TakeCover:
 		ProneOffset: 180,0,-200
 	AttackFrontal:
@@ -461,6 +461,7 @@ STNG:
 	Passenger:
 		PipType: Yellow
 		Weight: 2
+	-Wanders:
 
 RPG:
 	Inherits: ^Soldier
@@ -469,7 +470,7 @@ RPG:
 	Valued:
 		Cost: 700
 	Tooltip:
-		Name: RPG Soldier
+		Name: RPG Trooper
 	Buildable:
 		BuildPaletteOrder: 8
 		Prerequisites: ~barracks, ftur, ~!industryplant.on, ~infantry.soviet, ~techlevel.medium
@@ -511,7 +512,7 @@ E4:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 9
-		Prerequisites: ~barracks, ftur, ~!industryplant.on, ~infantry.soviet, ~techlevel.medium
+		Prerequisites: ~barracks, dome, ~!industryplant.on, ~techlevel.medium
 		Description: Close ranged Anti-infantry unit\narmed with an flamethrower\n Strong vs Infantry, Buildings\n Weak vs Tanks
 	Valued:
 		Cost: 400
@@ -547,71 +548,6 @@ E4:
 		Prerequisites: infantry.upgraded
 	Passenger:
 		PipType: Yellow
-		Weight: 2
-
-SNIP:
-	Inherits: ^Soldier
-	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Valued:
-		Cost: 700
-	Tooltip:
-		Name: Sniper
-		GenericName: Marksman
-	Buildable:
-		BuildPaletteOrder: 9
-		Prerequisites: ~barracks, dome, ~infantry.allies, ~!industryplant.on, ~techlevel.medium
-		Queue: Infantry
-		BuildAtProductionType: Soldier
-		Description: Sharpshooter infantry\nCan cloak when idle\nDetects cloaked units at close range\n Strong vs Infantry\n Weak vs Vehicles, Aircraft
-	Health:
-		HP: 8000
-	Mobile:
-		Speed: 56
-	Passenger:
-		PipType: Yellow
-		Weight: 2
-	RevealsShroud:
-		Range: 6c0
-	AutoTarget:
-		InitialStance: HoldFire
-		InitialStanceAI: ReturnFire
-	AutoTargetPriority@DEFAULT:
-		ValidTargets: Infantry
-	Armament@PRIMARY:
-		Weapon: Sniper
-	Armament@GARRISONED:
-		Name: garrisoned
-		Weapon: Sniper
-		MuzzleSequence: garrison-muzzle
-	AttackFrontal:
-	WithInfantryBody:
-		DefaultAttackSequence: shoot
-		RequiresCondition: !parachute
-	WithInfantryBody@PARACHUTE:
-		StandSequences: parachute
-		RequiresCondition: parachute
-	Cloak:
-		InitialDelay: 250
-		CloakDelay: 120
-		CloakSound:
-		UncloakSound: appear1.aud
-		IsPlayerPalette: true
-		UncloakOn: Attack, Unload, Infiltrate, Demolish, Move
-		PauseOnCondition: !(!cloak-force-disabled)
-	GrantConditionOnDamageState@UNCLOAK:
-		Condition: cloak-force-disabled
-		ValidDamageStates: Critical
-	DetectCloaked:
-		CloakTypes: Cloak, Thief
-		Range: 3c0
-	-MustBeDestroyed:
-	ProducibleWithLevel:
-		Prerequisites: infantry.upgraded
-	RenderSprites:
-		Image: sniper
-	Passenger:
-		PipType: Red
 		Weight: 2
 
 DOG:
@@ -796,6 +732,174 @@ THF:
 		PipType: Blue
 		Weight: 2
 	-Wanders:
+	-Cloneable:
+
+STNG:
+	Inherits: ^Soldier
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetAirAssaultMove
+	Valued:
+		Cost: 450
+	Tooltip:
+		Name: Stinger Soldier
+	Buildable:
+		BuildPaletteOrder: 11
+		Prerequisites: ~barracks, dome, ~infantry.allies, ~!industryplant.on, ~techlevel.medium
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		Description: Anti-aircraft rocket infantry\nCannot attack Ground units\n Strong vs Aircraft\n Weak vs Ground units
+	Mobile:
+		Speed: 56
+	Health:
+		HP: 4500
+	AutoTarget:
+		ScanRadius: 6
+	Armament@PRIMARY:
+		Weapon: RedEye
+		LocalOffset: 256,43,341
+		FireDelay: 5
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: RedEye
+	TakeCover:
+		ProneOffset: 180,0,-200
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	ProducibleWithLevel:
+		Prerequisites: infantry.upgraded
+	Passenger:
+		PipType: Yellow
+		Weight: 2
+
+FTRP:
+	Inherits: E3
+	Buildable:
+		BuildPaletteOrder: 11
+		Prerequisites: ~barracks, fcom.buildable, ~infantry.soviet, ~!industryplant.on, ~techlevel.medium
+		Description: Anti-aircraft Infantry\nCannot attack Ground units\n Strong vs Aircraft\n Weak vs Ground units
+	Tooltip:
+		Name: Flak Trooper
+	Armament@PRIMARY:
+		Weapon: FLAK-INF-AG
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: FLAK-INF-AA
+		LocalOffset: 0,0,555
+	Armament@GARRISONED:
+		Weapon: FLAK-INF-AE
+	Valued:
+		Cost: 600
+
+SNIP:
+	Inherits: ^Soldier
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Sniper
+		GenericName: Marksman
+	Buildable:
+		BuildPaletteOrder: 12
+		Prerequisites: ~barracks, dome, ~infantry.allies, ~!industryplant.on, ~techlevel.medium
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		Description: Sharpshooter infantry\nCan cloak when idle\nDetects cloaked units at close range\n Strong vs Infantry\n Weak vs Vehicles, Aircraft
+	Health:
+		HP: 8000
+	Mobile:
+		Speed: 56
+	Passenger:
+		PipType: Yellow
+		Weight: 2
+	RevealsShroud:
+		Range: 6c0
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: ReturnFire
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: Infantry
+	Armament@PRIMARY:
+		Weapon: Sniper
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: Sniper
+		MuzzleSequence: garrison-muzzle
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		RequiresCondition: !parachute
+	WithInfantryBody@PARACHUTE:
+		StandSequences: parachute
+		RequiresCondition: parachute
+	Cloak:
+		InitialDelay: 250
+		CloakDelay: 120
+		CloakSound:
+		UncloakSound: appear1.aud
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Infiltrate, Demolish, Move
+		PauseOnCondition: !(!cloak-force-disabled)
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+	DetectCloaked:
+		CloakTypes: Cloak, Thief
+		Range: 3c0
+	-MustBeDestroyed:
+	ProducibleWithLevel:
+		Prerequisites: infantry.upgraded
+	RenderSprites:
+		Image: sniper
+	Passenger:
+		PipType: Red
+		Weight: 2
+	-Wanders:
+	RevealOnFire:
+		ArmamentNames: primary
+
+MRTR:
+	Inherits: ^Soldier
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 11
+		BuildAtProductionType: Soldier
+		Prerequisites: ~barracks, fcom.buildable, ~infantry.soviet, ~!industryplant.on, ~techlevel.high
+		Description: Infantry armed with a Mortar gun\nthat shoots napalm rounds\n Strong vs Buildings, Infantry\n Weak vs Vehicles, Aircraft
+	Valued:
+		Cost: 600
+	Mobile:
+		Speed: 42
+	Tooltip:
+		Name: Mortar Infantry
+	Health:
+		HP: 5250
+	Armament@PRIMARY:
+		Weapon: MortarNapalmInf
+		LocalOffset: 0,0,155
+		FireDelay: 15
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: MortarNapalmInf
+		FireDelay: 15
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: throw
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+		Chance: 50
+	Passenger:
+		PipType: Yellow
+		Weight: 2
+	ProducibleWithLevel:
+		Prerequisites: infantry.upgraded
+	-Wanders:
+	RevealOnFire:
+		ArmamentNames: primary
 
 E7:
 	Inherits: ^Soldier
@@ -803,7 +907,7 @@ E7:
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
-		BuildPaletteOrder: 11
+		BuildPaletteOrder: 14
 		Prerequisites: ~barracks, techcenter, ~infantry.allies, ~techlevel.high
 		BuildLimit: 1
 		Description: Elite commando infantry\nArmed with dual pistols and C4\nMaximum 1 can be trained\nCan swim through Sea and cross River\n Strong vs Infantry, Buildings\n Weak vs Vehicles, Aircraft
@@ -881,7 +985,7 @@ VOLK:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
         Prerequisites: ~barracks, techcenter, ~infantry.soviet, ~techlevel.high
-		BuildPaletteOrder: 11
+		BuildPaletteOrder: 14
 		BuildLimit: 1
 		Description: Elite commando infantry armed with anti-tank gun and C4\nMaximum 1 can be trained\nCannot be crushed unless its Mammoth Tank\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
     Valued:

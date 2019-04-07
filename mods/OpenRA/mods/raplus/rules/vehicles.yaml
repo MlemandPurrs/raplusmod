@@ -385,12 +385,19 @@ BTR:
 		Range: 4c0
 	Turreted:
 		TurnSpeed: 7
-	Armament:
+	Armament@PRIMARY:
 		Weapon: 25mm
 		Recoil: 85
 		RecoilRecovery: 25
 		LocalOffset: 768,0,90
 		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: LtnkRockets
+		LocalOffset: 100,90,90
+		LocalYaw: -100, 100
+		Recoil: 10
 		PauseOnCondition: empdisable
 	AttackTurreted:
 		PauseOnCondition: empdisable
@@ -1577,7 +1584,7 @@ RA2.TTNK:
 	Buildable:
 		Queue: Vehicle, MWFVehicle
 		BuildPaletteOrder: 100
-		Prerequisites: ~disabled
+		Prerequisites: ~!disabled
 		Description: Heavy experimental vehicle, armed with dual tesla coils\n Strong vs Vehicles\n Weak vs Infantry, Aircraft
 	Valued:
 		Cost: 2025

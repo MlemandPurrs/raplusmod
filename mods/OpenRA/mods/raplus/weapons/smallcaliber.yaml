@@ -58,6 +58,80 @@ FLAK-23-AG:
 		ValidTargets: Water, Underwater
 		InvalidTargets: Ship, Structure, Bridge
 
+FLAK-INF-AA:
+	ReloadDelay: 20
+	Range: 7c512
+	Report: aacanon3.aud
+	ValidTargets: Air
+	Projectile: Bullet
+		Speed: 1c682
+		Blockable: false
+	Warhead@1Dam: SpreadDamage
+		Spread: 213
+		Damage: 1500
+		ValidTargets: Air, Ground, Water
+		Versus:
+			None: 20
+			Wood: 75
+			Light: 40
+			Concrete: 50
+		DamageTypes: Prone50Percent, TriggerProne, DefaultDeath
+	Warhead@2EffAir: CreateEffect
+		Explosions: small_explosion_air
+		ValidTargets: Air
+
+FLAK-INF-AG:
+	ReloadDelay: 20
+	Range: 5c0
+	Report: aacanon3.aud
+	ValidTargets: Ground, Water
+	Projectile: Bullet
+		Speed: 1c682
+		Blockable: false
+	Warhead@1Dam: SpreadDamage
+		Spread: 213
+		Damage: 1500
+		ValidTargets: Air, Ground, Water
+		Versus:
+			None: 20
+			Wood: 75
+			Light: 40
+			Concrete: 50
+		DamageTypes: Prone50Percent, TriggerProne, DefaultDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: small_explosion_air
+		ValidTargets: Ground, Ship, Air, Trees
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_splash
+		ValidTargets: Water, Underwater
+		InvalidTargets: Ship, Structure, Bridge
+
+FLAK-INF-AE:
+	ReloadDelay: 20
+	Range: 6c0
+	Report: aacanon3.aud
+	ValidTargets: Air, Ground, Water
+	Projectile: Bullet
+		Speed: 1c682
+		Blockable: false
+	Warhead@1Dam: SpreadDamage
+		Spread: 213
+		Damage: 1500
+		ValidTargets: Air, Ground, Water
+		Versus:
+			None: 20
+			Wood: 75
+			Light: 40
+			Concrete: 50
+		DamageTypes: Prone50Percent, TriggerProne, DefaultDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: small_explosion_air
+		ValidTargets: Ground, Ship, Air, Trees
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_splash
+		ValidTargets: Water, Underwater
+		InvalidTargets: Ship, Structure, Bridge
+
 ^HeavyMG:
 	ReloadDelay: 30
 	Range: 6c0

@@ -6,7 +6,7 @@ ss:
 
 pt:
 	Inherits: emp-overlay
-	idle:
+	idle: hydr
 		Facings: 16
 	turret: pttur
 		Facings: 32

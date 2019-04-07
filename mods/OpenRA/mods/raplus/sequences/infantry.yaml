@@ -829,6 +829,184 @@ stng.discount:
 	Defaults: stng
 	Inherits: stng
 
+ftrp:
+	stand:
+		Facings: 8
+	stand2:
+		Start: 8
+		Facings: 8
+	run:
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 120
+	shoot:
+		Start: 64
+		Length: 8
+		Facings: 8
+	idle1:
+		Start: 272
+		Length: 14
+		Tick: 120
+	idle2:
+		Start: 287
+		Length: 16
+		Tick: 120
+	parachute:
+		Start: 393
+	die1:
+		Start: 304
+		Length: 8
+	die2:
+		Start: 312
+		Length: 8
+	die3:
+		Start: 320
+		Length: 8
+	die4:
+		Start: 328
+		Length: 12
+	die5:
+		Start: 340
+		Length: 18
+	die6: electro
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: SUBTERRAN
+			TROPIC: JUNGLE
+	die-crushed: corpse1
+		Length: 6
+		Tick: 1600
+		ZOffset: -511
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+			JUNGLE: TEMPERAT
+			TROPIC: TEMPERAT
+			SUBTERRAN: TEMPERAT
+	prone-stand:
+		Start: 144
+		Stride: 4
+		Facings: 8
+	prone-stand2:
+		Start: 144
+		Stride: 4
+		Facings: 8
+	prone-run:
+		Start: 144
+		Length: 4
+		Facings: 8
+		Tick: 120
+	prone-shoot:
+		Start: 192
+		Length: 10
+		Facings: 8
+	icon: ftrpicon
+
+ftrp.discount:
+	Defaults: ftrp
+	Inherits: ftrp
+
+atgm:
+	stand:
+		Facings: 8
+	stand2:
+		Start: 8
+		Facings: 8
+	run:
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 100
+	throw:
+		Start: 64
+		Length: 8
+		Facings: 8
+	liedown:
+		Start: 176
+		Length: 2
+		Facings: 8
+	standup:
+		Start: 128
+		Length: 2
+		Facings: 8
+	prone-stand:
+		Start: 144
+		Stride: 4
+		Facings: 8
+	prone-stand2:
+		Start: 144
+		Stride: 4
+		Facings: 8
+	prone-run:
+		Start: 144
+		Length: 4
+		Facings: 8
+		Tick: 100
+	prone-throw:
+		Start: 192
+		Length: 10
+		Facings: 8
+	idle1:
+		Start: 272
+		Length: 14
+		Tick: 120
+	idle2:
+		Start: 286
+		Length: 18
+		Tick: 120
+	cheer:
+		Start: 358
+		Length: 3
+		Facings: 8
+		Tick: 120
+	die1:
+		Start: 304
+		Length: 8
+		Tick: 80
+	die2:
+		Start: 312
+		Length: 8
+		Tick: 80
+	die3:
+		Start: 320
+		Length: 8
+		Tick: 80
+	die4:
+		Start: 328
+		Length: 12
+		Tick: 80
+	die5:
+		Start: 340
+		Length: 18
+		Tick: 80
+	die6: electro
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: SUBTERRAN
+			TROPIC: JUNGLE
+	die-crushed: corpse1
+		Length: 6
+		Tick: 1600
+		ZOffset: -511
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+			JUNGLE: TEMPERAT
+			TROPIC: TEMPERAT
+			SUBTERRAN: TEMPERAT
+	icon: atgmicon
+
+atgm.discount:
+	Defaults: atgm
+	Inherits: atgm
+
 rpg:
 	stand:
 		Facings: 8
@@ -1761,7 +1939,8 @@ tecn:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+			INTERIOR: SUBTERRAN
+			TROPIC: JUNGLE
 	die-crushed: corpse1
 		Length: 6
 		Tick: 1600
@@ -1770,6 +1949,9 @@ tecn:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
+			JUNGLE: TEMPERAT
+			TROPIC: TEMPERAT
+			SUBTERRAN: TEMPERAT
 
 plot:
 	stand:
@@ -1821,7 +2003,8 @@ plot:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+			INTERIOR: SUBTERRAN
+			TROPIC: JUNGLE
 	die-crushed: corpse1
 		Length: 6
 		Tick: 1600
@@ -1830,3 +2013,102 @@ plot:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
+			JUNGLE: TEMPERAT
+			TROPIC: TEMPERAT
+			SUBTERRAN: TEMPERAT
+
+mrtr:
+	stand:
+		Facings: 8
+	stand2:
+		Facings: 8
+	run:
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 100
+	throw:
+		Start: 64
+		Length: 20
+		Facings: 8
+	liedown:
+		Start: 224
+		Length: 2
+		Facings: 8
+	standup:
+		Start: 272
+		Length: 2
+		Facings: 8
+	prone-stand:
+		Start: 240
+		Stride: 4
+		Facings: 8
+	prone-stand2:
+		Start: 240
+		Stride: 4
+		Facings: 8
+	prone-run:
+		Start: 240
+		Length: 4
+		Facings: 8
+		Tick: 100
+	prone-throw:
+		Start: 288
+		Length: 12
+		Facings: 8
+	idle1:
+		Start: 384
+		Length: 16
+		Tick: 120
+	idle2:
+		Start: 400
+		Length: 16
+		Tick: 120
+	cheer:
+		Start: 494
+		Length: 3
+		Facings: 8
+		Tick: 120
+	die1:
+		Start: 416
+		Length: 9
+		Tick: 80
+	die2:
+		Start: 424
+		Length: 8
+		Tick: 80
+	die3:
+		Start: 432
+		Length: 8
+		Tick: 80
+	die4:
+		Start: 440
+		Length: 12
+		Tick: 80
+	die5:
+		Start: 452
+		Length: 18
+		Tick: 80
+	die6: electro
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: SUBTERRAN
+			TROPIC: JUNGLE
+	die-crushed: corpse1
+		Length: 6
+		Tick: 1600
+		ZOffset: -511
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+			JUNGLE: TEMPERAT
+			TROPIC: TEMPERAT
+			SUBTERRAN: TEMPERAT
+	icon: mrtricon
+
+mrtr.discount:
+	Defaults: mrtr
+	Inherits: mrtr

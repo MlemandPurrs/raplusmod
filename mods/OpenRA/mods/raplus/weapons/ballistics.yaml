@@ -225,7 +225,7 @@ DepthCharge:
 	Range: 5c0
 	ValidTargets: Underwater
 	Projectile: Bullet
-		Speed: 125
+		Speed: 150
 		Image: BOMB
 		Inaccuracy: 128
 	Warhead@1Dam: SpreadDamage
@@ -283,6 +283,10 @@ MortarNapalm:
 		ImpactSounds: splash9.aud
 		ValidTargets: Water, Underwater
 		InvalidTargets: Ship, Structure, Bridge
+
+MortarNapalmInf:
+	Inherits: MortarNapalm
+	ReloadDelay: 60
 
 130mm:
 	ReloadDelay: 80

@@ -319,7 +319,7 @@ E1.discount:
 E2.discount:
 	Inherits: E2
 	Buildable:
-		Prerequisites: ~barracks, ~infantry.soviet, ~industryplant.on, ~techlevel.infonly
+		Prerequisites: ~barracks, ~industryplant.on, ~techlevel.infonly
 	Valued:
 		Cost: 115
 	-MapEditorData:
@@ -385,6 +385,22 @@ STNG.discount:
 	Buildable:
 		Prerequisites: ~barracks, dome, ~infantry.allies, ~industryplant.on, ~techlevel.medium
 	Valued:
+		Cost: 340
+	-MapEditorData:
+
+FTRP.discount:
+	Inherits: FTRP
+	Buildable:
+		Prerequisites: ~barracks, fcom, ~infantry.soviet, ~industryplant.on, ~techlevel.medium
+	Valued:
+		Cost: 450
+	-MapEditorData:
+
+ATGM.discount:
+	Inherits: ATGM
+	Buildable:
+		Prerequisites: ~barracks, fix, ~infantry.allies, ~industryplant.on, ~techlevel.medium
+	Valued:
 		Cost: 450
 	-MapEditorData:
 
@@ -407,9 +423,17 @@ SNIP.discount:
 E4.discount:
 	Inherits: E4
 	Buildable:
-		Prerequisites: ~barracks, ftur, ~infantry.soviet, ~industryplant.on, ~techlevel.medium
+		Prerequisites: ~barracks, dome, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 300
+	-MapEditorData:
+
+MRTR.discount:
+	Inherits: MRTR
+	Buildable:
+		Prerequisites: ~barracks, fcom, ~infantry.soviet, ~industryplant.on, ~techlevel.high
+	Valued:
+		Cost: 450
 	-MapEditorData:
 
 DOG.discount:
@@ -709,7 +733,7 @@ CA.discount:
 	-MapEditorData:
 
 CA2.discount:
-	Inherits: PT2
+	Inherits: CA2
 	Buildable:
 		Prerequisites: ~syrd, techcenter, ~ships.soviet, ~industryplant.on, ~techlevel.high
 	Valued:

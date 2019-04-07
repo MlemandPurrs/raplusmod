@@ -119,13 +119,13 @@
 			Shallow: 70
 	Locomotor@NAVAL:
 		Name: naval
-		Crushes: crate
+		Crushes: mine, crate
 		TerrainSpeeds:
 			Water: 100
 			Shallow: 70
 	Locomotor@LANDINGCRAFT:
 		Name: lcraft
-		Crushes: crate
+		Crushes: mine, crate
 		TerrainSpeeds:
 			Water: 100
 			Beach: 70
@@ -133,6 +133,19 @@
 	Locomotor@IMMOBILE:
 		Name: immobile
 		TerrainSpeeds:
+	Locomotor@BIKE:
+		Name: bike
+		Crushes: mine, crate
+		TerrainSpeeds:
+			Clear: 70
+			Rough: 35
+			Road: 100
+			Bridge: 100
+			Ore: 35
+			Gems: 35
+			Scraps: 35
+			Beach: 35
+			Shallow: 35
 	TerrainRenderer:
 	ShroudRenderer:
 		FogVariants: shroud

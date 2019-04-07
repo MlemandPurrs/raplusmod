@@ -535,6 +535,13 @@ HellfireAAPlane:
 Rockets:
 	Inherits: ^MissileWeapon
 
+LtnkRockets:
+	Inherits: ^MissileWeapon
+	ReloadDelay: 300
+	ValidTargets: Ground, Water
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Ground, Water
+
 Dragon:
 	Inherits: ^MissileWeapon
 	ReloadDelay: 20
@@ -597,3 +604,28 @@ LunMissile:
 	Warhead@4EffWater: CreateEffect
 		Explosions: large_splash
 		ImpactSounds: splash9.aud
+
+Kornet:
+	Inherits: ^AntiGroundMissile
+	Range: 6c0
+	Report: missile6.aud
+	ValidTargets: Ground
+	Projectile: Missile
+		Arm: 2
+		HorizontalRateOfTurn: 5
+		Speed: 213
+		RangeLimit: 9c204
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 5000
+		ValidTargets: Ground
+		Versus:
+			None: 10
+			Wood: 74
+			Light: 34
+			Heavy: 100
+	Warhead@3Eff: CreateEffect
+		Explosions: med_explosion
+		ImpactSounds: xplos.aud
+		ImpactActors: false
+		ValidTargets: Ground, Water

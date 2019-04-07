@@ -1,22 +1,27 @@
 General changes
 Eliminated individual Nation subfactions, unifying them into Allies and Soviet
 Prequisites for units reset on owner change. Its still possible to build other faction arsenal by capturing their Construction Yard
-Submarines have their own prequisite class, seperate of Ships. They also have their own ^Submarine default unit
-All defenses Stealth detection gets automatically paused when on Low power
-All Artillery units, Allies Cruiser and Soviet Missile Submarine reveal their position for an brief duration when firing their weaponry. Note: Missile Sub doesnt reveal position when engaging Air units using its AA weaponry
-Naval overhaul: Both factions have Ships and Submarines. Soviets have slightly different counterparts
-Major Economy change: Ore Refinery discards excess resources now. Do actually manage your economy!
-Maps are properly categorized now (1v1, 2v2, 3v3, FFA, Naval, Fun, Mini, etc.)
-There is an amazing collection of new maps included with the mod
-Defined clones of existing theatres for porting TD maps to RA and did so
+All Artillery units, Sniper, Mortar Trooper Cruisers, Missile Submarine reveal their position for an brief duration when firing their weaponry
 Giants Ants as map creeps made possible, added checkbox for it(disabled by Default). When enabled mineshafts will periodically spawn Giant Ants that are hostile to all.
 Made Giant Ants use predefined colors
 Added three new types of Giant Ant: Tesla Ant(blue) that attacks Tesla Tank weaponry, Toxic Ant(green) that sprays Chemicals at close range, Shadow Ant(black) that is invisible.
-Mine and Gem Mine footprint edited to become ground passable, that means it will no longer block any ground unit's movement.
-Added an extra type of Mine, the Ore Drill mine generates Ore twice as fast, its impassable unlike the shafts.
 Advice intervall for Low Power and Silos Needed audio increased to every 5 min
 Units armed with Tesla weaponry uses power now, -2 Power for each Shock Trooper and -4 for each Tesla Tank and Tesla Boat
-Only Veteran units eject an Pilot, the Pilot can enter any friendly vehicle or aircraft for promoting it, increasing recipient's rank by rank of himself. Air units have more probability of spawning an survivor than ground vehicles, the chance decreases as the rank increases.
+Only Veteran units can eject an Pilot, the Pilot can enter any friendly vehicle or aircraft for promoting it, increasing recipient's rank by rank of himself. Air units have more probability of spawning an survivor than ground vehicles, the chance decreases as the rank increases.
+
+
+Mapping changes
+Maps are properly categorized now (1v1, 2v2, 3v3, FFA, Naval, Fun, Mini, etc.)
+There is an amazing collection of new maps included with the mod
+Defined clones of existing theatres for porting TD maps to RA and did so
+Added 3 new tilesets: Jungle, Tropic and Underground
+
+
+Economical changes
+Major Economy change: Ore Refinery discards excess resources now. Do actually manage your economy!
+Silos provide secondary income now, aslong they are powered.
+Mine and Gem Mine footprint edited to become ground passable, that means it will no longer block any ground unit's movement.
+Added an extra type of Mine, the Ore Drill mine generates Ore twice as fast, its impassable unlike the shafts.
 
 
 Graphical changes
@@ -112,6 +117,53 @@ Gap Generator
  - Moved to Building queue from Defense
  - Cost reduced to 700$ from 800$
  - Power consumption reduced to -40 from -60
+NEW: Industrial Plant
+ - Soviets gained an new Science structure
+ - Reduces the cost of everything by -25% aslong it stands. In case where the number was odd, its got rounded up. Exceptions are: Stalin's Fist, Tanya & Volkov
+ - Costs 2500$ to build
+NEW: Command Post
+ - Soviets gained an new Production structure
+ - Clones produced Infantry units. Exceptions: Thieves, Dogs, Tanya and Volkov
+ - Only one can be built
+ - Charges the EMP Bomb support power
+ - Costs 1000$
+NEW: Nuclear Reactor
+ - Soviets can build an identical copy of the neutral structure
+ - Provides +300 Power
+ - Only one can be built
+ - Costs 1200$
+ - Explodes violently on death
+
+ 
+Tech builing changes
+Added several new tech buildings
+
+Communications Center
+ - Got an new model that is more fit for an communications related structure
+ - Line of sight increased to 16c(8c for GAP generated) from 12c(6c for GAP generated)
+Nuclear Reactor
+ - Bio Laboratory repurposed into Nuclear Reactor
+ - Provides 300 Power
+ - Explodes violently on death using MiniNuke
+Hospital
+ - Normalized building animation speed, is similar to TD
+Oil Pump
+ - Normalized building animation speed, is similar to TD
+NEW: Oil Platform
+ - Is basically an Oil Pump at Sea
+Forward Command
+ - Has new non-soviet appearance, fitting for an neutral building
+NEW: Airport
+ - Can be captured to provide Paratroopers, those Paratroopers are extra in addition to those gained from Airfield
+ - Can resupply an low-tech aircraft such as Yak or Spitfire
+NEW: Bank
+ - Can be garrisoned with Engineers to provide minor income
+NEW: Veteran's Academy
+ - Provides one level of Veterancy for all units upon capture
+
+Defense changes
+All defenses Stealth detection gets automatically paused when on Low power
+
 Sandbag and Wire Fence
  - Prequisite changed to any Barracks instead Ore Refinery
 Concrete Wall
@@ -161,46 +213,21 @@ Flak Turret
 Missile Silo
  - Explodes violently on death, using MiniNuke
  - Is now cloaked structure, like camo pillbox
-Communications Center
- - Got an new model that is more fit for an communications related structure
- - Line of sight increased to 16c(8c for GAP generated) from 12c(6c for GAP generated)
-Nuclear Reactor
- - Bio Laboratory repurposed into Nuclear Reactor
- - Provides 200 Power
- - Can be overcharged to provide 300 Power at the cost of hitpoints reduction
- - Explodes violently on death using MiniNuke
-Hospital
- - Normalized building animation speed, is similar to TD
-Oil Pump
- - Normalized building animation speed, is similar to TD
-Forward Command
- - Has new non-soviet appearance, fitting for an neutral building
-NEW: Industrial Plant
- - Soviets gained an new Science structure
- - Reduces the cost of everything by -25% aslong it stands. In case where the number was odd, its got rounded up. Exceptions are: Stalin's Fist, Tanya & Volkov
- - Costs 2500$ to build
-NEW: Command Post
- - Soviets gained an new Production structure
- - Clones produced Infantry units
- - Only one can be built
- - Charges the EMP Bomb support power
- - Costs 1000$
-NEW: Nuclear Reactor
- - Soviets can build an identical copy of the neutral structure
- - Provides +300 Power
- - Only one can be built
- - Costs 1200$
- - Explodes violently on death
+NEW: Listening Post
+ - Allies gained this structure
+ - Provides stealth detection in a 6c radius around it
+
 
 Infantry changes
 Resized all Infantry down to Tiberian Dawn size
-Added Weight for all infantry
+Added new Infantry: Grenade Launcher (Allies), Machinegunner (Allies), ATGM Soldier (Allies), Stinger Soldier (Allies), Sniper (Allies), Recon Bike (Soviet), Flak Trooper (Soviet), RPG Trooper (Soviet), Volkov (Soviet)
+Added Weight value for all Infantry
 Weight 1: Rifle Infantry, Grenadier, Grenade Launcher, Rocket Soldier
 Weight 2: Engineer, Medic, Mechanic, Dog, Spy, Thief, Machinegunner, Heavy Weapons Trooper, Shock Trooper, Stinger Soldier, RPG Soldier, Flame Trooper, Sniper
 Weight 3: Tanya, Volkov
-internal change: barracks.upgraded renamed to infantry.upgraded
-Added new Infantry: Grenade Launcher (Allies), Machinegunner (Allies), Stinger Soldier (Allies), Sniper (Allies), Heavy Weapons Infantry (Soviet), RPG Trooper (Soviet), Volkov (Soviet)
-All Infantry wanders around a bit when idle, exceptions are Tanya, Volkov, Spy and Thief
+Internal change: barracks.upgraded renamed to infantry.upgraded
+All Infantry wanders around a bit when idle, exceptions are Tanya, Volkov, Spy and Thief, ATGM Soldier, Sniper, Mortar Infantry
+
 Grenadier
  - Cost reduced to 150$ from 160$
 NEW: Grenade Launcher
@@ -231,29 +258,34 @@ Mechanic
 NEW: Machine Gunner
  - Allies gained an new Infantry unit
  - Is armed with same MachineGun as Jeep
-NEW: Heavy Weapons Infantry
- - Soviets gained an new Infantry unit
- - This unit is weak and armed with an Shotgun
- - It can deploy into an Machine Gun Nest with Light Armor, 10000 Hitpoints that is armed with Vulcan MG(same as Pillbox)
- - In Pillboxes mans the Machinegun, like Rifle Infantry
 NEW: Stinger Soldier
  - Allies gained an new Infantry unit
  - Can target Aircraft only
  - Transferred seperate AA projectile of Rocket Soldier here
+NEW: Flak Trooper
+ - Soviets gained an new Infantry unit
+ - Is armed with weaker version of the Flak Truck's gun
+ - Can attack both air and ground targets
 NEW: RPG Soldier
  - Soviets gained an new Infantry unit
  - Is armed with napalm rockets that hit like an weaker Flame Tower attack
  - Always explodes on death using Grenadier explosion
-Flame Trooper
+ Flame Trooper
  - Flamethrower renamed to Flame Trooper
  - Hitpoints increased to 7000 from 4000
  - Price bumped to 400$ from 300$
  - No longer pisses Napalm. Gained Tiberium Dawn flame weaponry instead
+ - Available for both Allies and Soviet
+ - Prequisite of Flame Tower changed to Radar Dome
 Sniper
  - Enabled Sniper for Allies
  - Its appearance changes dependant on tileset
  - Can detect cloaked at close range
  - Cloaked when idle(eg. not moving or firing)
+NEW: Mortar Soldier
+ - Soviets gained an Siege infantry unit
+ - Is armed with same Mortar as the tracked vehicle, with the catch being reloads faster
+ - Costs 700$
 Tanya
  - Cost reduced to 1000$ from 1200$
  - Weapon normalized, she no longer an aimbot instagib noclip haxxor. also -1 weapon range on her colts
@@ -268,10 +300,10 @@ Thief
  - Can no longer infiltrate Silos
  - Steals 35% instead 50%
 
+ 
 Vehicle changes
 Added new vehicles: MRLS (Allies), Phase Tank (Allies), Medium Tank (Soviet), APC (Soviet), Mortar Track (Soviet), Flame Tank (Soviet)
-Soviet Ore Trucks are armed with an Machinegun now
-Added Weight for all vehicles
+Added Weight values for all vehicles
 Weight 1: Ranger Jeep, Flak Truck, Supply Truck
 Weight 2: APC (both types), Medium Tank (both Types), Tank Destroyer, Mortar Track, Flame Tank, Minelayer, Mobile Radar Jammer, Mobile GAP Generator
 Weight 3: Ore Truck, Heavy Tank, Tesla Tank, Artillery, MRLS, V2, Phase Tank, Phase Transport, Chrono Tank, Prism Tank, Demolition Truck
@@ -281,6 +313,7 @@ MCV
  - Cost increased to 3000$ from 2500$
 Ore Truck
  - Cost increased to 1200$ from 1100$
+ - Soviet Ore Trucks are armed with an Machinegun now
 Ranger Jeep
  -Sight radius reduced by -1, down to 7c from 8c
  -Cost reduced to 350$ from 500$
@@ -304,6 +337,7 @@ Light Tank
  - Cost reduced to 600$ from 700$
  - Weaponry is the same range as every other Tank now
  - Became semi-amphibian. Now it can pass through Rivers at half speed, without needing an Ford to do so
+ - Has gained an secondary Rocket pod attack, that fires one E3 shot with long reload of 300
 Medium Tank
  - Cost reduced to 800$ from 850$
  - Gained an additional weapon to use versus Infantry: An weak machinegun that is equal to Rifle Infantry's weapon
@@ -312,8 +346,6 @@ NEW: Medium Tank (Soviet)
  - Is essentially an single barreled Heavy Tank, sporting an singular cannon version of Heavy Tank's weapon
  - Moves at same speed as Heavy Tank
  - Can be built at same price as Allies Medium Tank
-Heavy Tank
- - No changes
 Artillery
  - Cost down to 750$ from 850$
 V2 Rocket Launcher
@@ -408,8 +440,11 @@ NEW: Prism Tank
  - Armed with an Laser (is missing its signature 'bundling firepower' feature yet)
  - Costs same as Mammoth Tank (1500$)
 
+ 
 Naval
-Splitted ^Submarine into its own base class. Submarines can no longer be repaired while being underwater
+Naval overhaul: Both factions have Ships and Submarines. There are slight differences in basic naval units that fully unfold at later tier units. 
+Submarines have their own prequisite class, seperate of Ships. They also have their own ^Submarine default unit
+Submarines can no longer be repaired while being underwater
 Ships can only repair at an Ship Yard, Submarines require an Sub Pen for repairs
 The Sub Pen provides Sonar Pulse power on its own. Sonar pulse charge duration doubled to 1500 from 750
 Ship Yards can be infiltrated by an spy to gain veterancy on naval units
@@ -483,6 +518,7 @@ NEW: Attack Ekranoplan (Soviet)
  - Heavily armored and rather slow moving
  - Is Immune to Sea Mines
 
+ 
 Aircraft
 Seperated veterancy espionage reward for Airplane and Helicopters. That means infiltrating an Airfield will only upgrade Airplanes, while infiltrating an Helipad will grant veterancy for Helicopters
 Seperated aircraft.faction prequisite into airplanes. and helicopters.
@@ -541,6 +577,10 @@ NEW: Cossack Transport
  - Has 12 slots for either Infantry or Vehicles
  - Force fire on ground to drop cargo
  - Buildlimit of 1
+NEW: Iroqouis
+ - This light-weight helicopter tries to fill the vacant spot resulted of Hind transfer to Soviet
+ - Can transport up to 4 Infantry
+ - Armed with chainguns
  
 Known issues
 Gate anim is bugged, shoot the gate once with any rocket or cannon and it will fix itself
