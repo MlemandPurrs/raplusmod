@@ -3,7 +3,7 @@ In order to install this mod you will need to do the following:
 Download OpenRA from here: Openra.net if you don't have it.
 Then after you download OpenRA-release-20190314, install it.
 
-After that extract the file "openra-alpha-006.zip" you have just downloaded.
+After that extract the file "raplus-alpha-006e.zip" you have just downloaded.
 Open the new folder you just made (by extracting the zip file^) and copy the folder named "raplus".
 Now go to your openra install directory (if you can't find it then just right click on the desktop icon and then click "open file location"). When you get inside the openra folder navigate into mods\ paste the folder you copied earlier (raplus)
 
@@ -28,7 +28,7 @@ inside SDK's folder delete these two:
 OpenRAModSDK-master\mods\example\
 OpenRAModSDK-master\OpenRA.Mods.Example\
 
-now extract the file "openra-alpha-006.zip" you have just downloaded.
+now extract the file "raplus-alpha-006e." you have just downloaded.
 Open the new folder you just made (by extracting the zip file^) and copy the folder named "raplus" into SDK mods directory
 as example when done right looks like this:
 "D:\OpenRAModSDK-master\mods\raplus\"
