@@ -155,18 +155,48 @@
 		Name: Any
 		InternalName: Random
 		Side: Random
-		RandomFactionMembers: allies, soviet
-		Description: Random Country\nA random faction will be chosen when the game starts
+		RandomFactionMembers: allies, soviet, britain, france, germany, russia, ukraine, kazakh
+		Description: Random Faction\nA random faction will be chosen when the game starts
 	Faction@allies:
 		Name: Allies
 		InternalName: allies
 		Side: Allies
 		Description: Allies\nThe Allies is an military alliance of European nations, that hastily united against the imminent Soviet threat\nUnder the leadership of the prominent nations of Europe, such as Britain, Germany, France, Spain and Greece\nthe Alliance finds support worldwide, chiefly being backed by the USA and regional allies such as Turkey\nThey have divergent tactical options, possess a strong Navy and have access to many powerful technologies\nsuch as time travel, invisibility or prismatic laser weaponry, most are products of Prof. Einstein's genius
+	Faction@britain:
+		Name: Britain
+		InternalName: britain
+		Side: Allies
+		Description: Britain\nSpecialization: Intelligence\nThe forces of Britain uphold their long tradition in Espionage\nFaction Variations:\n    - Tanks* deal more damage but are costlier\n*Those Tanks being: Light Tank, Medium Tank, Tank Destroyer\n+10% damage dealt at the cost of being 10% expensiver\n    - Spy is trained as Veteran\nSupport Power:\n    - GPS Scrambler\nRenders an group of units invisible aslong they are not firing\nSpecial Units:\n    - Sniper (Infantry)\nThis accomplished marksman is capable of one-shotting most if not any Infantry\n    - ECM Jammer (Vehicle)\nThis vehicle is capable of jamming enemy missiles and radar
+	Faction@france:
+		Name: France
+		InternalName: france
+		Side: Allies
+		Description: France\nSpecialization: Deception\nThe forces of France are capable of deceiving their enemies in many ways\nFaction Variations:\n    - Tanks* fire faster but deal less damage\n*Those Tanks being: Light Tank, Medium Tank, Tank Destroyer\n+10% faster rate of fire, deals -250/-500/-750 damage per shot\n    - Can build Fake structures\nThis selection of fake structures look precisely as an real building to the enemy\nSupport Power:\n    - Decoy Army\nDelivers an group of Fake units at your primary War Factory\nThose remote-controlled units armed with dummy weaponry look identical to the opponent\nSpecial Units:\n    - Phase Transport (Vehicle)\nThis transport armed with rocket launcher is cloaked at all times\n    - Phase Tank (Vehicle)\nThis modification of the light tank is cloaked at all times 
+	Faction@germany:
+		Name: Germany
+		InternalName: germany
+		Side: Allies
+		Description: Germany\nSpecialization: Technology\nThe forces of Germany take pride in displaying their scientific progress on the battlefield\nFaction Variations:\n    - Tanks* are durabler but move slower\n*Those Tanks being: Light Tank, Medium Tank, Tank Destroyer\nTanks have their Health increased by 10%, they move marginally slower in return\n    - Can use Advanced Chronoshift\nThe advanced chronoshift is capable of transporting an larger group\nSupport Power:\n    - Paratanks\nA B-52 delivers two Light and one Medium Tanks anywhere on the map\nSpecial Units:\n    - Chrono Tank (Vehicle)\nThis tank armed with rocket pods is capable of Teleportation\n    - Prism Tank (Vehicle)\nThis tank is armed with beam weaponry that increases intensity as it bundles with others of its kind
 	Faction@soviet:
 		Name: Soviets
 		InternalName: soviet
 		Side: Soviet
 		Description: Soviets\nThe Soviets consist of the combined forces of the USSR. Under the leadership of Stalin they march forth to conquer Europe,\ntheir intention: to realize the comrade premier's dream of uniting the continent under communist Socialism at any cost\nThey use strong armoured divisions, napalm weaponry, tesla technology and strength in numbers to overwhelm opposition
+	Faction@russia:
+		Name: Russia
+		InternalName: russia
+		Side: Soviet
+		Description: Russia\nSpecialization: Tesla Weaponry\nThe forces of Russia utilize the next generation of Tesla technology\nFaction Variations:\n    - Tanks* are faster to build but have less health\n*Those Tanks being: Medium Tank, Heavy Tank, Mammoth Tank\nBuildDurationModifier is 50, Health reduced by 10%\n    - All Powerplants provide extra Power\nPower Plant provides additional +25, Advanced Power Plant +50, Nuclear Plant +100 power\nUnique Support Power:\n    - EMP Air Strike\nA plane drops an EMP Bomb on your target, disabling Vehicle, Ship and Submarines\nDisabled units cannot move or shoot for a while\nUncloaks hidden units, Submarines will resurface\nSpecial Units:\n    - Tesla Trooper (Infantry)\nThe advanced Tesla Trooper wears armor and cannot be crushed\n    - Heavy Tesla Tank (Vehicle)\nThis heavily armored variant causes vehicles to short-circuit briefly\n    - Kirov Airship (Aircraft)\nThis slow-moving Airship is heavily armored and drops bombs that cause EMP blasts\n    - Tesla Boat (Ship)\nBasically an Tesla Tank at sea
+	Faction@ukraine:
+		Name: Ukraine
+		InternalName: ukraine
+		Side: Soviet
+		Description: Ukraine\nSpecialization: Demolitions\nThe forces of Ukraine specialize in blowing their opponents to smithereens\nFaction Variations:\n    - Tanks* have +1 range but less rate of fire\n*Those Tanks being: Medium Tank, Heavy Tank, Mammoth Tank\n    - Can used Advanced Iron Curtain\nThe advanced Iron Curtain can be used offensively to kill enemy Infantry too\nSupport Power:\n    - Cruise Missile Strike\nAn badger will fire V2 rockets at your target\nSpecial Units:\n    - Bomb Dog (Infantry)\nAn dog with a bomb vest that had been trained to run towards enemies\n    - Mammoth KV-8 (Heavy Tank)\nThis special modification of the Mammoth chassis sports dual flamethrowers\n    - Demolition Truck (Vehicle)\nAn truck with a desperate driver, loaded with Nuclear explosives\n    - Flame Submarine (Ship)\nThis submarine is capable of shooting the same projectiles as Flame Tower
+	Faction@kazakh:
+		Name: Kazakhstan
+		InternalName: kazakh
+		Side: Soviet
+		Description: Kazakhstan\nSpecialization: Nuclear Weapons\nThe forces of Kazakhstan bring the Soviet nuclear arsenal to the table\nThey are believing all opponents to be ruled over by little girls\nFaction Variations:\n    - Tanks* move faster but are built slower\n*Those Tanks being: Medium Tank, Heavy Tank, Mammoth Tank\nBuildDurationModifier is 70, speed marginally faster\nMammoth body and turret turns one unit faster too\n    - Atom Bombs get prepared faster\nNuke recharges in 10500s instead 13500s\nUnique Support Power:\n    - Nuclear Air Strike\nAn special MiG drops an Nuclear Parabomb\nSpecial Units:\n    - Desolator (Infantry) (buildlimit:2)\nThis infantry in heavy armor suit is armed with micro nuclear missile launcher\n    - ICBM Launcher (Vehicle) (buildlimit:1)\nThe Ballistic launcher carries an ICBM that delivers the same payload as an Demotruck\n    - ICBM Submarine (Navy) (buildlimit:1)\nThis submarine carries an ICBM that delivers the same payload as an Demotruck\nAn note about ICBM units: you cant have both types at the same time, choose either one
 	ResourceType@ore:
 		Type: Ore
 		Name: Valuable Minerals
@@ -252,12 +282,12 @@ World:
 	MPStartUnits@mcvonly:
 		Class: none
 		ClassName: MCV Only
-		Factions: allies, soviet
+		Factions: allies, soviet, britain, france, germany, russia, ukraine, kazakh
 		BaseActor: mcv
 	MPStartUnits@lightallies:
 		Class: light
 		ClassName: Light Support
-		Factions: allies
+		Factions: allies, britain, france, germany
 		BaseActor: mcv
 		SupportActors: e1,e1,e1,e3,e3,jeep,1tnk
 		InnerSupportRadius: 3
@@ -265,7 +295,7 @@ World:
 	MPStartUnits@lightsoviet:
 		Class: light
 		ClassName: Light Support
-		Factions: soviet
+		Factions: soviet, russia, ukraine, kazakh
 		BaseActor: mcv
 		SupportActors: e1,e1,e1,e3,e3,btr,ftrk
 		InnerSupportRadius: 3
@@ -273,7 +303,7 @@ World:
 	MPStartUnits@heavyallies:
 		Class: heavy
 		ClassName: Heavy Support
-		Factions: allies
+		Factions: allies, britain, france, germany
 		BaseActor: mcv
 		SupportActors: e1,e1,e1,e3,e3,jeep,1tnk,2tnk,2tnk,2tnk
 		InnerSupportRadius: 3
@@ -281,7 +311,7 @@ World:
 	MPStartUnits@heavysoviet:
 		Class: heavy
 		ClassName: Heavy Support
-		Factions: soviet
+		Factions: soviet, russia, ukraine, kazakh
 		BaseActor: mcv
 		SupportActors: e1,e1,e1,e3,e3,btr,ftrk,3tnk,3tnk
 		InnerSupportRadius: 3

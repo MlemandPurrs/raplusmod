@@ -171,7 +171,7 @@
 	DamageMultiplier@IRONCURTAIN:
 		RequiresCondition: invulnerability
 		Modifier: 0
-	TimedConditionBar:
+	TimedConditionBar@INVULNERABILITY:
 		Condition: invulnerability
 	ExternalCondition@INVULNERABILITY:
 		Condition: invulnerability
@@ -276,6 +276,7 @@
 	Inherits@5: ^AffectedByEmergencyRepair
 	Inherits@6: ^AffectedByEMP
 	Inherits@7: ^LeavesScraps
+	Inherits@9: ^AffectedByGPSScrambler
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -383,6 +384,7 @@
 	Inherits@3: ^InfantryExperienceHospitalOverrides
 	Inherits@4: ^SpriteActor
 	Inherits@bounty: ^GlobalBounty
+	Inherits@9: ^AffectedByGPSScrambler
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -560,6 +562,7 @@
 	Inherits@bounty: ^GlobalBounty
 	Inherits@5: ^AffectedByEmergencyRepair
 	Inherits@6: ^AffectedByEMP
+	Inherits@9: ^AffectedByGPSScrambler
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -588,7 +591,7 @@
 		Types: Ship
 	Chronoshiftable:
 	RepairableNear:
-		Buildings: syrd, srep.deployed, srep.discount.deployed, carr.deployed, carr.discount.deployed
+		Buildings: syrd, syrd.discount, srep.deployed, srep.discount.deployed, carr.deployed, carr.discount.deployed
 	GpsDot:
 		String: Ship
 	WithDamageOverlay:
@@ -611,7 +614,7 @@
 ^Submarine
 	Inherits: ^Ship
 	RepairableNear:
-		Buildings: spen, srep.deployed, srep.discount.deployed, carr.deployed, carr.discount.deployed
+		Buildings: spen, spen.discount, srep.deployed, srep.discount.deployed, carr.deployed, carr.discount.deployed
 	Targetable:
 		TargetTypes: Ground, Water, Ship, Submarine, SeaDetonateAttack
 		RequiresCondition: !underwater
@@ -774,7 +777,8 @@
 
 ^Building:
 	Inherits: ^BasicBuilding
-	Inherits@7: ^LeavesScraps	
+	Inherits@7: ^LeavesScraps
+	Inherits@8: ^AffectedByMaintenance
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -1390,6 +1394,39 @@
 	ExternalCondition@EMERGENCY_REPAIR:
 		Condition: emergency_repair
 
+^AffectedByMaintenance:
+	SelfHealing@MAINTENANCE:
+		PercentageStep: 5
+		Delay: 25
+		HealIfBelow: 100
+		DamageCooldown: 25
+		RequiresCondition: on.maintenance
+		Step: 250
+	WithDecoration@MAINTENANCE:
+		RequiresSelection: false
+		Image: allyrepair
+		Sequence: repair
+		Palette: player
+		IsPlayerPalette: true
+		ReferencePoint: Center
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+		RequiresCondition: on.maintenance
+	ExternalCondition@MAINTENANCE:
+		Condition: on.maintenance
+	GrantConditionOnPrerequisite@IDISABLEFROMMAINT:
+		Condition: disabled
+		Prerequisites: maintenance
+	WithColoredOverlay@IDISABLEFROMMAINT:
+		RequiresCondition: disabled
+		Palette: disabled
+	TimedConditionBar@MAINTENANCE:
+		Condition: on.maintenance
+		Color: 2f74e2
+	PowerMultiplier@MAINTENANCE:
+		RequiresCondition: on.maintenance
+		Modifier: 0
+
 ^Gate:
 	Inherits: ^Building
 	Health:
@@ -1484,3 +1521,17 @@
 		EjectInAir: false
 		AllowUnsuitableCell: false
 		RequiresCondition: rank-elite
+
+^AffectedByGPSScrambler:
+	Cloak@GPSCRAMBLER:
+		InitialDelay: 0
+		CloakDelay: 50
+		UncloakOn: Attack, Unload, Infiltrate, Demolish
+		CloakTypes: Cloak
+		IsPlayerPalette: true
+		RequiresCondition: gps.scrambler
+	TimedConditionBar@GPSCRAMBLER:
+		Color: 200738
+		Condition: gps.scrambler
+	ExternalCondition@GPSCRAMBLER:
+		Condition: gps.scrambler

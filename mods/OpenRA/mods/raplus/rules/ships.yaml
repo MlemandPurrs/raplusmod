@@ -460,7 +460,7 @@ TBT:
 		Queue: Ship
 		BuildPaletteOrder: 6
 		BuildAtProductionType: Boat
-		Prerequisites: syrd, techcenter, ~ships.soviet, ~!industryplant.on, ~techlevel.high
+		Prerequisites: syrd, tsla, techcenter, ~ships.soviet, ~!player.is.subfaction, ~!industryplant.on, ~techlevel.high
 		Description: Ship with mounted Tesla coil\n Immune to EMP\n Strong vs Infantry, Navy\n Weak vs Ground units, Aircraft
 	Valued:
 		Cost: 850
@@ -503,7 +503,7 @@ SCRP:
         BuildPaletteOrder: 5
 		BuildAtProductionType: Boat
         Prerequisites: syrd, fix, ~ships.soviet, ~!industryplant.on, ~techlevel.medium
-        Description: Quick, light-weight boat\narmed with all-purpose Flak Gun\nCan lay an Sea Mine to destroy unwary enemy ships\nSea mine gets replenished when near a Shipyard\n Strong vs Helicopters\n Weak vs Ships
+        Description: Quick, light-weight boat\narmed with all-purpose Flak Gun\nCan lay two Sea Mines to destroy unwary enemy ships\nSea mine gets replenished when near a Shipyard\nImmune to Sea-Mines itself\n Strong vs Helicopters\n Weak vs Ships
     Valued:
         Cost: 750
     Tooltip:
@@ -553,7 +553,7 @@ SCRP:
 	MineImmune:
 	AmmoPool:
 		Armaments: 
-		Ammo: 1
+		Ammo: 2
 		RearmSound: minelay1.aud
 	ReloadAmmoPool:
 		Delay: 300
@@ -619,7 +619,7 @@ ASUB:
 	Selectable:
 		DecorationBounds: 38,38
 	ProducibleWithLevel:
-		Prerequisites: subs.upgraded
+		Prerequisites: submarines.upgraded
 
 SS:
 	Inherits: ^Submarine
@@ -683,7 +683,7 @@ SS:
 	Selectable:
 		DecorationBounds: 38,38
 	ProducibleWithLevel:
-		Prerequisites: subs.upgraded
+		Prerequisites: submarines.upgraded
 	RenderSprites:
 		Image: advsub
 
@@ -744,7 +744,7 @@ MSUB:
 	RevealOnFire:
 		ArmamentNames: primary
 	ProducibleWithLevel:
-		Prerequisites: subs.upgraded
+		Prerequisites: submarines.upgraded
 	RenderRangeCircle:
 	RenderSprites:
 		Image: advmsub
@@ -1088,3 +1088,137 @@ MGNM:
 		MoveSequence: move
 	Voiced:
 		VoiceSet: RoboticVoice
+
+FSUB:
+	Inherits: ^Submarine
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Ship
+		BuildAtProductionType: Submarine
+		BuildPaletteOrder: 10
+		Prerequisites: spen, ftur, techcenter, ~submarines.soviet, ~!player.is.subfaction, ~!industryplant.on, ~techlevel.medium
+		Description: Submerged anti-ship unit\narmed with torpedoes and gun\n Strong vs Naval units\n Weak vs Ground units, Aircraft
+	Valued:
+		Cost: 900
+	Tooltip:
+		Name: Flame Submarine
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 25000
+	Armor:
+		Type: Light
+	Mobile:
+		TurnSpeed: 4
+		Speed: 60
+	RevealsShroud:
+		Range: 6c0
+		RequiresCondition: !underwater
+		RevealGeneratedShroud: false
+	RevealsShroud@GAPGEN:
+		Range: 4c0
+		RequiresCondition: !underwater
+	RevealsShroud@UNDERWATER:
+		Range: 3c0
+		RequiresCondition: underwater
+	Armament:
+		Weapon: FireballLauncherSub
+		LocalOffset: 512,128,42, 512,-128,42
+		PauseOnCondition: empdisable
+    Turreted:
+        TurnSpeed: 255
+        Offset: 525,0,50
+    WithSpriteTurret:
+	AttackFrontal:
+		PauseOnCondition: empdisable
+	SelectionDecorations:
+	AutoTarget:
+		InitialStance: ReturnFire
+		InitialStanceAI: ReturnFire
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: Water, Underwater
+	AutoTargetPriority@ATTACKANYTHING:
+		ValidTargets: Water, Underwater
+	DetectCloaked:
+		CloakTypes: Underwater
+		Range: 1c0
+	Explodes:
+		Weapon: UnitExplodeSubmarine
+		EmptyWeapon: UnitExplodeSubmarine
+	Selectable:
+		DecorationBounds: 38,38
+	ProducibleWithLevel:
+		Prerequisites: submarines.upgraded
+
+ICBMSUB:
+	Inherits: ^Submarine
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Ship
+		BuildAtProductionType: Submarine
+		BuildPaletteOrder: 11
+		BuildLimit: 1
+		Prerequisites: ~spen, mslo, ~submarines.soviet, ~player.kazakh, ~!enough.icbm, ~techlevel.high
+		Description: Submerged anti-ground unit armed with\nlong-range nuclear ballistic missiles\nExplodes violently on death\n Strong vs Everything over distance\n Weak vs attacks at close range\nRequires an large minimum firing distance
+	-Explodes@SHIPEXPLODES:
+	Explodes@SHIPEXPLODES:
+		Weapon: MiniNuke
+		EmptyWeapon: UnitExplodeSubmarine
+		DamageSource: Killer
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: ICBM Submarine
+	Health:
+		HP: 50000
+	Armor:
+		Type: Light
+	Mobile:
+		TurnSpeed: 1
+		Speed: 46
+		RequiresCondition: !empdisable
+	RevealsShroud:
+		Range: 6c0
+		RequiresCondition: !underwater
+		RevealGeneratedShroud: false
+	RevealsShroud@GAPGEN:
+		Range: 4c0
+		RequiresCondition: !underwater
+	RevealsShroud@UNDERWATER:
+		Range: 3c0
+		RequiresCondition: underwater
+	Armament@PRIMARY:
+		Weapon: ICBM
+		LocalOffset: 350,-151,0, 350,151,0, 325,-151,0, 325,151,0
+		FireDelay: 21
+		PauseOnCondition: empdisable
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: TorpTube
+		LocalOffset: 0,-171,0, 0,171,0
+		FireDelay: 2
+		PauseOnCondition: empdisable
+	AttackFrontal:
+		Armaments: primary, secondary
+		PauseOnCondition: empdisable
+	SelectionDecorations:
+	DetectCloaked:
+		CloakTypes: Underwater
+		Range: 3c0
+	RenderDetectionCircle:
+	Selectable:
+		DecorationBounds: 68,38
+	RenderRangeCircle:
+	RevealOnFire:
+		ArmamentNames: primary
+	ReloadArmamentsBar:
+		Armaments: primary
+	AnnounceOnSeen:
+		Notification: AbombLaunchDetected
+		PingRadar: True
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: HoldFire
+		ScanRadius: 15
+	ProvidesPrerequisite@LIMITING:
+		Prerequisite: enough.icbm

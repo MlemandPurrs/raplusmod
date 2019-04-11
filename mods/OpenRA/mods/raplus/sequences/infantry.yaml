@@ -1201,6 +1201,14 @@ snip.discount:
 	Defaults: sniper
 	Inherits: sniper
 
+snip.britain:
+	Defaults: sniper
+	Inherits: sniper
+
+snip.britain.discount:
+	Defaults: sniper
+	Inherits: sniper
+
 dog:
 	stand:
 		Facings: 8
@@ -1348,6 +1356,14 @@ spy:
 spy.discount:
 	Defaults: spy
 	Inherits: spy
+
+spy.britain:
+	Defaults: spy
+	Inherits: spy
+
+spy.britain.discount:
+	Defaults: spy.britain
+	Inherits: spy.britain
 
 thf:
 	stand:
@@ -2112,3 +2128,194 @@ mrtr:
 mrtr.discount:
 	Defaults: mrtr
 	Inherits: mrtr
+
+ttrp:
+	stand:
+		Facings: 8
+	stand2:
+		Start: 8
+		Facings: 8
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 120
+	shoot:
+		Start: 164
+		Length: 6
+		Facings: 8
+	prone-stand:
+		Start: 86
+		Stride: 6
+		Facings: 8
+	prone-stand2:
+		Start: 86
+		Stride: 6
+		Facings: 8
+	prone-run:
+		Start: 86
+		Length: 6
+		Facings: 8
+		Tick: 120
+	liedown:
+		Start: 260
+		Length: 2
+		Facings: 8
+	standup:
+		Start: 276
+		Length: 2
+		Facings: 8
+	prone-shoot:
+		Start: 212
+		Length: 6
+		Facings: 8
+	parachute:
+		Start: 293
+		Length: 6
+		Tick: 120
+	idle1:
+		Start: 56
+		Length: 15
+		Tick: 120
+	idle2:
+		Start: 71
+		Length: 15
+		Tick: 120
+	die1:
+		Start: 134
+		Length: 15
+	die2:
+		Start: 149
+		Length: 15
+	die3:
+		Start: 134
+		Length: 15
+	die4:
+		Start: 134
+		Length: 15
+	die5:
+		Start: 149
+		Length: 16
+	die6: electro
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: SUBTERRAN
+			TROPIC: JUNGLE
+	die-crushed: corpse1
+		Length: 6
+		Tick: 1600
+		ZOffset: -511
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+			JUNGLE: TEMPERAT
+			TROPIC: TEMPERAT
+			SUBTERRAN: TEMPERAT
+	icon: ttrpicon
+
+ttrp.discount:
+	Defaults: ttrp
+	Inherits: ttrp
+
+dog.bomb:
+	Defaults: dog
+	Inherits: dog
+	icon: demodogicon
+
+dog.bomb.discount:
+	Defaults: dog.bomb
+	Inherits: dog.bomb
+
+deso:
+	stand:
+		Facings: 8
+	stand2:
+		Start: 8
+		Facings: 8
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 120
+	shoot:
+		Start: 164
+		Length: 6
+		Facings: 8
+	prone-stand:
+		Start: 86
+		Stride: 6
+		Facings: 8
+	prone-stand2:
+		Start: 86
+		Stride: 6
+		Facings: 8
+	prone-run:
+		Start: 86
+		Length: 6
+		Facings: 8
+		Tick: 120
+	liedown:
+		Start: 260
+		Length: 2
+		Facings: 8
+	standup:
+		Start: 276
+		Length: 2
+		Facings: 8
+	prone-shoot:
+		Start: 212
+		Length: 6
+		Facings: 8
+	parachute:
+		Start: 304
+		Length: 3
+		Tick: 120
+	idle1:
+		Start: 56
+		Length: 15
+		Tick: 120
+	idle2:
+		Start: 71
+		Length: 15
+		Tick: 120
+	die1:
+		Start: 134
+		Length: 15
+	die2:
+		Start: 149
+		Length: 15
+	die3:
+		Start: 134
+		Length: 15
+	die4:
+		Start: 134
+		Length: 15
+	die5:
+		Start: 149
+		Length: 15
+	die6: electro
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: SUBTERRAN
+			TROPIC: JUNGLE
+	die-crushed: corpse1
+		Length: 6
+		Tick: 1600
+		ZOffset: -511
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+			JUNGLE: TEMPERAT
+			TROPIC: TEMPERAT
+			SUBTERRAN: TEMPERAT
+	icon: desoicon
+
+deso.discount:
+	Defaults: deso
+	Inherits: deso

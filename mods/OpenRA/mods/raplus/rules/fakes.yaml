@@ -10,7 +10,7 @@ FPWR:
 	Buildable:
 		BuildPaletteOrder: 1
 		Queue: Fakestructure
-		Prerequisites: ~structures.allies, ~techlevel.infonly
+		Prerequisites: ~structures.allies, ~player.can.fakes, ~techlevel.infonly
 		Description: Looks like a Power Plant
 		Icon: fake-icon
 	Tooltip:
@@ -44,7 +44,7 @@ FAPW:
 	Buildable:
 		BuildPaletteOrder: 12
 		Queue: Fakestructure
-		Prerequisites: dome, ~structures.allies, ~techlevel.medium
+		Prerequisites: dome, ~structures.allies, ~player.can.fakes, ~techlevel.medium
 		Description: Looks like an Advanced Power Plant
 		Icon: fake-icon
 	Tooltip:
@@ -87,7 +87,7 @@ BARF:
 	Buildable:
 		BuildPaletteOrder: 2
 		Queue: Fakestructure
-		Prerequisites: ~structures.allies, ~techlevel.infonly
+		Prerequisites: ~structures.allies, ~player.can.fakes, ~techlevel.infonly
 		Description: Looks like an Barracks
 		Icon: fake-icon
 	Building:
@@ -113,7 +113,7 @@ PROF:
 	SelectionDecorations:
 	Buildable:
 		BuildPaletteOrder: 4
-		Prerequisites: proc, ~structures.allies, ~techlevel.low
+		Prerequisites: proc, ~structures.allies, ~player.can.fakes, ~techlevel.low
 		Queue: Fakestructure
 		Description: Looks like a Ore Refinery
 		Icon: fake-icon
@@ -164,7 +164,7 @@ WEAF:
 		Bounds: 72,48
 	Buildable:
 		BuildPaletteOrder: 5
-		Prerequisites: proc, ~structures.allies, ~techlevel.low
+		Prerequisites: proc, ~structures.allies, ~player.can.fakes, ~techlevel.low
 		Queue: Fakestructure
 		Description: Looks like a Weapons Factory
 		Icon: fake-icon
@@ -198,7 +198,7 @@ FIXF:
 	Buildable:
 		BuildPaletteOrder: 8
 		Queue: Fakestructure
-		Prerequisites: weap, ~structures.allies, ~techlevel.medium
+		Prerequisites: weap, ~structures.allies, ~player.can.fakes, ~techlevel.medium
 		Description: Looks like a Service Depot
 		Icon: fake-icon
 	Tooltip:
@@ -232,7 +232,7 @@ SYRF:
 	Buildable:
 		BuildPaletteOrder: 6
 		Queue: Fakestructure
-		Prerequisites: proc, ~structures.allies, ~techlevel.medium
+		Prerequisites: proc, ~structures.allies, ~player.can.fakes, ~techlevel.medium
 		Description: Looks like a Ship Yard
 		Icon: fake-icon
 	Tooltip:
@@ -279,7 +279,7 @@ SPEF:
 	Buildable:
 		BuildPaletteOrder: 9
 		Queue: Fakestructure
-		Prerequisites: syrd, ~structures.allies, ~techlevel.medium
+		Prerequisites: syrd, ~structures.allies, ~player.can.fakes, ~techlevel.medium
 		Description: Looks like a Sub Pen
 		Icon: fake-icon
 	Tooltip:
@@ -327,7 +327,7 @@ AFLF:
 	Buildable:
 		BuildPaletteOrder: 10
 		Queue: Fakestructure
-		Prerequisites: dome, ~structures.allies, ~techlevel.medium
+		Prerequisites: dome, ~structures.allies, ~player.can.fakes, ~techlevel.medium
 		Description: Looks like an Airfield
 		Icon: fake-icon
 	Building:
@@ -356,7 +356,7 @@ HPAF:
 	Buildable:
 		BuildPaletteOrder: 13
 		Queue: Fakestructure
-		Prerequisites: dome, ~structures.allies, ~techlevel.medium
+		Prerequisites: dome, ~structures.allies, ~player.can.fakes, ~techlevel.medium
 		Description: Looks like an Helipad
 		Icon: fake-icon
 	Building:
@@ -390,7 +390,7 @@ DOMF:
 	Buildable:
 		BuildPaletteOrder: 11
 		Queue: Fakestructure
-		Prerequisites: proc, ~structures.allies, ~techlevel.medium
+		Prerequisites: proc, ~structures.allies, ~player.can.fakes, ~techlevel.medium
 		Description: Looks like a Radar Dome
 		Icon: fake-icon
 	Building:
@@ -421,7 +421,7 @@ ATEF:
 	Buildable:
 		BuildPaletteOrder: 14
 		Queue: Fakestructure
-		Prerequisites: dome, techcenter, ~structures.allies, ~techlevel.unrestricted
+		Prerequisites: dome, techcenter, ~structures.allies, ~player.can.fakes, ~techlevel.unrestricted
 		BuildLimit: 1
 		Description: Looks like an Space Program\nMaximum 1 can be built
 		Icon: fake-icon
@@ -455,7 +455,7 @@ STEF:
 	Buildable:
 		BuildPaletteOrder: 13
 		Queue: Supportstruct
-		Prerequisites: weap, dome, ~structures.allies,~techlevel.high
+		Prerequisites: weap, dome, ~structures.allies, ~player.can.fakes, ~techlevel.high
 		Description: Looks like Tech Center
 		Icon: fake-icon
 	Building:
@@ -486,7 +486,7 @@ PDOF:
 	Buildable:
 		BuildPaletteOrder: 15
 		Queue: Fakestructure
-		Prerequisites: techcenter, ~structures.allies, ~techlevel.unrestricted
+		Prerequisites: techcenter, ~structures.allies, ~player.can.fakes, ~techlevel.unrestricted
 		BuildLimit: 1
 		Description: Looks like a Chronosphere\nMaximum 1 can be built
 		Icon: fake-icon
@@ -520,7 +520,7 @@ MSLF:
 	Buildable:
 		BuildPaletteOrder: 16
 		Queue: Fakestructure
-		Prerequisites: atek, ~structures.allies, ~techlevel.unrestricted
+		Prerequisites: atek, ~structures.allies, ~player.can.fakes, ~techlevel.unrestricted
 		BuildLimit: 1
 		Description: Looks like a Missile Silo\nMaximum 1 can be built
 		Icon: fake-icon
@@ -549,7 +549,7 @@ FACF:
 	Buildable:
 		BuildPaletteOrder: 3
 		Queue: Fakestructure
-		Prerequisites: fix, ~structures.allies, ~techlevel.medium
+		Prerequisites: fix, ~structures.allies, ~player.can.fakes, ~techlevel.medium
 		Description: Looks like a Construction Yard
 		Icon: fake-icon
 	Tooltip:
@@ -582,7 +582,7 @@ FGAP:
 	Buildable:
 		BuildPaletteOrder: 7
 		Queue: Fakestructure
-		Prerequisites: techcenter, ~structures.allies, ~techlevel.high
+		Prerequisites: techcenter, ~structures.allies, ~player.can.fakes, ~techlevel.high
 		Description: Looks like a Gap Generator
 		Icon: fake-icon
 	Tooltip:
@@ -604,3 +604,103 @@ FGAP:
 		Image: GAP
 	Valued:
 		Cost: 200
+
+1TNF:
+	Inherits: 1TNK
+	Buildable:
+		BuildPaletteOrder: 998
+		Prerequisites: ~disabled
+		Description: Looks like a Light Tank
+		Icon: fake-icon
+	Tooltip:
+		Name: Fake Light Tank
+		GenericName: Light Tank
+		GenericVisibility: Enemy
+		GenericStancePrefix: False
+	Valued:
+		Cost: 125
+	WithDecoration@fake:
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-fake
+		ReferencePoint: Top
+		ZOffset: 256
+	Explodes:
+		Weapon: Demolish
+		DamageThreshold: 70
+	Armament@PRIMARY:
+		Weapon: 25mm.Decoy
+		Recoil: 0
+	-Armament@SECONDARY:
+	-WithMuzzleOverlay:
+	-SpawnActorOnDeath:
+	RenderSprites:
+		Image: 1TNK
+	Voiced:
+		VoiceSet: RoboticVoice
+
+2TNF:
+	Inherits: 2TNK
+	Buildable:
+		BuildPaletteOrder: 999
+		Prerequisites: ~disabled
+		Description: Looks like a Medium Tank
+		Icon: fake-icon
+	Tooltip:
+		Name: Fake Medium Tank
+		GenericName: Medium Tank
+		GenericVisibility: Enemy
+		GenericStancePrefix: False
+	Valued:
+		Cost: 175
+	WithDecoration@fake:
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-fake
+		ReferencePoint: Top
+		ZOffset: 256
+	Explodes:
+		Weapon: Demolish
+		DamageThreshold: 70
+	Armament@PRIMARY:
+		Weapon: 90mm.decoy
+		Recoil: 0
+	-Armament@SECONDARY:
+	-WithMuzzleOverlay:
+	-SpawnActorOnDeath:
+	RenderSprites:
+		Image: 2TNK
+	Voiced:
+		VoiceSet: RoboticVoice
+
+ARTF:
+	Inherits: ARTY
+	Buildable:
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+		Description: Looks like a Artillery
+		Icon: fake-icon
+	Tooltip:
+		Name: Fake Artillery
+		GenericName: Artillery
+		GenericVisibility: Enemy
+		GenericStancePrefix: False
+	Valued:
+		Cost: 190
+	WithDecoration@fake:
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-fake
+		ReferencePoint: Top
+		ZOffset: 256
+	Explodes:
+		Weapon: Demolish
+		DamageThreshold: 70
+	Armament:
+		Weapon: 155mm.decoy
+		Recoil: 0
+	-WithMuzzleOverlay:
+	RenderSprites:
+		Image: ARTY
+	Voiced:
+		VoiceSet: RoboticVoice

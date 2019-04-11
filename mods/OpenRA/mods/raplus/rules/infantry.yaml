@@ -625,7 +625,7 @@ SPY:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 10
-		Prerequisites: ~barracks, dome, ~infantry.allies, ~!industryplant.on, ~techlevel.medium
+		Prerequisites: ~barracks, dome, ~infantry.allies, ~!player.britain, ~!industryplant.on, ~techlevel.medium
 		Description: Infiltrates enemy structures for intel or sabotage\nExact effect depends on the building infiltrated\nCan disguise as enemy infantry\nLoses disguise when attacking\nCan detect spies at close range\n Strong vs Infantry\n Weak vs Vehicles, Aircraft
 	Valued:
 		Cost: 500
@@ -777,7 +777,7 @@ FTRP:
 	Buildable:
 		BuildPaletteOrder: 11
 		Prerequisites: ~barracks, fcom.buildable, ~infantry.soviet, ~!industryplant.on, ~techlevel.medium
-		Description: Anti-aircraft Infantry\nCannot attack Ground units\n Strong vs Aircraft\n Weak vs Ground units
+		Description: Infantry armed with Flak-Gun\nCannot attack Ground units\n Strong vs Aircraft\n Weak vs Ground units
 	Tooltip:
 		Name: Flak Trooper
 	Armament@PRIMARY:
@@ -802,7 +802,7 @@ SNIP:
 		GenericName: Marksman
 	Buildable:
 		BuildPaletteOrder: 12
-		Prerequisites: ~barracks, dome, ~infantry.allies, ~!industryplant.on, ~techlevel.medium
+		Prerequisites: ~barracks, dome, ~infantry.allies, ~!player.is.subfaction, ~!industryplant.on, ~techlevel.medium
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		Description: Sharpshooter infantry\nCan cloak when idle\nDetects cloaked units at close range\n Strong vs Infantry\n Weak vs Vehicles, Aircraft
@@ -1037,6 +1037,9 @@ VOLK:
 	-Cloneable:
 	MapEditorData:
 		Categories: Infantry
+	Targetable:
+		RequiresCondition: !parachute
+		TargetTypes: Ground, Disguise
 
 EINSTEIN:
 	Inherits: ^CivInfantry
@@ -1341,3 +1344,204 @@ PLOT.RE:
 	DeliversExperience:
 	RenderSprites:
 		Image: plot
+
+TTRP:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 100
+		Prerequisites: ~barracks, tsla, techcenter, ~!industryplant.on, ~player.russia, ~techlevel.high
+		Description: Heavily armored Infantry\n Amplified Tesla weaponry ensures\nbrief short-circuit on Vehicles\nCannot be crushed unless its Mammoth Tank\n Strong vs Infantry, Vehicles\n Weak vs Aircraft
+	Valued:
+		Cost: 650
+	Tooltip:
+		Name: Tesla Trooper
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 6500
+	Armor:
+		Type: Heavy
+	Mobile:
+		Voice: Move
+		Speed: 48
+	RevealsShroud:
+		Range: 5c0
+	Armament@PRIMARY:
+		Weapon: PortaTeslaHeavy
+		LocalOffset: 427,0,341
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: PortaTeslaHeavy
+	TakeCover:
+		ProneOffset: 227,0,-245
+	AttackFrontal:
+		Voice: Attack
+	AttackMove:
+		Voice: Move
+	Passenger:
+		Voice: Move
+	Guard:
+		Voice: Move
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		RequiresCondition: !parachute
+	WithInfantryBody@PARACHUTE:
+		StandSequences: parachute
+		RequiresCondition: parachute
+	Voiced:
+		VoiceSet: ShokVoice
+	ProducibleWithLevel:
+		Prerequisites: infantry.upgraded
+	Passenger:
+		PipType: Yellow
+		Weight: 3
+	Power: 
+		Amount: -2
+	Crushable:
+		CrushClasses: heavywall
+	-Cloneable:
+	Targetable:
+		RequiresCondition: !parachute
+		TargetTypes: Ground, HeavyInfantry, Disguise
+
+DOG.bomb:
+	Inherits: ^Soldier
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Dog
+		BuildPaletteOrder: 100
+		Prerequisites: ~kenn, fix, ~infantry.soviet, ~player.ukraine, ~!industryplant.on, ~techlevel.medium
+		Description: Dog carrying an Bomb vest\n Strong vs Infantry\n Weak vs Vehicles, Aircraft
+	Valued:
+		Cost: 350
+	Tooltip:
+		Name: Bomb Dog
+		GenericName: Dog
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	SelectionDecorations:
+	Health:
+		HP: 1800
+	Mobile:
+		Speed: 99
+		Voice: Move
+		RequiresCondition: !attack-cooldown
+	Guard:
+		Voice: Move
+	Passenger:
+		Voice: Move
+	RevealsShroud:
+		Range: 3c512
+	Armament:
+		Weapon: DogJaw
+		ReloadingCondition: attack-cooldown
+	AttackLeap:
+		Voice: Attack
+		PauseOnCondition: attacking || attack-cooldown
+	AttackMove:
+		Voice: Move
+	GrantConditionWhileAiming:
+		Condition: run
+	AutoTarget:
+		InitialStance: AttackAnything
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: Infantry
+	Targetable:
+		TargetTypes: Ground, Infantry
+	WithInfantryBody:
+		MoveSequence: walk
+		StandSequences: stand
+		DefaultAttackSequence: eat
+		RequiresCondition: !run
+	WithInfantryBody@RUN:
+		MoveSequence: run
+		RequiresCondition: run
+	SpeedMultiplier:
+		Modifier: 150
+		RequiresCondition: run
+	IgnoresDisguise:
+	DetectCloaked:
+		CloakTypes: Cloak, Thief
+	Voiced:
+		VoiceSet: DogVoice
+	-TakeCover:
+	Passenger:
+		PipType: Red
+		Weight: 2
+	Explodes@UNITEXPLODES:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+		DamageSource: Killer
+	GrantConditionOnAttack:
+		Condition: triggered
+	GrantConditionOnDeploy:
+		DeployedCondition: triggered
+	KillsSelf:
+		RequiresCondition: triggered
+
+DESO:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 100
+		BuildLimit: 2
+		Prerequisites: ~barracks, bio.buildable, ~player.kazakh, ~techlevel.infonly
+		Description: Power armored Infantry armed\nwith Nuclear rocket launcher\nMaximum 2 can be built\nExplodes akin to V2 on death\nCannot attack Air units\n Strong vs Buildings, Vehicles\n Weak vs Defenses, Aircraft\nRequires an large minimum firing distance
+	Valued:
+		Cost: 1200
+	Mobile:
+		Speed: 42
+	Tooltip:
+		Name: Desolator
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 6500
+	Armament@PRIMARY:
+		Weapon: NuclearRocket
+		FireDelay: 9
+		LocalOffset: 0,0,555
+		PauseOnCondition: !ammo
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: NuclearRocket
+		FireDelay: 9
+		PauseOnCondition: !ammo
+	TakeCover:
+		ProneOffset: 384,0,-395
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		RequiresCondition: !parachute
+	WithInfantryBody@PARACHUTE:
+		StandSequences: parachute
+		RequiresCondition: parachute
+	ProducibleWithLevel:
+		Prerequisites: infantry.upgraded
+	AutoTarget:
+		ScanRadius: 5
+	Targetable:
+		RequiresCondition: !parachute
+		TargetTypes: Ground, HeavyInfantry, Disguise
+	Passenger:
+		PipType: Red
+		Weight: 4
+	RenderRangeCircle:
+	AmmoPool:
+		Armaments: primary
+		Ammo: 1
+		PipCount: 1
+		PipType: Blue
+		AmmoCondition: ammo
+	ReloadAmmoPool:
+		Delay: 150
+		Count: 1
+	ReloadArmamentsBar:
+	Explodes@UNITEXPLODES:
+		Weapon: V2Explode
+	-Wanders:

@@ -1,0 +1,90 @@
+
+25mm.britain:
+	Inherits: 25mm
+	Warhead@1Dam: SpreadDamage
+		Damage: 2750
+
+25mm.france:
+	Inherits: 25mm
+	ReloadDelay: 18
+	Warhead@1Dam: SpreadDamage
+		Damage: 2250
+
+90mm.britain:
+	Inherits: 90mm
+	Warhead@1Dam: SpreadDamage
+		Damage: 4500
+
+90mm.france:
+	Inherits: 90mm
+	ReloadDelay: 45
+	Warhead@1Dam: SpreadDamage
+		Damage: 3500
+
+130mm.britain:
+	Inherits: 130mm
+	Warhead@1Dam: SpreadDamage
+		Damage: 8750
+
+130mm.france:
+	Inherits: 130mm
+	ReloadDelay: 72
+	Warhead@1Dam: SpreadDamage
+		Damage: 7250
+
+25mm.decoy:
+	Inherits: 25mm
+	-Report:
+	-Projectile: Bullet
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Damage: 0
+	-Warhead@3Eff: CreateEffect
+	-Warhead@4EffWater: CreateEffect
+
+90mm.decoy:
+	Inherits: 90mm
+	-Report:
+	-Projectile: Bullet
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Damage: 0
+	-Warhead@2Smu: LeaveSmudge
+	-Warhead@3Eff: CreateEffect
+	-Warhead@4EffWater: CreateEffect
+
+155mm.decoy:
+	Inherits: 155mm
+	-Report:
+	-Projectile: Bullet
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Damage: 0
+	-Warhead@2Smu: LeaveSmudge
+	-Warhead@3Eff: CreateEffect
+	-Warhead@4EffWater: CreateEffect
+
+105mm.ukraine:
+	Inherits: ^Cannon
+	Range: 5c768
+	ReloadDelay: 78
+	Burst: 2
+	BurstDelays: 4
+	Warhead@1Dam: SpreadDamage
+		Versus:
+			Heavy: 115
+
+105mmSingular.ukraine:
+	Inherits: 105mm.ukraine
+	ReloadDelay: 65
+	-Burst:
+	-BurstDelays:
+	Warhead@1Dam: SpreadDamage
+		Versus:
+			Heavy: 115
+
+120mm.ukraine:
+	Inherits: 120mm
+	Range: 5c768
+	ReloadDelay: 100
+	

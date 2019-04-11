@@ -6,7 +6,7 @@ ss:
 
 pt:
 	Inherits: emp-overlay
-	idle: hydr
+	idle:
 		Facings: 16
 	turret: pttur
 		Facings: 32
@@ -149,6 +149,14 @@ tbt:
 tbt.discount:
 	Defaults: tbt
 	Inherits: tbt
+
+tbt.russia:
+	Defaults: tbt
+	Inherits: tbt
+
+tbt.russia.discount:
+	Defaults: tbt.russia
+	Inherits: tbt.russia
 
 advsub:
 	Inherits: emp-overlay
@@ -315,3 +323,34 @@ mgnm:
 mgnm.discount:
 	Defaults: mgnm
 	Inherits: mgnm
+
+fsub:
+	Inherits: emp-overlay
+	idle:
+		Facings: 16
+	turret: ftnk-tur
+		Facings: 32
+		UseClassicFacingFudge: True
+	icon: ssicon
+
+fsub.discount:
+	Defaults: fsub
+	Inherits: fsub
+
+fsub.ukraine:
+	Defaults: fsub
+	Inherits: fsub
+
+fsub.ukraine.discount
+	Defaults: fsub.ukraine
+	Inherits: fsub.ukraine
+
+icbmsub:
+	Inherits: emp-overlay
+	idle:
+		Facings: 16
+	icon: icbmsubicon
+
+icbmsub.discount:
+	Defaults: icbmsub
+	Inherits: icbmsub

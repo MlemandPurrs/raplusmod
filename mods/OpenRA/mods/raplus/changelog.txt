@@ -8,7 +8,7 @@ Added three new types of Giant Ant: Tesla Ant(blue) that attacks Tesla Tank weap
 Advice intervall for Low Power and Silos Needed audio increased to every 5 min
 Units armed with Tesla weaponry uses power now, -2 Power for each Shock Trooper and -4 for each Tesla Tank and Tesla Boat
 Only Veteran units can eject an Pilot, the Pilot can enter any friendly vehicle or aircraft for promoting it, increasing recipient's rank by rank of himself. Air units have more probability of spawning an survivor than ground vehicles, the chance decreases as the rank increases.
-
+Chronosphere duration increased to 30s for regular version, advanced stays at 20s
 
 Mapping changes
 Maps are properly categorized now (1v1, 2v2, 3v3, FFA, Naval, Fun, Mini, etc.)
@@ -93,6 +93,7 @@ Radar Dome
  - Spy Plane moved to Radar Dome(for Soviet)
  - Removed the bib infront of
  - New scouting support power for Allies: Radar Scan, does same as spy plane but in 5c radius, prequisites Tech Center
+ - Detection radius fixated to 6c0 now
 Airfield
  - Can be built by Allies too
  - Cost increased to 750$ from 500$
@@ -262,6 +263,7 @@ NEW: Stinger Soldier
  - Allies gained an new Infantry unit
  - Can target Aircraft only
  - Transferred seperate AA projectile of Rocket Soldier here
+ - Boosted range of weapon by +2
 NEW: Flak Trooper
  - Soviets gained an new Infantry unit
  - Is armed with weaker version of the Flak Truck's gun
@@ -294,13 +296,14 @@ NEW: Volkov
  - Is armed with anti-materiel rifle and C4
  - Cannot be crushed by anything smaller than a Mammoth Tank
 Shock Trooper
+ - Can be built by any Soviet
  - Price increased to 425$ from 350$
 Thief
  - Gained an new Icon
  - Can no longer infiltrate Silos
  - Steals 35% instead 50%
 
- 
+
 Vehicle changes
 Added new vehicles: MRLS (Allies), Phase Tank (Allies), Medium Tank (Soviet), APC (Soviet), Mortar Track (Soviet), Flame Tank (Soviet)
 Added Weight values for all vehicles
@@ -325,7 +328,7 @@ Flak Truck
  - Can carry up to 2 Infantry, with weight limit of 4
 APC
  - Transferred to Allies
- - Cost reduced to 500$ from 850$
+ - Cost reduced to 450$ from 850$
  - Speed reduced to 128 from 142
  - Maximum carryable Passenger weight bumped to 8 from 5, slot amount remains fixed at 5
 NEW: Soviet APC (BTR)
@@ -334,18 +337,19 @@ NEW: Soviet APC (BTR)
  - Less durable than Allies APC
  - Same carry capacity as Allies APC
 Light Tank
- - Cost reduced to 600$ from 700$
+ - Cost reduced to 500$ from 700$
  - Weaponry is the same range as every other Tank now
  - Became semi-amphibian. Now it can pass through Rivers at half speed, without needing an Ford to do so
  - Has gained an secondary Rocket pod attack, that fires one E3 shot with long reload of 300
 Medium Tank
- - Cost reduced to 800$ from 850$
+ - Cost reduced to 700$ from 850$
  - Gained an additional weapon to use versus Infantry: An weak machinegun that is equal to Rifle Infantry's weapon
 NEW: Medium Tank (Soviet)
  - Soviet gets their own version of Medium Tank
  - Is essentially an single barreled Heavy Tank, sporting an singular cannon version of Heavy Tank's weapon
  - Moves at same speed as Heavy Tank
  - Can be built at same price as Allies Medium Tank
+ - Costs 800$
 Artillery
  - Cost down to 750$ from 850$
 V2 Rocket Launcher

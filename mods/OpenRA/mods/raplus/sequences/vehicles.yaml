@@ -202,6 +202,7 @@ btr.discount:
 		Facings: 32
 		UseClassicFacingFudge: True
 	icon: 1tnkicon
+	fake-icon: 1tnficon
 
 1tnk.destroyed:
 	idle: 1tnk
@@ -216,6 +217,30 @@ btr.discount:
 1tnk.discount:
 	Defaults: 1tnk
 	Inherits: 1tnk
+
+1tnk.britain:
+	Defaults: 1tnk
+	Inherits: 1tnk
+
+1tnk.france:
+	Defaults: 1tnk
+	Inherits: 1tnk
+
+1tnk.germany:
+	Defaults: 1tnk
+	Inherits: 1tnk
+
+1tnk.britain.discount:
+	Defaults: 1tnk.britain
+	Inherits: 1tnk.britain
+
+1tnk.france.discount:
+	Defaults: 1tnk.france
+	Inherits: 1tnk.france
+
+1tnk.germany.discount:
+	Defaults: 1tnk.germany
+	Inherits: 1tnk.germany
 
 2tnk:
 	Inherits: emp-overlay
@@ -233,6 +258,7 @@ btr.discount:
 		Length: 6
 		Facings: 8	
 	icon: 2tnkicon
+	fake-icon: 2tnficon
 
 2tnk.destroyed:
 	idle: 2tnk
@@ -248,6 +274,30 @@ btr.discount:
 2tnk.discount:
 	Defaults: 2tnk
 	Inherits: 2tnk
+
+2tnk.britain:
+	Defaults: 2tnk
+	Inherits: 2tnk
+
+2tnk.france:
+	Defaults: 2tnk
+	Inherits: 2tnk
+
+2tnk.germany:
+	Defaults: 2tnk
+	Inherits: 2tnk
+
+2tnk.britain.discount:
+	Defaults: 2tnk.britain
+	Inherits: 2tnk.britain
+
+2tnk.france.discount:
+	Defaults: 2tnk.france
+	Inherits: 2tnk.france
+
+2tnk.germany.discount:
+	Defaults: 2tnk.germany
+	Inherits: 2tnk.germany
 
 2tnk.soviet:
 	Inherits: emp-overlay
@@ -281,6 +331,30 @@ btr.discount:
 	Defaults: 2tnk.soviet
 	Inherits: 2tnk.soviet
 
+2tnk.russia:
+	Defaults: 2tnk.soviet
+	Inherits: 2tnk.soviet
+
+2tnk.ukraine:
+	Defaults: 2tnk.soviet
+	Inherits: 2tnk.soviet
+
+2tnk.kazakh:
+	Defaults: 2tnk.soviet
+	Inherits: 2tnk.soviet
+
+2tnk.russia.discount:
+	Defaults: 2tnk.russia
+	Inherits: 2tnk.russia
+
+2tnk.ukraine.discount:
+	Defaults: 2tnk.ukraine
+	Inherits: 2tnk.ukraine
+
+2tnk.kazakh.discount:
+	Defaults: 2tnk.kazakh
+	Inherits: 2tnk.kazakh
+
 3tnk:
 	Inherits: emp-overlay
 	idle:
@@ -309,6 +383,30 @@ btr.discount:
 3tnk.discount:
 	Defaults: 3tnk
 	Inherits: 3tnk
+
+3tnk.russia:
+	Defaults: 3tnk
+	Inherits: 3tnk
+
+3tnk.ukraine:
+	Defaults: 3tnk
+	Inherits: 3tnk
+
+3tnk.kazakh:
+	Defaults: 3tnk
+	Inherits: 3tnk
+
+3tnk.russia.discount:
+	Defaults: 3tnk.russia
+	Inherits: 3tnk.russia
+
+3tnk.ukraine.discount:
+	Defaults: 3tnk.ukraine
+	Inherits: 3tnk.ukraine
+
+3tnk.kazakh.discount:
+	Defaults: 3tnk.kazakh
+	Inherits: 3tnk.kazakh
 
 4tnk:
 	Inherits: emp-overlay
@@ -339,6 +437,30 @@ btr.discount:
 	Defaults: 4tnk
 	Inherits: 4tnk
 
+4tnk.russia:
+	Defaults: 4tnk
+	Inherits: 4tnk
+
+4tnk.ukraine:
+	Defaults: 4tnk
+	Inherits: 4tnk
+
+4tnk.kazakh:
+	Defaults: 4tnk
+	Inherits: 4tnk
+
+4tnk.russia.discount:
+	Defaults: 4tnk.russia
+	Inherits: 4tnk.russia
+
+4tnk.ukraine.discount:
+	Defaults: 4tnk.ukraine
+	Inherits: 4tnk.ukraine
+
+4tnk.kazakh.discount:
+	Defaults: 4tnk.kazakh
+	Inherits: 4tnk.kazakh
+
 tnkd:
 	Inherits: emp-overlay
 	idle:
@@ -358,6 +480,30 @@ tnkd.discount:
 	Defaults: tnkd
 	Inherits: tnkd
 
+tnkd.britain:
+	Defaults: tnkd
+	Inherits: tnkd
+
+tnkd.france:
+	Defaults: tnkd
+	Inherits: tnkd
+
+tnkd.germany:
+	Defaults: tnkd
+	Inherits: tnkd
+
+tnkd.britain.discount:
+	Defaults: tnkd.britain
+	Inherits: tnkd.britain
+
+tnkd.france.discount:
+	Defaults: tnkd.france
+	Inherits: tnkd.france
+
+tnkd.germany.discount:
+	Defaults: tnkd.germany
+	Inherits: tnkd.germany
+
 arty:
 	Inherits: emp-overlay
 	idle:
@@ -366,6 +512,7 @@ arty:
 	muzzle: gunfire2
 		Length: 5
 	icon: artyicon
+	fake-icon: artficon
 
 arty.discount:
 	Defaults: arty
@@ -456,6 +603,14 @@ mrj.discount:
 	Defaults: mrj
 	Inherits: mrj
 
+mrj.britain:
+	Defaults: mrj
+	Inherits: mrj
+
+mrj.britain.discount:
+	Defaults: mrj
+	Inherits: mrj
+
 mgg:
 	Inherits: emp-overlay
 	idle:
@@ -510,6 +665,14 @@ dtrk.discount:
 	Defaults: dtrk
 	Inherits: dtrk
 
+dtrk.ukraine:
+	Defaults: dtrk
+	Inherits: dtrk
+
+dtrk.ukraine.discount:
+	Defaults: dtrk
+	Inherits: dtrk
+
 ctnk:
 	Inherits: emp-overlay
 	idle:
@@ -520,6 +683,14 @@ ctnk:
 	icon: ctnkicon
 
 ctnk.discount:
+	Defaults: ctnk
+	Inherits: ctnk
+
+ctnk.germany:
+	Defaults: ctnk
+	Inherits: ctnk
+
+ctnk.germany.discount:
 	Defaults: ctnk
 	Inherits: ctnk
 
@@ -588,9 +759,17 @@ ptnk:
 		UseClassicFacingFudge: True
 	muzzle: gunfire2
 		Length: *
-	icon: 1tnkicon
+	icon: ptnkicon
 
 ptnk.discount:
+	Defaults: ptnk
+	Inherits: ptnk
+
+ptnk.france:
+	Defaults: ptnk
+	Inherits: ptnk
+
+ptnk.france.discount:
 	Defaults: ptnk
 	Inherits: ptnk
 
@@ -609,6 +788,14 @@ papc:
 	Inherits: stnk
 
 papc.discount:
+	Defaults: stnk
+	Inherits: stnk
+
+papc.france:
+	Defaults: stnk
+	Inherits: stnk
+
+papc.france.discount:
 	Defaults: stnk
 	Inherits: stnk
 
@@ -666,6 +853,14 @@ prsm.discount:
 	Defaults: prsm
 	Inherits: prsm
 
+prsm.germany:
+	Defaults: prsm
+	Inherits: prsm
+
+prsm.germany.discount:
+	Defaults: prsm.germany
+	Inherits: prsm.germany
+
 ra2.ttnk:
 	Inherits: emp-overlay
 	idle: ra2ttnk
@@ -675,3 +870,52 @@ ra2.ttnk:
 		Facings: 32
 		UseClassicFacingFudge: True
 	icon: ra2ttnkicon
+
+ra2.ttnk.discount:
+	Defaults: ra2.ttnk
+	Inherits: ra2.ttnk
+
+4tnk.flame:
+	Inherits: emp-overlay
+	idle: 4tnk-kv8
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret: 4tnk-kv8
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	muzzle: gunfire2
+		Length: 5
+	icon: 4tnk-kv8-icon
+
+4tnk.flame.destroyed:
+	idle: 4tnk-kv8
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+	turret: 4tnk-kv8
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+
+4tnk.flame.discount:
+	Defaults: 4tnk.flame
+	Inherits: 4tnk.flame
+
+v3rl:
+	Defaults: v2rl
+	Inherits: v2rl
+
+v3rl.discount
+	Defaults: v3rl
+	Inherits: v3rl
+
+icbm:
+	Defaults: v2rl
+	Inherits: v2rl
+	icon: icbmicon
+
+icbm.discount
+	Defaults: icbm
+	Inherits: icbm

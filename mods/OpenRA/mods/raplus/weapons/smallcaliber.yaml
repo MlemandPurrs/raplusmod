@@ -364,12 +364,16 @@ M60mg.Inf:
 	Range: 2c512
 	Report: gun5.aud
 	ValidTargets: Ground, Infantry
-	InvalidTargets: Vehicle, Water, Structure, Wall, Husk
+	InvalidTargets: Vehicle, Water, Structure, Wall, Husk, HeavyInfantry
 	Projectile: Bullet
 		Speed: 1c682
 	Warhead@1Dam: SpreadDamage
 		Spread: 42
-		Damage: 15000
+		Damage: 10000
+		Versus:
+			None: 100
+			Light: 75
+			Heavy: 50
 		ValidTargets: Barrel, Infantry
 		DamageTypes: Prone50Percent, TriggerProne, DefaultDeath
 

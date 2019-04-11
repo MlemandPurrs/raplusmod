@@ -228,3 +228,22 @@ Cursors:
 			Start: 17
 		assaultmove-blocked-minimap:
 			Start: 19
+	ioncannoncurs.shp: cursor
+		ioncannon:
+			Start: 0
+			Length: 16
+	mouse_apolyton2.shp: cursor
+		empstrike:
+			Start: 0
+			Length: 6
+		airdrop:
+			Start: 7
+			Length: 5
+			Tick: 80
+		airstrike:
+			Start: 12
+			Length: 14
+	gpstargetcurs.shp: cursor
+		gps-target:
+			Start: 0
+			Length: 8

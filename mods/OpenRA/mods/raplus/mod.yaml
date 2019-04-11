@@ -81,6 +81,7 @@ Rules:
 	raplus|rules/ships.yaml
 	raplus|rules/fakes.yaml
 	raplus|rules/tech.yaml
+	raplus|rules/country-unit-duplicates.yaml
 	raplus|rules/costreduction-duplicates.yaml
 
 Sequences:
@@ -165,7 +166,8 @@ Weapons:
 	raplus|weapons/other.yaml
 	raplus|weapons/smallcaliber.yaml
 	raplus|weapons/superweapons.yaml
-	
+	raplus|weapons/country-weapon-duplicates.yaml
+
 Voices:
 	raplus|audio/voices.yaml
 

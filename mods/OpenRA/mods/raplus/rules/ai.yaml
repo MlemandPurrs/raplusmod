@@ -100,8 +100,8 @@ Player:
 					CheckRadius: 2c0
 	HarvesterBotModule:
 		RequiresCondition: enable-ai-player
-		HarvesterTypes: harv
-		RefineryTypes: proc
+		HarvesterTypes: harv, harv.soviet
+		RefineryTypes: proc, proc.soviet
 	BaseBuilderBotModule@aiplayer:
 		RequiresCondition: enable-ai-player
 		MinimumExcessPower: 60
@@ -120,25 +120,24 @@ Player:
 		BuildingLimits:
 			proc: 4
 			proc.soviet: 4
-			barr: 1
-			tent: 1
+			barr: 2
+			tent: 2
 			dome: 1
-			weap: 1
+			weap: 3
 			spen: 1
 			syrd: 1
 			hpad: 4
 			afld: 4
 			atek: 1
 			stek: 1
-			spro: 1
 			fix: 1
 			iron: 1
 			pdox: 1
 		BuildingFractions:
 			proc: 15
 			proc.soviet: 15
-			tent: 1
-			barr: 1
+			tent: 2
+			barr: 2
 			kenn: 1
 			dome: 1
 			weap: 6
@@ -147,16 +146,18 @@ Player:
 			syrd: 1
 			afld: 4
 			pbox: 7
+			hbox: 3
 			gun: 7
 			ftur: 10
 			tsla: 5
+			htur: 3
 			gap: 2
 			fix: 1
 			agun: 5
-			sam: 1
+			sam: 3
+			hsam: 3
 			atek: 1
 			stek: 1
-			spro: 1
 			mslo: 1
 			iron: 1
 			pdox: 1
@@ -173,8 +174,8 @@ Player:
 		SquadSizeRandomBonus: 16
 		RushInterval: 400
 		AttackScanRadius: 16
-		ExcludeFromSquadsTypes: harv, harv.soviet, mcv, dog
-		NavalUnitsTypes: ss,msub,dd,ca,lst,pt
+		ExcludeFromSquadsTypes: harv, harv.soviet, mcv, dog, mnly
+		NavalUnitsTypes: ss,msub,dd,ca,lst,pt,ca2,pt2,dd2,scrp,tbt,asub,lun
 		ConstructionYardTypes: fact
 		NavalProductionTypes: spen,syrd
 	UnitBuilderBotModule@aiplayer:
@@ -182,32 +183,38 @@ Player:
 		UnitsToBuild:
 			e1: 65
 			e2: 15
+			gren: 20
 			e3: 30
 			e4: 15
 			dog: 15
+			mgi: 25
 			shok: 15
+			atgm: 15
 			rpg: 10
 			stng: 5
-			mgi: 25
-			dcka: 10
+			ftrp: 10
+			snip: 5
+			mrtr: 10
 			harv: 15
-			apc: 30
+			harv.soviet: 15
 			jeep: 20
-			arty: 15
-			nona: 20
-			v2rl: 40
-			mrls: 30
 			ftrk: 30
+			apc: 30
+			btr: 15
 			1tnk: 40
 			2tnk: 50
 			2tnk.soviet: 45
 			3tnk: 35
+			tnkd: 20
+			arty: 15
+			nona: 20
+			v2rl: 40
+			mrls: 30
 			4tnk: 25
-			tnkd: 15
 			ttnk: 25
 			prsm: 20
 			mbun: 15
-			stnk: 5
+			papc: 5
 			ptnk: 5
 			mnly: 5
 			iroq: 15
@@ -221,12 +228,16 @@ Player:
 			spit: 15
 			ss: 10
 			msub: 10
+			asub: 10
 			dd: 10
 			dd2: 10
 			ca: 10
 			ca2: 10
 			pt: 10
 			pt2: 10
+			tbt: 5
+			scrp: 5
+			lun: 10
 		UnitLimits:
 			dog: 4
 			harv: 8

@@ -2,6 +2,12 @@ GenericVoice:
 	Variants:
 		allies: .v01,.v03
 		soviet: .r01,.r03
+		britain: .v01,.v03
+		france: .v01,.v03
+		germany: .v01,.v03
+		russia: .r01,.r03
+		ukraine: .r01,.r03
+		kazakh: .r01,.r03
 	Voices:
 		Select: await1,ready,report1,yessir1
 		Action: ackno,affirm1,noprob,overout,ritaway,roger,ugotit
@@ -14,6 +20,12 @@ VehicleVoice:
 	Variants:
 		allies: .v00,.v02
 		soviet: .r00,.r02
+		britain: .v00,.v02
+		france: .v00,.v02
+		germany: .v00,.v02
+		russia: .r00,.r02
+		ukraine: .r00,.r02
+		kazakh: .r00,.r02
 	Voices:
 		Select: vehic1,yessir1,report1,await1
 		Action: ackno,affirm1
@@ -155,3 +167,14 @@ RoboticVoice:
 		Select: vsensela, vsenselb, vsenselc, vsenseld
 		Move: vsenmova, vsenmovb, vsenmovc
 		Action: vsenmova, vsenmovb, vsenmovc
+
+KirovVoice:
+	Voices:
+		Select: kirsea,kirseb,kirsec,kirsed
+		Move: kirmoa,kirmob,kirmoc
+		Attack: kirata,kiratb,kiratc,kiratd
+		Action: kirmoa,kirmob,kirmoc
+		Die: kirdia,kirdib,kirdic,kirdid
+		Burned: kirdia,kirdib,kirdic,kirdid
+		Zapped: kirdia,kirdib,kirdic,kirdid
+		Build: kirsea

@@ -63,13 +63,80 @@ TRAN.SOVIET:
 		BuildAtProductionType: Helicopter
 		BuildPaletteOrder: 3
 		Prerequisites: hpad, fix, ~helicopters.soviet, ~!industryplant.on, ~techlevel.medium
-		Description: Fast Infantry Transport Helicopter\nCan carry up to 5 Infantry\nor carry an Light or Medium vehicle\n Unarmed
+		Description: Fast Infantry Transport Helicopter\nCan carry up to 5 Infantry\n Unarmed
 	Tooltip:
 		Name: Yak-24
 	Cargo:
 		Types: Infantry, Engineer
 		MaxWeight: 5
 		PipCount: 5
+	-Carryall:
+
+HINDCARR:
+	Inherits: ^Helicopter
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Aircraft
+		BuildAtProductionType: Helicopter
+		BuildPaletteOrder: 90
+		Prerequisites: hpad, fix, ~helicopters.soviet, ~!industryplant.on, ~techlevel.medium
+		Description: Armored Carryall Helicopter\nCan carry an Light or Medium vehicle\n Armed with MG versus Infantry
+	Valued:
+		Cost: 900
+	Tooltip:
+		Name: Hind Carryall
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 14000
+	RevealsShroud:
+		Range: 8c0
+		Type: GroundPosition
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 6c0
+		Type: GroundPosition
+	AttackAircraft:
+		FacingTolerance: 20
+	Aircraft:
+		TurnSpeed: 4
+		Speed: 112
+		LandableTerrainTypes: Clear,Rough,Road,Ore,Beach,Gems,Scraps
+		AltitudeVelocity: 0c58
+	Armament@PRIMARY:
+		Name: primary
+		Weapon: M60mg
+		LocalOffset: 928,0,70
+		MuzzleSequence: muzzle
+	WithMuzzleOverlay:
+	WithIdleOverlay@ROTORAIR:
+		Offset: 60,0,461
+		Sequence: rotor
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTOR2AIR:
+		Offset: 60,0,559
+		Sequence: rotor2
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTORGROUND:
+		Offset: 60,0,559
+		Sequence: slow-rotor2
+		RequiresCondition: !airborne
+	WithIdleOverlay@ROTOR2GROUND:
+		Offset: 60,0,431
+		Sequence: slow-rotor
+		RequiresCondition: !airborne
+	SpawnActorOnDeath:
+		Actor: HINDCARR.Husk
+	SelectionDecorations:
+	Selectable:
+		DecorationBounds: 40,36
+	Carryall:
+		LoadingDelay: 10
+		UnloadingDelay: 15
+		LocalOffset: 0, 0, 90
+	AutoTarget:
+		InitialStance: ReturnFire
+		InitialStanceAI: AttackAnything
 
 IROQ:
 	Inherits: ^Helicopter
@@ -481,10 +548,8 @@ F16:
 		Bounds: 36,28,0,2
 		DecorationBounds: 40,29,0,1
 	SelectionDecorations:
-	Contrail@1:
-		Offset: 14,-14,0
-	Contrail@2:
-		Offset: -14,-14,0
+	Contrail:
+		Offset: -853,0,0
 	SpawnActorOnDeath:
 		Actor: F16.Husk
 	SmokeTrailWhenDamaged:
@@ -819,6 +884,48 @@ B52.Bomber:
 	RenderSprites:
 		Image: b52
 
+BADR.Cruiser:
+	Inherits: ^NeutralPlane
+	AttackBomber:
+	Armament:
+		Weapon: SCUD.Badger
+		LocalOffset: 232,320,0, -232,-320,0, -432,-320,0, 432,320,0
+	Health:
+		HP: 30000
+	Aircraft:
+		CruiseAltitude: 2560
+		TurnSpeed: 5
+		Speed: 149
+		Repulsable: False
+		MaximumPitch: 56
+	AmmoPool:
+		Ammo: 4
+	-Selectable:
+	SelectionDecorations:
+		RenderSelectionBars: False
+	-Voiced:
+	Tooltip:
+		Name: Badger
+	Contrail@1:
+		Offset: -432,560,0
+	Contrail@2:
+		Offset: -432,-560,0
+	SpawnActorOnDeath:
+		Actor: BADR.Husk
+	SmokeTrailWhenDamaged@0:
+		Offset: -432,560,0
+		Interval: 2
+	SmokeTrailWhenDamaged@1:
+		Offset: -432,-560,0
+		Interval: 2
+	-MapEditorData:
+	RejectsOrders:
+	RenderSprites:
+		Image: badr
+	GivesExperience:
+		Experience: 1000
+	Interactable:
+
 COSSACK:
 	Inherits: ^Plane
 	Buildable:
@@ -826,7 +933,7 @@ COSSACK:
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 7
 		BuildLimit: 1
-		Prerequisites: afld, techcenter, ~airplanes.soviet, ~!industryplant.on, ~techlevel.high
+		Prerequisites: afld, techcenter, ~airplanes.soviet, ~!player.is.subfaction, ~!industryplant.on, ~techlevel.high
 		Description: Superheavy cargo lifter plane\n Transports any vehicle or up to 15 Infantry and\n deploys those with a parachute (force fire to unload)\nMaximum 1 can be built\n Unarmed
 	Valued:
 		Cost: 2850
@@ -935,3 +1042,94 @@ U2.emp:
 		Name: Tesla Plane
 	RenderSprites:
 		Image: u2
+
+KIROV:
+	Inherits: ^Helicopter
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Buildable:
+		Queue: Aircraft
+		BuildPaletteOrder: 6
+		Prerequisites: afld, ~factory, ~techcenter, ~airplanes.soviet, ~player.russia, ~!industryplant.on, ~techlevel.high
+		Description: Heavily armored Airship\nequipped with Tesla Bombs\nSelf-repairs when under 50% Health\n Strong vs Structures\n Weak vs Anti-Air
+	Valued:
+		Cost: 2200
+	Tooltip:
+		Name: Kirov Airship
+	Health:
+		HP: 60000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 7c0
+		Type: GroundPosition
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 5c0
+		Type: GroundPosition
+	Armament@PRIMARY:
+		Weapon: AirshipParaBomb
+		LocalOffset: -20,0,0
+		PauseOnCondition: !ammo
+	AttackFrontal:
+		Voice: Attack
+	AttackAircraft:
+		FacingTolerance: 20
+	Aircraft:
+		CruiseAltitude: 2c0
+		LandWhenIdle: false
+		InitialFacing: 192
+		TurnSpeed: 3
+		Speed: 50
+		TakeoffSound:
+		LandingSound:
+		Voice: Move
+		AltitudeVelocity: 0c50
+	AmmoPool:
+		Ammo: 6
+		PipCount: 6
+		AmmoCondition: ammo
+	ReloadAmmoPool:
+		Delay: 150
+		Count: 2
+	AutoTarget:
+		InitialStance: ReturnFire
+		InitialStanceAI: AttackAnything
+	SelectionDecorations:
+	SpawnActorOnDeath:
+		Actor: KIROV.Husk
+	WithIdleOverlay@ROTOR1AIR:
+		Offset: -180,597,250
+		Sequence: rotor
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTOR1GROUND:
+		Offset: -180,597,250
+		Sequence: slow-rotor
+		RequiresCondition: !airborne
+	WithIdleOverlay@ROTOR2AIR:
+		Offset: -180,-597,250
+		Sequence: rotor
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTOR2GROUND:
+		Offset: -180,-597,250
+		Sequence: slow-rotor
+		RequiresCondition: !airborne
+	SmokeTrailWhenDamaged@1:
+		Offset: -100,500,100
+	SmokeTrailWhenDamaged@2:
+		Offset: -100,-500,100
+	Selectable:
+		Bounds: 36,28,0,2
+		DecorationBounds: 40,29,0,1
+	SelfHealing:
+		Step: 100
+		Delay: 10
+		HealIfBelow: 50
+		DamageCooldown: 150
+	Voiced:
+		VoiceSet: KirovVoice
+	Explodes:
+		Weapon: UnitExplodePlane
+		RequiresCondition: !airborne
+	ProducibleWithLevel:
+		Prerequisites: helicopters.upgraded

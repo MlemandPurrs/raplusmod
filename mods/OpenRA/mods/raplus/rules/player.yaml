@@ -165,3 +165,27 @@ Player:
 		AdviceInterval: 500
 	PlayerExperience:
 	ConditionManager:
+	ProvidesPrerequisite@Britain:
+		Factions: britain
+		Prerequisite: player.britain
+	ProvidesPrerequisite@France:
+		Factions: france
+		Prerequisite: player.france
+	ProvidesPrerequisite@Germany:
+		Factions: germany
+		Prerequisite: player.germany
+	ProvidesPrerequisite@Russia:
+		Factions: russia
+		Prerequisite: player.russia
+	ProvidesPrerequisite@Ukraine:
+		Factions: ukraine
+		Prerequisite: player.ukraine
+	ProvidesPrerequisite@Kazakh:
+		Factions: kazakh
+		Prerequisite: player.kazakh
+	ProvidesPrerequisite@Countries:
+		Factions: britain, france, germany, russia, ukraine, kazakh
+		Prerequisite: player.is.subfaction
+	ProvidesPrerequisite@vanillaorfrance:
+		Factions: allies, france
+		Prerequisite: player.can.fakes

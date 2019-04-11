@@ -67,63 +67,83 @@ CRATE:
 	GiveUnitCrateAction@jeep:
 		SelectionShares: 6
 		Units: jeep
-		ValidFactions: allies, england, france, germany
+		ValidFactions: allies, britain, france, germany
 		Prerequisites: techlevel.low
 	GiveUnitCrateAction@1tnk:
 		SelectionShares: 6
 		Units: 1tnk
-		ValidFactions: allies, england, france, germany
+		ValidFactions: allies, britain, france, germany
 		Prerequisites: techlevel.low
 	GiveUnitCrateAction@apc:
 		SelectionShares: 6
 		Units: apc
-		ValidFactions: soviet, russia, ukraine
+		ValidFactions: allies, britain, france, germany
+		Prerequisites: techlevel.low
+	GiveUnitCrateAction@sovietapc:
+		SelectionShares: 6
+		Units: btr
+		ValidFactions: soviet, russia, ukraine, kazakh
 		Prerequisites: techlevel.low
 	GiveUnitCrateAction@ftrk:
 		SelectionShares: 6
 		Units: ftrk
-		ValidFactions: soviet, russia, ukraine
+		ValidFactions: soviet, russia, ukraine, kazakh
 		Prerequisites: techlevel.low
 	GiveUnitCrateAction@arty:
 		SelectionShares: 5
 		Units: arty
-		ValidFactions: allies, england, france, germany
+		ValidFactions: allies, britain, france, germany
 		Prerequisites: techlevel.medium, dome
+	GiveUnitCrateAction@nona:
+		SelectionShares: 5
+		Units: nona
+		ValidFactions: soviet, russia, ukraine, kazakh
+		Prerequisites: techlevel.medium, dome
+	GiveUnitCrateAction@mrls:
+		SelectionShares: 5
+		Units: mrls
+		ValidFactions: allies, britain, france, germany
+		Prerequisites: techlevel.high, dome
 	GiveUnitCrateAction@v2rl:
 		SelectionShares: 5
 		Units: v2rl
-		ValidFactions: soviet, russia, ukraine
-		Prerequisites: techlevel.medium, dome
+		ValidFactions: soviet, russia, ukraine, kazakh
+		Prerequisites: techlevel.high, dome
 	GiveUnitCrateAction@2tnk:
 		SelectionShares: 4
 		Units: 2tnk
-		ValidFactions: allies, england, france, germany
+		ValidFactions: allies, britain, france, germany
 		Prerequisites: techlevel.medium, fix
+	GiveUnitCrateAction@soviet2tnk:
+		SelectionShares: 4
+		Units: 2tnk.soviet
+		ValidFactions: soviet, russia, ukraine, kazakh
+		Prerequisites: techlevel.low
 	GiveUnitCrateAction@3tnk:
 		SelectionShares: 4
 		Units: 3tnk
-		ValidFactions: soviet, russia, ukraine
+		ValidFactions: soviet, russia, ukraine, kazakh
 		Prerequisites: techlevel.medium, fix
 	GiveUnitCrateAction@squadlight:
 		SelectionShares: 10
 		Units: e1,e1,e1,e3,e3
-		ValidFactions: allies, england, france, germany, soviet, russia, ukraine
+		ValidFactions: allies, britain, france, germany, soviet, russia, ukraine, kazakh
 	GiveUnitCrateAction@squadheavyallies:
 		SelectionShares: 7
 		Units: e1,e1,e1,e1,e3,e3,e3,e6,medi
-		ValidFactions: allies, england, france, germany
+		ValidFactions: allies, britain, france, germany
 		TimeDelay: 4500
 	GiveUnitCrateAction@squadheavysoviet:
 		SelectionShares: 7
 		Units: e1,e1,e4,e4,e3,e3,e3,e6
-		ValidFactions: soviet, russia, ukraine
+		ValidFactions: soviet, russia, ukraine, kazakh
 		TimeDelay: 4500
 	GrantExternalConditionCrateAction@invuln:
 		SelectionShares: 5
 		Sequence: invuln
 		Sound: ironcur9.aud
 		Condition: invulnerability
-		Duration: 600
+		Duration: 400
 
 MONEYCRATE:
 	Inherits: ^Crate
@@ -156,6 +176,15 @@ SCRATE:
 	Inherits: ^Crate
 	Tooltip:
 		Name: Steel Crate
+
+RANKUPCRATE:
+	Inherits: ^Crate
+	LevelUpCrateAction:
+		Range: 1c512
+		SelectionShares: 1
+		MaxExtraCollectors: 9
+	RenderSprites:
+		Image: scrate-rankup
 
 CAMERA:
 	Interactable:
@@ -498,7 +527,7 @@ ships.upgraded:
 	AlwaysVisible:
 	ProvidesPrerequisite:
 
-subs.upgraded:
+submarines.upgraded:
 	AlwaysVisible:
 	ProvidesPrerequisite:
 
@@ -558,3 +587,16 @@ CTFLAG:
 	MapEditorData:
 		Categories: Decoration
 	Interactable:
+
+maintenance:
+	Inherits: CAMERA
+	-RevealsShroud:
+	ProvidesPrerequisite@proxyname:
+	Buildable:
+		Queue: Maintenance
+	KillsSelf:
+		Delay: 750
+		RemoveInstead: true
+	ProximityExternalCondition:
+		Condition: on.maintenance
+		Range: 1000c0

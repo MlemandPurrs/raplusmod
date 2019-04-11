@@ -85,6 +85,28 @@ hind.discount:
 	Defaults: hind
 	Inherits: hind
 
+hindcarr:
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+	rotor: lrotorlg
+		Length: 4
+	rotor2: lrotorlg
+		Start: 4
+		Length: 4
+		Reverse: true
+	slow-rotor: lrotorlg
+		Start: 4
+		Length: 8
+	slow-rotor2: lrotorlg
+		Start: 4
+		Length: 8
+		Reverse: true
+	muzzle: minigun
+		Length: 6
+		Facings: 8
+	icon: hindcarricon
+
 spitfire:
 	idle:
 		Facings: 16
@@ -177,3 +199,14 @@ badr:
 b52:
 	idle:
 		Facings: 16
+
+kirov:
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+	rotor: krotor
+		Length: 4
+	slow-rotor: krotor
+		Start: 4
+		Length: 8
+	icon: kirovicon

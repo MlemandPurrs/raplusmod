@@ -357,6 +357,7 @@ APRT:
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
+		Cursor: airdrop
 	ParatroopersPower@SovietParatroopers:
 		OrderName: StripSovietParatroopersPowerInfoOrder
 		Prerequisites: ~airport.soviet, ~techlevel.unrestricted
@@ -375,6 +376,7 @@ APRT:
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
+		Cursor: airdrop
 	SpawnActorOnDeath:
 		Actor: APRT.Husk
 
@@ -440,7 +442,7 @@ ACAD:
 		Prerequisite: ships.upgraded
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@6:
-		Prerequisite: subs.upgraded
+		Prerequisite: submarines.upgraded
 		ResetOnOwnerChange: True
 	RenderSprites:
 		Image: acad

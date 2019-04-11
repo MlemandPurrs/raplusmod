@@ -111,6 +111,10 @@ V2Explode:
 	Inherits: SCUD
 	-Report:
 
+V3Explode:
+	Inherits: SCUD.HE
+	-Report:
+
 BuildingExplode:
 	Warhead@2Eff: CreateEffect
 		Explosions: building, building_napalm, large_explosion, self_destruct, large_napalm
@@ -355,3 +359,10 @@ MiniNuke:
 		InvalidTargets: Vehicle, Structure, Wall, Trees
 		Size: 4
 		Delay: 15
+
+Demolish:
+	Warhead@1Dam: SpreadDamage
+		DamageTypes: DefaultDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: building
+		ImpactSounds: kaboom25.aud

@@ -92,6 +92,10 @@ FireballLauncher:
 		Versus:
 			Light: 50
 
+FireballLauncherSub:
+	Inherits: FireballLauncher
+	ReloadDelay: 65
+
 Napalm:
 	Inherits: ^FireWeapon
 	ReloadDelay: 20
@@ -106,6 +110,36 @@ Napalm:
 		Versus:
 			Wood: 100
 			Concrete: 50
+
+KVFlame:
+	ReloadDelay: 90
+	Range: 5c512
+	Burst: 25
+	BurstDelays: 1
+	ValidTargets: Infantry, Vehicle, Tank, Structure, Wall, Ground
+	InvalidTargets: Water
+	Projectile: Bullet
+		Speed: 200
+		Inaccuracy: 853
+		LaunchAngle: 31
+		Image: fb3
+		TrailImage: fb4
+	Warhead@1Dam: SpreadDamage
+		Damage: 600
+		Versus:
+			None: 100
+			Wood: 100
+			Light: 30
+			Heavy: 20
+			Concrete: 50
+		Spread: 341
+		ValidTargets: Ground, Water, Trees
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Scorch
+	Warhead@3Eff: CreateEffect
+		Explosions: small_napalm
+		ImpactSounds: firebl3.aud
 
 ^TeslaWeapon:
 	ReloadDelay: 3
@@ -135,10 +169,27 @@ PortaTesla:
 			Wood: 73
 			Heavy: 60
 
+PortaTeslaHeavy:
+	Inherits: ^TeslaWeapon
+	ReloadDelay: 60
+	Range: 4c512
+
 TTankZap:
 	Inherits: ^TeslaWeapon
 	ReloadDelay: 120
 	Range: 7c0
+
+TTankZapDual:
+	Inherits: ^TeslaWeapon
+	ReloadDelay: 60
+	Burst: 2
+	BurstDelays: 60
+	Range: 4c256
+	Warhead@emp: GrantExternalCondition
+		Range: 1c512
+		Duration: 10
+		Condition: empdisable
+		ValidTargets: Ground, Vehicle, Ship
 
 DogJaw:
 	ValidTargets: Infantry
@@ -352,3 +403,40 @@ PrismLaser:
 			Heavy: 65
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Scorch
+
+AirshipParaBomb:
+	ReloadDelay: 40
+	ValidTargets: Ground, Water, Structure
+	InvalidTargets: Air
+	Report: bwhis.aud
+	Range: 1c0
+	TargetActorCenter: true
+	Projectile: GravityBomb
+		Image: TBOMB
+		OpenSequence: open
+		Velocity: 5, 0, -66
+		Acceleration: 0, 0, 0
+		Shadow: True
+	Warhead@1Dam: SpreadDamage
+		Spread: 1c0
+		Damage: 4500
+		InvalidTargets: Air
+		Versus:
+			None: 30
+			Wood: 75
+			Light: 65
+			Heavy: 30
+			Concrete: 40
+		DamageTypes: Prone50Percent, TriggerProne, ElectricityDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees
+	Warhead@3Eff: CreateEffect
+		Explosions: tsla_bomb
+		ImpactSounds: kirbo1.aud, kirbo2.aud
+		ValidTargets: Ground, Water, Ship, Trees
+	Warhead@4Emp: GrantExternalCondition
+		Range: 1c512
+		Duration: 55
+		Condition: empdisable
+		ValidTargets: Vehicle, Ship

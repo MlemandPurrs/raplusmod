@@ -12,10 +12,10 @@ FACT:
 		Prerequisites: ~disabled
 		Description: Produces Structures and Defenses
 	ProvidesPrerequisite@allies:
-		Factions: allies
+		Factions: allies, britain, france, germany
 		Prerequisite: structures.allies
 	ProvidesPrerequisite@soviet:
-		Factions: soviet
+		Factions: soviet, russia, ukraine, kazakh
 		Prerequisite: structures.soviet
 	Health:
 		HP: 150000
@@ -28,6 +28,7 @@ FACT:
 		Range: 4c0
 	Production:
 		Produces: Building,Defense,Fakestructure
+		PauseOnCondition: disabled
 	Valued:
 		Cost: 3000
 	Tooltip:
@@ -98,7 +99,7 @@ POWR:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 1
-		Prerequisites: ~!industryplant.on, ~techlevel.infonly
+		Prerequisites: ~!player.russia, ~!industryplant.on, ~techlevel.infonly
 		Description: Provides 75 power for other structures
 	Valued:
 		Cost: 300
@@ -149,7 +150,7 @@ APWR:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 15
-		Prerequisites: dome, ~!industryplant.on, ~techlevel.medium
+		Prerequisites: dome, ~!player.russia, ~!industryplant.on, ~techlevel.medium
 		Description: Provides double the power of a standard Power Plant
 	Valued:
 		Cost: 600
@@ -251,11 +252,11 @@ TENT:
 	ProvidesPrerequisite@barracks:
 		Prerequisite: barracks
 	ProvidesPrerequisite@allies:
-		Factions: allies
+		Factions: allies, britain, france, germany
 		Prerequisite: infantry.allies
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@soviet:
-		Factions: soviet
+		Factions: soviet, russia, ukraine, kazakh
 		Prerequisite: infantry.soviet
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@alliedstructure:
@@ -350,11 +351,11 @@ BARR:
 	ProvidesPrerequisite:
 		Prerequisite: barracks
 	ProvidesPrerequisite@allies:
-		Factions: allies
+		Factions: allies, britain, france, germany
 		Prerequisite: infantry.allies
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@soviet:
-		Factions: soviet
+		Factions: soviet, russia, ukraine, kazakh
 		Prerequisite: infantry.soviet
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@sovietstructure:
@@ -529,6 +530,7 @@ PROC:
 		DockAngle: 64
 		DockOffset: 1,2
 		DiscardExcessResources: Yes
+		RequiresCondition: !disabled
 	StoresResources:
 		PipCount: 17
 		Capacity: 2000
@@ -706,11 +708,11 @@ WEAP:
 		Produces: Vehicle
 		PauseOnCondition: disabled
 	ProvidesPrerequisite@allies:
-		Factions: allies
+		Factions: allies, britain, france, germany
 		Prerequisite: vehicles.allies
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@soviet:
-		Factions: soviet
+		Factions: soviet, russia, ukraine, kazakh
 		Prerequisite: vehicles.soviet
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@alliedstructure:
@@ -803,6 +805,7 @@ FIX:
 		Type: Polygon
 			Points: -1536,-300, -640,-811, 640,-811, 1536,-300, 1536,555, 640,1110, -640,1110, -1536,555
 	SpawnActorPower@FIELD_REPAIR:
+		OrderName: FieldRepairPowerInfoOrder
 		PauseOnCondition: lowpower
 		Actor: camera.fieldrepair
 		Prerequisites: ~techlevel.unrestricted
@@ -811,7 +814,19 @@ FIX:
 		Description: Field Repair
 		LongDesc: Repairs vehicles for 30% of their maximum health\nin a small area over time for an short duration
 		StartFullyCharged: false
-		OrderName: FieldRepairPowerInfoOrder
+		Cursor: goldwrench
+	ProduceActorPower@DECOYARMY:
+		OrderName: DecoyArmyPowerInfoOrder
+		PauseOnCondition: lowpower
+		Actors: 1tnf, 1tnf, 2tnf, 2tnf, artf
+		Prerequisites: player.france
+		ChargeInterval: 6000
+		Icon: decoyarmy
+		Description: Decoy Army
+		LongDesc: Delivers an group of Fake units at your primary War Factory\nThose remote-controlled units armed with dummy weaponry\nwill look identical to an real unit to the opponent
+		Type: Vehicle
+		ReadyAudio: ReinforcementsArrived
+		BlockedAudio: NoBuild
 	WithDeathAnimation:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
@@ -904,11 +919,11 @@ SYRD:
 	Power:
 		Amount: -30
 	ProvidesPrerequisite@allies:
-		Factions: allies
+		Factions: allies, britain, france, germany
 		Prerequisite: ships.allies
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@soviet:
-		Factions: soviet
+		Factions: soviet, russia, ukraine, kazakh
 		Prerequisite: ships.soviet
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@alliedstructure:
@@ -1067,11 +1082,11 @@ SPEN:
 		RequiresCondition: !disabled && !build-incomplete && lowpower
 	RenderDetectionCircle:
 	ProvidesPrerequisite@allies:
-		Factions: allies
+		Factions: allies, britain, france, germany
 		Prerequisite: submarines.allies
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@soviet:
-		Factions: soviet
+		Factions: soviet, russia, ukraine, kazakh
 		Prerequisite: submarines.soviet
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@alliedstructure:
@@ -1103,6 +1118,7 @@ SPEN:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
 	SpawnActorPower@sonarpulse:
+		OrderName: SonarPulsePowerInfoOrder
 		PauseOnCondition: disabled || lowpower
 		Prerequisites: ~techlevel.medium
 		Icon: sonar
@@ -1116,13 +1132,13 @@ SPEN:
 		DeploySound: sonpulse.aud
 		EffectImage: moveflsh
 		EffectPalette: moveflash
-		OrderName: SonarPulsePowerInfoOrder
+		Cursor: gps-target
 	SupportPowerChargeBar:
 	WithDeathAnimation:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
 	InfiltrateForSupportPower:
-		Proxy: subs.upgraded
+		Proxy: submarines.upgraded
 		Types: SpyInfiltrate
 
 SPEN.Husk:
@@ -1176,11 +1192,11 @@ AFLD:
 		Produces: Aircraft, Plane
 	Reservable:
 	ProvidesPrerequisite@allies:
-		Factions: allies
+		Factions: allies, britain, france, germany
 		Prerequisite: airplanes.allies
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@soviet:
-		Factions: soviet
+		Factions: soviet, russia, ukraine, kazakh
 		Prerequisite: airplanes.soviet
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@alliedstructure:
@@ -1209,6 +1225,7 @@ AFLD:
 		ClockSequence: clock
 		CircleSequence: circles
 		PauseOnCondition: lowpower
+		Cursor: airdrop
 	ParatroopersPower@SovietParatroopers:
 		OrderName: SovietParatroopersPowerInfoOrder
 		Prerequisites: ~airplanes.soviet, ~techlevel.unrestricted
@@ -1228,6 +1245,27 @@ AFLD:
 		ClockSequence: clock
 		CircleSequence: circles
 		PauseOnCondition: lowpower
+		Cursor: airdrop
+	ParatroopersPower@GermanyParatanks:
+		OrderName: GermanyParatanksPowerInfoOrder
+		Prerequisites: player.germany, ~airplanes.allies, ~techlevel.unrestricted
+		Icon: paratanks
+		ChargeInterval: 7500
+		Description: Paratanks
+		LongDesc: A B-52 drops an veteran squad of\ntwo Light Tanks and a Medium Tank anywhere on the map
+		DropItems: 1TNK.germany.R1, 2TNK.germany.R1, 1TNK.germany.R1
+		ReinforcementsArrivedSpeechNotification: ReinforcementsArrived
+		SelectTargetSpeechNotification: SelectTarget
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.paradrop
+		UnitType: b52
+		DisplayBeacon: true
+		BeaconPoster: paratanks
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		Cursor: airdrop
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
@@ -1240,7 +1278,6 @@ AFLD:
 	Power:
 		Amount: -20
 	ProvidesPrerequisite@buildingname:
-		Prerequisite: afld
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 	InfiltrateForSupportPower:
@@ -1323,11 +1360,11 @@ HPAD:
 	Power:
 		Amount: -10
 	ProvidesPrerequisite@allies:
-		Factions: allies
+		Factions: allies, britain, france, germany
 		Prerequisite: helicopters.allies
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@soviet:
-		Factions: soviet
+		Factions: soviet, russia, ukraine, kazakh
 		Prerequisite: helicopters.soviet
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@alliedstructure:
@@ -1412,7 +1449,7 @@ DOME:
 	InfiltrateForExploration:
 		Types: SpyInfiltrate
 	DetectCloaked:
-		Range: 10c0
+		Range: 6c0
 		RequiresCondition: !disabled
 	RenderDetectionCircle:
 	Power:
@@ -1452,6 +1489,7 @@ DOME:
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
+		Cursor: chrono-select
 	WithDeathAnimation:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
@@ -1498,7 +1536,7 @@ ATEK:
 	RevealsShroud@GAPGEN:
 		Range: 6c0
 	WithBuildingBib:
-	GpsPower:
+	GpsPower@GPSVANILLA:
 		PauseOnCondition: disabled
 		Icon: gps
 		OneShot: yes
@@ -1508,6 +1546,20 @@ ATEK:
 		RevealDelay: 375
 		LaunchSpeechNotification: SatelliteLaunched
 		DisplayTimerStances: Ally, Neutral, Enemy
+	GrantExternalConditionPower@GPSSCRAMBLER:
+		PauseOnCondition: disabled
+		OrderName: GPSScramblerPowerInfoOrder
+		Prerequisites: player.britain
+		Icon: gpsscrambler
+		ChargeInterval: 6000
+		Range: 2
+		Duration: 400
+		Description: GPS Scrambler
+		LongDesc: Renders an group of units temporarily\ninvisible aslong they are not firing
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		Condition: gps.scrambler
+		Cursor: gps-target
 	SupportPowerChargeBar:
 	Power:
 		Amount: -150
@@ -1572,7 +1624,7 @@ STEK:
 		UseDeathTypeSuffix: false
 	AirstrikePower@SovietParabombs:
 		OrderName: SovietParabombsPowerInfoOrder
-		Prerequisites: ~airplanes.soviet, ~techlevel.unrestricted
+		Prerequisites: ~airplanes.soviet, !player.ukraine, ~techlevel.unrestricted
 		Icon: parabombs
 		ChargeInterval: 7500
 		Description: Parabombs
@@ -1590,6 +1642,7 @@ STEK:
 		ClockSequence: clock
 		CircleSequence: circles
 		PauseOnCondition: lowpower
+		Cursor: airstrike
 	AirstrikePower@AlliesParabombs:
 		OrderName: AlliesParabombsPowerInfoOrder
 		Prerequisites: ~airplanes.allies, ~techlevel.unrestricted
@@ -1610,6 +1663,26 @@ STEK:
 		ClockSequence: clock
 		CircleSequence: circles
 		PauseOnCondition: lowpower
+		Cursor: airstrike
+	AirstrikePower@SovietCruiseMissile:
+		OrderName: SovietCruiseMissilePowerInfoOrder
+		Prerequisites: ~airplanes.soviet, ~player.ukraine, ~techlevel.unrestricted
+		Icon: cruisestrike
+		ChargeInterval: 9000
+		SquadSize: 1
+		QuantizedFacings: 8
+		Description: Cruise Missile Strike
+		LongDesc: A Badger fires four V2 rockets on your target
+		SelectTargetSpeechNotification: SelectTarget
+		UnitType: badr.cruiser
+		CameraActor: camera.paradrop
+		DisplayBeacon: True
+		BeaconPoster: cruisestrike
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		PauseOnCondition: lowpower
+		Cursor: airstrike
 	SupportPowerChargeBar:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
@@ -1699,9 +1772,9 @@ FCOM.Buildable:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 12
-		Prerequisites: barracks, techcenter, ~structures.soviet, ~!industryplant.on, !enough.fcom, ~techlevel.high
+		Prerequisites: barracks, dome, ~structures.soviet, ~!industryplant.on, !enough.fcom, ~techlevel.high
 		BuildLimit: 1
-		Description: Clones produced Infantry units\nMaximum 1 can be built\n Special Ability: EMP Bomb\nA plane drops an EMP Bomb on your target,\ndisables Vehicles, Ships and Submarines\nDisabled units cannot move or shoot for a while\nUncloaks hidden units, Submarines will resurface
+		Description: Clones produced Infantry units\nMaximum 1 can be built\n Special Ability: Field Promotion\nA Badger drops an Rank-up crate anywhere on the map\nUnits can pick it up to gain one free level of veterancy
 	RevealsShroud:
 		Range: 3c0
 	WithBuildingBib:
@@ -1712,9 +1785,30 @@ FCOM.Buildable:
 		Prerequisite: enough.fcom
 	Valued:
 		Cost: 1000
+	ParatroopersPower@FieldPromotion:
+		OrderName: FieldPromotionPowerInfoOrder
+		Prerequisites: ~airplanes.soviet, ~techlevel.unrestricted
+		Icon: rankcrate
+		ChargeInterval: 9000
+		Description: Field Promotion
+		LongDesc: A Badger drops an Rank-up crate anywhere on the map\nUnits can pick it up to gain one free level of veterancy
+		DropItems: RANKUPCRATE
+		ReinforcementsArrivedSpeechNotification: ReinforcementsArrived
+		SelectTargetSpeechNotification: SelectTarget
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.paradrop
+		UnitType: badr
+		DisplayBeacon: true
+		BeaconPoster: rankcrate
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		PauseOnCondition: lowpower
+		Cursor: airdrop
 	AirstrikePower@SovietEMP:
 		OrderName: SovietEMPPowerInfoOrder
-		Prerequisites: ~airplanes.soviet, ~techlevel.unrestricted
+		Prerequisites: ~airplanes.soviet, ~player.russia, ~techlevel.unrestricted
 		Icon: empbomb
 		ChargeInterval: 9000
 		SquadSize: 1
@@ -1730,6 +1824,7 @@ FCOM.Buildable:
 		ClockSequence: clock
 		CircleSequence: circles
 		PauseOnCondition: lowpower
+		Cursor: empstrike
 	SupportPowerChargeBar:
 	RallyPoint:
 	Exit@1:
@@ -1787,12 +1882,28 @@ PDOX:
 	WithBuildingBib:
 		HasMinibib: Yes
 	ChronoshiftPower@chronoshift:
-		OrderName: Chronoshift
+		OrderName: ChronoshiftPowerInfoOrder
 		PauseOnCondition: disabled
+		Prerequisites: !player.germany
 		Icon: chrono
 		ChargeInterval: 3000
 		Description: Chronoshift
-		LongDesc: Teleports a group of units across the map for 20 seconds
+		LongDesc: Teleports a small group of units across the map for 30 seconds
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		BeginChargeSpeechNotification: ChronosphereCharging
+		EndChargeSpeechNotification: ChronosphereReady
+		Duration: 600
+		KillCargo: yes
+		DisplayRadarPing: True
+	ChronoshiftPower@advancedchronoshift:
+		OrderName: AdvancedChronoshiftPowerInfoOrder
+		PauseOnCondition: disabled
+		Prerequisites: player.germany
+		Icon: chrono
+		ChargeInterval: 3000
+		Description: Advanced Chronoshift
+		LongDesc: Teleports a large group of units across the map for 20 seconds
 		SelectTargetSpeechNotification: SelectTarget
 		InsufficientPowerSpeechNotification: InsufficientPower
 		BeginChargeSpeechNotification: ChronosphereCharging
@@ -1860,10 +1971,11 @@ IRON:
 	GrantExternalConditionPower@IRONCURTAIN:
 		OrderName: IronCurtainPowerInfoOrder
 		PauseOnCondition: disabled
+		Prerequisites: !player.ukraine
 		Icon: invuln
 		ChargeInterval: 3000
 		Description: Invulnerability
-		LongDesc: Makes a group of units invulnerable\nfor 20 seconds.
+		LongDesc: Makes a group of units or structure invulnerable\nfor 20 seconds
 		Duration: 500
 		SelectTargetSpeechNotification: SelectTarget
 		InsufficientPowerSpeechNotification: InsufficientPower
@@ -1872,6 +1984,25 @@ IRON:
 		DisplayRadarPing: True
 		Condition: invulnerability
 		OnFireSound: ironcur9.aud
+	IonCannonPower@ADVANCEDIRONCURTAIN:
+		OrderName: AdvIronCurtainPowerInfoOrder
+		PauseOnCondition: disabled
+		Prerequisites: player.ukraine
+		Icon: invuln
+		ChargeInterval: 4500
+		Description: Invulnerability
+		LongDesc: Makes a group of units or structure invulnerable\nfor 20 seconds. Lethal to Infantry
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		BeginChargeSpeechNotification: IronCurtainCharging
+		EndChargeSpeechNotification: IronCurtainReady
+		DisplayRadarPing: True
+		OnFireSound: ironcur9.aud
+		Weapon: IronCurtain
+		WeaponDelay: 0
+		Effect: crate-effects
+		EffectSequence: invuln
+		Cursor: ability
 	SupportPowerChargeBar:
 	Power:
 		Amount: -200
@@ -1924,11 +2055,39 @@ MSLO:
 	RevealsShroud@GAPGEN:
 		Range: 5c0
 		RequiresCondition: !disabled
-	NukePower:
+	NukePower@Normal:
+		OrderName: NukePowerInfoOrder
 		PauseOnCondition: disabled
+		Prerequisites: !player.kazakh
 		Cursor: nuke
 		Icon: abomb
 		ChargeInterval: 13500
+		Description: Atom Bomb
+		LongDesc: Launches a devastating atomic bomb at target location
+		BeginChargeSpeechNotification: AbombPrepping
+		EndChargeSpeechNotification: AbombReady
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		IncomingSpeechNotification: AbombLaunchDetected
+		MissileWeapon: atomic
+		MissileDelay: 5
+		SpawnOffset: 1c0,427,0
+		DisplayTimerStances: Ally, Neutral, Enemy
+		DisplayBeacon: True
+		DisplayRadarPing: True
+		BeaconPoster: atomicon
+		FlashType: Nuke
+		CameraRange: 10c0
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+	NukePower@Advanced:
+		OrderName: AdvancedNukePowerInfoOrder
+		PauseOnCondition: disabled
+		Prerequisites: player.kazakh
+		Cursor: nuke
+		Icon: abomb
+		ChargeInterval: 11500
 		Description: Atom Bomb
 		LongDesc: Launches a devastating atomic bomb at target location
 		BeginChargeSpeechNotification: AbombPrepping
@@ -2699,11 +2858,11 @@ FISTBUILD:
 		CancelledAudio: Cancelled
 		LowPowerModifier: 300
 	ProvidesPrerequisite@allies:
-		Factions: allies
+		Factions: allies, britain, france, germany
 		Prerequisite: vehicles.allies
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@soviet:
-		Factions: soviet
+		Factions: soviet, russia, ukraine, kazakh
 		Prerequisite: vehicles.soviet
 		ResetOnOwnerChange: True
 	ProductionBar:
@@ -2720,6 +2879,7 @@ FISTBUILD:
 
 INDP:
 	Inherits: ^ScienceBuilding
+	Inherits@IDISABLE: ^DisableOnLowPower
 	Inherits@shape: ^3x2Shape
 	Selectable:
 		Bounds: 72,48
@@ -2730,13 +2890,14 @@ INDP:
 		BuildPaletteOrder: 16
 		BuildLimit: 1
 		Prerequisites: techcenter, ~structures.soviet, ~techlevel.high
-		Description: Reduces cost of everything by 25%
+		Description: Facility housing means to mass produce\nan variety of military hardware and equipment\nReduces cost of everything by 25%\n Requires Power to operate\n Special Ability: Maintenance\nPerforms emergency repairs on all base Building and Defenses\nDisables entire base for half minute
 	Valued:
 		Cost: 2500
 	Tooltip:
 		Name: Industrial Plant
 	ProvidesPrerequisite:
 		Prerequisite: industryplant.on
+		RequiresCondition: !disabled
 	Building:
 		Footprint: XxX XxX
 		Dimensions: 3,2
@@ -2759,6 +2920,23 @@ INDP:
 		UseDeathTypeSuffix: false
 	RenderSprites:
 		Image: rresf
+	ProduceActorPower@Maintenance:
+		PauseOnCondition: disabled
+		Description: Maintenance
+		LongDesc: Performs emergency repairs on all base Building and Defenses\nDisables entire base for half minute
+		Icon: mainicon
+		Prerequisites: ~techlevel.unrestricted
+		Actors: maintenance
+		Type: Maintenance
+		ChargeInterval: 11000
+		BlockedAudio: NoBuild
+		OrderName: MaintenancePowerInfoOrder
+	Production:
+		Produces: Maintenance
+		PauseOnCondition: disabled
+	Exit@1:
+	ExitsDebugOverlay:
+	SupportPowerChargeBar:
 
 OPRF:
 	Inherits: ^ScienceBuilding
@@ -2772,7 +2950,7 @@ OPRF:
 		BuildPaletteOrder: 16
 		BuildLimit: 1
 		Prerequisites: ~disabled
-		Description: Doenst Boosts your income from Ore and Gems by 25% as we lack the trait code for it
+		Description: Doesnt Boosts your income from Ore and Gems by 25% as we lack the trait code for it
 	Valued:
 		Cost: 2500
 	Tooltip:
@@ -2801,7 +2979,7 @@ OPRF:
 		Image: rresf
 	-MapEditorData:
 
-BIO.Buildable:
+BIO.buildable:
 	Inherits: ^Building
 	Inherits@POWER_OUTAGE: ^DisabledByPowerOutage
 	Inherits@shape: ^2x2Shape
@@ -2820,19 +2998,19 @@ BIO.Buildable:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 18
-		Prerequisites: techcenter, ~structures.soviet, ~!industryplant.on, !enough.bio, ~techlevel.high
+		Prerequisites: techcenter, ~structures.soviet, ~!player.russia, ~!industryplant.on, !enough.bio, ~techlevel.high
 		BuildLimit: 1
 		Description: Provides quadruple the power of a standard power plant\nMaximum 1 can be built\n Explodes violently on death!
 	SelectionDecorations:
 	RevealsShroud:
 		Range: 4c0
+	ProvidesPrerequisite:
+		Prerequisite: anypower
 	Power:
 		Amount: 300
 	Targetable:
 		TargetTypes: Ground, Structure, C4, DetonateAttack, SpyInfiltrate
 	ScalePowerWithHealth:
-	ProvidesPrerequisite:
-		Prerequisite: anypower
 	Valued:
 		Cost: 1200
 	GpsDot:

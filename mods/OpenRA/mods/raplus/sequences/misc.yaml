@@ -49,6 +49,7 @@ explosion:
 	building_napalm: napalm2
 		FlipX: true
 	nuke: atomsfx
+	nuke_small: atomlight
 	med_splash: h2o_exp2
 	self_destruct: art-exp1
 	artillery_explosion: art-exp1
@@ -74,6 +75,14 @@ explosion:
 	pulse_explosion: pulsefx2
 		BlendMode: Additive
 		Tick: 80
+	tsla_bomb: tslabomb
+		BlendMode: Alpha
+		Tick: 80
+	ironcurtain_effect: ironcur-effect
+		BlendMode: Additive
+		Tick: 85
+		ZOffset: 512
+		Offset: 2, 15
 
 burn-l:
 	idle:
@@ -189,6 +198,15 @@ beacon:
 		Length: *
 		Offset: 0,-42
 	empbomb: empbombsmallicon
+		Length: *
+		Offset: 0,-42
+	paratanks: paratanksmallicon
+		Length: *
+		Offset: 0,-42
+	cruisestrike: cruisestrikesmallicon
+		Length: *
+		Offset: 0,-42
+	rankcrate: rankcratesmallicon
 		Length: *
 		Offset: 0,-42
 
@@ -313,6 +331,17 @@ fb4:
 		ZOffset: 1023
 
 scrate:
+	Defaults:
+		ZOffset: -511
+	idle:
+	land:
+		Start: 1
+	water:
+		Start: 2
+		Length: 4
+		Tick: 500
+
+scrate-rankup:
 	Defaults:
 		ZOffset: -511
 	idle:
@@ -535,6 +564,12 @@ icon:
 	fieldrepair: frepicon
 	radarscan: radarscanicon
 	empbomb: empbombicon
+    mainicon: maintenanceicon
+	gpsscrambler: gpsscricon
+	paratanks: paratankicon
+	decoyarmy: decoyarmyicon
+	rankcrate: rankcrateicon
+	cruisestrike: cruisestrikeicon
 
 quee:
 	idle:
@@ -754,3 +789,12 @@ maxichute:
 moskito:
 	idle:
 		Facings: 32
+
+tbomb:
+	open:
+		Length: 8
+		ZOffset: 1023
+	idle:
+		Start: 8
+		Length: 5
+		ZOffset: 1023
