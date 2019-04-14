@@ -1,0 +1,418 @@
+^BaseWorld:
+	Inherits: ^Palettes
+	AlwaysVisible:
+	ActorMap:
+	ScreenMap:
+	MusicPlaylist:
+		VictoryMusic: score
+		DefeatMusic: map
+	TerrainGeometryOverlay:
+	DebugVisualizations:
+	Locomotor@FOOT:
+		Name: foot
+		Crushes: mine, crate
+		SharesCell: true
+		TerrainSpeeds:
+			Clear: 90
+			Rough: 80
+			Road: 100
+			Bridge: 100
+			Ore: 80
+			Gems: 80
+			Scraps: 80
+			Beach: 80
+			Shallow: 80
+	Locomotor@FOOT_AMPHIBIOUS:
+		Name: foot-amphibious
+		Crushes: mine, crate
+		SharesCell: true
+		TerrainSpeeds:
+			Clear: 90
+			Rough: 80
+			Road: 100
+			Bridge: 100
+			Ore: 80
+			Gems: 80
+			Scraps: 80
+			Beach: 80
+			Shallow: 80
+			Water: 60
+			River: 40
+	Locomotor@WHEELED:
+		Name: wheeled
+		Crushes: mine, crate
+		TerrainSpeeds:
+			Clear: 80
+			Rough: 40
+			Road: 100
+			Bridge: 100
+			Ore: 70
+			Gems: 70
+			Scraps: 70
+			Beach: 40
+			Shallow: 40
+	Locomotor@HEAVYWHEELED:
+		Name: heavywheeled
+		Crushes: wall, mine, crate, infantry
+		TerrainSpeeds:
+			Clear: 80
+			Rough: 40
+			Road: 100
+			Bridge: 100
+			Ore: 70
+			Gems: 70
+			Scraps: 70
+			Beach: 40
+			Shallow: 40
+	Locomotor@LIGHTTRACKED:
+		Name: lighttracked
+		Crushes: wall, mine, crate
+		TerrainSpeeds:
+			Clear: 80
+			Rough: 70
+			Road: 100
+			Bridge: 100
+			Ore: 70
+			Gems: 70
+			Scraps: 70
+			Beach: 70
+			Shallow: 70
+	Locomotor@TRACKED:
+		Name: tracked
+		Crushes: wall, infantry, mine, crate
+		TerrainSpeeds:
+			Clear: 80
+			Rough: 70
+			Road: 100
+			Bridge: 100
+			Ore: 70
+			Gems: 70
+			Scraps: 70
+			Beach: 70
+			Shallow: 70
+	Locomotor@TRACKED_AMPHIBIOUS:
+		Name: tracked-amphibious
+		Crushes: infantry, mine, crate
+		TerrainSpeeds:
+			Clear: 80
+			Rough: 70
+			Road: 100
+			Bridge: 100
+			Ore: 70
+			Gems: 70
+			Scraps: 70
+			Beach: 70
+			Shallow: 70
+			River: 40
+	Locomotor@HEAVYTRACKED:
+		Name: heavytracked
+		Crushes: wall, infantry, mine, crate, heavywall
+		TerrainSpeeds:
+			Clear: 80
+			Rough: 70
+			Road: 100
+			Bridge: 100
+			Ore: 70
+			Gems: 70
+			Scraps: 70
+			Beach: 70
+			Shallow: 70
+	Locomotor@NAVAL:
+		Name: naval
+		Crushes: mine, crate
+		TerrainSpeeds:
+			Water: 100
+			Shallow: 70
+	Locomotor@LANDINGCRAFT:
+		Name: lcraft
+		Crushes: mine, crate
+		TerrainSpeeds:
+			Water: 100
+			Beach: 70
+			Shallow: 70
+	Locomotor@IMMOBILE:
+		Name: immobile
+		TerrainSpeeds:
+	Locomotor@BIKE:
+		Name: bike
+		Crushes: mine, crate
+		TerrainSpeeds:
+			Clear: 70
+			Rough: 35
+			Road: 100
+			Bridge: 100
+			Ore: 35
+			Gems: 35
+			Scraps: 35
+			Beach: 35
+			Shallow: 35
+	JumpjetLocomotor@JUMPJET:
+		Name: jumpjet
+		Crushes: crate
+		SharesCell: true
+		JumpjetTransitionCost: 100
+		TerrainSpeeds:
+			Clear: 90
+			Rough: 80
+			Road: 100
+			Bridge: 100
+			Beach: 90
+			Shallow: 90
+			Ore: 90
+			Gems: 90
+			Scraps: 90
+			Jumpjet: 110
+	TerrainRenderer:
+	ShroudRenderer:
+		FogVariants: shroud
+		Index: 255, 16, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 20, 40, 56, 65, 97, 130, 148, 194, 24, 33, 66, 132, 28, 41, 67, 134, 1, 2, 4, 8, 3, 6, 12, 9, 7, 14, 13, 11, 5, 10, 15, 255
+		UseExtendedIndex: true
+	Faction@random:
+		Name: Random
+		InternalName: Random
+		Side: Random
+		RandomFactionMembers: allies, soviet, britain, france, germany, russia, ukraine, kazakh
+		Description: Random Any\nA random faction or country will be chosen when the game starts
+	Faction@randomfaction:
+		Name: R. Faction
+		InternalName: RandomFaction
+		Side: Random
+		RandomFactionMembers: allies, soviet
+		Description: Random Faction\nA random faction will be chosen when the game starts
+	Faction@randomallies:
+		Name: R. Allies
+		InternalName: RandomAllies
+		RandomFactionMembers: britain, france, germany
+		Side: Random
+		Description: Random Allies Country\nA random Allies country will be chosen when the game starts
+	Faction@randomsoviet:
+		Name: R. Soviet
+		InternalName: RandomSoviet
+		RandomFactionMembers: russia, ukraine, kazakh
+		Side: Random
+		Description: Random Soviet Country\nA random Soviet country will be chosen when the game starts
+	Faction@allies:
+		Name: Allies
+		InternalName: allies
+		Side: Allies
+		Description: Allies\nThe Allies is an military alliance of European nations, that hastily united against the imminent Soviet threat\nUnder the leadership of the prominent nations of Europe, such as Britain, Germany, France, Spain and Greece\nthe Alliance finds support worldwide, chiefly being backed by the USA and regional allies such as Turkey\nThey have divergent tactical options, possess a strong Navy and have access to many powerful technologies\nsuch as time travel, invisibility or prismatic laser weaponry, most are products of Prof. Einstein's genius
+	Faction@usa:
+		Name: USA
+		InternalName: usa
+		Side: Allies
+		Description: USA\nSpecialization: Airforce\nThe forces of USA utilize aerial superiority\nFaction Variations:\n    - Tank bonus (NYI) \n*Those Tanks being: Light Tank, Medium Tank, Tank Destroyer\n    - Paratroopers delivers double the amount of Troops\nUnique Support Power:\n    - Fuel Air Bomb\nAn B-52 drops this experimental bomb on your target\nSpecial Units:\n    - G.I. (Infantry)\nThis next generation of assault infantry attacks using machinegun and grenadelauncher at the same time\n    - MRLS (Vehicle)\nRocket artillery capable of firing in salvos\n    - Patriot Battery (Defense)\nSuperior Anti-Air defense structure\n    - Aircraft Carrier (Ship)\nThis ship is capable of producing and servicing multiple aircraft at Sea when deployed
+		Selectable: False
+	Faction@britain:
+		Name: Britain
+		InternalName: britain
+		Side: Allies
+		Description: Britain\nSpecialization: Intelligence\nThe forces of Britain uphold their long tradition in Espionage\nFaction Variations:\n    - Tanks* deal more damage but are costlier\n*Those Tanks being: Light Tank, Medium Tank, Tank Destroyer\n+10% damage dealt at the cost of being 10% expensiver\n    - Spy is trained as Veteran\nUnique Support Power:\n    - GPS Scrambler\nRenders an group of units invisible aslong they are not firing\nSpecial Units:\n    - Sniper (Infantry)\nThis accomplished marksman is capable of one-shotting most if not any Infantry\n    - ECM Jammer (Vehicle)\nThis vehicle is capable of jamming enemy missiles and radar
+	Faction@france:
+		Name: France
+		InternalName: france
+		Side: Allies
+		Description: France\nSpecialization: Deception\nThe forces of France are capable of deceiving their enemies in many ways\nFaction Variations:\n    - Tanks* fire faster but deal less damage\n*Those Tanks being: Light Tank, Medium Tank, Tank Destroyer\n+10% faster rate of fire, deals -250/-500/-750 damage per shot\n    - Can build Fake structures\nThis selection of fake structures look precisely as an real building to the enemy\nUnique Support Power:\n    - Decoy Army\nDelivers an group of Fake units at your primary War Factory\nThose remote-controlled units armed with dummy weaponry look identical to the opponent\nSpecial Units:\n    - Phase Transport (Vehicle)\nThis transport armed with rocket launcher is cloaked at all times\n    - Phase Tank (Vehicle)\nThis modification of the light tank is cloaked at all times \n    - Hunter Submarine(NYI)\nThis fast, nimble submarine armed with single torpedo is never revealed, even during attacking
+	Faction@germany:
+		Name: Germany
+		InternalName: germany
+		Side: Allies
+		Description: Germany\nSpecialization: Technology\nThe forces of Germany take pride in displaying their scientific progress on the battlefield\nFaction Variations:\n    - Tanks* are durabler but move slower\n*Those Tanks being: Light Tank, Medium Tank, Tank Destroyer\nTanks have their Health increased by 10%, they move marginally slower in return\n    - Can use Advanced Chronoshift\nThe advanced chronoshift is capable of transporting an larger group\nUnique Support Power:\n    - Paratanks\nA B-52 delivers two Light and one Medium Tanks anywhere on the map\nSpecial Units:\n    - Jumpjet Infantry\nThis lightly armed Infantry can fly over obstacles and water\n    - Chrono Tank (Vehicle)\nThis tank armed with rocket pods is capable of Teleportation\n    - Prism Tank (Vehicle)\nThis tank is armed with beam weaponry that increases intensity as it bundles with others of its kind\n    - Prism Corvette (NYI)\nBasically an Prism Tank at Sea
+	Faction@spain:
+		Name: Spain
+		InternalName: spain
+		Side: Allies
+		Description: Spain\nSpecialization: Economy\nThe forces of Spain support the allied cause with their strong Eco\nFaction Variations:\n    - Tanks* are cheaper but deal less damage\n*Those Tanks being: Light Tank, Medium Tank, Tank Destroyer\n-10% cheaper at the cost of -10% damage dealt\n    - TBD\nUnique Support Power:\n    - NYI\nTBD\nSpecial Units:\n    - G.I. (Infantry)\nThis next generation of assault infantry attacks using machinegun and grenadelauncher at the same time\n    - MRLS (Vehicle)\nRocket artillery capable of firing in salvos\n    - Patriot Battery(Defense)\nSuperior rocket artillery defense structure
+		Selectable: False
+	Faction@italy:
+		Name: Italy
+		InternalName: italy
+		Side: Allies
+		Description: Italy\nSpecialization: Mobility\nThe forces of Italy prefer rapid assaults\nFaction Variations:\nTBD\nSpecial Units:\n    - IFV (Vehicle)\nThe modular IFV can be outfitted with different weaponry dependant on its passenger
+		Selectable: False
+	Faction@greece:
+		Name: Greece
+		InternalName: greece
+		Side: Allies
+		Description: Greece\nSpecialization: Navy\nThe forces of Greece contribute their strong navy to the Allies cause\nFaction Variations:\n    - Tank bonus (NYI) \n*Those Tanks being: Light Tank, Medium Tank, Tank Destroyer\n    - Improved sonar recharges faster and detects in wider area\nUnique Support Power:\n    - NYI\n(NYI)\nSpecial Units:\n    - Helicarrier (Navy)
+		Selectable: False
+	Faction@turkey:
+		Name: Turkey
+		InternalName: turkey
+		Side: Allies
+		Description: Turkey\nSpecialization: Fortifications\nThe forces of Turkey are unyielding defenders\nFaction Variations:\n    - Tank bonus (NYI) \n*Those Tanks being: Light Tank, Medium Tank, Tank Destroyer\n    - Concrete Walls at half price\nUnique Support Power:\n    - None (NYI)\nNYI\nSpecial Units:\n    - Mobile Bunker (Vehicle)\nThis mobile fortification can house up to 5 Infantry, which then can attack from inside\n    - Grand Turret(Defense)\nTriple-barreled artillery defense structure
+		Selectable: False
+	Faction@soviet:
+		Name: Soviets
+		InternalName: soviet
+		Side: Soviet
+		Description: Soviets\nThe Soviets consist of the combined forces of the USSR. Under the leadership of Stalin they march forth to conquer Europe,\ntheir intention: to realize the comrade premier's dream of uniting the continent under communist Socialism at any cost\nThey use strong armoured divisions, napalm weaponry, tesla technology and strength in numbers to overwhelm opposition
+	Faction@russia:
+		Name: Russia
+		InternalName: russia
+		Side: Soviet
+		Description: Russia\nSpecialization: Tesla Weaponry\nThe forces of Russia utilize the next generation of Tesla technology\nFaction Variations:\n    - Tanks* are faster to build but have less health\n*Those Tanks being: Medium Tank, Heavy Tank, Mammoth Tank\nBuildDurationModifier is 50, Health reduced by 10%\n    - All Powerplants provide extra Power\nPower Plant provides additional +25, Advanced Power Plant +50, Nuclear Plant +100 power\nUnique Support Power:\n    - EMP Air Strike\nA plane drops an EMP Bomb on your target, disabling Vehicle, Ship and Submarines\nDisabled units cannot move or shoot for a while\nUncloaks hidden units, Submarines will resurface\nSpecial Units:\n    - Tesla Trooper (Infantry)\nThe advanced Tesla Trooper wears armor and cannot be crushed\n    - Heavy Tesla Tank (Vehicle)\nThis heavily armored variant causes vehicles to short-circuit briefly\n    - Kirov Airship (Aircraft)\nThis slow-moving Airship is heavily armored and drops bombs that cause EMP blasts\n    - Tesla Boat (Ship)\nBasically an Tesla Tank at sea
+	Faction@ukraine:
+		Name: Ukraine
+		InternalName: ukraine
+		Side: Soviet
+		Description: Ukraine\nSpecialization: Demolitions\nThe forces of Ukraine specialize in blowing their opponents to smithereens\nFaction Variations:\n    - Tanks* have +1 range but less rate of fire\n*Those Tanks being: Medium Tank, Heavy Tank, Mammoth Tank\n    - Can used Advanced Iron Curtain\nThe advanced Iron Curtain can be used offensively to kill enemy Infantry too\nUnique Support Power:\n    - Cruise Missile Strike\nAn badger will fire V2 rockets at your target\nSpecial Units:\n    - Bomb Dog (Infantry)\nAn dog with a bomb vest that had been trained to run towards enemies\n    - Mammoth KV-8 (Heavy Tank)\nThis special modification of the Mammoth chassis sports dual flamethrowers\n    - Demolition Truck (Vehicle)\nAn truck with a desperate driver, loaded with Nuclear explosives\n    - Flame Submarine (Ship)\nThis submarine is capable of shooting the same projectiles as Flame Tower
+	Faction@kazakh:
+		Name: Kazakhst.
+		InternalName: kazakh
+		Side: Soviet
+		Description: Kazakhstan\nSpecialization: Nuclear Weapons\nThe forces of Kazakhstan bring the Soviet nuclear arsenal to the table\nFaction Variations:\n    - Tanks* move faster but are built slower\n*Those Tanks being: Medium Tank, Heavy Tank, Mammoth Tank\nBuildDurationModifier is 70, speed marginally faster\nMammoth body and turret turns one unit faster too\n    - Atom Bombs get prepared faster\nNuke recharges in 10500s instead 13500s\nUnique Support Power:\n    - Paranuke\nAn special MiG drops an Nuclear Parabomb\nSpecial Units:\n    - Desolator (Infantry) (buildlimit:2)\nThis infantry in heavy armor suit is armed with micro nuclear missile launcher\n    - ICBM Launcher (Vehicle) (buildlimit:1)\nThe Ballistic launcher carries an ICBM that delivers the same payload as an Demotruck\n    - ICBM Submarine (Navy) (buildlimit:1)\nThis submarine carries an ICBM that delivers the same payload as an Demotruck\nAn note about ICBM units: you cant have both types at the same time, choose either one
+	ResourceType@ore:
+		Type: Ore
+		Name: Valuable Minerals
+		PipColor: Yellow
+		ResourceType: 1
+		TerrainType: Ore
+		Palette: player
+		Sequences: gold01,gold02,gold03,gold04
+		MaxDensity: 12
+		ValuePerUnit: 25
+		AllowedTerrainTypes: Clear,Road
+		AllowUnderActors: true
+	ResourceType@gem:
+		Type: Gems
+		Name: Valuable Minerals
+		PipColor: Red
+		ResourceType: 2
+		TerrainType: Gems
+		Palette: player
+		Sequences: gem01,gem02,gem03,gem04
+		MaxDensity: 3
+		ValuePerUnit: 50
+		AllowedTerrainTypes: Clear,Road
+		AllowUnderActors: true
+	ResourceType@scrap:
+		Type: Scraps
+		Name: Valuable Minerals
+		PipColor: Green
+		ResourceType: 3
+		TerrainType: Scraps
+		Palette: player
+		Sequences: scrap01,scrap02,scrap03,scrap04,scrap05,scrap06,scrap07,scrap08,scrap09,scrap10,scrap11,scrap12,scrap13,scrap14,scrap15,scrap16,scrap17,scrap18,scrap19,scrap20
+		MaxDensity: 12
+		ValuePerUnit: 12
+		AllowedTerrainTypes: Clear,Road
+		AllowUnderActors: true
+	JumpjetActorLayer:
+
+World:
+	Inherits: ^BaseWorld
+	ChatCommands:
+	DevCommands:
+	DebugVisualizationCommands:
+	PlayerCommands:
+	HelpCommand:
+	ScreenShaker:
+	BuildingInfluence:
+	ProductionQueueFromSelection:
+		ProductionPaletteWidget: PRODUCTION_PALETTE
+	LegacyBridgeLayer:
+		Bridges: bridge1, bridge2, bridge3, bridge4, br1, br2, br3, sbridge1, sbridge2, sbridge3, sbridge4
+	CustomTerrainDebugOverlay:
+	CrateSpawner:
+		DeliveryAircraft: badr.crate
+		QuantizedFacings: 16
+		Minimum: 1
+		Maximum: 3
+		SpawnInterval: 3000
+		WaterChance: 20
+		InitialSpawnDelay: 1500
+		CheckboxDisplayOrder: 1
+	DomainIndex:
+	SmudgeLayer@SCORCH:
+		Type: Scorch
+		Sequence: scorches
+		SmokePercentage: 50
+	SmudgeLayer@CRATER:
+		Type: Crater
+		Sequence: craters
+	ResourceLayer:
+	ResourceClaimLayer:
+	WarheadDebugOverlay:
+	SpawnMapActors:
+	MapBuildRadius:
+		AllyBuildRadiusCheckboxDisplayOrder: 4
+		BuildRadiusCheckboxDisplayOrder: 5
+		BuildRadiusCheckboxEnabled: False
+	MapOptions:
+		ShortGameCheckboxDisplayOrder: 2
+		TechLevelDropdownDisplayOrder: 2
+		GameSpeedDropdownDisplayOrder: 3
+		GameSpeed: fast
+	CreateMPPlayers:
+	MPStartUnits@mcvonly:
+		Class: none
+		ClassName: MCV Only
+		Factions: allies, soviet, britain, france, germany, russia, ukraine, kazakh
+		BaseActor: mcv
+	MPStartUnits@lightallies:
+		Class: light
+		ClassName: Light Support
+		Factions: allies, britain, france, germany
+		BaseActor: mcv
+		SupportActors: e1,e1,e1,e3,e3,jeep,1tnk
+		InnerSupportRadius: 3
+		OuterSupportRadius: 5
+	MPStartUnits@lightsoviet:
+		Class: light
+		ClassName: Light Support
+		Factions: soviet, russia, ukraine, kazakh
+		BaseActor: mcv
+		SupportActors: e1,e1,e1,e3,e3,btr,ftrk
+		InnerSupportRadius: 3
+		OuterSupportRadius: 5
+	MPStartUnits@heavyallies:
+		Class: heavy
+		ClassName: Heavy Support
+		Factions: allies, britain, france, germany
+		BaseActor: mcv
+		SupportActors: e1,e1,e1,e3,e3,jeep,1tnk,2tnk,2tnk,2tnk
+		InnerSupportRadius: 3
+		OuterSupportRadius: 5
+	MPStartUnits@heavysoviet:
+		Class: heavy
+		ClassName: Heavy Support
+		Factions: soviet, russia, ukraine, kazakh
+		BaseActor: mcv
+		SupportActors: e1,e1,e1,e3,e3,btr,ftrk,3tnk,3tnk
+		InnerSupportRadius: 3
+		OuterSupportRadius: 5
+	MPStartLocations:
+		SeparateTeamSpawnsCheckboxDisplayOrder: 6
+	SpawnMPUnits:
+		StartingUnitsClass: none
+		DropdownDisplayOrder: 1
+	PathFinder:
+	ValidateOrder:
+	DebugPauseState:
+	RadarPings:
+	StartGameNotification:
+	ObjectivesPanel:
+		PanelName: SKIRMISH_STATS
+	LoadWidgetAtGameStart:
+	MapCreeps:
+		CheckboxVisible: True
+		CheckboxLabel: Antfestation
+		CheckboxDescription: Periodically will Giant Ants emerge from Mineshafts, that are hostile to all
+		CheckboxEnabled: False
+		CheckboxDisplayOrder: 11
+	ActorSpawnManager:
+		Minimum: 0
+		Maximum: 16
+		SpawnInterval: 5000
+		Actors: ScoutAnt,FireAnt,WarriorAnt,TeslaAnt,ToxicAnt,ShadowAnt
+		Owner: Creeps
+		Types: mine,gmine
+	LuaScript:
+		Scripts: cossackscript.lua
+
+EditorWorld:
+	Inherits: ^BaseWorld
+	EditorActorLayer:
+	EditorResourceLayer:
+	EditorSelectionLayer:
+	LoadWidgetAtGameStart:

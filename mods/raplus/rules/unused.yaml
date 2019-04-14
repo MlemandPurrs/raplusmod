@@ -1,0 +1,129 @@
+stuff to implement:
+Chrono Ore Truck
+Deployable Mine booster truck for Spain
+Heavy Flak and dual-barrel Heavy Turret for Soviet
+allied extra navy Prism Boat, Hunter Submarine
+Behemoth, Carrier Airship and Crazy Ivan as commando for Belarus
+invent Commandoes for the rest of countries
+Transfer Tanya to USA once implemented
+
+JUMP:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	HiddenUnderFog:
+		Type: CenterPosition
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 12
+		Prerequisites: ~barracks, techcenter, dome, ~infantry.allies, ~player.germany, ~!industryplant.on, ~techlevel.medium
+		Description: Airborne soldier\n Strong vs Infantry, Aircraft\n Weak vs Vehicles
+	Valued:
+		Cost: 650
+	Tooltip:
+		Name: Jumpjet Infantry
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 9000
+	-Mobile:
+	RevealsShroud:
+		Range: 6c0
+		Type: CenterPosition
+	Armor:
+		Type: Light
+	Armament@primary:
+		Weapon: 20mm
+	AttackFrontal:
+	Aircraft:
+		CruiseAltitude: 3072
+		LandWhenIdle: True
+		InitialFacing: 20
+		TurnSpeed: 255
+		Speed: 140
+		AltitudeVelocity: 83
+		AirborneCondition: airborne
+		LandableTerrainTypes: Clear,Rough,Road,Ore,Beach,Gems,Scraps
+		RepairBuildings:
+		RearmBuildings:
+		CanHover: True
+		IdealSeparation: 512
+		TakeOffOnResupply: true
+		VTOL: true
+	WithInfantryBody:
+		StandSequences: fly
+		MoveSequence: fly
+		DefaultAttackSequence: shoot-air
+		IdleSequences: idle-air
+	Hovers:
+		OffsetModifier: -45
+	-Crushable:
+	-TakeCover:
+	-WithDeathAnimation:
+	WithShadow:
+	ProducibleWithLevel:
+		Prerequisites: infantry.upgraded
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	-Targetable:
+	-Targetable@HEAL:
+	Targetable@Ground:
+		TargetTypes: Ground, Infantry, DetonateAttack, Disguise
+		RequiresCondition: !airborne
+	Targetable@Airborne:
+		TargetTypes: Air, Disguise
+		RequiresCondition: airborne
+	-Passenger:
+	SpawnActorOnDeath:
+		Actor: JUMP.Husk
+
+JUMP.Husk:
+	Inherits: ^HelicopterHusk
+	Inherits@1: ^SpriteActor
+	WithFacingSpriteBody:
+	Tooltip:
+		Name: Jumpjet Infantry
+	Aircraft:
+		TurnSpeed: 10
+		Speed: 140
+	FallsToEarth:
+		Explosion: UnitExplodeSmall
+	RevealsShroud:
+		Range: 6c0
+		Type: CenterPosition
+	WithShadow:
+
+JUMP.Husk:
+	RenderSprites:
+	BodyOrientation:
+		QuantizedFacings: 1
+	Aircraft:
+	HiddenUnderFog:
+		Type: GroundPosition
+	ScriptTriggers:
+	Tooltip:
+		Name: Jumpjet Infantry
+	FallsToEarth:
+		Velocity: 86
+		Explosion:
+	Aircraft:
+		Speed: 186
+		CanHover: True
+		VTOL: true
+	RenderSprites:
+		Image: jump.husk
+	WithSpriteBody:
+		Sequence: die-falling
+	Health:
+	HitShape:
+	ConditionManager:
+	GrantConditionOnTerrain:
+		TerrainTypes: Water
+		Condition: water-death
+	WithDeathAnimation:
+		RequiresCondition: !water-death
+		FallbackSequence: die-flying
+	WithDeathAnimation@SPLASH:
+		RequiresCondition: water-death
+		FallbackSequence: die-splash
+	Interactable:
