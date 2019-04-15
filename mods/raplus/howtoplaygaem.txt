@@ -3,12 +3,13 @@ In order to install this mod you will need to do the following:
 Download OpenRA from here: Openra.net if you don't have it.
 Then after you download OpenRA-release-20190314, install it.
 
-After that extract the file "raplus-alpha-006e.zip" you have just downloaded.
+After that extract the file "raplus-alpha-006f.zip" you have just downloaded.
 Open the new folder you just made (by extracting the zip file^) and copy the folder named "raplus".
 Now go to your openra install directory (if you can't find it then just right click on the desktop icon and then click "open file location"). When you get inside the openra folder navigate into mods\ paste the folder you copied earlier (raplus)
 
 Now this is the hardest part for most users, so read carefully!
-In the OpenRa install directory there is a file named "OpenRA.Game.exe" right click, ok now a popup window will, well in that popup now find the option named "create shortcut" and click it. That will make a shortcut now right click on the shortcut, click properties and go to field named "target" at the end of that line paste or type
+In the OpenRa install directory there is a file named "OpenRA.Game.exe" right click, ok now a popup window will, well in that popup now find the option named "create shortcut" and click it. 
+That will make a shortcut now right click on the shortcut, click properties and go to field named "target" at the end of that line paste or type
 this: " Game.Mod=raplus
 as example when done right looks like this:
 "D:\OpenRA\OpenRA.Game.exe Game.Mod=raplus"
@@ -28,7 +29,7 @@ inside SDK's folder delete these two:
 OpenRAModSDK-master\mods\example\
 OpenRAModSDK-master\OpenRA.Mods.Example\
 
-now extract the file "raplus-alpha-006e." you have just downloaded.
+now extract the file "raplus-alpha-006f.zip" you have just downloaded.
 Open the new folder you just made (by extracting the zip file^) and copy the folder named "raplus" into SDK mods directory
 as example when done right looks like this:
 "D:\OpenRAModSDK-master\mods\raplus\"

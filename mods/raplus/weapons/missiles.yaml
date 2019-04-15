@@ -124,7 +124,7 @@ Thermobaric:
 MammothTusk:
 	Inherits: ^AntiGroundMissile
 	ReloadDelay: 60
-	Range: 6c512
+	Range: 4c512
 	Burst: 2
 	ValidTargets: Air, Infantry
 	Projectile: Missile

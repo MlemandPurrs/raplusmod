@@ -424,7 +424,7 @@ LST:
 	Valued:
 		Cost: 700
 	Tooltip:
-		Name: Transport
+		Name: Transport Ship
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -446,7 +446,7 @@ LST:
 	Cargo:
 		Types: Infantry, Engineer, Vehicle
 		MaxWeight: 10
-		PipCount: 8
+		PipCount: 10
 		PassengerFacing: 0
 		LoadingCondition: notmobile
 	-Chronoshiftable:

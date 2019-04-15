@@ -526,7 +526,7 @@ TNKD:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 11
-		Prerequisites: factory, fix, ~vehicles.allies, ~!player.is.subfaction, ~!industryplant.on, ~techlevel.medium
+		Prerequisites: factory, fix, dome, ~vehicles.allies, ~!player.is.subfaction, ~!industryplant.on, ~techlevel.medium
 		Description: Mobile anti-armor platform, sporting an big gun with long reload\n Strong vs Tanks, Vehicles\n Weak vs Infantry, Aircraft
 	Valued:
 		Cost: 900
