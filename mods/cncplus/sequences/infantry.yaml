@@ -1,0 +1,2071 @@
+e1:
+	stand:
+		Facings: 8
+	stand2:
+		Start: 8
+		Facings: 8
+	run:
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 64
+		Length: 8
+		Facings: 8
+	prone-stand:
+		Start: 144
+		Stride: 4
+		Facings: 8
+	prone-stand2:
+		Start: 144
+		Stride: 4
+		Facings: 8
+	prone-run:
+		Start: 144
+		Length: 4
+		Facings: 8
+		Tick: 100
+	# stand -> prone transition
+	liedown:
+		Start: 128
+		Length: 2
+		Facings: 8
+	# prone -> stand transition
+	standup:
+		Start: 176
+		Length: 2
+		Facings: 8
+	prone-shoot:
+		Start: 192
+		Length: 8
+		Facings: 8
+	idle1:
+		Start: 257
+		Length: 15
+		Tick: 120
+	idle2:
+		Start: 272
+		Length: 16
+		Tick: 120
+	idle3:
+		Start: 289
+		Length: 22
+		Tick: 120
+	cheer:
+		Start: 460
+		Length: 3
+		Facings: 8
+		Tick: 120
+	# Dancing
+	idle4:
+		Start: 517
+		Length: 9
+		Tick: 120
+	# Shot
+	die1:
+		Start: 381
+		Length: 9
+		Tick: 80
+	# Explode
+	die2:
+		Start: 390
+		Length: 8
+		Tick: 80
+	# Fly and explode in air
+	die3:
+		Start: 398
+		Length: 8
+		Tick: 80
+	# Fly through air squish on ground
+	die4:
+		Start: 406
+		Length: 12
+		Tick: 80
+	# Burn
+	die5:
+		Start: 418
+		Length: 18
+		Tick: 80
+	# Tib
+	die6: poisonTD
+		Length: *
+	die7: electroTD
+		Length: *
+	die-crushed: e1rot
+		Start: 16
+		Length: 4
+		Tick: 1600
+		ZOffset: -511
+	garrison-muzzle: minigun
+		Length: 6
+		Facings: 8
+	icon: e1icon.shp
+		AddExtension: False
+
+e2:
+	stand:
+		Facings: 8
+	stand2:
+		Start: 8
+		Facings: 8
+	run:
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 100
+	throw:
+		Start: 64
+		Length: 20
+		Facings: 8
+	# stand -> prone transition
+	liedown:
+		Start: 224
+		Length: 2
+		Facings: 8
+	# prone -> stand transition
+	standup:
+		Start: 272
+		Length: 2
+		Facings: 8
+	prone-stand:
+		Start: 240
+		Stride: 4
+		Facings: 8
+	prone-stand2:
+		Start: 240
+		Stride: 4
+		Facings: 8
+	prone-run:
+		Start: 240
+		Length: 4
+		Facings: 8
+		Tick: 100
+	prone-throw:
+		Start: 288
+		Length: 12
+		Facings: 8
+	idle1:
+		Start: 384
+		Length: 16
+		Tick: 120
+	idle2:
+		Start: 400
+		Length: 13
+		Tick: 120
+	cheer:
+		Start: 588
+		Length: 3
+		Facings: 8
+		Tick: 120
+	# Shot
+	die1:
+		Start: 509
+		Length: 9
+		Tick: 80
+	# Explode
+	die2:
+		Start: 518
+		Length: 8
+		Tick: 80
+	# Fly and explode in air
+	die3:
+		Start: 526
+		Length: 8
+		Tick: 80
+	# Fly through air squish on ground
+	die4:
+		Start: 534
+		Length: 12
+		Tick: 80
+	# Burn
+	die5:
+		Start: 546
+		Length: 18
+		Tick: 80
+	# Tib
+	die6: poisonTD
+		Length: *
+	die7: electroTD
+		Length: *
+	die-crushed: e2rot
+		Start: 16
+		Length: 4
+		Tick: 1600
+		ZOffset: -511
+	icon: e2icnh.tem
+		AddExtension: False
+
+shot:
+	stand:
+		Facings: 8
+	stand2:
+		Start: 8
+		Facings: 8
+	run:
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 64
+		Length: 16
+		Facings: 8
+	liedown:
+		Start: 192
+		Length: 2
+		Facings: 8
+	standup:
+		Start: 240
+		Length: 2
+		Facings: 8
+	prone-stand:
+		Start: 208
+		Stride: 4
+		Facings: 8
+	prone-stand2:
+		Start: 208
+		Stride: 4
+		Facings: 8
+	prone-run:
+		Start: 208
+		Length: 4
+		Facings: 8
+		Tick: 100
+	prone-shoot:
+		Start: 256
+		Length: 16
+		Facings: 8
+	idle1:
+		Start: 384
+		Length: 14
+		Tick: 120
+	idle2:
+		Start: 399
+		Length: 16
+		Tick: 120
+	die1:
+		Start: 416
+		Length: 8
+		Tick: 80
+	die2:
+		Start: 424
+		Length: 8
+		Tick: 80
+	die3:
+		Start: 432
+		Length: 8
+		Tick: 80
+	die4:
+		Start: 440
+		Length: 12
+		Tick: 80
+	# Burn
+	die5:
+		Start: 452
+		Length: 18
+		Tick: 80
+	# Tib
+	die6: poisonTD
+		Length: *
+	die7: electroTD
+		Length: *
+	die-crushed: e1rot
+		Start: 16
+		Length: 4
+		Tick: 1600
+		ZOffset: -511
+	garrison-muzzle: minigun
+		Length: 6
+		Facings: 8
+	icon: shoticon
+
+e3:
+	stand:
+		Facings: 8
+	stand2:
+		Start: 8
+		Facings: 8
+	run:
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 64
+		Length: 8
+		Facings: 8
+	# stand -> prone transition
+	liedown:
+		Start: 128
+		Length: 2
+		Facings: 8
+	# prone -> stand transition
+	standup:
+		Start: 176
+		Length: 2
+		Facings: 8
+	prone-stand:
+		Start: 144
+		Stride: 4
+		Facings: 8
+	prone-stand2:
+		Start: 144
+		Stride: 4
+		Facings: 8
+	prone-run:
+		Start: 144
+		Length: 4
+		Facings: 8
+		Tick: 100
+	prone-shoot:
+		Start: 192
+		Length: 10
+		Facings: 8
+	idle1:
+		Start: 274
+		Length: 12
+		Tick: 120
+	idle2:
+		Start: 289
+		Length: 14
+		Tick: 120
+	cheer:
+		Start: 476
+		Length: 3
+		Facings: 8
+		Tick: 120	
+	# Shot
+	die1:
+		Start: 397
+		Length: 9
+		Tick: 80
+	# Explode
+	die2:
+		Start: 406
+		Length: 8
+		Tick: 80
+	# Fly and explode in air
+	die3:
+		Start: 414
+		Length: 8
+		Tick: 80
+	# Fly through air squish on ground
+	die4:
+		Start: 422
+		Length: 12
+		Tick: 80
+	# Burn
+	die5:
+		Start: 434
+		Length: 18
+		Tick: 80
+	# Tib
+	die6: poisonTD
+		Length: *
+	die7: electroTD
+		Length: *
+	die-crushed: e3rot
+		Start: 16
+		Length: 4
+		Tick: 1600
+		ZOffset: -511
+	icon: e3icnh.tem
+		AddExtension: False
+
+e6:
+	stand:
+		Facings: 8
+	stand2:
+		Start: 8
+		Facings: 8
+	repair: e6-repair
+		Length: 58
+		Tick: 120
+	run:
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 100
+	# stand -> prone transition
+	liedown:
+		Start: 66
+		Length: 2
+		Facings: 8
+	# prone -> stand transition
+	standup:
+		Start: 114
+		Length: 2
+		Facings: 8
+	prone-stand:
+		Start: 82
+		Stride: 4
+		Facings: 8
+	prone-stand2:
+		Start: 82
+		Stride: 4
+		Facings: 8
+	prone-run:
+		Start: 82
+		Length: 4
+		Facings: 8
+		Tick: 100
+	idle1:
+		Start: 114
+		Length: 6
+		Tick: 120
+	idle2:
+		Start: 200
+		Length: 6
+		Tick: 120
+	cheer:
+		Start: 200
+		Length: 3
+		Facings: 8
+		Tick: 120
+	# Shot
+	die1:
+		Start: 146
+		Length: 8
+		Tick: 80
+	# Explode
+	die2:
+		Start: 154
+		Length: 8
+		Tick: 80
+	# Fly and explode in air
+	die3:
+		Start: 162
+		Length: 8
+		Tick: 80
+	# Fly through air squish on ground
+	die4:
+		Start: 170
+		Length: 12
+		Tick: 80
+	# Burn
+	die5:
+		Start: 182
+		Length: 18
+		Tick: 80
+	# Tib
+	die6: poisonTD
+		Length: *
+	die7: electroTD
+		Length: *
+	die-crushed: e1rot
+		Start: 16
+		Length: 4
+		Tick: 1600
+		ZOffset: -511
+	icon: e6icnh.tem
+		AddExtension: False
+
+medi:
+	stand:
+		Facings: 8
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 100
+	heal:
+		Start: 56
+		Length: 58
+		Tick: 120
+	standup:
+		Start: 114
+		Length: 2
+		Facings: 8
+	idle:
+		Start: 178
+		Length: 14
+		Tick: 120
+	die1:
+		Start: 193
+		Length: 7
+	die2:
+		Start: 201
+		Length: 8
+	die3:
+		Start: 209
+		Length: 8
+	die4:
+		Start: 217
+		Length: 12
+	die5:
+		Start: 229
+		Length: 18
+	die6: poisonTD
+		Length: *
+	die7: electroTD
+		Length: *
+	die-crushed: e1rot
+		Length: 6
+		Tick: 1600
+		ZOffset: -511
+	prone-stand:
+		Start: 130
+		Stride: 4
+		Facings: 8
+	prone-run:
+		Start: 130
+		Length: 4
+		Facings: 8
+		Tick: 100
+	icon: mediicon
+
+mech:
+	stand:
+		Facings: 8
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 100
+	repair:
+		Start: 56
+		Length: 58
+		Tick: 120
+	standup:
+		Start: 114
+		Length: 2
+		Facings: 8
+	idle:
+		Start: 178
+		Length: 14
+		Tick: 120
+	die1:
+		Start: 193
+		Length: 7
+	die2:
+		Start: 201
+		Length: 8
+	die3:
+		Start: 209
+		Length: 8
+	die4:
+		Start: 217
+		Length: 12
+	die5:
+		Start: 229
+		Length: 18
+	die6: poisonTD
+		Length: *
+	die7: electroTD
+		Length: *
+	die-crushed: e1rot
+		Start: 16
+		Length: 4
+		Tick: 1600
+		ZOffset: -511
+	prone-stand:
+		Start: 130
+		Stride: 4
+		Facings: 8
+	prone-run:
+		Start: 130
+		Length: 4
+		Facings: 8
+		Tick: 100
+	icon: mechicon
+
+gi:
+	stand:
+		Facings: 8
+	stand2:
+		Start: 8
+		Facings: 8
+	run:
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 64
+		Length: 8
+		Facings: 8
+	prone-stand:
+		Start: 144
+		Stride: 4
+		Facings: 8
+	prone-stand2:
+		Start: 144
+		Stride: 4
+		Facings: 8
+	prone-run:
+		Start: 144
+		Length: 4
+		Facings: 8
+		Tick: 100
+	# stand -> prone transition
+	liedown:
+		Start: 128
+		Length: 2
+		Facings: 8
+	# prone -> stand transition
+	standup:
+		Start: 176
+		Length: 2
+		Facings: 8
+	prone-shoot:
+		Start: 192
+		Length: 8
+		Facings: 8
+	idle1:
+		Start: 257
+		Length: 15
+		Tick: 120
+	idle2:
+		Start: 272
+		Length: 16
+		Tick: 120
+	cheer:
+		Start: 342
+		Length: 3
+		Facings: 8
+		Tick: 120
+	# Shot
+	die1:
+		Start: 381
+		Length: 9
+		Tick: 80
+	# Explode
+	die2:
+		Start: 390
+		Length: 8
+		Tick: 80
+	# Fly and explode in air
+	die3:
+		Start: 398
+		Length: 8
+		Tick: 80
+	# Fly through air squish on ground
+	die4:
+		Start: 406
+		Length: 12
+		Tick: 80
+	# Burn
+	die5:
+		Start: 418
+		Length: 18
+		Tick: 80
+	# Tib
+	die6: poisonTD
+		Length: *
+	die7: electroTD
+		Length: *
+	die-crushed: e1rot
+		Start: 16
+		Length: 4
+		Tick: 1600
+		ZOffset: -511
+	garrison-muzzle: minigun
+		Length: 6
+		Facings: 8
+	icon: giicon
+
+cybr:
+	Defaults:
+		Tick: 80
+	stand:
+		Facings: 8
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+	idle1:
+		Start: 56
+		Length: 15
+	idle2:
+		Start: 71
+		Length: 15
+	crippled-run:
+		Start: 86
+		Length: 6
+		Facings: 8
+	crippled-stand:
+		Start: 86
+		Facings: 8
+		Stride: 6
+	die1:
+		Start: 134
+		Length: 15
+	die2:
+		Start: 149
+		Length: 15
+	die3:
+		Start: 134
+		Length: 15
+	die4:
+		Start: 275
+		Length: 15
+	die5:
+		Start: 260
+		Length: 15
+	die6: poisonTD
+		Length: *
+	die7: electroTD
+		Length: *
+	die-crushed: e1rot
+		Start: 16
+		Length: 4
+		Tick: 1600
+		ZOffset: -511
+	shoot:
+		Start: 164
+		Length: 6
+		Facings: 8
+	crippled-shoot:
+		Start: 212
+		Length: 6
+		Facings: 8
+	emp-overlay: emp_fx01
+		Length: *
+		ZOffset: 512
+		BlendMode: Additive
+	garrison-muzzle: minigun
+		Length: 6
+		Facings: 8
+	icon: cybricon
+
+atgm:
+	stand:
+		Facings: 8
+	stand2:
+		Start: 8
+		Facings: 8
+	run:
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 100
+	throw:
+		Start: 64
+		Length: 8
+		Facings: 8
+	liedown:
+		Start: 176
+		Length: 2
+		Facings: 8
+	standup:
+		Start: 128
+		Length: 2
+		Facings: 8
+	prone-stand:
+		Start: 144
+		Stride: 4
+		Facings: 8
+	prone-stand2:
+		Start: 144
+		Stride: 4
+		Facings: 8
+	prone-run:
+		Start: 144
+		Length: 4
+		Facings: 8
+		Tick: 100
+	prone-throw:
+		Start: 192
+		Length: 10
+		Facings: 8
+	idle1:
+		Start: 272
+		Length: 14
+		Tick: 120
+	idle2:
+		Start: 286
+		Length: 18
+		Tick: 120
+	cheer:
+		Start: 358
+		Length: 3
+		Facings: 8
+		Tick: 120
+	die1:
+		Start: 304
+		Length: 8
+		Tick: 80
+	die2:
+		Start: 312
+		Length: 8
+		Tick: 80
+	die3:
+		Start: 320
+		Length: 8
+		Tick: 80
+	die4:
+		Start: 328
+		Length: 12
+		Tick: 80
+	die5:
+		Start: 340
+		Length: 18
+		Tick: 80
+	die6: poisonTD
+		Length: *
+	die7: electroTD
+		Length: *
+	die-crushed: e1rot
+		Length: 6
+		Tick: 1600
+		ZOffset: -511
+		UseTilesetExtension: false
+	icon: atgmicon
+
+stng:
+	stand:
+		Facings: 8
+	stand2:
+		Start: 8
+		Facings: 8
+	run:
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 64
+		Length: 16
+		Facings: 8
+	# stand -> prone transition
+	liedown:
+		Start: 192
+		Length: 2
+		Facings: 8
+	# prone -> stand transition
+	standup:
+		Start: 240
+		Length: 2
+		Facings: 8
+	prone-stand:
+		Start: 208
+		Stride: 4
+		Facings: 8
+	prone-stand2:
+		Start: 208
+		Stride: 4
+		Facings: 8
+	prone-run:
+		Start: 208
+		Length: 4
+		Facings: 8
+		Tick: 100
+	prone-shoot:
+		Start: 256
+		Length: 16
+		Facings: 8
+	idle1:
+		Start: 384
+		Length: 14
+		Tick: 120
+	idle2:
+		Start: 398
+		Length: 18
+		Tick: 120
+	cheer:
+		Start: 470
+		Length: 3
+		Facings: 8
+		Tick: 120	
+	# Shot
+	die1:
+		Start: 416
+		Length: 9
+		Tick: 80
+	# Explode
+	die2:
+		Start: 424
+		Length: 8
+		Tick: 80
+	# Fly and explode in air
+	die3:
+		Start: 432
+		Length: 8
+		Tick: 80
+	# Fly through air squish on ground
+	die4:
+		Start: 440
+		Length: 12
+		Tick: 80
+	# Burn
+	die5:
+		Start: 452
+		Length: 18
+		Tick: 80
+	# Tib
+	die6: poisonTD
+		Length: *
+	die7: electroTD
+		Length: *
+	die-crushed: e1rot
+		Start: 16
+		Length: 4
+		Tick: 1600
+		ZOffset: -511
+	icon: stngicon
+
+sniper:
+	Defaults:
+		UseTilesetExtension: true
+		TilesetOverrides:
+			TEMPERATRA: TEMPERATRAUNITS
+	stand:
+		Facings: 8
+	stand2:
+		Start: 8
+		Facings: 8
+	stand3:
+		Start: 128
+		Length: 16
+	run:
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 64
+		Length: 8
+		Facings: 8
+	prone-stand:
+		Start: 144
+		Stride: 4
+		Facings: 8
+	prone-stand2:
+		Start: 144
+		Stride: 4
+		Facings: 8
+	prone-run:
+		Start: 144
+		Length: 4
+		Facings: 8
+		Tick: 100
+	standup-0:
+		Start: 176
+		Length: 2
+		Facings: 8
+	prone-shoot:
+		Start: 192
+		Length: 8
+		Facings: 8
+	idle1:
+		Start: 256
+		Length: 16
+		Tick: 120
+	idle2:
+		Start: 272
+		Length: 16
+		Tick: 120
+	die1:
+		Start: 288
+		Length: 8
+	die2:
+		Start: 296
+		Length: 8
+	die3:
+		Start: 304
+		Length: 8
+	die4:
+		Start: 312
+		Length: 12
+	die5:
+		Start: 324
+		Length: 18
+	die6: poisonTD
+		Length: *
+		UseTilesetExtension: false
+	die7: electroTD
+		Length: *
+		UseTilesetExtension: false
+	die-crushed: e1rot
+		Length: *
+		Tick: 1600
+		ZOffset: -511
+		UseTilesetExtension: false
+	garrison-muzzle: minigun
+		Length: 6
+		UseTilesetExtension: false
+		Facings: 8
+	icon: snipericon
+		UseTilesetExtension: false
+
+e4:
+	stand:
+		Facings: 8
+	stand2:
+		Start: 8
+		Facings: 8
+	run:
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 64
+		Length: 16
+		Facings: 8
+	# stand -> prone transition
+	liedown:
+		Start: 192
+		Length: 2
+		Facings: 8
+	# prone -> stand transition
+	standup:
+		Start: 240
+		Length: 2
+		Facings: 8
+	prone-stand:
+		Start: 208
+		Stride: 4
+		Facings: 8
+	prone-stand2:
+		Start: 208
+		Stride: 4
+		Facings: 8
+	prone-run:
+		Start: 208
+		Length: 4
+		Facings: 8
+		Tick: 100
+	prone-shoot:
+		Start: 256
+		Length: 16
+		Facings: 8
+	idle1:
+		Start: 384
+		Length: 16
+		Tick: 120
+	idle2:
+		Start: 400
+		Length: 16
+		Tick: 120
+	cheer:
+		Start: 588
+		Length: 3
+		Facings: 8
+		Tick: 120	
+	# Shot
+	die1:
+		Start: 509
+		Length: 9
+		Tick: 80
+	# Explode
+	die2:
+		Start: 518
+		Length: 8
+		Tick: 80
+	# Fly and explode in air
+	die3:
+		Start: 526
+		Length: 8
+		Tick: 80
+	# Fly through air squish on ground
+	die4:
+		Start: 534
+		Length: 12
+		Tick: 80
+	# Burn
+	die5:
+		Start: 546
+		Length: 18
+		Tick: 80
+	# Tib
+	die6: poisonTD
+		Length: *
+	die7: electroTD
+		Length: *
+	die-crushed: e4rot
+		Start: 16
+		Length: 4
+		Tick: 1600
+		ZOffset: -511
+	muzzle:
+		Combine:
+			flame-n:
+				Length: *
+				Offset: 1,6
+			flame-nw:
+				Length: *
+				Offset: 8,7
+			flame-w:
+				Length: *
+				Offset: 8,2
+			flame-sw:
+				Length: *
+				Offset: 7,-2
+			flame-s:
+				Length: *
+				Offset: 1,-2
+			flame-se:
+				Length: *
+				Offset: -5,-2
+			flame-e:
+				Length: *
+				Offset: -7,2
+			flame-ne:
+				Length: *
+				Offset: -7,8
+		Facings: 8
+		Length: 13
+	muzzle-blue:
+		Combine:
+			flame-n:
+				Length: *
+				Offset: 1,6
+			flame-nw:
+				Length: *
+				Offset: 8,7
+			flame-w:
+				Length: *
+				Offset: 8,2
+			flame-sw:
+				Length: *
+				Offset: 7,-2
+			flame-s:
+				Length: *
+				Offset: 1,-2
+			flame-se:
+				Length: *
+				Offset: -5,-2
+			flame-e:
+				Length: *
+				Offset: -7,2
+			flame-ne:
+				Length: *
+				Offset: -7,8
+		Facings: 8
+		Length: 13
+	garrison-muzzle:
+		Combine:
+			flame-n:
+				Length: *
+				Offset: 1,6
+			flame-nw:
+				Length: *
+				Offset: 8,7
+			flame-w:
+				Length: *
+				Offset: 8,2
+			flame-sw:
+				Length: *
+				Offset: 7,-2
+			flame-s:
+				Length: *
+				Offset: 1,-2
+			flame-se:
+				Length: *
+				Offset: -5,-2
+			flame-e:
+				Length: *
+				Offset: -7,2
+			flame-ne:
+				Length: *
+				Offset: -7,8
+		Facings: 8
+		Length: 13
+	garrison-muzzle-blue:
+		Combine:
+			flame-n:
+				Length: *
+				Offset: 1,6
+			flame-nw:
+				Length: *
+				Offset: 8,7
+			flame-w:
+				Length: *
+				Offset: 8,2
+			flame-sw:
+				Length: *
+				Offset: 7,-2
+			flame-s:
+				Length: *
+				Offset: 1,-2
+			flame-se:
+				Length: *
+				Offset: -5,-2
+			flame-e:
+				Length: *
+				Offset: -7,2
+			flame-ne:
+				Length: *
+				Offset: -7,8
+		Facings: 8
+		Length: 13
+	icon: e4icnh.tem
+		AddExtension: False
+
+rmbo:
+	stand:
+		Facings: 8
+	stand2:
+		Start: 8
+		Facings: 8
+	run:
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 64
+		Length: 4
+		Facings: 8
+	# stand -> prone transition
+	liedown:
+		Start: 96
+		Length: 2
+		Facings: 8
+	# prone -> stand transition
+	standup:
+		Start: 144
+		Length: 2
+		Facings: 8
+	prone-stand:
+		Start: 112
+		Stride: 4
+		Facings: 8
+	prone-stand2:
+		Start: 112
+		Stride: 4
+		Facings: 8
+	prone-run:
+		Start: 112
+		Length: 4
+		Facings: 8
+		Tick: 100
+	prone-shoot:
+		Start: 160
+		Length: 4
+		Facings: 8
+	idle1:
+		Start: 192
+		Length: 16
+		Tick: 120
+	idle2:
+		Start: 208
+		Length: 16
+		Tick: 120
+	idle3:
+		Start: 224
+		Length: 15
+		Tick: 120
+	cheer:
+		Start: 396
+		Length: 3
+		Facings: 8
+		Tick: 120
+	# Shot
+	die1:
+		Start: 318
+		Length: 8
+		Tick: 80
+	# Explode
+	die2:
+		Start: 326
+		Length: 8
+		Tick: 80
+	# Fly and explode in air
+	die3:
+		Start: 334
+		Length: 8
+		Tick: 80
+	# Fly through air squish on ground
+	die4:
+		Start: 342
+		Length: 12
+		Tick: 80
+	# Burn
+	die5:
+		Start: 354
+		Length: 18
+		Tick: 80
+	# Tib
+	die6: poisonTD
+		Length: *
+	die7: electroTD
+		Length: *
+	die-crushed: e1rot
+		Start: 16
+		Length: 4
+		Tick: 1600
+		ZOffset: -511
+	garrison-muzzle: minigun
+		Length: 3
+		Stride: 6
+		Facings: 8
+	icon: rmboicnh.tem
+		AddExtension: False
+
+rngt:
+	stand:
+		Facings: 8
+	stand2:
+		Start: 8
+		Facings: 8
+	run:
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 64
+		Length: 4
+		Facings: 8
+	# stand -> prone transition
+	liedown:
+		Start: 96
+		Length: 2
+		Facings: 8
+	# prone -> stand transition
+	standup:
+		Start: 144
+		Length: 2
+		Facings: 8
+	prone-stand:
+		Start: 112
+		Stride: 4
+		Facings: 8
+	prone-stand2:
+		Start: 112
+		Stride: 4
+		Facings: 8
+	prone-run:
+		Start: 112
+		Length: 4
+		Facings: 8
+		Tick: 100
+	prone-shoot:
+		Start: 160
+		Length: 4
+		Facings: 8
+	idle1:
+		Start: 192
+		Length: 16
+		Tick: 120
+	idle2:
+		Start: 208
+		Length: 16
+		Tick: 120
+	idle3:
+		Start: 224
+		Length: 15
+		Tick: 120
+	cheer:
+		Start: 396
+		Length: 3
+		Facings: 8
+		Tick: 120
+	# Shot
+	die1:
+		Start: 318
+		Length: 8
+		Tick: 80
+	# Explode
+	die2:
+		Start: 326
+		Length: 8
+		Tick: 80
+	# Fly and explode in air
+	die3:
+		Start: 334
+		Length: 8
+		Tick: 80
+	# Fly through air squish on ground
+	die4:
+		Start: 342
+		Length: 12
+		Tick: 80
+	# Burn
+	die5:
+		Start: 354
+		Length: 18
+		Tick: 80
+	# Tib
+	die6: poisonTD
+		Length: *
+	die7: electroTD
+		Length: *
+	die-crushed: e1rot
+		Start: 16
+		Length: 4
+		Tick: 1600
+		ZOffset: -511
+	garrison-muzzle: minigun
+		Length: 3
+		Stride: 6
+		Facings: 8
+	icon: rmboicnh.tem
+		AddExtension: False
+
+mrtn:
+	stand:
+		Facings: 8
+	stand2:
+		Facings: 8
+	run:
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 100
+	throw:
+		Start: 64
+		Length: 20
+		Facings: 8
+	liedown:
+		Start: 224
+		Length: 2
+		Facings: 8
+	standup:
+		Start: 272
+		Length: 2
+		Facings: 8
+	prone-stand:
+		Start: 240
+		Stride: 4
+		Facings: 8
+	prone-stand2:
+		Start: 240
+		Stride: 4
+		Facings: 8
+	prone-run:
+		Start: 240
+		Length: 4
+		Facings: 8
+		Tick: 100
+	prone-throw:
+		Start: 288
+		Length: 12
+		Facings: 8
+	idle1:
+		Start: 384
+		Length: 16
+		Tick: 120
+	idle2:
+		Start: 400
+		Length: 16
+		Tick: 120
+	cheer:
+		Start: 494
+		Length: 3
+		Facings: 8
+		Tick: 120
+	die1:
+		Start: 416
+		Length: 9
+		Tick: 80
+	die2:
+		Start: 424
+		Length: 8
+		Tick: 80
+	die3:
+		Start: 432
+		Length: 8
+		Tick: 80
+	die4:
+		Start: 440
+		Length: 12
+		Tick: 80
+	die5:
+		Start: 452
+		Length: 18
+		Tick: 80
+	die6: poisonTD
+		Length: *
+	die7: electroTD
+		Length: *
+	die-crushed: e1rot
+		Length: 6
+		Tick: 1600
+		ZOffset: -511
+		UseTilesetExtension: false
+	icon: mrtnicon
+
+mrtc:
+	stand:
+		Facings: 8
+	stand2:
+		Facings: 8
+	run:
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 100
+	throw:
+		Start: 64
+		Length: 20
+		Facings: 8
+	liedown:
+		Start: 224
+		Length: 2
+		Facings: 8
+	standup:
+		Start: 272
+		Length: 2
+		Facings: 8
+	prone-stand:
+		Start: 240
+		Stride: 4
+		Facings: 8
+	prone-stand2:
+		Start: 240
+		Stride: 4
+		Facings: 8
+	prone-run:
+		Start: 240
+		Length: 4
+		Facings: 8
+		Tick: 100
+	prone-throw:
+		Start: 288
+		Length: 12
+		Facings: 8
+	idle1:
+		Start: 384
+		Length: 16
+		Tick: 120
+	idle2:
+		Start: 400
+		Length: 16
+		Tick: 120
+	cheer:
+		Start: 494
+		Length: 3
+		Facings: 8
+		Tick: 120
+	die1:
+		Start: 416
+		Length: 9
+		Tick: 80
+	die2:
+		Start: 424
+		Length: 8
+		Tick: 80
+	die3:
+		Start: 432
+		Length: 8
+		Tick: 80
+	die4:
+		Start: 440
+		Length: 12
+		Tick: 80
+	die5:
+		Start: 452
+		Length: 18
+		Tick: 80
+	die6: poisonTD
+		Length: *
+	die7: electroTD
+		Length: *
+	die-crushed: e1rot
+		Length: 6
+		Tick: 1600
+		ZOffset: -511
+		UseTilesetExtension: false
+	icon: mrtcicon
+
+jump:
+	stand: jumpjet
+		Start: 0
+		Facings: 8
+	flying: jumpjet-air
+		Start: 0
+		Length: 6
+		Facings: 8
+	run: jumpjet
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 100
+	flying-run: jumpjet-air
+		Start: 48
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot: jumpjet
+		Start: 56
+		Length: 6
+		Facings: 8
+		Tick: 100
+	flying-shoot: jumpjet-air
+		Start: 95
+		Length: 6
+		Facings: 8
+		Tick: 100
+	die1: blank
+		Length: *
+	die2: blank
+		Length: *
+	die3: blank
+		Length: *
+	die4: blank
+		Length: *
+	die5: blank
+		Length: *
+	die6: poisonTD
+		Length: *
+	die7: electroTD
+		Length: *
+	icon: jumpicon.shp
+		AddExtension: False
+
+jump.husk:
+	die-falling: jumpjet-air-die
+		Length: *
+		Tick: 100
+
+exo:
+	stand:
+		Start: 0
+		Facings: 8
+	idle:
+		Start: 8
+		Length: 6
+		Facings: 8
+	run:
+		Start: 56
+		Length: 8
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 120
+		Length: 6
+		Facings: 8
+	die1:
+		Start: 168
+		Length: 15
+		Facings: 1
+	die2:
+		Start: 168
+		Length: 15
+		Facings: 1
+	die3:
+		Start: 168
+		Length: 15
+		Facings: 1
+	die4:
+		Start: 168
+		Length: 15
+		Facings: 1
+	die5:
+		Start: 168
+		Length: 15
+		Facings: 1
+	die6: poisonTD
+		Length: *
+	die7: electroTD
+		Length: *
+	parachute:
+		Start: 198
+		Length: 13
+		Facings: 1
+	icon: exoicon.shp
+		AddExtension: False
+
+spy:
+	stand:
+		Facings: 8
+	stand2:
+		Start: 8
+		Facings: 8
+	run:
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 64
+		Length: 8
+		Facings: 8
+	idle1:
+		Start: 256
+		Length: 14
+		Tick: 120
+	idle2:
+		Start: 271
+		Length: 16
+		Tick: 120
+	die1:
+		Start: 288
+		Length: 8
+	die2:
+		Start: 296
+		Length: 8
+	die3:
+		Start: 304
+		Length: 8
+	die4:
+		Start: 312
+		Length: 12
+	die5:
+		Start: 324
+		Length: 18
+	die6: poisonTD
+		Length: *
+	die7: electroTD
+		Length: *
+	die-crushed: e1rot
+		Length: *
+		Tick: 1600
+		ZOffset: -511
+		UseTilesetExtension: false
+	prone-stand:
+		Start: 144
+		Stride: 4
+		Facings: 8
+	prone-stand2:
+		Start: 144
+		Stride: 4
+		Facings: 8
+	prone-run:
+		Start: 144
+		Length: 4
+		Facings: 8
+		Tick: 100
+	prone-shoot:
+		Start: 192
+		Length: 8
+		Facings: 8
+	garrison-muzzle: minigun
+		Length: 6
+		Facings: 8
+	icon: spyicon
+
+infl:
+	stand:
+		Facings: 8
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 56
+		Length: 4
+		Facings: 8
+	prone-stand:
+		Start: 104
+		Stride: 4
+		Facings: 8
+	prone-run:
+		Start: 104
+		Length: 4
+		Facings: 8
+		Tick: 100
+	standup:
+		Start: 136
+		Length: 2
+		Facings: 8
+	prone-shoot:
+		Start: 152
+		Length: 4
+		Facings: 8
+	idle1:
+		Start: 184
+		Length: 26
+		Tick: 120
+	die1:
+		Start: 210
+		Length: 8
+	die2:
+		Start: 218
+		Length: 8
+	die3:
+		Start: 226
+		Length: 8
+	die4:
+		Start: 234
+		Length: 12
+	die5:
+		Start: 246
+		Length: 18
+	die6: poisonTD
+		Length: *
+	die7: electroTD
+		Length: *
+	die-crushed: e1rot
+		Length: *
+		Tick: 1600
+		ZOffset: -511
+		UseTilesetExtension: false
+	garrison-muzzle: minigun
+		Length: 6
+		Facings: 8
+	icon: inflicon
+
+lcg:
+	stand:
+		Start: 0
+		Facings: 8
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 56
+		Length: 4
+		Facings: 8
+	die1: blank
+		Length: *
+	die2: blank
+		Length: *
+	die3: blank
+		Length: *
+	die4: blank
+		Length: *
+	die5: blank
+		Length: *
+	icon: lcgicon.shp
+		AddExtension: False
+
+e5:
+	stand:
+		Facings: 8
+	stand2:
+		Start: 8
+		Facings: 8
+	run:
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 64
+		Length: 16
+		Facings: 8
+	# stand -> prone transition
+	liedown:
+		Start: 192
+		Length: 2
+		Facings: 8
+	# prone -> stand transition
+	standup:
+		Start: 240
+		Length: 2
+		Facings: 8
+	prone-stand:
+		Start: 208
+		Stride: 4
+		Facings: 8
+	prone-stand2:
+		Start: 208
+		Stride: 4
+		Facings: 8
+	prone-run:
+		Start: 208
+		Length: 4
+		Facings: 8
+		Tick: 100
+	prone-shoot:
+		Start: 256
+		Length: 16
+		Facings: 8
+	idle1:
+		Start: 384
+		Length: 16
+		Tick: 120
+	idle2:
+		Start: 400
+		Length: 16
+		Tick: 120
+	cheer:
+		Start: 588
+		Length: 3
+		Facings: 8
+		Tick: 120	
+	# Shot
+	die1:
+		Start: 509
+		Length: 9
+		Tick: 80
+	# Explode
+	die2:
+		Start: 518
+		Length: 8
+		Tick: 80
+	# Fly and explode in air
+	die3:
+		Start: 526
+		Length: 8
+		Tick: 80
+	# Fly through air squish on ground
+	die4:
+		Start: 534
+		Length: 12
+		Tick: 80
+	# Burn
+	die5:
+		Start: 546
+		Length: 18
+		Tick: 80
+	# Tib
+	die6: poisonTD
+		Length: *
+	die7: electroTD
+		Length: *
+	die-crushed: e4rot
+		Start: 16
+		Length: 4
+		Tick: 1600
+		ZOffset: -511
+	muzzle:
+		Combine:
+			chem-n:
+				Length: *
+				Offset: 1,2
+			chem-nw:
+				Length: *
+				Offset: 8,2
+			chem-w:
+				Length: *
+				Offset: 8,-3
+			chem-sw:
+				Length: *
+				Offset: 7,-6
+			chem-s:
+				Length: *
+				Offset: 1,-6
+			chem-se:
+				Length: *
+				Offset: -5,-6
+			chem-e:
+				Length: *
+				Offset: -7,-3
+			chem-ne:
+				Length: *
+				Offset: -3,2
+		Facings: 8
+		Length: 13
+	garrison-muzzle:
+		Combine:
+			chem-n:
+				Length: *
+				Offset: 1,2
+			chem-nw:
+				Length: *
+				Offset: 8,2
+			chem-w:
+				Length: *
+				Offset: 8,-3
+			chem-sw:
+				Length: *
+				Offset: 7,-6
+			chem-s:
+				Length: *
+				Offset: 1,-6
+			chem-se:
+				Length: *
+				Offset: -5,-6
+			chem-e:
+				Length: *
+				Offset: -7,-3
+			chem-ne:
+				Length: *
+				Offset: -3,2
+		Facings: 8
+		Length: 13
+	icon: e5icnh.tem
+		AddExtension: False
+
+gren:
+	stand:
+		Facings: 8
+	stand2:
+		Start: 8
+		Facings: 8
+	run:
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 120
+	shoot:
+		Start: 64
+		Length: 16
+		Facings: 8
+	parachute:
+		Start: 505
+	idle1:
+		Start: 384
+		Length: 14
+		Tick: 120
+	idle2:
+		Start: 399
+		Length: 16
+		Tick: 120
+	die1:
+		Start: 416
+		Length: 8
+	die2:
+		Start: 424
+		Length: 8
+	die3:
+		Start: 432
+		Length: 8
+	die4:
+		Start: 440
+		Length: 12
+	die5:
+		Start: 452
+		Length: 18
+	die6: poisonTD
+		Length: *
+	die7: electroTD
+		Length: *
+	die-crushed: e1rot
+		Length: 6
+		Tick: 1600
+		ZOffset: -511
+		UseTilesetExtension: false
+	prone-stand:
+		Start: 208
+		Stride: 4
+		Facings: 8
+	prone-stand2:
+		Start: 208
+		Stride: 4
+		Facings: 8
+	prone-run:
+		Start: 208
+		Length: 4
+		Facings: 8
+		Tick: 120
+	prone-shoot:
+		Start: 256
+		Length: 16
+		Facings: 8
+	icon: grenicon
+
+vice:
+	idle:
+		Length: *
+	muzzle:
+		Combine:
+			chem-n:
+				Length: *
+				Offset: 1,2
+			chem-nw:
+				Length: *
+				Offset: 8,2
+			chem-w:
+				Length: *
+				Offset: 8,-3
+			chem-sw:
+				Length: *
+				Offset: 7,-6
+			chem-s:
+				Length: *
+				Offset: 1,-6
+			chem-se:
+				Length: *
+				Offset: -5,-6
+			chem-e:
+				Length: *
+				Offset: -7,-3
+			chem-ne:
+				Length: *
+				Offset: -3,2
+		Facings: 8
+		Length: 13
+	icon: viceicnh
+
+pvice:
+	Inherits: vice

@@ -1358,7 +1358,6 @@ MBUN:
 		Range: 4c0
 	Turreted:
 		TurnSpeed: 255
-		Offset: 0,0,80
 	AttackGarrisoned:
 		Armaments: garrisoned
 		PortOffsets: 384,0,128, 224,-341,128, -224,-341,128, -384,0,128, -224,341,128, 224,341,128
@@ -1366,7 +1365,6 @@ MBUN:
 		PortCones: 88, 88, 88, 88, 88, 88
 		PauseOnCondition: empdisable
 	WithMuzzleOverlay:
-	WithSpriteTurret:
 	Cargo:
 		Types: Infantry, Engineer
 		MaxWeight: 5

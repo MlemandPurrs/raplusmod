@@ -1,0 +1,591 @@
+fb4:
+	idle:
+		Length: 4
+		ZOffset: 1023
+
+fire:
+	1: fire1
+		Length: *
+		Offset: 0,-3
+		ZOffset: 1023
+	2: fire2
+		Length: *
+		Offset: 0,-3
+		ZOffset: 1023
+
+burn-l:
+	idle:
+		Length: *
+		ZOffset: 512
+	loop:
+		Start: 16
+		Length: 44
+		ZOffset: 512
+	end:
+		Start: 60
+		Length: 6
+		ZOffset: 512
+
+burn-m:
+	idle:
+		Length: *
+		ZOffset: 512
+	loop:
+		Start: 16
+		Length: 44
+		ZOffset: 512
+	end:
+		Start: 60
+		Length: 6
+		ZOffset: 512
+
+burn-s:
+	idle:
+		Length: *
+		ZOffset: 512
+	loop:
+		Start: 12
+		Length: 46
+		ZOffset: 512
+	end:
+		Start: 59
+		Length: 5
+		ZOffset: 512
+
+120mm:
+	idle:
+		ZOffset: 1023
+
+smoke_m:
+	idle:
+		Length: *
+		Offset: 2, -5
+		ZOffset: 512
+	loop:
+		Start: 49
+		Length: 42
+		Offset: 2, -5
+		ZOffset: 512
+	end:
+		Start: 26
+		Length: -26
+		Offset: 2, -5
+		ZOffset: 512
+
+laserfire:
+	idle: veh-hit3
+		Length: *
+		ZOffset: 511
+
+dragon:
+	idle:
+		Facings: 32
+		ZOffset: 1023
+
+smokey:
+	idle:
+		Length: *
+		ZOffset: 1023
+
+bomb:
+	idle:
+		Length: *
+		ZOffset: 1023
+
+missile:
+	idle:
+		Facings: 32
+		ZOffset: 1023
+
+patriot:
+	idle:
+		Facings: 32
+		ZOffset: 1023
+
+explosion:
+	Defaults:
+		Length: *
+		ZOffset: 2047
+	nuke_explosion: atomsfx
+	nuke_explosion_light: atomlightsfx
+	piff: piff
+	piffs: piffpiff
+	small_chemball: small_chemball
+	med_chemball: med_chemball
+	big_chemball: big_chemball
+	small_napalm: napalm1
+	med_napalm: napalm2
+	big_napalm: napalm3
+	small_frag: veh-hit3
+	med_frag: frag1
+	big_frag: frag3
+	small_poof: veh-hit2
+	poof: art-exp1
+	small_building: veh-hit1
+	building: fball1
+	building_napalm: napalm2
+		FlipX: true
+	pulse_explosion_small: pulsefx1_small
+		BlendMode: Alpha
+		Tick: 80
+	pulse_explosion: pulsefx2
+		BlendMode: Additive
+		Tick: 80
+	water_piff: wpiff
+	water_piffs: wpifpif
+	small_splash: h2o_exp3
+	med_splash: h2o_exp2
+	large_splash: h2o_exp1
+
+rank:
+	Defaults:
+		Offset: 0, 3
+	rank-veteran-1:
+	rank-veteran-2:
+		Start: 1
+	rank-veteran-3:
+		Start: 2
+	rank-elite:
+		Start: 3
+		Offset: 1, 3
+
+rallypoint:
+	flag: flagfly
+		Length: *
+		Offset: 10,-5
+		ZOffset: 2535
+	circles: fpls
+		Length: *
+		ZOffset: 2047
+
+beacon:
+	Defaults:
+		ZOffset: 2535
+	arrow: mouse2
+		Start: 5
+		Offset: 1,-12
+	circles: fpls
+		Length: *
+		ZOffset: 2047
+	airstrike: bombicon
+		Offset: 0,-42
+	atomic: atomicon
+		Offset: 0,-42
+	clock: beaconclock
+		Length: *
+		Offset: 0,-42
+	lruavicon: lores-uavicon
+		Length: *
+		Offset: 0,-42
+	pinficon: lores-pinficon
+		Length: *
+		Offset: 0,-42
+	airdrop: airdropiconsml
+		Length: *
+		Offset: 0,-42
+	cminesbcon: cminesbicon
+		Length: *
+		Offset: 0,-42
+
+select:
+	repair:
+		Start: 2
+
+allyrepair:
+	repair:
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+
+crate:
+	idle:
+		ZOffset: -511
+
+xcratea:
+	idle: xcrate
+		ZOffset: -511
+
+xcrateb:
+	idle: xcrate
+		Start: 1
+		ZOffset: -511
+
+xcratec:
+	idle: xcrate
+		Start: 2
+		ZOffset: -511
+
+xcrated:
+	idle: xcrate
+		Start: 3
+		ZOffset: -511
+
+crate-effects:
+	Defaults:
+		Length: *
+		ZOffset: 2047
+	airstrike: deviator
+	nuke: missile2
+	dollar: dollar
+	reveal-map: radarcrate
+	hide-map: empulse
+	heal: healcrate
+	mine: mine
+	redskull: rapid
+	cloak: cloakcrate
+	levelup: levelup
+		Tick: 200
+	firepowerup: firepowercrate
+	armorup: armorcrate
+	speedup: speedcrate
+
+atomic:
+	Defaults:
+		Length: *
+		ZOffset: 1023
+	up: atomicup
+	down: atomicdn
+
+ionsfx:
+	idle:
+		Length: *
+		Offset: 0, -78
+		ZOffset: 1023
+
+bomblet:
+	idle:
+		Length: *
+		ZOffset: 1023
+
+mpspawn:
+	idle:
+		Length: *
+
+waypoint:
+	idle:
+		Length: *
+
+camera:
+	idle:
+		Length: *
+
+clock:
+	idle: hclock
+		Length: *
+
+blackout:
+	idle: blank
+		Length: *
+
+pips:
+	groups: pdigits
+		Length: *
+		Offset: 9, 5
+	pip-heal: pip-heal
+		Offset: -1, 1
+	pip-hazmat: pip-hazmat
+		Offset: -3, 0
+	pickup-indicator: pip-tib_armor
+		Offset: -9, -9
+	tag-fake:
+		Start: 18
+		Offset: 0, 2
+	tag-primary:
+		Start: 2
+		Offset: 0, 2
+	tag-upgraded: pip-upgraded
+		Start: 0
+		Offset: 0, 12
+	tag-deployed: pip-deployed
+		Start: 0
+		Offset: 0, 2
+	tag-detector: pip-detector
+		Start: 0
+		Offset: 0, 2
+	tag-combat: pip-combat
+		Start: 0
+		Offset: 0, 2
+	pip-empty: pips2
+	pip-green: pips2
+		Start: 1
+	pip-yellow: pips2
+		Start: 2
+	pip-gray: pips2
+		Start: 3
+	pip-red: pips2
+		Start: 4
+	pip-blue: pips2
+		Start: 5
+	pip-disguise: pip-disguise
+		Length: *
+		Tick: 300
+		Offset: 0, -6
+	pip-stealth: pip-stealth
+		Length: *
+		Tick: 300
+		Offset: 0, -6
+	pip-rep: pip-mech
+		Offset: 0,2
+
+overlay:
+	build-valid-desert:
+	build-valid-snow:
+		Start: 2
+	build-valid-temperat:
+	build-valid-winter:
+	build-valid-jungle:
+	build-invalid:
+		Start: 1
+	target-select:
+		Start: 3
+	target-valid-desert:
+	target-valid-snow:
+		Start: 2
+	target-valid-temperat:
+	target-valid-winter:
+	target-valid-jungle:
+	target-invalid:
+		Start: 1
+
+editor-overlay:
+	copy: overlay
+		Start: 0
+	paste: overlay
+		Start: 1
+
+poweroff:
+	offline:
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+
+icon:
+	Defaults:
+		AddExtension: False
+	airstrike: bombicnh.tem
+	ioncannon: ionicnh.tem
+	empblast: empbicon.shp
+	abomb: atomicnh.tem
+	uavicon: uavicon.shp
+	gps: gpssicon.shp
+	paratroopers: pinficon.shp
+	airdrop: airdropicon.shp
+	gdiairdrop: gdiairdropicon.shp
+	fieldrepair: frepicon.shp
+	placeholder: placeholdericon.shp
+	radarscan: radarscanicon.shp
+	sattelitehack: sattelitehackicon.shp
+	clustermine: cminesicon.shp
+	sonar: sonaricon.shp
+	demoralize: demoraleicon.shp
+	gpsscrambler: gpsscricon.shp
+	hunter: huntseekicon.shp
+	
+moveflsh:
+	idle:
+		Length: *
+		Tick: 80
+		ZOffset: 2047
+
+resources:
+	Defaults:
+		UseTilesetExtension: true
+		Length: *
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+	gti1: rtib1
+	gti2: rtib2
+	gti3: rtib3
+	gti4: rtib4
+	gti5: rtib5
+	gti6: rtib6
+	gti7: rtib7
+	gti8: rtib8
+	gti9: rtib9
+	gti10: rtib10
+	gti11: rtib11
+	gti12: rtib12
+	bti1: rtib1
+	bti2: rtib2
+	bti3: rtib3
+	bti4: rtib4
+	bti5: rtib5
+	bti6: rtib6
+	bti7: rtib7
+	bti8: rtib8
+	bti9: rtib9
+	bti10: rtib10
+	bti11: rtib11
+	bti12: rtib12
+	rti1: rtib1
+	rti2: rtib2
+	rti3: rtib3
+	rti4: rtib4
+	rti5: rtib5
+	rti6: rtib6
+	rti7: rtib7
+	rti8: rtib8
+	rti9: rtib9
+	rti10: rtib10
+	rti11: rtib11
+	rti12: rtib12
+
+shroud:
+	Defaults:
+		Length: 12
+	typea: shadow
+	typeb: shadow
+		Start: 12
+	typec: shadow
+		Start: 24
+	typed: shadow
+		Start: 36
+	full: fullshroud
+		Length: 1
+
+# Note: The order of smudges and craters determines
+# the index that is mapped to them in maps
+scorches:
+	Defaults:
+		UseTilesetExtension: true
+		Length: *
+	sc1: sc1
+	sc2: sc2
+	sc3: sc3
+	sc4: sc4
+	sc5: sc5
+	sc6: sc6
+
+craters:
+	Defaults:
+		UseTilesetExtension: true
+		Length: *
+	cr1: cr1
+	cr2: cr2
+	cr3: cr3
+	cr4: cr4
+	cr5: cr5
+	cr6: cr6
+
+smokland:
+	open:
+		Length: 60
+		Tick: 120
+		ZOffset: 1023
+	idle:
+		Start: 60
+		Length: 32
+		Tick: 120
+		ZOffset: 1023
+
+maxichute:
+	open:
+		ZOffset: 512
+	idle:
+		Length: 20
+		ZOffset: 512
+
+parach:
+	open:
+		Length: 5
+	idle:
+		Start: 5
+		Length: 11
+
+parach-shadow:
+	idle:
+		Length: *
+
+gpsdot:
+	Infantry:
+	Vehicle:
+		Start: 1
+	Ship:
+		Start: 2
+	Helicopter:
+		Start: 3
+	Plane:
+		Start: 4
+	Harvester:
+		Start: 5
+	Structure:
+		Start: 6
+	Oil:
+		Start: 7
+	Hospital:
+		Start: 8
+	Biohazard:
+		Start: 9
+	Communications:
+		Start: 10
+	Forward:
+		Start: 11
+
+atkssmmis:
+	idle:
+		Facings: 32
+
+missilenew:
+	idle:
+		Facings: 32
+
+sputnik:
+	idle:
+		Length: *
+		Offset: -4,0
+		ZOffset: 1023
+
+minv:
+	idle:
+		ZOffset: -512
+	icon: jmin
+
+blank:
+	idle:
+		Length: *
+
+iconchevrons:
+	veteran:
+		Offset: 2, 2
+
+pulsball:
+	idle:
+		Length: *
+		BlendMode: Additive
+		ZOffset: 1023
+		Offset: 0, 0, 24
+
+wcrate:
+	Defaults:
+		ZOffset: -511
+	idle:
+	land:
+	water: wwcrate
+		Length: *
+		Tick: 500
+
+bubbles:
+	idle:
+		Length: *
+		Tick: 220
+
+torpedo:
+	idle: missile
+		Facings: 32
+		ZOffset: -1023
+
+v2:
+	idle: v2miss
+		Facings: 32
+		ZOffset: 1023
+
+emp-overlay: 
+	emp-overlay: emp_fx01
+		Length: *
+		BlendMode: Additive
+		Offset: 0, 0
+		UseTilesetCode: false
+		UseTilesetExtension: false
+		ZOffset: 512

@@ -1,0 +1,851 @@
+MCV.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Mobile Construction Vehicle (Destroyed)
+	TransformOnCapture:
+		IntoActor: mcv
+	InfiltrateForTransform:
+		IntoActor: mcv
+	RenderSprites:
+		Image: mcv.destroyed
+
+HARV.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Harvester (Destroyed)
+	TransformOnCapture:
+		IntoActor: harv
+	InfiltrateForTransform:
+		IntoActor: harv
+	RenderSprites:
+		Image: harv.destroyed
+
+BHARV.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Harvester (Destroyed)
+	TransformOnCapture:
+		IntoActor: bharv
+	InfiltrateForTransform:
+		IntoActor: bharv
+	RenderSprites:
+		Image: bharv.destroyed
+
+SHARV.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Harvester (Destroyed)
+	TransformOnCapture:
+		IntoActor: sharv
+	InfiltrateForTransform:
+		IntoActor: sharv
+	RenderSprites:
+		Image: harv.destroyed
+
+JEEP.Husk:
+	Inherits: ^LightHusk
+	Tooltip:
+		Name: Humvee (Destroyed)
+	TransformOnCapture:
+		IntoActor: jeep
+	InfiltrateForTransform:
+		IntoActor: jeep
+	RenderSprites:
+		Image: jeep.destroyed
+
+BGGY.Husk:
+	Inherits: ^LightHusk
+	Tooltip:
+		Name: Buggy (Destroyed)
+	TransformOnCapture:
+		IntoActor: bggy
+	InfiltrateForTransform:
+		IntoActor: bggy
+	RenderSprites:
+		Image: bggy.destroyed
+
+ATTBGGY.Husk:
+	Inherits: ^LightHusk
+	Tooltip:
+		Name: Attack Buggy (Destroyed)
+	TransformOnCapture:
+		IntoActor: attbggy
+	InfiltrateForTransform:
+		IntoActor: attbggy
+	RenderSprites:
+		Image: attbggy.destroyed
+
+APC.Husk:
+	Inherits: ^LightHusk
+	Tooltip:
+		Name: APC (Destroyed)
+	TransformOnCapture:
+		IntoActor: apc
+	InfiltrateForTransform:
+		IntoActor: apc
+	RenderSprites:
+		Image: apc.destroyed
+
+NODAPC.Husk:
+	Inherits: ^LightHusk
+	Tooltip:
+		Name: Nod APC (Destroyed)
+	TransformOnCapture:
+		IntoActor: nodapc
+	InfiltrateForTransform:
+		IntoActor: nodapc
+	RenderSprites:
+		Image: nodapc.destroyed
+
+7APC.Husk:
+	Inherits: ^LightHusk
+	Tooltip:
+		Name: Amphibian APC (Destroyed)
+	TransformOnCapture:
+		IntoActor: 7apc
+	InfiltrateForTransform:
+		IntoActor: 7apc
+	RenderSprites:
+		Image: 7apc.destroyed
+
+SAPC.Husk:
+	Inherits: ^LightHusk
+	Tooltip:
+		Name: Stealth APC (Destroyed)
+	TransformOnCapture:
+		IntoActor: sapc
+	InfiltrateForTransform:
+		IntoActor: sapc
+	RenderSprites:
+		Image: sapc.destroyed
+
+LTNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Light Tank (Destroyed)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: ltnk
+	InfiltrateForTransform:
+		IntoActor: ltnk
+	RenderSprites:
+		Image: ltnk.destroyed
+
+NTNKD.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Tank Destroyer (Destroyed)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: ntnkd
+	InfiltrateForTransform:
+		IntoActor: ntnkd
+	RenderSprites:
+		Image: ntnkd.destroyed
+
+MTNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Medium Tank (Destroyed)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: mtnk
+	InfiltrateForTransform:
+		IntoActor: mtnk
+	RenderSprites:
+		Image: mtnk.destroyed
+
+NODMTNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Medium Tank (Destroyed)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: nodmtnk
+	InfiltrateForTransform:
+		IntoActor: nodmtnk
+	RenderSprites:
+		Image: nodmtnk.destroyed
+
+HTNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Heavy Tank (Destroyed)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: htnk
+	InfiltrateForTransform:
+		IntoActor: htnk
+	RenderSprites:
+		Image: htnk.destroyed
+
+MRLS.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Multiple Rocket Launcher System (Destroyed)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: mrls
+	InfiltrateForTransform:
+		IntoActor: mrls
+	RenderSprites:
+		Image: mrls.destroyed
+
+MSAM.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Mobile SAM (Destroyed)
+	TransformOnCapture:
+		IntoActor: msam
+	InfiltrateForTransform:
+		IntoActor: msam
+	RenderSprites:
+		Image: msam.destroyed
+
+ARTY.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Artillery (Destroyed)
+	TransformOnCapture:
+		IntoActor: arty
+	InfiltrateForTransform:
+		IntoActor: arty
+	RenderSprites:
+		Image: arty.destroyed
+
+HARTY.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Heavy Artillery (Destroyed)
+	TransformOnCapture:
+		IntoActor: harty
+	InfiltrateForTransform:
+		IntoActor: harty
+	RenderSprites:
+		Image: harty.destroyed
+
+SARTY.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Stealth Artillery (Destroyed)
+	TransformOnCapture:
+		IntoActor: sarty
+	InfiltrateForTransform:
+		IntoActor: sarty
+	RenderSprites:
+		Image: sarty.destroyed
+
+HWTZ.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Howitzer (Destroyed)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: hwtz
+	InfiltrateForTransform:
+		IntoActor: hwtz
+	RenderSprites:
+		Image: hwtz.destroyed
+
+MRPG.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: RPG Launcher (Destroyed)
+	TransformOnCapture:
+		IntoActor: mrpg
+	InfiltrateForTransform:
+		IntoActor: mrpg
+	RenderSprites:
+		Image: mrpg.destroyed
+
+FTNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Flame Tank (Destroyed)
+	TransformOnCapture:
+		IntoActor: ftnk
+	InfiltrateForTransform:
+		IntoActor: ftnk
+	RenderSprites:
+		Image: ftnk.destroyed
+
+CTNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Chemical Tank (Destroyed)
+	TransformOnCapture:
+		IntoActor: ctnk
+	InfiltrateForTransform:
+		IntoActor: ctnk
+	RenderSprites:
+		Image: ctnk.destroyed
+
+MREP.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Mobile Repair (Destroyed)
+	TransformOnCapture:
+		IntoActor: mrep
+	InfiltrateForTransform:
+		IntoActor: mrep
+	RenderSprites:
+		Image: mrep.destroyed
+
+MHQ.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Mobile Radar
+	TransformOnCapture:
+		IntoActor: mhq
+	InfiltrateForTransform:
+		IntoActor: mhq
+	RenderSprites:
+		Image: mhq.destroyed
+
+STNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Stealth Tank (Destroyed)
+	TransformOnCapture:
+		IntoActor: stnk
+	InfiltrateForTransform:
+		IntoActor: stnk
+	RenderSprites:
+		Image: stnk.destroyed
+
+STNK.chem.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Stealth Tank (Destroyed)
+	TransformOnCapture:
+		IntoActor: stnk.chem
+	InfiltrateForTransform:
+		IntoActor: stnk.chem
+	RenderSprites:
+		Image: stnk.destroyed
+
+MAAG.Husk:
+	Inherits: ^LightHusk
+	Tooltip:
+		Name: MAAG (Destroyed)
+	TransformOnCapture:
+		IntoActor: maag
+	InfiltrateForTransform:
+		IntoActor: maag
+	RenderSprites:
+		Image: maag.destroyed
+
+BIKE.Husk:
+	Inherits: ^LightHusk
+	Tooltip:
+		Name: Recon Bike (Destroyed)
+	TransformOnCapture:
+		IntoActor: bike
+	InfiltrateForTransform:
+		IntoActor: bike
+	RenderSprites:
+		Image: bike.destroyed
+
+ASSCYCL.Husk:
+	Inherits: ^LightHusk
+	Tooltip:
+		Name: Assault Cycle (Destroyed)
+	TransformOnCapture:
+		IntoActor: asscycl
+	InfiltrateForTransform:
+		IntoActor: asscycl
+	RenderSprites:
+		Image: asscycl.destroyed
+
+DSRP.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Sonic Tank (Destroyed)
+	TransformOnCapture:
+		IntoActor: dsrp
+	InfiltrateForTransform:
+		IntoActor: dsrp
+	RenderSprites:
+		Image: dsrp.destroyed
+
+MEMP.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Mobile EMP (Destroyed)
+	TransformOnCapture:
+		IntoActor: memp
+	InfiltrateForTransform:
+		IntoActor: memp
+	RenderSprites:
+		Image: memp.destroyed
+
+MWAV.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Microwave Tank (Destroyed)
+	TransformOnCapture:
+		IntoActor: mwav
+	InfiltrateForTransform:
+		IntoActor: mwav
+	RenderSprites:
+		Image: mwav.destroyed
+
+MRJ.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Mobile Jammer (Destroyed)
+	TransformOnCapture:
+		IntoActor: mrj
+	InfiltrateForTransform:
+		IntoActor: mrj
+	RenderSprites:
+		Image: mrj.destroyed
+
+MAMT.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Mammoth Tank (Destroyed)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: mamt
+	InfiltrateForTransform:
+		IntoActor: mamt
+	RenderSprites:
+		Image: mamt.destroyed
+
+MAMT.Rail.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Mammoth Tank (Destroyed)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: mamt.rail
+	InfiltrateForTransform:
+		IntoActor: mamt.rail
+	RenderSprites:
+		Image: mamt.rail.destroyed
+
+MRLS.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: MRLS (Destroyed)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: mrls
+	InfiltrateForTransform:
+		IntoActor: mrls
+	RenderSprites:
+		Image: mrls.destroyed
+
+HVRMRLS.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Hover MRLS (Destroyed)
+	TransformOnCapture:
+		IntoActor: hvrmrls
+	InfiltrateForTransform:
+		IntoActor: hvrmrls
+	RenderSprites:
+		Image: hvrmrls.destroyed
+
+SSM.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: SSM (Destroyed)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: ssm
+	InfiltrateForTransform:
+		IntoActor: ssm
+	RenderSprites:
+		Image: ssm.destroyed
+
+HVRSSM.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Hover SSM (Destroyed)
+	TransformOnCapture:
+		IntoActor: hvrssm
+	InfiltrateForTransform:
+		IntoActor: hvrssm
+	RenderSprites:
+		Image: hvrssm.destroyed
+
+SSM.chem.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: SSM (Destroyed)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: ssm.chem
+	InfiltrateForTransform:
+		IntoActor: ssm.chem
+	RenderSprites:
+		Image: ssm.destroyed
+
+HVRSSM.chem.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Hover SSM (Destroyed)
+	TransformOnCapture:
+		IntoActor: hvrssm.chem
+	InfiltrateForTransform:
+		IntoActor: hvrssm.chem
+	RenderSprites:
+		Image: hvrssm.destroyed
+
+MCV.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Mobile Construction Vehicle (Destroyed)
+	TransformOnCapture:
+		IntoActor: mcv
+	InfiltrateForTransform:
+		IntoActor: mcv
+	RenderSprites:
+		Image: mcv.destroyed
+
+TRUCK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Supply Truck (Destroyed)
+	TransformOnCapture:
+		IntoActor: truck
+	InfiltrateForTransform:
+		IntoActor: truck
+	RenderSprites:
+		Image: truck.destroyed
+
+MWF.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Mobile Factory(destroyed)
+	TransformOnCapture:
+		IntoActor: mwf
+	InfiltrateForTransform:
+		IntoActor: mwf
+	RenderSprites:
+		Image: mwf.destroyed
+
+MSGEN.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Mobile Stealth Generator (Destroyed)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: msgen
+	InfiltrateForTransform:
+		IntoActor: msgen
+	RenderSprites:
+		Image: msgen.destroyed
+
+FACT.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 72,48
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Construction Yard (Destroyed)
+	WithBuildingBib:
+
+NUKE.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 48,48
+	Building:
+		Footprint: xX xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Nuclear Power Plant (Destroyed)
+	WithBuildingBib:
+
+NODNUKE.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 48,48
+	Building:
+		Footprint: xX xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Tiberium Power Plant (Destroyed)
+	WithBuildingBib:
+
+NUK2.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 48,48
+	Building:
+		Footprint: xX xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Advanced Nuc. Power Plant (Destroyed)
+	WithBuildingBib:
+
+NODNUK2.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 48,48
+	Building:
+		Footprint: xX xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Advanced Tib. Power Plant (Destroyed)
+	WithBuildingBib:
+
+PYLE.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 48,48
+	Building:
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Barracks (Destroyed)
+	WithBuildingBib:
+
+HAND.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 48,48
+	Building:
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Hand of Nod (Destroyed)
+	WithBuildingBib:
+
+PROC.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 72,48
+	Building:
+		Footprint: _x_ xxx === ===
+		Dimensions: 3,4
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Tiberium Refinery (Destroyed)
+	WithBuildingBib:
+
+SILO.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 16,24
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	Tooltip:
+		Name: Tiberium Silo (Destroyed)
+	WithBuildingBib:
+
+WEAP.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 72,48
+	Building:
+		Footprint: xxx === ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: GDI Weapons Factory (Destroyed)
+	WithBuildingBib:
+
+W2AP.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 72,48
+	Building:
+		Footprint: xxx === ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Nod Weapons Factory (Destroyed)
+	WithBuildingBib:
+
+STRP.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 72,48
+	Building:
+		Footprint: XXXX xxxx ====
+		Dimensions: 4,3
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Airstrip (Destroyed)
+	WithBuildingBib:
+
+FIX.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 64,34
+	Building:
+		Footprint: =X= xxx =X=
+		Dimensions: 3,3
+	Tooltip:
+		Name: Service Depot (Destroyed)
+	WithBuildingBib:
+
+GDIHQ.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 48,48
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: GDI Communications Center (Destroyed)
+	WithBuildingBib:
+
+HQ.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 48,48
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Nod Communications Center (Destroyed)
+	WithBuildingBib:
+
+TECH.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 72,48
+	Building:
+		Footprint: XxX XxX
+		Dimensions: 3,2
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Technology Center (Destroyed)
+	WithBuildingBib:
+
+TMPL.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 72,48
+	Building:
+		Footprint: xxx xxx ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Technology Center (Destroyed)
+	WithBuildingBib:
+
+HPAD.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 48,48
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: Helipad (Destroyed)
+	WithBuildingBib:
+
+SGEN.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 48,48
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: Stealth Generator (Destroyed)
+	WithBuildingBib:
+
+GDIAFLD.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 72,48
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: GDI Airfield (Destroyed)
+	WithBuildingBib:
+
+NODAFLD.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 72,48
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Nod Airfield (Destroyed)
+	WithBuildingBib:
+
+HOSP.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 48,48
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: Hospital (Destroyed)
+	WithBuildingBib:
+
+BIO.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 48,48
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: Biological Lab (Destroyed)
+	WithBuildingBib:
+
+MISSGDI.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 72,48
+	Building:
+		Footprint: XxX XxX
+		Dimensions: 3,2
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Communications Array (Destroyed)
+	WithIdleOverlay@ANTENA:
+		Sequence: idle-antena
+	WithBuildingBib:
+
+V19.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 24,24
+	WithSpriteBody:
+	WithIdleOverlay:
+		StartSequence: fire-start
+		Sequence: fire-loop
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+	Tooltip:
+		Name: Oil Derrick (Destroyed)

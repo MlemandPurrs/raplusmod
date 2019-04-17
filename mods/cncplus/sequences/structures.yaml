@@ -1,0 +1,1799 @@
+fact:
+	Inherits: emp-overlay
+	build:
+		Start: 4
+		Length: 20
+		Tick: 100
+	idle:
+		Length: 4
+		Tick: 100
+	damaged-idle:
+		Start: 24
+		Length: 4
+		Tick: 100
+	damaged-build:
+		Start: 28
+		Length: 20
+		Tick: 100
+	dead:
+		Start: 48
+		Tick: 800
+	make: factmake
+		Length: *
+		Tick: 80
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+	icon: facticnh
+
+gdifact:
+	Inherits: emp-overlay
+	build:
+		Start: 4
+		Length: 20
+		Tick: 100
+	idle:
+		Length: 4
+		Tick: 100
+	damaged-idle:
+		Start: 24
+		Length: 4
+		Tick: 100
+	damaged-build:
+		Start: 28
+		Length: 20
+		Tick: 100
+	dead:
+		Start: 48
+		Tick: 800
+	make: gdifactmake
+		Length: *
+		Tick: 80
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+	icon: facticnh
+
+nodfact:
+	Inherits: emp-overlay
+	idle:
+		Length: 4
+		Tick: 160
+	build:
+		Start: 4
+		Length: 20
+		Tick: 100
+	damaged-idle:
+		Start: 24
+		Length: 4
+		Tick: 160
+	damaged-build:
+		Start: 28
+		Length: 20
+		Tick: 100
+	dead:
+		Start: 48
+	make: nodfactmake
+		Length: *
+		Tick: 80
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+	emp-overlay: emp_fx01
+		Length: *
+		BlendMode: Additive
+		Offset: 0, 0
+		UseTilesetCode: false
+		ZOffset: 512
+	icon: facticnh
+
+nuke:
+	Inherits: emp-overlay
+	idle:
+		Length: 4
+		Tick: 1000
+	damaged-idle:
+		Start: 4
+		Length: 4
+		Tick: 1000
+	dead:
+		Start: 8
+		Tick: 800
+	make: nukemake
+		Length: *
+		Tick: 80
+	idle-advpp: nuk2
+		Length: 4
+		Tick: 1000
+	damaged-idle-advpp: nuk2
+		Start: 4
+		Length: 4
+		Tick: 1000
+	dead-advpp: nuk2
+		Start: 8
+		Tick: 800
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+	icon: nukeicnh.tem
+		AddExtension: False
+
+pp.adv:
+	icon: advppicon
+
+gdinuke:
+	Inherits: emp-overlay
+	idle:
+		Length: 4
+		Tick: 1000
+		Offset: 0, -3
+	damaged-idle:
+		Start: 4
+		Length: 4
+		Tick: 1000
+		Offset: 0, -3
+	dead:
+		Start: 8
+		Tick: 800
+		Offset: 0, -3
+	make: gdinukemake
+		Length: *
+		Tick: 80
+		Offset: 0, -3
+	idle-advpp2: gdinuk2
+		Length: 4
+		Tick: 1000
+		Offset: 0, -3
+	damaged-idle-advpp2: gdinuk2
+		Start: 4
+		Length: 4
+		Tick: 1000
+		Offset: 0, -3
+	dead-advpp2: gdinuk2
+		Start: 8
+		Tick: 800
+		Offset: 0, -3
+	make-advpp2: gdinuk2make
+		Length: *
+		Tick: 80
+		Offset: 0, -3
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+	icon: nukeicnh.tem
+		AddExtension: False
+
+pp.gadv:
+	icon: advppicon
+
+nodnuke:
+	Inherits: emp-overlay
+	idle:
+		Length: 4
+		Tick: 1000
+	damaged-idle:
+		Start: 4
+		Length: 4
+		Tick: 1000
+	idle-advpp: nodnuk2
+		Length: 4
+		Tick: 1000
+	damaged-idle-advpp: nodnuk2
+		Start: 4
+		Length: 4
+		Tick: 1000
+	dead:
+		Start: 8
+		Tick: 1000
+	dead-advpp: nodnuk2
+		Start: 8
+		Tick: 800
+	make: nodnukemake
+		Length: *
+		Tick: 80
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+	icon: nukeicnh.tem
+		AddExtension: False
+
+pp.nadv:
+	icon: advppicon
+
+nuk2:
+	Inherits: emp-overlay
+	idle:
+		Length: 4
+		Tick: 1000
+	damaged-idle:
+		Start: 4
+		Length: 4
+		Tick: 1000
+	dead:
+		Start: 8
+		Tick: 800
+	make: nuk2make
+		Length: *
+		Tick: 80
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+	icon: nuk2icnh.tem
+		AddExtension: False
+
+gdinuk2:
+	Inherits: emp-overlay
+	idle:
+		Length: 4
+		Tick: 1000
+		Offset: 0, -3
+	damaged-idle:
+		Start: 4
+		Length: 4
+		Tick: 1000
+		Offset: 0, -3
+	dead:
+		Start: 8
+		Tick: 800
+		Offset: 0, -3
+	make: gdinuk2make
+		Length: *
+		Tick: 80
+		Offset: 0, -3
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+	icon: nuk2icnh.tem
+		AddExtension: False
+
+nodnuk2:
+	Inherits: emp-overlay
+	idle:
+		Length: 4
+		Tick: 1000
+	damaged-idle:
+		Start: 4
+		Length: 4
+		Tick: 1000
+	dead:
+		Start: 8
+	make: nodnuk2make
+		Length: *
+		Tick: 80
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+	icon: nuk2icnh.tem
+		AddExtension: False
+
+pyle:
+	Inherits: emp-overlay
+	idle:
+		Length: 10
+		Tick: 100
+	damaged-idle:
+		Start: 10
+		Length: 10
+		Tick: 100
+	dead:
+		Start: 20
+		Tick: 800
+	make: pylemake
+		Length: *
+		Tick: 80
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+	icon: pyleicnh.tem
+		AddExtension: False
+
+hand:
+	Inherits: emp-overlay
+	Defaults:
+		Offset: 0,-8
+	idle:
+	damaged-idle:
+		Start: 1
+	dead:
+		Start: 2
+		Tick: 800
+	make: handmake
+		Length: *
+		Tick: 80
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+		Offset: 0,0
+	icon: handicnh.tem
+		AddExtension: False
+		Offset: 0,0
+
+proc:
+	Inherits: emp-overlay
+	idle:
+		Length: 6
+		Tick: 120
+		Offset: 2,4
+	damaged-idle:
+		Start: 30
+		Length: 6
+		Tick: 120
+		Offset: 2,4
+	dead:
+		Start: 60
+		Tick: 800
+		Offset: 2,4
+	make: procmake
+		Length: *
+		Tick: 80
+		Offset: 2,4
+	resources: proctwr
+		Length: 6
+		Offset: -30,-17
+	damaged-resources: proctwr
+		Start: 6
+		Length: 6
+		Offset: -30,-17
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+	icon: procicnh.tem
+		AddExtension: False
+
+nodproc:
+	Inherits: emp-overlay
+	idle:
+		Length: 5
+		Tick: 120
+		Offset: 2,4
+	damaged-idle:
+		Start: 30
+		Length: 6
+		Tick: 120
+		Offset: 2,4
+	dead:
+		Start: 60
+		Tick: 800
+		Offset: 2,4
+	make: nodprocmake
+		Length: *
+		Tick: 80
+		Offset: 2,4
+	resources: proctwr
+		Length: 6
+		Offset: -30,-17
+	damaged-resources: proctwr
+		Start: 6
+		Length: 6
+		Offset: -30,-17
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+	icon: procicnh.tem
+		AddExtension: False
+
+silo:
+	Inherits: emp-overlay
+	idle:
+		Offset: 0,-1
+	damaged-idle:
+		Start: 5
+		Offset: 0,-1
+	dead:
+		Start: 10
+		Offset: 0,-1
+		Tick: 800
+	stages:
+		Length: 5
+		Offset: 0,-1
+	damaged-stages:
+		Start: 5
+		Length: 5
+		Offset: 0,-1
+	make: silomake
+		Length: *
+		Tick: 80
+		Offset: 0,-1
+	bib: mbSILO
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+		Length: *
+		Offset: 0,1
+	icon: siloicnh.tem
+		AddExtension: False
+
+nodsilo:
+	Inherits: emp-overlay
+	idle:
+		Offset: 0,-1
+	damaged-idle:
+		Start: 5
+		Offset: 0,-1
+	dead:
+		Start: 10
+		Offset: 0,-1
+		Tick: 800
+	stages:
+		Length: 5
+		Offset: 0,-1
+	damaged-stages:
+		Start: 5
+		Length: 5
+		Offset: 0,-1
+	make: nodsilomake
+		Length: *
+		Tick: 80
+		Offset: 0,-1
+	bib: mbSILO
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+		Length: *
+		Offset: 0,1
+	icon: siloicnh.tem
+		AddExtension: False
+
+weap:
+	Inherits: emp-overlay
+	Defaults:
+		Offset: 0,-12
+	idle:
+		ZOffset: -511
+	damaged-idle:
+		Start: 1
+		ZOffset: -511
+	dead:
+		Start: 2
+		Tick: 800
+	build-top: weap2
+		Length: 10
+		ZOffset: -1024
+	damaged-build-top: weap2
+		Start: 10
+		Length: 10
+		ZOffset: -1024
+	make: weapmake
+		Length: *
+		Tick: 80
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+		Offset: 0,0
+	icon: weapicnh.tem
+		AddExtension: False
+		Offset: 0,0
+	idle-smoke: weap-smoke
+		Length: 40
+		Tick: 160
+		Offset: -8,-40
+	damaged-idle-smoke: weap-smoke-d
+		Length: 40
+		Tick: 160
+		Offset: -9,-40
+
+w2ap:
+	Inherits: emp-overlay
+	Defaults:
+		Offset: 0,-12
+	idle: weap-invert
+		Start: 0
+		Length: 1
+		ZOffset: -511
+	damaged-idle: weap-invert
+		Start: 1
+		Length: 1
+		ZOffset: -511
+	dead: weap-invert
+		Start: 2
+		Length: 1
+		Tick: 800
+	build-top: weap-invert2
+		Start: 0
+		Length: 10
+		ZOffset: -1024
+	damaged-build-top: weap-invert2
+		Start: 10
+		Length: 10
+		ZOffset: -1024
+	make: weap-invert-make
+		Length: *
+		Tick: 80
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+		Offset: 0,0
+	icon: w2apicon.shp
+		AddExtension: False
+		Offset: 0,0
+	idle-smoke: w2ap-smoke
+		Length: 40
+		Tick: 160
+		Offset: 3,-40
+	damaged-idle-smoke: w2ap-smoke-d
+		Length: 40
+		Tick: 160
+		Offset: 5,-40
+
+afld:
+	Inherits: emp-overlay
+	idle:
+		Tick: 120
+		ZOffset: -1023
+	damaged-idle:
+		Start: 16
+		Tick: 120
+		ZOffset: -1023
+	active:
+		Length: 16
+		Tick: 120
+		ZOffset: -1023
+	damaged-active:
+		Start: 16
+		Length: 16
+		Tick: 120
+		ZOffset: -1023
+	idle-dish: afld_d
+		Length: 16
+		Tick: 160
+	damaged-idle-dish: afld_d
+		Start: 16
+		Length: 16
+		Tick: 160
+	dead:
+		Start: 32
+		ZOffset: -1023
+		Tick: 800
+	make: afldmake
+		Length: *
+		Tick: 80
+	bib: bib1
+		UseTilesetExtension: true
+		Length: *
+	icon: strpicon.shp
+		AddExtension: False
+
+fix:
+	Inherits: emp-overlay
+	idle:
+		ZOffset: -1c511
+	damaged-idle:
+		Start: 7
+		ZOffset: -1c511
+	active:
+		Length: 7
+		ZOffset: -1c511
+	damaged-active:
+		Start: 7
+		Length: 7
+		ZOffset: -1c511
+	dead:
+		Start: 14
+		ZOffset: -1c511
+		Tick: 800
+	make: fixmake
+		Length: 14
+		Tick: 60
+	bib: mbFIX
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+		Length: *
+		Offset: 0,-9
+	icon: fixicon.shp
+		AddExtension: False
+
+nfix:
+	Inherits: emp-overlay
+	idle: fix
+		ZOffset: -1c511
+	damaged-idle: fix
+		Start: 7
+		ZOffset: -1c511
+	active: fix
+		Length: 7
+		ZOffset: -1c511
+	damaged-active: fix
+		Start: 7
+		Length: 7
+		ZOffset: -1c511
+	dead: fix
+		Start: 14
+		ZOffset: -1c511
+		Tick: 800
+	make: fixmake
+		Length: 14
+		Tick: 60
+	bib: mbFIX
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+		Length: *
+		Offset: 0,-9
+	icon: nfixicon
+
+hq:
+	Inherits: emp-overlay
+	idle:
+		Length: 16
+		Tick: 160
+	damaged-idle:
+		Start: 16
+		Length: 16
+		Tick: 160
+	dead:
+		Start: 32
+		Tick: 800
+	make: nodhqmake
+		Length: *
+		Tick: 80
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+	icon: hqicnh.tem
+		AddExtension: False
+
+gdihq:
+	Inherits: emp-overlay
+	idle:
+		Start: 0
+		Length: 1
+	damaged-idle:
+		Start: 1
+		Length: 1
+	dead:
+		Start: 2
+		Tick: 800
+	make: gdihqmake
+		Length: *
+		Tick: 80
+	idle-dish: hqdish-tc
+		Length: 16
+		Tick: 160
+		Offset: 4, 6
+	damaged-idle-dish: hqdish-tc
+		Length: 16
+		Tick: 160
+		Offset: 4, 6		
+	idle-dish2: gdihq-radarb
+		Length: 16
+		Tick: 160
+	idle-dish3: gdihq-eye
+		Start: 0
+		Length: 16
+		Tick: 160
+	damaged-idle-dish3: gdihq-eye
+		Start: 16
+		Length: 16
+		Tick: 160
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+	icon: gdihqicon
+
+nodhq:
+	Inherits: emp-overlay
+	idle:
+		Length: 16
+		Tick: 100
+	damaged-idle:
+		Start: 16
+		Length: 16
+		Tick: 100
+	dead:
+		Start: 31
+		Tick: 800
+	make: hqmake
+		Length: *
+		Tick: 80
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+	icon: hqicnh.tem
+		AddExtension: False
+
+hpad:
+	Inherits: emp-overlay
+	idle:
+		ZOffset: -1023
+	damaged-idle:
+		Start: 7
+		ZOffset: -1023
+	active:
+		Start: 1
+		Length: 6
+		Tick: 100
+		ZOffset: -1023
+	damaged-active:
+		Start: 8
+		Length: 6
+		Tick: 100
+		ZOffset: -1023
+	dead:
+		Start: 14
+		ZOffset: -1023
+		Tick: 800
+	make: hpadmake
+		Length: *
+		Tick: 80
+	icon: hpadicnh.tem
+		AddExtension: False
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+
+nhpad:
+	Inherits: emp-overlay
+	idle: hpad
+		ZOffset: -1023
+	damaged-idle: hpad
+		Start: 7
+		ZOffset: -1023
+	active: hpad
+		Start: 1
+		Length: 6
+		Tick: 100
+		ZOffset: -1023
+	damaged-active: hpad
+		Start: 8
+		Length: 6
+		Tick: 100
+		ZOffset: -1023
+	dead: hpad
+		Start: 14
+		ZOffset: -1023
+		Tick: 800
+	make: hpadmake
+		Length: *
+		Tick: 80
+	icon: nhpadicon
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+
+gdiafld:
+	Inherits: emp-overlay
+	idle: gdiafld-idle
+		Length: 16
+		Tick: 160
+		ZOffset: -1023
+		Offset: 0,-4
+	damaged-idle: gdiafld-idle
+		Start: 16
+		Length: 8
+		Tick: 160
+		ZOffset: -1023
+		Offset: 0,-4
+	active:
+		Length: 16
+		Tick: 160
+		ZOffset: -1023
+		Offset: 0,-4
+	damaged-active:
+		Start: 16
+		Length: 8
+		Tick: 160
+		ZOffset: -1023
+		Offset: 0,-4
+	make: gdiafld-make
+		Length: *
+		Offset: 0,-4
+	dead: gdiafld
+		Start: 24
+		ZOffset: -1023
+		Tick: 800
+		Offset: 0,-4
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+		ZOffset: -1024
+	icon: afldicon.shp
+		AddExtension: False
+
+nodafld:
+	Inherits: emp-overlay
+	idle: nodafld-idle
+		Length: 8
+		Tick: 160
+		ZOffset: -1023
+		Offset: 0,-4
+	damaged-idle: nodafld-idle
+		Start: 8
+		Length: 8
+		Tick: 160
+		ZOffset: -1023
+		Offset: 0,-4
+	active: 
+		Length: 8
+		Tick: 160
+		ZOffset: -1023
+		Offset: 0,-4
+	damaged-active:
+		Start: 8
+		Length: 8
+		Tick: 160
+		ZOffset: -1023
+		Offset: 0,-4
+	make: nodafld-make
+		Length: *
+		Offset: 0,-4
+	dead: nodafld
+		Start: 15
+		ZOffset: -1023
+		Tick: 800
+		Offset: 0,-4
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+		ZOffset: -1024
+	icon: afldicon.shp
+		AddExtension: False
+
+miss:
+	Inherits: emp-overlay
+	idle:
+		Offset: 0,-1
+	damaged-idle:
+		Start: 1
+		Offset: 0,-1
+	dead:
+		Start: 2
+		Tick: 800
+	make: missmake
+		Length: *
+		Tick: 80
+		Offset: 0,-1
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+		Offset: 0,0
+	icon: missicnh
+
+eye:
+	icon: eyeupicon.shp
+		AddExtension: False
+
+tmpl:
+	Inherits: emp-overlay
+	Defaults:
+		Offset: 0,-12
+	idle:
+	damaged-idle:
+		Start: 5
+	active:
+		Length: 5
+		Tick: 200
+	smoke: atomdoor
+		Length: *
+		Offset: -1,-47
+	damaged-active:
+		Start: 5
+		Length: 5
+	dead:
+		Start: 10
+		Tick: 800
+	make: tmplmake
+		Length: *
+		Tick: 60
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+		Offset: 0,0
+	icon: tmplicnh.tem
+		AddExtension: False
+		Offset: 0,0
+	fake-icon: faketmplicon.shp
+		AddExtension: False
+		Offset: 0,0
+
+mslo:
+	Inherits: emp-overlay
+	Defaults:
+		UseTilesetExtension: true
+	idle:
+	damaged-idle:
+		Start: 8
+	make: mslomake
+		Length: *
+	active:
+		Start: 1
+		Length: 7
+		Tick: 80
+	damaged-active:
+		Start: 9
+		Length: 7
+	dead: 
+		Start: 15
+		Tick: 800
+	icon: msloicon
+		UseTilesetExtension: false
+
+shrn:
+	Inherits: emp-overlay
+	idle: shrn-base
+		Start: 0
+		Length: 1
+	damaged-idle: shrn-base
+		Start: 1
+		Length: 1
+	dead: shrn-base
+		Start: 1
+		Tick: 800
+	make: shrn-make
+		Length: *
+	idle-orb: shrn-spinner
+		Start: 0
+		Length: 10
+		Tick: 120
+		Offset: -2,-8
+	damaged-idle-orb: shrn-spinner
+		Start: 10
+		Length: 10
+		Tick: 120
+		Offset: -2,-8
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+	icon: shrnicon
+
+empc:
+	Inherits: emp-overlay
+	idle:
+		Offset: 4, -8
+	damaged-idle:
+		Start: 1
+		Offset: 4, -8
+	dead:
+		Start: 2
+		Offset: 4, -8
+		Tick: 800
+	turret: empcturr
+		Facings: 32
+		Offset: 1, -20
+	make: empcmake
+		Length: *
+		Offset: 4, -8
+		Tick: 80
+	icon: empcicon
+
+syrd:
+	Inherits: emp-overlay
+	idle:
+	damaged-idle:
+		Start: 1
+	dead:
+		Start: 1
+		Tick: 800
+	make: syrdmake
+		Length: *
+	icon: syrdicon
+
+spen:
+	Inherits: emp-overlay
+	idle:
+		Offset: 0,2
+	damaged-idle:
+		Start: 1
+		Offset: 0,2
+	dead:
+		Start: 1
+		Tick: 800
+	make: spenmake
+		Length: *
+		Offset: 0,2
+	icon: spenicon
+
+nodspen:
+	Inherits: emp-overlay
+	idle:
+		Offset: 0,2
+	damaged-idle:
+		Start: 1
+		Offset: 0,2
+	make: nodspenmake
+		Length: *
+		Offset: 0,2
+	icon: nodspenicon
+
+gdigtwr:
+	Inherits: emp-overlay
+	idle:
+	damaged-idle:
+		Start: 1
+	dead:
+		Start: 2
+		Tick: 800
+	make:
+		Combine:
+			gtwrmake:
+				Length: 17
+			gtwrmake:
+				Start: 19
+		Length: 18
+		Tick: 80
+	muzzle: minigun
+		Length: 6
+		Facings: 8
+	bib: mbGTWR
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+		Length: *
+		Offset: 0,-2
+	icon: gtwricnh.tem
+		AddExtension: False
+
+gtwr:
+	Inherits: emp-overlay
+	idle:
+	damaged-idle:
+		Start: 1
+	dead:
+		Start: 2
+		Tick: 800
+	make:
+		Combine:
+			gtwrmake:
+				Length: 17
+			gtwrmake:
+				Start: 19
+		Length: 18
+		Tick: 80
+	muzzle: minigun
+		Length: 6
+		Facings: 8
+	bib: mbGTWR
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+		Length: *
+		Offset: 0,-2
+	icon: gtwricnh.tem
+		AddExtension: False
+	turret_sam: rastnk
+		Start: 38
+		Facings: 32
+
+gtwr.aa:
+	icon: gdiaatwricon
+
+gun:
+	Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+	recoil:
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	damaged-idle:
+		Start: 64
+		Facings: 32
+		UseClassicFacingFudge: True
+	damaged-recoil:
+		Start: 96
+		Facings: 32
+		UseClassicFacingFudge: True
+	make: gunmake
+		Length: *
+		Tick: 80
+	muzzle: gunfire2
+		Length: *
+	bib: mbGUN
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+		Length: *
+		Offset: -1,-1
+	icon: gunicnh.tem
+		AddExtension: False
+
+rtur:
+	Inherits: emp-overlay
+	idle:
+		Start: 0
+		Length: 1
+		Facings: 32
+	damaged-idle:
+		Start: 1
+		Length: 1
+		Facings: 32
+	turret:
+		Start: 2
+		Facings: 32
+	make: rturmake
+		Length: *
+		Tick: 80
+	dead:
+		Start: 1
+		Length: 1
+		Tick: 800
+	icon: rturicon
+	bib: mbGUN
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+		Length: *
+		Offset: -1, -1
+
+ltur:
+	Inherits: emp-overlay
+	closed-idle:
+		Start: 64
+		Length: 1
+	opening:
+		Start: 64
+		Length: 32
+		Tick: 30
+	idle:
+		Start: 0
+		Facings: 32
+		UseClassicFacingFudge: True
+	closing:
+		Start: 64
+		Length: 32
+		Reverse: true
+		Tick: 30
+	damaged-closed-idle:
+		Start: 64
+	damaged-opening:
+		Start: 64
+		Length: 32
+		Tick: 30
+	damaged-idle:
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	damaged-closing:
+		Start: 64
+		Length: 32
+		Reverse: true
+		Tick: 30
+	dead:
+		Start: 96
+		Tick: 800
+	make: ltur
+		Start: 64
+		Length: 32
+		Tick: 30
+	icon: lturicon
+
+sam:
+	Inherits: emp-overlay
+	closed-idle:
+		Start: 0
+	opening:
+		Start: 1
+		Length: 16
+		Tick: 30
+	idle:
+		Start: 17
+		Facings: 32
+		UseClassicFacingFudge: True
+	closing:
+		Start: 50
+		Length: 14
+		Tick: 30
+	damaged-closed-idle:
+		Start: 64
+	damaged-opening:
+		Start: 65
+		Length: 16
+		Tick: 30
+	damaged-idle:
+		Start: 81
+		Facings: 32
+		UseClassicFacingFudge: True
+	damaged-closing:
+		Start: 114
+		Length: 14
+		Tick: 30
+	dead:
+		Start: 128
+		Tick: 800
+	make: sammake
+		Length: 20
+		Tick: 30
+	muzzle: samfire
+		Length: 18
+		Facings: 8
+	icon: samicnh.tem
+		AddExtension: False
+	emp-overlay: emp_fx01
+		Length: *
+		BlendMode: Additive
+		Offset: 0, 0
+		UseTilesetCode: false
+		ZOffset: 512
+
+atwr:
+	Inherits: emp-overlay
+	Defaults:
+		Offset: 0,-13
+	idle:
+	damaged-idle:
+		Start: 1
+	dead:
+		Start: 2
+		Tick: 800
+	make: atwrmake
+		Length: *
+		Tick: 80
+	muzzle: gunfire2
+		Length: *
+	bib: mbGTWR
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+		Length: *
+		Offset: -3,0
+	icon: atwricnh.tem
+		AddExtension: False
+		Offset: 0,0
+
+obli:
+	Inherits: emp-overlay
+	idle: newobli
+		Start: 0
+		Length: 1
+		Offset: 0, -12
+	damaged-idle: newobli
+		Start: 1
+		Length: 1
+		Offset: 0, -12
+	active: newoblibuildup
+		Start: 0
+		Length: 36
+		Tick: 340
+		Offset: 0, -12
+	damaged-active: newoblibuildup
+		Start: 36
+		Length: 35
+		Tick: 340
+		Offset: 0, -12
+	dead: newobli
+		Start: 2
+		Length: 1
+		Tick: 800
+		Offset: 0, -12
+	make: newoblimake
+		Length: 21
+		Tick: 80
+		Offset: 0, -12
+	bib: mbOBLI
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+		Length: *
+		Offset: -1,-3
+	icon: obliicnh.tem
+		AddExtension: False
+		Offset: 0,0
+
+lsrfpost:
+	Inherits: emp-overlay
+	idle:
+		Start: 0
+	damaged-idle:
+		Start: 1
+	dead:
+		Start: 1
+		Tick: 400
+	make: lsrfpost
+		Start: 0
+		Length: 1
+		Tick: 80
+	icon: lsrficon
+
+lsrfsgmt:
+	Inherits: emp-overlay
+	idle:
+		Length: 1
+	disabled-x:
+		Start: 2
+		Length: 1
+	disabled-y:
+		Start: 2
+		Length: 1
+	enabled-x:
+		Start: 0
+		Length: 1
+	enabled-y:
+		Frames: 1
+		Length: 1
+
+hbox:
+	Inherits: emp-overlay
+	Defaults:
+		UseTilesetExtension: true
+	idle:
+	damaged-idle:
+		Start: 2
+	make: hboxmake
+		Length: *
+	dead:
+		Start: 2
+		Length: 1
+		Tick: 400
+	muzzle: minigun
+		Length: 6
+		Facings: 8
+		UseTilesetExtension: false
+	icon: hboxicon
+		UseTilesetExtension: false
+
+brik:
+	idle:
+		Length: 16
+	scratched-idle:
+		Start: 16
+		Length: 16
+	damaged-idle:
+		Start: 32
+		Length: 16
+	icon: brikicnh.tem
+		AddExtension: False
+
+sbag:
+	idle:
+		Length: 16
+	icon: sbagicnh.tem
+		AddExtension: False
+
+cycl:
+	idle:
+		Length: 16
+	damaged-idle:
+		Start: 16
+		Length: 16
+	icon: cyclicnh.tem
+		AddExtension: False
+
+barb:
+	idle:
+		Length: 16
+	damaged-idle:
+		Start: 16
+		Length: 16
+
+wood:
+	idle:
+		Length: 16
+	damaged-idle:
+		Start: 16
+		Length: 16
+
+hosp:
+	Inherits: emp-overlay
+	idle:
+		Length: 4
+		Tick: 100
+		Offset: 0,-2
+	damaged-idle:
+		Start: 4
+		Length: 4
+		Offset: 0,-2
+	dead:
+		Start: 8
+		Tick: 800
+	make: hospmake
+		Length: *
+		Tick: 80
+		Offset: 0,-2
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+	icon: hospicon
+
+bio:
+	Inherits: emp-overlay
+	idle:
+	damaged-idle:
+		Start: 1
+	dead:
+		Start: 2
+		Tick: 800
+	make: biomake
+		Length: *
+		Tick: 80
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+	idle-smoke: biosmoke
+		Length: 40
+		Tick: 160
+		Offset: 0,-20
+	damaged-idle-smoke: biosmoke-d
+		Length: 40
+		Tick: 160
+		Offset: 0,-20
+	icon: bioicon
+
+missgdi:
+	Inherits: emp-overlay
+	idle:
+		Offset: 0,-1
+	damaged-idle:
+		Start: 1
+		Offset: 0,-1
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+		Offset: 0,0
+	icon: missicnhold.shp
+		AddExtension: False
+	dead:
+		Start: 2
+		Tick: 800
+		Offset: 0,-1
+	idle-dish: antena2
+		Length: 16
+		Tick: 160
+		Offset: 18,5
+	damaged-idle-dish: antena2
+		Start: 16
+		Length: 16
+		Tick: 160
+		Offset: 18,5
+	idle-antena: antena1
+		Length: 31
+		Offset: -15,22
+		Tick: 160
+	damaged-idle-antena: antena1
+		Start: 32
+		Length: 1
+		Offset: -15,22
+		Tick: 160
+	dead-antena: antena1
+		Tick: 1000
+		Start: 32
+		Length: 1
+		Offset: -15,22
+
+army:
+	Inherits: emp-overlay
+	idle:
+		Start: 0
+		Length: 9
+		Tick: 100
+	damaged-idle:
+		Start: 9
+		Length: 9
+		Tick: 100
+	make: armymake
+		Length: *
+		Tick: 80
+	dead:
+		Start: 17
+		Tick: 800
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+	icon: armyicon
+
+gcom:
+	Inherits: emp-overlay
+	idle:
+		Start: 0
+		Offset: 0, -10
+	damaged-idle:
+		Start: 1
+		Offset: 0, -10
+	make: gcom-make
+		Length: *
+		Tick: 80
+		Offset: 0, -10
+	dead: gcom
+		Start: 2
+		Tick: 800
+		Offset: 0, -10
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+	icon: gcomicon
+
+intc:
+	Inherits: emp-overlay
+	idle: ncom
+		Start: 0
+	damaged-idle: ncom
+		Start: 1
+	make: ncommake
+		Length: *
+		Tick: 80
+	dead: ncom
+		Start: 1
+		Tick: 800
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+	icon: ncomicon
+
+sgen:
+	Inherits: emp-overlay
+	idle:
+		Offset: 0,-10
+	active:
+		Length: 4
+		Offset: 0,-10
+	damaged-idle:
+		Start: 4
+		Offset: 0,-10
+	damaged-active:
+		Start: 4
+		Length: 4
+		Offset: 0,-10
+	make: sgenmake
+		Length: *
+		Offset: 0,-10
+	dead:
+		Start: 4
+		Tick: 800
+		Offset: 0,-10
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+	icon: sgenicon
+
+vgate:
+	make:
+		Length: 7
+	idle:
+		Frames: 6, 5, 4, 3, 2, 1, 0
+		Length: 7
+		ZOffset: -1c511
+	damaged-idle:
+		Frames: 13, 12, 11, 10, 9, 8, 7
+		Length: 7
+		ZOffset: -1c511
+	icon: gatbicon
+
+ngate:
+	make:
+		Length: 7
+	idle:
+		Frames: 6, 5, 4, 3, 2, 1, 0
+		Length: 7
+		ZOffset: -1c511
+	damaged-idle:
+		Frames: 13, 12, 11, 10, 9, 8, 7
+		Length: 7
+		ZOffset: -1c511
+	icon: gataicon
+
+fact.husk:
+	idle: fact
+		Start: 48
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+
+gdifact.husk:
+	idle: fact
+		Start: 48
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+
+nodfact.husk:
+	idle: fact
+		Start: 48
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+
+nuke.husk:
+	idle: nuke
+		Start: 8
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+
+nodnuke.husk:
+	idle: nodnuke
+		Start: 8
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+
+nuk2.husk:
+	idle: nuk2
+		Start: 8
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+
+nodnuk2.husk:
+	idle: nuk2
+		Start: 8
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+
+pyle.husk:
+	idle: pyle
+		Start: 20
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+
+hand.husk:
+	idle: hand
+		Start: 2
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+
+proc.husk:
+	idle: proc
+		Start: 60
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+
+nodproc.husk:
+	idle: nodproc
+		Start: 60
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+
+silo.husk:
+	idle: silo
+		Start: 10
+	bib: mbSILO
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+
+weap.husk:
+	idle: weap
+		Start: 2
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+		Offset: 0,0
+
+w2ap.husk:
+	idle: weap-invert
+		Start: 2
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+		Offset: 0,0
+
+strp.husk:
+	idle: afld
+		Start: 32
+	bib: bib1
+		UseTilesetExtension: true
+		Length: *
+
+fix.husk:
+	idle: fix
+		Start: 14
+	bib: mbFIX
+		UseTilesetExtension: true
+		TilesetOverrides:
+			WINTER: TEMPERAT
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+		Length: *
+		Offset: 0,-9
+
+hq.husk:
+	idle: hq
+		Start: 32
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+
+gdihq.husk:
+	idle: gdihq
+		Start: 2
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+
+nodhq.husk:
+	idle: hq
+		Start: 31
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+
+miss.husk:
+	idle: miss
+		Start: 2
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+		Offset: 0,0
+
+tmpl.husk:
+	idle: tmpl
+		Start: 10
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+		Offset: 0,0
+
+sgen.husk:
+	idle: sgen-base
+		Start: 1
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+
+hosp.husk:
+	idle: hosp
+		Start: 8
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+
+bio.husk:
+	idle: bio
+		Start: 2
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+
+missgdi.husk:
+	idle: missgdi
+		Start: 2
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+		Offset: 0,0
+	idle-antena: antena1
+		Start: 32
+		Length: 1
+		Offset: -15,22
+
+mwfbuild:
+	Inherits: emp-overlay
+	idle: weapmini
+	damaged-idle: weapmini
+		Start: 1
+	dead: weapmini
+		Start: 2
+		Tick: 800
+	build-top: weapmini2
+		Length: 4
+		ZOffset: -1024
+	damaged-build-top: weapmini2
+		Start: 4
+		Length: 4
+		ZOffset: -1024
+	make: weapminimake
+		Length: *
+		Tick: 80
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+	icon: weapicnh.tem
+		AddExtension: False
+		Offset: 0,0

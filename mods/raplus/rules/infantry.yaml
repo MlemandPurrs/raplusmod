@@ -533,6 +533,7 @@ E4:
 	Armament@GARRISONED:
 		Name: garrisoned
 		Weapon: Flamer
+		MuzzleSequence: muzzle
 	TakeCover:
 		ProneOffset: 190,0,-198
 	AttackFrontal:	

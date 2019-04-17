@@ -828,7 +828,6 @@ mbun:
 	Inherits: emp-overlay
 	idle:
 		Facings: 32
-	turret: 4tnkpbox
 	muzzle: minigun
 		Length: 6
 		Facings: 8

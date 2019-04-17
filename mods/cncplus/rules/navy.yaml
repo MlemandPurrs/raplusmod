@@ -1,0 +1,901 @@
+PTB:
+	Inherits: ^Ship
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Buildable:
+		Queue: Ship
+		BuildAtProductionType: Boat
+		BuildPaletteOrder: 1
+		Prerequisites: ~syrd, ~ships.gdi, ~techlevel.low
+		Description: Light fire-support ship armed with Rocket battery\n Strong vs Defenses, Air\n Weak vs Ships, Infantry
+	Valued:
+		Cost: 750
+	Tooltip:
+		Name: Patrol Boat
+	Health:
+		HP: 18000
+	Armor:
+		Type: Heavy
+	Mobile:
+		TurnSpeed: 7
+		Speed: 128
+	RevealsShroud:
+		Range: 5c0
+	Turreted:
+		TurnSpeed: 5
+		Offset: 460,0,171
+	Armament@PRIMARY:
+		Weapon: 227mm.stnk
+		LocalOffset: 85,-85,0, 85,85,0
+		PauseOnCondition: empdisable
+	AttackTurreted:
+		PauseOnCondition: empdisable
+	WithMuzzleOverlay:
+	SelectionDecorations:
+	WithSpriteTurret:
+	WithMoveAnimation:
+		MoveSequence: move
+	Selectable:
+		DecorationBounds: 36,36
+	ProducibleWithLevel:
+		Prerequisites: allunits.upgraded
+		
+SCRB:
+	Inherits: ^Ship
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Ship
+		BuildAtProductionType: Boat
+		BuildPaletteOrder: 1
+		Prerequisites: ~syrd, ~ships.nod, ~techlevel.low
+		Description: Fast scout ship armed with dual Machinegun\nDoes not appear on enemy radar\n Strong vs Infantry\n Weak vs Ships, Vehicles
+	Valued:
+		Cost: 475
+	Tooltip:
+		Name: Scarab Speedboat
+	Health:
+		HP: 18000
+	Armor:
+		Type: Light
+	Mobile:
+		TurnSpeed: 7
+		Speed: 152
+	RevealsShroud:
+		Range: 5c0
+	Armament@PRIMARY:
+		Weapon: MachineGunH
+		LocalOffset: 101,85,183
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	Armament@SECONDARY:
+		Weapon: MachineGunH
+		LocalOffset: 101,-85,183
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	AttackFrontal:
+		PauseOnCondition: empdisable
+	WithMuzzleOverlay:
+	WithMoveAnimation:
+		MoveSequence: move
+	SelectionDecorations:
+	Selectable:
+		DecorationBounds: 36,36
+	ProducibleWithLevel:
+		Prerequisites: allunits.upgraded
+	AppearsOnRadar:
+		ValidStances: Ally
+	-GpsDot:
+
+DEST:
+	Inherits: ^Ship
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Buildable:
+		Queue: Ship
+		BuildAtProductionType: Boat
+		BuildPaletteOrder: 2
+		Prerequisites: ~syrd, anyhq, ~ships.gdi, ~techlevel.medium
+		Description: Multi-role naval vessel\nCan attack Air units\nCan detect Submarines and use Torpedoes against them\n Strong vs Aircraft\n Weak vs Everything else
+	Valued:
+		Cost: 1075
+	Tooltip:
+		Name: Destroyer
+	Health:
+		HP: 54000
+	Armor:
+		Type: Heavy
+	Mobile:
+		TurnSpeed: 7
+		Speed: 65
+	RevealsShroud:
+		Range: 6c0
+	Turreted@1:
+		Turret: primary
+		TurnSpeed: 7
+		Offset: 796,0,240
+	Turreted@2:
+		Turret: secondary
+		TurnSpeed: 255
+		Offset: 0,0,0
+	Armament@PRIMARY:
+		Turret: primary
+		Name: primary
+		Weapon: MinigunAA
+		LocalOffset: 250,0,50
+		LocalYaw: 64, -64
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	Armament@SECONDARY:
+		Turret: secondary
+		Name: secondary
+		Weapon: TorpTubeVS
+		LocalOffset: 0,-171,0, 0,171,0
+		FireDelay: 2
+		PauseOnCondition: empdisable
+	AttackTurreted:
+		Armaments: primary, secondary
+		PauseOnCondition: empdisable
+	SelectionDecorations:
+	WithSpriteTurret@PRIMARY:
+		Turret: primary
+	WithMuzzleOverlay:
+	Selectable:
+		DecorationBounds: 38,38
+	ProducibleWithLevel:
+		Prerequisites: allunits.upgraded
+	WithMoveAnimation:
+		MoveSequence: move
+	DetectCloaked:
+		CloakTypes: Underwater
+		Range: 6c0
+	RenderDetectionCircle:
+	WithIdleOverlay@SPINNER:
+		Sequence: spinner
+		Offset: -90,0,406
+		PauseOnCondition: empdisable
+
+SCRV:
+	Inherits: ^Ship
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Buildable:
+		Queue: Ship
+		BuildAtProductionType: Boat
+		BuildPaletteOrder: 2
+		Prerequisites: ~syrd, anyhq, ~ships.nod, ~techlevel.low
+		Description: Main battleship of Nod equipped with Missile battery\nUses torpedo against Submarines\nDoes not appear on enemy Radar\n Strong vs Defenses, Air\n Weak vs Ships, Infantry
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Stealth Cruiser
+	Health:
+		HP: 36000
+	Armor:
+		Type: Heavy
+	Mobile:
+		TurnSpeed: 7
+		Speed: 65
+	RevealsShroud:
+		Range: 5c0
+	Turreted@1:
+		Turret: primary
+		TurnSpeed: 5
+		Offset: 460,0,30
+	Turreted@2:
+		Turret: secondary
+		TurnSpeed: 255
+		Offset: 0,0,0
+	Armament@PRIMARY:
+		Turret: primary
+		Weapon: 227mm.stnk
+		LocalOffset: 85,-85,0, 85,85,0
+		PauseOnCondition: empdisable
+	Armament@SECONDARY:
+		Turret: secondary
+		Name: secondary
+		Weapon: TorpTubeVS
+		LocalOffset: 0,-171,0, 0,171,0
+		FireDelay: 2
+		PauseOnCondition: empdisable
+	AttackTurreted:
+		Turrets: primary, secondary
+		PauseOnCondition: empdisable
+	SelectionDecorations:
+	WithSpriteTurret@PRIMARY:
+		Turret: primary
+	Selectable:
+		DecorationBounds: 36,36
+	ProducibleWithLevel:
+		Prerequisites: allunits.upgraded
+	AppearsOnRadar:
+		ValidStances: Ally
+	-GpsDot:
+
+MCRUS:
+	Inherits: ^Ship
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Ship
+		BuildAtProductionType: Boat
+		BuildPaletteOrder: 3
+		Prerequisites: ~syrd, tech, ~ships.gdi, ~techlevel.high
+		Description: Slow moving, long-ranged rocket artillery ship\n Strong vs Buildings, Ground units\n Weak vs Naval units, Aircraft
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Missile Cruiser
+	Health:
+		HP: 72000
+	Armor:
+		Type: Heavy
+	Mobile:
+		TurnSpeed: 3
+		Speed: 42
+	RevealsShroud:
+		Range: 8c0
+	Turreted@PRIMARY:
+		Turret: primary
+		Offset: -996,0,128
+		TurnSpeed: 3
+	Turreted@SECONDARY:
+		Turret: secondary
+		Offset: 768,0,128
+		TurnSpeed: 3
+	Armament@PRIMARY:
+		Turret: primary
+		Weapon: 227mm3Burst
+		LocalOffset: 480,-100,40, 480,100,40
+		Recoil: 171
+		RecoilRecovery: 34
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	Armament@SECONDARY:
+		Name: secondary
+		Turret: secondary
+		Weapon: 227mm3Burst
+		LocalOffset: 480,-100,40, 480,100,40
+		Recoil: 171
+		RecoilRecovery: 34
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	AttackTurreted:
+		Turrets: primary, secondary
+		PauseOnCondition: empdisable
+	SelectionDecorations:
+	Selectable:
+		DecorationBounds: 44,44
+	ProducibleWithLevel:
+		Prerequisites: allunits.upgraded
+	WithMoveAnimation:
+		MoveSequence: move
+	WithAttackAnimation:
+		Sequence: attack
+	RenderRangeCircle:
+
+SHDW:
+	Inherits: ^Ship
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Ship
+		BuildAtProductionType: Boat
+		BuildPaletteOrder: 3
+		Prerequisites: ~syrd, tmpl, ~ships.nod, ~techlevel.high
+		Description: Slow moving, long-ranged rocket artillery ship\nCloaks when not moving\n Strong vs Buildings, Ground units\n Weak vs Naval units, Aircraft
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Sea Shadow
+	Health:
+		HP: 72000
+	Armor:
+		Type: Heavy
+	Mobile:
+		TurnSpeed: 3
+		Speed: 42
+	RevealsShroud:
+		Range: 8c0
+	Turreted@PRIMARY:
+		Turret: primary
+		Offset: -0,0,228
+		TurnSpeed: 3
+	Armament@PRIMARY:
+		Turret: primary
+		Weapon: HonestJohnNapalm
+		LocalOffset: 480,-100,40, 480,100,40
+		Recoil: 171
+		RecoilRecovery: 34
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	AttackTurreted:
+		Turrets: primary
+		PauseOnCondition: empdisable
+	SelectionDecorations:
+	Selectable:
+		DecorationBounds: 44,44
+	Cloak:
+		InitialDelay: 90
+		CloakDelay: 90
+		CloakSound: trans1.aud
+		UncloakSound: trans1.aud
+		CloakedCondition: hidden
+		UncloakOn: Attack, Move, Dock
+		PauseOnCondition: !(!cloak-force-disabled && !empdisable)
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+	WithDecoration@hidden:
+		Image: pips
+		Sequence: pip-stealth
+		ReferencePoint: Top, Left
+		ZOffset: 256
+		RequiresCondition: hidden
+	ProducibleWithLevel:
+		Prerequisites: allunits.upgraded
+	WithMoveAnimation:
+		MoveSequence: move
+	WithAttackAnimation:
+		Sequence: attack
+	RenderRangeCircle:
+
+FRIG:
+	Inherits: ^Ship
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Buildable:
+		Queue: Ship
+		BuildAtProductionType: Boat
+		BuildPaletteOrder: 5
+		Prerequisites: ~syrd, tech, ~ships.gdi, upgrade.railguns, ~techlevel.high
+		Description: Escort vessel armed with an Railgun\n Strong vs Navy, Vehicles\n Weak vs Aircraft, Artillery
+	Valued:
+		Cost: 1350
+	Tooltip:
+		Name: Railgun Frigate
+	Health:
+		HP: 36000
+	Armor:
+		Type: Heavy
+	Mobile:
+		TurnSpeed: 7
+		Speed: 85
+	RevealsShroud:
+		Range: 6c0
+	Turreted:
+		TurnSpeed: 7
+		Offset: 114,0,166
+	Armament@PRIMARY:
+		Weapon: TurRail
+		LocalOffset: 48,0,112
+		PauseOnCondition: empdisable
+	AttackTurreted:
+		PauseOnCondition: empdisable
+	SelectionDecorations:
+	WithSpriteTurret:
+	Selectable:
+		DecorationBounds: 38,38
+	ProducibleWithLevel:
+		Prerequisites: allunits.upgraded
+	WithMoveAnimation:
+		MoveSequence: move
+
+LCRV:
+	Inherits: ^Ship
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Ship
+		BuildAtProductionType: Boat
+		BuildPaletteOrder: 5
+		Prerequisites: ~syrd, anyhq, ~ships.nod, upgrade.lasertech, ~techlevel.medium
+		Description: Main battle ship of Nod armed with\ngun turret and powerful Laser\nNeeds to redirect all power to Laser\nin order to fire it, becoming immobile\n Strong vs anything on Ground\n Weak vs Aircraft, Artillery
+	Valued:
+		Cost: 1450
+	Tooltip:
+		Name: Laser Corvette
+	Health:
+		HP: 36000
+	Armor:
+		Type: Heavy
+	Mobile:
+		TurnSpeed: 7
+		Speed: 85
+		RequiresCondition: !empdisable && !deployed
+	RevealsShroud:
+		Range: 6c0
+	Turreted:
+		TurnSpeed: 7
+		Offset: 746,0,208
+	Armament@PRIMARY:
+		Name: primary
+		Weapon: TurretGun
+		LocalOffset: 512,0,112
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable && deployed
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: Laser
+		LocalOffset: -654,0,340
+		PauseOnCondition: empdisable && !deployed
+	AttackTurreted:
+		Armaments: primary
+		PauseOnCondition: empdisable
+		RequiresCondition: !deployed
+	AttackCharges:
+		Armaments: secondary
+		RequiresCondition: deployed
+		PauseOnCondition: empdisable
+		ChargeLevel: 100
+	SelectionDecorations:
+	WithSpriteTurret:
+	WithMuzzleOverlay:
+	Selectable:
+		DecorationBounds: 38,38
+	ProducibleWithLevel:
+		Prerequisites: allunits.upgraded
+	WithMoveAnimation:
+		MoveSequence: move
+	GrantConditionOnDeploy:
+		DeployedCondition: deployed
+		SkipMakeAnimation: yes
+		DeploySound: place2.aud
+		UndeploySound: clicky1.aud
+	WithChargeOverlay:
+	WithDecoration@deployed:
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-deployed
+		ReferencePoint: Top
+		ZOffset: 256
+		RequiresCondition: deployed
+
+GREP:
+	Inherits: ^Ship
+	Buildable:
+		Queue: Ship
+		BuildAtProductionType: Boat
+		BuildPaletteOrder: 6
+		Prerequisites: ~syrd, fix, ~ships.gdi, ~techlevel.medium
+		Description: Support vessel capable of Repairing other ships\nCan detect Submerged units\n Unarmed
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Support Ship
+	Health:
+		HP: 32500
+	Armor:
+		Type: Heavy
+	Mobile:
+		TurnSpeed: 6
+		Speed: 85
+	RevealsShroud:
+		Range: 7c0
+	Armament:
+		Weapon: Repair
+		Cursor: repair
+		OutsideRangeCursor: repair
+		TargetStances: Ally
+		ForceTargetStances: None
+		PauseOnCondition: empdisable
+	AttackFrontal:
+		PauseOnCondition: empdisable
+	SelectionDecorations:
+	Selectable:
+		DecorationBounds: 38,38
+	WithMoveAnimation:
+		MoveSequence: move
+	CaptureManager:
+	Captures:
+		CaptureTypes: building
+		PlayerExperience: 25
+		CaptureDelay: 200
+	AutoTarget:
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: Vehicle, Ship
+	DetectCloaked:
+		CloakTypes: Underwater
+		Range: 4c0
+	RenderDetectionCircle:
+
+NREP:
+	Inherits: ^Ship
+	Buildable:
+		Queue: Ship
+		BuildAtProductionType: Boat
+		BuildPaletteOrder: 6
+		Prerequisites: ~syrd, fix, ~ships.nod, ~techlevel.medium
+		Description: Support vessel capable of Repairing other ships\nCan detect Submerged units\n Unarmed
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Support Ship
+	Health:
+		HP: 32500
+	Armor:
+		Type: Heavy
+	Mobile:
+		TurnSpeed: 6
+		Speed: 85
+	RevealsShroud:
+		Range: 7c0
+	RepairableNear:
+		Buildings: syrd
+	Armament:
+		Weapon: Repair
+		Cursor: repair
+		OutsideRangeCursor: repair
+		TargetStances: Ally
+		ForceTargetStances: None
+		PauseOnCondition: empdisable
+	AttackFrontal:
+		PauseOnCondition: empdisable
+	SelectionDecorations:
+	Selectable:
+		DecorationBounds: 38,38
+	WithMoveAnimation:
+		MoveSequence: move
+	CaptureManager:
+	Captures:
+		CaptureTypes: building
+		PlayerExperience: 25
+		CaptureDelay: 200
+	AutoTarget:
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: Vehicle, Ship
+
+GDIHVRTRANS:
+	Inherits: ^Ship
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Hover Transport (GDI)
+	Buildable:
+		Queue: Ship
+		BuildPaletteOrder: 4
+		Prerequisites: ~ships.gdi, ~techlevel.low
+		Description: General-purpose naval transport\nCan carry infantry and vehicles\n Unarmed
+	Mobile:
+		Locomotor: hcraft
+		TurnSpeed: 3
+		Speed: 110
+		RequiresCondition: !empdisable && !notmobile
+	Health:
+		HP: 35000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 3c0
+	SelectionDecorations:
+	Selectable:
+		Bounds: 48,48
+	WithRoof:
+	WithCargo:
+		DisplayTypes: Infantry, Vehicle
+		LocalOffset: 390,-256,0, 390,256,0, 0,0,0, -390,-256,0, -390,256,0
+	Cargo:
+		Types: Infantry, Vehicle
+		MaxWeight: 5
+		PipCount: 5
+		PassengerFacing: 0
+		LoadingCondition: notmobile
+	RenderSprites:
+		Image: lst
+
+NODHVRTRNS:
+	Inherits: ^Ship
+	Buildable:
+		Queue: Ship
+		BuildPaletteOrder: 4
+		Prerequisites: ~ships.nod, ~techlevel.low
+		Description: General-purpose naval transport\nCan carry infantry and vehicles\n Unarmed
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Hover Transport (Nod)
+	Health:
+		HP: 35000
+	Armor:
+		Type: Heavy
+	Mobile:
+		Locomotor: hcraft
+		TurnSpeed: 3
+		Speed: 110
+		RequiresCondition: !empdisable && !notmobile
+	RevealsShroud:
+		Range: 3c0
+	SelectionDecorations:
+	Cargo:
+		Types: Infantry, Vehicle
+		MaxWeight: 5
+		PipCount: 5
+		LoadingCondition: notmobile
+	Selectable:
+		DecorationBounds: 48,48
+	RenderSprites:
+		Image: hvrtrns
+
+ASUB:
+	Inherits: ^Submarine
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Ship
+		BuildAtProductionType: Submarine
+		BuildPaletteOrder: 7
+		Prerequisites: ~spen, ~submarines.gdi, anyhq, ~techlevel.medium
+		Description: Submerged multi-role unit armed\nwith Torpedoes and anti-ground Missiles\n Strong vs Basic Defenses, Naval units\n Weak vs Ground units
+	Valued:
+		Cost: 950
+	Tooltip:
+		Name: Attack Submarine
+	Health:
+		HP: 25000
+	Armor:
+		Type: Light
+	Mobile:
+		TurnSpeed: 4
+		Speed: 71
+	RevealsShroud:
+		Range: 6c0
+		RequiresCondition: !underwater
+		RevealGeneratedShroud: false
+	RevealsShroud@GAPGEN:
+		Range: 4c0
+		RequiresCondition: !underwater
+	RevealsShroud@UNDERWATER:
+		Range: 3c0
+		RequiresCondition: underwater
+    Turreted:
+        TurnSpeed: 255
+        Offset: -200,0,100
+    WithSpriteTurret:
+	Armament@PRIMARY:
+		Name: primary
+		Weapon: TorpTube
+		LocalOffset: 0,-171,-100, 0,171,-100
+		FireDelay: 2
+		PauseOnCondition: empdisable
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: 227mm.stnk
+		LocalOffset: -200,-100,0, -200,100,0
+		LocalYaw: 64, -64
+		PauseOnCondition: empdisable
+	AttackFrontal:
+		PauseOnCondition: empdisable
+	Cloak:
+		CloakDelay: 65
+	SelectionDecorations:
+	Selectable:
+		DecorationBounds: 38,38
+	ProducibleWithLevel:
+		Prerequisites: allunits.upgraded
+
+SUB:
+	Inherits: ^Submarine
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Ship
+		BuildAtProductionType: Submarine
+		BuildPaletteOrder: 7
+		Prerequisites: spen, ~submarines.nod, ~techlevel.medium
+		Description: Submerged anti-ship unit\narmed with torpedoes\n Strong vs Naval units\n Weak vs Ground units, Aircraft
+	Valued:
+		Cost: 775
+	Tooltip:
+		Name: Submarine
+	Health:
+		HP: 25000
+	Armor:
+		Type: Light
+	Mobile:
+		TurnSpeed: 4
+		Speed: 71
+	RevealsShroud:
+		Range: 6c0
+		RequiresCondition: !underwater
+		RevealGeneratedShroud: false
+	RevealsShroud@GAPGEN:
+		Range: 4c0
+		RequiresCondition: !underwater
+	RevealsShroud@UNDERWATER:
+		Range: 3c0
+		RequiresCondition: underwater
+	Armament:
+		Weapon: TorpTube
+		LocalOffset: 0,-171,0, 0,171,0
+		FireDelay: 2
+		PauseOnCondition: empdisable
+	AttackFrontal:
+		PauseOnCondition: empdisable
+	SelectionDecorations:
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: ReturnFire
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: Water, Underwater
+	AutoTargetPriority@ATTACKANYTHING:
+		ValidTargets: Water, Underwater
+	Explodes:
+		Weapon: UnitExplodeSubmarine
+		EmptyWeapon: UnitExplodeSubmarine
+	Selectable:
+		DecorationBounds: 38,38
+	ProducibleWithLevel:
+		Prerequisites: allunits.upgraded
+	RenderSprites:
+		Image: sub
+		FactionImages:
+			gdi: sub
+			nod: nodsub
+
+MSUB:
+	Inherits: ^Ship
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Buildable:
+		Queue: Ship
+		BuildAtProductionType: Submarine
+		BuildPaletteOrder: 8
+		Prerequisites: spen, intc, ~!upgrade.chemmissiles, ~submarines.nod, ~techlevel.high
+		Description: Submerged naval unit armed with general-purpose rockets\n Strong vs Buildings, Helicopters\n Weak vs Naval units
+	Valued:
+		Cost: 1250
+	Tooltip:
+		Name: Missile Submarine
+	Health:
+		HP: 40000
+	Armor:
+		Type: Light
+	Mobile:
+		TurnSpeed: 3
+		Speed: 65
+	RevealsShroud:
+		Range: 6c0
+		RequiresCondition: !underwater
+		RevealGeneratedShroud: false
+	RevealsShroud@GAPGEN:
+		Range: 4c0
+		RequiresCondition: !underwater
+	RevealsShroud@UNDERWATER:
+		Range: 3c0
+		RequiresCondition: underwater
+	Armament@PRIMARY:
+		Weapon: SubMissile
+		LocalOffset: 0,-171,0, 0,171,0
+		FireDelay: 2
+		PauseOnCondition: empdisable
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: SubMissileAA
+		LocalOffset: 0,-171,0, 0,171,0
+		FireDelay: 2
+		PauseOnCondition: empdisable
+	AttackFrontal:
+		PauseOnCondition: empdisable
+	SelectionDecorations:
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: ReturnFire
+	Explodes:
+		Weapon: UnitExplodeSubmarine
+		EmptyWeapon: UnitExplodeSubmarine
+	Selectable:
+		DecorationBounds: 44,44
+	ProducibleWithLevel:
+		Prerequisites: allunits.upgraded
+	RenderRangeCircle:
+
+MSUB.chem:
+	Inherits: MSUB
+	Buildable:
+		Prerequisites: spen, intc, bio.buildable, ~upgrade.chemmissiles, ~submarines.nod, ~techlevel.high
+		Description: Submerged naval unit armed with chemical rockets\nthat also has anti-air capabilities\n Strong vs Buildings, Helicopters\n Weak vs Naval units
+	Tooltip:
+		Name: Chemical Missile Submarine
+	Armament@PRIMARY:
+		Weapon: SubMissileChem
+		LocalOffset: 0,-171,0, 0,171,0
+		FireDelay: 2
+		PauseOnCondition: empdisable
+
+SUB.mini:
+	Inherits: SUB
+	Buildable:
+		Queue: Ship
+		BuildAtProductionType: Submarine
+		BuildPaletteOrder: 8
+		Prerequisites: spen, eye, ~submarines.gdi, ~techlevel.high
+		Description: Miniature submarine that fires sonic shocks\n Strong vs Naval units\n Weak vs Aircraft, Defenses
+	Valued:
+		Cost: 1250
+	Mobile:
+		TurnSpeed: 5
+		Speed: 86
+	Tooltip:
+		Name: Sonic Submarine
+	Health:
+		HP: 20000
+	Armament:
+		Weapon: SonicShock
+		LocalOffset: 350,0,50
+		PauseOnCondition: empdisable
+	-RenderSprites:
+	RenderSprites:
+		Image: minisub
+
+ICBMSUB:
+	Inherits: ^Ship
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Ship
+		BuildAtProductionType: Submarine
+		BuildPaletteOrder: 9
+		BuildLimit: 1
+		Prerequisites: spen, tmpl, ~submarines.nod, ~techlevel.unrestricted
+		Description: Submerged anti-ground unit armed with\nlong-range nuclear ballistic missiles\nExplodes violently on death\n Strong vs Everything over distance\n Weak vs attacks at close range\nRequires an large minimum firing distance
+	Explodes:
+		Weapon: MiniNuke
+		EmptyWeapon: UnitExplodeSubmarine
+		DamageSource: Killer
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: ICBM Submarine
+		GenericName: Nuclear launch detected
+	Health:
+		HP: 50000
+	Armor:
+		Type: Light
+	Mobile:
+		TurnSpeed: 1
+		Speed: 36
+	RevealsShroud:
+		Range: 6c0
+		RequiresCondition: !underwater
+		RevealGeneratedShroud: false
+	RevealsShroud@GAPGEN:
+		Range: 4c0
+		RequiresCondition: !underwater
+	RevealsShroud@UNDERWATER:
+		Range: 3c0
+		RequiresCondition: underwater
+	Armament@primary:
+		Weapon: ICBM
+		LocalOffset: 350,-151,0, 350,151,0, 325,-151,0, 325,151,0
+		FireDelay: 1
+		PauseOnCondition: empdisable
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: TorpTube
+		LocalOffset: 0,-171,0, 0,171,0
+		FireDelay: 2
+		PauseOnCondition: empdisable
+	AttackFrontal:
+		Armaments: primary, secondary
+		PauseOnCondition: empdisable
+	SelectionDecorations:
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: AttackAnything
+	DetectCloaked:
+		CloakTypes: Underwater
+		Range: 4c0
+	RenderDetectionCircle:
+	Selectable:
+		DecorationBounds: 68,38
+	RenderRangeCircle:
+	RevealOnFire:
+		ArmamentNames: primary
+	ReloadArmamentsBar:
+		Armaments: primary
+	AnnounceOnSeen:
+		Notification: NuclearWarheadApproaching
+		PingRadar: True
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: HoldFire
+		ScanRadius: 15

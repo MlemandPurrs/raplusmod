@@ -1,0 +1,1641 @@
+MCV:
+	Inherits: ^Vehicle
+	Valued:
+		Cost: 3000
+	Tooltip:
+		Name: Mobile Construction Vehicle
+		GenericName: New Base
+	Buildable:
+		BuildPaletteOrder: 14
+		Prerequisites: vehicleproduction, fix, ~techlevel.medium
+		Queue: Vehicle
+		Description: Deploys into another Construction Yard\n Unarmed
+	Selectable:
+		Priority: 4
+		DecorationBounds: 36,36
+	Mobile:
+		Speed: 71
+		Locomotor: heavywheeled
+	Health:
+		HP: 120000
+	Repairable:
+		HpPerStep: 2182
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 8c0
+	Transforms:
+		IntoActor: fact
+		Offset: -1,-0
+		Facing: 108
+		TransformSounds: constru2.aud, hvydoor1.aud
+		NoTransformNotification: BuildingCannotPlaceAudio
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	BaseBuilding:
+	SpawnActorOnDeath:
+		Actor: MCV.Husk
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
+	SelectionDecorations:
+	-Carryable:
+
+HARV:
+	Inherits: ^Tank
+	Inherits@CLOAK: ^AcceptsCloakCrate
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Tiberium Harvester
+		GenericName: Harvester
+	Buildable:
+		BuildPaletteOrder: 1
+		Prerequisites: vehicleproduction, proc, ~techlevel.low
+		Queue: Vehicle, MWFVehicle
+		Description: Collects Tiberium for processing\n Unarmed
+	Selectable:
+		Priority: 7
+		DecorationBounds: 36,36
+	Harvester:
+		Resources: Tiberium, BlueTiberium
+		PipCount: 7
+		Capacity: 20
+		BaleLoadDelay: 12
+		BaleUnloadDelay: 6
+		SearchFromProcRadius: 25
+		SearchFromOrderRadius: 15
+		EmptyCondition: no-tiberium
+	Mobile:
+		Speed: 85
+		RequiresCondition: !notmobile
+	Health:
+		HP: 62500
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 4c0
+	SpawnActorOnDeath:
+		Actor: HARV.Husk
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
+	WithHarvestAnimation:
+	WithDockingAnimation:
+	Explodes:
+		RequiresCondition: !no-tiberium
+		Weapon: TiberiumExplosion
+	SelectionDecorations:
+	-Carryable:
+	AutoCarryable:
+		CarriedCondition: notmobile
+		ReservedCondition: carryall-reserved
+	WithDecoration@CARRYALL:
+		Image: pips
+		Sequence: pickup-indicator
+		ReferencePoint: Top, Left
+		ZOffset: 256
+		RequiresCondition: carryall-reserved
+	Targetable:
+		TargetTypes: Ground, Vehicle, Harvester
+
+JEEP:
+	Inherits: ^Vehicle
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@CLOAK: ^AcceptsCloakCrate
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 350
+	Tooltip:
+		Name: Humvee
+		GenericName: Scout
+		RequiresCondition: !loaded
+	Tooltip@TOW:
+		Name: TOW Humvee
+		GenericName: Scout
+		RequiresCondition: hmmv-tow
+	Tooltip@LOSAT:
+		Name: SAM Humvee
+		GenericName: Scout
+		RequiresCondition: hmmv-sam
+	Tooltip@AMBULANCE:
+		Name: Ambulance Humvee
+		GenericName: Scout
+		RequiresCondition: hmmv-medic
+	Buildable:
+		BuildPaletteOrder: 2
+		Prerequisites: vehicleproduction, ~vehicles.gdi, ~techlevel.low
+		Queue: Vehicle, MWFVehicle
+		Description: Fast scout vehicle, armed with machinegun at default\nCan be armed with TOW launcher with a Rocket Soldier\nCan be used as Ambulance with Medic inside\nCan be used as Mobile SAM with a Stinger Soldier\n Strength and weakness varies with active armament\nAt Default:\nStrong vs Infantry\n Weak vs Tanks
+	Mobile:
+		TurnSpeed: 10
+		Speed: 156
+		RequiresCondition: !notmobile && !being-captured && !empdisable
+	Health:
+		HP: 15000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 7c0
+	Turreted@Default:
+		Turret: default
+		TurnSpeed: 10
+		Offset: -85,0,128
+	Turreted@Rocket:
+		Turret: tow
+		TurnSpeed: 10
+		Offset: -85,0,128
+	Turreted@Sam:
+		Turret: sam
+		TurnSpeed: 10
+		Offset: -85,0,78
+	Turreted@Medic:
+		Turret: medic
+		TurnSpeed: 255
+		Offset: -85,0,128
+	Armament@Default:
+		Name: mg
+		Turret: default
+		Weapon: MachineGun
+		LocalOffset: 171,0,85
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+		RequiresCondition: !hmmv-tow && !hmmv-sam && !hmmv-medic && !apbulletson
+	Armament@DefaultUpgraded:
+		Name: mgupg
+		Turret: default
+		Weapon: MachineGunAP
+		LocalOffset: 171,0,85
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+		RequiresCondition: !hmmv-tow && !hmmv-sam && !hmmv-medic && apbulletson
+	Armament@Rocket:
+		Name: rocket
+		Turret: tow
+		Weapon: JeepRockets
+		LocalOffset: 171,0,85
+		PauseOnCondition: empdisable
+		RequiresCondition: hmmv-tow
+	Armament@AARocket:
+		Name: aarocket
+		Turret: sam
+		Weapon: RedEye
+		LocalOffset: 171,0,85
+		PauseOnCondition: empdisable
+		RequiresCondition: hmmv-sam
+	Armament@Medic:
+		Weapon: Heal
+		Cursor: heal
+		OutsideRangeCursor: heal
+		TargetStances: Ally
+		ForceTargetStances: None
+		LocalOffset: 171,0,85
+		PauseOnCondition: empdisable
+		RequiresCondition: hmmv-medic
+	AttackTurreted:
+		Armaments: mg, mgupg, rocket, aarocket, heal
+		Turrets: default, tow, sam, medic
+		PauseOnCondition: empdisable
+	WithMuzzleOverlay:
+	WithSpriteTurret@Default:
+		Sequence: turret_default
+		Turret: default
+		RequiresCondition: !hmmv-tow && !hmmv-sam && !hmmv-medic
+	WithSpriteTurret@Rocket:
+		Sequence: turret_rocket
+		Turret: tow
+		RequiresCondition: hmmv-tow
+	WithSpriteTurret@Sam:
+		Sequence: turret_minisam
+		Turret: sam
+		RequiresCondition: hmmv-sam
+	WithSpriteTurret@Medic:
+		Sequence: turret_medic
+		Turret: medic
+		RequiresCondition: hmmv-medic
+	ProximityExternalCondition@MEDIC:
+		Condition: medic_healaura
+		Range: 3c0
+		RequiresCondition: hmmv-medic && !empdisable
+	Cargo:
+		Types: Infantry
+		MaxWeight: 2
+		PipCount: 1
+		LoadingCondition: notmobile
+		LoadedCondition: loaded
+		PassengerConditions:
+			e3: hmmv-tow
+			stng: hmmv-sam
+			medi: hmmv-medic
+	SpawnActorOnDeath:
+		Actor: JEEP.Husk
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
+	ProducibleWithLevel:
+		Prerequisites: allunits.upgraded
+	GrantConditionOnPrerequisite@APBULLETS:
+		Condition: apbulletson
+		Prerequisites: upgrade.apbullets
+
+BGGY:
+	Inherits: ^Vehicle
+	Inherits@@EXPERIENCE: ^GainsExperience
+	Inherits@CLOAK: ^AcceptsCloakCrate
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Buggy
+		GenericName: Scout
+	Buildable:
+		BuildPaletteOrder: 2
+		Prerequisites: vehicleproduction, ~vehicles.nod, ~techlevel.low
+		Queue: Vehicle, MWFVehicle
+		Description: Fast scout and anti-infantry vehicle\nDoes not appear on enemy radar\n Strong vs Infantry\n Weak vs Tanks
+	Mobile:
+		TurnSpeed: 10
+		Speed: 170
+	Health:
+		HP: 12000
+	Repairable:
+		HpPerStep: 1819
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 7c0
+	Turreted:
+		TurnSpeed: 10
+		Offset: -43,0,128
+	Armament:
+		Weapon: MachineGun
+		LocalOffset: 171,0,43
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	AttackTurreted:
+		PauseOnCondition: empdisable
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+	SpawnActorOnDeath:
+		Actor: BGGY.Husk
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
+	ProducibleWithLevel:
+		Prerequisites: allunits.upgraded
+	AppearsOnRadar:
+		ValidStances: Ally
+	-GpsDot:
+
+APC:
+	Inherits: ^Tank
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@CLOAK: ^AcceptsCloakCrate
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Vehicle, MWFVehicle
+		BuildPaletteOrder: 3
+		Prerequisites: vehicleproduction, barracks, ~vehicles.gdi, ~techlevel.low
+		Description: Tough infantry transport\nCan transport 5 infantry\n Strong vs Infantry, Light armor\n Weak vs Tanks, Aircraft
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Armored Personnel Carrier (GDI)
+		GenericName: APC
+	Health:
+		HP: 30000
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 128
+		RequiresCondition: !notmobile && !being-captured && !empdisable
+	RevealsShroud:
+		Range: 5c0
+	Turreted:
+		TurnSpeed: 7
+	Armament@PRIMARY:
+		Weapon: MachineGun
+		LocalOffset: 150,0,100
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+		RequiresCondition: !apbulletson
+	Armament@SECONDARY:
+		Weapon: MachineGunAP
+		LocalOffset: 150,0,100
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+		RequiresCondition: apbulletson
+	AttackTurreted:
+		PauseOnCondition: empdisable
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+	Cargo:
+		Types: Infantry
+		MaxWeight: 5
+		PipCount: 5
+		LoadingCondition: notmobile
+	ProducibleWithLevel:
+		Prerequisites: allunits.upgraded
+	Passenger:
+		CargoType: Vehicle
+		Weight: 3
+	SpawnActorOnDeath:
+		Actor: APC.Husk
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
+	GrantConditionOnPrerequisite@APBULLETS:
+		Condition: apbulletson
+		Prerequisites: upgrade.apbullets
+
+apc.colorpicker:
+	Inherits: APC
+	-Buildable:
+	-MapEditorData:
+	-AttackTurreted:
+	-Turreted:
+	-WithSpriteTurret:
+	AttackFrontal:
+	RenderSprites:
+		Image: apc.ui
+		Palette: colorpicker
+		Scale: 1.5
+
+NODAPC:
+	Inherits: ^Vehicle
+	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Inherits@CLOAK: ^AcceptsCloakCrate
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Vehicle, MWFVehicle
+		BuildPaletteOrder: 3
+		Prerequisites: vehicleproduction, barracks, ~vehicles.nod, ~techlevel.low
+		Description: Fast infantry transport\nCan transport 5 infantry\nFaster but nimbler than its GDI counterpart\n Strong vs Infantry, Light armor, Buildings\n Weak vs Tanks, Aircraft
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Armored Personnel Carrier (Nod)
+		GenericName: APC
+	Health:
+		HP: 20000
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 142
+		RequiresCondition: !notmobile && !being-captured && !empdisable
+	RevealsShroud:
+		Range: 5c0
+	Turreted:
+		TurnSpeed: 7
+		Offset: 40,0,0
+	Armament:
+		Weapon: MachineGunH
+		LocalOffset: 250,0,100
+		MuzzleSequence: muzzle
+		FireDelay: 8
+		PauseOnCondition: empdisable
+	AttackTurreted:
+		PauseOnCondition: empdisable
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+	Cargo:
+		Types: Infantry
+		MaxWeight: 5
+		PipCount: 5
+		LoadingCondition: notmobile
+	ProducibleWithLevel:
+		Prerequisites: allunits.upgraded
+	Passenger:
+		CargoType: Vehicle
+		Weight: 3
+	SpawnActorOnDeath:
+		Actor: NODAPC.Husk
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
+
+LTNK:
+	Inherits: ^Tank
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@CLOAK: ^AcceptsCloakCrate
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@GDIOFFENSE: ^AffectedByBombardment
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Light Tank
+		GenericName: Tank
+	Buildable:
+		BuildPaletteOrder: 4
+		Prerequisites: vehicleproduction, ~techlevel.low
+		Queue: Vehicle, MWFVehicle
+		Description: Fast moving light tank, armed\nwith cannon and anti-vehicle rocket\nCan transport up to 2 Infantry\n Strong vs Light Vehicles, Basic Defenses\n Weak vs massed Infantry, Tanks
+	Mobile:
+		TurnSpeed: 7
+		Speed: 110
+		RequiresCondition: !notmobile && !being-captured && !empdisable
+	Health:
+		HP: 34000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 6c0
+	Turreted:
+		TurnSpeed: 7
+	Armament@PRIMARY:
+		Weapon: 70mm
+		Recoil: 85
+		RecoilRecovery: 17
+		LocalOffset: 720,0,90
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: LtnkRockets
+		LocalOffset: 100,-90,90
+		LocalYaw: -100, 100
+		Recoil: 10
+		PauseOnCondition: empdisable
+		RequiresCondition: !atgm-inside
+	Armament@TERTIARY:
+		Name: tertiary
+		Weapon: LtnkRocketsBoosted
+		LocalOffset: 100,-90,90
+		LocalYaw: -100, 100
+		Recoil: 10
+		PauseOnCondition: empdisable
+		RequiresCondition: atgm-inside
+	AttackTurreted:
+		PauseOnCondition: empdisable
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+	SpawnActorOnDeath:
+		Actor: LTNK.Husk
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
+	Cargo:
+		Types: Infantry
+		MaxWeight: 2
+		PipCount: 2
+		LoadingCondition: notmobile
+		PassengerConditions:
+			atgm: atgm-inside
+	Passenger:
+		CargoType: Vehicle
+		Weight: 2
+	ProducibleWithLevel:
+		Prerequisites: allunits.upgraded
+	DamageMultiplier@COMPOSITE_ARMOR:
+		RequiresCondition: compositearmoron
+		Modifier: 90
+	GrantConditionOnPrerequisite@COMPOSITE_ARMOR:
+		Condition: compositearmoron
+		Prerequisites: upgrade.compositearmor
+
+MTNK:
+	Inherits: ^Tank
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@CLOAK: ^AcceptsCloakCrate
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@GDIOFFENSE: ^AffectedByBombardment
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Medium Tank (GDI)
+		GenericName: Tank
+	Buildable:
+		BuildPaletteOrder: 5
+		Prerequisites: vehicleproduction, fix, ~vehicles.gdi, ~techlevel.medium
+		Queue: Vehicle, MWFVehicle
+		Description: GDI Main Battle Tank, armed\nwith Cannon and Machinegun\nCan be upgraded to gain extra Missile Pod\n Strong vs Vehicles, Basic Defenses\n Weak vs Anti-Armor units, Advanced Defenses
+	Mobile:
+		Speed: 85
+	Health:
+		HP: 45000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 6c0
+	Turreted:
+		TurnSpeed: 5
+	Armament@PRIMARY:
+		Name: primary
+		Weapon: 120mm
+		Recoil: 128
+		RecoilRecovery: 26
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: M16Tank
+		MuzzleSequence: mg-muzzle
+		LocalOffset: 286,3,90
+		PauseOnCondition: empdisable
+		RequiresCondition: !apbulletson
+	Armament@TERTIARY:
+		Name: tertiary
+		Weapon: M16TankAP
+		MuzzleSequence: mg-muzzle
+		LocalOffset: 286,3,90
+		PauseOnCondition: empdisable
+		RequiresCondition: apbulletson
+	Armament@QUARTENARY:
+		Name: quartenary
+		Weapon: LtnkRockets
+		LocalOffset: 100,90,90
+		LocalYaw: -100, 100
+		Recoil: 10
+		PauseOnCondition: empdisable
+		RequiresCondition: missilepodon
+	AttackTurreted:
+		Armaments: primary, secondary, tertiary, quartenary
+		PauseOnCondition: empdisable
+	WithMuzzleOverlay:
+	WithSpriteTurret@DEFAULT:
+		Sequence: turret
+		RequiresCondition: !missilepodon
+	WithSpriteTurret@UPGRADED:
+		Sequence: turret-upgraded
+		RequiresCondition: missilepodon
+	SpawnActorOnDeath:
+		Actor: MTNK.Husk
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
+	SelectionDecorations:
+	Selectable:
+		DecorationBounds: 28,28
+	Passenger:
+		CargoType: Vehicle
+		Weight: 3
+	ProducibleWithLevel:
+		Prerequisites: allunits.upgraded
+	GrantConditionOnPrerequisite@APBULLETS:
+		Condition: apbulletson
+		Prerequisites: upgrade.apbullets
+	GrantConditionOnPrerequisite@MISSILEPOD:
+		Condition: missilepodon
+		Prerequisites: upgrade.missilepod
+	DamageMultiplier@COMPOSITE_ARMOR:
+		RequiresCondition: compositearmoron
+		Modifier: 80
+	GrantConditionOnPrerequisite@COMPOSITE_ARMOR:
+		Condition: compositearmoron
+		Prerequisites: upgrade.compositearmor
+
+NODMTNK:
+	Inherits: ^Tank
+	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Inherits@CLOAK: ^AcceptsCloakCrate
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@GDIOFFENSE: ^AffectedByBombardment
+	Buildable:
+		Queue: Vehicle, MWFVehicle
+		BuildPaletteOrder: 5
+		Prerequisites: vehicleproduction, fix, ~vehicles.nod, ~techlevel.medium
+		Description: Nod Main Battle Tank, armed\nwith Cannon and Machinegun\nHas more range but less RoF than its GDI counterpart\n Strong vs Vehicles\n Weak vs Infantry, Aircraft
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Medium Tank (Nod)
+		GenericName: Tank
+	Health:
+		HP: 45000
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 85
+	RevealsShroud:
+		Range: 6c0
+		RevealGeneratedShroud: False
+	Turreted:
+		TurnSpeed: 5
+	Armament@PRIMARY:
+		Weapon: 105mmSingular
+		Recoil: 128
+		RecoilRecovery: 26
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+		RequiresCondition: !autoloaderon
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: M16Tank
+		MuzzleSequence: mg-muzzle
+		LocalOffset: 286,3,90
+		PauseOnCondition: empdisable
+	Armament@TERTIARY:
+		Name: tertiary
+		Weapon: 105mmSingularUpg
+		Recoil: 128
+		RecoilRecovery: 26
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+		RequiresCondition: autoloaderon
+	AttackTurreted:
+		Armaments: primary, secondary, tertiary
+		PauseOnCondition: empdisable
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+	SpawnActorOnDeath:
+		Actor: NODMTNK.Husk
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
+	SelectionDecorations:
+	Selectable:
+		DecorationBounds: 28,28
+	Passenger:
+		CargoType: Vehicle
+		Weight: 2
+	ProducibleWithLevel:
+		Prerequisites: allunits.upgraded
+	RenderSprites:
+		Image: nodmtnk
+	GrantConditionOnPrerequisite@AUTOLOADER:
+		Condition: autoloaderon
+		Prerequisites: upgrade.autoloader
+
+ARTY:
+	Inherits: ^Tank
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@CLOAK: ^AcceptsCloakCrate
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@GDIOFFENSE: ^AffectedByBombardment
+	Valued:
+		Cost: 750
+	Tooltip:
+		Name: Artillery
+		GenericName: Basic Artillery
+	Buildable:
+		BuildPaletteOrder: 6
+		Prerequisites: vehicleproduction, fix, anyhq, ~vehicles.gdi, ~techlevel.medium
+		Queue: Vehicle, MWFVehicle
+		Description: Long-range artillery\n Strong vs Infantry, Vehicles and Buildings
+	Mobile:
+		TurnSpeed: 4
+		Speed: 85
+	Health:
+		HP: 7500
+	Repairable:
+		HpPerStep: 569
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 5c0
+	Armament:
+		Weapon: ArtilleryShell
+		LocalOffset: 624,0,208
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	AttackFrontal:
+		PauseOnCondition: empdisable
+	WithMuzzleOverlay:
+	AutoTarget:
+		InitialStanceAI: Defend
+	SpawnActorOnDeath:
+		Actor: ARTY.Husk
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
+	Explodes:
+		Weapon: ArtilleryShell
+		EmptyWeapon: UnitExplode
+		LoadedChance: 75
+	ProducibleWithLevel:
+		Prerequisites: allunits.upgraded
+	RenderRangeCircle:
+	RevealOnFire:
+		ArmamentNames: primary
+
+HWTZ:
+	Inherits: ^Vehicle
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@CLOAK: ^AcceptsCloakCrate
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 650
+	Tooltip:
+		Name: Howitzer
+		GenericName: Basic Artillery
+	Buildable:
+		BuildPaletteOrder: 6
+		Prerequisites: vehicleproduction, anyhq, ~vehicles.nod, ~techlevel.medium
+		Queue: Vehicle, MWFVehicle
+		Description: Medium-range artillery\n Strong vs Infantry and Base Buildings\nWeak vs Vehicles and Defenses
+	Mobile:
+		TurnSpeed: 7
+		Speed: 95
+	Health:
+		HP: 9000
+	Repairable:
+		HpPerStep: 569
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 5c0
+	Turreted:
+		TurnSpeed: 5
+		Offset: -128,0,218
+	Armament:
+		Weapon: HowitzerShell
+		LocalOffset: 824,0,90
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	AttackTurreted:
+		PauseOnCondition: empdisable
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+	AutoTarget:
+		InitialStanceAI: Defend
+	SpawnActorOnDeath:
+		Actor: HWTZ.Husk
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
+	Explodes:
+		Weapon: ArtilleryShell
+		EmptyWeapon: UnitExplode
+		LoadedChance: 75
+	ProducibleWithLevel:
+		Prerequisites: allunits.upgraded
+	RenderRangeCircle:
+	RevealOnFire:
+		ArmamentNames: primary
+
+FTNK:
+	Inherits: ^Tank
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@CLOAK: ^AcceptsCloakCrate
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Flame Tank
+		GenericName: BBQ
+	Buildable:
+		BuildPaletteOrder: 9
+		Prerequisites: vehicleproduction, anyhq, ~vehicles.nod, ~techlevel.medium
+		Queue: Vehicle, MWFVehicle
+		Description: Heavily armored flame-throwing vehicle\n Strong vs Infantry, Buildings and Vehicles\n Weak vs Tanks
+	Mobile:
+		TurnSpeed: 7
+		Speed: 92
+	Health:
+		HP: 27000
+	Repairable:
+		HpPerStep: 2046
+	Armor:
+		Type: Heavy
+	Turreted:
+		TurnSpeed: 3
+	RevealsShroud:
+		Range: 5c0
+	Armament@Yellow:
+		Weapon: BigFlamer
+		LocalOffset: 512,128,42, 512,-128,42
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+		RequiresCondition: !black_napalm
+	Armament@Blue:
+		Weapon: BigFlamerBlue
+		LocalOffset: 512,128,42, 512,-128,42
+		MuzzleSequence: muzzle-blue
+		PauseOnCondition: empdisable
+		RequiresCondition: black_napalm
+	AttackTurreted:
+		PauseOnCondition: empdisable
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+	Explodes:
+		Weapon: FlametankExplode
+		EmptyWeapon: FlametankExplode
+	SpawnActorOnDeath:
+		Actor: FTNK.Husk
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
+	ProducibleWithLevel:
+		Prerequisites: allunits.upgraded
+	GrantConditionOnPrerequisite@BLACK_NAPALM:
+		Condition: black_napalm
+		Prerequisites: upgrade.blueflame
+
+MRPG:
+	Inherits: ^Tank
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@CLOAK: ^AcceptsCloakCrate
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@GDIOFFENSE: ^AffectedByBombardment
+	Valued:
+		Cost: 450
+	Tooltip:
+		Name: RPG Launcher
+		GenericName: Fire Support
+	Buildable:
+		BuildPaletteOrder: 7
+		Prerequisites: vehicleproduction, fix, anyhq, ~vehicles.gdi, ~techlevel.medium
+		Queue: Vehicle, MWFVehicle
+		Description: Medium-range fire-support\nCan lay an EMP Mine\n Strong vs clustered Infantry, Light Vehicles\nWeak vs Defenses, Tanks
+	Mobile:
+		TurnSpeed: 4
+		Speed: 92
+	Health:
+		HP: 23000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 8c0
+	Armament:
+		Weapon: RPGLauncher
+		LocalOffset: 43,43,256, 43,-43,256
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+		RequiresCondition: !empgrenadeson
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: RPGLauncherEMP
+		LocalOffset: 43,43,256, 43,-43,256
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+		RequiresCondition: empgrenadeson
+	AttackFrontal:
+		PauseOnCondition: empdisable
+	WithMuzzleOverlay:
+	Explodes:
+		Weapon: UnitExplode
+		EmptyWeapon: UnitExplodeSmall
+	AutoTarget:
+		InitialStance: Defend
+		InitialStanceAI: Defend
+	SpawnActorOnDeath:
+		Actor: MRPG.Husk
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
+	ProducibleWithLevel:
+		Prerequisites: allunits.upgraded
+	Minelayer:
+		Mine: MINV
+	MineImmune:
+	AmmoPool:
+		Armaments:
+		Ammo: 1
+		RearmSound: minelay1.aud
+	Rearmable:
+		RearmActors: fix
+	GrantConditionOnPrerequisite@EMPGRENADE:
+		Condition: empgrenadeson
+		Prerequisites: upgrade.empgrenade
+	Rearmable:
+		RearmActors: fix
+
+BIKE:
+	Inherits: ^Vehicle
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@CLOAK: ^AcceptsCloakCrate
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Recon Bike
+		GenericName: Recon
+	Buildable:
+		BuildPaletteOrder: 7
+		Prerequisites: vehicleproduction, anyhq, ~vehicles.nod, ~techlevel.medium
+		Queue: Vehicle, MWFVehicle
+		Description: Fast scout vehicle, armed with rockets\nCan detect Cloaked units in a small radius\nCan attack Aircraft\n Strong vs Vehicles, Tanks\n Weak vs Infantry
+	Mobile:
+		TurnSpeed: 10
+		Speed: 213
+		Locomotor: bike
+	Health:
+		HP: 11000
+	Repairable:
+		HpPerStep: 1000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 8c0
+	Armament:
+		Weapon: BikeRockets
+		LocalOffset: -128, -170, 170, -128, 170, 170
+		LocalYaw: 100, -100
+		PauseOnCondition: empdisable
+	AttackFrontal:
+		PauseOnCondition: empdisable
+	SpawnActorOnDeath:
+		Actor: BIKE.Husk
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
+	ProducibleWithLevel:
+		Prerequisites: allunits.upgraded
+	DetectCloaked:
+		Range: 3c0
+	RenderDetectionCircle:
+
+MHQ:
+	Inherits: ^Vehicle
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@CLOAK: ^AcceptsCloakCrate
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 8
+		Prerequisites: vehicleproduction, fix, anytech, ~vehicles.gdi, ~techlevel.high
+		Description: Mobile Detector\nCan detect Cloaked units and Mines\nProvides radar on the move\n Unarmed
+	Valued:
+		Cost: 950
+	Tooltip:
+		Name: Mobile Radar System
+		GenericName: Sensor
+	Health:
+		HP: 20000
+	Armor:
+		Type: Light
+	Mobile:
+		Speed: 85
+	RevealsShroud:
+		Range: 8c0
+	WithIdleOverlay@SPINNER:
+		Sequence: spinner
+		Offset: 0,0,256
+		PauseOnCondition: empdisable
+	DetectCloaked:
+		Range: 8c0
+		CloakTypes: Cloak, Mine
+		RequiresCondition: !empdisable
+	RenderDetectionCircle:
+	ProvidesRadar:
+		RequiresCondition: !jammed && !empdisable && !lowpower
+	Power:
+		Amount: -20
+	Passenger:
+		CargoType: Vehicle
+		Weight: 3
+	RenderSprites:
+		Image: mhq
+	SpawnActorOnDeath:
+		Actor: MHQ.Husk
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
+	-Carryable:
+
+MREP:
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 8
+		Prerequisites: vehicleproduction, fix, ~vehicles.nod, ~techlevel.high
+		Description: Mechanized Repair Service\nRepairs nearby vehicles\nCaptures enemy structures\nDetects Mines\n Unarmed
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Mobile Repair Tank
+		GenericName: McGyver
+	Selectable:
+		Priority: 6
+	Health:
+		HP: 10000
+	Armor:
+		Type: Light
+	Voiced:
+		VoiceSet: EngineerVoice
+	Mobile:
+		Speed: 110
+		Voice: Move
+	RevealsShroud:
+		Range: 3c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 2c0
+	AttackFrontal:
+		PauseOnCondition: empdisable
+	Armament:
+		Weapon: Repair
+		Cursor: repair
+		OutsideRangeCursor: repair
+		TargetStances: Ally
+		ForceTargetStances: None
+		PauseOnCondition: empdisable
+	CaptureManager:
+	Captures@BUILDING:
+		CaptureTypes: building
+		PlayerExperience: 25
+		CaptureDelay: 375
+	AutoTarget:
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: Vehicle, Ship
+	Passenger:
+		CargoType: Vehicle
+		Weight: 3
+	MineImmune:
+	DetectCloaked:
+		Range: 5c0
+		CloakTypes: Mine
+	RenderDetectionCircle:
+	SpawnActorOnDeath:
+		Actor: MREP.Husk
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
+
+MAAG:
+	Inherits: ^Tank
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@CLOAK: ^AcceptsCloakCrate
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Mobile Anti-Air Gun
+		GenericName: Flak
+	Buildable:
+		BuildPaletteOrder: 9
+		Prerequisites: vehicleproduction, fix, anyhq, ~vehicles.gdi, ~techlevel.medium
+		Queue: Vehicle, MWFVehicle
+		Description: Mobile anti-aircraft platform\nCan attack Aircraft\n Strong vs Vehicles\n Weak vs Infantry
+	Mobile:
+		TurnSpeed: 5
+		Speed: 132
+	Health:
+		HP: 19000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 6c0
+	Turreted:
+		TurnSpeed: 10
+	Armament@PRIMARY:
+		Weapon: APCGun
+		Recoil: 48
+		RecoilRecovery: 18
+		LocalOffset: 85,85,299
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	Armament@SECONDARY:
+		Weapon: APCGun
+		Recoil: 48
+		RecoilRecovery: 18
+		LocalOffset: 85,-85,299
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	Armament@TERTIARY:
+		Name: tertiary
+		Weapon: APCGun.AA
+		Recoil: 48
+		RecoilRecovery: 18
+		LocalOffset: 85,85,299
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	Armament@QUARTENARY:
+		Name: quartenary
+		Weapon: APCGun.AA
+		Recoil: 48
+		RecoilRecovery: 18
+		LocalOffset: 85,-85,299
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	AttackTurreted:
+		Armaments: primary, secondary, tertiary, quartenary
+		PauseOnCondition: empdisable
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+	SpawnActorOnDeath:
+		Actor: MAAG.Husk
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
+	ProducibleWithLevel:
+		Prerequisites: allunits.upgraded
+
+MAMT:
+	Inherits: ^Tank
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@CLOAK: ^AcceptsCloakCrate
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@GDIOFFENSE: ^AffectedByBombardment
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Mammoth Tank
+		GenericName: Heavy Tank
+	Buildable:
+		BuildPaletteOrder: 11
+		Prerequisites: vehicleproduction, fix, anytech, ~!upgrade.railguns, ~vehicles.gdi, ~techlevel.high
+		Queue: Vehicle
+		Description: Heavily armored GDI Tank\nCan attack Aircraft\n Strong vs Everything
+	Mobile:
+		Locomotor: heavytracked
+		Speed: 56
+		TurnSpeed: 3
+	Health:
+		HP: 87000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 6c0
+	WithSpriteTurret:
+	Turreted:
+		TurnSpeed: 3
+	Armament@PRIMARY:
+		Weapon: 120mmDual
+		LocalOffset: 900,180,340, 900,-180,340
+		Recoil: 170
+		RecoilRecovery: 42
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: MammothMissiles
+		LocalOffset: -85,384,340, -85,-384,340
+		LocalYaw: -100, 100
+		Recoil: 10
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	AttackTurreted:
+		PauseOnCondition: empdisable
+	WithMuzzleOverlay:
+	SelfHealing:
+		Step: 500
+		Delay: 10
+		HealIfBelow: 50
+		DamageCooldown: 150
+		RequiresCondition: !empdisable
+	SpawnActorOnDeath:
+		Actor: MAMT.Husk
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
+	SelectionDecorations:
+	Selectable:
+		DecorationBounds: 34,34,0,-3
+	Passenger:
+		CargoType: Vehicle
+		Weight: 4
+	-Carryable:
+	ProducibleWithLevel:
+		Prerequisites: allunits.upgraded
+	DamageMultiplier@COMPOSITE_ARMOR:
+		RequiresCondition: compositearmoron
+		Modifier: 80
+	GrantConditionOnPrerequisite@COMPOSITE_ARMOR:
+		Condition: compositearmoron
+		Prerequisites: upgrade.compositearmor
+
+MAMT.Rail:
+	Inherits: MAMT
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Mammoth Tank (Railgun)
+		GenericName: Heavy Tank
+	Buildable:
+		BuildPaletteOrder: 11
+		Prerequisites: vehicleproduction, fix, anytech, ~upgrade.railguns, ~vehicles.gdi, ~techlevel.high
+		Queue: Vehicle
+		Description: Heavily armored GDI Tank, armed with Railguns\nCan attack Aircraft\n Strong vs Everything
+	Armament@PRIMARY:
+		Weapon: MedRailDual
+		LocalOffset: 900,180,340, 900,-180,340
+		Recoil: 170
+		RecoilRecovery: 42
+		PauseOnCondition: empdisable
+	-WithMuzzleOverlay:
+	SpawnActorOnDeath:
+		Actor: MAMT.Rail.Husk
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
+
+STNK:
+	Inherits: ^Vehicle
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Stealth Tank
+		GenericName: Cloaker
+	Buildable:
+		BuildPaletteOrder: 11
+		Prerequisites: vehicleproduction, anytech, ~!upgrade.chemmissiles, ~vehicles.nod, ~techlevel.high
+		Queue: Vehicle
+		Description: Missile equipped tank that can cloak\nCan attack Aircraft\nHas weak armor\nCan be spotted by infantry and base defenses\n Strong vs Vehicles, Tanks\n Weak vs Infantry
+	Mobile:
+		Locomotor: heavywheeled
+		TurnSpeed: 10
+		Speed: 142
+	Health:
+		HP: 15000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 7c0
+	Cloak:
+		InitialDelay: 90
+		CloakDelay: 90
+		CloakSound: trans1.aud
+		UncloakSound: trans1.aud
+		CloakedCondition: hidden
+		PauseOnCondition: cloak-force-disabled && empdisable
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+	Armament:
+		Weapon: 227mm.stnk
+		LocalOffset: 213,43,128, 213,-43,128
+		PauseOnCondition: empdisable
+	AttackTurreted:
+		PauseOnCondition: empdisable
+	Turreted:
+		TurnSpeed: 10
+	WithSpriteTurret:
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: ReturnFire
+	SpawnActorOnDeath:
+		Actor: STNK.Husk
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
+	-MustBeDestroyed:
+	Passenger:
+		CargoType: Vehicle
+		Weight: 2
+	ProducibleWithLevel:
+		Prerequisites: allunits.upgraded
+	WithDecoration@hidden:
+		Image: pips
+		Sequence: pip-stealth
+		ReferencePoint: Top, Left
+		ZOffset: 256
+		RequiresCondition: hidden
+
+STNK.chem:
+	Inherits: STNK
+	Buildable:
+		BuildPaletteOrder: 11
+		Prerequisites: vehicleproduction, anytech, bio.buildable, ~upgrade.chemmissiles, ~vehicles.nod, ~techlevel.high
+		Queue: Vehicle
+		Description: Missile equipped tank that can cloak\nCan attack Aircraft\nHas weak armor\nCan be spotted by infantry and base defenses\n Strong vs Vehicles, Tanks\n Weak vs Infantry
+	Armament:
+		Weapon: 227mm.stnk.chem
+		LocalOffset: 213,43,128, 213,-43,128
+		PauseOnCondition: empdisable
+	SpawnActorOnDeath:
+		Actor: STNK.chem.Husk
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
+
+DSRP:
+	Inherits: ^Tank
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Valued:
+		Cost: 1250
+	Tooltip:
+		Name: Sonic Tank
+		GenericName: Sonic
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 10
+		Prerequisites: vehicleproduction, fix, tech, ~vehicles.gdi, ~techlevel.high
+		Description: High-tech weapons platform with Sonic armament\n Strong vs clustered Ground Units\n Weak vs Aircraft, Artillery
+	Health:
+		HP: 35000
+	Armor:
+		Type: Heavy
+	Mobile:
+		Locomotor: heavytracked
+		TurnSpeed: 4
+		Speed: 56
+	RevealsShroud:
+		Range: 6c0
+	Armament:
+		Weapon: SonicZap
+		FireDelay: 10
+		LocalOffset: -100,0,-50
+		PauseOnCondition: empdisable
+	Turreted:
+		TurnSpeed: 5
+		Offset: -256,0,223
+	AttackFrontal:
+		PauseOnCondition: empdisable
+	WithSpriteTurret:
+	-Carryable:
+	RenderSprites:
+		Scale: 1.1
+	SelectionDecorations:
+	Selectable:
+		DecorationBounds: 34,34,0,-3
+	SpawnActorOnDeath:
+		Actor: DSRP.Husk
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
+
+MWAV:
+	Inherits: ^Tank
+	Inherits@CLOAK: ^AcceptsCloakCrate
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 10
+		Prerequisites: vehicleproduction, fix, tmpl, ~vehicles.nod, ~techlevel.high
+		Description: Experimental vehicle armed with an Laser\nthat can disable its target\nImmune to EMP\n Strong vs Vehicles\n Weak vs Infantry, Aircraft
+	Valued:
+		Cost: 1100
+	Tooltip:
+		Name: Microwave Tank
+		GenericName: EMP
+	Health:
+		HP: 52500
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 56
+		RequiresCondition: !being-captured
+	RevealsShroud:
+		Range: 6c0
+	SelectionDecorations:
+	Targetable:
+		TargetTypes: Ground, Repair, Vehicle
+	Selectable:
+		DecorationBounds: 28,28
+	Passenger:
+		CargoType: Vehicle
+		Weight: 4
+	Armament:
+		Weapon: MicroLaser
+		LocalOffset: 500,-85,326
+	Turreted:
+		TurnSpeed: 10
+	AttackTurreted:
+	WithSpriteTurret:
+	-Carryable:
+	SpawnActorOnDeath:
+		Actor: MWAV.Husk
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
+
+MRLS:
+	Inherits: ^Tank
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@CLOAK: ^AcceptsCloakCrate
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Multiple Rocket Launcher System
+		GenericName: Advanced Artillery
+	Buildable:
+		BuildPaletteOrder: 12
+		Prerequisites: vehicleproduction, fix, eye, ~vehicles.gdi, ~techlevel.high
+		Queue: Vehicle
+		Description: Long range rocket artillery\n Strong vs all Ground units
+	Mobile:
+		Speed: 85
+		TurnSpeed: 4
+	Health:
+		HP: 12000
+	Repairable:
+		HpPerStep: 546
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 5c0
+	Turreted:
+		TurnSpeed: 255
+		Offset: -256,0,128
+	Armament@PRIMARY:
+		Weapon: 227mm
+		LocalOffset: 213,128,0, 213,-128,0
+		PauseOnCondition: empdisable
+	AttackFrontal:
+		PauseOnCondition: empdisable
+	WithSpriteTurret:
+	SpawnActorOnDeath:
+		Actor: MRLS.Husk
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
+	WithTurretAimAnimation:
+		Sequence: aim
+	RenderSprites:
+		Image: mrls
+	ProducibleWithLevel:
+		Prerequisites: allunits.upgraded
+	RenderRangeCircle:
+	RevealOnFire:
+		ArmamentNames: primary
+
+SSM:
+	Inherits: ^Tank
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@CLOAK: ^AcceptsCloakCrate
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 900
+	Tooltip:
+		Name: SSM Launcher
+		GenericName: Incinerator
+	Buildable:
+		BuildPaletteOrder: 12
+		Prerequisites: vehicleproduction, fix, intc, ~!upgrade.chemmissiles, ~vehicles.nod, ~techlevel.high
+		Queue: Vehicle
+		Description: Surface to Surface Missile launcher\n Strong vs Everything at Long-range\n Weak vs Close-range attacks
+	Mobile:
+		Speed: 85
+		TurnSpeed: 4
+	Health:
+		HP: 18000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 8c0
+	Turreted:
+		TurnSpeed: 8
+		Offset: -128,0,128
+		RealignDelay: 0
+	Armament:
+		Weapon: HonestJohnNapalm
+		LocalOffset: 0,-171,0, 0,171,0
+		PauseOnCondition: empdisable
+	AmmoPool:
+		Ammo: 2
+		PipCount: 0
+		AmmoCondition: ammo
+	AttackTurreted:
+		PauseOnCondition: empdisable
+	WithSpriteTurret:
+		RequiresCondition: ammo > 1
+	WithSpriteTurret@OneMissile:
+		RequiresCondition: ammo == 1
+		Sequence: turret1
+	WithSpriteTurret@NoMissiles:
+		RequiresCondition: !ammo
+		Sequence: turret0
+	AutoTarget:
+		InitialStanceAI: Defend
+	RenderRangeCircle:
+	SpawnActorOnDeath:
+		Actor: SSM.Husk
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
+	ReloadAmmoPool@1:
+		Delay: 240
+		Count: 2
+	ProducibleWithLevel:
+		Prerequisites: allunits.upgraded
+	Explodes:
+		Weapon: Napalm.Crate
+		EmptyWeapon: Napalm.Crate
+	RevealOnFire:
+		ArmamentNames: primary
+
+SSM.chem:
+	Inherits: SSM
+	Tooltip:
+		Name: SSM Launcher
+		GenericName: Deviator
+	Buildable:
+		BuildPaletteOrder: 12
+		Prerequisites: vehicleproduction, fix, intc, bio.buildable, ~upgrade.chemmissiles, ~vehicles.nod, ~techlevel.high
+		Queue: Vehicle
+		Description: Surface to Surface Missile launcher\nFires chemical warheads that change\nthe allegiance of enemy vehicles\n Strong vs Everything at Long-range\n Weak vs Close-range attacks
+	Armament:
+		Weapon: HonestJohnChem
+		LocalOffset: 0,-171,0, 0,171,0
+		PauseOnCondition: empdisable
+	-Explodes:
+	Explodes:
+		Weapon: UnitExplodeChem
+		EmptyWeapon: UnitExplodeChem
+	SpawnActorOnDeath:
+		Actor: SSM.chem.Husk
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
+
+TRUCK:
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 15
+		Prerequisites: vehicleproduction, proc, ~techlevel.low
+		Description: Transports 500 cash to other players\n Unarmed
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Supply Truck
+		GenericName: Extra Money
+	Selectable:
+		Priority: 6
+	Health:
+		HP: 11000
+	Armor:
+		Type: Light
+	Mobile:
+		Speed: 128
+	RevealsShroud:
+		Range: 4c0
+	DeliversCash:
+		Payload: 500
+		PlayerExperience: 50
+	SpawnActorOnDeath:
+		Actor: moneycrate
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
+	Targetable:
+		TargetTypes: Ground, Vehicle, Repair, Vehicle-Disguise
+	-AttackMove:
+
+DTRK:
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 16
+		BuildLimit: 1
+		Prerequisites: vehicleproduction, tmpl, ~vehicles.nod, ~techlevel.high
+		Description: Truck with actively armed nuclear explosives\nMaximum 1 can be built\nCan disguise as an Supply Truck\nHas paper-thin armor
+	Valued:
+		Cost: 1500
+	-Tooltip:
+	DisguiseTooltip:
+		Name: Bomb Truck
+		GenericName: Tiktaktiktak Boom!
+	Health:
+		HP: 5000
+	Armor:
+		Type: Light
+	Mobile:
+		Speed: 85
+	RevealsShroud:
+		Range: 3c0
+	Explodes:
+		Weapon: MiniNuke
+		EmptyWeapon: MiniNuke
+		DamageSource: Killer
+	AttackFrontal:
+		FacingTolerance: 128
+	Armament@PRIMARY:
+		Weapon: DemoTruckTargeting
+	GrantConditionOnAttack:
+		Condition: triggered
+	GrantConditionOnDeploy:
+		DeployedCondition: triggered
+	KillsSelf:
+		RequiresCondition: triggered
+	Passenger:
+		CargoType: Vehicle
+		Weight: 3
+		PipType: Red
+	Disguise:
+		TargetTypes: Vehicle-Disguise
+		DisguisedCondition: disguise
+	WithDecoration@disguise:
+		Image: pips
+		Sequence: pip-disguise
+		Palette: effect
+		ReferencePoint: Top, Left
+		ZOffset: 256
+		RequiresCondition: disguise
+	IgnoresDisguise:
+
+ICBM:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 16
+		BuildLimit: 1
+		Prerequisites: vehicleproduction, gcom, ~vehicles.gdi, ~techlevel.unrestricted
+		Description: Nuclear rocket artillery\nMaximum 1 can be built\nExplodes violently on death\n Strong vs Everything over distance\n Weak vs attacks at close range\nRequires an large minimum firing distance
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: ICBM Launcher
+		GenericName: Nuclear launch detected
+	Health:
+		HP: 20000
+	Armor:
+		Type: Light
+	Mobile:
+		Speed: 56
+	RevealsShroud:
+		Range: 5c0
+	Armament:
+		Name: primary
+		FireDelay: 11
+		Weapon: ICBM
+		ReloadingCondition: reloading
+		PauseOnCondition: empdisable
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: HoldFire
+		ScanRadius: 15
+	AttackFrontal:
+		PauseOnCondition: empdisable
+	WithFacingSpriteBody:
+		RequiresCondition: !reloading
+		Name: loaded
+	WithFacingSpriteBody@EMPTY:
+		RequiresCondition: reloading
+		Sequence: empty-idle
+		Name: reloading
+	SelectionDecorations:
+	Explodes:
+		Weapon: MiniNuke
+		EmptyWeapon: UnitExplode
+	Selectable:
+		DecorationBounds: 28,28
+	RenderRangeCircle:
+	RevealOnFire:
+		ArmamentNames: primary
+	ReloadArmamentsBar:
+	AnnounceOnSeen:
+		Notification: NuclearWarheadApproaching
+		PingRadar: True
+	-Carryable:

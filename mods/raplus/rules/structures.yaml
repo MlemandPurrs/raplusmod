@@ -798,7 +798,7 @@ FIX:
 	WithResupplyAnimation:
 		RequiresCondition: !build-incomplete
 	Power:
-		Amount: -30
+		Amount: -20
 	ProvidesPrerequisite@buildingname:
 	HitShape:
 		TargetableOffsets: 840,0,0, 598,-640,0, 598,640,0, -1060,0,0, -768,-640,0, -768,640,0

@@ -1,0 +1,285 @@
+Metadata:
+	Title: Tiberian Dawn Plus Mod
+	Version: alpha-004c
+	Website: https://www.openra.net
+	WebIcon32: https://www.openra.net/images/icons/cnc_32x32.png
+
+PackageFormats: Mix
+
+ModCredits:
+	ModTabTitle: TD Plus Mod
+	ModCreditsFile: cncplus|credits.yaml
+
+Packages:
+	~^Content/cnc
+	.
+	$cncplus: cncplus
+	./mods/common: common
+	~speech.mix
+	~conquer.mix
+	~sounds.mix
+	~tempicnh.mix
+	~temperat.mix
+	~winter.mix
+	~desert.mix
+	~movies.mix
+	~scores.mix
+	~scores2.mix
+	~scores-covertops.mix
+	~transit.mix
+	cncplus|bits/snow.mix
+	cncplus|bits
+	cncplus|bits/aircraft
+	cncplus|bits/buildings
+	cncplus|bits/effects
+	cncplus|bits/icons
+	cncplus|bits/infantry
+	cncplus|bits/naval
+	cncplus|bits/vehicles
+	cncplus|bits/terrain
+	cncplus|bits/sounds
+	cncplus|bits/jungle
+	cncplus|bits/desert
+	cncplus|bits/ss
+	cncplus|uibits
+
+MapFolders:
+	cncplus|maps: System
+	~^maps/cncplus/release-20190314: User
+
+Rules:
+	cncplus|rules/misc.yaml
+	cncplus|rules/ai.yaml
+	cncplus|rules/player.yaml
+	cncplus|rules/world.yaml
+	cncplus|rules/palettes.yaml
+	cncplus|rules/defaults.yaml
+	cncplus|rules/structures.yaml
+	cncplus|rules/infantry.yaml
+	cncplus|rules/vehicles.yaml
+	cncplus|rules/trees.yaml
+	cncplus|rules/civilian.yaml
+	cncplus|rules/civilian-desert.yaml
+	cncplus|rules/tech.yaml
+	cncplus|rules/navy.yaml
+	cncplus|rules/aircraft.yaml
+	cncplus|rules/husks.yaml
+	cncplus|rules/airstrip.yaml
+	cncplus|rules/research.yaml
+
+Sequences:
+	cncplus|sequences/structures.yaml
+	cncplus|sequences/vehicles.yaml
+	cncplus|sequences/infantry.yaml
+	cncplus|sequences/aircraft.yaml
+	cncplus|sequences/decorations.yaml
+	cncplus|sequences/misc.yaml
+	cncplus|sequences/funpark.yaml
+	cncplus|sequences/civilian.yaml
+	cncplus|sequences/campaign.yaml
+	cncplus|sequences/navy.yaml
+	cncplus|sequences/research.yaml
+
+TileSets:
+	cncplus|tilesets/desert.yaml
+	cncplus|tilesets/winter.yaml
+	cncplus|tilesets/snow.yaml
+	cncplus|tilesets/temperat.yaml
+	cncplus|tilesets/jungle.yaml
+
+Weapons:
+	cncplus|weapons/explosions.yaml
+	cncplus|weapons/ballistics.yaml
+	cncplus|weapons/missiles.yaml
+	cncplus|weapons/other.yaml
+	cncplus|weapons/smallcaliber.yaml
+	cncplus|weapons/superweapons.yaml
+
+Cursors:
+	cncplus|cursors.yaml
+
+Chrome:
+	cncplus|chrome.yaml
+
+Assemblies:
+	common|OpenRA.Mods.Common.dll
+	common|OpenRA.Mods.Cnc.dll
+
+ChromeLayout:
+	common|chrome/ingame.yaml
+	common|chrome/ingame-chat.yaml
+	common|chrome/ingame-fmvplayer.yaml
+	common|chrome/ingame-info.yaml
+	common|chrome/ingame-infoscripterror.yaml
+	common|chrome/ingame-infobriefing.yaml
+	common|chrome/ingame-infoobjectives.yaml
+	common|chrome/ingame-infostats.yaml
+	common|chrome/ingame-menu.yaml
+	cncplus|chrome/ingame-observer.yaml
+	common|chrome/ingame-observerstats.yaml
+	cncplus|chrome/ingame-player.yaml
+	common|chrome/ingame-perf.yaml
+	common|chrome/ingame-debug.yaml
+	common|chrome/ingame-infochat.yaml
+	common|chrome/mainmenu.yaml
+	common|chrome/settings.yaml
+	common|chrome/credits.yaml
+	common|chrome/lobby.yaml
+	common|chrome/lobby-mappreview.yaml
+	common|chrome/lobby-players.yaml
+	common|chrome/lobby-options.yaml
+	common|chrome/lobby-music.yaml
+	common|chrome/lobby-servers.yaml
+	common|chrome/lobby-kickdialogs.yaml
+	common|chrome/color-picker.yaml
+	common|chrome/map-chooser.yaml
+	common|chrome/multiplayer-browser.yaml
+	common|chrome/multiplayer-browserpanels.yaml
+	common|chrome/multiplayer-createserver.yaml
+	common|chrome/multiplayer-directconnect.yaml
+	common|chrome/connection.yaml
+	common|chrome/replaybrowser.yaml
+	common|chrome/dropdowns.yaml
+	common|chrome/musicplayer.yaml
+	common|chrome/tooltips.yaml
+	common|chrome/assetbrowser.yaml
+	common|chrome/missionbrowser.yaml
+	common|chrome/confirmation-dialogs.yaml
+	common|chrome/editor.yaml
+	common|chrome/playerprofile.yaml
+
+Voices:
+	cncplus|audio/voices.yaml
+
+Notifications:
+	cncplus|audio/notifications.yaml
+
+Music:
+	cncplus|audio/music.yaml
+
+Translations:
+	cncplus|languages/english.yaml
+
+Hotkeys:
+	common|hotkeys/game.yaml
+	common|hotkeys/observer.yaml
+	common|hotkeys/production-common.yaml
+	common|hotkeys/production-peractor.yaml
+	common|hotkeys/supportpowers.yaml
+	common|hotkeys/viewport.yaml
+	cncplus|hotkeys.yaml
+
+LoadScreen: LogoStripeLoadScreen
+	Image: cncplus|uibits/loadscreen.png
+	Text: Filling Crates..., Charging Capacitors..., Reticulating Splines..., Planting Trees..., Building Bridges..., Aging Empires..., Compiling EVA..., Constructing Pylons..., Activating Skynet..., Splitting Atoms...
+
+ServerTraits:
+	LobbyCommands
+	PlayerPinger
+	MasterServerPinger
+	LobbySettingsNotification
+
+ChromeMetrics:
+	common|metrics.yaml
+	cncplus|metrics.yaml
+
+Fonts:
+	Tiny:
+		Font: common|FreeSans.ttf
+		Size: 10
+	TinyBold:
+		Font: common|FreeSansBold.ttf
+		Size: 10
+	Small:
+		Font: common|FreeSans.ttf
+		Size: 12
+	Regular:
+		Font: common|FreeSans.ttf
+		Size: 14
+	Bold:
+		Font: common|FreeSansBold.ttf
+		Size: 14
+	MediumBold:
+		Font: common|FreeSansBold.ttf
+		Size: 18
+	BigBold:
+		Font: common|FreeSansBold.ttf
+		Size: 24
+	Title:
+		Font: common|FreeSansBold.ttf
+		Size: 32
+
+MapGrid:
+	TileSize: 24,24
+	Type: Rectangular
+
+SupportsMapsFrom: cnc
+
+SoundFormats: Aud, Wav
+
+SpriteFormats: ShpTD, TmpTD, ShpTS, TmpRA
+
+SpriteSequenceFormat: TilesetSpecificSpriteSequence
+	TilesetExtensions:
+		TEMPERAT: .tem
+		WINTER: .win
+		SNOW: .sno
+		DESERT: .des
+		JUNGLE: .jun
+
+ModelSequenceFormat: PlaceholderModelSequence
+
+GameSpeeds:
+	slowest:
+		Name: Slowest
+		Timestep: 80
+		OrderLatency: 2
+	slower:
+		Name: Slower
+		Timestep: 50
+		OrderLatency: 3
+	default:
+		Name: Normal
+		Timestep: 40
+		OrderLatency: 3
+	fast:
+		Name: Fast
+		Timestep: 35
+		OrderLatency: 4
+	faster:
+		Name: Faster
+		Timestep: 30
+		OrderLatency: 4
+	fastest:
+		Name: Fastest
+		Timestep: 20
+		OrderLatency: 6
+
+ColorValidator:
+	TeamColorPresets: ABB7E4, 2f86f2, FFFC01, 0CF7B2, 540081, A46F33, F5D378, 6B9493, DF74A1, FE1100, ff7a22, 5CC1A3, 253D8C, 8C5033, D1987C, B6F706
+
+ModContent:
+	InstallPromptMessage: Tiberian Dawn Plus requires artwork and audio from the original game.\n\nQuick Install will automatically download this content (without music\nor videos) from a mirror of the 2007 C&C Gold freeware release.\n\nAdvanced Install includes options for downloading the music and for\ncopying the videos and other content from an original game disc.
+	QuickDownload: basefiles
+	HeaderMessage: Game content may be extracted from the original game discs or an\nexisting digital install. OpenRA can also download the base game\nfiles from an online mirror of the 2007 freeware release of C&C.
+	Packages:
+		base: Base Game Files
+			TestFiles: ^Content/cnc/conquer.mix, ^Content/cnc/desert.mix, ^Content/cnc/sounds.mix, ^Content/cnc/speech.mix, ^Content/cnc/temperat.mix, ^Content/cnc/tempicnh.mix, ^Content/cnc/winter.mix
+			Sources: gdi95, gdi95-linux, nod95, nod95-linux, tfd, origin
+			Required: true
+			Download: basefiles
+		music: Base Game Music
+			TestFiles: ^Content/cnc/scores.mix
+			Sources: gdi95, gdi95-linux, nod95, nod95-linux, tfd, origin
+			Download: music
+		music-covertops: Covert Operations Music
+			TestFiles: ^Content/cnc/scores-covertops.mix
+			Sources: covertops, covertops-linux, tfd, origin
+	Downloads:
+		cncplus|installer/downloads.yaml
+	Sources:
+		cncplus|installer/covertops.yaml
+		cncplus|installer/firstdecade.yaml
+		cncplus|installer/gdi95.yaml
+		cncplus|installer/nod95.yaml
+		cncplus|installer/origin.yaml

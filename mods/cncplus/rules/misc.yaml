@@ -1,0 +1,389 @@
+CRATE.plain:
+	Inherits: ^Crate
+	ScriptTriggers:
+
+CRATE:
+	Inherits: ^Crate
+	Crate:
+		Lifetime: 240
+	GiveCashCrateAction:
+		Amount: 1000
+		SelectionShares: 20
+		UseCashTick: yes
+	LevelUpCrateAction:
+		SelectionShares: 40
+	LevelUpCrateAction:
+		Levels: 4
+		SelectionShares: 10
+	ExplodeCrateAction@fire:
+		Weapon: Napalm.Crate
+		SelectionShares: 5
+	ExplodeCrateAction@boom:
+		Weapon: CrateExplosion
+		SelectionShares: 5
+	ExplodeCrateAction@nuclear:
+		Weapon: Atomic
+		SelectionShares: 1
+	RevealMapCrateAction:
+		SelectionShares: 5
+		Sequence: reveal-map
+	HideMapCrateAction:
+		SelectionShares: 1
+		Sequence: hide-map
+	HealUnitsCrateAction:
+		Sound: heal2.aud
+		SelectionShares: 2
+		Sequence: heal
+	DuplicateUnitCrateAction:
+		SelectionShares: 10
+		MaxAmount: 5
+		MinAmount: 1
+		MaxDuplicateValue: 1500
+	GiveMcvCrateAction:
+		SelectionShares: 0
+		NoBaseSelectionShares: 100
+		Units: mcv
+	GiveUnitCrateAction@jeep:
+		SelectionShares: 6
+		Units: jeep
+		ValidFactions: gdi
+		Prerequisites: techlevel.low
+	GiveUnitCrateAction@buggy:
+		SelectionShares: 6
+		Units: bggy
+		ValidFactions: nod
+		Prerequisites: techlevel.low
+	GiveUnitCrateAction@1tnk:
+		SelectionShares: 6
+		Units: ltnk
+		ValidFactions: gdi, nod
+		Prerequisites: techlevel.low, vehicleproduction
+	GiveUnitCrateAction@apc:
+		SelectionShares: 6
+		Units: apc
+		ValidFactions: gdi
+		Prerequisites: techlevel.low
+	GiveUnitCrateAction@btr:
+		SelectionShares: 6
+		Units: nodapc
+		ValidFactions: nod
+		Prerequisites: techlevel.low
+	GiveUnitCrateAction@mrpg:
+		SelectionShares: 5
+		Units: mrpg
+		ValidFactions: gdi
+		Prerequisites: techlevel.medium, anyhq
+	GiveUnitCrateAction@hwtz:
+		SelectionShares: 5
+		Units: hwtz
+		ValidFactions: nod
+		Prerequisites: techlevel.medium, fix, anyhq
+	GiveUnitCrateAction@mtnk:
+		SelectionShares: 4
+		Units: mtnk
+		ValidFactions: gdi
+		Prerequisites: techlevel.medium, vehicleproduction, fix
+	GiveUnitCrateAction@nodmtnk:
+		SelectionShares: 4
+		Units: nodmtnk
+		ValidFactions: nod
+		Prerequisites: techlevel.medium, vehicleproduction, fix
+	GiveUnitCrateAction@squadlight:
+		SelectionShares: 10
+		Units: e1,e1,e1,e3,e3
+		ValidFactions: gdi, nod
+	GiveUnitCrateAction@squadheavy:
+		SelectionShares: 7
+		Units: e1,e1,e1,e1,e3,e3,e3,e6,medi
+		ValidFactions: gdi, nod
+		TimeDelay: 4500
+	GiveUnitCrateAction@visceroid:
+		Units: vice
+		Owner: Creeps
+		SelectionShares: 10
+	GrantExternalConditionCrateAction@cloak:
+		SelectionShares: 5
+		Sequence: cloak
+		Condition: cloak-crate-collected
+
+MONEYCRATE:
+	Inherits: ^Crate
+	Tooltip:
+		Name: Money Crate
+	GiveCashCrateAction:
+		Amount: 500
+		SelectionShares: 1
+		UseCashTick: true
+	RenderSprites:
+		Image: wcrate
+
+WCRATE:
+	Inherits: ^Crate
+	Tooltip:
+		Name: Wooden Crate
+
+SCRATE:
+	Inherits: ^Crate
+	Tooltip:
+		Name: Steel Crate
+
+mpspawn:
+	Interactable:
+	EditorOnlyTooltip:
+		Name: (multiplayer player starting point)
+	AlwaysVisible:
+	Immobile:
+		OccupiesSpace: false
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+	BodyOrientation:
+		QuantizedFacings: 1
+	MapEditorData:
+		Categories: System
+
+waypoint:
+	Interactable:
+	EditorOnlyTooltip:
+		Name: (waypoint for scripted behavior)
+	AlwaysVisible:
+	Immobile:
+		OccupiesSpace: false
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+	BodyOrientation:
+		QuantizedFacings: 1
+	MapEditorData:
+		Categories: System
+
+CAMERA:
+	Interactable:
+	EditorOnlyTooltip:
+		Name: (reveals area to owner)
+	AlwaysVisible:
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+	BodyOrientation:
+		QuantizedFacings: 1
+	Immobile:
+		OccupiesSpace: false
+	RevealsShroud:
+		Range: 10c0
+		Type: CenterPosition
+	MapEditorData:
+		Categories: System
+
+CAMERA.small:
+	Interactable:
+	EditorOnlyTooltip:
+		Name: (reveals small area to owner)
+	AlwaysVisible:
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+		Image: camera
+	BodyOrientation:
+		QuantizedFacings: 1
+	Immobile:
+		OccupiesSpace: false
+	Health:
+		HP: 100000
+	HitShape:
+	RevealsShroud:
+		Range: 6c0
+		Type: CenterPosition
+	MapEditorData:
+		Categories: System
+
+CAMERA.spyplane:
+	Interactable:
+	EditorOnlyTooltip:
+		Name: (support power proxy camera)
+	AlwaysVisible:
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+		Image: camera
+	BodyOrientation:
+		QuantizedFacings: 1
+	Immobile:
+		OccupiesSpace: false
+	Health:
+		HP: 100000
+	HitShape:
+	RevealsShroud:
+		Range: 10c0
+		Type: CenterPosition
+	MapEditorData:
+		Categories: System
+	DetectCloaked:
+		Range: 10c0
+		CloakTypes: Cloak
+
+CAMERA.paradrop:
+	Interactable:
+	EditorOnlyTooltip:
+		Name: (support power proxy camera)
+	AlwaysVisible:
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+		Image: camera
+	BodyOrientation:
+		QuantizedFacings: 1
+	Immobile:
+		OccupiesSpace: false
+	Health:
+		HP: 100000
+	HitShape:
+	RevealsShroud:
+		Range: 6c0
+		Type: CenterPosition
+	MapEditorData:
+		Categories: System
+
+CAMERA.fieldrepair:
+	Interactable:
+	EditorOnlyTooltip:
+		Name: (support power proxy camera)
+	AlwaysVisible:
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+		Image: camera
+	BodyOrientation:
+		QuantizedFacings: 1
+	Immobile:
+		OccupiesSpace: false
+	Health:
+		HP: 100000
+	HitShape:
+	ProximityExternalCondition:
+		Condition: emergency_repair
+		Range: 3c0
+	KillsSelf:
+		RemoveInstead: true
+		Delay: 151
+	AmbientSound:
+		SoundFiles: srepaira.aud
+		Interval: 20
+	MapEditorData:
+		Categories: System
+
+SONAR:
+	Interactable:
+	EditorOnlyTooltip:
+		Name: (support power proxy camera)
+	AlwaysVisible:
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+		Image: camera
+	BodyOrientation:
+		QuantizedFacings: 1
+	Immobile:
+		OccupiesSpace: false
+	Health:
+		HP: 100000
+	HitShape:
+	RevealsShroud:
+		Range: 10c0
+		Type: CenterPosition
+	-RevealsShroud:
+	MapEditorData:
+		Categories: System
+	DetectCloaked:
+		Range: 8c0
+		CloakTypes: Underwater
+
+FLARE:
+	Immobile:
+		OccupiesSpace: false
+	RevealsShroud:
+		Range: 3c0
+		Type: CenterPosition
+	RenderSprites:
+		Image: smokland
+		Palette: terrain
+	WithSpriteBody:
+		StartSequence: open
+	HiddenUnderFog:
+		Type: CenterPosition
+	Tooltip:
+		Name: Flare
+		ShowOwnerRow: false
+	BodyOrientation:
+		QuantizedFacings: 1
+	MapEditorData:
+		Categories: System
+	Interactable:
+
+BLACKOUT:
+	ConditionManager:
+	RevealsShroud:
+	-RevealsShroud:
+	Buildable:
+		Queue: Intelligence
+	Tooltip:
+		Name: Blackout
+	EditorOnlyTooltip:
+		Name: (jams minimaps globally for a while)
+	Interactable:
+	AlwaysVisible:
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+	BodyOrientation:
+		QuantizedFacings: 1
+	Immobile:
+		OccupiesSpace: false	
+	KillsSelf:
+		RemoveInstead: true
+		Delay: 750
+	ProximityExternalCondition@JAMMER:
+		Range: 1000c0
+		ValidStances: Enemy, Neutral
+		Condition: jammed
+	MapEditorData:
+		Categories: System
+
+allunits.upgraded:
+	AlwaysVisible:
+	ProvidesPrerequisite:
+
+infantry.upgraded:
+	AlwaysVisible:
+	ProvidesPrerequisite:
+
+vehicles.upgraded:
+	AlwaysVisible:
+	ProvidesPrerequisite:
+
+aircraft.upgraded:
+	AlwaysVisible:
+	ProvidesPrerequisite:
+
+navy.upgraded:
+	AlwaysVisible:
+	ProvidesPrerequisite:
+
+reveal.infantryproduction:
+	AlwaysVisible:
+	ProvidesPrerequisite:
+
+reveal.vehicleproduction:
+	AlwaysVisible:
+	ProvidesPrerequisite:
+
+reveal.aircraftproduction:
+	AlwaysVisible:
+	ProvidesPrerequisite:
+
+reveal.navyproduction:
+	AlwaysVisible:
+	ProvidesPrerequisite:
+
+gdi.tech.infiltrated:
+	AlwaysVisible:
+	ProvidesPrerequisite:
+
+nod.tech.infiltrated:
+	AlwaysVisible:
+	ProvidesPrerequisite:
+
+any.tech.infiltrated:
+	AlwaysVisible:
+	ProvidesPrerequisite:

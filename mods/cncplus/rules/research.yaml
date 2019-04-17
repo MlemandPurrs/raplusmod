@@ -1,0 +1,325 @@
+^UpgradeActor:
+	AlwaysVisible:
+	Interactable:
+	Immobile:
+		OccupiesSpace: false
+	BodyOrientation:
+		QuantizedFacings: 1
+	ProvidesPrerequisite@upgradename:
+
+upgrade.advancedreactors:
+	Inherits: ^UpgradeActor
+	Tooltip:
+		Name: Advanced Reactors
+	Buildable:
+		BuildPaletteOrder: 1
+		Prerequisites: ~anytech, ~research.gdi, ~techlevel.high, ~!upgrade.advancedreactors
+		Queue: Research
+		BuildLimit: 1
+		Description: Develop an new type of Power Plant that generates +50 more power\nHas no risk of failsafe and increased building health\nExisting powerplants do not get the upgrade
+	Valued:
+		Cost: 800
+	RenderSprites:
+		Image: researchgdipower
+
+upgrade.tiberiumfuel:
+	Inherits: ^UpgradeActor
+	Tooltip:
+		Name: Tiberium Fuel
+	Buildable:
+		BuildPaletteOrder: 1
+		Prerequisites: ~tmpl, ~bio.buildable, ~research.nod, ~techlevel.high, ~!upgrade.tiberiumfuel
+		Queue: Research
+		Description: Tiberium Power Plants can use the Tiberium they are storing\nto generate extra power at the cost of resource drain while active
+	Valued:
+		Cost: 800
+	RenderSprites:
+		Image: researchnodpower
+
+upgrade.missilepod:
+	Inherits: ^UpgradeActor
+	Tooltip:
+		Name: Missile Pod
+	Buildable:
+		BuildPaletteOrder: 2
+		Prerequisites: ~anytech, ~fix, ~techlevel.high, ~research.gdi, ~!upgrade.missilepod
+		Queue: Research
+		BuildLimit: 1
+		Description: Installs an Missile pod on Medium Tanks\nThe missile can target ground only and reloads slowly
+	Valued:
+		Cost: 1000
+	RenderSprites:
+		Image: researchmissilepod
+
+upgrade.autoloader:
+	Inherits: ^UpgradeActor
+	Tooltip:
+		Name: Autoloader
+	Buildable:
+		BuildPaletteOrder: 2
+		Prerequisites: ~anytech, ~fix, ~techlevel.high, ~research.nod, ~!upgrade.autoloader
+		Queue: Research
+		BuildLimit: 1
+		Description: Modernizes the reloading mechanism of Medium and Heavy Tanks\nImproved Rate of Fire on main cannon for the affected units
+	Valued:
+		Cost: 1000
+	RenderSprites:
+		Image: researchautoloader
+
+upgrade.empgrenade:
+	Inherits: ^UpgradeActor
+	Tooltip:
+		Name: EMP Grenades
+	Buildable:
+		BuildPaletteOrder: 3
+		Prerequisites: ~anytech, ~techlevel.high, ~research.gdi, ~!upgrade.empgrenade
+		Queue: Research
+		BuildLimit: 1
+		Description: The grenades launched by the RPG Launcher\ngain EMP property, disabling vehicles they hit for an brief time\nThis doesnt work on Defenses or Ships due to the warhead being too small
+	Valued:
+		Cost: 700
+	RenderSprites:
+		Image: researchempgrenade
+
+upgrade.camouflage:
+	Inherits: ^UpgradeActor
+	Tooltip:
+		Name: Camouflage
+	Buildable:
+		BuildPaletteOrder: 3
+		Prerequisites: ~tmpl, ~shrn, ~techlevel.high, ~research.nod, ~!upgrade.camouflage
+		Queue: Research
+		BuildLimit: 1
+		Description: Allows Riflemen, Rocket Soldier and Shotgunners to cloak when standing still\nMay allow to set up ambushes using them and the Hold Fire stance
+	Valued:
+		Cost: 1000
+	RenderSprites:
+		Image: researchcamouflage
+
+upgrade.compositearmor:
+	Inherits: ^UpgradeActor
+	Tooltip:
+		Name: Composite Armor
+	Buildable:
+		BuildPaletteOrder: 4
+		Prerequisites: ~tech, ~fix, ~techlevel.high, ~research.gdi, ~!upgrade.compositearmor
+		Queue: Research
+		BuildLimit: 1
+		Description: Equips Light, Medium and Mammoth Tanks with improved armor\nIncreases the durability of affected Tanks
+	Valued:
+		Cost: 2000
+	RenderSprites:
+		Image: researchcompositearmor
+
+upgrade.blueflame:
+	Inherits: ^UpgradeActor
+	Tooltip:
+		Name: Napalm Tech
+	Buildable:
+		BuildPaletteOrder: 4
+		Prerequisites: ~anytech, ~shrn, ~techlevel.high, ~research.nod, ~!upgrade.blueflame
+		Queue: Research
+		BuildLimit: 1
+		Description: Improves the attack Range and Damage of Flamethrowers
+	Valued:
+		Cost: 2000
+	RenderSprites:
+		Image: researchblacknapalm
+
+upgrade.railguns:
+	Inherits: ^UpgradeActor
+	Tooltip:
+		Name: Railgun Weaponry
+	Buildable:
+		BuildPaletteOrder: 5
+		Prerequisites: ~tech, ~techlevel.high, ~research.gdi, ~!upgrade.railguns
+		Queue: Research
+		BuildLimit: 1
+		Description: Equips Mammoth Tanks with powerful Railguns\nExisting Mammoths dont get upgraded, only the future ones\nEnables the construction of Railgun Turrets\nEnables the production of Railgun Frigate and Exo Suits
+	Valued:
+		Cost: 5000
+	RenderSprites:
+		Image: researchrailguns
+
+upgrade.lasertech:
+	Inherits: ^UpgradeActor
+	Tooltip:
+		Name: Laser Technology
+	Buildable:
+		BuildPaletteOrder: 5
+		Prerequisites: ~tmpl, ~techlevel.high, ~research.nod, ~!upgrade.lasertech
+		Queue: Research
+		BuildLimit: 1
+		Description: Enables the construction of Laser Turret and Laser Fence\nEnables the production of Laser Corvettes\nEnables training of Blackhand Combatants
+	Valued:
+		Cost: 3000
+	RenderSprites:
+		Image: researchlasertech
+
+upgrade.apbullets:
+	Inherits: ^UpgradeActor
+	Tooltip:
+		Name: Armor-Piercing Bullets
+	Buildable:
+		BuildPaletteOrder: 6
+		Prerequisites: ~anytech, ~army, ~techlevel.high, ~research.gdi, ~!upgrade.apbullets
+		Queue: Research
+		BuildLimit: 1
+		Description: Extends range of all small caliber weaponry by +1\nImproves the damage of machineguns against vehicles\n Affected armaments:\nInfantry armed with MG, Humvee, APC, Medium Tank's MG, Orca's MG
+	Valued:
+		Cost: 1500
+	RenderSprites:
+		Image: researchapbullets
+
+upgrade.chemmissiles:
+	Inherits: ^UpgradeActor
+	Tooltip:
+		Name: Chemical Missiles
+	Buildable:
+		BuildPaletteOrder: 6
+		Prerequisites: ~anytech, ~bio.buildable, ~techlevel.high, ~research.nod, ~!upgrade.chemmissiles
+		Queue: Research
+		BuildLimit: 1
+		Description: Equips Stealth Tank, Comanche, SSM Launcher and Missile Submarine\nwith Tiberium enhanced chemical warheads that deal increased damage\nThe SSM launcher's warhead can change the allegiance of enemy vehicles\nThe affected units will additionally prequisite an Bio Lab in order to be built\nDOES NOT AFFECT EXISTING UNITS, ONLY FUTURE ONES
+	Valued:
+		Cost: 2000
+	RenderSprites:
+		Image: researchchemmissiles
+
+upgrade.specopstrain:
+	Inherits: ^UpgradeActor
+	Tooltip:
+		Name: Spec-Ops Training
+	Buildable:
+		BuildPaletteOrder: 7
+		Prerequisites: ~tech, ~army, ~techlevel.high, ~research.gdi, ~!upgrade.specopstrain
+		Queue: Research
+		BuildLimit: 1
+		Description: All Infantry units gain experience double fast
+	Valued:
+		Cost: 2000
+	RenderSprites:
+		Image: researchspecopstrain
+
+upgrade.comanchepods:
+	Inherits: ^UpgradeActor
+	Tooltip:
+		Name: Rocket Pods
+	Buildable:
+		BuildPaletteOrder: 7
+		Prerequisites: ~hpad, ~tmpl, ~aircraft.nod, ~techlevel.high, ~research.nod, ~!upgrade.comanchepods
+		Queue: Research
+		BuildLimit: 1
+		Description: Comanche's dont gain +4 Rocket ammo as Ammopool doesnt accept RequiresCondition
+	Valued:
+		Cost: 800
+	RenderSprites:
+		Image: researchcomanchepods
+
+upgrade.xtrafuel:
+	Inherits: ^UpgradeActor
+	Tooltip:
+		Name: Extra Fuel Pods
+	Buildable:
+		BuildPaletteOrder: 8
+		Prerequisites: ~aircraftproduction, ~tech, ~techlevel.high, ~research.gdi, ~!upgrade.xtrafuel
+		Queue: Research
+		BuildLimit: 1
+		Description: Increases movement Speed of F-18 Hornet by 10%
+	Valued:
+		Cost: 500
+	RenderSprites:
+		Image: researchxtrafuel
+
+upgrade.laserguided:
+	Inherits: ^UpgradeActor
+	Tooltip:
+		Name: Laser Guided Missiles
+	Buildable:
+		BuildPaletteOrder: 8
+		Prerequisites: ~aircraftproduction, ~tmpl, ~techlevel.high, ~research.nod, ~!upgrade.laserguided
+		Queue: Research
+		BuildLimit: 1
+		Description: Provides +2 Range increase and eliminates inaccuracy of Rockets carried by the YF-22 Raptor
+	Valued:
+		Cost: 1500
+	RenderSprites:
+		Image: researchlaserguided
+
+upgrade.stealthcoating:
+	Inherits: ^UpgradeActor
+	Tooltip:
+		Name: Stealth Coating
+	Buildable:
+		BuildPaletteOrder: 9
+		Prerequisites: ~aircraftproduction, ~tmpl, ~intc, ~aircraft.nod, ~techlevel.high, ~research.nod, ~!upgrade.stealthcoating
+		Queue: Research
+		BuildLimit: 1
+		Description: Equips RAH-66 Commanche and YF-23 Black Widow with Stealth coating\nAffected units are able to turn invisible while on air
+	Valued:
+		Cost: 1500
+	RenderSprites:
+		Image: researchairstealth
+
+^StrategyActor:
+	Interactable:
+	AlwaysVisible:
+	Buildable:
+		Queue: Strategy
+		BuildDurationModifier: 100
+		BuildLimit: 1
+	RenderSprites:
+	ProvidesPrerequisite@upgradename:
+	ConditionManager:
+	Valued:
+		Cost: 0
+	Aircraft:
+	KillsSelf:
+		RemoveInstead: true
+		Delay: 1
+		RequiresCondition: !strategy_center
+	GrantConditionOnPrerequisite@STRATEGY_CENTER:
+		Condition: strategy_center
+		Prerequisites: gcom
+
+strategy.gdioffense:
+	Inherits: ^StrategyActor
+	Tooltip:
+		Name: Offensive Strategy: Bombardment
+	Buildable:
+		BuildPaletteOrder: 0
+		Prerequisites: ~!strategy.gdisupport, ~!strategy.gdidefense
+		Description: Increases damage of Light, Medium, Mammoth, Merkava Tanks, Artillery and Heavy Artillery by 20%\nDoes not affect Railgun Mammoths
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Bombardment
+
+strategy.gdisupport:
+	Inherits: ^StrategyActor
+	Tooltip:
+		Name: Supportive Strategy: Search and Destroy
+	Buildable:
+		BuildPaletteOrder: 1
+		Prerequisites: ~!strategy.gdioffense, ~!strategy.gdidefense
+		Description: Increases attack range of all Aircraft by 20% allowing them to strike further afar
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: SearchandDestroy
+
+strategy.gdidefense:
+	Inherits: ^StrategyActor
+	Tooltip:
+		Name: Defensive Strategy: Hold the Line
+	Buildable:
+		BuildPaletteOrder: 2
+		Prerequisites: ~!strategy.gdioffense, ~!strategy.gdisupport
+		Description: Increases the Armor of all Buildings, allowing them to take 10% less damage
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: HoldTheLine

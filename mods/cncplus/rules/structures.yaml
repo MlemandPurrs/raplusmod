@@ -1,0 +1,3432 @@
+FACT:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^3x2Shape
+	Selectable:
+		Bounds: 72,48
+	Valued:
+		Cost: 3000
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+	Tooltip:
+		Name: Construction Yard
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 210000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 10c0
+		RequiresCondition: !empdisable
+	RevealsShroud@Offline:
+		Range: 5c0
+		RequiresCondition: empdisable
+	WithBuildingBib:
+	Production:
+		Produces: Building,Defense,Support
+		PauseOnCondition: empdisable
+	Transforms:
+		IntoActor: mcv
+		Offset: 1,0
+		Facing: 108
+		RequiresCondition: factundeploy && !build-incomplete
+		PauseOnCondition: being-demolished
+	GrantConditionOnPrerequisite@GLOBALFACTUNDEPLOY:
+		Condition: factundeploy
+		Prerequisites: global-factundeploy
+	BaseBuilding:
+	ProductionBar@Building:
+		ProductionType: Building
+	ProductionBar@Defense:
+		ProductionType: Defense
+		Color: 8A8A8A
+	BaseProvider:
+		Cooldown: 75
+		Range: 14c0
+	WithBuildingPlacedAnimation:
+		RequiresCondition: !build-incomplete
+	Power:
+		Amount: 30
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@gdi:
+		Factions: gdi
+		Prerequisite: structures.gdi
+	ProvidesPrerequisite@nod:
+		Factions: nod
+		Prerequisite: structures.nod
+	Buildable:
+		Description: Builds structures
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1,e1,e6
+	RenderSprites:
+		Image: fact
+		FactionImages:
+			gdi: gdifact
+			nod: nodfact
+
+NUKE:
+	Inherits: ^BaseBuilding
+	Inherits@POWER_OUTAGE: ^DisabledByPowerOutage
+	Inherits@shape: ^2x2Shape
+	Selectable:
+		Bounds: 48,48
+	HitShape:
+		TargetableOffsets: 630,299,0
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Power Plant
+		RequiresCondition: !advpp
+	Tooltip@PLUGGED:
+		Name: Advanced Power Plant
+		RequiresCondition: advpp
+	ProvidesPrerequisite:
+		Prerequisite: anypower
+	Buildable:
+		BuildPaletteOrder: 1
+		Queue: Building
+		Prerequisites: ~structures.gdi, ~!upgrade.advancedreactors, ~techlevel.low
+		Description: Provides 75 power for other structures\nSleight risk of 25% for fail-safe failure, that causes it to explode violently
+	Building:
+		Footprint: xX xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 55000
+	RevealsShroud:
+		Range: 4c0
+		RequiresCondition: !disabled
+	RevealsShroud@disabled:
+		Range: 2c0
+		RequiresCondition: disabled
+	WithBuildingBib:
+	Power:
+		Amount: 75
+		RequiresCondition: !advpp
+	Power@pluga:
+		Amount: 150
+		RequiresCondition: advpp
+	ScalePowerWithHealth:
+	RenderSprites:
+		Image: nuke
+	WithSpriteBody:
+		RequiresCondition: !advpp
+	WithSpriteBody@ADVPP:
+		Name: advanced
+		Sequence: idle-advpp
+		RequiresCondition: advpp
+	Targetable:
+		TargetTypes: Ground, Structure, C4, DetonateAttack, SpyInfiltrate
+	InfiltrateForPowerOutage:
+		Types: SpyInfiltrate
+	Pluggable@pluga:
+		Conditions:
+			advpp: advpp
+		Requirements:
+			advpp: !advpp && !build-incomplete
+	Explodes:
+		Chance: 100
+		Weapon: LightNuke
+		Type: CenterPosition
+		EmptyWeapon: UnitExplodeSmall
+		LoadedChance: 25
+	AmmoPool:
+		Name: FaultyFailSafe
+		Ammo: 1
+		PipCount: 0
+
+PP.ADV:
+	Inherits: ^BuildingPlug
+	Valued:
+		Cost: 350
+	Tooltip:
+		Name: Advanced Power Plant (Plug)
+	Buildable:
+		BuildPaletteOrder: 18
+		Prerequisites: anyhq, ~structures.gdi, ~!upgrade.advancedreactors, ~techlevel.medium
+		Queue: Building
+		Description: Provides double the power of\na standard Power Plant
+	Plug:
+		Type: advpp
+
+GDINUKE:
+	Inherits: ^BaseBuilding
+	Inherits@POWER_OUTAGE: ^DisabledByPowerOutage
+	Inherits@shape: ^2x2Shape
+	Selectable:
+		Bounds: 48,48
+	HitShape:
+		TargetableOffsets: 630,299,0
+	Valued:
+		Cost: 350
+	Tooltip:
+		Name: Power Plant
+		RequiresCondition: !gadvpp
+	Tooltip@PLUGGED:
+		Name: Advanced Power Plant
+		RequiresCondition: gadvpp
+	ProvidesPrerequisite:
+		Prerequisite: anypower
+	Buildable:
+		BuildPaletteOrder: 1
+		Queue: Building
+		Prerequisites: ~structures.gdi, ~upgrade.advancedreactors, ~techlevel.high
+		Description: Provides 125 power for other structures
+	Building:
+		Footprint: xX xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 70000
+	RevealsShroud:
+		Range: 4c0
+		RequiresCondition: !disabled
+	RevealsShroud@disabled:
+		Range: 2c0
+		RequiresCondition: disabled
+	WithBuildingBib:
+	Power:
+		Amount: 125
+		RequiresCondition: !gadvpp
+	Power@pluga:
+		Amount: 200
+		RequiresCondition: gadvpp
+	ScalePowerWithHealth:
+	RenderSprites:
+		Image: gdinuke
+	WithSpriteBody:
+		RequiresCondition: !gadvpp
+	WithSpriteBody@ADVPP:
+		Name: advanced
+		Sequence: idle-advpp2
+		RequiresCondition: gadvpp
+	Targetable:
+		TargetTypes: Ground, Structure, C4, DetonateAttack, SpyInfiltrate
+	InfiltrateForPowerOutage:
+		Types: SpyInfiltrate
+	Pluggable@pluga:
+		Conditions:
+			gadvpp: gadvpp
+		Requirements:
+			gadvpp: !gadvpp && !build-incomplete
+
+PP.GADV:
+	Inherits: ^BuildingPlug
+	Valued:
+		Cost: 425
+	Tooltip:
+		Name: Advanced Power Plant (Plug)
+	Buildable:
+		BuildPaletteOrder: 18
+		Prerequisites: anytech, ~structures.gdi, ~upgrade.advancedreactors, ~techlevel.high
+		Queue: Building
+		Description: Provides double the power of\nan advanced Power Plant
+	Plug:
+		Type: gadvpp
+
+NODNUKE:
+	Inherits: ^BaseBuilding
+	Inherits@POWER_OUTAGE: ^DisabledByPowerOutage
+	Inherits@shape: ^2x2Shape
+	Selectable:
+		Bounds: 48,48
+	HitShape:
+		TargetableOffsets: 630,299,0
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Tiberium Power Plant
+		RequiresCondition: !nadvpp
+	Tooltip@DEPLOYED:
+		Name: Advanced Tib. Power Plant
+		RequiresCondition: nadvpp
+	ProvidesPrerequisite:
+		Prerequisite: anypower
+	Buildable:
+		BuildPaletteOrder: 1
+		Queue: Building
+		Prerequisites: ~structures.nod, ~techlevel.low
+		Description: Provides 75 power for other structures\nStores few processed Tiberium\n Needs Tiberium Fuel upgrade:\nCan be overcharged to produce\nmore power using stored Tiberium
+	Building:
+		Footprint: xX xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 55000
+	RevealsShroud:
+		Range: 4c0
+		RequiresCondition: !disabled
+	RevealsShroud@disabled:
+		Range: 2c0
+		RequiresCondition: disabled
+	WithBuildingBib:
+	Power@normal:
+		Amount: 75
+		RequiresCondition: !overcharge && !nadvpp && !empdisable && !disabled
+	Power@overcharged:
+		Amount: 125
+		RequiresCondition: overcharge && !nadvpp && !empdisable && !disabled
+	Power@normaladv:
+		Amount: 150
+		RequiresCondition: !overcharge && nadvpp && !empdisable && !disabled
+	Power@overchargedadv:
+		Amount: 200
+		RequiresCondition: overcharge && nadvpp && !empdisable && !disabled
+	CashTrickler:
+		Interval: 25
+		Amount: -30
+		RequiresCondition: overcharge && !empdisable && !disabled
+	StoresResources:
+		PipCount: 3
+		PipColor: Green
+		Capacity: 750
+	GrantConditionOnDeploy:
+		SkipMakeAnimation: True
+		DeployedCondition: overcharge
+		RequiresCondition: tiberiumfuel
+	ScalePowerWithHealth:
+	RenderSprites:
+		Image: nodnuke
+	WithSpriteBody:
+		RequiresCondition: !nadvpp
+	WithSpriteBody@ADVPP:
+		Name: advanced
+		Sequence: idle-advpp
+		RequiresCondition: nadvpp
+	WithDecoration@deployed:
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-deployed
+		ReferencePoint: Top
+		ZOffset: 256
+		RequiresCondition: overcharge
+	Targetable:
+		TargetTypes: Ground, Structure, C4, DetonateAttack, SpyInfiltrate
+	InfiltrateForPowerOutage:
+		Types: SpyInfiltrate
+	Pluggable@pluga:
+		Conditions:
+			nadvpp: nadvpp
+		Requirements:
+			nadvpp: !nadvpp && !build-incomplete
+	GrantConditionOnPrerequisite@TIBFUEL:
+		Condition: tiberiumfuel
+		Prerequisites: upgrade.tiberiumfuel
+
+PP.NADV:
+	Inherits: ^BuildingPlug
+	Valued:
+		Cost: 350
+	Tooltip:
+		Name: Advanced Tib. Power Plant (Plug)
+	Buildable:
+		BuildPaletteOrder: 18
+		Prerequisites: anyhq, ~structures.nod, ~techlevel.medium
+		Queue: Building
+		Description: Provides double the power of\na standard Power Plant\nHealth of building doesnt increase with Upgrade\nStorage capacity of Power Plant doesnt change due to\nStoresResources trait not accepting RequiresCondition
+	Plug:
+		Type: nadvpp
+
+NUK2:
+	Inherits: ^BaseBuilding
+	Inherits@POWER_OUTAGE: ^DisabledByPowerOutage
+	Inherits@shape: ^2x2Shape
+	Selectable:
+		Bounds: 48,48
+	HitShape:
+		TargetableOffsets: 630,299,0
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Advanced Power Plant
+	ProvidesPrerequisite:
+		Prerequisite: anypower
+	Buildable:
+		BuildPaletteOrder: 15
+		Prerequisites: anyhq, ~structures.gdi, ~!upgrade.advancedreactors, ~techlevel.medium
+		Queue: Building
+		Description: Provides double the power of a standard Power Plant\nSleight risk of 25% for fail-safe failure, that causes it to explode violently
+	Building:
+		Footprint: xX xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 55000
+	RevealsShroud:
+		Range: 4c0
+		RequiresCondition: !disabled
+	RevealsShroud@disabled:
+		Range: 2c0
+		RequiresCondition: disabled
+	WithBuildingBib:
+	Power:
+		Amount: 150
+	ScalePowerWithHealth:
+	RenderSprites:
+		Image: nuk2
+	Targetable:
+		TargetTypes: Ground, Structure, C4, DetonateAttack, SpyInfiltrate
+	InfiltrateForPowerOutage:
+		Types: SpyInfiltrate
+	Explodes:
+		Chance: 100
+		Weapon: LightNuke
+		Type: CenterPosition
+		EmptyWeapon: UnitExplodeSmall
+		LoadedChance: 25
+	AmmoPool:
+		Name: FaultyFailSafe
+		Ammo: 1
+		PipCount: 0
+
+GDINUK2:
+	Inherits: ^BaseBuilding
+	Inherits@POWER_OUTAGE: ^DisabledByPowerOutage
+	Inherits@shape: ^2x2Shape
+	Selectable:
+		Bounds: 48,48
+	HitShape:
+		TargetableOffsets: 630,299,0
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Advanced Power Plant
+	ProvidesPrerequisite:
+		Prerequisite: anypower
+	Buildable:
+		BuildPaletteOrder: 15
+		Prerequisites: anytech, ~structures.gdi, ~upgrade.advancedreactors, ~techlevel.medium
+		Queue: Building
+		Description: Provides double the power of\nan advanced Power Plant
+	Building:
+		Footprint: xX xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 55000
+	RevealsShroud:
+		Range: 4c0
+		RequiresCondition: !disabled
+	RevealsShroud@disabled:
+		Range: 2c0
+		RequiresCondition: disabled
+	WithBuildingBib:
+	Power:
+		Amount: 150
+	ScalePowerWithHealth:
+	RenderSprites:
+		Image: gdinuk2
+	Targetable:
+		TargetTypes: Ground, Structure, C4, DetonateAttack, SpyInfiltrate
+	InfiltrateForPowerOutage:
+		Types: SpyInfiltrate
+
+NODNUK2:
+	Inherits: ^BaseBuilding
+	Inherits@POWER_OUTAGE: ^DisabledByPowerOutage
+	Inherits@shape: ^2x2Shape
+	Selectable:
+		Bounds: 48,48
+	HitShape:
+		TargetableOffsets: 630,299,0
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Advanced Tib. Power Plant
+	ProvidesPrerequisite:
+		Prerequisite: anypower
+	Buildable:
+		BuildPaletteOrder: 15
+		Prerequisites: anyhq, ~structures.nod, ~techlevel.medium
+		Queue: Building
+		Description: Provides double the power of\na standard Power Plant
+	Building:
+		Footprint: xX xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 70000
+	RevealsShroud:
+		Range: 4c0
+		RequiresCondition: !disabled
+	RevealsShroud@disabled:
+		Range: 2c0
+		RequiresCondition: disabled
+	WithBuildingBib:
+	Power@normal:
+		Amount: 150
+		RequiresCondition: !overcharge && !empdisable && !disabled
+	Power@overcharged:
+		Amount: 175
+		RequiresCondition: overcharge && !empdisable && !disabled
+	CashTrickler:
+		Interval: 25
+		Amount: -30
+		RequiresCondition: overcharge && !empdisable && !disabled
+	StoresResources:
+		PipCount: 5
+		PipColor: Green
+		Capacity: 1500
+	GrantConditionOnDeploy:
+		SkipMakeAnimation: True
+		DeployedCondition: overcharge
+		RequiresCondition: tiberiumfuel
+	ScalePowerWithHealth:
+	RenderSprites:
+		Image: nodnuk2
+	WithDecoration@deployed:
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-deployed
+		ReferencePoint: Top
+		ZOffset: 256
+		RequiresCondition: overcharge
+	Targetable:
+		TargetTypes: Ground, Structure, C4, DetonateAttack, SpyInfiltrate
+	InfiltrateForPowerOutage:
+		Types: SpyInfiltrate
+	GrantConditionOnPrerequisite@TIBFUEL:
+		Condition: tiberiumfuel
+		Prerequisites: upgrade.tiberiumfuel
+
+PYLE:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^2x2Shape
+	Inherits@IDISABLE: ^DisableOnPowerDown
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 840,-256,0, 840,512,0, 210,-512,0, -71,512,0
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 640
+	Valued:
+		Cost: 375
+	Tooltip:
+		Name: Barracks
+	ProvidesPrerequisite:
+		Prerequisite: barracks
+	ProvidesPrerequisite@gdi:
+		Factions: gdi
+		Prerequisite: infantry.gdi
+		ResetOnOwnerChange: True
+	ProvidesPrerequisite@nod:
+		Factions: nod
+		Prerequisite: infantry.nod
+		ResetOnOwnerChange: True
+	Buildable:
+		BuildPaletteOrder: 2
+		Prerequisites: ~structures.gdi, ~techlevel.low
+		Queue: Building
+		Description: Trains and heals Infantry units
+	Building:
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 60000
+	RevealsShroud:
+		Range: 5c0
+		RequiresCondition: !disabled
+	RevealsShroud@disabled:
+		Range: 2c0
+		RequiresCondition: disabled
+	WithBuildingBib:
+	RallyPoint:
+	Exit@1:
+		SpawnOffset: -426,85,0
+		ExitCell: 0,1
+	Exit@2:
+		SpawnOffset: 298,298,0
+		ExitCell: 1,1
+	Production:
+		Produces: Infantry, Soldier
+		PauseOnCondition: disabled || empdisable
+	ProductionBar:
+		ProductionType: Infantry
+	Power:
+		Amount: -20
+	ProvidesPrerequisite@buildingname:
+	Selectable:
+		Bounds: 48,42,0,-5
+	PrimaryBuilding:
+		PrimaryCondition: primary
+		SelectionNotification: PrimaryBuildingSelected
+	WithDecoration@primary:
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-primary
+		ReferencePoint: Top
+		ZOffset: 256
+		RequiresCondition: primary
+	RepairsUnits:
+		HpPerStep: 500
+		PlayerExperience: 15
+		PauseOnCondition: disabled || empdisable
+
+HAND:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^2x2Shape
+	Inherits@IDISABLE: ^DisableOnPowerDown
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 630,-512,0, 355,512,0, -281,-512,0, -630,512,0
+	Valued:
+		Cost: 375
+	Tooltip:
+		Name: Hand of Nod
+	ProvidesPrerequisite:
+		Prerequisite: barracks
+	ProvidesPrerequisite@gdi:
+		Factions: gdi
+		Prerequisite: infantry.gdi
+		ResetOnOwnerChange: True
+	ProvidesPrerequisite@nod:
+		Factions: nod
+		Prerequisite: infantry.nod
+		ResetOnOwnerChange: True
+	Buildable:
+		BuildPaletteOrder: 2
+		Prerequisites: ~structures.nod, ~techlevel.low
+		Queue: Building
+		Description: Trains and heals Infantry units
+	Building:
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 60000
+	RevealsShroud:
+		Range: 5c0
+		RequiresCondition: !disabled
+	RevealsShroud@disabled:
+		Range: 2c0
+		RequiresCondition: disabled
+	WithBuildingBib:
+	RallyPoint:
+		Offset: 1,2
+	Exit@1:
+		SpawnOffset: 512,1024,0
+		ExitCell: 1,2
+	Production:
+		Produces: Infantry, Soldier
+		PauseOnCondition: disabled || empdisable
+	ProductionBar:
+		ProductionType: Infantry
+	Power:
+		Amount: -20
+	ProvidesPrerequisite@buildingname:
+	Selectable:
+		Bounds: 48,48
+		DecorationBounds: 48,68,0,-10
+	SelectionDecorations:
+	PrimaryBuilding:
+		PrimaryCondition: primary
+		SelectionNotification: PrimaryBuildingSelected
+	WithDecoration@primary:
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-primary
+		ReferencePoint: Top
+		ZOffset: 256
+		RequiresCondition: primary
+	RepairsUnits:
+		HpPerStep: 500
+		PlayerExperience: 15
+		PauseOnCondition: disabled || empdisable
+
+PROC:
+	Inherits: ^BaseBuilding
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1450, -512
+			BottomRight: 1450, 853
+	HitShape@TOP:
+		Type: Rectangle
+			TopLeft: -512, -1450
+			BottomRight: 896, -512
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Tiberium Refinery
+	Buildable:
+		BuildPaletteOrder: 3
+		Prerequisites: ~!structures.nod, ~techlevel.low
+		Queue: Building
+		Description: Processes raw Tiberium\ninto useable resources
+	Building:
+		Footprint: _x_ xxx === ===
+		Dimensions: 3,4
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 100000
+	RevealsShroud:
+		Range: 5c0
+		RequiresCondition: !empdisable
+	RevealsShroud@disabled:
+		Range: 2c0
+		RequiresCondition: empdisable
+	WithBuildingBib:
+	Refinery:
+		DockAngle: 112
+		DockOffset: 0,2
+		IsDragRequired: True
+		DragOffset: -554,512,0
+		DragLength: 12
+		TickRate: 15
+		DiscardExcessResources: Yes
+	StoresResources:
+		PipColor: Green
+		PipCount: 9
+		Capacity: 3000
+	Selectable:
+		Bounds: 72,56
+		DecorationBounds: 73,72
+	CustomSellValue:
+		Value: 500
+	FreeActorWithDelivery:
+		Actor: HARV
+		DeliveryOffset: 1,2
+		DeliveringActor: orcarr.delivery
+		Facing: 64
+	WithResourceLevelOverlay:
+		RequiresCondition: !build-incomplete
+	Power:
+		Amount: -30
+	ProvidesPrerequisite@buildingname:
+	SelectionDecorations:
+	RenderSprites:
+		Image: proc
+	Targetable:
+		TargetTypes: Ground, Structure, C4, DetonateAttack, SpyInfiltrate
+	InfiltrateForCash:
+		Percentage: 30
+		Types: SpyInfiltrate
+		Notification: SilosNeeded
+
+NODPROC:
+	Inherits: PROC
+	Buildable:
+		Prerequisites: ~structures.nod, ~techlevel.low
+	FreeActorWithDelivery:
+		Actor: HARV
+		DeliveryOffset: 1,2
+		DeliveringActor: osprey.delivery
+		Facing: 64
+	RenderSprites:
+		Image: nodproc
+	ProvidesPrerequisite:
+		Prerequisite: proc
+
+SILO:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^2x1Shape
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Tiberium Silo
+	Buildable:
+		BuildPaletteOrder: 8
+		Prerequisites: proc, ~techlevel.low
+		Queue: Building
+		Description: Stores processed Tiberium\nPeriodically generates minor income\nLeaks Tiberium and drains funds at critical health
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	-GivesBuildableArea:
+	Health:
+		HP: 30000
+	RevealsShroud:
+		Range: 3c0
+	WithBuildingBib:
+		HasMinibib: Yes
+	RenderSprites:
+	-WithSpriteBody:
+	WithResourceLevelSpriteBody:
+		Sequence: stages
+	StoresResources:
+		PipCount: 7
+		PipColor: Green
+		Capacity: 3000
+	-SpawnActorsOnSell:
+	Power:
+		Amount: -10
+	MustBeDestroyed:
+		RequiredForShortGame: false
+	SelectionDecorations:
+	-AcceptsDeliveredCash:
+	Selectable:
+		Bounds: 48,24
+		DecorationBounds: 49,30
+	RenderSprites:
+		Image: silo
+		FactionImages:
+			gdi: silo
+			nod: nodsilo
+	CashTrickler@INCOME:
+		Interval: 600
+		Amount: 30
+		PauseOnCondition: empdisable
+		RequiresCondition: !tiberium-leakage
+	CashTrickler@DECREASE:
+		Interval: 165
+		Amount: -15
+		RequiresCondition: tiberium-leakage
+	CashTricklerBar:
+	SeedsResource:
+		Interval: 165
+		ResourceType: Tiberium
+		RequiresCondition: tiberium-leakage
+	GrantConditionOnDamageState@TIBERLEAK:
+		Condition: tiberium-leakage
+		ValidDamageStates: Critical
+
+WEAP:
+	Inherits: ^BaseBuilding
+	Inherits@IDISABLE: ^DisableOnPowerDown
+	Inherits@shape: ^3x2Shape
+	HitShape:
+		TargetableOffsets: 0,0,0, 0,1024,0, 0,-1024,0
+		Type: Rectangle
+			TopLeft: -1536, -1024
+			BottomRight: 1536, 512
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Weapons Factory (GDI)
+	ProvidesPrerequisite:
+		Prerequisite: vehicleproduction
+	Buildable:
+		BuildPaletteOrder: 4
+		Prerequisites: proc, ~structures.gdi, ~techlevel.low
+		Queue: Building
+		Description: Produces Vehicle units
+	Building:
+		Footprint: xxx === ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
+	Selectable:
+		Bounds: 72,48
+		DecorationBounds: 72,64,0,-16
+	SelectionDecorations:
+	Health:
+		HP: 110000
+	RevealsShroud:
+		Range: 4c0
+		RequiresCondition: !disabled
+	RevealsShroud@disabled:
+		Range: 2c0
+		RequiresCondition: disabled
+	WithBuildingBib:
+	WithProductionDoorOverlay:
+		RequiresCondition: !build-incomplete
+		Sequence: build-top
+	RallyPoint:
+		Offset: 0,2
+	Exit@1:
+		SpawnOffset: -512,-512,0
+		ExitCell: 0,1
+		ExitDelay: 3
+	ProvidesPrerequisite@gdi:
+		Factions: gdi
+		Prerequisite: vehicles.gdi
+		ResetOnOwnerChange: True
+	ProvidesPrerequisite@nod:
+		Factions: nod
+		Prerequisite: vehicles.nod
+		ResetOnOwnerChange: True
+	Production:
+		PauseOnCondition: disabled || empdisable
+		Produces: Vehicle
+	ProductionBar:
+		ProductionType: Vehicle
+	Power:
+		Amount: -30
+	ProvidesPrerequisite@buildingname:
+	PrimaryBuilding:
+		PrimaryCondition: primary
+		SelectionNotification: PrimaryBuildingSelected
+	WithDecoration@primary:
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-primary
+		ReferencePoint: Top
+		ZOffset: 256
+		RequiresCondition: primary
+	WithIdleOverlay@SMOKE:
+		RequiresCondition: !build-incomplete && !disabled && !empdisable
+		Sequence: idle-smoke
+
+W2AP:
+	Inherits: ^BaseBuilding
+	Inherits@IDISABLE: ^DisableOnPowerDown
+	Inherits@shape: ^3x2Shape
+	HitShape:
+		TargetableOffsets: 0,0,0, 0,1024,0, 0,-1024,0
+		Type: Rectangle
+			TopLeft: -1536, -1024
+			BottomRight: 1536, 512
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Weapons Factory (Nod)
+	ProvidesPrerequisite:
+		Prerequisite: vehicleproduction
+	Buildable:
+		BuildPaletteOrder: 4
+		Prerequisites: proc, ~structures.nod, ~techlevel.low
+		Queue: Building
+		Description: Produces Vehicle units
+	Building:
+		Footprint: xxx === ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
+	Selectable:
+		Bounds: 72,48
+		DecorationBounds: 72,64,0,-16
+	SelectionDecorations:
+	Health:
+		HP: 110000
+	RevealsShroud:
+		Range: 4c0
+		RequiresCondition: !disabled
+	RevealsShroud@disabled:
+		Range: 2c0
+		RequiresCondition: disabled
+	WithBuildingBib:
+	WithProductionDoorOverlay:
+		RequiresCondition: !build-incomplete
+		Sequence: build-top
+	RallyPoint:
+		Offset: 0,2
+	Exit@1:
+		SpawnOffset: 512,-512,0
+		ExitCell: 2,1
+		ExitDelay: 3
+	ProvidesPrerequisite@gdi:
+		Factions: gdi
+		Prerequisite: vehicles.gdi
+		ResetOnOwnerChange: True
+	ProvidesPrerequisite@nod:
+		Factions: nod
+		Prerequisite: vehicles.nod
+		ResetOnOwnerChange: True
+	Production:
+		PauseOnCondition: disabled || empdisable
+		Produces: Vehicle
+	ProductionBar:
+		ProductionType: Vehicle
+	Power:
+		Amount: -30
+	ProvidesPrerequisite@buildingname:
+	PrimaryBuilding:
+		PrimaryCondition: primary
+		SelectionNotification: PrimaryBuildingSelected
+	WithDecoration@primary:
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-primary
+		ReferencePoint: Top
+		ZOffset: 256
+		RequiresCondition: primary
+	WithIdleOverlay@SMOKE:
+		Sequence: idle-smoke
+		RequiresCondition: !build-incomplete && !disabled && !empdisable
+
+STRP:
+	Inherits: ^BaseBuilding
+	Selectable:
+		Bounds: 96,48
+	HitShape:
+		TargetableOffsets: 0,0,0, 0,-512,256, 0,-1451,384, 0,512,128, 0,1536,85
+		Type: Rectangle
+			TopLeft: -2048, -1024
+			BottomRight: 2048, 1024
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Airstrip
+	Buildable:
+		BuildPaletteOrder: 10
+		Prerequisites: vehicleproduction, anyhq, ~techlevel.medium
+		Queue: Building
+		Description: Provides a dropzone for vehicle reinforcements,\nthose are expensive Vehicle units that are either an direct upgrade\nto an standard vehicle or an underused side-grade tactical option\n Special Ability: Airdrop\nAn C17 plane paradrops one APC and two Light Tanks\nto targeted area
+	Building:
+		Footprint: XXXX xxxx ====
+		Dimensions: 4,3
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 110000
+	RevealsShroud:
+		Range: 6c0
+		RequiresCondition: !empdisable
+	RevealsShroud@disabled:
+		Range: 3c0
+		RequiresCondition: empdisable
+	WithBuildingBib:
+	WithIdleOverlay@DISH:
+		Sequence: idle-dish
+		RequiresCondition: !build-incomplete
+	RallyPoint:
+		Offset: 4,2
+	Exit@1:
+		SpawnOffset: -1024,0,0
+		ExitCell: 3,1
+	ProductionAirdrop:
+		Produces: Airport
+	WithDeliveryAnimation:
+		RequiresCondition: !build-incomplete
+	ProductionBar:
+		ProductionType: Airport
+	Power:
+		Amount: -40
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@gdi:
+		Prerequisite: airport.gdi
+		Factions: gdi
+		ResetOnOwnerChange: True
+	ProvidesPrerequisite@nod:
+		Prerequisite: airport.nod
+		Factions: nod
+		ResetOnOwnerChange: True
+	PrimaryBuilding:
+		PrimaryCondition: primary
+		SelectionNotification: PrimaryBuildingSelected
+	WithDecoration@primary:
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-primary
+		ReferencePoint: Top
+		ZOffset: 256
+		RequiresCondition: primary
+	RenderSprites:
+		Image: afld
+	ParatroopersPower@NodAirdrop:
+		PauseOnCondition: empdisable
+		OrderName: NodAirdropPowerInfoOrder
+		Prerequisites: ~vehicleproduction, ~barracks, ~airport.nod
+		Icon: airdrop
+		ChargeInterval: 7500
+		Description: Airdrop
+		UnitType: c17
+		LongDesc: An C17 Plane paradrops one APC\nand two Light Tanks anywhere on the map
+		DropItems: nodapc,ltnk,ltnk
+		ReinforcementsArrivedSpeechNotification: Reinforce
+		SelectTargetSpeechNotification: SelectTarget
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.paradrop
+		DisplayBeacon: true
+		BeaconPoster: airdrop
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		Cursor: airdrop
+	ParatroopersPower@GDIAirdrop:
+		PauseOnCondition: empdisable
+		OrderName: GDIAirdropPowerInfoOrder
+		Prerequisites: ~vehicleproduction, ~barracks, ~airport.gdi
+		Icon: gdiairdrop
+		ChargeInterval: 7500
+		Description: Airdrop
+		UnitType: c17
+		LongDesc: An C17 Plane paradrops one APC\nand two Light Tanks anywhere on the map
+		DropItems: apc,ltnk,ltnk
+		ReinforcementsArrivedSpeechNotification: Reinforce
+		SelectTargetSpeechNotification: SelectTarget
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.paradrop
+		DisplayBeacon: true
+		BeaconPoster: airdrop
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		Cursor: airdrop
+
+FIX:
+	Inherits: ^BaseBuilding
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
+	HitShape:
+		TargetableOffsets: 840,0,0, 598,-640,0, 598,640,0, -1060,0,0, -768,-640,0, -768,640,0
+		Type: Polygon
+			Points: -1536,-256, -341,-940, 341,-940, 1536,-256, 1536,341, 341,1110, -341,1110, -1536,341
+	Valued:
+		Cost: 750
+	Tooltip:
+		Name: Service Depot
+	Buildable:
+		BuildPaletteOrder: 7
+		Prerequisites: vehicleproduction, ~techlevel.medium
+		Queue: Building
+		Description: Repairs vehicles for credits\n Special Ability: Field Repair\nRepairs vehicles for 30% of their maximum health\nin a small area over time for an short duration
+	Building:
+		Footprint: =X= xxx =X=
+		Dimensions: 3,3
+	Selectable:
+		Bounds: 64,34,0,3
+		DecorationBounds: 72,48
+	SelectionDecorations:
+	Health:
+		HP: 80000
+	RevealsShroud:
+		Range: 5c0
+		RequiresCondition: !disabled
+	RevealsShroud@disabled:
+		Range: 2c0
+		RequiresCondition: disabled
+	SpawnActorPower@FIELD_REPAIR:
+		PauseOnCondition: disabled || empdisable
+		Actor: camera.fieldrepair
+		Prerequisites: ~techlevel.unrestricted
+		ChargeInterval: 6000
+		Icon: fieldrepair
+		Description: Field Repair
+		LongDesc: Repairs vehicles for 30% of their maximum health\nin a small area over time for an short duration
+		StartFullyCharged: false
+		OrderName: FieldRepairPowerInfoOrder
+	WithBuildingBib:
+		HasMinibib: Yes
+	Reservable:
+	RepairsUnits:
+		PauseOnCondition: disabled || empdisable
+		HpPerStep: 2000
+		Interval: 15
+		PlayerExperience: 15
+		StartRepairingNotification: Repairing
+	RallyPoint:
+	WithResupplyAnimation:
+		RequiresCondition: !build-incomplete
+	Power:
+		Amount: -20
+	ProvidesPrerequisite@buildingname:
+	RenderSprites:
+		Image: fix
+		FactionImages:
+			gdi: fix
+			nod: nfix
+	SupportPowerChargeBar:
+
+MWFBUILD:
+	Inherits: ^BaseBuilding
+	Tooltip:
+		Name: Mobile Weapons Factory (deployed)
+	Valued:
+		Cost: 1500
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 999
+		Prerequisites: ~disabled
+	Building:
+		Footprint: ___ xxx ===
+		Dimensions: 3,3
+	Health:
+		HP: 60000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 5c0
+	-GivesBuildableArea:
+	-Sellable:
+	WithBuildingBib:
+	WithProductionDoorOverlay:
+		RequiresCondition: !build-incomplete
+		Sequence: build-top
+	RallyPoint:
+		Offset: 0,3
+	Exit@1:
+		SpawnOffset: 0,-256,0
+		ExitCell: 1,2
+		ExitDelay: 3
+	Production:
+		Produces: MWFVehicle
+		PauseOnCondition: empdisable
+	ProductionQueue:
+		Type: MWFVehicle
+		Group: Vehicle
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
+	ProvidesPrerequisite@gdi:
+		Factions: gdi
+		Prerequisite: vehicles.gdi
+		ResetOnOwnerChange: True
+	ProvidesPrerequisite@nod:
+		Factions: nod
+		Prerequisite: vehicles.nod
+		ResetOnOwnerChange: True
+	ProductionBar:
+		ProductionType: Vehicle
+	ProvidesPrerequisite:
+		Prerequisite: vehicleproduction
+	ProvidesPrerequisite@buildingname:
+	Transforms:
+		IntoActor: mwf
+		Offset: 1,1
+		Facing: 96
+		RequiresCondition: !build-incomplete
+		PauseOnCondition: being-demolished
+
+GDIAFLD:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^3x2Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 420,0,0, 420,-1024,0, 420,1024,0, -777,0,0, -777,-1024,0, -777,1024,0
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 12
+		Prerequisites: anyhq, ~structures.gdi, ~techlevel.medium
+		Description: Produces, rearms and repairs Airplanes
+	Valued:
+		Cost: 750
+	Tooltip:
+		Name: Airfield (GDI)
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 100000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 5c0
+		RequiresCondition: !empdisable
+	Exit@1:
+		ExitCell: 1,1
+		Facing: 192
+		MoveIntoWorld: false
+	WithBuildingBib:
+	Production:
+		Produces: Aircraft, Plane
+		PauseOnCondition: empdisable
+	ProductionBar:
+		ProductionType: Aircraft
+	Reservable:
+	ProvidesPrerequisite:
+		Prerequisite: aircraftproduction
+	ProvidesPrerequisite@gdi:
+		Factions: gdi
+		Prerequisite: aircraft.gdi
+		ResetOnOwnerChange: True
+	ProvidesPrerequisite@nod:
+		Factions: nod
+		Prerequisite: aircraft.nod
+		ResetOnOwnerChange: True
+	SupportPowerChargeBar:
+	PrimaryBuilding:
+		PrimaryCondition: primary
+		SelectionNotification: PrimaryBuildingSelected
+	Power:
+		Amount: -30
+	ProvidesPrerequisite@buildingname:
+	WithDecoration@primary:
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-primary
+		ReferencePoint: Top
+		ZOffset: 256
+		RequiresCondition: primary
+	WithResupplyAnimation:
+		RequiresCondition: !build-incomplete
+	RepairsUnits:
+		HpPerStep: 1000
+		PlayerExperience: 25
+		StartRepairingNotification: Repairing
+	RenderSprites:
+		Image: gdiafld
+
+NODAFLD:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^3x2Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 420,0,0, 420,-1024,0, 420,1024,0, -777,0,0, -777,-1024,0, -777,1024,0
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 12
+		Prerequisites: anyhq, ~structures.nod, ~techlevel.high
+		Description: Produces, rearms and repairs Airplanes
+	Valued:
+		Cost: 750
+	Tooltip:
+		Name: Airfield (Nod)
+		GenericName: Aircraft Production
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 100000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 5c0
+		RequiresCondition: !empdisable
+	Exit@1:
+		ExitCell: 1,1
+		Facing: 192
+		MoveIntoWorld: false
+	WithBuildingBib:
+	Production:
+		Produces: Aircraft, Plane
+		PauseOnCondition: empdisable
+	ProductionBar:
+		ProductionType: Aircraft
+	Reservable:
+	ProvidesPrerequisite:
+		Prerequisite: aircraftproduction
+	ProvidesPrerequisite@gdi:
+		Factions: gdi
+		Prerequisite: aircraft.gdi
+		ResetOnOwnerChange: True
+	ProvidesPrerequisite@nod:
+		Factions: nod
+		Prerequisite: aircraft.nod
+		ResetOnOwnerChange: True
+	PrimaryBuilding:
+		PrimaryCondition: primary
+		SelectionNotification: PrimaryBuildingSelected
+	Power:
+		Amount: -30
+	ProvidesPrerequisite@buildingname:
+	WithDecoration@primary:
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-primary
+		ReferencePoint: Top
+		ZOffset: 256
+		RequiresCondition: primary
+	WithResupplyAnimation:
+		RequiresCondition: !build-incomplete
+	RepairsUnits:
+		HpPerStep: 1000
+		PlayerExperience: 25
+		StartRepairingNotification: Repairing
+	RenderSprites:
+		Image: nodafld
+
+HPAD:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^2x2Shape
+	Selectable:
+		Bounds: 48,48
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 768,-512,0, 768,512,0, -281,-512,0, -630,512,0
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Helipad
+	Buildable:
+		BuildPaletteOrder: 11
+		Prerequisites: anyhq, ~techlevel.medium
+		Queue: Building
+		Description: Produces, rearms and repairs Helicopters
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 60000
+	RevealsShroud:
+		Range: 3c0
+		RequiresCondition: !empdisable
+	Exit@1:
+		SpawnOffset: 0,-256,0
+	Production:
+		Produces: Aircraft, Helicopter
+		PauseOnCondition: empdisable
+	Reservable:
+	RepairsUnits:
+		HpPerStep: 1000
+		PlayerExperience: 25
+		StartRepairingNotification: Repairing
+	WithResupplyAnimation:
+		RequiresCondition: !build-incomplete
+	RallyPoint:
+	ProductionBar:
+		ProductionType: Aircraft
+	Power:
+		Amount: -10
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@gdi:
+		Factions: gdi
+		Prerequisite: aircraft.gdi
+		ResetOnOwnerChange: True
+	ProvidesPrerequisite@nod:
+		Factions: nod
+		Prerequisite: aircraft.nod
+		ResetOnOwnerChange: True
+	PrimaryBuilding:
+		PrimaryCondition: primary
+		SelectionNotification: PrimaryBuildingSelected
+	WithDecoration@primary:
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-primary
+		ReferencePoint: Top
+		ZOffset: 256
+		RequiresCondition: primary
+	WithBuildingBib:
+	RenderSprites:
+		Image: hpad
+		FactionImages:
+			gdi: hpad
+			nod: nhpad
+
+SYRD:
+	Inherits: ^BaseBuilding
+	Inherits@IDISABLE: ^DisableOnPowerDown
+	Selectable:
+		Bounds: 72,48
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 6
+		Prerequisites: proc, ~techlevel.low
+		Description: Produces and repairs\nShip naval units
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Naval Yard
+	Targetable:
+		TargetTypes: Ground, Water, Structure, WaterStructure, C4, DetonateAttack
+	Building:
+		Footprint: XXX xxx XXX
+		Dimensions: 3,3
+		TerrainTypes: Water
+	RequiresBuildableArea:
+		Adjacent: 8
+	-GivesBuildableArea:
+	Health:
+		HP: 100000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+		RequiresCondition: !disabled
+	RevealsShroud@disabled:
+		Range: 2c0
+		RequiresCondition: disabled
+	Exit@1:
+		SpawnOffset: -1024,1024,0
+		Facing: 160
+		ExitCell: 0,2
+		ProductionTypes: Ship, Boat
+	Exit@2:
+		SpawnOffset: 1024,1024,0
+		Facing: 224
+		ExitCell: 2,2
+		ProductionTypes: Ship, Boat
+	Exit@3:
+		SpawnOffset: -1024,-1024,0
+		Facing: 96
+		ExitCell: 0,0
+		ProductionTypes: Ship, Boat
+	Exit@4:
+		SpawnOffset: 1024,-1024,0
+		Facing: 32
+		ExitCell: 2,0
+		ProductionTypes: Ship, Boat
+	Production:
+		PauseOnCondition: disabled || empdisable
+		Produces: Ship, Boat
+	PrimaryBuilding:
+		PrimaryCondition: primary
+		SelectionNotification: PrimaryBuildingSelected
+	-SpawnActorsOnSell:
+	RepairsUnits:
+		HpPerStep: 1000
+		FinishRepairingNotification:
+		PlayerExperience: 15
+		StartRepairingNotification: Repairing
+	RallyPoint:
+	ProductionBar:
+		ProductionType: Ship
+	Power:
+		Amount: -30
+	ProvidesPrerequisite@gdi:
+		Factions: gdi
+		Prerequisite: ships.gdi
+		ResetOnOwnerChange: True
+	ProvidesPrerequisite@nod:
+		Factions: nod
+		Prerequisite: ships.nod
+		ResetOnOwnerChange: True
+	ProvidesPrerequisite@buildingname:
+	WithDecoration@primary:
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-primary
+		ReferencePoint: Top
+		ZOffset: 256
+		RequiresCondition: primary
+	HitShape:
+		TargetableOffsets: 768,0,0, 768,-1024,0, 768,1024,0
+		Type: Rectangle
+			TopLeft: -1536, -1152
+			BottomRight: 1536, 598
+	HitShape@BOTTOM:
+		TargetableOffsets: -768,0,0
+		Type: Rectangle
+			TopLeft: -512, 598
+			BottomRight: 512, 1110
+
+SPEN:
+	Inherits: ^BaseBuilding
+	Inherits@IDISABLE: ^DisableOnPowerDown
+	Selectable:
+		Bounds: 72,48
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1536, -598
+			BottomRight: 1536, 598
+	HitShape@TOPANDBOTTOM:
+		TargetableOffsets: 811,0,0, -811,0,0
+		Type: Rectangle
+			TopLeft: -555, -1110
+			BottomRight: 555, 1110
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Submarine Pen
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 9
+		Prerequisites: syrd, anyhq, ~techlevel.medium
+		Description: Produces and repairs\nSubmarine naval units\nDetects Submerged units within a radius
+	Targetable:
+		TargetTypes: Ground, Water, Structure, WaterStructure, C4, DetonateAttack
+	Building:
+		Footprint: XXX xxx _=_
+		Dimensions: 3,3
+		TerrainTypes: Water
+	RequiresBuildableArea:
+		AreaTypes: building
+		Adjacent: 8
+	-GivesBuildableArea:
+	Health:
+		HP: 100000
+	Armor:
+		Type: Wood
+	ProvidesPrerequisite@gdi:
+		Factions: gdi
+		Prerequisite: submarines.gdi
+		ResetOnOwnerChange: True
+	ProvidesPrerequisite@nod:
+		Factions: nod
+		Prerequisite: submarines.nod
+		ResetOnOwnerChange: True
+	RevealsShroud:
+		Range: 4c0
+		RequiresCondition: !disabled
+	RevealsShroud@disabled:
+		Range: 2c0
+		RequiresCondition: disabled
+	ProvidesPrerequisite@buildingname:
+	Exit@1:
+		SpawnOffset: 0,-213,0
+		Facing: 96
+		ExitCell: -1,2
+		ProductionTypes: Submarine
+	Exit@2:
+		SpawnOffset: 0,-213,0
+		Facing: 160
+		ExitCell: 3,2
+		ProductionTypes: Submarine
+	Exit@3:
+		SpawnOffset: 0,0,0
+		Facing: 32
+		ExitCell: 0,0
+		ProductionTypes: Submarine
+	Exit@4:
+		SpawnOffset: 0,0,0
+		Facing: 224
+		ExitCell: 2,0
+		ProductionTypes: Submarine
+	Exit@b1:
+		SpawnOffset: -1024,1024,0
+		Facing: 160
+		ExitCell: 0,2
+		ProductionTypes: Ship
+	Exit@b2:
+		SpawnOffset: 1024,1024,0
+		Facing: 224
+		ExitCell: 2,2
+		ProductionTypes: Ship
+	Exit@b3:
+		SpawnOffset: -1024,-1024,0
+		Facing: 96
+		ExitCell: 0,0
+		ProductionTypes: Ship
+	Exit@b4:
+		SpawnOffset: 1024,-1024,0
+		Facing: 32
+		ExitCell: 2,0
+		ProductionTypes: Ship
+	Production:
+		PauseOnCondition: disabled || empdisable
+		Produces: Ship, Submarine
+	PrimaryBuilding:
+		PrimaryCondition: primary
+		SelectionNotification: PrimaryBuildingSelected
+	WithDecoration@primary:
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-primary
+		ReferencePoint: Top
+		ZOffset: 256
+		RequiresCondition: primary
+	-SpawnActorsOnSell:
+	RepairsUnits:
+		PauseOnCondition: disabled || empdisable
+		HpPerStep: 1000
+		FinishRepairingNotification:
+		PlayerExperience: 15
+		StartRepairingNotification: Repairing
+	RallyPoint:
+	ProductionBar:
+		ProductionType: Ship
+	Reservable:
+	Power:
+		Amount: -30
+	DetectCloaked:
+		CloakTypes: Underwater
+		Range: 6c0
+	RenderDetectionCircle:
+	RenderSprites:
+		Image: spen
+		FactionImages:
+			gdi: spen
+			nod: nodspen
+	SpawnActorPower@sonarpulse:
+		PauseOnCondition: disabled || empdisable
+		Prerequisites: ~techlevel.unrestricted
+		Icon: sonar
+		Description: Sonar Pulse
+		LongDesc: Reveals all submarines in the area for a short time
+		ChargeInterval: 750
+		EndChargeSpeechNotification:
+		SelectTargetSpeechNotification: SelectTarget
+		Actor: sonar
+		LifeTime: 250
+		DeploySound: sonpulse.aud
+		EffectImage: moveflsh
+		EffectPalette: moveflash
+		OrderName: SonarPulsePowerInfoOrder
+	SupportPowerChargeBar:
+
+GDIHQ:
+	Inherits: ^BaseBuilding
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
+	Inherits@shape: ^2x2Shape
+	HitShape:
+		TargetableOffsets: 0,0,0, 0,512,0, 420,-598,256
+		Type: Rectangle
+			TopLeft: -1024, -384
+			BottomRight: 1024, 1024
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Communications Center (GDI)
+	ProvidesPrerequisite:
+		Prerequisite: anyhq
+	ProvidesPrerequisite@eyeupgrade:
+		Prerequisite: eye
+		RequiresCondition: eyeupgrade
+	Buildable:
+		BuildPaletteOrder: 5
+		Prerequisites: proc, anypower, ~structures.gdi, ~techlevel.low
+		Queue: Building
+		Description: Provides an overview minimap\nof the battlefield\nDetects cloaked units in a radius\n Special Ability: Recon Drone\nAn UAV reveals a strip of the map\nand cloaked enemy units within sight
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Selectable:
+		Bounds: 48,40,0,9
+		DecorationBounds: 48,53,0,-4
+	SelectionDecorations:
+	WithSpriteBody:
+		PauseOnCondition: disabled
+	WithIdleOverlay@DISH:
+		Sequence: idle-dish
+		PauseOnCondition: disabled
+		RequiresCondition: !eyeupgrade && !build-incomplete
+	WithIdleOverlay@OTHERDISH:
+		Sequence: idle-dish2
+		PauseOnCondition: disabled
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@EYE:
+		Sequence: idle-dish3
+		PauseOnCondition: disabled
+		RequiresCondition: eyeupgrade && !build-incomplete
+	Health:
+		HP: 80000
+	RevealsShroud:
+		Range: 10c0
+		RequiresCondition: !disabled && !eyeupgrade
+	RevealsShroud@UPGRADED:
+		Range: 15c0
+		RequiresCondition: !disabled && eyeupgrade
+	RevealsShroud@disabled:
+		Range: 5c0
+		RequiresCondition: disabled
+	WithBuildingBib:
+	ProvidesRadar:
+		RequiresCondition: !jammed && !disabled
+	RenderDetectionCircle:
+	DetectCloaked:
+		Range: 6c0
+		RequiresCondition: !disabled
+	AirstrikePower@uav:
+		PauseOnCondition: disabled || empdisable
+		OrderName: GDIUAVPowerInfoOrder
+		Prerequisites: ~techlevel.unrestricted
+		Icon: uavicon
+		ChargeInterval: 7500
+		Description: Recon Drone
+		LongDesc: An UAV reveals a strip of the map\nand cloaked enemy units within sight
+		SelectTargetSpeechNotification: SelectTarget
+		CameraActor: camera.spyplane
+		CameraRemoveDelay: 0
+		UnitType: uav
+		QuantizedFacings: 32
+		DisplayBeacon: true
+		BeaconPoster: lruavicon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+	GpsPower@GPS:
+		RequiresCondition: eyeupgrade
+		PauseOnCondition: disabled || empdisable
+		Icon: gps
+		OneShot: yes
+		ChargeInterval: 1
+		Description: GPS Satellite
+		LongDesc: Reveals map terrain and provides tactical information\nRequires power and active radar
+		Prerequisites: ~techlevel.unrestricted
+		RevealDelay: 1
+		LaunchSpeechNotification:
+		DisplayTimerStances: Ally, Neutral, Enemy
+		StartFullyCharged: True
+		DoorImage: blank
+		DoorSequence: idle
+		SatelliteSequence: idle
+	IonCannonPower@ION:
+		RequiresCondition: eyeupgrade
+		PauseOnCondition: disabled || empdisable
+		Prerequisites: ~techlevel.unrestricted
+		Icon: ioncannon
+		Cursor: ioncannon
+		ChargeInterval: 6750
+		Description: Ion Cannon
+		LongDesc: Initiate an Ion Cannon strike\nApplies instant damage to an small area
+		BeginChargeSpeechNotification: IonCannonCharging
+		EndChargeSpeechNotification: IonCannonReady
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		OnFireSound: ion1.aud
+		DisplayRadarPing: True
+		CameraActor: camera.small
+	SupportPowerChargeBar:
+	Power:
+		Amount: -30
+	RenderSprites:
+		Image: gdihq
+	Pluggable:
+		Conditions:
+			eyeupgrade: eyeupgrade
+		Requirements:
+			eyeupgrade: !eyeupgrade && !build-incomplete
+	Targetable:
+		TargetTypes: Ground, Structure, C4, DetonateAttack, SpyInfiltrate
+	InfiltrateForExploration:
+		Types: SpyInfiltrate
+
+EYE:
+	Inherits: ^BuildingPlug
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Sattelite Uplink
+	Buildable:
+		BuildPaletteOrder: 11
+		Prerequisites: tech, !eye, ~structures.gdi, ~techlevel.high
+		Queue: Defense
+		BuildLimit: 1
+		Description: Add an Sattelite Uplink to\nan GDI Comm. Center\nReveals map terrain\nand provides tactical information\nMaximum 1 can be built\n Requires power and active radar\n Special Ability: Ion Cannon Strike\nApplies instant damage to an small area
+	Power:
+		Amount: -60
+	Plug:
+		Type: eyeupgrade
+
+HQ:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^2x2Shape
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
+	HitShape:
+		TargetableOffsets: 0,0,0, 0,512,0, 420,-598,256
+		Type: Rectangle
+			TopLeft: -1024, -384
+			BottomRight: 1024, 1024
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Communications Center (Nod)
+	ProvidesPrerequisite:
+		Prerequisite: anyhq
+	Buildable:
+		BuildPaletteOrder: 5
+		Prerequisites: proc, anypower, ~structures.nod, ~techlevel.low
+		Queue: Building
+		Description: Provides an overview minimap\nof the battlefield\nDetects cloaked units in a radius\nCan be deployed for increased sight\nand detection radius at the cost of\nincreased power consumption\n Special Ability: Radar Scan\nReveals an area of the map for a while,\nalso detects cloaked units in that area
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Selectable:
+		Bounds: 48,40,0,9
+		DecorationBounds: 48,53,0,-4
+	SelectionDecorations:
+	WithSpriteBody:
+		PauseOnCondition: disabled
+	Health:
+		HP: 80000
+	RevealsShroud@default:
+		Range: 10c0
+		RequiresCondition: !disabled && !deployed
+	RevealsShroud@deployed:
+		Range: 15c0
+		RequiresCondition: !disabled && deployed
+	RevealsShroud@disabled:
+		Range: 5c0
+		RequiresCondition: disabled
+	WithBuildingBib:
+	ProvidesRadar:
+		RequiresCondition: !jammed && !disabled
+	RenderDetectionCircle:
+	DetectCloaked@default:
+		Range: 6c0
+		RequiresCondition: !disabled && !deployed
+	DetectCloaked@deployed:
+		Range: 9c0
+		RequiresCondition: !disabled && deployed
+	GrantConditionOnDeploy:
+		DeployedCondition: deployed
+		SkipMakeAnimation: True
+		DeploySound: bleep9.aud
+		UndeploySound: bleep13.aud
+		RequiresCondition: !disabled
+	SupportPowerChargeBar:
+	Power:
+		Amount: -20
+		RequiresCondition: !deployed
+	Power@deployed:
+		Amount: -40
+		RequiresCondition: deployed
+	RenderSprites:
+		Image: nodhq
+	WithDecoration@deployed:
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-deployed
+		ReferencePoint: Top
+		ZOffset: 256
+		RequiresCondition: deployed
+	Targetable:
+		TargetTypes: Ground, Structure, C4, DetonateAttack, SpyInfiltrate
+	InfiltrateForExploration:
+		Types: SpyInfiltrate
+	SpawnActorPower@RADAR_SCAN:
+		PauseOnCondition: empdisable || disabled
+		Actor: camera.small
+		Prerequisites: techlevel.unrestricted
+		LifeTime: 300
+		ChargeInterval: 1500
+		Icon: radarscan
+		Description: Radar Scan
+		LongDesc: Reveals an area of the map for a while,\nalso detects cloaked units in that area
+		StartFullyCharged: false
+		SelectTargetSpeechNotification: SelectTarget
+		OrderName: RadarScanPowerInfoOrder
+		Cursor: chrono-select
+
+ARMY:
+	Inherits: ^BaseBuilding
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
+	Inherits@shape: ^2x2Shape
+	Selectable:
+		Bounds: 48,48
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 40000
+	Armor:
+		Type: Wood
+	Tooltip:
+		Name: Armory
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 13
+		Prerequisites: barracks, anyhq, ~structures.gdi, ~techlevel.medium
+		Description: Weapons depot of the GDI\nEnables production of advanced infantry\n Special Ability: Paratroopers\nAn C17 Plane drops a small Veteran\ninfantry squad anywhere on the map
+	SelectionDecorations:
+	RevealsShroud:
+		Range: 4c0
+		RequiresCondition: !disabled
+	RevealsShroud@disabled:
+		Range: 2c0
+		RequiresCondition: disabled
+	WithBuildingBib:
+	WithSpriteBody:
+		PauseOnCondition: disabled
+	Power:
+		Amount: -30
+	ProvidesPrerequisite@buildingname:
+	Valued:
+		Cost: 500
+	ParatroopersPower@GDIParatroopers:
+		OrderName: GDIParatroopersPowerInfoOrder
+		Prerequisites: ~barracks, ~aircraft.gdi, ~techlevel.unrestricted
+		Icon: paratroopers
+		ChargeInterval: 7500
+		Description: Paratroopers
+		LongDesc: An C17 Plane drops a small Veteran\ninfantry squad anywhere on the map
+		UnitType: C17
+		DropItems: GIR1,E3R1,MEDI,E3R1,GIR1
+		ReinforcementsArrivedSpeechNotification: Reinforce
+		SelectTargetSpeechNotification: SelectTarget
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.paradrop
+		DisplayBeacon: true
+		BeaconPoster: pinficon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		PauseOnCondition: disabled || empdisable
+		Cursor: airdrop
+	SupportPowerChargeBar:
+
+SHRN:
+	Inherits: ^BaseBuilding
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
+	Inherits@shape: ^2x2Shape
+	Selectable:
+		Bounds: 48,48
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Shrine of Nod
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 13
+		Prerequisites: barracks, anyhq, ~structures.nod, ~techlevel.medium
+		BuildLimit: 1
+		Description: Hidden Shrine of the Blackhand\nEnables production of advanced unit and structures\n Special Ability: Demoralize\nUses propaganda to break morale of enemy units\nAffected units have their Rate of Fire reduced to 25% of their base rate
+	SelectionDecorations:
+	WithSpriteBody:
+		PauseOnCondition: disabled
+	Health:
+		HP: 50000
+	RevealsShroud:
+		Range: 5c0
+		RequiresCondition: !disabled
+	RevealsShroud@disabled:
+		Range: 2c0
+		RequiresCondition: disabled
+	WithBuildingBib:
+	Power:
+		Amount: -50
+	MustBeDestroyed:
+		RequiredForShortGame: false
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	ProvidesPrerequisite@buildingname:
+	ProximityExternalCondition@STEALTHGEN:
+		Condition: in_sgen_radius
+		Range: 5c0
+		RequiresCondition: !disabled
+	WithIdleOverlay@ORB:
+		Sequence: idle-orb
+		PauseOnCondition: disabled
+		RequiresCondition: !build-incomplete
+	-AcceptsDeliveredCash:
+	WithRangeCircle:
+		Range: 5c0
+		Type: cloakgenerator
+	GrantExternalConditionPower@DEMORALIZE:
+		OrderName: DemoralizePowerInfoOrder
+		PauseOnCondition: empdisable
+		Prerequisites: ~techlevel.unrestricted
+		Icon: demoralize
+		ChargeInterval: 6000
+		Range: 1
+		Description: Demoralize
+		LongDesc: Uses propaganda to break morale of enemy units\nAffected units have their Rate of Fire reduced to 25% of their base rate
+		Duration: 500
+		OnFireSound:
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		Condition: demoralized
+		ValidStances: enemy
+		Cursor: attack-red
+		BlockedCursor: attack-red-blocked
+
+TECH:
+	Inherits: ^BaseBuilding
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
+	Inherits@shape: ^3x2Shape
+	Selectable:
+		Bounds: 72,48
+	HitShape:
+		TargetableOffsets: 420,-768,0, 420,768,0, -770,-768,0, -770,768,0
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 14
+		BuildLimit: 1
+		Prerequisites: vehicleproduction, anyhq, barracks, ~structures.gdi, ~techlevel.high
+		Description: Enables to Research new technologies\nUnlocks production of hi-tech unit and structures\nMaximum 1 can be built
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Technology Center
+	ProvidesPrerequisite:
+		Prerequisite: anytech
+	ProvidesPrerequisite@gdi:
+		Factions: gdi
+		Prerequisite: research.gdi
+	ProvidesPrerequisite@nod:
+		Factions: nod
+		Prerequisite: research.nod
+	Production:
+		Produces: Research
+		PauseOnCondition: disabled
+	Exit:
+	Building:
+		Footprint: XxX XxX
+		Dimensions: 3,2
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 125000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 5c0
+		RequiresCondition: !disabled
+	RevealsShroud@disabled:
+		Range: 2c0
+		RequiresCondition: disabled
+	WithBuildingBib:
+	Power:
+		Amount: -100
+	ProvidesPrerequisite@buildingname:
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+	RenderSprites:
+		Image: miss
+	RenderDetectionCircle:
+	DetectCloaked:
+		Range: 3c0
+		RequiresCondition: !disabled
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1,e1,e6
+	Targetable:
+		TargetTypes: Ground, Structure, C4, DetonateAttack, SpyInfiltrate
+	InfiltrateForSupportPower:
+		Proxy: allunits.upgraded
+		Types: SpyInfiltrate
+
+TMPL:
+	Inherits: ^BaseBuilding
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
+	Inherits@shape: ^3x2Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 0,-896,0, 0,896,0, 840,0,0, -706,0,0, -706,-768,0, -706,640,0
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Temple of Nod
+	ProvidesPrerequisite:
+		Prerequisite: anytech
+	ProvidesPrerequisite@gdi:
+		Factions: gdi
+		Prerequisite: research.gdi
+	ProvidesPrerequisite@nod:
+		Factions: nod
+		Prerequisite: research.nod
+	Production:
+		Produces: Research
+		PauseOnCondition: disabled
+	Exit:
+	Buildable:
+		BuildPaletteOrder: 14
+		Prerequisites: vehicleproduction, anyhq, barracks, ~structures.nod, ~techlevel.high
+		Queue: Building
+		BuildLimit: 1
+		Description: Enables to Research new technologies\nUnlocks production of hi-tech unit and structures\nMaximum 1 can be built\n Special Ability: Atom Bomb\nFires an devastating Nuclear warhead\n If Techlevel Unlimited explodes violently upon destruction
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+		LocalCenterOffset: 0,-512,0
+	Selectable:
+		Bounds: 72,48
+		DecorationBounds: 72,68,0,-12
+	SelectionDecorations:
+	Health:
+		HP: 210000
+	RevealsShroud:
+		Range: 5c0
+		RequiresCondition: !disabled
+	RevealsShroud@disabled:
+		Range: 2c0
+		RequiresCondition: disabled
+	WithBuildingBib:
+	RenderDetectionCircle:
+	DetectCloaked:
+		Range: 3c0
+		RequiresCondition: !disabled
+	NukePower:
+		PauseOnCondition: disabled || empdisable
+		Prerequisites: ~techlevel.unrestricted
+		Icon: abomb
+		Cursor: nuke
+		ChargeInterval: 13500
+		Description: Nuclear Strike
+		LongDesc: Launch a tactical nuclear warhead\nApplies heavy damage over a large area
+		EndChargeSpeechNotification: NuclearWeaponAvailable
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		LaunchSpeechNotification: NuclearWeaponLaunched
+		IncomingSpeechNotification: NuclearWarheadApproaching
+		MissileWeapon: atomic
+		MissileDelay: 11
+		SpawnOffset: 3c0,0,-1c512
+		DisplayBeacon: True
+		BeaconPoster: atomic
+		DisplayRadarPing: True
+		CameraRange: 10c0
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+	WithNukeLaunchAnimation:
+		RequiresCondition: !build-incomplete
+	WithNukeLaunchOverlay:
+		RequiresCondition: !build-incomplete
+		Sequence: smoke
+	SupportPowerChargeBar:
+	Power:
+		Amount: -150
+	ProvidesPrerequisite@buildingname:
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1,e1,e6
+	GrantConditionOnPrerequisite@EXPLODENUCLEAR:
+		Condition: nukeon
+		Prerequisites: techlevel.unrestricted
+	Explodes:
+		Weapon: MiniNuke
+		EmptyWeapon: MiniNuke
+		DamageSource: Killer
+		RequiresCondition: nukeon
+	Targetable:
+		TargetTypes: Ground, Structure, C4, DetonateAttack, SpyInfiltrate
+	InfiltrateForSupportPower:
+		Proxy: allunits.upgraded
+		Types: SpyInfiltrate
+
+FAKE.TMPL:
+	Inherits: ^FakeBuilding
+	Inherits@IDISABLE: ^DisableOnLowPower
+	Inherits@shape: ^3x2Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 0,-896,0, 0,896,0, 840,0,0, -706,0,0, -706,-768,0, -706,640,0
+	Selectable:
+		Bounds: 72,48
+		DecorationBounds: 72,68,0,-12
+	SelectionDecorations:
+	Tooltip:
+		Name: Temple of Nod (Decoy)
+		GenericName: Temple of Nod
+		GenericVisibility: Enemy
+		GenericStancePrefix: False
+	Buildable:
+		BuildPaletteOrder: 14
+		Queue: Defense
+		Prerequisites: vehicleproduction, anyhq, barracks, ~structures.nod, ~techlevel.unrestricted
+		BuildLimit: 1
+		Description: Appears like a Temple of Nod to your enemies\nMaximum 1 can be built
+		Icon: fake-icon
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+		LocalCenterOffset: 0,-512,0
+	RenderSprites:
+		Image: TMPL
+	Valued:
+		Cost: 1000
+	Health:
+		HP: 105000
+	Armor:
+		Type: Wood
+	Explodes:
+		DamageThreshold: 50
+	WithBuildingBib:
+
+MSLO:
+	Inherits: ^BaseBuilding
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
+	Inherits@shape: ^2x1Shape
+	Selectable:
+		Bounds: 48,24
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Missile Silo
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 12
+		Prerequisites: gcom, ~structures.gdi, ~techlevel.unrestricted
+		BuildLimit: 1
+		Description: Stores and prepares an atom bomb for launch\nMaximum 1 can be built\nStructure is cloaked\nExplodes violently on death\n Special Ability: Atom Bomb\nFires an devastating Nuclear warhead
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	Health:
+		HP: 100000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 3c0
+		RequiresCondition: !disabled
+		RevealGeneratedShroud: False
+	RevealsShroud@Offline:
+		Range: 1c0
+		RequiresCondition: disabled
+	ProvidesPrerequisite@buildingname:
+	NukePower:
+		PauseOnCondition: disabled || empdisable
+		Prerequisites: ~techlevel.unrestricted
+		Icon: abomb
+		Cursor: nuke
+		ChargeInterval: 13500
+		Description: Nuclear Strike
+		LongDesc: Launch a tactical nuclear warhead\nApplies heavy damage over a large area
+		EndChargeSpeechNotification: NuclearWeaponAvailable
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		LaunchSpeechNotification: NuclearWeaponLaunched
+		IncomingSpeechNotification: NuclearWarheadApproaching
+		MissileWeapon: atomic
+		MissileDelay: 11
+		SpawnOffset: 1c0,427,0
+		DisplayBeacon: True
+		BeaconPoster: atomic
+		DisplayRadarPing: True
+		CameraRange: 10c0
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+	SupportPowerChargeBar:
+	Cloak:
+		InitialDelay: 125
+		CloakDelay: 60
+		CloakSound:
+		UncloakSound: appear1.aud
+		Palette: racloak
+		IsPlayerPalette: true
+		CloakedCondition: hidden
+		PauseOnCondition: !(!cloak-force-disabled)
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+	WithDecoration@hidden:
+		Image: pips
+		Sequence: pip-stealth
+		ReferencePoint: Top, Left
+		ZOffset: 256
+		RequiresCondition: hidden
+	Power:
+		Amount: -150
+	MustBeDestroyed:
+		RequiredForShortGame: false
+	WithNukeLaunchAnimation:
+		RequiresCondition: !build-incomplete
+	Explodes:
+		Weapon: MiniNuke
+		EmptyWeapon: MiniNuke
+		DamageSource: Killer
+
+HOSP.Buildable:
+	Inherits: ^BaseBuilding
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
+	Inherits@shape: ^2x2Shape
+	Selectable:
+		Bounds: 48,48
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 40000
+	Armor:
+		Type: Wood
+	Tooltip:
+		Name: Hospital
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 16
+		Prerequisites: army, anytech, ~structures.gdi, ~techlevel.high
+		BuildLimit: 1
+		Description: Field hospital of the GDI\nMaximum 1 can be built\n Passive Ability: Medical Distribution\nAllows Infantry to self-heal
+	SelectionDecorations:
+	RevealsShroud:
+		Range: 3c0
+	WithBuildingBib:
+	Power:
+		Amount: -20
+	ProvidesPrerequisite@buildingname:
+	Valued:
+		Cost: 750
+	GpsDot:
+		String: Hospital
+	RepairsUnits:
+		HpPerStep: 500
+		PlayerExperience: 15
+		PauseOnCondition: disabled || empdisable
+	RenderSprites:
+		Image: hosp
+
+BIO.Buildable:
+	Inherits: ^BaseBuilding
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
+	Inherits@shape: ^2x2Shape
+	Selectable:
+		Bounds: 48,48
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 40000
+	Armor:
+		Type: Wood
+	Tooltip:
+		Name: Biological Lab
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 16
+		Prerequisites: tmpl, proc, ~structures.nod, ~techlevel.high
+		BuildLimit: 1
+		Description: Research facility of the Brotherhood\nEnables production of chemical unit and cyborgs\n Requires Power to operate\n Passive Ability: NBC Suits\nRenders Infantry units immune to Tiberium\n Special Ability: Hunter Seeker UAV\nReleases a Tiberium seeking drone that will\nacquire and detonate an enemy Harvester
+	SelectionDecorations:
+	RevealsShroud:
+		Range: 3c0
+	WithBuildingBib:
+	Power:
+		Amount: -40
+	ProvidesPrerequisite@buildingname:
+	Valued:
+		Cost: 1000
+	GpsDot:
+		String: Biohazard
+	RenderSprites:
+		Image: bio
+	WithIdleOverlay@SMOKE:
+		Sequence: idle-smoke
+		RequiresCondition: !build-incomplete && !disabled && !empdisable
+	ProduceActorPower@HUNTSEEK:
+		PauseOnCondition: disabled || empdisable
+		Prerequisites: ~techlevel.unrestricted
+		OrderName: NodUAVPowerInfoOrder
+		Description: Hunter Seeker
+		LongDesc: Doesnt work because missing targeting logic\nReleases a Tiberium seeking drone that will\nacquire and detonate an enemy Harvester
+		Icon: hunter
+		Actors: hunter
+		Type: HunterSeeker
+		ChargeInterval: 9000
+	Production:
+		Produces: HunterSeeker
+		PauseOnCondition: empdisable
+	Exit@1:
+	ExitsDebugOverlay:
+	SupportPowerChargeBar:
+	Explodes:
+		Weapon: TiberiumExplosion
+
+GCOM:
+	Inherits: ^BaseBuilding
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
+	Inherits@shape: ^3x2Shape
+	Selectable:
+		Bounds: 72,72
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 17
+		BuildLimit: 1
+		Prerequisites: tech, ~structures.gdi, ~techlevel.high
+		Description: Strategical Headquarters of the GDI\nThe presence of High Command authorizes\nusage of the Nuclear arsenal\nAllows to pick one of three strategies\nproviding an global bonus for the affected\nMaximum 1 can be built\n Requires power to operate\n Special Ability: Airstrike\nAn aerial napalm strike burns buildings\nand infantry along a line
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Command Center
+	Building:
+		Footprint: XxX xxX
+		Dimensions: 3,2
+		LocalCenterOffset: 0,-512,0
+	Production:
+		Produces: Strategy
+		PauseOnCondition: disabled
+	ProductionQueue:
+		Type: Strategy
+		Group: Research
+		LowPowerModifier: 300
+		ReadyAudio:
+		BlockedAudio:
+		LimitedAudio:
+		QueuedAudio:
+		OnHoldAudio:
+		CancelledAudio:
+	Exit:
+	Health:
+		HP: 40000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 5c0
+		RequiresCondition: !disabled
+	RevealsShroud@disabled:
+		Range: 2c0
+		RequiresCondition: disabled
+	WithBuildingBib:
+	Power:
+		Amount: -40
+	ProvidesPrerequisite@buildingname:
+	RenderDetectionCircle:
+	DetectCloaked:
+		Range: 3c0
+		RequiresCondition: !disabled
+	AirstrikePower@a10planes:
+		PauseOnCondition: disabled || empdisable
+		Prerequisites: ~techlevel.unrestricted
+		Icon: airstrike
+		ChargeInterval: 6000
+		SquadSize: 3
+		QuantizedFacings: 8
+		Description: Air Strike
+		LongDesc: Deploy an aerial napalm strike\nBurns buildings and infantry along a line
+		EndChargeSpeechNotification: AirstrikeReady
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		IncomingSpeechNotification: EnemyPlanesApproaching
+		UnitType: a10.bomber
+		DisplayBeacon: True
+		BeaconPoster: airstrike
+		DisplayRadarPing: True
+		CameraActor: camera
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		Cursor: airstrike
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1,e1,e6
+	SupportPowerChargeBar:
+
+INTC:
+	Inherits: ^BaseBuilding
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
+	Inherits@shape: ^2x2Shape
+	Selectable:
+		Bounds: 48,48
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 40000
+	Armor:
+		Type: Wood
+	Tooltip:
+		Name: Intelligence Center
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 17
+		Prerequisites: tmpl, ~structures.nod, ~techlevel.high
+		BuildLimit: 1
+		Description: Secret lair of Nod hacker teams\n Requires power to operate\n Passive Ability: Scrambling\nObscures enemy vision in a radius around itself\n Special Ability: Sattelite Hack\nBlackouts the opposition's minimap for a while
+	SelectionDecorations:
+	RevealsShroud:
+		Range: 7c0
+		RequiresCondition: !disabled
+	RevealsShroud@disabled:
+		Range: 3c0
+		RequiresCondition: disabled
+	CreatesShroud:
+		Range: 8c0
+		RequiresCondition: !disabled
+	RenderShroudCircle:
+	WithBuildingBib:
+	Power:
+		Amount: -40
+	ProvidesPrerequisite@buildingname:
+	Valued:
+		Cost: 1000
+	Production:
+		Produces: Intelligence
+		PauseOnCondition: disabled || empdisable
+	ProduceActorPower@BLACKOUT:
+		PauseOnCondition: disabled || empdisable
+		Prerequisites: ~techlevel.unrestricted
+		Description: Sattelite Hack
+		LongDesc: Blackouts the opposition's minimap for a while
+		Icon: sattelitehack
+		Actors: blackout
+		Type: Intelligence
+		ChargeInterval: 7500
+		OrderName: SatteliteHackPowerInfoOrder
+	SupportPowerChargeBar:
+	Exit@1:
+	ExitsDebugOverlay:
+
+SGEN:
+	Inherits: ^BaseBuilding
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 11
+		Prerequisites: tmpl, ~structures.nod, ~techlevel.unrestricted
+		Description: Cloaks unit and structures within radius\n Special Ability: Portable GAP Scramblers\nAffected ground Vehicle or Ships will obscure\ndirect enemy vision on themselves at an close radius
+	Valued:
+		Cost: 1250
+	Tooltip:
+		Name: Stealth Generator
+	Building:
+		Footprint: xxx xx=
+		Dimensions: 3,2
+		LocalCenterOffset: 0,0,0
+	WithSpriteBody:
+		PauseOnCondition: disabled
+	ProximityExternalCondition@STEALTHGEN:
+		Condition: in_sgen_radius
+		Range: 8c0
+		RequiresCondition: !disabled
+	SelectionDecorations:
+	ProvidesPrerequisite@buildingname:
+	Health:
+		HP: 50000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 5c0
+		RequiresCondition: !disabled
+	RevealsShroud@Offline:
+		Range: 2c0
+		RequiresCondition: disabled
+	WithBuildingBib:
+	Power:
+		Amount: -70
+	MustBeDestroyed:
+		RequiredForShortGame: false
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -1536, -1024
+			BottomRight: 1024, 1024
+	-AcceptsDeliveredCash:
+	WithRangeCircle:
+		Range: 8c0
+		Type: cloakgenerator
+	GrantExternalConditionPower@GPS_SCRAMBLER:
+		PauseOnCondition: disabled || empdisable
+		OrderName: GAPScramblerPowerInfoOrder
+		Prerequisites: ~techlevel.unrestricted
+		Icon: gpsscrambler
+		ChargeInterval: 6000
+		Range: 1
+		Duration: 0
+		Description: Portable GAP Scramblers
+		LongDesc: Affected ground Vehicle or Ships will obscure\ndirect enemy vision on themselves at an close radius
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		Condition: gap_scrambler
+		ValidStances: ally
+		Cursor: chrono-target
+		BlockedCursor: chrono-blocked
+
+EMPC:
+	Inherits: ^BaseBuilding
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
+	Inherits@SHAPE: ^2x2Shape
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: EMP Cannon
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 13
+		Prerequisites: intc, ~structures.nod, ~techlevel.unrestricted
+		BuildLimit: 1
+		Description: Electromagnetic Pulse Cannon\nMaximum 1 can be built\n Special Ability: EMP Blast\nFires an energy pulse that disables all\nmechanical units and structures within its area of effect
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 50000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 5c0
+		RequiresCondition: !disabled
+	RevealsShroud@disabled:
+		Range: 2c0
+		RequiresCondition: disabled
+	Turreted:
+		TurnSpeed: 8
+		InitialFacing: 224
+	AttackTurreted:
+		RequiresCondition: !empdisable && !disabled
+	Armament:
+		Weapon: EMPCannon
+		LocalOffset: 212,0,534
+		LocalYaw: 0,100
+	WithSpriteTurret:
+		Sequence: turret
+	Power:
+		Amount: -150
+	SelectionDecorations:
+	RenderSprites:
+		Image: empc
+	AttackOrderPower:
+		PauseOnCondition: empdisable || disabled
+		Icon: empblast
+		ChargeInterval: 9000
+		Description: EMP Blast
+		OrderName: EMPBlastPowerInfoOrder
+		LongDesc: Fires an energy pulse that disables all\nmechanical units and structures within its area of effect
+		EndChargeSpeechNotification: IonCannonReady
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		Cursor: artilerybarrage
+	SupportPowerChargeBar:
+	Selectable:
+		Bounds: 48,48
+	SelectionDecorations:
+
+GTWR:
+	Inherits: ^Defense
+	Inherits@IDISABLE: ^DisableOnPowerDown
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Selectable:
+		Bounds: 24,24
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Guard Tower
+		GenericName: Anti-Infantry Defense
+		RequiresCondition: !aatwr
+	Tooltip@AA:
+		Name: Anti-Air Tower
+		GenericName: Anti-Air Defense
+		RequiresCondition: aatwr
+	Buildable:
+		BuildPaletteOrder: 6
+		Prerequisites: barracks, ~techlevel.low
+		Queue: Defense
+		Description: Basic Anti-Infantry base defense\n Strong vs Infantry\n Weak vs Tanks
+	Building:
+	Health:
+		HP: 40000
+	RevealsShroud:
+		Range: 7c0
+	WithBuildingBib:
+		HasMinibib: Yes
+	Armament@DEFAULT:
+		Name: mg
+		Weapon: HighV
+		LocalOffset: 256,0,256
+		MuzzleSequence: muzzle
+		Turret: default
+		PauseOnCondition: disabled || empdisable
+		RequiresCondition: !aatwr && !apbulletson
+	Armament@UPGRADED:
+		Name: mgupg
+		Weapon: HighVAP
+		LocalOffset: 256,0,256
+		MuzzleSequence: muzzle
+		Turret: default
+		PauseOnCondition: disabled || empdisable
+		RequiresCondition: !aatwr && apbulletson
+	Armament@SECONDARY:
+		Name: gdisam
+		Weapon: TowerAAMissile
+		Turret: gdisam
+		LocalOffset: 256,128,0, 256,-128,0
+		LocalYaw: -100,100
+		PauseOnCondition: disabled || empdisable
+		RequiresCondition: aatwr
+	AttackTurreted:
+		Armaments: mg, mgupg, gdisam
+		Turrets: default, gdisam
+		PauseOnCondition: disabled || empdisable
+		RequiresCondition: !build-incomplete
+	Turreted@Default:
+		Turret: default
+		TurnSpeed: 255
+	Turreted@GDISAM:
+		Turret: gdisam
+		TurnSpeed: 10
+		InitialFacing: 35
+		Offset: 0,-50,150
+	WithSpriteTurret@GDISAM:
+		Sequence: turret_sam
+		Turret: gdisam
+		RequiresCondition: aatwr
+	BodyOrientation:
+		QuantizedFacings: 8
+	DetectCloaked:
+		Range: 3c0
+		RequiresCondition: !disabled && !build-incomplete
+	WithMuzzleOverlay:
+	Power:
+		Amount: -10
+	RenderSprites:
+		Image: gtwr
+	RequiresBuildableArea:
+		Adjacent: 3
+	-SpawnActorsOnSell:
+	Pluggable:
+		Conditions:
+			aatwr: aatwr
+		Requirements:
+			aatwr: !aatwr && !build-incomplete
+	GrantConditionOnPrerequisite@APBULLETS:
+		Condition: apbulletson
+		Prerequisites: upgrade.apbullets
+
+GTWR.AA:
+	Inherits: ^BuildingPlug
+	Valued:
+		Cost: 250
+	Tooltip:
+		Name: Anti-Air Tower
+	Buildable:
+		BuildPaletteOrder: 9
+		Prerequisites: anyhq, ~structures.gdi, ~techlevel.medium
+		Queue: Defense
+		Description: Add an SAM Turret to an Guard Tower\nThe resulting Tower can attack only Aircraft
+	Power:
+		Amount: -10
+	Plug:
+		Type: aatwr
+
+GUN:
+	Inherits: ^Defense
+	Inherits@IDISABLE: ^DisableOnPowerDown
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Selectable:
+		Bounds: 24,24
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Gun Turret
+		GenericName: Anti-Vehicle Defense
+	Buildable:
+		BuildPaletteOrder: 7
+		Prerequisites: vehicleproduction, ~techlevel.low
+		Queue: Defense
+		Description: Basic Anti-Tank base defense\n Strong vs Tanks, Vehicles\n Weak vs Infantry
+	Building:
+	Health:
+		HP: 41000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 6c0
+	WithBuildingBib:
+		HasMinibib: Yes
+	Turreted:
+		TurnSpeed: 12
+		InitialFacing: 56
+	-WithSpriteBody:
+	WithEmbeddedTurretSpriteBody:
+	Armament:
+		Weapon: TurretGun
+		LocalOffset: 512,0,0
+		MuzzleSequence: muzzle
+		PauseOnCondition: disabled || empdisable
+	AttackTurreted:
+		PauseOnCondition: disabled || empdisable
+		RequiresCondition: !build-incomplete
+	WithMuzzleOverlay:
+	-WithDeathAnimation:
+	DetectCloaked:
+		Range: 3c0
+		RequiresCondition: !disabled && !build-incomplete
+	Power:
+		Amount: -20
+	BodyOrientation:
+		UseClassicFacingFudge: True
+	RequiresBuildableArea:
+		Adjacent: 3
+	-SpawnActorsOnSell:
+
+RTUR:
+	Inherits: ^Defense
+	Inherits@IDISABLE: ^DisableOnPowerDown
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Selectable:
+		Bounds: 36,36
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Railgun Turret
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 10
+		Prerequisites: tech, ~structures.gdi, upgrade.railguns, ~techlevel.high
+		Description: Advanced anti-tank defense, armed with Railgun\n Strong vs Tanks, Vehicles\n Weak vs Infantry
+	Building:
+	Health:
+		HP: 52000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 6c0
+	WithBuildingBib:
+		HasMinibib: Yes
+	Turreted:
+		TurnSpeed: 6
+		InitialFacing: 128
+	Armament:
+		Weapon: MedRail
+		LocalOffset: 1408,-32,256
+		PauseOnCondition: disabled || empdisable
+	AttackTurreted:
+		PauseOnCondition: disabled || empdisable
+		RequiresCondition: !build-incomplete
+	WithSpriteTurret:
+		RequiresCondition: !build-incomplete
+	Power:
+		Amount: -40
+	DetectCloaked:
+		Range: 3c0
+		RequiresCondition: !disabled && !build-incomplete
+	RequiresBuildableArea:
+		Adjacent: 3
+	-SpawnActorsOnSell:
+	BodyOrientation:
+
+LTUR:
+	Inherits: ^Defense
+	Inherits@IDISABLE: ^DisableOnPowerDown
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Selectable:
+		Bounds: 24,24
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Laser Turret
+		GenericName: Anti-Vehicle Defense
+	Buildable:
+		BuildPaletteOrder: 10
+		Prerequisites: tmpl, ~structures.nod, upgrade.lasertech, ~techlevel.high
+		Queue: Defense
+		Description: Advanced Anti-Tank base defense, armed with Laser\nCloaked when out of combat\n Strong vs Tanks, Vehicles\n Weak vs Infantry
+	Building:
+	Health:
+		HP: 46000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 4c0
+	Turreted:
+		TurnSpeed: 12
+		InitialFacing: 56
+	-WithSpriteBody:
+	WithEmbeddedTurretSpriteBody:
+	BodyOrientation:
+		UseClassicFacingFudge: True
+	Armament:
+		Weapon: LaserGun
+		LocalOffset: 412,0,208
+		PauseOnCondition: disabled || empdisable
+	AttackPopupTurreted:
+		CloseDelay: 75
+		RequiresCondition: !build-incomplete
+		PauseOnCondition: disabled || empdisable
+	WithMuzzleOverlay:
+	Power:
+		Amount: -30
+	DetectCloaked:
+		Range: 3c0
+		RequiresCondition: !disabled && !build-incomplete
+	RequiresBuildableArea:
+		Adjacent: 3
+	-SpawnActorsOnSell:
+	BodyOrientation:
+	Cloak:
+		InitialDelay: 90
+		CloakDelay: 90
+		CloakSound:
+		UncloakSound: appear1.aud
+		CloakedCondition: hidden
+		Palette: racloak
+		IsPlayerPalette: true
+		PauseOnCondition: !(!cloak-force-disabled && !empdisable)
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+	WithDecoration@hidden:
+		Image: pips
+		Sequence: pip-stealth
+		ReferencePoint: Top, Left
+		ZOffset: 256
+		RequiresCondition: hidden
+
+ATWR:
+	Inherits: ^Defense
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
+	Inherits@AUTOTARGET: ^AutoTargetAll
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Advanced Guard Tower
+		GenericName: Advanced Defense
+	Buildable:
+		BuildPaletteOrder: 8
+		Prerequisites: anytech, ~structures.gdi, ~techlevel.high
+		Queue: Defense
+		BuildDuration: 2880
+		BuildDurationModifier: 40
+		Description: All-purpose defensive structure\n Strong vs Aircraft, Tanks\n Weak vs Infantry
+	Selectable:
+		Bounds: 24,24
+		DecorationBounds: 22,48,0,-12
+	SelectionDecorations:
+	Health:
+		HP: 55000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 8c0
+	WithBuildingBib:
+		HasMinibib: Yes
+	Turreted:
+		TurnSpeed: 255
+		Offset: 128,128,384
+	Armament@PRIMARY:
+		Name: primary
+		Weapon: TowerMissile
+		LocalOffset: 256,128,0, 256,-128,0
+		LocalYaw: -100,100
+		PauseOnCondition: disabled || empdisable
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: Patriot
+		LocalOffset: 256,128,0, 256,-128,0
+		LocalYaw: -100,100
+		PauseOnCondition: disabled || empdisable || !ammo
+	AmmoPool:
+		Armaments: secondary
+		Ammo: 2
+		PipCount: 0
+		AmmoCondition: ammo
+	ReloadAmmoPool:
+		Delay: 60
+		Count: 1
+	AttackTurreted:
+		PauseOnCondition: disabled || empdisable
+		RequiresCondition: !build-incomplete
+	BodyOrientation:
+		QuantizedFacings: 8
+	DetectCloaked:
+		Range: 5c0
+		RequiresCondition: !disabled && !build-incomplete
+	Power:
+		Amount: -50
+	RequiresBuildableArea:
+		Adjacent: 3
+	-SpawnActorsOnSell:
+
+OBLI:
+	Inherits: ^Defense
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
+	Inherits@AUTOTARGET: ^AutoTargetAll
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Obelisk of Light
+		GenericName: Advanced Defense
+	Buildable:
+		BuildPaletteOrder: 8
+		Prerequisites: tmpl, ~structures.nod, ~techlevel.high
+		Queue: Defense
+		Description: Advanced base defense\n Strong vs all Ground units\n Can target Helicopters with\nan weaker Laser weapon
+	Selectable:
+		Bounds: 24,24
+		DecorationBounds: 22,44,0,-10
+	SelectionDecorations:
+	Health:
+		HP: 75000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 8c0
+	WithBuildingBib:
+		HasMinibib: Yes
+	WithChargeOverlay:
+		RequiresCondition: !build-incomplete
+	Armament:
+		Name: primary
+		Weapon: Laser
+		LocalOffset: 0,-85,1280
+		PauseOnCondition: disabled || empdisable
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: LaserAA
+		LocalOffset: 0,-85,1280
+		PauseOnCondition: disabled || empdisable
+	AttackCharges:
+		RequiresCondition: !build-incomplete
+		PauseOnCondition: disabled || empdisable
+		ChargeLevel: 50
+		ChargingCondition: charging
+	AmbientSound:
+		RequiresCondition: charging
+		SoundFiles: obelpowr.aud
+		Interval: 30, 40
+	DetectCloaked:
+		Range: 5c0
+		RequiresCondition: !disabled && !build-incomplete
+	Power:
+		Amount: -70
+	RequiresBuildableArea:
+		Adjacent: 3
+	-SpawnActorsOnSell:
+
+SAM:
+	Inherits: ^Defense
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
+	Inherits@AUTOTARGET: ^AutoTargetAir
+	Inherits@shape: ^2x1Shape
+	Selectable:
+		Bounds: 48,24
+	HitShape:
+		Type: Rectangle
+			TopLeft: -768,-512
+			BottomRight: 768,512
+	Valued:
+		Cost: 750
+	Tooltip:
+		Name: SAM Site
+		GenericName: Anti-Air Defense
+	Buildable:
+		BuildPaletteOrder: 9
+		Prerequisites: anyhq, ~structures.nod, ~techlevel.medium
+		Queue: Defense
+		BuildDuration: 1700
+		BuildDurationModifier: 40
+		Description: Cloaked Anti-Aircraft base defense\n Strong vs Aircraft\n Cannot target Ground units
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	Health:
+		HP: 40000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 6c0
+	Turreted:
+		TurnSpeed: 10
+		InitialFacing: 0
+		RealignDelay: -1
+	-WithSpriteBody:
+	WithEmbeddedTurretSpriteBody:
+	Armament:
+		Weapon: Dragon
+		MuzzleSequence: muzzle
+		PauseOnCondition: disabled || empdisable
+	AttackPopupTurreted:
+		PauseOnCondition: disabled || empdisable
+		RequiresCondition: !build-incomplete
+	WithMuzzleOverlay:
+	-RenderDetectionCircle:
+	Power:
+		Amount: -20
+	BodyOrientation:
+		UseClassicFacingFudge: True
+	RequiresBuildableArea:
+		Adjacent: 3
+	-SpawnActorsOnSell:
+	Cloak:
+		InitialDelay: 90
+		CloakDelay: 90
+		CloakSound:
+		UncloakSound: appear.aud
+		Palette: racloak
+		IsPlayerPalette: true
+		CloakedCondition: hidden
+		PauseOnCondition: !(!cloak-force-disabled && !empdisable)
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+	WithDecoration@hidden:
+		Image: pips
+		Sequence: pip-stealth
+		ReferencePoint: Top, Left
+		ZOffset: 256
+		RequiresCondition: hidden
+
+SBAG:
+	Inherits: ^Wall
+	Valued:
+		Cost: 50
+	CustomSellValue:
+		Value: 0
+	Tooltip:
+		Name: Sandbag Wall
+		GenericName: Basic Wall
+	Buildable:
+		BuildPaletteOrder: 1
+		Prerequisites: barracks, ~techlevel.low
+		Queue: Defense
+		Description: Stops infantry and light vehicles\nCan be crushed by tanks
+	Armor:
+		Type: Light
+	LineBuild:
+		NodeTypes: sandbag
+	LineBuildNode:
+		Types: sandbag
+	WithWallSpriteBody:
+		Type: sandbag
+
+CYCL:
+	Inherits: ^Wall
+	Valued:
+		Cost: 75
+	CustomSellValue:
+		Value: 0
+	Tooltip:
+		Name: Chain Link Barrier
+		GenericName: Basic Wall
+	Buildable:
+		BuildPaletteOrder: 2
+		Prerequisites: proc, ~techlevel.medium
+		Queue: Defense
+		Description: Stops infantry and light vehicles\nDoesnt block small calibre projectiles\nCan be crushed by tanks
+	Armor:
+		Type: Light
+	LineBuild:
+		NodeTypes: chain
+	LineBuildNode:
+		Types: chain
+	WithWallSpriteBody:
+		Type: chain
+
+BRIK:
+	Inherits: ^Wall
+	Valued:
+		Cost: 150
+	CustomSellValue:
+		Value: 0
+	Tooltip:
+		Name: Concrete Barrier
+		GenericName: Advanced Wall
+	Buildable:
+		BuildPaletteOrder: 3
+		Prerequisites: vehicleproduction, ~techlevel.high
+		Queue: Defense
+		Description: Stops units and blocks enemy non-arced fire
+	Health:
+		HP: 40000
+	Armor:
+		Type: Heavy
+	BlocksProjectiles:
+	Crushable:
+		CrushClasses: heavywall
+		-CrushSound:
+	SoundOnDamageTransition:
+		DestroyedSounds: crumble.aud
+	LineBuild:
+		NodeTypes: concrete
+	LineBuildNode:
+		Types: concrete
+	WithWallSpriteBody:
+		Type: concrete
+
+LSRFPOST:
+	Inherits: ^Building
+	Inherits@IDISABLED: ^DisableOnLowPowerOrPowerDown
+	Building:
+		RequiresBaseProvider: true
+		BuildSounds: constru2.aud, hvydoor1.aud
+		UndeploySounds: cashturn.aud
+		TerrainTypes: Clear,Road
+	RequiresBuildableArea:
+		AreaTypes: building
+		Adjacent: 2
+	MustBeDestroyed:
+		RequiredForShortGame: false
+	RepairableBuilding:
+		RepairPercent: 40
+		RepairStep: 1400
+		PlayerExperience: 15
+	Sellable:
+		SellSounds: cashturn.aud
+	WithBuildingRepairDecoration:
+		Image: allyrepair
+		Sequence: repair
+		ReferencePoint: Center
+		Palette: player
+		IsPlayerPalette: True
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 12
+		Prerequisites: tmpl, ~structures.nod, upgrade.lasertech, ~techlevel.high
+		Description: Stops infantry and blocks enemy fire\nCannot be crushed by tanks
+	Valued:
+		Cost: 400
+	Tooltip:
+		Name: Laser Fence
+		GenericName: Advanced Wall
+	Health:
+		HP: 30000
+	Armor:
+		Type: Concrete
+	LineBuild:
+		Range: 10
+		NodeTypes: laserfencenode
+		SegmentType: lsrfsgmt
+		SegmentsRequireNode: true
+	LineBuildNode:
+		Types: laserfencenode
+	Power:
+		Amount: -25
+	RevealsShroud:
+		Range: 2c0
+	LineBuildSegmentExternalCondition:
+		RequiresCondition: !disabled
+		Condition: active-posts
+	Targetable:
+		TargetTypes: Ground, Structure, C4, DetonateAttack
+
+LSRFSGMT:
+	Inherits: ^Wall
+	Tooltip:
+		Name: Laser Fence
+		GenericName: Bzzzzrrrrttt
+	LineBuild:
+		NodeTypes: laserfence
+	LineBuildNode:
+		Types: laserfence
+	-Crushable:
+	-Sellable:
+	Demolishable:
+	-Targetable:
+	-Building:
+	EnergyWall:
+		ActiveCondition: active-posts == 2
+		Weapon: LaserFence
+	GrantConditionOnLineBuildDirection@X:
+		Direction: X
+		Condition: laserfence-direction-x
+	GrantConditionOnLineBuildDirection@Y:
+		Direction: Y
+		Condition: laserfence-direction-y
+	-WithWallSpriteBody:
+	ExternalCondition@ACTIVE:
+		Condition: active-posts
+	WithWallSpriteBody@XENABLED:
+		RequiresCondition: laserfence-direction-x && active-posts == 2
+		Type: laserfence
+		Sequence: enabled-x
+		Name: x-enabled
+	WithWallSpriteBody@YENABLED:
+		RequiresCondition: laserfence-direction-y && active-posts == 2
+		Type: laserfence
+		Sequence: enabled-y
+		Name: y-enabled
+	WithSpriteBody@XDISABLED:
+		RequiresCondition: laserfence-direction-x && active-posts < 2
+		Sequence: disabled-x
+		Name: x-disabled
+	WithSpriteBody@YDISABLED:
+		RequiresCondition: laserfence-direction-y && active-posts < 2
+		Sequence: disabled-y
+		Name: y-disabled
+	BlocksProjectiles:
+		RequiresCondition: active-posts == 2
+	DamageMultiplier:
+		Modifier: 0
+	Interactable:
+		Bounds: 24, 24
+
+VGATE:
+	Inherits: ^Gate
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -512, -1536
+			BottomRight: 512, 1536
+	Building:
+		Footprint: x x x
+		Dimensions: 1,3
+	Valued:
+		Cost: 250
+	Demolishable:
+		Condition: being-demolished
+	Sellable:
+		RequiresCondition: !build-incomplete && !being-demolished
+	CustomSellValue:
+		Value: 50
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 4
+		Prerequisites: vehicleproduction, ~techlevel.high
+		Description: Places an vertical gate\nThe gate automatically opens for friendly units\nBlocks enemy access into your base
+	WithGateSpriteBody:
+		WallConnections: 0,-1, 0,3
+	LineBuildNode:
+		Connections: 0,-1, 0,1
+	Tooltip:
+		Name: Gate I (vertical)
+
+HGATE:
+	Inherits: ^Gate
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -1536, -512
+			BottomRight: 1536, 512
+	Building:
+		Footprint: xxx
+		Dimensions: 3,1
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 5
+		Prerequisites: vehicleproduction, ~techlevel.high
+		Description: Places an horizontal gate\nThe gate automatically opens for friendly units\nBlocks enemy access into your base
+	Valued:
+		Cost: 250
+	Demolishable:
+		Condition: being-demolished
+	Sellable:
+		RequiresCondition: !build-incomplete && !being-demolished
+	CustomSellValue:
+		Value: 50
+	WithGateSpriteBody:
+		WallConnections: -1,0, 3,0
+	LineBuildNode:
+		Connections: -1,0, 1,0
+	Tooltip:
+		Name: Gate - (horizontal)
+	RenderSprites:
+		Image: ngate
+
+FOXH:
+	Inherits: ^Defense
+	Inherits@AUTOTARGET: ^AutoTargetAll
+	Tooltip:
+		Name: Foxhole
+	Building:
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 120
+		Prerequisites: ~disabled
+		Description: Static defense with a fireport\nfor a garrisoned soldier
+	Valued:
+		Cost: 700
+	CustomSellValue:
+		Value: 500
+	Health:
+		HP: 20000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 1c0
+	Turreted:
+		TurnSpeed: 255
+	-QuantizeFacingsFromSequence:
+	BodyOrientation:
+		QuantizedFacings: 8
+	Cargo:
+		Types: Infantry
+		MaxWeight: 2
+		PipCount: 1
+	-Sellable:
+	-SpawnActorsOnSell:
+	AttackGarrisoned:
+		Armaments: garrisoned
+		PortOffsets: 384,0,128, 224,-341,128, -224,-341,128, -384,0,128, -224,341,128, 224,341,128
+		PortYaws: 0, 176, 341, 512, 682, 853
+		PortCones: 88, 88, 88, 88, 88, 88
+		RequiresCondition: !build-incomplete
+	-MustBeDestroyed:
+	RepairableBuilding:
+	-EngineerRepairable:
+	RenderDetectionCircle:
+	DetectCloaked:
+		Range: 1c0
+	-RenderDetectionCircle:
+	-DetectCloaked:
+	RenderSprites:
+		Image: hbox
+
+BARRACKS:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: Infantry Production
+	Buildable:
+		Description: Infantry Production
+
+VEHICLEPRODUCTION:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: Vehicle Production
+	Buildable:
+		Description: Vehicle Production
+
+AIRCRAFTPRODUCTION:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: an Airfield
+	Buildable:
+		Description: an Airfield
+
+ANYPOWER:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: Power Plant
+	Buildable:
+		Description: Power Plant
+
+ANYHQ:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: a communications center
+	Buildable:
+		Description: a communications center
+
+ANYTECH:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: a technology center
+	Buildable:
+		Description: a technology center
