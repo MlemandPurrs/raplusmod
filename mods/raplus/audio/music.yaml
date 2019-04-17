@@ -76,3 +76,18 @@ rpt: Running Through Pipes
 search: The Search
 traction: Traction
 wastelnd: Wasteland
+
+# Retaliation Tracks
+crus226m_retal: Crush Remix
+fac1226m_retal: No Mercy '98
+hell226m_retal: Hell March Remix
+# contains announcer voice and unit quotes, opted to leave it out
+radio2_retal: Radio 2 Remix
+	Hidden: true
+work226m_retal: Workmen Remix
+mud_remix: Mud Remix
+	VolumeModifier: 1.3
+journey: Journey
+# this is so silly
+surfnomercy: Surf No Mercy
+	Hidden: true

@@ -643,6 +643,7 @@
 		UncloakSound: subshow1.aud
 		CloakedCondition: underwater
 		Palette: submerged
+		UncloakOn: Attack, Heal, Dock, SelfHeal, Demolish
 		PauseOnCondition: cloak-force-disabled || shallowcrossing || empdisable
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled

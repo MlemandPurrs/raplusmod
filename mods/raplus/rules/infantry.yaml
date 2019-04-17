@@ -844,7 +844,7 @@ SNIP:
 		CloakSound:
 		UncloakSound: appear1.aud
 		IsPlayerPalette: true
-		UncloakOn: Attack, Unload, Infiltrate, Demolish, Move
+		UncloakOn: Attack, Unload, Heal, Dock, SelfHeal, Demolish, Move
 		PauseOnCondition: !(!cloak-force-disabled)
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled

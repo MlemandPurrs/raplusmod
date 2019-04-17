@@ -919,6 +919,7 @@ PTNK:
 		CloakDelay: 175
 		CloakSound: appear1.aud
 		UncloakSound: appear1.aud
+		UncloakOn: Attack, Unload, Heal, Dock, SelfHeal
 		IsPlayerPalette: true
 		PauseOnCondition: cloak-force-disabled
 	GrantConditionOnDamageState@UNCLOAK:
@@ -984,6 +985,7 @@ PAPC:
 		CloakSound: appear1.aud
 		UncloakSound: appear1.aud
 		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Heal, Dock, SelfHeal
 		PauseOnCondition: cloak-force-disabled
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
