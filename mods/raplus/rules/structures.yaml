@@ -12,11 +12,14 @@ FACT:
 		Prerequisites: ~disabled
 		Description: Produces Structures and Defenses
 	ProvidesPrerequisite@allies:
-		Factions: allies, britain, france, germany
+		Factions: allies, usa, britain, france, nether, germany, spain, italy, greece, turkey
 		Prerequisite: structures.allies
 	ProvidesPrerequisite@soviet:
-		Factions: soviet, russia, ukraine, kazakh
+		Factions: soviet, russia, ukraine, kazakh, kyrgiz, belarus, moldova, lithuan, karelia, uzbekh
 		Prerequisite: structures.soviet
+	ProvidesPrerequisite@arabs:
+		Factions: arabs, saudi, iraq, syria, jordan, egypt, yemen, somali, qatar, libya
+		Prerequisite: structures.arabs
 	Health:
 		HP: 150000
 	Armor:
@@ -208,7 +211,7 @@ TENT:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 2
-		Prerequisites: ~structures.allies, ~!industryplant.on, ~techlevel.infonly
+		Prerequisites: ~structures.allies, ~!player.britain, ~!industryplant.on, ~techlevel.infonly
 		Description: Trains and heals Infantry units
 	Valued:
 		Cost: 350
@@ -252,12 +255,16 @@ TENT:
 	ProvidesPrerequisite@barracks:
 		Prerequisite: barracks
 	ProvidesPrerequisite@allies:
-		Factions: allies, britain, france, germany
+		Factions: allies, usa, britain, france, nether, germany, spain, italy, greece, turkey
 		Prerequisite: infantry.allies
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@soviet:
-		Factions: soviet, russia, ukraine, kazakh
+		Factions: soviet, russia, ukraine, kazakh, kyrgiz, belarus, moldova, lithuan, karelia, uzbekh
 		Prerequisite: infantry.soviet
+		ResetOnOwnerChange: True
+	ProvidesPrerequisite@arabs:
+		Factions: arabs, saudi, iraq, syria, jordan, egypt, yemen, somali, qatar, libya
+		Prerequisite: infantry.arabs
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@alliedstructure:
 		RequiresPrerequisites: structures.allies
@@ -351,12 +358,16 @@ BARR:
 	ProvidesPrerequisite:
 		Prerequisite: barracks
 	ProvidesPrerequisite@allies:
-		Factions: allies, britain, france, germany
+		Factions: allies, usa, britain, france, nether, germany, spain, italy, greece, turkey
 		Prerequisite: infantry.allies
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@soviet:
-		Factions: soviet, russia, ukraine, kazakh
+		Factions: soviet, russia, ukraine, kazakh, kyrgiz, belarus, moldova, lithuan, karelia, uzbekh
 		Prerequisite: infantry.soviet
+		ResetOnOwnerChange: True
+	ProvidesPrerequisite@arabs:
+		Factions: arabs, saudi, iraq, syria, jordan, egypt, yemen, somali, qatar, libya
+		Prerequisite: infantry.arabs
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@sovietstructure:
 		RequiresPrerequisites: structures.soviet
@@ -394,6 +405,109 @@ BARR.Husk:
 	Tooltip:
 		Name: Barracks (Destroyed)
 
+PYLE:
+	Inherits: ^Building
+	Inherits@shape: ^2x2Shape
+	Inherits@IDISABLE: ^DisableOnPowerDown
+	Selectable:
+		Bounds: 48,48
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 490,-470,0, 355,512,0, -355,-512,0, -630,512,0
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 2
+		Prerequisites: ~structures.arabs, ~!industryplant.on, ~techlevel.infonly
+		Description: Trains and heals Infantry units
+	Valued:
+		Cost: 350
+	Tooltip:
+		Name: Barracks (Arabs)
+	Building:
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 60000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 5c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 4c0
+	WithBuildingBib:
+	RallyPoint:
+	Exit@1:
+		RequiresCondition: !being-captured
+		SpawnOffset: -426,85,0
+		ExitCell: 0,1
+		ProductionTypes: Soldier, Infantry
+	Exit@2:
+		RequiresCondition: !being-captured
+		SpawnOffset: 298,298,0
+		ExitCell: 1,1
+		ProductionTypes: Soldier, Infantry
+	Production:
+		Produces: Infantry, Soldier
+		PauseOnCondition: disabled || on.maintenance
+	GrantExternalConditionToProduced:
+		Condition: produced
+	PrimaryBuilding:
+		PrimaryCondition: primary
+		SelectionNotification: PrimaryBuildingSelected
+	ProductionBar:
+		ProductionType: Infantry
+	ProvidesPrerequisite:
+		Prerequisite: barracks
+	ProvidesPrerequisite@allies:
+		Factions: allies, usa, britain, france, nether, germany, spain, italy, greece, turkey
+		Prerequisite: infantry.allies
+		ResetOnOwnerChange: True
+	ProvidesPrerequisite@soviet:
+		Factions: soviet, russia, ukraine, kazakh, kyrgiz, belarus, moldova, lithuan, karelia, uzbekh
+		Prerequisite: infantry.soviet
+		ResetOnOwnerChange: True
+	ProvidesPrerequisite@arabs:
+		Factions: arabs, saudi, iraq, syria, jordan, egypt, yemen, somali, qatar, libya
+		Prerequisite: infantry.arabs
+		ResetOnOwnerChange: True
+	ProvidesPrerequisite@arabstructure:
+		RequiresPrerequisites: structures.arabs
+		Prerequisite: infantry.arabs
+	Power:
+		Amount: -20
+	ProvidesPrerequisite@buildingname:
+	InfiltrateForSupportPower:
+		Proxy: infantry.upgraded
+		Types: SpyInfiltrate
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+	WithDecoration@primary:
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-primary
+		ReferencePoint: Top
+		ZOffset: 256
+		RequiresCondition: primary
+	RepairsUnits:
+		HpPerStep: 500
+		PlayerExperience: 15
+		PauseOnCondition: disabled
+	WithDeathAnimation:
+		DeathSequence: dead
+		UseDeathTypeSuffix: false
+
+PYLE.Husk:
+	Inherits: ^CivBuildingHusk
+	Interactable:
+		Bounds: 48,48
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: Barracks (Destroyed)
+
 KENN:
 	Inherits: ^Building
 	Selectable:
@@ -401,7 +515,7 @@ KENN:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 3
-		Prerequisites: barracks, ~!industryplant.on, ~techlevel.infonly
+		Prerequisites: barracks, ~!player.britain, ~!industryplant.on, ~techlevel.infonly
 		Description: Trains Attack Dogs
 	Valued:
 		Cost: 100
@@ -572,19 +686,20 @@ PROC:
 		RequiresCondition: !build-incomplete && !on.maintenance
 		Sequence: idle-smoke
 
-PROC.SOVIET:
+PROC.soviet:
 	Inherits: PROC
 	Buildable:
-		Prerequisites: ~structures.soviet, ~!industryplant.on, ~techlevel.low
+		Prerequisites: ~structures.soviet, ~!player.belarus, ~!industryplant.on, ~techlevel.low
 	-FreeActor:
 	FreeActor:
-		Actor: HARV.SOVIET
+		Actor: HARV.soviet
 		SpawnOffset: 1,2
 		Facing: 64
 	RenderSprites:
 		Image: proc
 	ProvidesPrerequisite:
 		Prerequisite: proc
+	-MapEditorData:
 
 PROC.Husk:
 	Inherits: ^CivBuildingHusk
@@ -675,7 +790,7 @@ WEAP:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 5
-		Prerequisites: proc, ~!industryplant.on, ~techlevel.low
+		Prerequisites: proc, ~!player.britain, ~!industryplant.on, ~techlevel.low
 		Description: Produces Vehicle units
 	Valued:
 		Cost: 2000
@@ -686,7 +801,7 @@ WEAP:
 		Dimensions: 3,3
 		LocalCenterOffset: 0,-512,0
 	Health:
-		HP: 150000
+		HP: 172500
 	Armor:
 		Type: Wood
 	RevealsShroud:
@@ -707,12 +822,16 @@ WEAP:
 		Produces: Vehicle
 		PauseOnCondition: disabled || on.maintenance
 	ProvidesPrerequisite@allies:
-		Factions: allies, britain, france, germany
+		Factions: allies, usa, britain, france, nether, germany, spain, italy, greece, turkey
 		Prerequisite: vehicles.allies
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@soviet:
-		Factions: soviet, russia, ukraine, kazakh
+		Factions: soviet, russia, ukraine, kazakh, kyrgiz, belarus, moldova, lithuan, karelia, uzbekh
 		Prerequisite: vehicles.soviet
+		ResetOnOwnerChange: True
+	ProvidesPrerequisite@arabs:
+		Factions: arabs, saudi, iraq, syria, jordan, egypt, yemen, somali, qatar, libya
+		Prerequisite: vehicles.arabs
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@alliedstructure:
 		RequiresPrerequisites: structures.allies
@@ -720,6 +839,9 @@ WEAP:
 	ProvidesPrerequisite@sovietstructure:
 		RequiresPrerequisites: structures.soviet
 		Prerequisite: vehicles.soviet
+	ProvidesPrerequisite@arabstructure:
+		RequiresPrerequisites: structures.arabs
+		Prerequisite: vehicles.arabs
 	ProvidesPrerequisite:
 		Prerequisite: factory
 	PrimaryBuilding:
@@ -762,14 +884,14 @@ FIX:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 8
-		Prerequisites: weap, ~!industryplant.on, ~techlevel.medium
+		Prerequisites: factory, ~!industryplant.on, ~techlevel.medium
 		Description: Repairs Vehicles for credits\n Special Ability: Field Repair\nRepairs vehicles for 30% of their maximum health\nin a small area over time for an short duration
 	Valued:
 		Cost: 750
 	Tooltip:
 		Name: Service Depot
 	Building:
-		Footprint: _=_ xxx _=_
+		Footprint: === xxx ===
 		Dimensions: 3,3
 	Selectable:
 		Bounds: 68,34,0,3
@@ -853,7 +975,7 @@ SYRD:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 6
-		Prerequisites: proc, ~!industryplant.on, ~techlevel.low
+		Prerequisites: proc, ~!player.britain, ~!industryplant.on, ~techlevel.low
 		Description: Produces and repairs Ship naval units
 	Valued:
 		Cost: 1000
@@ -920,12 +1042,16 @@ SYRD:
 	Power:
 		Amount: -30
 	ProvidesPrerequisite@allies:
-		Factions: allies, britain, france, germany
+		Factions: allies, usa, britain, france, nether, germany, spain, italy, greece, turkey
 		Prerequisite: ships.allies
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@soviet:
-		Factions: soviet, russia, ukraine, kazakh
+		Factions: soviet, russia, ukraine, kazakh, kyrgiz, belarus, moldova, lithuan, karelia, uzbekh
 		Prerequisite: ships.soviet
+		ResetOnOwnerChange: True
+	ProvidesPrerequisite@arabs:
+		Factions: arabs, saudi, iraq, syria, jordan, egypt, yemen, somali, qatar, libya
+		Prerequisite: ships.arabs
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@alliedstructure:
 		RequiresPrerequisites: structures.allies
@@ -933,6 +1059,9 @@ SYRD:
 	ProvidesPrerequisite@sovietstructure:
 		RequiresPrerequisites: structures.soviet
 		Prerequisite: ships.soviet
+	ProvidesPrerequisite@arabstructure:
+		RequiresPrerequisites: structures.arabs
+		Prerequisite: ships.arabs
 	ProvidesPrerequisite@buildingname:
 	MapEditorData:
 		ExcludeTilesets: INTERIOR
@@ -987,7 +1116,7 @@ SPEN:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 9
-		Prerequisites: syrd, ~!industryplant.on, ~techlevel.medium
+		Prerequisites: syrd, ~!player.britain, ~!industryplant.on, ~techlevel.medium
 		Description: Produces and repairs Submarine naval units\nDetects Submerged units within a radius\n Special ability: Sonar Pulse\nReveals all submarines in the area for a short time
 	Targetable:
 		TargetTypes: Ground, Water, Structure, WaterStructure, C4, DetonateAttack, SpyInfiltrate
@@ -1084,12 +1213,16 @@ SPEN:
 		RequiresCondition: !disabled && !build-incomplete && lowpower
 	RenderDetectionCircle:
 	ProvidesPrerequisite@allies:
-		Factions: allies, britain, france, germany
+		Factions: allies, usa, britain, france, nether, germany, spain, italy, greece, turkey
 		Prerequisite: submarines.allies
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@soviet:
-		Factions: soviet, russia, ukraine, kazakh
+		Factions: soviet, russia, ukraine, kazakh, kyrgiz, belarus, moldova, lithuan, karelia, uzbekh
 		Prerequisite: submarines.soviet
+		ResetOnOwnerChange: True
+	ProvidesPrerequisite@arabs:
+		Factions: arabs, saudi, iraq, syria, jordan, egypt, yemen, somali, qatar, libya
+		Prerequisite: submarines.arabs
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@alliedstructure:
 		RequiresPrerequisites: structures.allies
@@ -1097,6 +1230,9 @@ SPEN:
 	ProvidesPrerequisite@sovietstructure:
 		RequiresPrerequisites: structures.soviet
 		Prerequisite: submarines.soviet
+	ProvidesPrerequisite@sovietstructure:
+		RequiresPrerequisites: structures.arabs
+		Prerequisite: submarines.arabs
 	ProvidesPrerequisite@buildingname:
 	MapEditorData:
 		ExcludeTilesets: INTERIOR
@@ -1119,10 +1255,26 @@ SPEN:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
-	SpawnActorPower@sonarpulse:
+	SpawnActorPower@SonarNormal:
 		OrderName: SonarPulsePowerInfoOrder
 		PauseOnCondition: disabled || lowpower
-		Prerequisites: ~techlevel.medium
+		Prerequisites: !player.greece, ~techlevel.unrestricted
+		Icon: sonar
+		Description: Sonar Pulse
+		LongDesc: Reveals all Submarines in the area for a short time
+		ChargeInterval: 2250
+		EndChargeSpeechNotification:
+		SelectTargetSpeechNotification: SelectTarget
+		Actor: sonar
+		LifeTime: 250
+		DeploySound: sonpulse.aud
+		EffectImage: moveflsh
+		EffectPalette: moveflash
+		Cursor: gps-target
+	SpawnActorPower@SonarAdvanced:
+		OrderName: AdvSonarPulsePowerInfoOrder
+		PauseOnCondition: disabled || lowpower
+		Prerequisites: player.greece, ~techlevel.unrestricted
 		Icon: sonar
 		Description: Sonar Pulse
 		LongDesc: Reveals all Submarines in the area for a short time
@@ -1163,7 +1315,7 @@ AFLD:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 10
-		Prerequisites: dome, ~!industryplant.on, ~techlevel.medium
+		Prerequisites: dome, ~!player.britain, ~!industryplant.on, ~techlevel.medium
 		Description: Produces, rearms and repairs Airplanes\n Special Ability: Paratroopers\nA plane drops a squad of infantry anywhere on the map
 	Valued:
 		Cost: 750
@@ -1194,12 +1346,16 @@ AFLD:
 		Produces: Aircraft, Plane
 	Reservable:
 	ProvidesPrerequisite@allies:
-		Factions: allies, britain, france, germany
+		Factions: allies, usa, britain, france, nether, germany, spain, italy, greece, turkey
 		Prerequisite: airplanes.allies
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@soviet:
-		Factions: soviet, russia, ukraine, kazakh
+		Factions: soviet, russia, ukraine, kazakh, kyrgiz, belarus, moldova, lithuan, karelia, uzbekh
 		Prerequisite: airplanes.soviet
+		ResetOnOwnerChange: True
+	ProvidesPrerequisite@arabs:
+		Factions: arabs, saudi, iraq, syria, jordan, egypt, yemen, somali, qatar, libya
+		Prerequisite: airplanes.arabs
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@alliedstructure:
 		RequiresPrerequisites: structures.allies
@@ -1207,9 +1363,12 @@ AFLD:
 	ProvidesPrerequisite@sovietstructure:
 		RequiresPrerequisites: structures.soviet
 		Prerequisite: airplanes.soviet
+	ProvidesPrerequisite@arabstructure:
+		RequiresPrerequisites: structures.arabs
+		Prerequisite: airplanes.arabs
 	ParatroopersPower@AlliesParatroopers:
 		OrderName: AlliesParatroopersPowerInfoOrder
-		Prerequisites: ~airplanes.allies, ~techlevel.unrestricted
+		Prerequisites: ~airplanes.allies, !player.usa, ~techlevel.unrestricted
 		Icon: paratroopers
 		ChargeInterval: 7500
 		Description: Paratroopers
@@ -1248,14 +1407,78 @@ AFLD:
 		CircleSequence: circles
 		PauseOnCondition: lowpower || on.maintenance
 		Cursor: airdrop
+	ParatroopersPower@ArabianParatroopers:
+		OrderName: ArabianParatroopersPowerInfoOrder
+		Prerequisites: ~airplanes.arabs, ~techlevel.unrestricted
+		Icon: paratroopers
+		ChargeInterval: 7500
+		Description: Paratroopers
+		LongDesc: A Blimp drops a squad of veteran\ninfantry anywhere on the map
+		DropItems: E1R1,E3R1,E1R1,E3R1,E1R1
+		ReinforcementsArrivedSpeechNotification: ReinforcementsArrived
+		SelectTargetSpeechNotification: SelectTarget
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.paradrop
+		UnitType: blmp
+		DisplayBeacon: true
+		BeaconPoster: pinficon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		PauseOnCondition: lowpower || on.maintenance
+		Cursor: airdrop
+	ParatroopersPower@AmericanParatroopers:
+		OrderName: AmericanParatroopersPowerInfoOrder
+		Prerequisites: ~airplanes.allies, ~player.usa, ~techlevel.unrestricted
+		Icon: paratroopers
+		ChargeInterval: 7500
+		Description: Paratroopers
+		LongDesc: Two B-52 each drop a squad of veteran\ninfantry anywhere on the map
+		DropItems: E1R1,E3R1,MGIR1,E3R1,E1R1, E1R1,E3R1,MGIR1,E3R1,E1R1
+		ReinforcementsArrivedSpeechNotification: ReinforcementsArrived
+		SelectTargetSpeechNotification: SelectTarget
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.paradrop
+		UnitType: b52
+		SquadSize: 2
+		DisplayBeacon: true
+		BeaconPoster: pinficon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		PauseOnCondition: lowpower || on.maintenance
+		Cursor: airdrop
 	ParatroopersPower@GermanyParatanks:
 		OrderName: GermanyParatanksPowerInfoOrder
-		Prerequisites: player.germany, ~airplanes.allies, ~techlevel.unrestricted
+		Prerequisites: ~airplanes.allies, ~player.germany, ~techlevel.unrestricted
 		Icon: paratanks
 		ChargeInterval: 7500
 		Description: Paratanks
 		LongDesc: A B-52 drops an veteran squad of\ntwo Light Tanks and a Medium Tank anywhere on the map
 		DropItems: 1TNK.germany.R1, 2TNK.germany.R1, 1TNK.germany.R1
+		ReinforcementsArrivedSpeechNotification: ReinforcementsArrived
+		SelectTargetSpeechNotification: SelectTarget
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.paradrop
+		UnitType: b52
+		DisplayBeacon: true
+		BeaconPoster: paratanks
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		PauseOnCondition: lowpower || on.maintenance
+		Cursor: airdrop
+	ParatroopersPower@BelarusParamines:
+		OrderName: BelarusParaminePowerInfoOrder
+		Prerequisites: ~airplanes.soviet, ~player.belarus, ~techlevel.unrestricted
+		Icon: paramines
+		ChargeInterval: 7500
+		Description: Paramines
+		LongDesc: A Badger drops two Minelayers anywhere on the map
+		DropItems: MNLY,MNLY
 		ReinforcementsArrivedSpeechNotification: ReinforcementsArrived
 		SelectTargetSpeechNotification: SelectTarget
 		AllowImpassableCells: false
@@ -1324,7 +1547,7 @@ HPAD:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 13
-		Prerequisites: dome, ~!industryplant.on, ~techlevel.medium
+		Prerequisites: dome, ~!player.britain, ~!industryplant.on, ~techlevel.medium
 		Description: Produces, rearms and repairs Helicopters
 	Valued:
 		Cost: 500
@@ -1364,12 +1587,16 @@ HPAD:
 	Power:
 		Amount: -10
 	ProvidesPrerequisite@allies:
-		Factions: allies, britain, france, germany
+		Factions: allies, usa, britain, france, nether, germany, spain, italy, greece, turkey
 		Prerequisite: helicopters.allies
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@soviet:
-		Factions: soviet, russia, ukraine, kazakh
+		Factions: soviet, russia, ukraine, kazakh, kyrgiz, belarus, moldova, lithuan, karelia, uzbekh
 		Prerequisite: helicopters.soviet
+		ResetOnOwnerChange: True
+	ProvidesPrerequisite@arabs:
+		Factions: arabs, saudi, iraq, syria, jordan, egypt, yemen, somali, qatar, libya
+		Prerequisite: helicopters.arabs
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@alliedstructure:
 		RequiresPrerequisites: structures.allies
@@ -1377,6 +1604,9 @@ HPAD:
 	ProvidesPrerequisite@sovietstructure:
 		RequiresPrerequisites: structures.soviet
 		Prerequisite: helicopters.soviet
+	ProvidesPrerequisite@sovietstructure:
+		RequiresPrerequisites: structures.arabs
+		Prerequisite: helicopters.arabs
 	ProvidesPrerequisite@buildingname:
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
@@ -1437,24 +1667,40 @@ DOME:
 		HP: 100000
 	Armor:
 		Type: Wood
-	RevealsShroud:
-		Range: 12c0
-		RequiresCondition: !disabled
+	RevealsShroud@1:
+		Range: 10c0
+		RequiresCondition: !disabled && !player.is.britain
 		RevealGeneratedShroud: False
-	RevealsShroud@Offline:
+	RevealsShroud@2:
+		Range: 12c0
+		RequiresCondition: !disabled && player.is.britain
+		RevealGeneratedShroud: False
+	RevealsShroud@Offline1:
+		Range: 5c0
+		RequiresCondition: disabled && on.maintenance && !player.is.britain
+	RevealsShroud@Offline2:
 		Range: 6c0
-		RequiresCondition: disabled && on.maintenance
-	RevealsShroud@GAPGEN:
+		RequiresCondition: disabled && on.maintenance && player.is.britain
+	RevealsShroud@GAPGEN1:
+		Range: 5c0
+		RequiresCondition: !disabled && !on.maintenance && !player.is.britain
+	RevealsShroud@GAPGEN2:
 		Range: 6c0
-		RequiresCondition: !disabled && !on.maintenance
+		RequiresCondition: !disabled && !on.maintenance	&& player.is.britain	
 	WithBuildingBib:
 	ProvidesRadar:
 		RequiresCondition: !jammed && !disabled && !on.maintenance
 	InfiltrateForExploration:
 		Types: SpyInfiltrate
-	DetectCloaked:
-		Range: 6c0
-		RequiresCondition: !disabled && !on.maintenance
+	GrantConditionOnPrerequisite@BRITBONUS:
+		Condition: player.is.britain
+		Prerequisites: player.britain
+	DetectCloaked@1:
+		Range: 4c512
+		RequiresCondition: !disabled && !on.maintenance && !player.is.britain
+	DetectCloaked@2:
+		Range: 6c512
+		RequiresCondition: !disabled && !on.maintenance && player.is.britain
 	RenderDetectionCircle:
 	Power:
 		Amount: -40
@@ -1649,7 +1895,7 @@ STEK:
 		Cursor: airstrike
 	AirstrikePower@AlliesParabombs:
 		OrderName: AlliesParabombsPowerInfoOrder
-		Prerequisites: ~airplanes.allies, ~techlevel.unrestricted
+		Prerequisites: ~airplanes.allies, !player.usa, ~techlevel.unrestricted
 		Icon: parabombs
 		ChargeInterval: 7500
 		Description: Parabombs
@@ -1662,6 +1908,48 @@ STEK:
 		DisplayBeacon: true
 		BeaconPoster: pbmbicon
 		SquadSize: 3
+		SquadOffset: 1792,1792,0
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		PauseOnCondition: lowpower || on.maintenance
+		Cursor: airstrike
+	AirstrikePower@ArabsParabombs:
+		OrderName: ArabsParabombsPowerInfoOrder
+		Prerequisites: ~airplanes.arabs, ~techlevel.unrestricted
+		Icon: parabombs
+		ChargeInterval: 7500
+		Description: Parabombs
+		LongDesc: A trio of Blimps drop parachuted bombs on your target
+		SelectTargetSpeechNotification: SelectTarget
+		CameraActor: camera
+		CameraRemoveDelay: 150
+		UnitType: blmp.bomber
+		QuantizedFacings: 8
+		DisplayBeacon: true
+		BeaconPoster: pbmbicon
+		SquadSize: 3
+		SquadOffset: 1792,1792,0
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		PauseOnCondition: lowpower || on.maintenance
+		Cursor: airstrike
+	AirstrikePower@AmericanParabombs:
+		OrderName: AmericanParabombsPowerInfoOrder
+		Prerequisites: ~airplanes.allies, ~player.usa, ~techlevel.unrestricted
+		Icon: stlthbombs
+		ChargeInterval: 7500
+		Description: Stealth Parabombs
+		LongDesc: An B-2 drops parachuted bombs on your target
+		SelectTargetSpeechNotification: SelectTarget
+		CameraActor: camera
+		CameraRemoveDelay: 150
+		UnitType: b2.bomber
+		QuantizedFacings: 8
+		DisplayBeacon: true
+		# BeaconPoster: pbmbicon
+		SquadSize: 1
 		SquadOffset: 1792,1792,0
 		ArrowSequence: arrow
 		ClockSequence: clock
@@ -2172,7 +2460,7 @@ PBOX:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 3
-		Prerequisites: barracks, ~!industryplant.on, ~techlevel.low
+		Prerequisites: barracks, ~!player.turkey, ~!industryplant.on, ~techlevel.low
 		Description: Static defense with a fireport for a garrisoned soldier\nCan detect cloaked units at close radius\n Strong vs Infantry, Light armor\n Weak vs Tanks, Aircraft
 	Valued:
 		Cost: 500
@@ -2222,7 +2510,7 @@ HBOX:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 6
-		Prerequisites: barracks, dome, ~structures.allies, ~!industryplant.on, ~techlevel.medium
+		Prerequisites: barracks, dome, ~structures.allies, ~!player.turkey, ~!industryplant.on, ~techlevel.medium
 		Description: Camouflaged static defense with a fireport for a garrisoned soldier\n Strong vs Infantry, Light armor\n Weak vs Tanks, Aircraft
 	Valued:
 		Cost: 650
@@ -2277,7 +2565,7 @@ GUN:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 7
-		Prerequisites: weap, ~!industryplant.on, ~techlevel.medium
+		Prerequisites: weap, ~!player.turkey, ~!industryplant.on, ~techlevel.medium
 		Description: Basic Anti-Tank base defense\nCan detect cloaked units at close radius\n Strong vs Vehicles\n Weak vs Infantry, Aircraft
 	Valued:
 		Cost: 600
@@ -2336,7 +2624,7 @@ SAM:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 9
-		Prerequisites: dome, ~structures.allies, ~!industryplant.on, ~techlevel.medium
+		Prerequisites: dome, ~structures.allies, ~!player.turkey, ~!industryplant.on, ~techlevel.medium
 		Description: Anti-Air base defense\n Strong vs Aircraft\n Weak vs Ground units
 	Valued:
 		Cost: 600
@@ -2390,7 +2678,7 @@ HSAM:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 12
-		Prerequisites: dome, techcenter, ~structures.allies, ~!industryplant.on, ~techlevel.medium
+		Prerequisites: dome, techcenter, ~structures.allies, ~!player.turkey, ~!industryplant.on, ~techlevel.medium
 		Description: Cloaked Anti-Air base defense\n Strong vs Aircraft\n Weak vs Ground units
 	Tooltip:
 		Name: Camo SAM Site
@@ -2481,7 +2769,7 @@ HTUR:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 8
-		Prerequisites: techcenter, ~structures.allies, ~!industryplant.on, ~techlevel.high
+		Prerequisites: techcenter, ~structures.allies, ~!player.turkey, ~!industryplant.on, ~techlevel.high
 		Description: Triple-barreled Artillery base defence\n Strong vs Ground units\n Weak vs Aircraft
 	Valued:
 		Cost: 1500
@@ -2494,7 +2782,7 @@ HTUR:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Health:
-		HP: 90000
+		HP: 60000
 	Armor:
 		Type: Heavy
 	RevealsShroud:
@@ -2529,7 +2817,7 @@ TSLA:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 8
-		Prerequisites: techcenter, ~!industryplant.on, ~structures.soviet, ~techlevel.high
+		Prerequisites: techcenter, ~!player.russia, ~structures.soviet, ~!industryplant.on, ~techlevel.high
 		Description: Advanced base defense\nRequires power to operate\nCan detect cloaked units\n Strong vs Vehicles, Infantry\n Weak vs Aircraft
 	Valued:
 		Cost: 1200
@@ -2686,8 +2974,8 @@ BRIK:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 2
-		Prerequisites: weap, ~!industryplant.on, ~techlevel.medium
-		Description: Stop units and blocks enemy fire\nOnly Mammoth Tanks can crush
+		Prerequisites: weap, ~!player.france, ~!player.turkey, ~!industryplant.on, ~techlevel.medium
+		Description: Stop units and blocks enemy fire\nOnly Heavy Tanks such as Mammoths can crush
 	Valued:
 		Cost: 200
 	CustomSellValue:
@@ -2786,6 +3074,11 @@ CYCL:
 
 BARB:
 	Inherits: ^Wall
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 1
+		Prerequisites: barracks, ~structures.arabs, ~techlevel.low
+		Description: Stops infantry and light vehicles\nCan be crushed by tracked vehicles
 	Tooltip:
 		Name: Barbed-Wire Fence
 	Armor:
@@ -2885,12 +3178,16 @@ FISTBUILD:
 		CancelledAudio: Cancelled
 		LowPowerModifier: 300
 	ProvidesPrerequisite@allies:
-		Factions: allies, britain, france, germany
+		Factions: allies, usa, britain, france, nether, germany, spain, italy, greece, turkey
 		Prerequisite: vehicles.allies
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@soviet:
-		Factions: soviet, russia, ukraine, kazakh
+		Factions: soviet, russia, ukraine, kazakh, kyrgiz, belarus, moldova, lithuan, karelia, uzbekh
 		Prerequisite: vehicles.soviet
+		ResetOnOwnerChange: True
+	ProvidesPrerequisite@arabs:
+		Factions: arabs, saudi, iraq, syria, jordan, egypt, yemen, somali, qatar, libya
+		Prerequisite: vehicles.arabs
 		ResetOnOwnerChange: True
 	ProductionBar:
 		ProductionType: Vehicle
@@ -2916,13 +3213,13 @@ INDP:
 		Queue: Building
 		BuildPaletteOrder: 16
 		BuildLimit: 1
-		Prerequisites: techcenter, ~structures.soviet, ~techlevel.high
+		Prerequisites: techcenter, ~structures.soviet, ~!player.belarus, ~techlevel.high
 		Description: Facility housing means to mass produce\nan variety of military hardware and equipment\nReduces cost of everything by 25%\n Requires Power to operate\n Special Ability: Maintenance\nPerforms emergency repairs on all base Building and Defenses\nDisables entire base for half minute
 	Valued:
 		Cost: 2500
 	Tooltip:
 		Name: Industrial Plant
-	ProvidesPrerequisite:
+	ProvidesPrerequisite@COSTREDUCER:
 		Prerequisite: industryplant.on
 		RequiresCondition: !disabled
 	Building:
@@ -3056,3 +3353,51 @@ BIO.buildable:
 		UseDeathTypeSuffix: false
 	ProvidesPrerequisite@LIMITING:
 		Prerequisite: enough.bio
+
+PBAT:
+	Inherits: ^Defense
+	Inherits@AUTOTARGET: ^AutoTargetAir
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
+	Inherits@shape: ^2x2Shape
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 16
+		Prerequisites: techcenter, ~structures.allies, ~player.usa, ~!industryplant.on, ~techlevel.high
+		Description: Superior anti-air Defense\n Can attack Aircraft only
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Patriot Battery
+	Selectable:
+		DecorationBounds: 34,34
+	SelectionDecorations:
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 50000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 8c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 6c0
+	Turreted:
+		TurnSpeed: 2
+		InitialFacing: 0
+		RealignDelay: -1
+	-WithSpriteBody:
+	WithEmbeddedTurretSpriteBody:
+	AttackTurreted:
+		PauseOnCondition: disabled || on.maintenance
+		RequiresCondition: !build-incomplete
+	Armament:
+		Weapon: Patriot
+		LocalOffset: 0,-171,0, 0,171,0
+		PauseOnCondition: disabled || on.maintenance
+	WithMuzzleOverlay:
+	Power:
+		Amount: -80
+	BodyOrientation:
+		UseClassicFacingFudge: True

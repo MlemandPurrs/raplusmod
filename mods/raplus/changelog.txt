@@ -140,11 +140,11 @@ Sub Pen
  - Provides Sonar Pulse power on its own, infiltration no longer necessary.
 Radar Dome
  - Cost reduced to 1500$ from 1800$
- - Reveals 12c(6c when disabled and for gap generated) instead 10c(5c)
+ - Reveals 10c(5c when disabled and for gap generated), only Britain gets 12c(6c when disabled and for gap generated)
  - Spy Plane moved to Radar Dome(for Soviet)
  - Removed the bib infront of.
  - New scouting support power for Allies: Radar Scan, does same as spy plane but in 5c radius, prequisites Tech Center.
- - Detection radius fixated to 6c0 now.
+ - Detection radius reduced to 4c512(Britain gets 6c512).
 Airfield
  - Can be built by Allies too.
  - Cost increased to 750$ from 500$
@@ -298,8 +298,8 @@ Added several new Infantry units
  - Boris (Soviet)
 
 Added Weight value for all Infantry
- - Weight 1: Rifle Infantry, Grenadier, Grenade Launcher, Rocket Soldier
- - Weight 2: Engineer, Medic, Mechanic, Dog, Spy, Thief, Machinegunner, Shock Trooper, Stinger Soldier, RPG Soldier, Flame Trooper, Sniper
+ - Weight 1: Rifle Infantry, Grenadier, Grenade Launcher, Rocket Soldier, Flame Trooper
+ - Weight 2: Engineer, Medic, Mechanic, Dog, Spy, Thief, Machinegunner, Shock Trooper, Stinger Soldier, RPG Soldier, Sniper
  - Weight 3: Tanya, Commando, Chrono Commando, Volkov, Natasha, Desolator
 
 Internal change: barracks.upgraded renamed to infantry.upgraded
@@ -332,6 +332,7 @@ Mechanic
  - Cost reduced to 425$ from 500$
  - Speed increased to 56 from 50.
  - Range of Repair decreased to 2c from 4c.
+ - Health down to 6000 from 8000.
 NEW: Machine Gunner
  - Allies gained an new Infantry unit.
  - Is armed with same MachineGun as Jeep.
@@ -350,11 +351,12 @@ NEW: RPG Soldier
  - Always explodes on death using Grenadier explosion.
  Flame Trooper
  - Flamethrower renamed to Flame Trooper.
- - Hitpoints increased to 7000 from 4000.
+ - Hitpoints increased to 6000 from 4000.
  - Price bumped to 400$ from 300$
  - No longer pisses Napalm. Gained Tiberium Dawn flame weaponry instead.
  - Available for both Allies and Soviet.
  - Prequisite of Flame Tower changed to Radar Dome.
+ - Speed increased to 63 from 56.
 Sniper
  - Enabled Sniper for Allies.
  - Its appearance changes dependant on tileset.
@@ -417,6 +419,7 @@ Thief
  - Can no longer infiltrate Silos.
  - He was supposed able to sabotage production structures, just like Saboteur can in Gen:ZH. Its on hold until can get trait for it.
  - Steals 35% instead 50%
+ - Speed reduced to 63 from 71
 NEW: Tesla Trooper
  - Is armored, meaning he cant be mauled by Dogs or Sniped off(unless its a Commando)
  - Moves slow.
@@ -543,6 +546,10 @@ Phase Transport
  - Does not detect cloaked anymore.
  - Sight radius reduced by -2, down to 5c from 7c.
  - Prequisites changed to Barracks, Techcenter, Techlevel High from Allied Tech Center, Techlevel High.
+ - Received an improved chassis model.
+ - Its weaponry(APTusk) fires in a Burst of 2.
+ - Gained secondary Anti-air rocket weaponry, identical to Destroyer's, for now.
+ - Lost AttackTurreted, gained AttackFrontal, must turn to target.
 Chrono Tank
  - Prequisite changed to Chronosphere.
  - Can be built only by Allies or Germany.
@@ -717,6 +724,7 @@ NEW: Stealth Bomber
  - Allies gained an new plane.
  - Carries only bombs but in larger quantity.
  - Same cost as Frogfoot.
+ - Can be built by vanilla Allies or Britain.
 Badger
  - Paradrop radius increased to 5c from 4c.
  - Crates will be Paradropped by an variant specially tooled for it, having 0c512 on it's Paradrop.

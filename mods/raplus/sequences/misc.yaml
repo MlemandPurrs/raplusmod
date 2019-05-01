@@ -249,6 +249,11 @@ missile:
 		Facings: 32
 		ZOffset: 1023
 
+patriot:
+	idle:
+		Facings: 32
+		ZOffset: 1023
+
 torpedo:
 	idle: missile
 		Facings: 32
@@ -574,6 +579,8 @@ icon:
 	rankcrate: rankcrateicon
 	cruisestrike: cruisestrikeicon
 	paranuke: paranukeicon
+	stlthbombs: b2icon
+	paramines: mnlyicon
 
 quee:
 	idle:

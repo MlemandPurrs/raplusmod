@@ -67,7 +67,10 @@ e1:
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
+			TEMPERATTD: TEMPERAT
 			DESERT: TEMPERAT
+			DESERTTD: TEMPERAT
+			SNOWTD: SNOW
 			INTERIOR: SUBTERRAN
 			TROPIC: JUNGLE
 	die-crushed: corpse1
@@ -76,19 +79,16 @@ e1:
 		ZOffset: -511
 		UseTilesetExtension: true
 		TilesetOverrides:
-			DESERT: TEMPERAT
+			TEMPERATTD: TEMPERAT
+			DESERTTD: DESERT
+			SNOWTD: SNOW
 			INTERIOR: TEMPERAT
-			JUNGLE: TEMPERAT
-			TROPIC: TEMPERAT
+			TROPIC: JUNGLE
 			SUBTERRAN: TEMPERAT
 	garrison-muzzle: minigun
 		Length: 6
 		Facings: 8
 	icon: e1icon
-
-e1.discount:
-	Defaults: e1
-	Inherits: e1
 
 e2:
 	stand:
@@ -134,7 +134,10 @@ e2:
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
+			TEMPERATTD: TEMPERAT
 			DESERT: TEMPERAT
+			DESERTTD: TEMPERAT
+			SNOWTD: SNOW
 			INTERIOR: SUBTERRAN
 			TROPIC: JUNGLE
 	die-crushed: corpse1
@@ -143,10 +146,11 @@ e2:
 		ZOffset: -511
 		UseTilesetExtension: true
 		TilesetOverrides:
-			DESERT: TEMPERAT
+			TEMPERATTD: TEMPERAT
+			DESERTTD: DESERT
+			SNOWTD: SNOW
 			INTERIOR: TEMPERAT
-			JUNGLE: TEMPERAT
-			TROPIC: TEMPERAT
+			TROPIC: JUNGLE
 			SUBTERRAN: TEMPERAT
 	prone-stand:
 		Start: 240
@@ -166,10 +170,6 @@ e2:
 		Length: 12
 		Facings: 8
 	icon: e2icon
-
-e2.discount:
-	Defaults: e2
-	Inherits: e2
 
 gren:
 	stand:
@@ -215,7 +215,10 @@ gren:
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
+			TEMPERATTD: TEMPERAT
 			DESERT: TEMPERAT
+			DESERTTD: TEMPERAT
+			SNOWTD: SNOW
 			INTERIOR: SUBTERRAN
 			TROPIC: JUNGLE
 	die-crushed: corpse1
@@ -224,10 +227,11 @@ gren:
 		ZOffset: -511
 		UseTilesetExtension: true
 		TilesetOverrides:
-			DESERT: TEMPERAT
+			TEMPERATTD: TEMPERAT
+			DESERTTD: DESERT
+			SNOWTD: SNOW
 			INTERIOR: TEMPERAT
-			JUNGLE: TEMPERAT
-			TROPIC: TEMPERAT
+			TROPIC: JUNGLE
 			SUBTERRAN: TEMPERAT
 	prone-stand:
 		Start: 208
@@ -247,10 +251,6 @@ gren:
 		Length: 16
 		Facings: 8
 	icon: grenicon
-
-gren.discount:
-	Defaults: gren
-	Inherits: gren
 
 e3:
 	stand:
@@ -296,7 +296,10 @@ e3:
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
+			TEMPERATTD: TEMPERAT
 			DESERT: TEMPERAT
+			DESERTTD: TEMPERAT
+			SNOWTD: SNOW
 			INTERIOR: SUBTERRAN
 			TROPIC: JUNGLE
 	die-crushed: corpse1
@@ -305,10 +308,11 @@ e3:
 		ZOffset: -511
 		UseTilesetExtension: true
 		TilesetOverrides:
-			DESERT: TEMPERAT
+			TEMPERATTD: TEMPERAT
+			DESERTTD: DESERT
+			SNOWTD: SNOW
 			INTERIOR: TEMPERAT
-			JUNGLE: TEMPERAT
-			TROPIC: TEMPERAT
+			TROPIC: JUNGLE
 			SUBTERRAN: TEMPERAT
 	prone-stand:
 		Start: 144
@@ -328,10 +332,6 @@ e3:
 		Length: 10
 		Facings: 8
 	icon: e3icon
-
-e3.discount:
-	Defaults: e3
-	Inherits: e3
 
 e6:
 	stand:
@@ -373,7 +373,10 @@ e6:
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
+			TEMPERATTD: TEMPERAT
 			DESERT: TEMPERAT
+			DESERTTD: TEMPERAT
+			SNOWTD: SNOW
 			INTERIOR: SUBTERRAN
 			TROPIC: JUNGLE
 	die-crushed: corpse1
@@ -382,10 +385,11 @@ e6:
 		ZOffset: -511
 		UseTilesetExtension: true
 		TilesetOverrides:
-			DESERT: TEMPERAT
+			TEMPERATTD: TEMPERAT
+			DESERTTD: DESERT
+			SNOWTD: SNOW
 			INTERIOR: TEMPERAT
-			JUNGLE: TEMPERAT
-			TROPIC: TEMPERAT
+			TROPIC: JUNGLE
 			SUBTERRAN: TEMPERAT
 	prone-stand:
 		Start: 82
@@ -401,10 +405,6 @@ e6:
 		Facings: 8
 		Tick: 100
 	icon: e6icon
-
-e6.discount:
-	Defaults: e6
-	Inherits: e6
 
 medi:
 	stand:
@@ -445,7 +445,10 @@ medi:
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
+			TEMPERATTD: TEMPERAT
 			DESERT: TEMPERAT
+			DESERTTD: TEMPERAT
+			SNOWTD: SNOW
 			INTERIOR: SUBTERRAN
 			TROPIC: JUNGLE
 	die-crushed: corpse1
@@ -454,10 +457,11 @@ medi:
 		ZOffset: -511
 		UseTilesetExtension: true
 		TilesetOverrides:
-			DESERT: TEMPERAT
+			TEMPERATTD: TEMPERAT
+			DESERTTD: DESERT
+			SNOWTD: SNOW
 			INTERIOR: TEMPERAT
-			JUNGLE: TEMPERAT
-			TROPIC: TEMPERAT
+			TROPIC: JUNGLE
 			SUBTERRAN: TEMPERAT
 	prone-stand:
 		Start: 130
@@ -472,10 +476,6 @@ medi:
 	parachute:
 		Start: 178
 		Length: 1
-
-medi.discount:
-	Defaults: medi
-	Inherits: medi
 
 mech:
 	stand:
@@ -516,7 +516,10 @@ mech:
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
+			TEMPERATTD: TEMPERAT
 			DESERT: TEMPERAT
+			DESERTTD: TEMPERAT
+			SNOWTD: SNOW
 			INTERIOR: SUBTERRAN
 			TROPIC: JUNGLE
 	die-crushed: corpse1
@@ -525,10 +528,11 @@ mech:
 		ZOffset: -511
 		UseTilesetExtension: true
 		TilesetOverrides:
-			DESERT: TEMPERAT
+			TEMPERATTD: TEMPERAT
+			DESERTTD: DESERT
+			SNOWTD: SNOW
 			INTERIOR: TEMPERAT
-			JUNGLE: TEMPERAT
-			TROPIC: TEMPERAT
+			TROPIC: JUNGLE
 			SUBTERRAN: TEMPERAT
 	prone-stand:
 		Start: 130
@@ -543,10 +547,6 @@ mech:
 	parachute:
 		Start: 179
 		Length: 1
-
-mech.discount:
-	Defaults: mech
-	Inherits: mech
 
 mgi:
 	stand:
@@ -617,7 +617,10 @@ mgi:
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
+			TEMPERATTD: TEMPERAT
 			DESERT: TEMPERAT
+			DESERTTD: TEMPERAT
+			SNOWTD: SNOW
 			INTERIOR: SUBTERRAN
 			TROPIC: JUNGLE
 	die-crushed: corpse1
@@ -626,19 +629,16 @@ mgi:
 		ZOffset: -511
 		UseTilesetExtension: true
 		TilesetOverrides:
-			DESERT: TEMPERAT
+			TEMPERATTD: TEMPERAT
+			DESERTTD: DESERT
+			SNOWTD: SNOW
 			INTERIOR: TEMPERAT
-			JUNGLE: TEMPERAT
-			TROPIC: TEMPERAT
+			TROPIC: JUNGLE
 			SUBTERRAN: TEMPERAT
 	garrison-muzzle: minigun
 		Length: 6
 		Facings: 8
 	icon: mgiicon
-
-mgi.discount:
-	Defaults: mgi
-	Inherits: mgi
 
 shok:
 	stand:
@@ -709,25 +709,25 @@ shok:
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
+			TEMPERATTD: TEMPERAT
 			DESERT: TEMPERAT
+			DESERTTD: TEMPERAT
+			SNOWTD: SNOW
 			INTERIOR: SUBTERRAN
 			TROPIC: JUNGLE
 	die-crushed: corpse1
-		Length: 6
+		Length: *
 		Tick: 1600
 		ZOffset: -511
 		UseTilesetExtension: true
 		TilesetOverrides:
-			DESERT: TEMPERAT
+			TEMPERATTD: TEMPERAT
+			DESERTTD: DESERT
+			SNOWTD: SNOW
 			INTERIOR: TEMPERAT
-			JUNGLE: TEMPERAT
-			TROPIC: TEMPERAT
+			TROPIC: JUNGLE
 			SUBTERRAN: TEMPERAT
 	icon: shokicon
-
-shok.discount:
-	Defaults: shok
-	Inherits: shok
 
 stng:
 	stand:
@@ -806,7 +806,10 @@ stng:
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
+			TEMPERATTD: TEMPERAT
 			DESERT: TEMPERAT
+			DESERTTD: TEMPERAT
+			SNOWTD: SNOW
 			INTERIOR: SUBTERRAN
 			TROPIC: JUNGLE
 	die-crushed: corpse1
@@ -815,19 +818,16 @@ stng:
 		ZOffset: -511
 		UseTilesetExtension: true
 		TilesetOverrides:
-			DESERT: TEMPERAT
+			TEMPERATTD: TEMPERAT
+			DESERTTD: DESERT
+			SNOWTD: SNOW
 			INTERIOR: TEMPERAT
-			JUNGLE: TEMPERAT
-			TROPIC: TEMPERAT
+			TROPIC: JUNGLE
 			SUBTERRAN: TEMPERAT
 	icon: stngicon
 	parachute:
 		Start: 192
 		Length: 2
-
-stng.discount:
-	Defaults: stng
-	Inherits: stng
 
 ftrp:
 	stand:
@@ -873,19 +873,23 @@ ftrp:
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
+			TEMPERATTD: TEMPERAT
 			DESERT: TEMPERAT
+			DESERTTD: TEMPERAT
+			SNOWTD: SNOW
 			INTERIOR: SUBTERRAN
 			TROPIC: JUNGLE
 	die-crushed: corpse1
-		Length: 6
+		Length: *
 		Tick: 1600
 		ZOffset: -511
 		UseTilesetExtension: true
 		TilesetOverrides:
-			DESERT: TEMPERAT
+			TEMPERATTD: TEMPERAT
+			DESERTTD: DESERT
+			SNOWTD: SNOW
 			INTERIOR: TEMPERAT
-			JUNGLE: TEMPERAT
-			TROPIC: TEMPERAT
+			TROPIC: JUNGLE
 			SUBTERRAN: TEMPERAT
 	prone-stand:
 		Start: 144
@@ -905,10 +909,6 @@ ftrp:
 		Length: 10
 		Facings: 8
 	icon: ftrpicon
-
-ftrp.discount:
-	Defaults: ftrp
-	Inherits: ftrp
 
 atgm:
 	stand:
@@ -987,25 +987,25 @@ atgm:
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
+			TEMPERATTD: TEMPERAT
 			DESERT: TEMPERAT
+			DESERTTD: TEMPERAT
+			SNOWTD: SNOW
 			INTERIOR: SUBTERRAN
 			TROPIC: JUNGLE
 	die-crushed: corpse1
-		Length: 6
+		Length: *
 		Tick: 1600
 		ZOffset: -511
 		UseTilesetExtension: true
 		TilesetOverrides:
-			DESERT: TEMPERAT
+			TEMPERATTD: TEMPERAT
+			DESERTTD: DESERT
+			SNOWTD: SNOW
 			INTERIOR: TEMPERAT
-			JUNGLE: TEMPERAT
-			TROPIC: TEMPERAT
+			TROPIC: JUNGLE
 			SUBTERRAN: TEMPERAT
 	icon: atgmicon
-
-atgm.discount:
-	Defaults: atgm
-	Inherits: atgm
 
 rpg:
 	stand:
@@ -1051,19 +1051,23 @@ rpg:
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
+			TEMPERATTD: TEMPERAT
 			DESERT: TEMPERAT
+			DESERTTD: TEMPERAT
+			SNOWTD: SNOW
 			INTERIOR: SUBTERRAN
 			TROPIC: JUNGLE
 	die-crushed: corpse1
-		Length: 6
+		Length: *
 		Tick: 1600
 		ZOffset: -511
 		UseTilesetExtension: true
 		TilesetOverrides:
-			DESERT: TEMPERAT
+			TEMPERATTD: TEMPERAT
+			DESERTTD: DESERT
+			SNOWTD: SNOW
 			INTERIOR: TEMPERAT
-			JUNGLE: TEMPERAT
-			TROPIC: TEMPERAT
+			TROPIC: JUNGLE
 			SUBTERRAN: TEMPERAT
 	liedown:
 		Start: 192
@@ -1096,10 +1100,6 @@ rpg:
 		Length: 3
 		Reverse: true
 		Facings: 8
-
-rpg.discount:
-	Defaults: rpg
-	Inherits: rpg
 
 sniper:
 	Defaults:
@@ -1173,7 +1173,10 @@ sniper:
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
+			TEMPERATTD: TEMPERAT
 			DESERT: TEMPERAT
+			DESERTTD: TEMPERAT
+			SNOWTD: SNOW
 			INTERIOR: SUBTERRAN
 			TROPIC: JUNGLE
 	die-crushed: corpse1
@@ -1182,10 +1185,11 @@ sniper:
 		ZOffset: -511
 		UseTilesetExtension: true
 		TilesetOverrides:
-			DESERT: TEMPERAT
+			TEMPERATTD: TEMPERAT
+			DESERTTD: DESERT
+			SNOWTD: SNOW
 			INTERIOR: TEMPERAT
-			JUNGLE: TEMPERAT
-			TROPIC: TEMPERAT
+			TROPIC: JUNGLE
 			SUBTERRAN: TEMPERAT
 	garrison-muzzle: minigun
 		Length: 6
@@ -1196,18 +1200,6 @@ sniper:
 	parachute:
 		Start: 176
 		Length: 2
-
-snip.discount:
-	Defaults: sniper
-	Inherits: sniper
-
-snip.britain:
-	Defaults: sniper
-	Inherits: sniper
-
-snip.britain.discount:
-	Defaults: sniper
-	Inherits: sniper
 
 dog:
 	stand:
@@ -1253,15 +1245,16 @@ dog:
 	die6: electdog
 		Length: *
 	die-crushed: corpse1
-		Length: 6
+		Length: *
 		Tick: 1600
 		ZOffset: -511
 		UseTilesetExtension: true
 		TilesetOverrides:
-			DESERT: TEMPERAT
+			TEMPERATTD: TEMPERAT
+			DESERTTD: DESERT
+			SNOWTD: SNOW
 			INTERIOR: TEMPERAT
-			JUNGLE: TEMPERAT
-			TROPIC: TEMPERAT
+			TROPIC: JUNGLE
 			SUBTERRAN: TEMPERAT
 	jump: dogbullt
 		Length: 4
@@ -1270,10 +1263,6 @@ dog:
 	parachute:
 		Start: 8
 		Length: 6
-
-dog.discount:
-	Defaults: dog
-	Inherits: dog
 
 spy:
 	stand:
@@ -1317,19 +1306,23 @@ spy:
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
+			TEMPERATTD: TEMPERAT
 			DESERT: TEMPERAT
+			DESERTTD: TEMPERAT
+			SNOWTD: SNOW
 			INTERIOR: SUBTERRAN
 			TROPIC: JUNGLE
 	die-crushed: corpse1
-		Length: 6
+		Length: *
 		Tick: 1600
 		ZOffset: -511
 		UseTilesetExtension: true
 		TilesetOverrides:
-			DESERT: TEMPERAT
+			TEMPERATTD: TEMPERAT
+			DESERTTD: DESERT
+			SNOWTD: SNOW
 			INTERIOR: TEMPERAT
-			JUNGLE: TEMPERAT
-			TROPIC: TEMPERAT
+			TROPIC: JUNGLE
 			SUBTERRAN: TEMPERAT
 	prone-stand:
 		Start: 144
@@ -1352,18 +1345,6 @@ spy:
 	parachute:
 		Start: 138
 		Length: 2
-
-spy.discount:
-	Defaults: spy
-	Inherits: spy
-
-spy.britain:
-	Defaults: spy
-	Inherits: spy
-
-spy.britain.discount:
-	Defaults: spy.britain
-	Inherits: spy.britain
 
 thf:
 	stand:
@@ -1396,19 +1377,23 @@ thf:
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
+			TEMPERATTD: TEMPERAT
 			DESERT: TEMPERAT
+			DESERTTD: TEMPERAT
+			SNOWTD: SNOW
 			INTERIOR: SUBTERRAN
 			TROPIC: JUNGLE
 	die-crushed: corpse1
-		Length: 6
+		Length: *
 		Tick: 1600
 		ZOffset: -511
 		UseTilesetExtension: true
 		TilesetOverrides:
-			DESERT: TEMPERAT
+			TEMPERATTD: TEMPERAT
+			DESERTTD: DESERT
+			SNOWTD: SNOW
 			INTERIOR: TEMPERAT
-			JUNGLE: TEMPERAT
-			TROPIC: TEMPERAT
+			TROPIC: JUNGLE
 			SUBTERRAN: TEMPERAT
 	prone-stand:
 		Start: 72
@@ -1423,10 +1408,6 @@ thf:
 	parachute:
 		Start: 138
 		Length: 1
-
-thf.discount:
-	Defaults: thf
-	Inherits: thf
 
 e7:
 	stand:
@@ -1467,19 +1448,23 @@ e7:
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
+			TEMPERATTD: TEMPERAT
 			DESERT: TEMPERAT
+			DESERTTD: TEMPERAT
+			SNOWTD: SNOW
 			INTERIOR: SUBTERRAN
 			TROPIC: JUNGLE
 	die-crushed: corpse1
-		Length: 6
+		Length: *
 		Tick: 1600
 		ZOffset: -511
 		UseTilesetExtension: true
 		TilesetOverrides:
-			DESERT: TEMPERAT
+			TEMPERATTD: TEMPERAT
+			DESERTTD: DESERT
+			SNOWTD: SNOW
 			INTERIOR: TEMPERAT
-			JUNGLE: TEMPERAT
-			TROPIC: TEMPERAT
+			TROPIC: JUNGLE
 			SUBTERRAN: TEMPERAT
 	prone-stand:
 		Start: 128
@@ -1557,10 +1542,6 @@ e7:
 		Start: 128
 		Length: 1
 
-e7.britain:
-	Defaults: e7
-	Inherits: e7
-
 e4:
 	stand:
 		Facings: 8
@@ -1605,19 +1586,23 @@ e4:
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
+			TEMPERATTD: TEMPERAT
 			DESERT: TEMPERAT
+			DESERTTD: TEMPERAT
+			SNOWTD: SNOW
 			INTERIOR: SUBTERRAN
 			TROPIC: JUNGLE
 	die-crushed: corpse1
-		Length: 6
+		Length: *
 		Tick: 1600
 		ZOffset: -511
 		UseTilesetExtension: true
 		TilesetOverrides:
-			DESERT: TEMPERAT
+			TEMPERATTD: TEMPERAT
+			DESERTTD: DESERT
+			SNOWTD: SNOW
 			INTERIOR: TEMPERAT
-			JUNGLE: TEMPERAT
-			TROPIC: TEMPERAT
+			TROPIC: JUNGLE
 			SUBTERRAN: TEMPERAT
 	muzzle:
 		Combine:
@@ -1665,10 +1650,6 @@ e4:
 		Length: 16
 		Facings: 8
 	icon: e4icon
-
-e4.discount:
-	Defaults: e4
-	Inherits: e4
 
 gnrl:
 	stand:
@@ -1722,19 +1703,23 @@ gnrl:
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
+			TEMPERATTD: TEMPERAT
 			DESERT: TEMPERAT
+			DESERTTD: TEMPERAT
+			SNOWTD: SNOW
 			INTERIOR: SUBTERRAN
 			TROPIC: JUNGLE
 	die-crushed: corpse1
-		Length: 6
+		Length: *
 		Tick: 1600
 		ZOffset: -511
 		UseTilesetExtension: true
 		TilesetOverrides:
-			DESERT: TEMPERAT
+			TEMPERATTD: TEMPERAT
+			DESERTTD: DESERT
+			SNOWTD: SNOW
 			INTERIOR: TEMPERAT
-			JUNGLE: TEMPERAT
-			TROPIC: TEMPERAT
+			TROPIC: JUNGLE
 			SUBTERRAN: TEMPERAT
 	icon: gnrlicon
 	parachute:
@@ -1778,19 +1763,23 @@ zombie:
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
+			TEMPERATTD: TEMPERAT
 			DESERT: TEMPERAT
+			DESERTTD: TEMPERAT
+			SNOWTD: SNOW
 			INTERIOR: SUBTERRAN
 			TROPIC: JUNGLE
 	die-crushed: corpse1
-		Length: 6
+		Length: *
 		Tick: 1600
 		ZOffset: -511
 		UseTilesetExtension: true
 		TilesetOverrides:
-			DESERT: TEMPERAT
+			TEMPERATTD: TEMPERAT
+			DESERTTD: DESERT
+			SNOWTD: SNOW
 			INTERIOR: TEMPERAT
-			JUNGLE: TEMPERAT
-			TROPIC: TEMPERAT
+			TROPIC: JUNGLE
 			SUBTERRAN: TEMPERAT
 	icon: zombicon
 
@@ -1958,19 +1947,23 @@ tecn:
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
+			TEMPERATTD: TEMPERAT
 			DESERT: TEMPERAT
+			DESERTTD: TEMPERAT
+			SNOWTD: SNOW
 			INTERIOR: SUBTERRAN
 			TROPIC: JUNGLE
 	die-crushed: corpse1
-		Length: 6
+		Length: *
 		Tick: 1600
 		ZOffset: -511
 		UseTilesetExtension: true
 		TilesetOverrides:
-			DESERT: TEMPERAT
+			TEMPERATTD: TEMPERAT
+			DESERTTD: DESERT
+			SNOWTD: SNOW
 			INTERIOR: TEMPERAT
-			JUNGLE: TEMPERAT
-			TROPIC: TEMPERAT
+			TROPIC: JUNGLE
 			SUBTERRAN: TEMPERAT
 
 plot:
@@ -2022,19 +2015,23 @@ plot:
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
+			TEMPERATTD: TEMPERAT
 			DESERT: TEMPERAT
+			DESERTTD: TEMPERAT
+			SNOWTD: SNOW
 			INTERIOR: SUBTERRAN
 			TROPIC: JUNGLE
 	die-crushed: corpse1
-		Length: 6
+		Length: *
 		Tick: 1600
 		ZOffset: -511
 		UseTilesetExtension: true
 		TilesetOverrides:
-			DESERT: TEMPERAT
+			TEMPERATTD: TEMPERAT
+			DESERTTD: DESERT
+			SNOWTD: SNOW
 			INTERIOR: TEMPERAT
-			JUNGLE: TEMPERAT
-			TROPIC: TEMPERAT
+			TROPIC: JUNGLE
 			SUBTERRAN: TEMPERAT
 
 mrtr:
@@ -2113,25 +2110,25 @@ mrtr:
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
+			TEMPERATTD: TEMPERAT
 			DESERT: TEMPERAT
+			DESERTTD: TEMPERAT
+			SNOWTD: SNOW
 			INTERIOR: SUBTERRAN
 			TROPIC: JUNGLE
 	die-crushed: corpse1
-		Length: 6
+		Length: *
 		Tick: 1600
 		ZOffset: -511
 		UseTilesetExtension: true
 		TilesetOverrides:
-			DESERT: TEMPERAT
+			TEMPERATTD: TEMPERAT
+			DESERTTD: DESERT
+			SNOWTD: SNOW
 			INTERIOR: TEMPERAT
-			JUNGLE: TEMPERAT
-			TROPIC: TEMPERAT
+			TROPIC: JUNGLE
 			SUBTERRAN: TEMPERAT
 	icon: mrtricon
-
-mrtr.discount:
-	Defaults: mrtr
-	Inherits: mrtr
 
 ttrp:
 	stand:
@@ -2204,34 +2201,30 @@ ttrp:
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
+			TEMPERATTD: TEMPERAT
 			DESERT: TEMPERAT
+			DESERTTD: TEMPERAT
+			SNOWTD: SNOW
 			INTERIOR: SUBTERRAN
 			TROPIC: JUNGLE
 	die-crushed: corpse1
-		Length: 6
+		Length: *
 		Tick: 1600
 		ZOffset: -511
 		UseTilesetExtension: true
 		TilesetOverrides:
-			DESERT: TEMPERAT
+			TEMPERATTD: TEMPERAT
+			DESERTTD: DESERT
+			SNOWTD: SNOW
 			INTERIOR: TEMPERAT
-			JUNGLE: TEMPERAT
-			TROPIC: TEMPERAT
+			TROPIC: JUNGLE
 			SUBTERRAN: TEMPERAT
 	icon: ttrpicon
-
-ttrp.discount:
-	Defaults: ttrp
-	Inherits: ttrp
 
 dog.bomb:
 	Defaults: dog
 	Inherits: dog
 	icon: demodogicon
-
-dog.bomb.discount:
-	Defaults: dog.bomb
-	Inherits: dog.bomb
 
 deso:
 	stand:
@@ -2304,25 +2297,25 @@ deso:
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
+			TEMPERATTD: TEMPERAT
 			DESERT: TEMPERAT
+			DESERTTD: TEMPERAT
+			SNOWTD: SNOW
 			INTERIOR: SUBTERRAN
 			TROPIC: JUNGLE
 	die-crushed: corpse1
-		Length: 6
+		Length: *
 		Tick: 1600
 		ZOffset: -511
 		UseTilesetExtension: true
 		TilesetOverrides:
-			DESERT: TEMPERAT
+			TEMPERATTD: TEMPERAT
+			DESERTTD: DESERT
+			SNOWTD: SNOW
 			INTERIOR: TEMPERAT
-			JUNGLE: TEMPERAT
-			TROPIC: TEMPERAT
+			TROPIC: JUNGLE
 			SUBTERRAN: TEMPERAT
 	icon: desoicon
-
-deso.discount:
-	Defaults: deso
-	Inherits: deso
 
 jump:
 	Defaults:
@@ -2390,20 +2383,24 @@ jump:
 		Facings: 1
 		UseTilesetExtension: true
 		TilesetOverrides:
+			TEMPERATTD: TEMPERAT
 			DESERT: TEMPERAT
+			DESERTTD: TEMPERAT
+			SNOWTD: SNOW
 			INTERIOR: SUBTERRAN
 			TROPIC: JUNGLE
 	die-crushed: corpse1
-		Length: 6
+		Length: *
 		Facings: 1
 		Tick: 1600
 		ZOffset: -511
 		UseTilesetExtension: true
 		TilesetOverrides:
-			DESERT: TEMPERAT
+			TEMPERATTD: TEMPERAT
+			DESERTTD: DESERT
+			SNOWTD: SNOW
 			INTERIOR: TEMPERAT
-			JUNGLE: TEMPERAT
-			TROPIC: TEMPERAT
+			TROPIC: JUNGLE
 			SUBTERRAN: TEMPERAT
 	shoot:
 		Start: 164
@@ -2449,10 +2446,6 @@ jump.husk:
 		Length: 16
 		Facings: 2
 		Tick: 120
-
-jump.discount:
-	Defaults: jump
-	Inherits: jump
 
 rmbo:
 	stand:
@@ -2535,25 +2528,25 @@ rmbo:
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
+			TEMPERATTD: TEMPERAT
 			DESERT: TEMPERAT
+			DESERTTD: TEMPERAT
+			SNOWTD: SNOW
 			INTERIOR: SUBTERRAN
 			TROPIC: JUNGLE
 	die-crushed: corpse1
-		Length: 6
+		Length: *
 		Tick: 1600
 		ZOffset: -511
 		UseTilesetExtension: true
 		TilesetOverrides:
-			DESERT: TEMPERAT
+			TEMPERATTD: TEMPERAT
+			DESERTTD: DESERT
+			SNOWTD: SNOW
 			INTERIOR: TEMPERAT
-			JUNGLE: TEMPERAT
-			TROPIC: TEMPERAT
+			TROPIC: JUNGLE
 			SUBTERRAN: TEMPERAT
 	icon: rmboicon
-
-rmbo.france:
-	Defaults: rmbo
-	Inherits: rmbo
 
 ccmd:
 	stand:
@@ -2616,25 +2609,25 @@ ccmd:
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
+			TEMPERATTD: TEMPERAT
 			DESERT: TEMPERAT
+			DESERTTD: TEMPERAT
+			SNOWTD: SNOW
 			INTERIOR: SUBTERRAN
 			TROPIC: JUNGLE
 	die-crushed: corpse1
-		Length: 6
+		Length: *
 		Tick: 1600
 		ZOffset: -511
 		UseTilesetExtension: true
 		TilesetOverrides:
-			DESERT: TEMPERAT
+			TEMPERATTD: TEMPERAT
+			DESERTTD: DESERT
+			SNOWTD: SNOW
 			INTERIOR: TEMPERAT
-			JUNGLE: TEMPERAT
-			TROPIC: TEMPERAT
+			TROPIC: JUNGLE
 			SUBTERRAN: TEMPERAT
 	icon: ccmdicon
-
-ccmd.germany:
-	Defaults: ccmd
-	Inherits: ccmd
 
 ntsh:
 	stand:
@@ -2698,19 +2691,23 @@ ntsh:
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
+			TEMPERATTD: TEMPERAT
 			DESERT: TEMPERAT
+			DESERTTD: TEMPERAT
+			SNOWTD: SNOW
 			INTERIOR: SUBTERRAN
 			TROPIC: JUNGLE
 	die-crushed: corpse1
-		Length: 6
+		Length: *
 		Tick: 1600
 		ZOffset: -511
 		UseTilesetExtension: true
 		TilesetOverrides:
-			DESERT: TEMPERAT
+			TEMPERATTD: TEMPERAT
+			DESERTTD: DESERT
+			SNOWTD: SNOW
 			INTERIOR: TEMPERAT
-			JUNGLE: TEMPERAT
-			TROPIC: TEMPERAT
+			TROPIC: JUNGLE
 			SUBTERRAN: TEMPERAT
 	cheer:
 		Start: 196
@@ -2721,10 +2718,6 @@ ntsh:
 		Length: 1
 		Facings: 1
 	icon: ntshicon
-
-ntsh.ukraine:
-	Defaults: ntsh
-	Inherits: ntsh
 
 bors:
 	stand:
@@ -2788,19 +2781,23 @@ bors:
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
+			TEMPERATTD: TEMPERAT
 			DESERT: TEMPERAT
+			DESERTTD: TEMPERAT
+			SNOWTD: SNOW
 			INTERIOR: SUBTERRAN
 			TROPIC: JUNGLE
 	die-crushed: corpse1
-		Length: 6
+		Length: *
 		Tick: 1600
 		ZOffset: -511
 		UseTilesetExtension: true
 		TilesetOverrides:
-			DESERT: TEMPERAT
+			TEMPERATTD: TEMPERAT
+			DESERTTD: DESERT
+			SNOWTD: SNOW
 			INTERIOR: TEMPERAT
-			JUNGLE: TEMPERAT
-			TROPIC: TEMPERAT
+			TROPIC: JUNGLE
 			SUBTERRAN: TEMPERAT
 	cheer:
 		Start: 297
@@ -2813,7 +2810,3 @@ bors:
 		Start: 217
 		Length: 6
 	icon: borsicon
-
-bors.kazakh:
-	Defaults: bors
-	Inherits: bors

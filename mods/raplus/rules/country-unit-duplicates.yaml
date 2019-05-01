@@ -1,3 +1,337 @@
+
+# Allies Structures
+
+FACT.britain:
+	Inherits: FACT
+	Health:
+		HP: 172500
+	Transforms:
+		IntoActor: mcv.britain
+	RenderSprites:
+		Image: fact
+	ProvidesPrerequisite@COUNTRYDUPLICATE:
+		Prerequisite: fact
+	-MapEditorData:
+
+TENT.britain:
+	Inherits: TENT
+	Buildable:
+		Prerequisites: ~structures.allies, ~player.britain, ~!industryplant.on, ~techlevel.infonly
+	Health:
+		HP: 69000
+	RenderSprites:
+		Image: tent
+	ProvidesPrerequisite@COUNTRYDUPLICATE:
+		Prerequisite: tent
+	-MapEditorData:
+
+KENN.britain
+	Inherits: KENN
+	Buildable:
+		Prerequisites: barracks, ~player.britain, ~!industryplant.on, ~techlevel.infonly
+	Health:
+		HP: 34500
+	RenderSprites:
+		Image: kenn
+	ProvidesPrerequisite@COUNTRYDUPLICATE:
+		Prerequisite: kenn
+	-MapEditorData:
+
+WEAP.britain:
+	Inherits: WEAP
+	Buildable:
+		Prerequisites: proc, ~player.britain, ~!industryplant.on, ~techlevel.low
+	Health:
+		HP: 187500
+	RenderSprites:
+		Image: weap
+	ProvidesPrerequisite@COUNTRYDUPLICATE:
+		Prerequisite: weap
+	-MapEditorData:
+
+SYRD.britain:
+	Inherits: SYRD
+	Buildable:
+		Prerequisites: proc, ~player.britain, ~!industryplant.on, ~techlevel.low
+	Health:
+		HP: 115000
+	RenderSprites:
+		Image: syrd
+	ProvidesPrerequisite@COUNTRYDUPLICATE:
+		Prerequisite: syrd
+	-MapEditorData:
+
+SPEN.britain:
+	Inherits: SPEN
+	Buildable:
+		Prerequisites: syrd, ~player.britain, ~!industryplant.on, ~techlevel.medium
+	Health:
+		HP: 115000
+	RenderSprites:
+		Image: spen
+	ProvidesPrerequisite@COUNTRYDUPLICATE:
+		Prerequisite: spen
+	-MapEditorData:
+
+AFLD.britain:
+	Inherits: AFLD
+	Buildable:
+		Prerequisites: dome, ~player.britain, ~!industryplant.on, ~techlevel.medium
+	Health:
+		HP: 115000
+	RenderSprites:
+		Image: afld
+	ProvidesPrerequisite@COUNTRYDUPLICATE:
+		Prerequisite: afld
+	-MapEditorData:
+
+HPAD.britain:
+	Inherits: HPAD
+	Buildable:
+		Prerequisites: dome, ~player.britain, ~!industryplant.on, ~techlevel.medium
+	Health:
+		HP: 92000
+	RenderSprites:
+		Image: hpad
+	ProvidesPrerequisite@COUNTRYDUPLICATE:
+		Prerequisite: hpad
+	-MapEditorData:
+
+PBOX.turkey:
+	Inherits: PBOX
+	Buildable:
+		Prerequisites: barracks, dome, ~player.turkey, ~!industryplant.on, ~techlevel.low
+	Health:
+		HP: 52000
+	RenderSprites:
+		Image: pbox
+	-MapEditorData:
+
+HBOX.turkey:
+	Inherits: HBOX
+	Buildable:
+		Prerequisites: barracks, ~structures.allies, ~player.turkey, ~!industryplant.on, ~techlevel.low
+	Health:
+		HP: 52000
+	RenderSprites:
+		Image: hbox
+	-MapEditorData:
+
+GUN.turkey:
+	Inherits: GUN
+	Buildable:
+		Prerequisites: weap, ~player.turkey, ~!industryplant.on, ~techlevel.medium
+	Health:
+		HP: 52000
+	RenderSprites:
+		Image: gun
+	-MapEditorData:
+
+SAM.turkey:
+	Inherits: SAM
+	Buildable:
+		Prerequisites: dome, ~structures.allies, ~!player.turkey, ~!industryplant.on, ~techlevel.medium
+	Health:
+		HP: 52000
+	RenderSprites:
+		Image: sam
+	-MapEditorData:
+
+HSAM.turkey:
+	Inherits: HSAM
+	Buildable:
+		Prerequisites: dome, techcenter, ~structures.allies, ~player.turkey, ~!industryplant.on, ~techlevel.medium
+	Health:
+		HP: 52000
+	RenderSprites:
+		Image: hsam
+	-MapEditorData:
+
+HTUR.turkey:
+	Inherits: HTUR
+	Buildable:
+		Prerequisites: techcenter, ~structures.allies, ~player.turkey, ~!industryplant.on, ~techlevel.high
+	Health:
+		HP: 78000
+	RenderSprites:
+		Image: htur
+	-MapEditorData:
+
+BRIK.france:
+	Inherits: BRIK
+	Buildable:
+		Prerequisites: weap, ~player.france, ~!industryplant.on, ~techlevel.medium
+	Health:
+		HP: 60000	
+	RenderSprites:
+		Image: brik
+	-MapEditorData:
+
+BRIK.turkey:
+	Inherits: BRIK
+	Buildable:
+		Prerequisites: weap, ~player.turkey, ~!industryplant.on, ~techlevel.medium
+	Valued:
+		Cost: 100
+	RenderSprites:
+		Image: brik
+	-MapEditorData:
+
+# Allies Infantry
+
+DOG.italy:
+	Inherits: DOG
+	Buildable:
+		Prerequisites: ~kenn, ~player.italy, ~!industryplant.on, ~techlevel.infonly
+	SelfHealing:
+		Step: 100
+		Delay: 10
+		HealIfBelow: 100
+		DamageCooldown: 150
+	RenderSprites:
+		Image: dog
+	-MapEditorData:
+
+SPY.usa:
+	Inherits: SPY
+	Buildable:
+		Prerequisites: ~barracks, dome, ~infantry.allies, ~player.usa, ~!industryplant.on, ~techlevel.medium
+	Valued:
+		Cost: 375
+	RenderSprites:
+		Image: spy
+	-MapEditorData:	
+
+SPY.britain:
+	Inherits: SPY
+	Buildable:
+		Prerequisites: ~barracks, dome, ~infantry.allies, ~player.britain, ~!industryplant.on, ~techlevel.medium
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	RenderSprites:
+		Image: spy
+	-MapEditorData:	
+
+SNIP.britain:
+	Inherits: SNIP
+	Buildable:
+		Prerequisites: ~barracks, dome, ~infantry.allies, ~player.britain, ~!industryplant.on, ~techlevel.medium
+	RenderSprites:
+		Image: sniper
+	-MapEditorData:	
+
+GREN.france:
+	Inherits: GREN
+	Buildable:
+		Prerequisites: ~barracks, anypower, ~infantry.allies, ~player.france, ~!industryplant.on, ~techlevel.infonly
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	RenderSprites:
+		Image: gren
+	-MapEditorData:	
+
+MGI.germany:
+	Inherits: MGI
+	Buildable:
+		Prerequisites: ~barracks, dome, ~infantry.allies, ~player.germany, ~!industryplant.on, ~techlevel.medium
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	RenderSprites:
+		Image: mgi
+	-MapEditorData:
+
+MECH.germany:
+	Inherits: MECH
+	Buildable:
+		Prerequisites: ~barracks, fix, ~player.germany, ~!industryplant.on, ~techlevel.medium
+	Armament:
+		Weapon: Repair.germany
+		Cursor: repair
+		OutsideRangeCursor: repair
+		TargetStances: Ally
+		ForceTargetStances: None
+	RenderSprites:
+		Image: mech
+	-MapEditorData:
+
+MEDI.greece:
+	Inherits: MEDI
+	Buildable:
+		Prerequisites: ~barracks, ~player.greece, ~!industryplant.on, ~techlevel.infonly
+	Armament:
+		Weapon: Heal.greece
+		Cursor: repair
+		OutsideRangeCursor: repair
+		TargetStances: Ally
+		ForceTargetStances: None
+	RenderSprites:
+		Image: medi
+	-MapEditorData:
+
+ATGM.greece:
+	Inherits: ATGM
+	Buildable:
+		Prerequisites: ~barracks, fix, ~infantry.allies, ~player.greece, ~!industryplant.on, ~techlevel.medium
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	RenderSprites:
+		Image: atgm
+	-MapEditorData:
+
+E7.britain:
+	Inherits: E7
+	Buildable:
+		Prerequisites: ~barracks, techcenter, ~infantry.allies, !enough.commandos, ~player.britain, ~techlevel.high
+	RenderSprites:
+		Image: e7
+	-MapEditorData:
+
+CCMD.germany:
+	Inherits: CCMD
+	Buildable:
+		Prerequisites: ~barracks, techcenter, ~infantry.allies, !enough.commandos, ~player.germany, ~techlevel.high
+	RenderSprites:
+		Image: ccmd
+	-MapEditorData:
+
+RMBO.turkey:
+	Inherits: RMBO
+	Buildable:
+		Prerequisites: ~barracks, techcenter, ~infantry.allies, !enough.commandos, ~player.turkey, ~techlevel.high
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	RenderSprites:
+		Image: rmbo
+	-MapEditorData:	
+
+# Allies Vehicles
+
+MCV.britain:
+	Inherits: MCV
+	Buildable:
+		Prerequisites: factory, fix, ~player.britain, ~!industryplant.on, ~techlevel.medium
+	Transforms:
+		IntoActor: fact.britain
+	RenderSprites:
+		Image: mcv
+	-MapEditorData:
+
+JEEP.usa:
+	Inherits: JEEP
+	Buildable:
+		Prerequisites: factory, ~vehicles.allies, ~player.usa, ~!industryplant.on, ~techlevel.low
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	RenderSprites:
+		Image: jeep
+	-MapEditorData:
+
 1TNK.britain:
 	Inherits: 1TNK
 	Buildable:
@@ -13,6 +347,8 @@
 		PauseOnCondition: empdisable
 	SpawnActorOnDeath:
 		Actor: 1TNK.britain.Husk
+	RenderSprites:
+		Image: 1tnk
 	-MapEditorData:	
 
 1TNK.britain.Husk:
@@ -42,6 +378,8 @@
 		PauseOnCondition: empdisable
 	SpawnActorOnDeath:
 		Actor: 1TNK.france.Husk
+	RenderSprites:
+		Image: 1tnk
 	-MapEditorData:
 
 1TNK.france.Husk:
@@ -68,6 +406,8 @@
 		Speed: 90
 	SpawnActorOnDeath:
 		Actor: 1TNK.germany.Husk
+	RenderSprites:
+		Image: 1tnk
 	-MapEditorData:
 
 1TNK.germany.Husk:
@@ -90,8 +430,65 @@
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
 	-Buildable:
+
+1TNK.spain:
+	Inherits: 1TNK
+	Buildable:
+		Prerequisites: factory, ~vehicles.allies, ~player.spain, ~!industryplant.on, ~techlevel.low
+	Armament@PRIMARY:
+		Weapon: 25mm.spain
+		Recoil: 85
+		RecoilRecovery: 25
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	SpawnActorOnDeath:
+		Actor: 1TNK.spain.Husk
 	RenderSprites:
-		Image: 1tnk.germany
+		Image: 1tnk
+	-MapEditorData:
+
+1TNK.spain.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Light Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 1tnk.spain
+	InfiltrateForTransform:
+		IntoActor: 1tnk.spain
+	RenderSprites:
+		Image: 1tnk.destroyed
+	-MapEditorData:
+
+1TNK.italy:
+	Inherits: 1TNK
+	Buildable:
+		Prerequisites: factory, ~vehicles.allies, ~player.italy, ~!industryplant.on, ~techlevel.low
+	Health:
+		HP: 19500
+	Mobile:
+		Speed: 140
+	SpawnActorOnDeath:
+		Actor: 1TNK.italy.Husk
+	RenderSprites:
+		Image: 1tnk
+	-MapEditorData:
+
+1TNK.italy.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Light Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 1tnk.italy
+	InfiltrateForTransform:
+		IntoActor: 1tnk.italy
+	RenderSprites:
+		Image: 1tnk.destroyed
+	-MapEditorData:
 
 2TNK.britain:
 	Inherits: 2TNK
@@ -109,6 +506,8 @@
 		PauseOnCondition: empdisable
 	SpawnActorOnDeath:
 		Actor: 2TNK.britain.Husk
+	RenderSprites:
+		Image: 2tnk
 	-MapEditorData:	
 
 2TNK.britain.Husk:
@@ -130,7 +529,7 @@
 	Buildable:
 		Prerequisites: factory, fix, ~vehicles.allies, ~player.france, ~!industryplant.on, ~techlevel.medium
 	Armament@PRIMARY:
-		Weapon: 25mm.france
+		Weapon: 90mm.france
 		Recoil: 85
 		RecoilRecovery: 25
 		LocalOffset: 768,0,90
@@ -138,6 +537,8 @@
 		PauseOnCondition: empdisable
 	SpawnActorOnDeath:
 		Actor: 2TNK.france.Husk
+	RenderSprites:
+		Image: 2tnk
 	-MapEditorData:
 
 2TNK.france.Husk:
@@ -164,6 +565,8 @@
 		Speed: 77
 	SpawnActorOnDeath:
 		Actor: 2TNK.germany.Husk
+	RenderSprites:
+		Image: 2tnk
 	-MapEditorData:
 
 2TNK.germany.Husk:
@@ -186,15 +589,72 @@
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
 	-Buildable:
+
+2TNK.spain:
+	Inherits: 2TNK
+	Buildable:
+		Prerequisites: factory, fix, ~vehicles.allies, ~player.spain, ~!industryplant.on, ~techlevel.medium
+	Armament@PRIMARY:
+		Weapon: 90mm.spain
+		Recoil: 85
+		RecoilRecovery: 25
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	SpawnActorOnDeath:
+		Actor: 2TNK.spain.Husk
 	RenderSprites:
-		Image: 2tnk.germany
+		Image: 2tnk
+	-MapEditorData:
+
+2TNK.spain.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Medium Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 2tnk.spain
+	InfiltrateForTransform:
+		IntoActor: 2tnk.spain
+	RenderSprites:
+		Image: 2tnk.destroyed
+	-MapEditorData:
+
+2TNK.italy:
+	Inherits: 2TNK
+	Buildable:
+		Prerequisites: factory, fix, ~vehicles.allies, ~player.italy, ~!industryplant.on, ~techlevel.medium
+	Health:
+		HP: 35500
+	Mobile:
+		Speed: 92
+	SpawnActorOnDeath:
+		Actor: 2TNK.italy.Husk
+	RenderSprites:
+		Image: 2tnk
+	-MapEditorData:
+
+2TNK.italy.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Medium Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 2tnk.italy
+	InfiltrateForTransform:
+		IntoActor: 2tnk.italy
+	RenderSprites:
+		Image: 2tnk.destroyed
+	-MapEditorData:
 
 TNKD.britain:
 	Inherits: TNKD
 	Buildable:
 		Prerequisites: factory, fix, ~vehicles.allies, ~player.britain, ~!industryplant.on, ~techlevel.medium
 	Armament:
-		Weapon: 130mm.britain
+		Weapon: 110mm.britain
 		LocalOffset: 720,0,90
 		MuzzleSequence: muzzle
 		PauseOnCondition: empdisable
@@ -202,6 +662,8 @@ TNKD.britain:
 		Cost: 1000
 	SpawnActorOnDeath:
 		Actor: TNKD.britain.Husk
+	RenderSprites:
+		Image: tnkd
 	-MapEditorData:
 
 TNKD.britain.Husk:
@@ -221,12 +683,14 @@ TNKD.france:
 	Buildable:
 		Prerequisites: factory, fix, ~vehicles.allies, ~player.france, ~!industryplant.on, ~techlevel.medium
 	Armament:
-		Weapon: 130mm.france
+		Weapon: 110mm.france
 		LocalOffset: 720,0,90
 		MuzzleSequence: muzzle
 		PauseOnCondition: empdisable
 	SpawnActorOnDeath:
 		Actor: TNKD.france.Husk
+	RenderSprites:
+		Image: tnkd
 	-MapEditorData:
 
 TNKD.france.Husk:
@@ -251,6 +715,8 @@ TNKD.germany:
 		Speed: 77
 	SpawnActorOnDeath:
 		Actor: TNKD.germany.Husk
+	RenderSprites:
+		Image: tnkd
 	-MapEditorData:
 
 TNKD.germany.Husk:
@@ -265,67 +731,247 @@ TNKD.germany.Husk:
 		Image: tnkd.destroyed
 	-MapEditorData:
 
-SPY.britain:
-	Inherits: SPY
+TNKD.spain:
+	Inherits: TNKD
 	Buildable:
-		Prerequisites: ~barracks, dome, ~infantry.allies, ~player.britain, ~!industryplant.on, ~techlevel.medium
-	ProducibleWithLevel:
-		Prerequisites: techlevel.infonly
-		InitialLevels: 1
-	-MapEditorData:	
+		Prerequisites: factory, fix, ~vehicles.allies, ~player.spain, ~!industryplant.on, ~techlevel.medium
+	Armament:
+		Weapon: 110mm.spain
+		LocalOffset: 720,0,90
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	SpawnActorOnDeath:
+		Actor: TNKD.spain.Husk
+	RenderSprites:
+		Image: tnkd
+	-MapEditorData:
 
-SNIP.britain:
-	Inherits: SNIP
+TNKD.spain.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Tank Destroyer (Destroyed)
+	TransformOnCapture:
+		IntoActor: tnkd.spain
+	InfiltrateForTransform:
+		IntoActor: tnkd.spain
+	RenderSprites:
+		Image: tnkd.destroyed
+	-MapEditorData:
+
+TNKD.italy:
+	Inherits: TNKD
 	Buildable:
-		Prerequisites: ~barracks, dome, ~infantry.allies, ~player.britain, ~!industryplant.on, ~techlevel.medium
+		Prerequisites: factory, fix, ~vehicles.allies, ~player.italy, ~!industryplant.on, ~techlevel.medium
+	Health:
+		HP: 40500
+	Mobile:
+		Speed: 92
+	SpawnActorOnDeath:
+		Actor: TNKD.italy.Husk
+	RenderSprites:
+		Image: tnkd
+	-MapEditorData:
+
+TNKD.italy.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Tank Destroyer (Destroyed)
+	TransformOnCapture:
+		IntoActor: tnkd.italy
+	InfiltrateForTransform:
+		IntoActor: tnkd.italy
+	RenderSprites:
+		Image: tnkd.destroyed
+	-MapEditorData:
+
+MRLS.usa:
+	Inherits: MRLS
+	Buildable:
+		Prerequisites: factory, dome, techcenter, ~vehicles.allies, ~player.usa, ~!industryplant.on, ~techlevel.high
+	RenderSprites:
+		Image: mrls
 	-MapEditorData:	
 
 MRJ.britain:
 	Inherits: MRJ
 	Buildable:
 		Prerequisites: factory, techcenter, ~vehicles.allies, ~player.britain, ~!industryplant.on, ~techlevel.high
+	RenderSprites:
+		Image: mrj
 	-MapEditorData:	
+
+MNLY.britain:
+	Inherits: MNLY
+	Buildable:
+		BuildPaletteOrder: 12
+		Prerequisites: factory, fix, ~vehicles.allies, ~player.britain, ~!industryplant.on, ~techlevel.medium
+	RenderSprites:
+		Image: mnly
+	-MapEditorData:
 
 PAPC.france:
 	Inherits: PAPC
 	Buildable:
 		Prerequisites: factory, barracks, techcenter, ~vehicles.allies, ~player.france, ~!industryplant.on, ~techlevel.high
-	-MapEditorData:
-
-PTNK.france:
-	Inherits: PTNK
-	Buildable:
-		Prerequisites: factory, techcenter, ~vehicles.allies, ~player.france, ~!industryplant.on, ~techlevel.high
+	RenderSprites:
+		Image: papc
 	-MapEditorData:
 
 CTNK.germany:
 	Inherits: CTNK
 	Buildable:
 		Prerequisites: factory, pdox, ~vehicles.allies, ~player.germany, ~!industryplant.on, ~techlevel.high
+	RenderSprites:
+		Image: ctnk
 	-MapEditorData:
 
-PRSM.germany:
-	Inherits: PRSM
+MBUN.turkey:
+	Inherits: MBUN
 	Buildable:
-		Prerequisites: factory, techcenter, ~vehicles.allies, ~player.germany, ~!industryplant.on, ~techlevel.high
-
-E7.britain:
-	Inherits: E7
-	Buildable:
-		Prerequisites: ~barracks, techcenter, ~infantry.allies, !enough.commandos, ~player.britain, ~techlevel.high
+		Prerequisites: factory, barracks, techcenter, ~vehicles.allies, ~player.turkey, ~!industryplant.on, ~techlevel.high
+	RenderSprites:
+		Image: mbun
 	-MapEditorData:
 
-RMBO.france:
-	Inherits: RMBO
+# Allies Aircraft
+
+HELI.usa:
+	Inherits: HELI
 	Buildable:
-		Prerequisites: ~barracks, techcenter, ~infantry.allies, !enough.commandos, ~player.france, ~techlevel.high
+		Prerequisites: hpad, techcenter, ~helicopters.allies, ~player.usa, ~!industryplant.on, ~techlevel.high
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	RenderSprites:
+		Image: heli
 	-MapEditorData:
 
-CCMD.germany:
-	Inherits: CCMD
+SPIT.usa:
+	Inherits: SPIT
 	Buildable:
-		Prerequisites: ~barracks, techcenter, ~infantry.allies, !enough.commandos, ~player.germany, ~techlevel.high
+		Prerequisites: afld, ~airplanes.allies, ~player.usa, ~!industryplant.on, ~techlevel.medium
+	Aircraft:
+		Speed: 195
+	RenderSprites:
+		Image: spitfire
 	-MapEditorData:
+
+SPIT.britain:
+	Inherits: SPIT
+	Buildable:
+		Prerequisites: afld, ~airplanes.allies, ~player.britain, ~!industryplant.on, ~techlevel.medium
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	RenderSprites:
+		Image: spitfire
+	-MapEditorData:
+
+F16.usa:
+	Inherits: F16
+	Buildable:
+		Prerequisites: afld, techcenter, ~airplanes.allies, ~player.usa, ~!industryplant.on, ~techlevel.high
+	Aircraft:
+		Speed: 286
+	RenderSprites:
+		Image: f16
+	-MapEditorData:
+
+F16.turkey:
+	Inherits: F16
+	Buildable:
+		Prerequisites: afld, techcenter, ~airplanes.allies, ~player.turkey, ~!industryplant.on, ~techlevel.high
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	RenderSprites:
+		Image: f16
+	-MapEditorData:
+
+SFIG.britain:
+	Inherits: SFIG
+	Buildable:
+		Prerequisites: afld, techcenter, fix, ~airplanes.allies, ~player.britain, ~!industryplant.on, ~techlevel.high
+	RenderSprites:
+		Image: sfig
+	-MapEditorData:
+
+# Allies Navy
+
+PT.greece:
+	Inherits: PT
+	Buildable:
+		Prerequisites: syrd, ~ships.allies, ~player.greece, ~!industryplant.on, ~techlevel.low
+	Health:
+		HP: 24000
+	RenderSprites:
+		Image: pt
+	-MapEditorData:
+
+DD.germany:
+	Inherits: DD
+	Buildable:
+		Prerequisites: syrd, dome, ~ships.allies, ~player.germany, ~!industryplant.on, ~techlevel.medium
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	RenderSprites:
+		Image: dd
+	-MapEditorData:
+
+DD.greece:
+	Inherits: DD
+	Buildable:
+		Prerequisites: syrd, dome, ~ships.allies, ~player.greece, ~!industryplant.on, ~techlevel.medium
+	Health:
+		HP: 48000
+	RenderSprites:
+		Image: dd
+	-MapEditorData:
+
+CA.spain:
+	Inherits: CA
+	Buildable:
+		Prerequisites: syrd, techcenter, ~ships.allies, ~player.spain, ~!industryplant.on, ~techlevel.high
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	RenderSprites:
+		Image: ca
+	-MapEditorData:
+
+CA.greece:
+	Inherits: CA
+	Buildable:
+		Prerequisites: syrd, techcenter, ~ships.allies, ~player.greece, ~!industryplant.on, ~techlevel.high
+	Health:
+		HP: 96000
+	RenderSprites:
+		Image: ca
+	-MapEditorData:
+
+LST.greece:
+	Inherits: LST
+	Buildable:
+		Prerequisites: syrd, ~player.greece, ~!industryplant.on, ~techlevel.low
+	Health:
+		HP: 42000
+	RenderSprites:
+		Image: lst
+	-MapEditorData:
+
+ASUB.france
+	Inherits: ASUB
+	Buildable:
+		Prerequisites: ~spen, dome, ~submarines.allies, ~player.france, ~!industryplant.on, ~techlevel.medium
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	RenderSprites:
+		Image: asub
+	-MapEditorData:
+
+# Soviet Structures
 
 POWR.russia:
 	Inherits: POWR
@@ -342,7 +988,6 @@ APWR.russia:
 	Inherits: APWR
 	Buildable:
 		Prerequisites: dome, ~player.russia, ~!industryplant.on, ~techlevel.medium
-		Description: Provides double the power of a standard Power Plant
 	Power:
 		Amount: 200
 	RenderSprites:
@@ -353,11 +998,285 @@ BIO.russia:
 	Inherits: BIO.buildable
 	Buildable:
 		Prerequisites: techcenter, ~structures.soviet, ~player.russia, ~!industryplant.on, !enough.bio, ~techlevel.high
-		Description: Provides quadruple the power of a standard power plant\nMaximum 1 can be built\n Explodes violently on death!
 	Power:
 		Amount: 400
 	RenderSprites:
 		Image: bio
+	-MapEditorData:
+
+TSLA.russia:
+	Inherits: TSLA
+	Buildable:
+		Prerequisites: techcenter, ~player.russia, ~structures.soviet, ~!industryplant.on, ~techlevel.high
+	Armament:
+		Weapon: TeslaZap.russia
+		LocalOffset: 0,0,896
+		PauseOnCondition: disabled || on.maintenance
+	RenderSprites:
+		Image: tsla
+	-MapEditorData:
+
+PROC.belarus:
+	Inherits: PROC.soviet
+	Buildable:
+		Prerequisites: ~structures.soviet, ~player.belarus, ~!industryplant.on, ~techlevel.low
+	-FreeActor:
+	FreeActor:
+		Actor: HARV.belarus
+		SpawnOffset: 1,2
+		Facing: 64
+	RenderSprites:
+		Image: proc
+	ProvidesPrerequisite:
+		Prerequisite: proc
+
+INDP.belarus:
+	Inherits: INDP
+	Buildable:
+		Prerequisites: dome, ~structures.soviet, ~player.belarus, ~techlevel.high
+	ProvidesPrerequisite@COUNTRYDUPLICATE:
+		Prerequisite: indp
+	ProvidesPrerequisite@COSTREDUCER:
+		Prerequisite: industryplant.on
+		RequiresCondition: !disabled
+	RenderSprites:
+		Image: rresf
+	-MapEditorData:
+
+# Soviet Infantry
+
+E1.kazakh:
+	Inherits: E1
+	Buildable:
+		Prerequisites: ~barracks, ~player.kazakh, ~!industryplant.on, ~techlevel.infonly
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	RenderSprites: 
+		Image: e1
+	-MapEditorData:
+
+E1.belarus:
+	Inherits: E1
+	Buildable:
+		Prerequisites: ~barracks, ~player.belarus, ~!industryplant.on, ~techlevel.infonly
+	Health:
+		HP: 6000
+	RenderSprites: 
+		Image: e1
+	-MapEditorData:
+
+E2.belarus:
+	Inherits: E2
+	Buildable:
+		Prerequisites: ~barracks, ~infantry.soviet, ~player.belarus, ~!industryplant.on, ~techlevel.infonly
+	Health:
+		HP: 6000
+	RenderSprites: 
+		Image: e2
+	-MapEditorData:
+
+E3.belarus:
+	Inherits: E3
+	Buildable:
+		Prerequisites: ~barracks, anypower, ~player.belarus, ~!industryplant.on, ~techlevel.infonly
+	Health:
+		HP: 5400
+	RenderSprites: 
+		Image: e3
+	-MapEditorData:
+
+E6.belarus:
+	Inherits: E6
+	Buildable:
+		Prerequisites: ~barracks, proc, ~player.belarus, ~!industryplant.on, ~techlevel.infonly
+	Health:
+		HP: 3000
+	RenderSprites: 
+		Image: e6
+	-MapEditorData:
+
+MEDI.belarus:
+	Inherits: MEDI
+	Buildable:
+		Prerequisites: ~barracks, ~player.belarus, ~!industryplant.on, ~techlevel.infonly
+	Health:
+		HP: 7300
+	RenderSprites: 
+		Image: medi
+	-MapEditorData:
+
+MECH.belarus:
+	Inherits: MECH
+	Buildable:
+		Prerequisites: ~barracks, fix, ~player.belarus, ~!industryplant.on, ~techlevel.medium
+	Health:
+		HP: 7300
+	RenderSprites: 
+		Image: mech
+	-MapEditorData:
+
+SHOK.russia:
+	Inherits: SHOK
+	Buildable:
+		Prerequisites: ~barracks, tsla, ~infantry.soviet, ~player.russia, ~!industryplant.on, ~techlevel.high
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	RenderSprites:
+		Image: shok
+	-MapEditorData:
+
+SHOK.belarus:
+	Inherits: SHOK
+	Buildable:
+		Prerequisites: ~barracks, tsla, ~infantry.soviet, ~player.belarus, ~!industryplant.on, ~techlevel.high
+	Health:
+		HP: 6000
+	RenderSprites:
+		Image: shok
+	-MapEditorData:
+
+RPG.belarus:
+	Inherits: RPG
+	Buildable:
+		Prerequisites: ~barracks, ftur, ~infantry.soviet, ~player.belarus, ~!industryplant.on, ~techlevel.medium
+	Health:
+		HP: 5400
+	RenderSprites:
+		Image: rpg
+	-MapEditorData:
+
+E4.ukraine:
+	Inherits: E4
+	Buildable:
+		Prerequisites: ~barracks, dome, ~player.ukraine, ~!industryplant.on, ~techlevel.medium
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	RenderSprites:
+		Image: e4
+	-MapEditorData:
+
+E4.belarus:
+	Inherits: E4
+	Buildable:
+		Prerequisites: ~barracks, dome, ~player.belarus, ~!industryplant.on, ~techlevel.medium
+	Health:
+		HP: 7200
+	RenderSprites:
+		Image: e4
+	-MapEditorData:
+
+DOG.belarus:
+	Inherits: DOG
+	Buildable:
+		Prerequisites: ~kenn, ~player.belarus, ~!industryplant.on, ~techlevel.infonly
+	Health:
+		HP: 2160
+	RenderSprites:
+		Image: dog
+	-MapEditorData:
+
+THF.belarus:
+	Inherits: THF
+	Buildable:
+		Prerequisites: ~barracks, fix, ~infantry.soviet, ~player.belarus, ~!industryplant.on, ~techlevel.medium
+	Health:
+		HP: 5400
+	RenderSprites:
+		Image: thf
+	-MapEditorData:
+
+THF.moldova:
+	Inherits: THF
+	Buildable:
+		Prerequisites: ~barracks, fix, ~infantry.soviet, ~player.moldova, ~!industryplant.on, ~techlevel.medium
+	Mobile:
+		Speed: 71
+	RenderSprites:
+		Image: thf
+	-MapEditorData:
+
+FTRP.belarus:
+	Inherits: FTRP
+	Buildable:
+		Prerequisites: ~barracks, fcom.buildable, ~infantry.soviet, ~player.belarus, ~!industryplant.on, ~techlevel.medium
+	Health:
+		HP: 5400
+	RenderSprites:
+		Image: ftrp
+	-MapEditorData:
+
+SNIP.belarus:
+	Inherits: SNIP
+	Buildable:
+		Prerequisites: ~barracks, dome, ~infantry.soviet, ~player.belarus, ~!industryplant.on, ~techlevel.medium
+	Health:
+		HP: 9600
+	RenderSprites:
+		Image: sniper
+	-MapEditorData:
+
+VOLK.russia:
+	Inherits: VOLK
+	Buildable:
+		Prerequisites: ~barracks, techcenter, ~infantry.soviet, !enough.commandos, ~player.russia, ~techlevel.high
+	RenderSprites:
+		Image: gnrl
+	-MapEditorData:
+
+VOLK.belarus:
+	Inherits: VOLK
+	Buildable:
+		Prerequisites: ~barracks, techcenter, ~infantry.soviet, !enough.commandos, ~player.belarus, ~techlevel.high
+	Health:
+		HP: 14400
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	RenderSprites:
+		Image: gnrl
+	-MapEditorData:
+
+NTSH.ukraine:
+	Inherits: NTSH
+	Buildable:
+		Prerequisites: ~barracks, techcenter, ~infantry.soviet, !enough.commandos, ~player.ukraine, ~techlevel.high
+	RenderSprites:
+		Image: ntsh
+	-MapEditorData:
+
+BORS.kazakh:
+	Inherits: BORS
+	Buildable:
+		Prerequisites: ~barracks, techcenter, ~infantry.soviet, !enough.commandos, ~player.kazakh, ~techlevel.high
+	RenderSprites:
+		Image: bors
+	-MapEditorData:
+
+# Soviet Vehicles
+
+HARV.belarus:
+	Inherits: HARV.soviet
+	Buildable:
+		Prerequisites: factory, proc, ~vehicles.soviet, ~player.belarus, ~!industryplant.on, ~techlevel.infonly
+	RenderSprites:
+		Image: harv.soviet
+	Harvester:
+		Capacity: 30
+		PipCount: 9
+	-MapEditorData:
+
+BTR.russia:
+	Inherits: BTR
+	Buildable:
+		Prerequisites: factory, barracks, ~vehicles.soviet, ~player.russia, ~!industryplant.on, ~techlevel.low
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	RenderSprites:
+		Image: btr
 	-MapEditorData:
 
 2TNK.russia:
@@ -369,33 +1288,8 @@ BIO.russia:
 		HP: 40500
 	SpawnActorOnDeath:
 		Actor: 2TNK.russia.Husk
-	-MapEditorData:
-
-2TNK.ukraine:
-	Inherits: 2TNK.soviet
-	Buildable:
-		Prerequisites: factory, fix, ~vehicles.soviet, ~player.ukraine, ~!industryplant.on, ~techlevel.low
-	Armament@PRIMARY:
-		Name: primary
-		Weapon: 105mmSingular.ukraine
-		Recoil: 128
-		RecoilRecovery: 26
-		LocalOffset: 768,0,90
-		MuzzleSequence: muzzle
-		PauseOnCondition: empdisable
-	SpawnActorOnDeath:
-		Actor: 2TNK.ukraine.Husk
-	-MapEditorData:
-
-2TNK.kazakh:
-	Inherits: 2TNK.soviet
-	Buildable:
-		Prerequisites: factory, fix, ~vehicles.soviet, ~player.kazakh, ~!industryplant.on, ~techlevel.low
-		BuildDurationModifier: 70
-	Mobile:
-		Speed: 80
-	SpawnActorOnDeath:
-		Actor: 2TNK.ukraine.Husk
+	RenderSprites:
+		Image: 2tnk.soviet
 	-MapEditorData:
 
 2TNK.russia.Husk:
@@ -412,6 +1306,24 @@ BIO.russia:
 		Image: 2tnk.soviet.destroyed
 	-MapEditorData:
 
+2TNK.ukraine:
+	Inherits: 2TNK.soviet
+	Buildable:
+		Prerequisites: factory, fix, ~vehicles.soviet, ~player.ukraine, ~!industryplant.on, ~techlevel.low
+	Armament@PRIMARY:
+		Name: primary
+		Weapon: 105mmSingular.ukraine
+		Recoil: 128
+		RecoilRecovery: 26
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	SpawnActorOnDeath:
+		Actor: 2TNK.ukraine.Husk
+	RenderSprites:
+		Image: 2tnk.soviet
+	-MapEditorData:
+
 2TNK.ukraine.Husk:
 	Inherits: ^Husk
 	Tooltip:
@@ -424,6 +1336,19 @@ BIO.russia:
 		IntoActor: 2tnk.ukraine
 	RenderSprites:
 		Image: 2tnk.soviet.destroyed
+	-MapEditorData:
+
+2TNK.kazakh:
+	Inherits: 2TNK.soviet
+	Buildable:
+		Prerequisites: factory, fix, ~vehicles.soviet, ~player.kazakh, ~!industryplant.on, ~techlevel.low
+		BuildDurationModifier: 70
+	Mobile:
+		Speed: 80
+	SpawnActorOnDeath:
+		Actor: 2TNK.ukraine.Husk
+	RenderSprites:
+		Image: 2tnk.soviet
 	-MapEditorData:
 
 2TNK.kazakh.Husk:
@@ -449,32 +1374,8 @@ BIO.russia:
 		HP: 54000
 	SpawnActorOnDeath:
 		Actor: 3TNK.russia.Husk
-	-MapEditorData:
-
-3TNK.ukraine:
-	Inherits: 3TNK
-	Buildable:
-		Prerequisites: factory, fix, ~vehicles.soviet, ~player.ukraine, ~!industryplant.on, ~techlevel.medium
-	Armament:
-		Weapon: 105mm.ukraine
-		Recoil: 128
-		RecoilRecovery: 38
-		LocalOffset: 768,85,90, 768,-85,90
-		MuzzleSequence: muzzle
-		PauseOnCondition: empdisable
-	SpawnActorOnDeath:
-		Actor: 3TNK.ukraine.Husk
-	-MapEditorData:
-
-3TNK.kazakh:
-	Inherits: 3TNK
-	Buildable:
-		Prerequisites: factory, fix, ~vehicles.soviet, ~player.kazakh, ~!industryplant.on, ~techlevel.medium
-		BuildDurationModifier: 70
-	Mobile:
-		Speed: 80
-	SpawnActorOnDeath:
-		Actor: 3TNK.kazakh.Husk
+	RenderSprites:
+		Image: 3tnk
 	-MapEditorData:
 
 3TNK.russia.Husk:
@@ -491,6 +1392,23 @@ BIO.russia:
 		Image: 3tnk.destroyed
 	-MapEditorData:
 
+3TNK.ukraine:
+	Inherits: 3TNK
+	Buildable:
+		Prerequisites: factory, fix, ~vehicles.soviet, ~player.ukraine, ~!industryplant.on, ~techlevel.medium
+	Armament:
+		Weapon: 105mm.ukraine
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 768,85,90, 768,-85,90
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	SpawnActorOnDeath:
+		Actor: 3TNK.ukraine.Husk
+	RenderSprites:
+		Image: 3tnk
+	-MapEditorData:
+
 3TNK.ukraine.Husk:
 	Inherits: ^Husk
 	Tooltip:
@@ -503,6 +1421,19 @@ BIO.russia:
 		IntoActor: 3tnk.ukraine
 	RenderSprites:
 		Image: 3tnk.destroyed
+	-MapEditorData:
+
+3TNK.kazakh:
+	Inherits: 3TNK
+	Buildable:
+		Prerequisites: factory, fix, ~vehicles.soviet, ~player.kazakh, ~!industryplant.on, ~techlevel.medium
+		BuildDurationModifier: 70
+	Mobile:
+		Speed: 80
+	SpawnActorOnDeath:
+		Actor: 3TNK.kazakh.Husk
+	RenderSprites:
+		Image: 3tnk
 	-MapEditorData:
 
 3TNK.kazakh.Husk:
@@ -528,35 +1459,8 @@ BIO.russia:
 		HP: 81000
 	SpawnActorOnDeath:
 		Actor: 4TNK.russia.Husk
-	-MapEditorData:
-
-4TNK.ukraine:
-	Inherits: 4TNK
-	Buildable:
-		Prerequisites: factory, fix, techcenter, ~vehicles.soviet, ~player.ukraine, ~!industryplant.on, ~techlevel.high
-	Armament@PRIMARY:
-		Weapon: 120mm.ukraine
-		LocalOffset: 900,180,340, 900,-180,340
-		Recoil: 171
-		RecoilRecovery: 30
-		MuzzleSequence: muzzle
-		PauseOnCondition: empdisable
-	SpawnActorOnDeath:
-		Actor: 4TNK.ukraine.Husk
-	-MapEditorData:
-
-4TNK.kazakh:
-	Inherits: 4TNK
-	Buildable:
-		Prerequisites: factory, fix, techcenter, ~vehicles.soviet, ~player.kazakh, ~!industryplant.on, ~techlevel.high
-		BuildDurationModifier: 70
-	Mobile:
-		Speed: 62
-		TurnSpeed: 4
-	Turreted:
-		TurnSpeed: 4
-	SpawnActorOnDeath:
-		Actor: 4TNK.kazakh.Husk
+	RenderSprites:
+		Image: 4tnk
 	-MapEditorData:
 
 4TNK.russia.Husk:
@@ -573,6 +1477,23 @@ BIO.russia:
 		Image: 4tnk.destroyed
 	-MapEditorData:
 
+4TNK.ukraine:
+	Inherits: 4TNK
+	Buildable:
+		Prerequisites: factory, fix, techcenter, ~vehicles.soviet, ~player.ukraine, ~!industryplant.on, ~techlevel.high
+	Armament@PRIMARY:
+		Weapon: 120mm.ukraine
+		LocalOffset: 900,180,340, 900,-180,340
+		Recoil: 171
+		RecoilRecovery: 30
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	SpawnActorOnDeath:
+		Actor: 4TNK.ukraine.Husk
+	RenderSprites:
+		Image: 4tnk
+	-MapEditorData:
+
 4TNK.ukraine.Husk:
 	Inherits: ^Husk
 	Tooltip:
@@ -585,6 +1506,22 @@ BIO.russia:
 		IntoActor: 4tnk.ukraine
 	RenderSprites:
 		Image: 4tnk.destroyed
+	-MapEditorData:
+
+4TNK.kazakh:
+	Inherits: 4TNK
+	Buildable:
+		Prerequisites: factory, fix, techcenter, ~vehicles.soviet, ~player.kazakh, ~!industryplant.on, ~techlevel.high
+		BuildDurationModifier: 70
+	Mobile:
+		Speed: 62
+		TurnSpeed: 4
+	Turreted:
+		TurnSpeed: 4
+	SpawnActorOnDeath:
+		Actor: 4TNK.kazakh.Husk
+	RenderSprites:
+		Image: 4tnk
 	-MapEditorData:
 
 4TNK.kazakh.Husk:
@@ -601,38 +1538,69 @@ BIO.russia:
 		Image: 4tnk.destroyed
 	-MapEditorData:
 
+DTRK.ukraine:
+	Inherits: DTRK
+	Buildable:
+		Prerequisites: factory, techcenter, ~vehicles.soviet, ~player.ukraine, ~!industryplant.on, ~techlevel.high
+	RenderSprites:
+		Image: dtrk
+	-MapEditorData:
+
+V2RL.ukraine:
+	Inherits: V2RL
+	Buildable:
+		Prerequisites: factory, dome, techcenter, ~vehicles.soviet, ~player.ukraine, ~!industryplant.on, ~techlevel.high
+	Armament:
+		Weapon: SCUD.ukraine
+		ReloadingCondition: reloading
+		PauseOnCondition: empdisable
+	RenderSprites:
+		Image: v2rl
+	-MapEditorData:
+
+QTNK.uzbekh:
+	Inherits: QTNK
+	Buildable:
+		Prerequisites: factory, fix, techcenter, ~vehicles.soviet, ~player.uzbekh, ~!industryplant.on, ~techlevel.high
+	RenderSprites:
+		Image: qtnk
+	-MapEditorData:
+
+# Soviet Aircraft
+
+MIG.ukraine:
+	Inherits: MIG
+	Buildable:
+		Prerequisites: afld, techcenter, ~airplanes.soviet, ~player.ukraine, ~!industryplant.on, ~techlevel.high
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	RenderSprites:
+		Image: mig
+	-MapEditorData:
+
+FROG.belarus:
+	Inherits: FROG
+	Buildable:
+		Prerequisites: afld, techcenter, fix, ~airplanes.soviet, ~player.belarus, ~!industryplant.on, ~techlevel.high
+	RenderSprites:
+		Image: frog
+	-MapEditorData:
+
+# Soviet Navy
+
 TBT.russia:
 	Inherits: TBT
 	Buildable:
 		Prerequisites: syrd, techcenter, ~ships.soviet, ~player.russia, ~!industryplant.on, ~techlevel.high
+	RenderSprites:
+		Image: tbt
 	-MapEditorData:
 
 FSUB.ukraine:
 	Inherits: FSUB
 	Buildable:
 		Prerequisites: spen, ~submarines.soviet, ~player.ukraine, ~!industryplant.on, ~techlevel.medium
-	-MapEditorData:
-
-DTRK.ukraine:
-	Inherits: DTRK
-	Buildable:
-		Prerequisites: factory, techcenter, ~vehicles.soviet, ~player.ukraine, ~!industryplant.on, ~techlevel.high
-	-MapEditorData:
-
-VOLK.russia:
-	Inherits: VOLK
-	Buildable:
-		Prerequisites: ~barracks, techcenter, ~infantry.soviet, !enough.commandos, ~player.russia, ~techlevel.high
-	-MapEditorData:
-
-NTSH.ukraine:
-	Inherits: NTSH
-	Buildable:
-		Prerequisites: ~barracks, techcenter, ~infantry.soviet, !enough.commandos, ~player.ukraine, ~techlevel.high
-	-MapEditorData:
-
-BORS.kazakh:
-	Inherits: BORS
-	Buildable:
-		Prerequisites: ~barracks, techcenter, ~infantry.soviet, !enough.commandos, ~player.kazakh, ~techlevel.high
+	RenderSprites:
+		Image: fsub
 	-MapEditorData:

@@ -265,7 +265,7 @@ CAMERA.small:
 		Range: 5c0
 		Type: CenterPosition
 	DetectCloaked:
-		Range: 5c0
+		Range: 5c256
 		CloakTypes: Cloak, Thief
 	MapEditorData:
 		Categories: System
@@ -277,6 +277,11 @@ SONAR:
 	-RevealsShroud:
 	DetectCloaked:
 		CloakTypes: Underwater
+
+SONAR.greece:
+	Inherits: SONAR
+	DetectCloaked:
+		Range: 6c512
 
 FLARE:
 	Immobile:

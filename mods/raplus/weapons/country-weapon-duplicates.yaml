@@ -10,6 +10,11 @@
 	Warhead@1Dam: SpreadDamage
 		Damage: 2250
 
+25mm.spain:
+	Inherits: 25mm
+	Range: 5c768
+	ReloadDelay: 24
+
 90mm.britain:
 	Inherits: 90mm
 	Warhead@1Dam: SpreadDamage
@@ -21,16 +26,26 @@
 	Warhead@1Dam: SpreadDamage
 		Damage: 3500
 
-130mm.britain:
-	Inherits: 130mm
+90mm.spain:
+	Inherits: 90mm
+	Range: 5c768
+	ReloadDelay: 55
+
+110mm.britain:
+	Inherits: 110mm
 	Warhead@1Dam: SpreadDamage
 		Damage: 8750
 
-130mm.france:
-	Inherits: 130mm
+110mm.france:
+	Inherits: 110mm
 	ReloadDelay: 72
 	Warhead@1Dam: SpreadDamage
 		Damage: 7250
+
+110mm.spain:
+	Inherits: 110mm
+	Range: 6c768
+
 
 25mm.decoy:
 	Inherits: 25mm
@@ -64,6 +79,14 @@
 	-Warhead@3Eff: CreateEffect
 	-Warhead@4EffWater: CreateEffect
 
+Repair.germany:
+	Inherits: Repair
+	Range: 4c0
+
+Heal.greece:
+	Inherits: Heal
+	Range: 4c0
+
 105mm.ukraine:
 	Inherits: ^Cannon
 	Range: 5c768
@@ -87,4 +110,11 @@
 	Inherits: 120mm
 	Range: 5c768
 	ReloadDelay: 100
-	
+
+SCUD.ukraine:
+	Inherits: SCUD
+	ReloadDelay: 215
+
+TeslaZap.russia:
+	Inherits: TeslaZap
+	Range: 9c512

@@ -72,7 +72,11 @@ Rules:
 	raplus|rules/palettes.yaml
 	raplus|rules/world.yaml
 	raplus|rules/defaults.yaml
-	raplus|rules/vehicles.yaml
+	# raplus|rules/vehicles.yaml
+	raplus|rules/common-vehicles.yaml
+	raplus|rules/allies-vehicles.yaml
+	raplus|rules/soviet-vehicles.yaml
+	raplus|rules/arabs-vehicles.yaml
 	raplus|rules/husks.yaml
 	raplus|rules/structures.yaml
 	raplus|rules/infantry.yaml

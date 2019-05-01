@@ -868,6 +868,15 @@ rushouse.husk:
 	idle: rushouse
 		Start: 1
 
+hotel:
+	idle:
+	damaged-idle:
+		Start: 1
+
+hotel.husk:
+	idle: hotel
+		Start: 2
+
 asianhut:
 	idle:
 	damaged-idle:

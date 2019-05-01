@@ -23,14 +23,6 @@ tran.soviet:
 	Inherits: tran
 	icon: yk24icon
 
-tran.discount:
-	Defaults: tran
-	Inherits: tran
-
-tran.soviet.discount:
-	Defaults: tran.soviet
-	Inherits: tran.soviet
-
 iroq:
 	idle:
 		Facings: 32
@@ -44,10 +36,6 @@ iroq:
 		Length: 6
 		Facings: 8
 	icon: iroqicon
-
-iroq.discount:
-	Defaults: iroq
-	Inherits: iroq
 
 heli:
 	idle:
@@ -63,10 +51,6 @@ heli:
 		Facings: 8
 	icon: heliicon
 
-heli.discount:
-	Defaults: heli
-	Inherits: heli
-
 hind:
 	idle:
 		Facings: 32
@@ -81,9 +65,19 @@ hind:
 		Facings: 8
 	icon: hindicon
 
-hind.discount:
-	Defaults: hind
-	Inherits: hind
+cbra:
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+	rotor: lrotor
+		Length: 4
+	slow-rotor: lrotor
+		Start: 4
+		Length: 8
+	muzzle: minigun
+		Length: 6
+		Facings: 8
+	icon: cbraicon
 
 hindcarr:
 	idle:
@@ -115,10 +109,6 @@ spitfire:
 		Facings: 8
 	icon: spitfireicon
 
-spit.disounct:
-	Defaults: yak
-	Inherits: yak
-
 yak:
 	idle:
 		Facings: 16
@@ -127,27 +117,15 @@ yak:
 		Facings: 8
 	icon: yakicon
 
-yak.discount:
-	Defaults: yak
-	Inherits: yak
-
 f16:
 	idle:
 		Facings: 16
 	icon: f16icon
 
-f16.discount:
-	Defaults: f16
-	Inherits: f16
-
 mig:
 	idle:
 		Facings: 16
 	icon: migicon
-
-mig.discount:
-	Defaults: mig
-	Inherits: mig
 
 frog:
 	idle:
@@ -157,18 +135,10 @@ frog:
 		Facings: 8
 	icon: frogicon
 
-frog.discount:
-	Defaults: frog
-	Inherits: frog
-
 sfig:
 	idle:
 		Facings: 32
 	icon: sfigicon
-
-sfig.discount:
-	Defaults: sfig
-	Inherits: sfig
 
 cossack:
 	idle:
@@ -177,10 +147,6 @@ cossack:
 		UseClassicFacingFudge: True
 		Offset: 0,5
 	icon: cossackicon
-
-cossack.discount:
-	Defaults: cossack
-	Inherits: cossack
 
 tran1husk:
 	idle:
@@ -200,6 +166,14 @@ b52:
 	idle:
 		Facings: 16
 
+b2:
+	idle:
+		Facings: 16
+
+blmp:
+	idle:
+		Facings: 32
+
 kirov:
 	idle:
 		Facings: 32
@@ -210,3 +184,19 @@ kirov:
 		Start: 4
 		Length: 8
 	icon: kirovicon
+
+kirov.carrier:
+	idle: kirov-carrier
+		Facings: 32
+		UseClassicFacingFudge: True
+	rotor: krotor
+		Length: 4
+	rotor-rear: lrotor
+		Length: 4
+	slow-rotor: krotor
+		Start: 4
+		Length: 8
+	slow-rotor-rear: lrotor
+		Start: 4
+		Length: 8
+	icon: kirov-carrier-icon

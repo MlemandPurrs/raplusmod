@@ -1,9 +1,14 @@
+
+# Buildings
+
 POWR.discount:
 	Inherits: POWR
 	Buildable:
 		Prerequisites: ~!player.russia, ~industryplant.on, ~techlevel.infonly
 	Valued:
 		Cost: 225
+	RenderSprites:
+		Image: powr
 	-MapEditorData:
 
 POWR.russia.discount:
@@ -19,6 +24,8 @@ APWR.discount:
 		Prerequisites: dome, ~!player.russia, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 450
+	RenderSprites:
+		Image: apwr
 	-MapEditorData:
 
 APWR.russia.discount:
@@ -31,15 +38,28 @@ APWR.russia.discount:
 TENT.discount:
 	Inherits: TENT
 	Buildable:
-		Prerequisites: ~structures.allies, ~industryplant.on, ~techlevel.infonly
+		Prerequisites: ~structures.allies, ~!player.britain, ~industryplant.on, ~techlevel.infonly
 	Valued:
 		Cost: 265
+	RenderSprites:
+		Image: tent
 	-MapEditorData:
+
+TENT.britain.discount:
+	Inherits: TENT
+	Buildable:
+		Prerequisites: ~structures.allies, ~player.britain, ~industryplant.on, ~techlevel.infonly
+	Valued:
+		Cost: 265
+	RenderSprites:
+		Image: tent
 
 BARR.discount:
 	Inherits: BARR
 	Buildable:
 		Prerequisites: ~structures.soviet, ~industryplant.on, ~techlevel.infonly
+	RenderSprites:
+		Image: barr
 	Valued:
 		Cost: 265
 	-MapEditorData:
@@ -47,12 +67,25 @@ BARR.discount:
 KENN.discount:
 	Inherits: KENN
 	Buildable:
-		Prerequisites: barracks, ~industryplant.on, ~techlevel.infonly
+		Prerequisites: barracks, ~!player.britain, ~industryplant.on, ~techlevel.infonly
 	Valued:
 		Cost: 75
 	ProvidesPrerequisite:
 		Prerequisite: kenn
+	RenderSprites:
+		Image: kenn
 	-MapEditorData:
+
+KENN.britain.discount:
+	Inherits: KENN
+	Buildable:
+		Prerequisites: barracks, ~player.britain, ~industryplant.on, ~techlevel.infonly
+	Valued:
+		Cost: 75
+	ProvidesPrerequisite:
+		Prerequisite: kenn
+	RenderSprites:
+		Image: kenn
 
 SPMST.discount:
 	Inherits: SPMST
@@ -60,6 +93,8 @@ SPMST.discount:
 		Prerequisites:  techcenter, ~structures.allies, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 300
+	RenderSprites:
+		Image: spmst
 	-MapEditorData:
 
 PROC.discount:
@@ -70,15 +105,23 @@ PROC.discount:
 		Cost: 1125
 	ProvidesPrerequisite:
 		Prerequisite: proc
+	RenderSprites:
+		Image: proc
 	-MapEditorData:
 
-PROC.SOVIET.discount:
-	Inherits: PROC.SOVIET
+PROC.soviet.discount:
+	Inherits: PROC.soviet
 	Buildable:
-		Prerequisites: ~structures.soviet, ~industryplant.on, ~techlevel.low
+		Prerequisites: ~structures.soviet, ~!player.belarus, ~industryplant.on, ~techlevel.low
 	Valued:
 		Cost: 1125
-	-MapEditorData:
+
+PROC.belarus.discount:
+	Inherits: PROC.belarus
+	Buildable:
+		Prerequisites: ~structures.soviet, ~player.belarus, ~industryplant.on, ~techlevel.low
+	Valued:
+		Cost: 1125
 
 SILO.discount:
 	Inherits: SILO
@@ -88,15 +131,30 @@ SILO.discount:
 		Cost: 115
 	ProvidesPrerequisite:
 		Prerequisite: silo
+	RenderSprites:
+		Image: silo
 	-MapEditorData:
 
 WEAP.discount:
 	Inherits: WEAP
 	Buildable:
-		Prerequisites: proc, ~industryplant.on, ~techlevel.low
+		Prerequisites: proc, ~!player.britain, ~industryplant.on, ~techlevel.low
 	Valued:
 		Cost: 1500
+	RenderSprites:
+		Image: weap
 	-MapEditorData:
+
+WEAP.britain.discount:
+	Inherits: WEAP
+	Buildable:
+		Prerequisites: proc, ~player.britain, ~industryplant.on, ~techlevel.low
+	Valued:
+		Cost: 1500
+	ProvidesPrerequisite:
+		Prerequisite: weap
+	RenderSprites:
+		Image: weap
 
 FIX.discount:
 	Inherits: FIX
@@ -106,48 +164,101 @@ FIX.discount:
 		Cost: 565
 	ProvidesPrerequisite:
 		Prerequisite: fix
+	RenderSprites:
+		Image: fix
 	-MapEditorData:
 
 SYRD.discount:
 	Inherits: SYRD
 	Buildable:
-		Prerequisites: proc, ~industryplant.on, ~techlevel.low
+		Prerequisites: proc, ~!player.britain, ~industryplant.on, ~techlevel.low
 	Valued:
 		Cost: 750
 	ProvidesPrerequisite:
 		Prerequisite: syrd
+	RenderSprites:
+		Image: syrd
 	-MapEditorData:
 
+SYRD.britain.discount:
+	Inherits: SYRD.britain
+	Buildable:
+		Prerequisites: proc, ~player.britain, ~industryplant.on, ~techlevel.low
+	Valued:
+		Cost: 750
+	ProvidesPrerequisite:
+		Prerequisite: syrd
+	RenderSprites:
+		Image: syrd
 
 SPEN.discount:
 	Inherits: SPEN
 	Buildable:
-		Prerequisites: syrd, ~industryplant.on, ~techlevel.medium
+		Prerequisites: syrd, ~!player.britain, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 600
 	ProvidesPrerequisite:
 		Prerequisite: spen
+	RenderSprites:
+		Image: spen
 	-MapEditorData:
+
+SPEN.britain.discount:
+	Inherits: SPEN.britain
+	Buildable:
+		Prerequisites: syrd, ~player.britain, ~industryplant.on, ~techlevel.medium
+	Valued:
+		Cost: 600
+	ProvidesPrerequisite:
+		Prerequisite: spen
+	RenderSprites:
+		Image: spen
 
 AFLD.discount:
 	Inherits: AFLD
 	Buildable:
-		Prerequisites: dome, ~industryplant.on, ~techlevel.medium
+		Prerequisites: dome, ~!player.britain, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 565
 	ProvidesPrerequisite:
 		Prerequisite: afld
+	RenderSprites:
+		Image: afld
 	-MapEditorData:
+
+AFLD.britain.discount:
+	Inherits: AFLD.britain
+	Buildable:
+		Prerequisites: dome, ~player.britain, ~industryplant.on, ~techlevel.medium
+	Valued:
+		Cost: 565
+	ProvidesPrerequisite:
+		Prerequisite: afld
+	RenderSprites:
+		Image: afld
 
 HPAD.discount:
 	Inherits: HPAD
 	Buildable:
-		Prerequisites: dome, ~industryplant.on, ~techlevel.medium
+		Prerequisites: dome, ~!player.britain, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 375
 	ProvidesPrerequisite:
 		Prerequisite: hpad
+	RenderSprites:
+		Image: hpad
 	-MapEditorData:
+
+HPAD.britain.discount:
+	Inherits: HPAD.britain
+	Buildable:
+		Prerequisites: dome, ~player.britain, ~industryplant.on, ~techlevel.medium
+	Valued:
+		Cost: 375
+	ProvidesPrerequisite:
+		Prerequisite: hpad
+	RenderSprites:
+		Image: hpad
 
 DOME.discount:
 	Inherits: DOME
@@ -155,6 +266,8 @@ DOME.discount:
 		Prerequisites: proc, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 1125
+	RenderSprites:
+		Image: dome
 	-MapEditorData:
 
 ATEK.discount:
@@ -163,6 +276,8 @@ ATEK.discount:
 		Prerequisites: dome, techcenter, ~industryplant.on, !enough.spro, ~techlevel.unrestricted
 	Valued:
 		Cost: 1125
+	RenderSprites:
+		Image: atek
 	-MapEditorData:
 
 STEK.discount:
@@ -171,6 +286,8 @@ STEK.discount:
 		Prerequisites: weap, dome, ~structures.soviet, ~industryplant.on, !enough.techcenter, ~techlevel.high
 	Valued:
 		Cost: 1500
+	RenderSprites:
+		Image: stek
 	-MapEditorData:
 
 GAP.discount:
@@ -181,6 +298,8 @@ GAP.discount:
 		Cost: 600
 	ProvidesPrerequisite:
 		Prerequisite: gap
+	RenderSprites:
+		Image: gap
 	-MapEditorData:
 
 FCOM.Buildable.discount:
@@ -191,6 +310,8 @@ FCOM.Buildable.discount:
 		Cost: 800
 	ProvidesPrerequisite:
 		Prerequisite: fcom.buildable
+	RenderSprites:
+		Image: fcom
 	-MapEditorData:
 
 BIO.buildable.discount:
@@ -220,6 +341,8 @@ PDOX.discount:
 		Cost: 1125
 	ProvidesPrerequisite:
 		Prerequisite: pdox
+	RenderSprites:
+		Image: pdox
 	-MapEditorData:
 
 IRON.discount:
@@ -230,6 +353,8 @@ IRON.discount:
 		Cost: 1125
 	ProvidesPrerequisite:
 		Prerequisite: iron
+	RenderSprites:
+		Image: iron
 	-MapEditorData:
 
 MSLO.discount:
@@ -240,6 +365,8 @@ MSLO.discount:
 		Cost: 1875
 	ProvidesPrerequisite:
 		Prerequisite: mslo
+	RenderSprites:
+		Image: mslo
 	-MapEditorData:
 
 SBAG.discount:
@@ -248,6 +375,8 @@ SBAG.discount:
 		Prerequisites: barracks, ~structures.allies, ~industryplant.on, ~techlevel.low
 	Valued:
 		Cost: 40
+	RenderSprites:
+		Image: sbag
 	-MapEditorData:
 
 FENC.discount:
@@ -256,15 +385,26 @@ FENC.discount:
 		Prerequisites: barracks, ~structures.soviet, ~industryplant.on, ~techlevel.low
 	Valued:
 		Cost: 40
+	RenderSprites:
+		Image: fenc
 	-MapEditorData:
 
 BRIK.discount:
 	Inherits: BRIK
 	Buildable:
-		Prerequisites: weap, ~industryplant.on, ~techlevel.medium
+		Prerequisites: weap, ~!player.france, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 150
+	RenderSprites:
+		Image: brik
 	-MapEditorData:
+
+BRIK.france.discount:
+	Inherits: BRIK.france
+	Buildable:
+		Prerequisites: weap, ~player.france, ~industryplant.on, ~techlevel.medium
+	Valued:
+		Cost: 75
 
 HGATE.discount:
 	Inherits: HGATE
@@ -272,6 +412,8 @@ HGATE.discount:
 		Prerequisites: weap, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 175
+	RenderSprites:
+		Image: hgate
 	-MapEditorData:
 
 VGATE.discount:
@@ -280,29 +422,59 @@ VGATE.discount:
 		Prerequisites: weap, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 175
+	RenderSprites:
+		Image: vgate
 	-MapEditorData:
 
 PBOX.discount:
 	Inherits: PBOX
 	Buildable:
-		Prerequisites: barracks, ~industryplant.on, ~techlevel.low
+		Prerequisites: barracks, ~!player.turkey, ~industryplant.on, ~techlevel.low
 	Valued:
 		Cost: 425
 	-CustomSellValue:
 	CustomSellValue:
 		Value: 225
+	RenderSprites:
+		Image: pbox
 	-MapEditorData:
+
+PBOX.turkey.discount:
+	Inherits: PBOX
+	Buildable:
+		Prerequisites: barracks, ~player.turkey, ~industryplant.on, ~techlevel.low
+	Valued:
+		Cost: 425
+	-CustomSellValue:
+	CustomSellValue:
+		Value: 225
+	RenderSprites:
+		Image: pbox
 
 HBOX.discount:
 	Inherits: HBOX
 	Buildable:
-		Prerequisites: barracks, dome, ~structures.allies, ~industryplant.on, ~techlevel.medium
+		Prerequisites: barracks, dome, ~structures.allies, ~!player.turkey, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 425
 	-CustomSellValue:
 	CustomSellValue:
 		Value: 300
+	RenderSprites:
+		Image: hbox
 	-MapEditorData:
+
+HBOX.turkey.discount:
+	Inherits: HBOX
+	Buildable:
+		Prerequisites: barracks, dome, ~structures.allies, ~player.turkey, ~industryplant.on, ~techlevel.medium
+	Valued:
+		Cost: 425
+	-CustomSellValue:
+	CustomSellValue:
+		Value: 300
+	RenderSprites:
+		Image: hbox
 
 FTUR.discount:
 	Inherits: FTUR
@@ -312,49 +484,108 @@ FTUR.discount:
 		Cost: 450
 	ProvidesPrerequisite:
 		Prerequisite: ftur
+	RenderSprites:
+		Image: ftur
 	-MapEditorData:
 
 GUN.discount:
 	Inherits: GUN
 	Buildable:
-		Prerequisites: weap, ~industryplant.on, ~techlevel.medium
+		Prerequisites: weap, ~!player.turkey, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 450
+	RenderSprites:
+		Image: gun
 	-MapEditorData:
+
+GUN.turkey.discount:
+	Inherits: GUN
+	Buildable:
+		Prerequisites: weap, ~player.turkey, ~industryplant.on, ~techlevel.medium
+	Valued:
+		Cost: 450
+	RenderSprites:
+		Image: gun
 
 HTUR.discount:
 	Inherits: HTUR
 	Buildable:
-		Prerequisites: techcenter, ~structures.allies, ~industryplant.on, ~techlevel.high
+		Prerequisites: techcenter, ~structures.allies, ~!player.turkey, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 1125
+	RenderSprites:
+		Image: htur
 	-MapEditorData:
+
+HTUR.turkey.discount:
+	Inherits: HTUR
+	Buildable:
+		Prerequisites: techcenter, ~structures.allies, ~player.turkey, ~industryplant.on, ~techlevel.high
+	Valued:
+		Cost: 1125
+	RenderSprites:
+		Image: htur
 
 TSLA.discount:
 	Inherits: TSLA
 	Buildable:
-		Prerequisites: techcenter, ~structures.soviet, ~industryplant.on, ~techlevel.high
+		Prerequisites: techcenter, ~structures.soviet, ~!player.russia, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 900
 	ProvidesPrerequisite:
 		Prerequisite: tsla
+	RenderSprites:
+		Image: tsla
 	-MapEditorData:
+
+TSLA.russia.discount:
+	Inherits: TSLA.russia
+	Buildable:
+		Prerequisites: techcenter, ~structures.soviet, ~player.russia, ~industryplant.on, ~techlevel.high
+	Valued:
+		Cost: 900
+	ProvidesPrerequisite:
+		Prerequisite: tsla
+	RenderSprites:
+		Image: tsla
 
 SAM.discount:
 	Inherits: SAM
 	Buildable:
-		Prerequisites: dome, ~structures.allies, ~industryplant.on, ~techlevel.medium
+		Prerequisites: dome, ~structures.allies, ~!player.turkey, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 450
+	RenderSprites:
+		Image: sam
 	-MapEditorData:
+
+SAM.turkey.discount:
+	Inherits: SAM
+	Buildable:
+		Prerequisites: dome, ~structures.allies, ~player.turkey, ~industryplant.on, ~techlevel.medium
+	Valued:
+		Cost: 450
+	RenderSprites:
+		Image: sam
 
 HSAM.discount:
 	Inherits: HSAM
 	Buildable:
-		Prerequisites: dome, techcenter, ~structures.allies, ~industryplant.on, ~techlevel.medium
+		Prerequisites: dome, techcenter, ~structures.allies, ~!player.turkey, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 565
+	RenderSprites:
+		Image: hsam
 	-MapEditorData:
+
+HSAM.turkey.discount:
+	Inherits: HSAM.turkey
+	Buildable:
+		Prerequisites: dome, techcenter, ~structures.allies, ~player.turkey, ~industryplant.on, ~techlevel.medium
+	Valued:
+		Cost: 565
+	RenderSprites:
+		Image: hsam
 
 AGUN.discount:
 	Inherits: AGUN
@@ -362,7 +593,11 @@ AGUN.discount:
 		Prerequisites: dome, ~structures.soviet, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 600
+	RenderSprites:
+		Image: agun
 	-MapEditorData:
+
+# Infantry
 
 E1.discount:
 	Inherits: E1
@@ -370,6 +605,8 @@ E1.discount:
 		Prerequisites: ~barracks, ~industryplant.on, ~techlevel.infonly
 	Valued:
 		Cost: 75
+	RenderSprites:
+		Image: e1
 	-MapEditorData:
 
 E2.discount:
@@ -378,6 +615,8 @@ E2.discount:
 		Prerequisites: ~barracks, ~infantry.soviet, ~industryplant.on, ~techlevel.infonly
 	Valued:
 		Cost: 115
+	RenderSprites:
+		Image: e2
 	-MapEditorData:
 
 GREN.discount:
@@ -386,6 +625,8 @@ GREN.discount:
 		Prerequisites: ~barracks, anypower, ~infantry.allies, ~industryplant.on, ~techlevel.infonly
 	Valued:
 		Cost: 170
+	RenderSprites:
+		Image: gren
 	-MapEditorData:
 
 E3.discount:
@@ -394,6 +635,8 @@ E3.discount:
 		Prerequisites: ~barracks, anypower, ~industryplant.on, ~techlevel.infonly
 	Valued:
 		Cost: 225
+	RenderSprites:
+		Image: e3
 	-MapEditorData:
 
 E6.discount:
@@ -402,23 +645,43 @@ E6.discount:
 		Prerequisites: ~barracks, proc, ~industryplant.on, ~techlevel.infonly
 	Valued:
 		Cost: 375
+	RenderSprites:
+		Image: e6
 	-MapEditorData:
 
 MEDI.discount:
 	Inherits: MEDI
 	Buildable:
-		Prerequisites: ~barracks, ~industryplant.on, ~techlevel.infonly
+		Prerequisites: ~barracks, ~!player.greece, ~industryplant.on, ~techlevel.infonly
 	Valued:
 		Cost: 190
+	RenderSprites:
+		Image: medi
 	-MapEditorData:
+
+MEDI.greece.discount:
+	Inherits: MEDI.greece
+	Buildable:
+		Prerequisites: ~barracks, ~player.greece, ~industryplant.on, ~techlevel.infonly
+	Valued:
+		Cost: 190
 
 MECH.discount:
 	Inherits: MECH
 	Buildable:
-		Prerequisites: ~barracks, fix, ~industryplant.on, ~techlevel.medium
+		Prerequisites: ~barracks, fix, ~!player.germany, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 320
+	RenderSprites:
+		Image: mech
 	-MapEditorData:
+
+MECH.germany.discount:
+	Inherits: MECH.germany
+	Buildable:
+		Prerequisites: ~barracks, fix, ~player.germany, ~industryplant.on, ~techlevel.medium
+	Valued:
+		Cost: 320
 
 MGI.discount:
 	Inherits: MGI
@@ -426,6 +689,8 @@ MGI.discount:
 		Prerequisites: ~barracks, dome, ~infantry.allies, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 300
+	RenderSprites:
+		Image: mgi
 	-MapEditorData:
 
 SHOK.discount:
@@ -434,6 +699,8 @@ SHOK.discount:
 		Prerequisites: ~barracks, tsla, ~infantry.soviet, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 320
+	RenderSprites:
+		Image: shok
 	-MapEditorData:
 
 STNG.discount:
@@ -442,6 +709,8 @@ STNG.discount:
 		Prerequisites: ~barracks, dome, ~infantry.allies, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 340
+	RenderSprites:
+		Image: stng
 	-MapEditorData:
 
 FTRP.discount:
@@ -450,6 +719,8 @@ FTRP.discount:
 		Prerequisites: ~barracks, fcom, ~infantry.soviet, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 450
+	RenderSprites:
+		Image: ftrp
 	-MapEditorData:
 
 ATGM.discount:
@@ -458,6 +729,8 @@ ATGM.discount:
 		Prerequisites: ~barracks, fix, ~infantry.allies, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 450
+	RenderSprites:
+		Image: atgm
 	-MapEditorData:
 
 RPG.discount:
@@ -466,6 +739,8 @@ RPG.discount:
 		Prerequisites: ~barracks, ftur, ~infantry.soviet, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 575
+	RenderSprites:
+		Image: rpg
 	-MapEditorData:
 
 SNIP.discount:
@@ -474,6 +749,8 @@ SNIP.discount:
 		Prerequisites: ~barracks, dome, ~infantry.allies, ~!player.is.subfaction, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 525
+	RenderSprites:
+		Image: sniper
 	-MapEditorData:
 
 SNIP.britain.discount:
@@ -483,20 +760,40 @@ SNIP.britain.discount:
 	Valued:
 		Cost: 525
 
+SNIP.belarus.discount:
+	Inherits: SNIP.belarus
+	Buildable:
+		Prerequisites: ~barracks, dome, ~infantry.allies, ~player.belarus, ~industryplant.on, ~techlevel.medium
+	Valued:
+		Cost: 525
+
 E4.discount:
 	Inherits: E4
 	Buildable:
-		Prerequisites: ~barracks, dome, ~industryplant.on, ~techlevel.medium
+		Prerequisites: ~barracks, dome, ~!player.ukraine, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 300
+	RenderSprites:
+		Image: e4
 	-MapEditorData:
+
+E4.ukraine.discount:
+	Inherits: E4.ukraine
+	Buildable:
+		Prerequisites: ~barracks, dome, ~player.ukraine, ~industryplant.on, ~techlevel.medium
+	Valued:
+		Cost: 300
+	RenderSprites:
+		Image: e4
 
 MRTR.discount:
 	Inherits: MRTR
 	Buildable:
-		Prerequisites: ~barracks, fcom, ~infantry.soviet, ~industryplant.on, ~techlevel.high
+		Prerequisites: ~barracks, fcom.buildable, ~infantry.soviet, ~!player.is.subfaction, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 450
+	RenderSprites:
+		Image: mrtr
 	-MapEditorData:
 
 DOG.discount:
@@ -505,15 +802,26 @@ DOG.discount:
 		Prerequisites: ~kenn, ~industryplant.on, ~techlevel.infonly
 	Valued:
 		Cost: 150
+	RenderSprites:
+		Image: dog
 	-MapEditorData:
 
 SPY.discount:
 	Inherits: SPY
 	Buildable:
-		Prerequisites: ~barracks, dome, ~infantry.allies, ~!player.britain, ~industryplant.on, ~techlevel.medium
+		Prerequisites: ~barracks, dome, ~infantry.allies, ~!player.usa, ~!player.britain, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 375
+	RenderSprites:
+		Image: spy
 	-MapEditorData:
+
+SPY.usa.discount:
+	Inherits: SPY.usa
+	Buildable:
+		Prerequisites: ~barracks, dome, ~infantry.allies, ~player.usa, ~industryplant.on, ~techlevel.medium
+	Valued:
+		Cost: 280
 
 SPY.britain.discount:
 	Inherits: SPY.britain
@@ -528,6 +836,8 @@ THF.discount:
 		Prerequisites: ~barracks, fix, ~infantry.soviet, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 375
+	RenderSprites:
+		Image: thf
 	-MapEditorData:
 
 TTRP.discount:
@@ -536,7 +846,11 @@ TTRP.discount:
 		Prerequisites: ~barracks, tsla, techcenter, ~industryplant.on, ~player.russia, ~techlevel.high
 	Valued:
 		Cost: 490
+	RenderSprites:
+		Image: ttrp
 	-MapEditorData:
+
+# Vehicles	
 
 MCV.discount:
 	Inherits: MCV
@@ -544,6 +858,8 @@ MCV.discount:
 		Prerequisites: factory, fix, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 2250
+	RenderSprites:
+		Image: mcv
 	-MapEditorData:
 
 HARV.discount:
@@ -552,15 +868,28 @@ HARV.discount:
 		Prerequisites: factory, proc, ~!vehicles.soviet, ~industryplant.on, ~techlevel.infonly
 	Valued:
 		Cost: 900
+	RenderSprites:
+		Image: harv
 	-MapEditorData:
 
 HARV.SOVIET.discount:
-	Inherits: HARV.SOVIET
+	Inherits: HARV.soviet
 	Buildable:
-		Prerequisites: factory, proc, ~vehicles.soviet, ~industryplant.on, ~techlevel.infonly
+		Prerequisites: factory, proc, ~vehicles.soviet, ~!player.belarus, ~industryplant.on, ~techlevel.infonly
 	Valued:
 		Cost: 900
+	RenderSprites:
+		Image: harv.soviet
 	-MapEditorData:
+
+HARV.belarus.discount:
+	Inherits: HARV.belarus
+	Buildable:
+		Prerequisites: factory, proc, ~vehicles.soviet, ~player.belarus, ~industryplant.on, ~techlevel.infonly
+	Valued:
+		Cost: 900
+	RenderSprites:
+		Image: harv.soviet
 
 JEEP.discount:
 	Inherits: JEEP
@@ -568,6 +897,8 @@ JEEP.discount:
 		Prerequisites: factory, ~vehicles.allies, ~industryplant.on, ~techlevel.low
 	Valued:
 		Cost: 265
+	RenderSprites:
+		Image: jeep
 	-MapEditorData:
 
 FTRK.discount:
@@ -576,6 +907,8 @@ FTRK.discount:
 		Prerequisites: factory, ~vehicles.soviet, ~industryplant.on, ~techlevel.low
 	Valued:
 		Cost: 320
+	RenderSprites:
+		Image: ftrk
 	-MapEditorData:
 
 APC.discount:
@@ -584,22 +917,37 @@ APC.discount:
 		Prerequisites: factory, barracks, ~vehicles.allies, ~industryplant.on, ~techlevel.low
 	Valued:
 		Cost: 375
+	RenderSprites:
+		Image: apc
 	-MapEditorData:
 
 BTR.discount:
 	Inherits: BTR
 	Buildable:
-		Prerequisites: factory, barracks, ~vehicles.soviet, ~industryplant.on, ~techlevel.low
+		Prerequisites: factory, barracks, ~vehicles.soviet, ~!player.russia, ~industryplant.on, ~techlevel.low
 	Valued:
 		Cost: 490
+	RenderSprites:
+		Image: btr
 	-MapEditorData:
+
+BTR.russia.discount:
+	Inherits: BTR.russia
+	Buildable:
+		Prerequisites: factory, barracks, ~vehicles.soviet, ~player.russia, ~industryplant.on, ~techlevel.low
+	Valued:
+		Cost: 490
+	RenderSprites:
+		Image: btr
 
 1TNK.discount:
 	Inherits: 1TNK
 	Buildable:
-		Prerequisites: factory, ~vehicles.allies, ~!player.is.subfaction, ~industryplant.on, ~techlevel.low
+		Prerequisites: factory, ~vehicles.allies, ~player.not.tankbonus, ~industryplant.on, ~techlevel.low
 	Valued:
 		Cost: 375
+	RenderSprites:
+		Image: 1tnk
 	-MapEditorData:
 
 1TNK.britain.discount:
@@ -623,12 +971,28 @@ BTR.discount:
 	Valued:
 		Cost: 375
 
+1TNK.spain.discount:
+	Inherits: 1TNK.spain
+	Buildable:
+		Prerequisites: factory, ~vehicles.allies, ~player.spain, ~industryplant.on, ~techlevel.low
+	Valued:
+		Cost: 375
+
+1TNK.italy.discount:
+	Inherits: 1TNK.italy
+	Buildable:
+		Prerequisites: factory, ~vehicles.allies, ~player.italy, ~industryplant.on, ~techlevel.low
+	Valued:
+		Cost: 375
+
 2TNK.discount:
 	Inherits: 2TNK
 	Buildable:
-		Prerequisites: factory, fix, ~vehicles.allies, ~!player.is.subfaction, ~industryplant.on, ~techlevel.medium
+		Prerequisites: factory, fix, ~vehicles.allies, ~player.not.tankbonus, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 525
+	RenderSprites:
+		Image: 2tnk
 	-MapEditorData:
 
 2TNK.britain.discount:
@@ -652,12 +1016,28 @@ BTR.discount:
 	Valued:
 		Cost: 525
 
+2TNK.spain.discount:
+	Inherits: 2TNK.spain
+	Buildable:
+		Prerequisites: factory, fix, ~vehicles.allies, ~player.spain, ~industryplant.on, ~techlevel.medium
+	Valued:
+		Cost: 525
+
+2TNK.italy.discount:
+	Inherits: 2TNK.italy
+	Buildable:
+		Prerequisites: factory, fix, ~vehicles.allies, ~player.italy, ~industryplant.on, ~techlevel.medium
+	Valued:
+		Cost: 525
+
 2TNK.soviet.discount:
 	Inherits: 2TNK.soviet
 	Buildable:
-		Prerequisites: factory, fix, ~vehicles.soviet, ~!player.is.subfaction, ~industryplant.on, ~techlevel.low
+		Prerequisites: factory, fix, ~vehicles.soviet, ~player.not.tankbonus, ~industryplant.on, ~techlevel.low
 	Valued:
 		Cost: 600
+	RenderSprites:
+		Image: 2tnk.soviet
 	-MapEditorData:
 
 2TNK.russia.discount:
@@ -684,38 +1064,66 @@ BTR.discount:
 TNKD.discount:
 	Inherits: TNKD
 	Buildable:
-		Prerequisites: factory, fix, ~vehicles.allies, ~!player.is.subfaction, ~industryplant.on, ~techlevel.medium
+		Prerequisites: factory, fix, dome, ~vehicles.allies, ~player.not.tankbonus, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 675
+	RenderSprites:
+		Image: tnkd
 	-MapEditorData:
 
 TNKD.britain.discount:
 	Inherits: TNKD.britain
 	Buildable:
-		Prerequisites: factory, fix, ~vehicles.allies, ~player.britain, ~industryplant.on, ~techlevel.medium
+		Prerequisites: factory, fix, dome, ~vehicles.allies, ~player.britain, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 750
 
 TNKD.france.discount:
 	Inherits: TNKD.france
 	Buildable:
-		Prerequisites: factory, fix, ~vehicles.allies, ~player.france, ~industryplant.on, ~techlevel.medium
+		Prerequisites: factory, fix, dome, ~vehicles.allies, ~player.france, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 675
 
 TNKD.germany.discount:
 	Inherits: TNKD.germany
 	Buildable:
-		Prerequisites: factory, fix, ~vehicles.allies, ~player.germany, ~industryplant.on, ~techlevel.medium
+		Prerequisites: factory, fix, dome, ~vehicles.allies, ~player.germany, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 675
+
+TNKD.spain.discount:
+	Inherits: TNKD.spain
+	Buildable:
+		Prerequisites: factory, fix, dome, ~vehicles.allies, ~player.spain, ~industryplant.on, ~techlevel.medium
+	Valued:
+		Cost: 675
+
+TNKD.italy.discount:
+	Inherits: TNKD.italy
+	Buildable:
+		Prerequisites: factory, fix, dome, ~vehicles.allies, ~player.italy, ~industryplant.on, ~techlevel.medium
+	Valued:
+		Cost: 675
+
+TNKD.heavy.discount:
+	Inherits: TNKD.heavy
+	Buildable:
+		Prerequisites: factory, fix, techcenter, ~vehicles.allies, ~player.usa, ~industryplant.on, ~techlevel.high
+	Valued:
+		Cost: 900
+	RenderSprites:
+		Image: tnkd.heavy
+	-MapEditorData:
 
 3TNK.discount:
 	Inherits: 3TNK
 	Buildable:
-		Prerequisites: factory, fix, ~vehicles.soviet, ~!player.is.subfaction, ~industryplant.on, ~techlevel.medium
+		Prerequisites: factory, fix, ~vehicles.soviet, ~player.not.tankbonus, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 865
+	RenderSprites:
+		Image: 3tnk
 	-MapEditorData:
 
 3TNK.russia.discount:
@@ -745,6 +1153,8 @@ ARTY.discount:
 		Prerequisites: factory, dome, ~vehicles.allies, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 565
+	RenderSprites:
+		Image: arty
 	-MapEditorData:
 
 NONA.discount:
@@ -753,23 +1163,45 @@ NONA.discount:
 		Prerequisites: factory, dome, ~vehicles.soviet, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 490
+	RenderSprites:
+		Image: nona
 	-MapEditorData:
 
 MRLS.discount:
 	Inherits: MRLS
 	Buildable:
-		Prerequisites: factory, dome, techcenter, ~vehicles.allies, ~industryplant.on, ~techlevel.high
+		Prerequisites: factory, dome, techcenter, ~vehicles.allies, ~!player.is.subfaction, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 600
+	RenderSprites:
+		Image: mrls
 	-MapEditorData:
+
+MRLS.usa.discount:
+	Inherits: MRLS.usa
+	Buildable:
+		Prerequisites: factory, dome, techcenter, ~vehicles.allies, ~player.usa, ~industryplant.on, ~techlevel.high
+	Valued:
+		Cost: 600
 
 V2RL.discount:
 	Inherits: V2RL
 	Buildable:
-		Prerequisites: factory, dome, techcenter, ~vehicles.soviet, ~industryplant.on, ~techlevel.high
+		Prerequisites: factory, dome, techcenter, ~vehicles.soviet, ~!player.ukraine, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 675
+	RenderSprites:
+		Image: v2rl
 	-MapEditorData:
+
+V2RL.ukraine.discount:
+	Inherits: V2RL.ukraine
+	Buildable:
+		Prerequisites: factory, dome, techcenter, ~vehicles.soviet, ~player.ukraine, ~industryplant.on, ~techlevel.high
+	Valued:
+		Cost: 675
+	RenderSprites:
+		Image: v2rl
 
 FTNK.discount:
 	Inherits: FTNK
@@ -777,30 +1209,38 @@ FTNK.discount:
 		Prerequisites: factory, ftur, techcenter, ~vehicles.soviet, ~!player.ukraine, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 450
+	RenderSprites:
+		Image: ftnk
 	-MapEditorData:
 
 PTNK.discount:
 	Inherits: PTNK
 	Buildable:
-		Prerequisites: factory, techcenter, ~vehicles.allies, ~!player.is.subfaction, ~industryplant.on, ~techlevel.high
-	Valued:
-		Cost: 715
-	-MapEditorData:
-
-PTNK.france.discount:
-	Inherits: PTNK.france
-	Buildable:
 		Prerequisites: factory, techcenter, ~vehicles.allies, ~player.france, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 715
+	RenderSprites:
+		Image: ptnk
+	-MapEditorData:
 
 MNLY.discount:
 	Inherits: MNLY
 	Buildable:
-		Prerequisites: factory, fix, ~industryplant.on, ~vehicles.soviet, ~techlevel.medium
+		Prerequisites: factory, fix, ~vehicles.soviet, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 525
+	RenderSprites:
+		Image: mnly
 	-MapEditorData:
+
+MNLY.britain.discount:
+	Inherits: MNLY.britain
+	Buildable:
+		Prerequisites: factory, fix, ~vehicles.allies, ~player.britain, ~industryplant.on, ~techlevel.medium
+	Valued:
+		Cost: 525
+	RenderSprites:
+		Image: mnly
 
 PAPC.discount:
 	Inherits: PAPC
@@ -808,6 +1248,8 @@ PAPC.discount:
 		Prerequisites: factory, barracks, techcenter, ~vehicles.allies, ~!player.is.subfaction, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 1015
+	RenderSprites:
+		Image: papc
 	-MapEditorData:
 
 PAPC.france.discount:
@@ -823,6 +1265,8 @@ MRJ.discount:
 		Prerequisites: factory, techcenter, ~vehicles.allies, ~!player.is.subfaction, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 875
+	RenderSprites:
+		Image: mrj
 	-MapEditorData:
 
 MRJ.britain.discount:
@@ -838,14 +1282,18 @@ TTNK.discount:
 		Prerequisites: factory, tsla, techcenter, ~vehicles.soviet, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 1015
+	RenderSprites:
+		Image: ttnk
 	-MapEditorData:
 
 4TNK.discount:
 	Inherits: 4TNK
 	Buildable:
-		Prerequisites: factory, fix, techcenter, ~vehicles.soviet, ~!player.is.subfaction, ~industryplant.on, ~techlevel.high
+		Prerequisites: factory, fix, techcenter, ~vehicles.soviet, ~player.not.tankbonus, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 1125
+	RenderSprites:
+		Image: 4tnk
 	-MapEditorData:
 
 4TNK.russia.discount:
@@ -875,6 +1323,8 @@ CTNK.discount:
 		Prerequisites: factory, pdox, ~vehicles.allies, ~!player.is.subfaction, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 1015
+	RenderSprites:
+		Image: ctnk
 	-MapEditorData:
 
 CTNK.germany.discount:
@@ -887,33 +1337,60 @@ CTNK.germany.discount:
 QTNK.discount:
 	Inherits: QTNK
 	Buildable:
-		Prerequisites: factory, fix, techcenter, ~vehicles.soviet, ~industryplant.on, ~techlevel.high
+		Prerequisites: factory, fix, techcenter, ~vehicles.soviet, ~!player.is.subfaction, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 1350
+	RenderSprites:
+		Image: qtnk
 	-MapEditorData:
+
+QTNK.uzbekh.discount:
+	Inherits: QTNK
+	Buildable:
+		Prerequisites: factory, fix, techcenter, ~vehicles.soviet, ~player.uzbekh, ~industryplant.on, ~techlevel.high
+	Valued:
+		Cost: 1350
+	RenderSprites:
+		Image: qtnk
 
 MBUN.discount:
 	Inherits: MBUN
 	Buildable:
-		Prerequisites: factory, barracks, techcenter, ~vehicles.allies, ~industryplant.on, ~techlevel.high
+		Prerequisites: factory, barracks, techcenter, ~vehicles.allies, ~!player.is.subfaction, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 900
+	RenderSprites:
+		Image: mbun
+	-MapEditorData:
+
+MBUN.turkey.discount:
+	Inherits: MBUN.turkey
+	Buildable:
+		Prerequisites: factory, barracks, techcenter, ~vehicles.allies, ~player.turkey, ~industryplant.on, ~techlevel.high
+	Valued:
+		Cost: 900
+	RenderSprites:
+		Image: mbun
+
+ADST.discount:
+	Inherits: ADST
+	Buildable:
+		Prerequisites: factory, syrd, techcenter, ~vehicles.allies, ~!player.is.subfaction, ~industryplant.on, ~techlevel.high
+	Valued:
+		Cost: 1200
+	RenderSprites:
+		Image: adst
 	-MapEditorData:
 
 PRSM.discount:
 	Inherits: PRSM
 	Buildable:
-		Prerequisites: factory, techcenter, ~vehicles.allies, ~!player.is.subfaction, ~industryplant.on, ~techlevel.high
-	Valued:
-		Cost: 1125
-	-MapEditorData:
-
-PRSM.germany.discount:
-	Inherits: PRSM.germany
-	Buildable:
 		Prerequisites: factory, techcenter, ~vehicles.allies, ~player.germany, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 1125
+	RenderSprites:
+		Image: prsm
+	-MapEditorData:
 
 MGG.discount:
 	Inherits: MGG
@@ -921,6 +1398,8 @@ MGG.discount:
 		Prerequisites: factory, gap, ~vehicles.allies, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 675
+	RenderSprites:
+		Image: mgg
 	-MapEditorData:
 
 DTRK.discount:
@@ -929,6 +1408,8 @@ DTRK.discount:
 		Prerequisites: factory, techcenter, ~industryplant.on, ~!player.is.subfaction, ~vehicles.soviet, ~techlevel.high
 	Valued:
 		Cost: 1500
+	RenderSprites:
+		Image: dtrk
 	-MapEditorData:
 
 DTRK.ukraine.discount:
@@ -937,6 +1418,8 @@ DTRK.ukraine.discount:
 		Prerequisites: factory, techcenter, ~industryplant.on, ~player.ukraine, ~vehicles.soviet, ~techlevel.high
 	Valued:
 		Cost: 1500
+	RenderSprites:
+		Image: dtrk
 
 RA2.TTNK.discount:
 	Inherits: RA2.TTNK
@@ -944,6 +1427,8 @@ RA2.TTNK.discount:
 		Prerequisites: factory, tsla, techcenter, ~industryplant.on, ~player.russia, ~techlevel.high
 	Valued:
 		Cost: 1390
+	RenderSprites:
+		Image: ra2.ttnk
 	-MapEditorData:
 
 4TNK.Flame.discount:
@@ -952,15 +1437,38 @@ RA2.TTNK.discount:
 		Prerequisites: factory, fix, ftur, techcenter, ~vehicles.soviet, ~player.ukraine, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 900
+	RenderSprites:
+		Image: 4tnk.flame
 	-MapEditorData:
+
+BEHE.discount:
+	Inherits: BEHE
+	Buildable:
+		Prerequisites: factory, fix, techcenter, ~vehicles.soviet, !enough.behemoths, ~player.belarus, ~industryplant.on, ~techlevel.high
+	Valued:
+		Cost: 1875
+	RenderSprites:
+		Image: behe
+	-MapEditorData:
+
+# Navy
 
 PT.discount:
 	Inherits: PT
 	Buildable:
-		Prerequisites: ~syrd, ~ships.allies, ~industryplant.on, ~techlevel.low
+		Prerequisites: ~syrd, ~ships.allies, ~!player.greece, ~industryplant.on, ~techlevel.low
 	Valued:
 		Cost: 360
+	RenderSprites:
+		Image: pt
 	-MapEditorData:
+
+PT.greece.discount:
+	Inherits: PT.greece
+	Buildable:
+		Prerequisites: ~syrd, ~ships.allies, ~player.greece, ~industryplant.on, ~techlevel.low
+	Valued:
+		Cost: 360
 
 PT2.discount:
 	Inherits: PT2
@@ -968,15 +1476,33 @@ PT2.discount:
 		Prerequisites: ~syrd, ~ships.soviet, ~industryplant.on, ~techlevel.low
 	Valued:
 		Cost: 470
+	RenderSprites:
+		Image: pt2
 	-MapEditorData:
 
 DD.discount:
 	Inherits: DD
 	Buildable:
-		Prerequisites: ~syrd, dome, ~ships.allies, ~industryplant.on, ~techlevel.medium
+		Prerequisites: ~syrd, dome, ~ships.allies, ~!player.germany, ~!player.greece, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 715
+	RenderSprites:
+		Image: dd
 	-MapEditorData:
+
+DD.germany.discount:
+	Inherits: DD.germany
+	Buildable:
+		Prerequisites: ~syrd, dome, ~ships.allies, ~player.germany, ~industryplant.on, ~techlevel.medium
+	Valued:
+		Cost: 715
+
+DD.greece.discount:
+	Inherits: DD.greece
+	Buildable:
+		Prerequisites: ~syrd, dome, ~ships.allies, ~player.greece, ~industryplant.on, ~techlevel.medium
+	Valued:
+		Cost: 715
 
 DD2.discount:
 	Inherits: DD2
@@ -984,15 +1510,33 @@ DD2.discount:
 		Prerequisites: ~syrd, dome, ~ships.soviet, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 715
+	RenderSprites:
+		Image: dd2
 	-MapEditorData:
 
 CA.discount:
 	Inherits: CA
 	Buildable:
-		Prerequisites: ~syrd, techcenter, ~ships.allies, ~industryplant.on, ~techlevel.high
+		Prerequisites: ~syrd, techcenter, ~ships.allies, ~!player.spain, ~!player.greece, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 1500
+	RenderSprites:
+		Image: ca
 	-MapEditorData:
+
+CA.spain.discount:
+	Inherits: CA.spain
+	Buildable:
+		Prerequisites: ~syrd, techcenter, ~ships.allies, ~player.spain, ~industryplant.on, ~techlevel.high
+	Valued:
+		Cost: 1500
+
+CA.greece.discount:
+	Inherits: CA.greece
+	Buildable:
+		Prerequisites: ~syrd, techcenter, ~ships.allies, ~player.greece, ~industryplant.on, ~techlevel.high
+	Valued:
+		Cost: 1500
 
 CA2.discount:
 	Inherits: CA2
@@ -1000,6 +1544,8 @@ CA2.discount:
 		Prerequisites: ~syrd, techcenter, ~ships.soviet, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 1500
+	RenderSprites:
+		Image: ca2
 	-MapEditorData:
 
 SS.discount:
@@ -1008,6 +1554,8 @@ SS.discount:
 		Prerequisites: ~spen, ~industryplant.on, ~techlevel.low
 	Valued:
 		Cost: 585
+	RenderSprites:
+		Image: ss
 	-MapEditorData:
 
 MSUB.discount:
@@ -1016,23 +1564,43 @@ MSUB.discount:
 		Prerequisites: ~spen, techcenter, ~submarines.allies, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 940
+	RenderSprites:
+		Image: msub
 	-MapEditorData:
 
 ASUB.discount:
 	Inherits: ASUB
 	Buildable:
-		Prerequisites: ~spen, ~submarines.allies, dome, ~industryplant.on, ~techlevel.medium
+		Prerequisites: ~spen, dome, ~submarines.allies, ~!player.france, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 715
+	RenderSprites:
+		Image: asub
 	-MapEditorData:
+
+ASUB.france.discount:
+	Inherits: ASUB.france
+	Buildable:
+		Prerequisites: ~spen, dome, ~submarines.allies, ~player.france, ~industryplant.on, ~techlevel.medium
+	Valued:
+		Cost: 715
 
 LST.discount:
 	Inherits: LST
 	Buildable:
-		Prerequisites: ~syrd, ~industryplant.on, ~techlevel.low
+		Prerequisites: ~syrd, ~!player.greece, ~industryplant.on, ~techlevel.low
 	Valued:
 		Cost: 525
+	RenderSprites:
+		Image: lst
 	-MapEditorData:
+
+LST.greece.discount:
+	Inherits: LST.greece
+	Buildable:
+		Prerequisites: ~syrd, ~player.greece, ~industryplant.on, ~techlevel.low
+	Valued:
+		Cost: 525
 
 TBT.discount:
 	Inherits: TBT
@@ -1040,6 +1608,8 @@ TBT.discount:
 		Prerequisites: ~syrd, tsla, techcenter, ~ships.soviet, ~!player.is.subfaction, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 640
+	RenderSprites:
+		Image: tbt
 	-MapEditorData:
 
 TBT.russia.discount:
@@ -1055,6 +1625,8 @@ FSUB.discount:
 		Prerequisites: spen, ftur, techcenter, ~submarines.soviet, ~!player.is.subfaction, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 675
+	RenderSprites:
+		Image: fsub
 	-MapEditorData:
 
 FSUB.ukraine.discount:
@@ -1070,6 +1642,8 @@ SCRP.discount:
 		Prerequisites: ~syrd, fix, ~ships.soviet, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 565
+	RenderSprites:
+		Image: scrp
 	-MapEditorData:
 
 LUN.discount:
@@ -1078,6 +1652,8 @@ LUN.discount:
 		Prerequisites: spen, afld, techcenter, ~submarines.soviet, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 1685
+	RenderSprites:
+		Image: lun
 	-MapEditorData:
 
 CARR.discount:
@@ -1090,6 +1666,8 @@ CARR.discount:
 	Transforms:
 		IntoActor: carr.discount.deployed
 		Offset: 0,0
+	RenderSprites:
+		Image: carr
 	-MapEditorData:
 
 CARR.discount.deployed:
@@ -1098,6 +1676,8 @@ CARR.discount.deployed:
 	Transforms:
 		IntoActor: carr.discount
 		Offset: 0,0
+	RenderSprites:
+		Image: carr.deployed
 	-MapEditorData:
 
 SREP.discount:
@@ -1110,6 +1690,8 @@ SREP.discount:
 	Transforms:
 		IntoActor: srep.discount.deployed
 		Offset: 0,0
+	RenderSprites:
+		Image: srep
 	-MapEditorData:
 
 SREP.discount.deployed:
@@ -1118,6 +1700,8 @@ SREP.discount.deployed:
 	Transforms:
 		IntoActor: srep.discount
 		Offset: 0,0
+	RenderSprites:
+		Image: srep.deployed
 	-MapEditorData:
 
 MGNM.discount:
@@ -1126,7 +1710,21 @@ MGNM.discount:
 		Prerequisites: spen, fix, ~ships.allies, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 470
+	RenderSprites:
+		Image: mgnm
 	-MapEditorData:
+
+PBT.discount:
+	Inherits: PT
+	Buildable:
+		 Prerequisites: syrd, techcenter, ~ships.allies, ~player.german, ~industryplant.on, ~techlevel.high
+	Valued:
+		Cost: 360
+	RenderSprites:
+		Image: pt
+	-MapEditorData:
+
+# Aircraft	
 
 TRAN.discount:
 	Inherits: TRAN
@@ -1134,6 +1732,8 @@ TRAN.discount:
 		Prerequisites: hpad, fix, ~helicopters.allies, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 675
+	RenderSprites:
+		Image: tran
 	-MapEditorData:
 
 TRAN.SOVIET.discount:
@@ -1150,15 +1750,26 @@ IROQ.discount:
 		Prerequisites: hpad, ~helicopters.allies, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 900
+	RenderSprites:
+		Image: iroq
 	-MapEditorData:
 
 HELI.discount:
 	Inherits: HELI
 	Buildable:
-		Prerequisites: hpad, techcenter, ~helicopters.allies, ~industryplant.on, ~techlevel.high
+		Prerequisites: hpad, techcenter, ~helicopters.allies, ~!player.usa, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 1315
+	RenderSprites:
+		Image: heli
 	-MapEditorData:
+
+HELI.usa.discount:
+	Inherits: HELI.usa
+	Buildable:
+		Prerequisites: hpad, techcenter, ~helicopters.allies, ~player.usa, ~industryplant.on, ~techlevel.high
+	Valued:
+		Cost: 1315
 
 HIND.discount:
 	Inherits: HIND
@@ -1166,15 +1777,33 @@ HIND.discount:
 		Prerequisites: hpad, techcenter, ~helicopters.soviet, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 1315
+	RenderSprites:
+		Image: hind
 	-MapEditorData:
 
 SPIT.discount:
 	Inherits: SPIT
 	Buildable:
-		Prerequisites: afld, ~airplanes.allies, ~industryplant.on, ~techlevel.medium
+		Prerequisites: afld, ~airplanes.allies, ~!player.usa, ~!player.britain, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 1015
+	RenderSprites:
+		Image: spitfire
 	-MapEditorData:
+
+SPIT.usa.discount:
+	Inherits: SPIT.usa
+	Buildable:
+		Prerequisites: afld, ~airplanes.allies, ~player.usa, ~industryplant.on, ~techlevel.medium
+	Valued:
+		Cost: 1015
+
+SPIT.britain.discount:
+	Inherits: SPIT.britain
+	Buildable:
+		Prerequisites: afld, ~airplanes.allies, ~player.britain, ~industryplant.on, ~techlevel.medium
+	Valued:
+		Cost: 1015
 
 YAK.discount:
 	Inherits: YAK
@@ -1182,15 +1811,33 @@ YAK.discount:
 		Prerequisites: afld, ~airplanes.soviet, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 1015
+	RenderSprites:
+		Image: yak
 	-MapEditorData:
 
 F16.discount:
 	Inherits: F16
 	Buildable:
-		Prerequisites: afld, techcenter, ~airplanes.allies, ~industryplant.on, ~techlevel.high
+		Prerequisites: afld, techcenter, ~airplanes.allies, ~!player.usa, ~!player.turkey, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 1405
+	RenderSprites:
+		Image: f16
 	-MapEditorData:
+
+F16.usa.discount:
+	Inherits: F16.usa
+	Buildable:
+		Prerequisites: afld, techcenter, ~airplanes.allies, ~player.usa, ~industryplant.on, ~techlevel.high
+	Valued:
+		Cost: 1405
+
+F16.turkey.discount:
+	Inherits: F16.turkey
+	Buildable:
+		Prerequisites: afld, techcenter, ~airplanes.allies, ~player.turkey, ~industryplant.on, ~techlevel.high
+	Valued:
+		Cost: 1405
 
 MIG.discount:
 	Inherits: MIG
@@ -1198,15 +1845,26 @@ MIG.discount:
 		Prerequisites: afld, techcenter, ~airplanes.soviet, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 1405
+	RenderSprites:
+		Image: mig
 	-MapEditorData:
 
 SFIG.discount:
 	Inherits: SFIG
 	Buildable:
-		Prerequisites: afld, techcenter, fix, ~airplanes.allies, ~industryplant.on, ~techlevel.high
+		Prerequisites: afld, techcenter, fix, ~airplanes.allies, ~!player.is.subfaction, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 1800
+	RenderSprites:
+		Image: sfig
 	-MapEditorData:
+
+SFIG.britain.discount:
+	Inherits: SFIG.britain
+	Buildable:
+		Prerequisites: afld, techcenter, fix, ~airplanes.allies, ~player.britain, ~industryplant.on, ~techlevel.high
+	Valued:
+		Cost: 1800
 
 FROG.discount:
 	Inherits: FROG
@@ -1214,6 +1872,8 @@ FROG.discount:
 		Prerequisites: afld, techcenter, fix, ~airplanes.soviet, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 1800
+	RenderSprites:
+		Image: frog
 	-MapEditorData:
 
 COSSACK.discount:
@@ -1222,6 +1882,8 @@ COSSACK.discount:
 		Prerequisites: afld, techcenter, ~airplanes.soviet, ~!player.is.subfaction, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 2140
+	RenderSprites:
+		Image: cossack
 	-MapEditorData:
 
 DOG.bomb.discount:
@@ -1230,6 +1892,8 @@ DOG.bomb.discount:
 		Prerequisites: ~kenn, fix, ~infantry.soviet, ~player.ukraine, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 265
+	RenderSprites:
+		Image: dog.bomb
 	-MapEditorData:
 
 JUMP.discount:
@@ -1238,4 +1902,26 @@ JUMP.discount:
 		Prerequisites: ~barracks, techcenter, dome, ~infantry.allies, ~player.germany, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 490
+	RenderSprites:
+		Image: jump
+	-MapEditorData:
+
+KIROV.discount:
+	Inherits: KIROV
+	Buildable:
+		Prerequisites: afld, ~factory, ~techcenter, ~airplanes.soviet, ~player.russia, ~industryplant.on, ~techlevel.high
+	Valued:
+		Cost: 1650
+	RenderSprites:
+		Image: kirov
+	-MapEditorData:
+
+KIROV.carrier.discount:
+	Inherits: KIROV.carrier
+	Buildable:
+		Prerequisites: afld, ~factory, ~techcenter, ~airplanes.soviet, ~player.belarus, ~industryplant.on, ~techlevel.high
+	Valued:
+		Cost: 2100
+	RenderSprites:
+		Image: kirov.carrier
 	-MapEditorData:

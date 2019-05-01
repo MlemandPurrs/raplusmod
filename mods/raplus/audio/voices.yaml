@@ -2,12 +2,33 @@ GenericVoice:
 	Variants:
 		allies: .v01,.v03
 		soviet: .r01,.r03
+		usa: .v01,.v03
 		britain: .v01,.v03
 		france: .v01,.v03
+		nether: .v01,.v03
 		germany: .v01,.v03
+		spain: .v01,.v03
+		italy: .v01,.v03
+		greece: .v01,.v03
+		turkey: .v01,.v03
 		russia: .r01,.r03
 		ukraine: .r01,.r03
 		kazakh: .r01,.r03
+		kyrgiz: .r01,.r03
+		belarus: .r01,.r03
+		moldova: .r01,.r03
+		lithuan: .r01,.r03
+		karelia: .r01,.r03
+		uzbekh: .r01,.r03
+		arabs: .a01,.a03
+		saudi: .a01,.a03
+		iraq: .a01,.a03
+		syria: .a01,.a03
+		jordan: .a01,.a03
+		egypt: .a01,.a03
+		yemen: .a01,.a03
+		somali: .a01,.a03
+		libya: .a01,.a03
 	Voices:
 		Select: await1,ready,report1,yessir1
 		Action: ackno,affirm1,noprob,overout,ritaway,roger,ugotit
@@ -20,12 +41,33 @@ VehicleVoice:
 	Variants:
 		allies: .v00,.v02
 		soviet: .r00,.r02
+		usa: .v00,.v02
 		britain: .v00,.v02
 		france: .v00,.v02
+		nether: .v00,.v02
 		germany: .v00,.v02
+		spain: .v00,.v02
+		italy: .v00,.v02
+		greece: .v00,.v02
+		turkey: .v00,.v02
 		russia: .r00,.r02
 		ukraine: .r00,.r02
 		kazakh: .r00,.r02
+		kyrgiz: .r00,.r02
+		belarus: .r00,.r02
+		moldova: .r00,.r02
+		lithuan: .r00,.r02
+		karelia: .r00,.r02
+		uzbekh: .r00,.r02
+		arabs: .a00,.a02
+		saudi: .a00,.a02
+		iraq: .a00,.a02
+		syria: .a00,.a02
+		jordan: .a00,.a02
+		egypt: .a00,.a02
+		yemen: .a00,.a02
+		somali: .a00,.a02
+		libya: .a00,.a02
 	Voices:
 		Select: vehic1,yessir1,report1,await1
 		Action: ackno,affirm1

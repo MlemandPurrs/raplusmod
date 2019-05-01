@@ -5,7 +5,7 @@ E1:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 1
-		Prerequisites: ~barracks, ~!industryplant.on, ~techlevel.infonly
+		Prerequisites: ~barracks, ~!player.kazakh, ~!player.belarus, ~!industryplant.on, ~techlevel.infonly
 		Description: General-purpose infantry\n Strong vs Infantry\n Weak vs Vehicles, Aircraft
 	Selectable:
 		Class: E1
@@ -49,7 +49,7 @@ E2:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 3
-		Prerequisites: ~barracks, ~infantry.soviet, ~!industryplant.on, ~techlevel.infonly
+		Prerequisites: ~barracks, ~infantry.soviet, ~!player.belarus, ~!industryplant.on, ~techlevel.infonly
 		Description: Fast infantry armed with grenades\n Strong vs Buildings, slow-moving targets\n Weak vs Infantry, Vehicles
 	Valued:
 		Cost: 150
@@ -98,7 +98,7 @@ GREN:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 3
-		Prerequisites: ~barracks, anypower, ~infantry.allies, ~!industryplant.on, ~techlevel.infonly
+		Prerequisites: ~barracks, anypower, ~infantry.allies, ~!player.france, ~!industryplant.on, ~techlevel.infonly
 		Description: Infantry armed with grenade launcher\nHas longer range compared to Soviet counterpart\n Strong vs Infantry, Buildings\n Weak vs Vehicles, Aircraft
 	Armament@PRIMARY:
 		Weapon: GrenadeLauncher
@@ -129,7 +129,7 @@ E3:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 2
-		Prerequisites: ~barracks, anypower, ~!industryplant.on, ~techlevel.infonly
+		Prerequisites: ~barracks, anypower, ~!player.belarus, ~!industryplant.on, ~techlevel.infonly
 		Description: Anti-tank/Anti-aircraft infantry\n Strong vs Vehicles, Aircraft\n Weak vs Infantry
 	Selectable:
 		Class: E3
@@ -145,6 +145,9 @@ E3:
 		HP: 4500
 	Armament@PRIMARY:
 		Weapon: Rockets
+		LocalOffset: 0,0,555
+	Armament@SECONDARY:
+		Weapon: RocketsAA
 		LocalOffset: 0,0,555
 	Armament@GARRISONED:
 		Name: garrisoned
@@ -178,7 +181,7 @@ E6:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 4
-		Prerequisites: ~barracks, proc, ~!industryplant.on, ~techlevel.infonly
+		Prerequisites: ~barracks, proc, ~!player.belarus, ~!industryplant.on, ~techlevel.infonly
 		Description: Versatile engineering corps\nCan instant repair structures\nCaptures enemy structures\nCan repair destroyed bridges\n Unarmed
 	Valued:
 		Cost: 500
@@ -225,7 +228,7 @@ MEDI:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 5
-		Prerequisites: ~barracks, ~!industryplant.on, ~techlevel.infonly
+		Prerequisites: ~barracks, ~!player.greece, ~!player.belarus, ~!industryplant.on, ~techlevel.infonly
 		Description: Heals nearby infantry\n Unarmed
 	Valued:
 		Cost: 250
@@ -235,8 +238,6 @@ MEDI:
 		AddToArmyValue: true
 	Health:
 		HP: 6000
-	Mobile:
-		Speed: 56
 	RevealsShroud:
 		Range: 3c0
 	Passenger:
@@ -272,7 +273,7 @@ MECH:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 6
-		Prerequisites: ~barracks, fix, ~!industryplant.on, ~techlevel.medium
+		Prerequisites: ~barracks, fix, ~!player.germany, ~!player.belarus, ~!industryplant.on, ~techlevel.medium
 		Description: Repairs nearby vehicles\nRestores vehicle husks to working condition\nCan capture driverless vehicles\n Unarmed
 	Valued:
 		Cost: 425
@@ -281,9 +282,8 @@ MECH:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
-		HP: 8000
+		HP: 6000
 	Mobile:
-		Speed: 56
 		Voice: Move
 	RevealsShroud:
 		Range: 3c0
@@ -336,7 +336,7 @@ MGI:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 7
-		Prerequisites: ~barracks, dome, ~infantry.allies, ~!industryplant.on, ~techlevel.medium
+		Prerequisites: ~barracks, dome, ~infantry.allies, ~!player.germany, ~!industryplant.on, ~techlevel.medium
 		Description: Infantry equiped with a rapid firing Machine Gun\n Strong vs Infantry\n Weak vs Vehicles, Defenses
 	Armament@PRIMARY:
 		Weapon: M60mg.Inf
@@ -372,7 +372,7 @@ SHOK:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 7
-		Prerequisites: ~barracks, tsla, ~!industryplant.on, ~infantry.soviet, ~techlevel.high
+		Prerequisites: ~barracks, tsla, ~infantry.soviet, ~!player.russia, ~!player.belarus, ~!industryplant.on, ~techlevel.high
 		Description: Versatile infantry with portable Tesla coils\n Strong vs Infantry, Vehicles\n Weak vs Aircraft
 	Valued:
 		Cost: 425
@@ -437,7 +437,7 @@ ATGM:
 		Name: ATGM Soldier
 	Buildable:
 		BuildPaletteOrder: 8
-		Prerequisites: ~barracks, fix, ~infantry.allies, ~!industryplant.on, ~techlevel.medium
+		Prerequisites: ~barracks, fix, ~infantry.allies, ~!player.greece, ~!industryplant.on, ~techlevel.medium
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		Description: Anti-armor rocket infantry\nCannot attack Air units\n Strong vs Tanks\n Weak vs Aircraft, Infantry
@@ -476,12 +476,10 @@ RPG:
 		Name: RPG Trooper
 	Buildable:
 		BuildPaletteOrder: 8
-		Prerequisites: ~barracks, ftur, ~!industryplant.on, ~infantry.soviet, ~techlevel.medium
+		Prerequisites: ~barracks, ftur, ~infantry.soviet, ~!player.belarus, ~!industryplant.on, ~techlevel.medium
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		Description: Soldier armed with thermobaric Napalm rockets\nCannot attack Air units\n Strong vs clustered Infantry, Structures\n Weak vs Anti-Infantry measures
-	Mobile:
-		Speed: 56
 	Health:
 		HP: 4500
 	AutoTarget:
@@ -515,7 +513,7 @@ E4:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 9
-		Prerequisites: ~barracks, dome, ~!industryplant.on, ~techlevel.medium
+		Prerequisites: ~barracks, dome, ~!player.ukraine, ~!player.belarus, ~!industryplant.on, ~techlevel.medium
 		Description: Close ranged Anti-infantry unit\narmed with an flamethrower\n Strong vs Infantry, Buildings\n Weak vs Tanks
 	Valued:
 		Cost: 400
@@ -523,8 +521,10 @@ E4:
 		Name: Flame Trooper
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
+	Mobile:
+		Speed: 63
 	Health:
-		HP: 7000
+		HP: 6000
 	Armament@PRIMARY:
 		Weapon: Flamer
 		LocalOffset: 341,0,256
@@ -552,7 +552,7 @@ E4:
 		Prerequisites: infantry.upgraded
 	Passenger:
 		PipType: Yellow
-		Weight: 2
+		Weight: 1
 
 DOG:
 	Inherits: ^Soldier
@@ -560,7 +560,7 @@ DOG:
 		Queue: Infantry
 		BuildAtProductionType: Dog
 		BuildPaletteOrder: 13
-		Prerequisites: ~kenn, ~!industryplant.on, ~techlevel.infonly
+		Prerequisites: ~kenn, ~!player.belarus, ~!industryplant.on, ~techlevel.infonly
 		Description: Anti-infantry unit\nCan detect spies\n Strong vs Infantry\n Weak vs Vehicles, Aircraft
 	Valued:
 		Cost: 200
@@ -630,7 +630,7 @@ SPY:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 10
-		Prerequisites: ~barracks, dome, ~infantry.allies, ~!player.britain, ~!industryplant.on, ~techlevel.medium
+		Prerequisites: ~barracks, dome, ~infantry.allies, ~!player.usa, ~!player.britain, ~!industryplant.on, ~techlevel.medium
 		Description: Infiltrates enemy structures for intel or sabotage\nExact effect depends on the building infiltrated\nCan disguise as enemy infantry\nLoses disguise when attacking\nCan detect spies at close range\n Strong vs Infantry\n Weak vs Vehicles, Aircraft
 	Valued:
 		Cost: 500
@@ -691,7 +691,7 @@ THF:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 10
-		Prerequisites: ~barracks, fix, ~!industryplant.on, ~infantry.soviet, ~techlevel.medium
+		Prerequisites: ~barracks, fix, ~infantry.soviet, ~!player.belarus, ~!player.moldova, ~!industryplant.on, ~techlevel.medium
 		Description: Steals enemy credits\nHijacks enemy vehicles\nCloaked when standing still\n Unarmed
 	Valued:
 		Cost: 500
@@ -699,6 +699,8 @@ THF:
 		Name: Thief
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
+	Mobile:
+		Speed: 64
 	Health:
 		HP: 4500
 	RevealsShroud:
@@ -731,8 +733,7 @@ THF:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
-	Mobile:
-		Speed: 71
+
 	Passenger:
 		PipType: Blue
 		Weight: 2
@@ -781,7 +782,7 @@ FTRP:
 	Inherits: E3
 	Buildable:
 		BuildPaletteOrder: 11
-		Prerequisites: ~barracks, fcom.buildable, ~infantry.soviet, ~!industryplant.on, ~techlevel.medium
+		Prerequisites: ~barracks, fcom.buildable, ~infantry.soviet, ~!player.belarus, ~!industryplant.on, ~techlevel.medium
 		Description: Infantry armed with Flak-Gun\nCannot attack Ground units\n Strong vs Aircraft\n Weak vs Ground units
 	Tooltip:
 		Name: Flak Trooper
@@ -872,7 +873,7 @@ MRTR:
 		Queue: Infantry
 		BuildPaletteOrder: 11
 		BuildAtProductionType: Soldier
-		Prerequisites: ~barracks, fcom.buildable, ~infantry.soviet, ~!industryplant.on, ~techlevel.high
+		Prerequisites: ~barracks, fcom.buildable, ~infantry.soviet, ~!player.is.subfaction, ~!industryplant.on, ~techlevel.high
 		Description: Infantry armed with a Mortar gun\nthat shoots napalm rounds\n Strong vs Buildings, Infantry\n Weak vs Vehicles, Aircraft
 	Valued:
 		Cost: 600
@@ -995,9 +996,9 @@ RMBO:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 17
-		Prerequisites: ~barracks, techcenter, ~infantry.allies, !enough.commandos, ~!player.is.subfaction, ~techlevel.high
+		Prerequisites: ~barracks, techcenter, ~infantry.allies, !enough.commandos, ~!player.britain, ~!player.germany, ~!player.turkey, ~techlevel.high
 		BuildLimit: 1
-		Description: Elite commando infantry\nArmed with silenced Sniper and C4\nMaximum 1 can be trained\n Special ability: Detection\nCan detect cloaked units within an wide radius\n Strong vs Infantry, Buildings\n Weak vs Vehicles, Aircraft
+		Description: Elite commando infantry\nArmed with silenced Sniper and C4\nMaximum 1 can be trained\n Special ability: Detection\nCan detect cloaked units within weapon range\n Strong vs Infantry, Buildings\n Weak vs Vehicles, Aircraft
 	Mobile:
 		Speed: 71
 		Voice: Move
@@ -1010,7 +1011,7 @@ RMBO:
 		Voice: Move
 		Weight: 3
 	RevealsShroud:
-		Range: 6c0
+		Range: 5c512
 	Demolition:
 		DetonationDelay: 45
 		Voice: Demolish

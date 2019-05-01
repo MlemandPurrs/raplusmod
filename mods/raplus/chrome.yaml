@@ -206,6 +206,110 @@ command-button-soviet-disabled: chrome.png
 command-button-soviet-highlighted-disabled: chrome.png
 	background: 31,31,22,22
 
+sidebar-arabs: chrome.png
+	background-top: 763,167,238,290
+	background-iconrow: 763,457,238,47
+	background-bottom: 763,504,238,8
+	background-supportoverlay: 763,75,64,48
+
+sidebar-button-arabs: chrome.png
+	background: 199,31,22,22
+	border-r: 221,31,3,22
+	border-l: 196,31,3,22
+	border-b: 199,53,22,3
+	border-t: 199,28,22,3
+	corner-tl: 196,28,3,3
+	corner-tr: 221,28,3,3
+	corner-bl: 196,53,3,3
+	corner-br: 221,53,3,3
+sidebar-button-arabs-hover: chrome.png
+	background: 199,3,22,22
+	border-r: 221,3,3,22
+	border-l: 196,3,3,22
+	border-b: 199,25,22,3
+	border-t: 199,0,22,3
+	corner-tl: 196,0,3,3
+	corner-tr: 221,0,3,3
+	corner-bl: 196,25,3,3
+	corner-br: 221,25,3,3
+sidebar-button-arabs-pressed: chrome.png
+	background: 199,31,22,22
+	border-r: 221,31,3,22
+	border-l: 196,31,3,22
+	border-b: 199,53,22,3
+	border-t: 199,28,22,3
+	corner-tl: 196,28,3,3
+	corner-tr: 221,28,3,3
+	corner-bl: 196,53,3,3
+	corner-br: 221,53,3,3
+sidebar-button-arabs-highlighted: chrome.png
+	background: 227,31,22,22
+	border-r: 249,31,3,22
+	border-l: 224,31,3,22
+	border-b: 227,53,22,3
+	border-t: 227,28,22,3
+	corner-tl: 224,28,3,3
+	corner-tr: 249,28,3,3
+	corner-bl: 224,53,3,3
+	corner-br: 249,53,3,3
+sidebar-button-arabs-highlighted-hover: chrome.png
+	background: 227,3,22,22
+	border-r: 249,3,3,22
+	border-l: 224,3,3,22
+	border-b: 227,25,22,3
+	border-t: 227,0,22,3
+	corner-tl: 224,0,3,3
+	corner-tr: 249,0,3,3
+	corner-bl: 224,25,3,3
+	corner-br: 249,25,3,3
+sidebar-button-arabs-highlighted-pressed: chrome.png
+	background: 227,31,22,22
+	border-r: 249,31,3,22
+	border-l: 224,31,3,22
+	border-b: 227,53,22,3
+	border-t: 227,28,22,3
+	corner-tl: 224,28,3,3
+	corner-tr: 249,28,3,3
+	corner-bl: 224,53,3,3
+	corner-br: 249,53,3,3
+sidebar-button-arabs-disabled: chrome.png
+	background: 171,3,22,22
+	border-r: 193,3,3,22
+	border-l: 168,3,3,22
+	border-b: 171,25,22,3
+	border-t: 171,0,22,3
+	corner-tl: 168,0,3,3
+	corner-tr: 193,0,3,3
+	corner-bl: 168,25,3,3
+	corner-br: 193,25,3,3
+sidebar-button-arabs-highlighted-disabled: chrome.png
+	background: 171,3,22,22
+	border-r: 193,3,3,22
+	border-l: 168,3,3,22
+	border-b: 171,25,22,3
+	border-t: 171,0,22,3
+	corner-tl: 168,0,3,3
+	corner-tr: 193,0,3,3
+	corner-bl: 168,25,3,3
+	corner-br: 193,25,3,3
+
+command-button-arabs: chrome.png
+	background: 199,31,22,22
+command-button-arabs-hover: chrome.png
+	background: 199,3,22,22
+command-button-arabs-pressed: chrome.png
+	background: 199,31,22,22
+command-button-arabs-highlighted: chrome.png
+	background: 227,31,22,22
+command-button-arabs-highlighted-hover: chrome.png
+	background: 227,3,22,22
+command-button-arabs-highlighted-pressed: chrome.png
+	background: 227,31,22,22
+command-button-arabs-disabled: chrome.png
+	background: 227,3,22,22
+command-button-arabs-highlighted-disabled: chrome.png
+	background: 199,31,22,22
+
 sidebar-bits: chrome.png
 	production-tooltip-time: 416, 80, 16, 16
 	production-tooltip-power: 432, 80, 16, 16
@@ -528,20 +632,20 @@ dialog5: dialog.png
 	corner-bl: 579,446,1,1
 	corner-br: 643,446,1,1
 
-lobby-bits: buttons.png
-	spawn-unclaimed: 159,5,23,22
-	spawn-claimed: 127,5,23,22
-	admin: 187,5,7,5
-	colorpicker: 127,5,23,22
-	huepicker: 194,0,7,15
-	protected: 201,0,12,13
-	protected-disabled: 212,0,12,13
-	authentication: 199,16,12,13
-	authentication-disabled: 212,16,12,13
-	admin-registered: 224,0,16,16
-	admin-anonymous: 240,0,16,16
-	player-registered: 224,16,16,16
-	player-anonymous: 240,16,16,16
+lobby-bits: chrome.png
+	spawn-unclaimed: 605,85,23,22
+	spawn-claimed: 573,85,23,22
+	admin: 635,90,7,5
+	colorpicker: 573,85,23,22
+	huepicker: 642,85,7,15
+	protected: 648,85,12,13
+	protected-disabled: 660,85,12,13
+	authentication: 647,101,12,13
+	authentication-disabled: 660,101,12,13
+	admin-registered: 672,85,16,16
+	admin-anonymous: 688,85,16,16
+	player-registered: 672,107,16,16
+	player-anonymous: 688,101,16,16
 
 reload-icon: chrome.png
 	enabled: 512,80,16,16
@@ -558,44 +662,68 @@ reload-icon: chrome.png
 	disabled-10: 672,64,16,16
 	disabled-11: 688,64,16,16
 
-strategic: buttons.png
-	unowned: 127,5,23,22
-	critical_unowned: 127,27,23,22
-	enemy_owned: 159,27,23,22
-	player_owned: 159,49,23,22
+strategic: chrome.png
+	unowned: 573,85,23,22
+	critical_unowned: 573,107,23,22
+	enemy_owned: 605,107,23,22
+	player_owned: 605,129,23,22
 
-flags: buttons.png
-	soviet: 0,112,30,15
-	allies: 30,112,30,15
-	Random: 60,157,30,15
-	RandomFaction: 60,172,30,15
-	RandomAllies: 30,172,30,15
-	RandomSoviet: 0,172,30,15
-	spectator: 60,127,30,15
-	UnholyAlliance: 60,112,30,15
+flags: nations.png
+	soviet: 0,0,30,15
+	allies: 30,0,30,15
+	arabs: 60,0,30,15
+	Random: 90,135,30,15
+	RandomSoviet: 0,150,30,15
+	RandomAllies: 30,150,30,15
+	RandomArabs: 60,150,30,15
+	RandomFaction: 90,150,30,15
+	spectator: 90,15,30,15
+	UnholyAlliance: 90,0,30,15
 
-	russia: 0,127,30,15
-	ukraine: 0,142,30,15
-	kazakh: 0,157,30,15
+	russia: 0,15,30,15
+	ukraine: 0,30,30,15
+	kazakh: 0,45,30,15
+	kyrgiz: 0,60,30,15
+	belarus: 0,75,30,15
+	moldova: 0,90,30,15
+	latvia: 0,105,30,15
+	karelia: 0,120,30,15
+	uzbekh: 0,135,30,15
 
-	britain: 30,127,30,15
-	france: 30,142,30,15
-	germany: 30,157,30,15
+	usa: 30,15,30,15
+	britain: 30,30,30,15
+	france: 30,45,30,15
+	nether: 30,60,30,15
+	germany: 30,75,30,15
+	spain: 30,90,30,15
+	italy: 30,105,30,15
+	greece: 30,120,30,15
+	turkey: 30,135,30,15
+
+	saudi: 60,15,30,15
+	iraq: 60,30,30,15
+	syria: 60,45,30,15
+	jordan: 60,60,30,15
+	egypt: 60,75,30,15
+	emirates: 60,90,30,15
+	lybia: 60,105,30,15
+	somali: 60,120,30,15
+	qatar: 60,135,30,15
 
 music: buttons.png
-	pause: 0,193,25,25
-	stop: 25,193,25,25
-	play: 55,193,25,25
-	next: 82,193,25,25
-	prev: 110,193,25,25
-	fastforward: 131,193,25,25
-	slowmo: 159,193,25,25
+	pause: 0,25,25,25
+	stop: 25,25,25,25
+	play: 55,25,25,25
+	next: 82,25,25,25
+	prev: 110,25,25,25
+	fastforward: 131,25,25,25
+	slowmo: 159,25,25,25
 
-scrollbar: buttons.png
-	down_arrow: 116,140,16,16
-	down_pressed: 116,140,16,16
-	up_arrow: 132,140,16,16
-	up_pressed: 132,140,16,16
+scrollbar: chrome.png
+	down_arrow: 539,102,16,16
+	down_pressed: 539,102,16,16
+	up_arrow: 555,102,16,16
+	up_pressed: 555,102,16,16
 
 # A copy of dialog3 (pressed button)
 progressbar-bg: dialog.png
@@ -968,11 +1096,11 @@ checkbox: dialog.png
 	corner-bl: 640,127,1,1
 	corner-br: 767,127,1,1
 
-checkbox-bits: buttons.png
-	checked: 100,157,16,16
-	checked-disabled: 100,173,16,16
-	crossed: 116,157,16,16
-	crossed-disabled: 116,173,16,16
+checkbox-bits: chrome.png
+	checked: 523,119,16,16
+	checked-disabled: 523,173,16,16
+	crossed: 539,119,16,16
+	crossed-disabled: 539,135,16,16
 
 checkbox-hover: dialog.png
 	background: 641,129,126,126

@@ -1,0 +1,590 @@
+USA
+\nSpecialization: Airforce
+\nThe forces of USA utilize aerial superiority
+\nFaction Variations:
+\n    - Airplanes have +10% movespeed
+\n    - Paratroopers power delivers double the amount of Troops
+\n    - Spy is 25% cheaper to train
+\nVeterancy Bonuses:
+\n    - Jeep gets built as Veteran
+\n    - Apache gets built as Veteran
+\nUnique Support Powers:
+\n    - Stealth Parabombs
+\nA B2 performs an silent bombing run on your target
+\n    - Airborne
+\nA B-52 drops two Jeeps and one APC anywhere on the map
+\nSpecial Units:
+\n    - Heavy Tank Destroyer (Vehicle)
+\nThis heavyweight version of the Tank Destroyer has
+\nan reverse engineered Mammoth cannon armament
+\n    - MRLS (Vehicle)
+\nRocket artillery capable of firing in salvos
+\n    - Patriot Battery (Defense)
+\nSuperior Anti-Air defense structure with superb range
+\n    - Aircraft Carrier (Ship)
+\nThis ship is capable of producing and servicing
+\nall types of Aircraft at Sea when deployed
+
+Britain
+\nSpecialization: Intelligence
+\nThe forces of Britain uphold their long tradition in Espionage
+\nFaction Variations:
+\n    - Tanks* deal more damage but are costlier
+\n*Those Tanks being: Light Tank, Medium Tank, Tank Destroyer
+\n+10% damage dealt at the cost of being 10% more expensive
+\n    - All Production Buildings have 15% increased Hitpoints
+\nThis includes the Construction Yard too but not the MCV
+\n    - Sight and Detection radius bonus of +2 for Radar Domes
+\nVeterancy Bonuses:
+\n    - Spy is trained as Veteran
+\n    - Spitfire gets built as Veteran
+\nUnique Support Powers:
+\n    - GPS Scrambler
+\nRenders an group of units invisible aslong they are not firing
+\n    - Intelligence Drop
+\nA B-52 drops one Spy and two Snipers anywhere on the map
+\nSpecial Units:
+\n    - Sniper (Infantry)
+\nThis accomplished marksman is capable of one-shotting most if not any Infantry
+\n    - Minelayer (Vehicle)
+\n Can build the Minelayer despite being Allies country
+\n    - ECM Jammer (Vehicle)
+\nThis vehicle is capable of jamming enemy missiles and radar
+\n    - Stealth Bomber (Aircraft)
+\nThis ground-attack bomber aircraft is cloaked when airborne
+
+France
+\nSpecialization: Deception
+\nThe forces of France are capable of deceiving their enemies in many ways
+\nFaction Variations:
+\n    - Tanks* fire faster but deal less damage
+\n*Those Tanks being: Light Tank, Medium Tank, Tank Destroyer
+\n+10% faster rate of fire, deals -250/-500/-750 damage per shot
+\n    - Can build Fake structures
+\nThis selection of fake structures look precisely as an real building to the enemy
+\n    - Concrete Walls have +50% Health
+\nVeterancy Bonus:
+\n    - Grenade Launcher is trained as Veteran
+\n    - Attack Submarine gets built as Veteran
+\nUnique Support Power:
+\n    - Decoy Army
+\nDelivers an group of Fake units at your primary War Factory
+\nThose remote-controlled units armed with dummy weaponry look identical to the opponent
+\nSpecial Units:
+\n    - Phase Transport (Vehicle)
+\nThis transport armed with rocket launcher is cloaked at all times
+\n    - Phase Tank (Vehicle)
+\nThis modification of the light tank is cloaked at all times
+
+Netherlands
+\nSpecialization: Economy
+\nThe forces of Netherlands support the allied cause with their strong Economy
+\nFaction Variations:
+\n    - Infantry move faster, but have less health
+\nAll Infantry move marginally faster at the expanse of -10% Health
+\n    - NYI
+\n    - Ore Silos deliver income frequenter
+\nVeterancy Bonuses:
+\n    - NYI
+\n    - NYI
+\nUnique Support Power:
+\n    - NYI
+\n TODO
+\nSpecial Units:
+\n    - Storm Trooper (Infantry)
+\nThis next generation of Assault infantry
+\nattacks using MG and Grenades at same time
+\n    - Chrono Miner (Vehicle)
+\nThe experimental chrono miner is capable of warping back to Refineries 
+\n    - NYI
+\nTODO
+\n    - NYI
+\nTODO
+
+Germany
+\nSpecialization: Technology
+\nThe forces of Germany take pride in displaying their scientific progress on the battlefield
+\nFaction Variations:
+\n    - Tanks* are durabler but move slower
+\n*Those Tanks being: Light Tank, Medium Tank, Tank Destroyer
+\nTanks have their Health increased by 10%, they move marginally slower in return
+\n    - Can use Advanced Chronoshift
+\nThe advanced chronoshift is capable of transporting an larger group
+\n    - Mechanic has +2 Range bonus
+\nVeterancy Bonuses:
+\n    - Machine Gunner is trained as Veteran
+\n    - Destroyer gets built as Veteran
+\nUnique Support Power:
+\n    - Paratanks
+\nA B-52 delivers two Light and one Medium Tanks anywhere on the map
+\nSpecial Units:
+\n    - Jumpjet Infantry
+\nThis lightly armed Infantry can fly over obstacles and water
+\n    - Chrono Tank (Vehicle)
+\nThis tank armed with rocket pods is capable of Teleportation
+\n    - Prism Tank (Vehicle)
+\nThis tank is armed with beam weaponry that increases
+\nintensity as it bundles with others of its kind
+\n    - Prism Corvette (Navy)
+\nBasically an Prism Tank at Sea
+
+Spain
+\nSpecialization: TODO
+\n NYI
+\nFaction Variations:
+\n    - Tanks* have +1 Range but less rate of fire
+\n*Those Tanks being: Light Tank, Medium Tank, Tank Destroyer
+\n    - All Defenses(excluding any Walls)are built 20% faster
+\n    - Ore Purifier available earlier
+\nThe Ore Purifier can be built with Radar Dome instead an Tech Center
+\nVeterancy Bonus:
+\n    - NYI
+\n    - Cruiser gets built as Veteran
+\nUnique Support Power:
+\n    - TBD
+\n NYI
+\nSpecial Units:
+\n    - Mine Truck (Vehicle)
+\nNon-combat vehicle capable of deploying over an Mine to boost its Ore Generation rate
+
+Italy
+\nSpecialization: Mobility
+\nThe forces of Italy prefer rapid assaults
+\nFaction Variations:
+\n    - Tanks* move faster but have less health
+\n*Those Tanks being: Light Tank, Medium Tank, Tank Destroyer
+\n    - Base Defenses can be built one tile further
+\n    - Dog regenerates out of combat
+\nVeterancy Bonus:
+\n    - Artillery gets built as Veteran
+\n    - Gunboat gets built as Veteran
+\nUnique Support Power:
+\n    - TBD
+\n NYI
+\nSpecial Units:
+\n    - Recon Biker (Infantry)
+\nThis infantry mounted on a cycle can detect cloaked units at close radius
+\n    - Infantry Fighting Vehicle (Vehicle)
+\nThe modular IFV can be outfitted with different weaponry dependant on its passenger
+\n    - Hovercraft (Vehicle)
+\nAn amphibian Vehicle with anti-air Weaponry
+
+Greece
+\nSpecialization: Navy
+\nThe forces of Greece contribute their strong navy to the Allies cause
+\nFaction Variations:
+\n    - All Ships have increased durability
+\n An bonus of +20% Hitpoints for all Ships
+\n This does not include the Support Carrier
+\n    - Can use Improved Sonar
+\n Improved sonar recharges faster and detects in wider area
+\n    - Medic has +2 Range bonus
+\nVeterancy Bonuseses:
+\n    - ATGM Soldier is trained as Veteran
+\n    - Iroqouis gets built as Veteran
+\nUnique Support Power:
+\n    - TBD
+\n NYI
+\nSpecial Units:
+\n    - Aegis Cruiser (Navy)
+\nThe 'Aegis' pattern of allied Cruiser is armed with
+\nmultiple SAM batteries against enemy Aircraft
+
+Turkey
+\nSpecialization: Fortifications
+\nThe forces of Turkey are unyielding defenders
+\nFaction Variations:
+\n    - All Infantry are trained faster
+\n
+\n    - All Defenses(excluding any Walls) have +30% Hitpoints
+\n    - Concrete Walls are built at half price
+\nVeterancy Bonuses:
+\n    - Commando is trained as Veteran
+\n    - F-16 gets built as Veteran
+\nUnique Support Power:
+\n    - TBD
+\n NYI
+\nSpecial Units:
+\n    - Grand Cannon (Vehicle)
+\n    - The Grand Cannon is the superior artillery piece, having immense range
+\n    - Mobile Bunker (Vehicle)
+\nThis mobile fortification can house up to 5 Infantry, which then can attack from inside
+\n    - Grand Turret(Defense)
+\nThe triple-barreled artillery defense structure can destroy anything at the distance
+
+Russia
+\nSpecialization: Tesla Weaponry
+\nThe forces of Russia utilize the next generation of Tesla technology
+\nFaction Variations:
+\n    - Tanks* are faster to build but have less health
+\n*Those Tanks being: Medium Tank, Heavy Tank, Mammoth Tank
+\nBuildDurationModifier is 50, Health reduced by 10%
+\n    - All Powerplants provide extra Power
+\nPower Plant provides additional +25, Advanced Power Plant +50, Nuclear Plant +100 power
+\n    - Tesla Coils have +1 Range
+\nVeterancy Bonuses:
+\n    - Shock Trooper is trained as Veteran
+\n    - APC gets built as Veteran
+\nUnique Support Power:
+\n    - EMP Air Strike
+\nA plane drops an EMP Bomb on your target, disabling Vehicle, Ship and Submarines
+\nDisabled units cannot move or shoot for a while
+\nUncloaks hidden units, Submarines will resurface
+\nSpecial Units:
+\n    - Tesla Trooper (Infantry)
+\nThe advanced Tesla Trooper wears armor and cannot be crushed
+\n    - Heavy Tesla Tank (Vehicle)
+\nThis heavily armored variant causes vehicles to short-circuit briefly
+\n    - Kirov Airship (Aircraft)
+\nThis slow-moving Airship is heavily armored and drops bombs that cause EMP blasts
+\n    - Tesla Boat (Ship)
+\nBasically an Tesla Tank at sea
+
+Ukraine
+\nSpecialization: Demolitions
+\nThe forces of Ukraine specialize in blowing their opponents to smithereens
+\nFaction Variations:
+\n    - Tanks* have +1 range but less rate of fire
+\n*Those Tanks being: Medium Tank, Heavy Tank, Mammoth Tank
+\n    - Can used Advanced Iron Curtain
+\nThe advanced Iron Curtain can be used offensively to kill enemy Infantry too
+\n    - V2 Rocket Launcher reloads faster
+\nReloadDelay of 215 instead 240 on V2 rocketry
+\nVeterancy Bonuses:
+\n    - Flame Trooper is trained as Veteran
+\n    - MiG gets built as Veteran
+\nUnique Support Power:
+\n    - Cruise Missile Strike
+\nAn badger will fire V2 rockets at your target
+\nSpecial Units:
+\n    - Bomb Dog (Infantry)
+\nAn dog with a bomb vest that had been trained to run towards enemies
+\n    - Mammoth KV-8 (Heavy Tank)
+\nThis special modification of the Mammoth chassis sports dual flamethrowers
+\n    - Demolition Truck (Vehicle)
+\nAn truck with a desperate driver, loaded with Nuclear explosives
+\n    - Flame Submarine (Ship)
+\nThis submarine is capable of shooting the same projectiles as Flame Tower
+
+Kazakhstan
+\nSpecialization: Nuclear Weapons
+\nThe forces of Kazakhstan bring the Soviet nuclear arsenal to the table
+\nFaction Variations:
+\n    - Tanks* move faster but are built slower
+\n*Those Tanks being: Medium Tank, Heavy Tank, Mammoth Tank
+\nBuildDurationModifier is 70, speed marginally faster
+\nMammoth body and turret turns one unit faster too
+\n    - Atom Bombs get prepared faster
+\nNuke recharges in 10500s instead 13500s
+\n    - TBD
+\n NYI
+\nVeterancy Bonuses:
+\n    - 
+\nUnique Support Power:
+\n    - Paranuke
+\nAn special MiG drops an Nuclear Parabomb on your target
+\nSpecial Units:
+\n    - Desolator (Infantry) (buildlimit:2)
+\nThis infantry in heavy armor suit is armed with micro nuclear missile launcher
+\n    - ICBM Launcher (Vehicle) (buildlimit:1)
+\nThe Ballistic launcher carries an ICBM that delivers the same payload as an Demotruck
+\n    - ICBM Submarine (Navy) (buildlimit:1)
+\nThis submarine carries an ICBM that delivers the same payload as an Demotruck
+\nAn note about ICBM units: you cant have both types at the same time, choose either one
+
+Kyrgizstan
+\nSpecialization: TODO
+\n NYI
+\nFaction Variations:
+\n    - TBD
+\n NYI
+\n    - Paratroopers available more frequently
+\n    - TBD
+\n NYI
+\nVeterancy Bonus:
+\n    - Flak Truck built as Veteran
+\nUnique Support Power:
+\n    - TBD
+\n NYI
+\nSpecial Units:
+\n    - TBD
+\n NYI
+
+Belarus
+\nSpecialization: Industrialism
+\nThe forces of Belarus utilize the benefit of socialism to its fullest
+\nFaction Variations:
+\n    - TBD
+\n NYI
+\n    - TBD
+\n NYI
+\n    - Industrial Plant available earlier
+\nThe Industrial Plant can be built with Radar Dome instead an Tech Center
+\nVeterancy Bonus:
+\n    - V2 Rocket Launcher gets built as Veteran
+\nUnique Support Power: TODO
+\n NYI
+\nSpecial Units:
+\n    - Behemoth (Heavy Tank) (buildlimit:1)
+\nThis super-massive artillery is capable of launching devastating barrages
+\n    - Frogfoot Attack Plane (Aircraft)
+\nThe superior ground attack plane uses strafing Machineguns prior to dropping it Bombs
+
+Transoxania
+\nSpecialization: Frontliners
+\nTODO
+\nFaction Variations:
+\n    - TBD
+\n NYI
+\n    - TBD
+\n NYI
+\n    - Thief moves faster
+\nVeterancy Bonus:
+\n    - 
+\nUnique Support Power: Conscription
+\nInstantly delivers an group of Infantry at your Command Post
+\nSpecial Units:
+\n    - Mortar Infantry
+\nInfantry armed with fast-reloading Mortars
+
+Lithuania
+\nSpecialization: TODO
+\n NYI
+\nFaction Variations:
+\n    - TBD
+\n NYI
+\n    - Mortar Tracks are Amphibian
+\n    - Get one free Yak with each Airfield
+\nVeterancy Bonus:
+\n    - V2 Rocket Launcher gets built as Veteran
+\n NYI
+\nUnique Support Power:
+\n    - TBD
+\n NYI
+\nSpecial Units:
+\n    - TBD
+\n NYI
+
+Karelia
+\nSpecialization: Navy
+\nTODO
+\nFaction Variations:
+\n    - TBD
+\n NYI
+\n    - TBD
+\n NYI
+\n    - Hinds have additional Depthcharges attack
+\nVeterancy Bonuses:
+\n    - Hind gets built as Veteran
+\n    - Submarine gets built as Veteran
+\nUnique Support Power:
+\n    - TBD
+\n NYI
+\nSpecial Units:
+\n    - TBD
+\n NYI
+
+Uzbekistan
+\nSpecialization: Experimentals
+\nTODO
+\nFaction Variations:
+\n    - TBD
+\n NYI
+\n    - TBD
+\n NYI
+\n    - Engineer trained at half price
+\nVeterancy Bonus:
+\n    - TBD
+\nUnique Support Power:
+\n    - Battle Shelter
+\n Creates an Pillbox at target location
+\nSpecial Units:
+\n    - MAD Tank (Heavy Tank)
+\nThis device is capable of emitting seismic waves when deployed,
+\nthat damage structures in a wide radius around it per shockwave
+\n    -  Attack Ekranoplan (Navy)
+\nFires an volley of six rockets, covering an wide area with napalm
+
+Saudi Arabia
+\nSpecialization: Petroleum
+\nTODO
+\nFaction Variations:
+\n    - NYI
+\n    - NYI
+\n    - NYI
+\nVeterancy Bonuses:
+\n    - NYI
+\n    - NYI
+\nUnique Support Power:
+\n    - NYI
+\n TODO
+\nSpecial Units:
+\n    - NYI
+\nTODO
+\n    - NYI
+\nTODO
+\n    - NYI
+\nTODO
+\n    - NYI
+\nTODO
+
+Iraq
+\nSpecialization: Chemical Weapons
+\nTODO
+\nFaction Variations:
+\n    - NYI
+\n    - NYI
+\n    - NYI
+\nVeterancy Bonuses:
+\n    - NYI
+\n    - NYI
+\nUnique Support Power:
+\n    - NYI
+\n TODO
+\nSpecial Units:
+\n    - NYI
+\nTODO
+\n    - NYI
+\nTODO
+\n    - NYI
+\nTODO
+\n    - NYI
+\nTODO
+
+Syria
+\nSpecialization: NYI
+\nTODO
+\nFaction Variations:
+\n    - NYI
+\n    - NYI
+\n    - NYI
+\nVeterancy Bonuses:
+\n    - NYI
+\n    - NYI
+\nUnique Support Power:
+\n    - NYI
+\n TODO
+\nSpecial Units:
+\n    - NYI
+\nTODO
+\n    - NYI
+\nTODO
+\n    - NYI
+\nTODO
+\n    - NYI
+\nTODO
+
+Jordan
+\nSpecialization: NYI
+\nTODO
+\nFaction Variations:
+\n    - NYI
+\n    - NYI
+\n    - NYI
+\nVeterancy Bonuses:
+\n    - NYI
+\n    - NYI
+\nUnique Support Power:
+\n    - NYI
+\n TODO
+\nSpecial Units:
+\n    - NYI
+\nTODO
+\n    - NYI
+\nTODO
+\n    - NYI
+\nTODO
+\n    - NYI
+\nTODO
+
+Egypt
+\nSpecialization: NYI
+\nTODO
+\nFaction Variations:
+\n    - +10% bonus to Ore income
+\n    - NYI
+\n    - NYI
+\nVeterancy Bonuses:
+\n    - NYI
+\n    - NYI
+\nUnique Support Power:
+\n    - NYI
+\n TODO
+\nSpecial Units:
+\n    - NYI
+\nTODO
+\n    - NYI
+\nTODO
+\n    - NYI
+\nTODO
+\n    - NYI
+\nTODO
+
+Yemen
+\nSpecialization: NYI
+\nTODO
+\nFaction Variations:
+\n    - NYI
+\n    - NYI
+\n    - NYI
+\nVeterancy Bonuses:
+\n    - NYI
+\n    - NYI
+\nUnique Support Power:
+\n    - NYI
+\n TODO
+\nSpecial Units:
+\n    - NYI
+\nTODO
+\n    - NYI
+\nTODO
+\n    - NYI
+\nTODO
+\n    - NYI
+\nTODO
+
+Somali
+\nSpecialization: Piracy
+\nTODO
+\nFaction Variations:
+\n    - NYI
+\n    - NYI
+\n    - NYI
+\nVeterancy Bonuses:
+\n    - NYI
+\n    - NYI
+\nUnique Support Power:
+\n    - NYI
+\n TODO
+\nSpecial Units:
+\n    - NYI
+\nTODO
+\n    - NYI
+\nTODO
+\n    - NYI
+\nTODO
+\n    - NYI
+\nTODO
+
+Lybia
+\nSpecialization: NYI
+\nTODO
+\nFaction Variations:
+\n    - All Infantry moves 15% faster
+\n    - All Defenses are cloaked out of combat
+\n    - NYI
+\nVeterancy Bonuses:
+\n    - NYI
+\n    - NYI
+\nUnique Support Power:
+\n    - NYI
+\n TODO
+\nSpecial Units:
+\n    - Marksman (Infantry)
+\nLong ranged assassin that uses
+\n    - Demolition Truck (Vehicle)
+\nCan build Demo Trucks despite being an Arab country
+\n    - NYI
+\nTODO
+\n    - NYI
+\nTODO

@@ -58,6 +58,18 @@ UnitExplode:
 	Warhead@1Dam: SpreadDamage
 		Falloff: 1000, 368, 135, 50, 18, 7, 0
 
+UnitExplode.trike:
+	Inherits: UnitExplode
+	Warhead@1Dam: SpreadDamage
+		Spread: 1c0
+		Falloff: 1000, 500
+		Versus:
+			None: 90
+			Wood: 50
+			Light: 60
+			Heavy: 30
+			Concrete: 80
+
 UnitExplodePlane:
 	Inherits: UnitExplode
 	Warhead@2Eff: CreateEffect

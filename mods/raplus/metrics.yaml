@@ -7,18 +7,32 @@ Metrics:
 	FactionSuffix-usa: allies
 	FactionSuffix-britain: allies
 	FactionSuffix-france: allies
+	FactionSuffix-nether: allies
 	FactionSuffix-germany: allies
 	FactionSuffix-spain: allies
+	FactionSuffix-italy: allies
 	FactionSuffix-greece: allies
 	FactionSuffix-turkey: allies
 	FactionSuffix-soviet: soviet
 	FactionSuffix-russia: soviet
 	FactionSuffix-ukraine: soviet
 	FactionSuffix-kazakh: soviet
+	FactionSuffix-kyrgiz: soviet
 	FactionSuffix-belarus: soviet
-	FactionSuffix-karelia: soviet
-	FactionSuffix-uzbek: soviet
 	FactionSuffix-moldova: soviet
+	FactionSuffix-lithuan: soviet
+	FactionSuffix-karelia: soviet
+	FactionSuffix-uzbekh: soviet
+	FactionSuffix-arabs: arabs
+	FactionSuffix-saudi: arabs
+	FactionSuffix-iraq: arabs
+	FactionSuffix-syria: arabs
+	FactionSuffix-jordan: arabs
+	FactionSuffix-egypt: arabs
+	FactionSuffix-emirates: arabs
+	FactionSuffix-libya: arabs
+	FactionSuffix-somali: arabs
+	FactionSuffix-qatar: arabs
 	IncompatibleProtectedGameColor: B22222
 	IncompatibleVersionColor: D3D3D3
 	TextfieldColorHighlight: 562020

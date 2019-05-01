@@ -184,25 +184,31 @@ Player:
 		ExcessPowerIncrement: 40
 		ExcessPowerIncreaseThreshold: 4
 		CheckForWaterRadius: 4
-		ConstructionYardTypes: fact
+		ConstructionYardTypes: fact,fact.britain
 		RefineryTypes: proc,proc.soviet
-		PowerTypes: powr,apwr
-		BarracksTypes: barr,tent
-		VehiclesFactoryTypes: weap
-		ProductionTypes: barr,tent,weap,afld,hpad
-		NavalProductionTypes: spen,syrd
+		PowerTypes: powr,apwr,powr.russia,apwr.russia
+		BarracksTypes: barr,tent,tent.britain
+		VehiclesFactoryTypes: weap,weap.britain
+		ProductionTypes: barr,tent,tent.britain,weap,weap.britain,afld,afld.britain,hpad,hpad.britain
+		NavalProductionTypes: spen,spen.britain,syrd,syrd.britain
 		SiloTypes: silo
 		BuildingLimits:
 			proc: 4
 			proc.soviet: 4
 			barr: 2
 			tent: 2
+			tent.britain: 2
 			dome: 1
 			weap: 3
+			weap.britain: 3
 			spen: 1
+			spen.britain: 1
 			syrd: 1
+			syrd.britain: 1
 			hpad: 4
+			hpad.britain: 1
 			afld: 4
+			afld.britain: 1
 			atek: 1
 			stek: 1
 			fix: 1
@@ -213,14 +219,21 @@ Player:
 			proc: 15
 			proc.soviet: 15
 			tent: 2
+			tent.britain: 2
 			barr: 2
 			kenn: 1
+			kenn.britain: 1
 			dome: 1
 			weap: 6
+			weap.britain: 6
 			hpad: 4
+			hpad.britain: 4
 			spen: 1
+			spen.britain: 1
 			syrd: 1
+			syrd.britain: 1
 			afld: 4
+			afld.britain: 4
 			pbox: 7
 			hbox: 3
 			gun: 7
@@ -242,30 +255,33 @@ Player:
 		RequiresCondition: enable-ai-player
 	McvManagerBotModule:
 		RequiresCondition: enable-ai-player
-		McvTypes: mcv
-		ConstructionYardTypes: fact
-		McvFactoryTypes: weap
+		McvTypes: mcv,mcv.britain
+		ConstructionYardTypes: fact,fact.britain
+		McvFactoryTypes: weap,weap.britain
 	SquadManagerBotModule@aiplayer:
 		RequiresCondition: enable-ai-player
 		SquadSize: 24
 		SquadSizeRandomBonus: 16
 		RushInterval: 400
 		AttackScanRadius: 16
-		ExcludeFromSquadsTypes: harv, harv.soviet, mcv, dog, mnly
+		ExcludeFromSquadsTypes: harv, harv.soviet, mcv, mcv.britain, dog, mnly
 		NavalUnitsTypes: ss,msub,dd,ca,lst,pt,ca2,pt2,dd2,scrp,tbt,tbt.russia,asub,lun,fsub,fsub.ukraine
-		ConstructionYardTypes: fact
-		NavalProductionTypes: spen,syrd
+		ConstructionYardTypes: fact,fact.britain
+		NavalProductionTypes: spen,syrd,spen.britain,syrd.britain
 	UnitBuilderBotModule@aiplayer:
 		RequiresCondition: enable-ai-player
 		UnitsToBuild:
 			e1: 65
 			e2: 15
 			gren: 20
+			gren.france: 20
 			e3: 30
 			e4: 15
 			dog: 15
 			mgi: 25
+			mgi.germany: 25
 			shok: 15
+			shok.russia: 15
 			atgm: 15
 			rpg: 10
 			stng: 5
@@ -300,6 +316,7 @@ Player:
 			tnkd.britain: 20
 			tnkd.france: 20
 			tnkd.germany: 20
+			tnkd.heavy: 10
 			arty: 15
 			nona: 20
 			v2rl: 40
@@ -325,6 +342,7 @@ Player:
 			heli: 30
 			hind: 30
 			mig: 30
+			mig.ukraine: 30
 			frog: 15
 			f16: 15
 			sfig: 15
@@ -346,7 +364,6 @@ Player:
 			e7: 1
 			e7.britain: 1
 			rmbo: 1
-			rmbo.france: 1
 			ccmd: 1
 			ccmd.germany: 1
 			volk: 1
@@ -365,7 +382,6 @@ Player:
 			e7: 1
 			e7.britain: 1
 			rmbo: 1
-			rmbo.france: 1
 			ccmd: 1
 			ccmd.germany: 1
 			volk: 1

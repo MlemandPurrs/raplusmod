@@ -3196,3 +3196,370 @@ Templates:
 		Tiles:
 			0: Rock
 			1: Rock
+	# variation to rv14.des
+	Template@698:
+		Id: 698
+		Images: rv30.des
+		Size: 5,4
+		Categories: River
+		Tiles:
+			0: Rough
+			1: Rock
+			5: Rock
+			6: Rock
+			7: River
+			8: Rock
+			9: River
+			10: Rock
+			11: Rock
+			12: Rock
+			13: Rock
+			14: River
+			16: Rock
+			17: Rough
+	Template@699:
+		Id: 699
+		Images: rv31.des
+		Size: 5,3
+		Categories: River
+		Tiles:
+			0: Rough
+			1: Rough
+			2: Rock
+			3: River
+			4: River
+			5: Rock
+			6: Rock
+			7: River
+			8: Rock
+			9: Rock
+			10: River
+			11: Rock
+			12: Rock
+	# shorter version of id 62
+	Template@700:
+		Id: 700
+		Images: rv32.des
+		Size: 4,4
+		Categories: River
+		Tiles:
+			2: Rough
+			3: River
+			5: Rock
+			6: Rock
+			7: River
+			8: River
+			9: River
+			10: River
+			11: Rock
+			12: Rock
+			13: Rock
+			14: Rock
+	# shorter version of id 63
+	Template@701:
+		Id: 701
+		Images: rv33.des
+		Size: 4,4
+		Categories: River
+		Tiles:
+			0: Rock
+			1: River
+			4: Rock
+			5: River
+			6: River
+			7: Rough
+			8: Rough
+			9: Rock
+			10: Rock
+			11: River
+			13: Rough
+			14: Rock
+			15: Rock
+	# 'on the side' river tiles
+	Template@702:
+		Id: 702
+		Images: rv34.des
+		Size: 3,3
+		Categories: River
+		Tiles:
+			0: Rough
+			1: River
+			2: River
+			3: Rough
+			4: River
+			5: River
+			6: Rock
+			7: River
+			8: River
+	Template@703:
+		Id: 703
+		Images: rv35.des
+		Size: 3,2
+		Categories: River
+		Tiles:
+			0: Rock
+			1: Rock
+			2: River
+			3: Rock
+			4: Rock
+			5: River
+	Template@704:
+		Id: 704
+		Images: rv36.des
+		Size: 3,2
+		Categories: River
+		Tiles:
+			0: Rock
+			1: Rock
+			2: River
+			3: Rock
+			4: Rock
+			5: Rock
+	# short river corners
+	Template@705:
+		Id: 705
+		Images: rv37.des
+		Size: 2,2
+		Categories: River
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: River
+	Template@706:
+		Id: 706
+		Images: rv38.des
+		Size: 2,2
+		Categories: River
+		Tiles:
+			0: River
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@707:
+		Id: 707
+		Images: rv39.des
+		Size: 2,2
+		Categories: River
+		Tiles:
+			0: Rock
+			1: River
+			2: Rock
+			3: Rock
+	Template@708:
+		Id: 708
+		Images: rv40.des
+		Size: 2,2
+		Categories: River
+		Tiles:
+			0: River
+			1: Rock
+			2: Rough
+			3: Rock
+	# direct T crossing for W joining into N-S
+	Template@709:
+		Id: 709
+		Images: rv41.des
+		Size: 3,4
+		Categories: River
+		Tiles:
+			0: Clear
+			1: River
+			2: River
+			3: River
+			4: River
+			5: River
+			6: Rock
+			7: River
+			8: Rough
+			9: Clear
+			10: Rock
+			11: River
+	# T crossing with waterfall below
+	Template@710:
+		Id: 710
+		Images: rv42.des
+		Size: 4,4
+		Categories: River
+		Tiles:
+			2: River
+			3: River
+			4: Rock
+			5: Rock
+			6: River
+			7: Rock
+			8: Rock
+			9: Rock
+			10: River
+			11: Rock
+			12: Rough
+			13: Rock
+			14: River
+	        15: Rock
+	# extra Mini tiles
+	Template@711:
+		Id: 711
+		Images: rv43.des
+		Size: 1,2
+		Categories: River
+		Tiles:
+			0: River
+			1: Rock
+	Template@712:
+		Id: 712
+		Images: rv44.des
+		Size: 2,1
+		Categories: River
+		Tiles:
+			0: Rock
+			1: River
+	# mini watering hole
+	Template@713:
+		Id: 713
+		Images: xtra0013.des
+		Size: 2,2
+		Categories: Beach
+		Tiles:
+			0: Beach
+			1: Beach
+			2: Beach
+			3: Beach
+	# some extra debris
+	Template@714:
+		Id: 714
+		Images: xtra0001.des
+		Size: 2,1
+		Categories: Debris
+		Tiles:
+			0: Rock
+			1: Rock
+	Template@715:
+		Id: 715
+		Images: xtra0002.des
+		Size: 2,1
+		Categories: Debris
+		Tiles:
+			0: Rock
+			1: Rock
+	Template@716:
+		Id: 716
+		Images: xtra0003.des
+		Size: 2,2
+		Categories: Debris
+		Tiles:
+			0: Clear
+			1: Rough
+			2: Rough
+			3: Rock
+	# combined waterfall tiles
+	Template@717:
+		Id: 717
+		Images: xtra0005.des
+		Size: 7,5
+		Categories: Debris
+		Tiles:
+			0: Clear
+			1: River
+			2: River
+			3: Clear
+			7: Clear
+			8: Rock
+			9: River
+			10: Rock
+			11: Rock
+			12: Rock
+			13: Clear
+			14: Rock
+			15: Rock
+			16: Rock
+			17: River
+			18: Rock
+			19: Rock
+			20: Clear
+			21: Clear
+			22: Clear
+			23: Rough
+			24: River
+			25: River
+			26: River
+			27: Rough
+			31: Rough
+			32: Rock
+			33: River
+			34: River
+	# snakey canyon tile
+	Template@718:
+		Id: 718
+		Images: xtra0006.des
+		Size: 4,4
+		Categories: Cliffs
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rock
+			6: Rock
+			7: Rock
+			8: Rock
+			9: Rock
+			10: Rock
+			11: Rough
+			12: Rock
+			13: Rock
+			14: Rough
+			15: Rough
+	# some more debris
+	Template@719:
+		Id: 719
+		Images: xtra0007.des
+		Size: 3,2
+		Categories: Debris
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rock
+	# craters
+	Template@720:
+		Id: 720
+		Images: xtra0008.des
+		Size: 1,1
+		Categories: Debris
+		Tiles:
+			0: Rough
+	Template@721:
+		Id: 721
+		Images: xtra0009.des
+		Size: 1,1
+		Categories: Debris
+		Tiles:
+			0: Rough
+	Template@722:
+		Id: 722
+		Images: xtra0010.des
+		Size: 1,1
+		Categories: Debris
+		Tiles:
+			0: Rock
+	# river tile variation
+	Template@723:
+		Id: 723
+		Images: xtra0011.des
+		Size: 4,3
+		Categories: River
+		Tiles:
+			0: Rock
+			1: Rock
+			2: River
+			3: Clear
+			4: Clear
+			5: Rough
+			6: River
+			7: River
+			9: Clear
+			10: River
+			11: River

@@ -59,6 +59,10 @@
 		Versus:
 			Heavy: 115
 
+90mm.rhino:
+	Inherits: 90mm
+	Range: 5c768
+
 105mm:
 	Inherits: ^Cannon
 	ReloadDelay: 70
@@ -88,6 +92,13 @@
 			Heavy: 115
 		InvalidTargets: Air
 
+130mm:
+	Inherits: 120mm
+	ReloadDelay: 70
+	-Burst:
+	Range: 6c256
+	Report: tnkdfire.aud
+
 TurretGun:
 	Inherits: ^Cannon
 	ReloadDelay: 30
@@ -98,6 +109,10 @@ TurretGun:
 		Versus:
 			None: 20
 			Wood: 50
+
+TurretGun.SPG:
+	Inherits: TurretGun
+	ReloadDelay: 50
 
 ^Artillery:
 	Inherits: ^Cannon
@@ -161,6 +176,12 @@ TurretGun:
 			Concrete: 100
 	Warhead@4EffWater: CreateEffect
 		Explosions: large_splash
+
+8InchSingular
+	Inherits: 8Inch
+	-Burst:
+	Range: 8c0
+	ReloadDelay: 95
 
 2Inch:
 	Inherits: ^Cannon
@@ -289,8 +310,8 @@ MortarNapalmInf:
 	Inherits: MortarNapalm
 	ReloadDelay: 60
 
-130mm:
-	ReloadDelay: 80
+110mm:
+	ReloadDelay: 70
 	InvalidTargets: Air
 	Range: 5c768
 	Report: tnkdfire.aud

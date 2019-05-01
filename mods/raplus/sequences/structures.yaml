@@ -25,10 +25,6 @@ fcom.buildable:
 	Defaults: fcom
 	Inherits: fcom
 
-fcom.buildable.discount:
-	Defaults: fcom
-	Inherits: fcom
-
 acom:
 	idle:
 	damaged-idle:
@@ -231,10 +227,6 @@ proc.husk:
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
 
-proc.discount:
-	Defaults: proc
-	Inherits: proc
-
 silo:
 	idle: silo2
 		Offset: 0,-1
@@ -269,10 +261,6 @@ silo.husk:
 		Length: *
 		UseTilesetExtension: true
 
-silo.discount:
-	Defaults: silo
-	Inherits: silo
-
 powr:
 	idle:
 	damaged-idle:
@@ -306,10 +294,6 @@ powr.husk:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
-
-powr.discount:
-	Defaults: powr
-	Inherits: powr
 
 apwr:
 	idle:
@@ -349,10 +333,6 @@ apwr.husk:
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
 
-apwr.discount:
-	Defaults: apwr
-	Inherits: apwr
-
 barr:
 	idle:
 		Length: 10
@@ -387,10 +367,6 @@ barr.husk:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
-
-barr.discount:
-	Defaults: barr
-	Inherits: barr
 
 tent:
 	Defaults:
@@ -437,9 +413,36 @@ tent.husk:
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
 
-tent.discount:
-	Defaults: tent
-	Inherits: tent
+pyle:
+	idle:
+		Length: 10
+		Tick: 100
+	damaged-idle:
+		Start: 10
+		Length: 10
+		Tick: 100
+	dead:
+		Start: 20
+		Tick: 800
+	make: pylemake
+		Length: *
+		Tick: 80
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	icon: pyleicon
+
+pyle.husk:
+	idle: pyle
+		Start: 20
+		Length: 1
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
 
 kenn:
 	idle:
@@ -463,10 +466,6 @@ kenn.husk:
 	bib: mbSILO
 		Length: *
 		UseTilesetExtension: true
-
-kenn.discount:
-	Defaults: kenn
-	Inherits: kenn
 
 spmst:
 	idle:
@@ -494,10 +493,6 @@ spmst.husk:
 	bib: mbSILO
 		Length: *
 		UseTilesetExtension: true
-
-spmst.discount:
-	Defaults: spmst
-	Inherits: spmst
 
 dome:
 	idle:
@@ -529,10 +524,6 @@ dome.husk:
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
 
-dome.discount:
-	Defaults: dome
-	Inherits: dome
-
 atek:
 	idle:
 	damaged-idle:
@@ -563,10 +554,6 @@ atek.husk:
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
 
-atek.discount:
-	Defaults: atek
-	Inherits: atek
-
 stek:
 	idle:
 	damaged-idle:
@@ -593,10 +580,6 @@ stek.husk:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
-
-stek.discount:
-	Defaults: stek
-	Inherits: stek
 
 weap:
 	idle:
@@ -628,10 +611,6 @@ weap.husk:
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
 
-weap.discount:
-	Defaults: weap
-	Inherits: weap
-
 hpad:
 	idle:
 		ZOffset: -1023
@@ -662,10 +641,6 @@ hpad.husk:
 		Start: 7
 		Length: 1
 		ZOffset: -1023
-
-hpad.discount:
-	Defaults: hpad
-	Inherits: hpad
 
 afld:
 	idle: afldidle
@@ -708,10 +683,6 @@ afld.husk:
 		Start: 8
 		Length: 1
 
-afld.discount:
-	Defaults: afld
-	Inherits: afld
-
 spen:
 	idle:
 		Offset: 0,2
@@ -734,10 +705,6 @@ spen.husk:
 		Start: 1
 		Offset: 0,2
 
-spen.discount:
-	Defaults: spen
-	Inherits: spen
-
 syrd:
 	idle:
 	damaged-idle:
@@ -756,10 +723,6 @@ syrd.husk:
 	idle: syrd
 		Start: 1
 		Offset: 0,2
-
-syrd.discount:
-	Defaults: syrd
-	Inherits: syrd
 
 fix:
 	idle:
@@ -807,10 +770,6 @@ fix.husk:
 		Offset: 0,-4
 		UseTilesetExtension: true
 
-fix.discount:
-	Defaults: fix
-	Inherits: fix
-
 gun:
 	idle:
 		Facings: 32
@@ -845,10 +804,6 @@ gun.husk:
 		Length: *
 		Offset: -1,-1
 		UseTilesetExtension: true
-
-gun.discount:
-	Defaults: gun
-	Inherits: gun
 
 agun:
 	idle:
@@ -894,10 +849,6 @@ agun.husk:
 		TilesetOverrides:
 			JUNGLE: TEMPERAT
 
-agun.discount:
-	Defaults: agun
-	Inherits: agun
-
 sam:
 	idle: sam2
 		Facings: 32
@@ -931,10 +882,6 @@ sam.husk:
 		Offset: 0,1
 		UseTilesetExtension: true
 
-sam.discount:
-	Defaults: sam
-	Inherits: sam
-
 ftur:
 	idle:
 		Offset: 0,-2
@@ -957,10 +904,6 @@ ftur.husk:
 	bib: mbFTUR
 		Length: *
 		UseTilesetExtension: true
-
-ftur.discount:
-	Defaults: ftur
-	Inherits: ftur
 
 htur:
 	idle: htur-base
@@ -998,10 +941,6 @@ htur.husk:
 		Offset: 0,1
 		UseTilesetExtension: true
 
-htur.discount:
-	Defaults: htur
-	Inherits: htur
-
 tsla:
 	idle:
 		Offset: 0,-13
@@ -1035,10 +974,6 @@ tsla.husk:
 		Length: *
 		UseTilesetExtension: true
 
-tsla.discount:
-	Defaults: tsla
-	Inherits: tsla
-
 pbox:
 	idle:
 	damaged-idle:
@@ -1056,10 +991,6 @@ pbox:
 			JUNGLE: TEMPERAT
 	icon: pboxicon
 
-pbox.discount:
-	Defaults: pbox
-	Inherits: pbox
-
 hbox:
 	Defaults:
 		UseTilesetExtension: true
@@ -1076,10 +1007,6 @@ hbox:
 		UseTilesetExtension: false
 	icon: hboxicon
 		UseTilesetExtension: false
-
-hbox.discount:
-	Defaults: hbox
-	Inherits: hbox
 
 gap:
 	idle:
@@ -1110,10 +1037,6 @@ gap.husk:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			JUNGLE: TEMPERAT
-
-gap.discount:
-	Defaults: gap
-	Inherits: gap
 
 iron:
 	idle:
@@ -1151,10 +1074,6 @@ iron.husk:
 		TilesetOverrides:
 			JUNGLE: TEMPERAT
 
-iron.discount:
-	Defaults: iron
-	Inherits: iron
-
 pdox:
 	idle:
 	damaged-idle:
@@ -1181,10 +1100,6 @@ pdox.husk:
 		Length: *
 		Offset: 0,-4
 		UseTilesetExtension: true
-
-pdox.discount:
-	Defaults: pdox
-	Inherits: pdox
 
 mslo:
 	Defaults:
@@ -1217,10 +1132,6 @@ mslo.husk:
 		Start: 12
 		Length: 1
 		Offset: 0,-12
-
-mslo.discount:
-	Defaults: mslo
-	Inherits: mslo
 
 miss:
 	idle:
@@ -1300,27 +1211,23 @@ brik:
 		Length: 16
 	icon: brikicon
 
-brik.discount:
-	Defaults: brik
-	Inherits: brik
-
 sbag:
 	idle:
 		Length: 16
 	icon: sbagicon
-
-sbag.discount:
-	Defaults: sbag
-	Inherits: sbag
 
 fenc:
 	idle:
 		Length: 16
 	icon: fencicon
 
-fenc.discount:
-	Defaults: fenc
-	Inherits: fenc
+barb:
+	idle:
+		Length: 16
+	damaged-idle:
+		Start: 16
+		Length: 16
+	icon: barbicon
 
 cycl:
 	idle:
@@ -1328,6 +1235,7 @@ cycl:
 	damaged-idle:
 		Start: 16
 		Length: 16
+	icon: cyclicon
 
 vgate:
 	make:
@@ -1342,10 +1250,6 @@ vgate:
 		ZOffset: -1c511
 	icon: vgateicon
 
-vgate.discount:
-	Defaults: vgate
-	Inherits: vgate
-
 hgate:
 	make:
 		Length: 7
@@ -1358,10 +1262,6 @@ hgate:
 		Length: 7
 		ZOffset: -1c511
 	icon: hgateicon
-
-hgate.discount:
-	Defaults: hgate
-	Inherits: hgate
 
 fistbuild:
 	idle: weapmini
@@ -1431,10 +1331,6 @@ hsam.husk:
 		Length: 1
 		Offset: -1,-2
 
-hsam.discount:
-	Defaults: hsam
-	Inherits: hsam
-
 rresf:
 	idle:
 	damaged-idle:
@@ -1501,3 +1397,22 @@ acad.husk:
 		Start: 7
 		Length: 1
 		Offset: -2, 10
+
+pbat:
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+		Offset: 0,-11
+	damaged-idle:
+		Start: 0
+		Facings: 32
+		UseClassicFacingFudge: True
+		Offset: 0,-11
+	make: blank
+		Length: *
+		Offset: 0,-11
+	bib: mbSAM
+		Length: *
+		Offset: 0,1
+		UseTilesetExtension: true
+	icon: pbaticon

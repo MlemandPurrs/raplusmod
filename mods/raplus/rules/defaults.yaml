@@ -278,6 +278,7 @@
 	Inherits@7: ^LeavesScraps
 	Inherits@9: ^AffectedByGPSScrambler
 	Inherits@10: ^AffectedByDriverKill
+	Inherits@11: ^AffectedByLeadership
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -509,6 +510,7 @@
 
 ^Soldier:
 	Inherits: ^Infantry
+	Inherits@11: ^AffectedByLeadership
 	UpdatesPlayerStatistics:
 	MustBeDestroyed:
 	ProximityCaptor:
@@ -718,7 +720,7 @@
 	Inherits: ^NeutralPlane
 	Inherits@2: ^GainsExperience
 	Repairable:
-		RepairBuildings: afld
+		RepairBuildings: afld, aircarr.deployed, aircarr.discount.deployed
 
 ^Helicopter:
 	Inherits: ^Plane
@@ -732,7 +734,7 @@
 		VTOL: true
 		InitialFacing: 224
 	Repairable:
-		RepairBuildings: hpad, srep, srep.deployed, srep.discount.deployed, carr.deployed, carr.discount.deployed
+		RepairBuildings: hpad, srep, srep.deployed, srep.discount.deployed, carr.deployed, carr.discount.deployed, aircarr.deployed, aircarr.discount.deployed
 	GpsDot:
 		String: Helicopter
 	Hovers@CRUISING:
@@ -1558,3 +1560,20 @@
 		RequiresCondition: driver_killed
 		ValidStances: Enemy, Neutral, Ally
 	CaptureManager:
+
+^AffectedByLeadership:
+	FirepowerMultiplier@LEADERSHIP:
+		RequiresCondition: leader_boost
+		Modifier: 110
+	ReloadDelayMultiplier@LEADERSHIP:
+		RequiresCondition: leader_boost
+		Modifier: 90
+	SelfHealing@LEADERSHIP:
+		Step: 0
+		PercentageStep: 2
+		Delay: 40
+		HealIfBelow: 100
+		DamageCooldown: 0
+		RequiresCondition: leader_boost
+	ExternalCondition@LEADERSHIP:
+		Condition: leader_boost

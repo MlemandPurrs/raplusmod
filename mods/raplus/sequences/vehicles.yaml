@@ -11,10 +11,6 @@ mcvhusk:
 		UseClassicFacingFudge: True
 		ZOffset: -1023
 
-mcv.discount:
-	Defaults: mcv
-	Inherits: mcv
-
 harv:
 	Inherits: emp-overlay
 	idle: harvempty
@@ -52,10 +48,6 @@ harv:
 		Start: 104
 		Length: 7
 	icon: harvicon
-
-harv.discount:
-	Defaults: harv
-	Inherits: harv
 
 harv.soviet:
 	Inherits: emp-overlay
@@ -101,10 +93,6 @@ harv.soviet:
 		Facings: 8
 	icon: harvicon
 
-harv.soviet.discount:
-	Defaults: harv.soviet
-	Inherits: harv.soviet
-
 truk:
 	Inherits: emp-overlay
 	idle:
@@ -126,10 +114,6 @@ jeep:
 		Facings: 8
 	icon: jeepicon
 
-jeep.discount:
-	Defaults: jeep
-	Inherits: jeep
-
 ftrk:
 	Inherits: emp-overlay
 	idle:
@@ -142,10 +126,6 @@ ftrk:
 	muzzle: gunfire2
 		Length: 2
 	icon: ftrkicon
-
-ftrk.discount:
-	Defaults: ftrk
-	Inherits: ftrk
 
 apc:
 	Inherits: emp-overlay
@@ -161,10 +141,6 @@ apc:
 	unload:
 		Start: 32
 	icon: apcicon
-
-apc.discount:
-	Defaults: apc
-	Inherits: apc
 
 btr:
 	Inherits: emp-overlay
@@ -184,9 +160,18 @@ btr:
 		Start: 32
 	icon: btricon
 
-btr.discount:
-	Defaults: btr
-	Inherits: btr
+bmp:
+	Inherits: emp-overlay
+	idle: bmp-other
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret: 1tnk
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	muzzle: gunfire2
+		Length: 2
+	icon: bmpicon
 
 1tnk:
 	Inherits: emp-overlay
@@ -198,7 +183,7 @@ btr.discount:
 		UseClassicFacingFudge: True
 	muzzle: gunfire2
 		Length: 2
-	idle-float: 1tnk_float
+	idle-float: 1tnk-float
 		Facings: 32
 		UseClassicFacingFudge: True
 	icon: 1tnkicon
@@ -213,34 +198,6 @@ btr.discount:
 		Facings: 32
 		UseClassicFacingFudge: True
 		ZOffset: -512
-
-1tnk.discount:
-	Defaults: 1tnk
-	Inherits: 1tnk
-
-1tnk.britain:
-	Defaults: 1tnk
-	Inherits: 1tnk
-
-1tnk.france:
-	Defaults: 1tnk
-	Inherits: 1tnk
-
-1tnk.germany:
-	Defaults: 1tnk
-	Inherits: 1tnk
-
-1tnk.britain.discount:
-	Defaults: 1tnk.britain
-	Inherits: 1tnk.britain
-
-1tnk.france.discount:
-	Defaults: 1tnk.france
-	Inherits: 1tnk.france
-
-1tnk.germany.discount:
-	Defaults: 1tnk.germany
-	Inherits: 1tnk.germany
 
 2tnk:
 	Inherits: emp-overlay
@@ -271,34 +228,6 @@ btr.discount:
 		UseClassicFacingFudge: True
 		ZOffset: -512
 
-2tnk.discount:
-	Defaults: 2tnk
-	Inherits: 2tnk
-
-2tnk.britain:
-	Defaults: 2tnk
-	Inherits: 2tnk
-
-2tnk.france:
-	Defaults: 2tnk
-	Inherits: 2tnk
-
-2tnk.germany:
-	Defaults: 2tnk
-	Inherits: 2tnk
-
-2tnk.britain.discount:
-	Defaults: 2tnk.britain
-	Inherits: 2tnk.britain
-
-2tnk.france.discount:
-	Defaults: 2tnk.france
-	Inherits: 2tnk.france
-
-2tnk.germany.discount:
-	Defaults: 2tnk.germany
-	Inherits: 2tnk.germany
-
 2tnk.soviet:
 	Inherits: emp-overlay
 	idle: 2tnksoviet
@@ -327,34 +256,6 @@ btr.discount:
 		UseClassicFacingFudge: True
 		ZOffset: -512
 
-2tnk.soviet.discount:
-	Defaults: 2tnk.soviet
-	Inherits: 2tnk.soviet
-
-2tnk.russia:
-	Defaults: 2tnk.soviet
-	Inherits: 2tnk.soviet
-
-2tnk.ukraine:
-	Defaults: 2tnk.soviet
-	Inherits: 2tnk.soviet
-
-2tnk.kazakh:
-	Defaults: 2tnk.soviet
-	Inherits: 2tnk.soviet
-
-2tnk.russia.discount:
-	Defaults: 2tnk.russia
-	Inherits: 2tnk.russia
-
-2tnk.ukraine.discount:
-	Defaults: 2tnk.ukraine
-	Inherits: 2tnk.ukraine
-
-2tnk.kazakh.discount:
-	Defaults: 2tnk.kazakh
-	Inherits: 2tnk.kazakh
-
 3tnk:
 	Inherits: emp-overlay
 	idle:
@@ -379,34 +280,6 @@ btr.discount:
 		Facings: 32
 		UseClassicFacingFudge: True
 		ZOffset: -512
-
-3tnk.discount:
-	Defaults: 3tnk
-	Inherits: 3tnk
-
-3tnk.russia:
-	Defaults: 3tnk
-	Inherits: 3tnk
-
-3tnk.ukraine:
-	Defaults: 3tnk
-	Inherits: 3tnk
-
-3tnk.kazakh:
-	Defaults: 3tnk
-	Inherits: 3tnk
-
-3tnk.russia.discount:
-	Defaults: 3tnk.russia
-	Inherits: 3tnk.russia
-
-3tnk.ukraine.discount:
-	Defaults: 3tnk.ukraine
-	Inherits: 3tnk.ukraine
-
-3tnk.kazakh.discount:
-	Defaults: 3tnk.kazakh
-	Inherits: 3tnk.kazakh
 
 4tnk:
 	Inherits: emp-overlay
@@ -433,34 +306,6 @@ btr.discount:
 		UseClassicFacingFudge: True
 		ZOffset: -512
 
-4tnk.discount:
-	Defaults: 4tnk
-	Inherits: 4tnk
-
-4tnk.russia:
-	Defaults: 4tnk
-	Inherits: 4tnk
-
-4tnk.ukraine:
-	Defaults: 4tnk
-	Inherits: 4tnk
-
-4tnk.kazakh:
-	Defaults: 4tnk
-	Inherits: 4tnk
-
-4tnk.russia.discount:
-	Defaults: 4tnk.russia
-	Inherits: 4tnk.russia
-
-4tnk.ukraine.discount:
-	Defaults: 4tnk.ukraine
-	Inherits: 4tnk.ukraine
-
-4tnk.kazakh.discount:
-	Defaults: 4tnk.kazakh
-	Inherits: 4tnk.kazakh
-
 tnkd:
 	Inherits: emp-overlay
 	idle:
@@ -476,33 +321,23 @@ tnkd.destroyed:
 		Facings: 32
 		UseClassicFacingFudge: True
 
-tnkd.discount:
-	Defaults: tnkd
-	Inherits: tnkd
+tnkd.heavy:
+	Inherits: emp-overlay
+	idle: tnkd-heavy
+		Facings: 32
+		UseClassicFacingFudge: True
+	shoot: tnkd-heavy
+		Start: 32
+		Facings: 32
+		Length: 8
+		UseClassicFacingFudge: True
+		Tick: 100
+	icon: tnkdicon
 
-tnkd.britain:
-	Defaults: tnkd
-	Inherits: tnkd
-
-tnkd.france:
-	Defaults: tnkd
-	Inherits: tnkd
-
-tnkd.germany:
-	Defaults: tnkd
-	Inherits: tnkd
-
-tnkd.britain.discount:
-	Defaults: tnkd.britain
-	Inherits: tnkd.britain
-
-tnkd.france.discount:
-	Defaults: tnkd.france
-	Inherits: tnkd.france
-
-tnkd.germany.discount:
-	Defaults: tnkd.germany
-	Inherits: tnkd.germany
+tnkd.heavy.destroyed:
+	idle: tnkd-heavy
+		Facings: 32
+		UseClassicFacingFudge: True
 
 arty:
 	Inherits: emp-overlay
@@ -514,25 +349,17 @@ arty:
 	icon: artyicon
 	fake-icon: artficon
 
-arty.discount:
-	Defaults: arty
-	Inherits: arty
-
 nona:
 	Inherits: emp-overlay
 	idle: bmp
 		Facings: 32
 		UseClassicFacingFudge: True
-	turret: bmptur
+	turret: bmp-tur
 		Facings: 32
 		UseClassicFacingFudge: True
 	muzzle: gunfire2
 		Length: 2
 	icon: nonaicon
-
-nona.discount:
-	Defaults: nona
-	Inherits: nona
 
 mrls:
 	Inherits: emp-overlay
@@ -553,10 +380,6 @@ mrls:
 		UseClassicFacingFudge: True
 	icon: mrlsicon
 
-mrls.discount:
-	Defaults: mrls
-	Inherits: mrls
-
 v2rl:
 	Inherits: emp-overlay
 	idle:
@@ -568,13 +391,16 @@ v2rl:
 		UseClassicFacingFudge: True
 	icon: v2rlicon
 
-v2rl.discount:
-	Defaults: v2rl
-	Inherits: v2rl
-
 mnly:
 	Inherits: emp-overlay
 	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+	icon: mnlyicon
+
+mnly.soviet:
+	Inherits: emp-overlay
+	idle: mnly
 		Facings: 32
 		UseClassicFacingFudge: True
 	turret: apctur
@@ -585,10 +411,6 @@ mnly:
 		Facings: 8
 	icon: mnlyicon
 
-mnly.discount:
-	Defaults: mnly
-	Inherits: mnly
-
 mrj:
 	Inherits: emp-overlay
 	idle:
@@ -598,18 +420,6 @@ mrj:
 		Start: 32
 		Length: 32
 	icon: mrjicon
-
-mrj.discount:
-	Defaults: mrj
-	Inherits: mrj
-
-mrj.britain:
-	Defaults: mrj
-	Inherits: mrj
-
-mrj.britain.discount:
-	Defaults: mrj
-	Inherits: mrj
 
 mgg:
 	Inherits: emp-overlay
@@ -636,10 +446,6 @@ mgg.destroyed:
 	spinner-idle: mgg
 		Start: 32
 
-mgg.discount:
-	Defaults: mgg
-	Inherits: mgg
-
 ttnk:
 	Inherits: emp-overlay
 	idle:
@@ -650,28 +456,12 @@ ttnk:
 		Length: 32
 	icon: ttnkicon
 
-ttnk.discount:
-	Defaults: ttnk
-	Inherits: ttnk
-
 dtrk:
 	Inherits: emp-overlay
 	idle:
 		Facings: 32
 		UseClassicFacingFudge: True
 	icon: dtrkicon
-
-dtrk.discount:
-	Defaults: dtrk
-	Inherits: dtrk
-
-dtrk.ukraine:
-	Defaults: dtrk
-	Inherits: dtrk
-
-dtrk.ukraine.discount:
-	Defaults: dtrk
-	Inherits: dtrk
 
 ctnk:
 	Inherits: emp-overlay
@@ -681,18 +471,6 @@ ctnk:
 	muzzle: gunfire2
 		Length: 5
 	icon: ctnkicon
-
-ctnk.discount:
-	Defaults: ctnk
-	Inherits: ctnk
-
-ctnk.germany:
-	Defaults: ctnk
-	Inherits: ctnk
-
-ctnk.germany.discount:
-	Defaults: ctnk
-	Inherits: ctnk
 
 qtnk:
 	Inherits: emp-overlay
@@ -704,10 +482,6 @@ qtnk:
 		Facings: 8
 		Length: 8
 	icon: qtnkicon
-
-qtnk.discount:
-	Defaults: qtnk
-	Inherits: qtnk
 
 ftnk:
 	Inherits: emp-overlay
@@ -744,10 +518,6 @@ ftnk:
 		Length: 13
 	icon: ftnkicon
 
-ftnk.discount:
-	Defaults: ftnk
-	Inherits: ftnk
-
 ptnk:
 	Inherits: emp-overlay
 	idle: ptnk
@@ -761,21 +531,9 @@ ptnk:
 		Length: *
 	icon: ptnkicon
 
-ptnk.discount:
-	Defaults: ptnk
-	Inherits: ptnk
-
-ptnk.france:
-	Defaults: ptnk
-	Inherits: ptnk
-
-ptnk.france.discount:
-	Defaults: ptnk
-	Inherits: ptnk
-
 stnk:
 	Inherits: emp-overlay
-	idle: stnk
+	idle: papc
 		Facings: 32
 		UseClassicFacingFudge: True
 	turret: stnk
@@ -784,18 +542,6 @@ stnk:
 	icon: stnkicon
 
 papc:
-	Defaults: stnk
-	Inherits: stnk
-
-papc.discount:
-	Defaults: stnk
-	Inherits: stnk
-
-papc.france:
-	Defaults: stnk
-	Inherits: stnk
-
-papc.france.discount:
 	Defaults: stnk
 	Inherits: stnk
 
@@ -833,10 +579,6 @@ mbun:
 		Facings: 8
 	icon: mbunicon
 
-mbun.discount:
-	Defaults: mbun
-	Inherits: mbun
-
 prsm:
 	Inherits: emp-overlay
 	idle:
@@ -848,18 +590,6 @@ prsm:
 		UseClassicFacingFudge: True
 	icon: prsmicon
 
-prsm.discount:
-	Defaults: prsm
-	Inherits: prsm
-
-prsm.germany:
-	Defaults: prsm
-	Inherits: prsm
-
-prsm.germany.discount:
-	Defaults: prsm.germany
-	Inherits: prsm.germany
-
 ra2.ttnk:
 	Inherits: emp-overlay
 	idle: ra2ttnk
@@ -869,10 +599,6 @@ ra2.ttnk:
 		Facings: 32
 		UseClassicFacingFudge: True
 	icon: ra2ttnkicon
-
-ra2.ttnk.discount:
-	Defaults: ra2.ttnk
-	Inherits: ra2.ttnk
 
 4tnk.flame:
 	Inherits: emp-overlay
@@ -898,23 +624,196 @@ ra2.ttnk.discount:
 		UseClassicFacingFudge: True
 		ZOffset: -512
 
-4tnk.flame.discount:
-	Defaults: 4tnk.flame
-	Inherits: 4tnk.flame
-
 v3rl:
 	Defaults: v2rl
 	Inherits: v2rl
-
-v3rl.discount
-	Defaults: v3rl
-	Inherits: v3rl
 
 icbm:
 	Defaults: v2rl
 	Inherits: v2rl
 	icon: icbmicon
 
-icbm.discount
-	Defaults: icbm
-	Inherits: icbm
+adst:
+	Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+	idle-float: adst-float
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret: pttur
+		Facings: 32
+	muzzle: gunfire2
+		Length: 5
+	icon: adsticon
+
+behe:
+	Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret:
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	muzzle:
+		Combine:
+			behmuz-n:
+				Length: *
+				Offset: 0,0
+			behmuz-nw:
+				Length: *
+				Offset: 0,0
+			behmuz-w:
+				Length: *
+				Offset: 0,0
+			behmuz-sw:
+				Length: *
+				Offset: 0,0
+			behmuz-s:
+				Length: *
+				Offset: 0,0
+			behmuz-se:
+				Length: *
+				Offset: 0,0
+			behmuz-e:
+				Length: *
+				Offset: 0,0
+			behmuz-ne:
+				Length: *
+				Offset: 0,0
+		Facings: 8
+		Length: 10
+	icon: beheicon
+
+mtnk:
+	Inherits: emp-overlay
+	idle: mtnknorock
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret: mtnknorock
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	muzzle: cann-muzzle
+		Length: 2
+		Facings: 16
+	mg-muzzle: minigun
+		Length: 6
+		Facings: 8
+	icon: mtnkicon
+
+mtnk.destroyed:
+	idle: mtnk
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+	turret: mtnk
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+
+rtrk:
+	Inherits: emp-overlay
+	idle: ftrk
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret: crane-turret
+		Facings: 32
+		UseClassicFacingFudge: True
+	icon: rtrkicon
+
+brdm:
+	Inherits: emp-overlay
+	idle:
+		Facings: 32
+	turret-default: frig-tur
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret-mg: brdm
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	muzzle-mg: minigun
+		Length: 6
+		Facings: 8
+	turret-flamer: brdm-flame-tur
+		Start: 0
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret-cannon: bmp-tur
+		Start: 0
+		Facings: 32
+		UseClassicFacingFudge: True
+	muzzle-cannon: gunfire2
+		Length: 2
+	open:
+		Start: 32
+		Length: 3
+	unload:
+		Start: 32
+	icon: brdmicon
+
+rhin:
+	Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret:
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	muzzle: cann-muzzle
+		Length: 2
+		Facings: 16
+	icon: rhinicon
+
+rhin.destroyed:
+	idle: rhin
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+	turret: rhin
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+
+spg:
+	Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+	muzzle: gunfire2
+		Length: 2
+	icon: spgicon
+
+spg.destroyed:
+	idle: spg
+		Facings: 32
+		UseClassicFacingFudge: True
+
+trik:
+	Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+	icon: trikicon
+
+mhq:
+	Inherits: emp-overlay
+	idle: ttnk
+		Facings: 32
+		UseClassicFacingFudge: True
+	spinner: mrj
+		Start: 32
+		Length: 32
+	turret: jeep
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	muzzle: minigun
+		Length: 6
+		Facings: 8
+	icon: mhqicon

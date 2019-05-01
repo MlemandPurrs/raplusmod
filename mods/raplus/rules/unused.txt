@@ -1,0 +1,46 @@
+from mental omega
+USA
++15% Speed for Vehicle, Aircraft, Infantry
+GB
++15% Armor(eg. hitpoints) for Vehicle, Aircraft, Infantry
+France
++30% Armor(eg. hitpoints) for Defenses
+South Korea
+Aircraft speed and armor +20%, cost -20%, build time -15%
+Russia
+Vehicles & ships armor +25% (version 2.0)
+Iraq
+Vehicles & ships speed +25%
+Libya
+Quick Reaction - Infantry speed +30%
+Cuba
+Mass Fortification - -20% defense build time (version 2.0)
+Initiation - Infantry cost -25% (version 1.2)
+Yuri
+Immunity - Infantry armor +25%
+Yuri Chaos
+Alchemy - Ore value +15%
+Yuri Scorpion
+Mass Production - 20% faster unit construction
+Germany
+Tank Mechanics - Units speed + 12%, armor +12%
+Greece
+Protection - Buildings armor +25%
+North Korea
+Base Expansion - Structures build time -25%
+China
+Conscription - -20% infantry cost
+
+faction bonuses
+MCV costs 50% less
+Buildings have more hitpoints
+Medic heals 50% faster
+Tech Center 33% cheaper
+Infantry moves 15% faster
+Infantry trained faster
+Infantry have better attack versus building
+Gain more starting units at game begin
+Scout unit has more Line of Sight
+Ore Silo generates more
+First of item is free
+Cash start bonus

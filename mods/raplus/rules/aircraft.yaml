@@ -1,7 +1,7 @@
 TRAN:
 	Inherits: ^Helicopter
 	Buildable:
-		Queue: Aircraft
+		Queue: Aircraft, MAfld
 		BuildAtProductionType: Helicopter
 		BuildPaletteOrder: 3
 		Prerequisites: hpad, fix, ~helicopters.allies, ~!industryplant.on, ~techlevel.medium
@@ -71,6 +71,8 @@ TRAN.SOVIET:
 		MaxWeight: 5
 		PipCount: 5
 	-Carryall:
+	RenderSprites:
+		Image: tran
 
 HINDCARR:
 	Inherits: ^Helicopter
@@ -143,11 +145,11 @@ IROQ:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EJECTPILOT: ^EjectsPilotOnAir
 	Buildable:
-		Queue: Aircraft
+		Queue: Aircraft, MAfld
 		BuildAtProductionType: Helicopter
 		BuildPaletteOrder: 1
 		Prerequisites: hpad, ~helicopters.allies, ~!industryplant.on, ~techlevel.medium
-		Description: Light helicopter armed with dual chainguns\nCan transport up to 4 Infantry\n Strong vs Infantry, Light armor\n Weak vs Tanks, Aircraft
+		Description: Light helicopter armed with dual chainguns\n Strong vs Infantry, Light armor\n Weak vs Tanks, Aircraft
 	Valued:
 		Cost: 1200
 	Tooltip:
@@ -197,10 +199,6 @@ IROQ:
 		PipCount: 6
 		AmmoCondition: ammo
 		ReloadDelay: 9
-	Cargo:
-		Types: Infantry, Engineer
-		MaxWeight: 4
-		PipCount: 4
 	SelectionDecorations:
 	WithMuzzleOverlay:
 	SpawnActorOnDeath:
@@ -212,7 +210,7 @@ IROQ:
 	Selectable:
 		DecorationBounds: 38,32
 	Rearmable:
-		RearmActors: hpad, srep.deployed, srep.discount.deployed, carr.deployed, carr.discount.deployed
+		RearmActors: hpad, hpad.discount, hpad.britain, hpad.britain.discount, srep.deployed, srep.discount.deployed, carr.deployed, carr.discount.deployed, aircarr.deployed, aircarr.discount.deployed
 	AcceptsDeliveredExperience:
 
 HELI:
@@ -220,10 +218,10 @@ HELI:
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@EJECTPILOT: ^EjectsPilotOnAir
 	Buildable:
-		Queue: Aircraft
+		Queue: Aircraft, MAfld
 		BuildAtProductionType: Helicopter
 		BuildPaletteOrder: 2
-		Prerequisites: hpad, techcenter, ~helicopters.allies, ~!industryplant.on, ~techlevel.high
+		Prerequisites: hpad, techcenter, ~helicopters.allies, ~!player.usa, ~!industryplant.on, ~techlevel.high
 		BuildDurationModifier: 50
 		Description: Attack Helicopter armed with\nChainguns and Rockets\n Strong vs Infantry, Light Vehicles\n Weak vs Tanks, Anti-Air
 	Valued:
@@ -305,7 +303,7 @@ HELI:
 	Selectable:
 		DecorationBounds: 36,28
 	Rearmable:
-		RearmActors: hpad, srep.deployed, srep.discount.deployed, carr.deployed, carr.discount.deployed
+		RearmActors: hpad, hpad.discount, hpad.britain, hpad.britain.discount, srep.deployed, srep.discount.deployed, carr.deployed, carr.discount.deployed, aircarr.deployed, aircarr.discount.deployed
 	AcceptsDeliveredExperience:
 
 HIND:
@@ -378,7 +376,7 @@ HIND:
 	AmmoPool@TERTIARY:
 		Armaments: tertiary
 		Ammo: 8
-		PipCount: 3
+		PipCount: 4
 		ReloadDelay: 9
 		AmmoCondition: ammorock
 	SelectionDecorations:
@@ -392,8 +390,17 @@ HIND:
 	Selectable:
 		DecorationBounds: 38,32
 	Rearmable:
-		RearmActors: hpad, srep.deployed, srep.discount.deployed, carr.deployed, carr.discount.deployed
+		RearmActors: hpad, hpad.discount, hpad.britain, hpad.britain.discount, srep.deployed, srep.discount.deployed, carr.deployed, carr.discount.deployed, aircarr.deployed, aircarr.discount.deployed
 	AcceptsDeliveredExperience:
+
+CBRA:
+	Inherits: HIND
+	Buildable:
+		Prerequisites: hpad, techcenter, ~helicopters.arabs, ~!industryplant.on, ~techlevel.high
+	Tooltip:
+		Name: Cobra
+	SpawnActorOnDeath:
+		Actor: CBRA.Husk
 
 YAK:
 	Inherits: ^Plane
@@ -464,16 +471,16 @@ YAK:
 	Selectable:
 		DecorationBounds: 30,28,0,2
 	Rearmable:
-		RearmActors: afld, aprt
+		RearmActors: afld, afld.britain, afld.discount, afld.britain.discount, aprt, aircarr.deployed, aircarr.discount.deployed
 	AcceptsDeliveredExperience:
 
 SPIT:
 	Inherits: YAK
 	Buildable:
-		Queue: Aircraft
+		Queue: Aircraft, MAfld
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 4
-		Prerequisites: afld, ~airplanes.allies, ~!industryplant.on, ~techlevel.medium
+		Prerequisites: afld, ~airplanes.allies, ~!player.usa, ~!player.britain, ~!industryplant.on, ~techlevel.medium
 		Description: Attack Plane armed with dual machine guns\n Strong vs Infantry, Light armor\n Weak vs Tanks, Aircraft
 	Tooltip:
 		Name: Spitfire Attack Plane
@@ -487,10 +494,10 @@ F16:
 	Inherits@AUTOTARGET: ^AutoTargetAir
 	Inherits@EJECTSPILOT: ^EjectsPilotOnAir	
 	Buildable:
-		Queue: Aircraft
+		Queue: Aircraft, MAfld
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 5
-		Prerequisites: afld, techcenter, ~airplanes.allies, ~!industryplant.on, ~techlevel.high
+		Prerequisites: afld, techcenter, ~airplanes.allies, ~!player.usa, ~!player.turkey, ~!industryplant.on, ~techlevel.high
 		BuildDurationModifier: 50
 		Description: Fast Interceptor Plane, armed with AA missiles\nCan provide limited ground support with Bombs\n Strong vs Aircraft\n Weak vs Anti-Air
 	Valued:
@@ -526,7 +533,7 @@ F16:
 		MaximumPitch: 56
 		TakeOffOnCreation: False
 	Rearmable:
-		RearmActors: afld
+		RearmActors: afld, afld.britain, afld.discount, afld.britain.discount, aircarr.deployed, aircarr.discount.deployed
 	AutoTarget:
 		InitialStance: ReturnFire
 		InitialStanceAI: AttackAnything
@@ -567,7 +574,7 @@ MIG:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 5
-		Prerequisites: afld, techcenter, ~airplanes.soviet, ~!industryplant.on, ~techlevel.high
+		Prerequisites: afld, techcenter, ~airplanes.soviet, ~!player.ukraine, ~!industryplant.on, ~techlevel.high
 		BuildDurationModifier: 50
 		Description: Fast Attack Plane, armed with multi-purpose missiles\nCapable of engaging Air and Ground targets\n Strong vs Buildings, Vehicles\n Weak vs Infantry
 	Valued:
@@ -629,7 +636,7 @@ MIG:
 	ProducibleWithLevel:
 		Prerequisites: airplanes.upgraded
 	Rearmable:
-		RearmActors: afld
+		RearmActors: afld, afld.britain, afld.discount, afld.britain.discount 
 	AcceptsDeliveredExperience:
 
 SFIG:
@@ -637,10 +644,10 @@ SFIG:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EJECTSPILOT: ^EjectsPilotOnAir
 	Buildable:
-		Queue: Aircraft
+		Queue: Aircraft, MAfld
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 6
-		Prerequisites: afld, techcenter, fix, ~airplanes.allies, ~!industryplant.on, ~techlevel.high
+		Prerequisites: afld, techcenter, fix, ~airplanes.allies, ~!player.is.subfaction, ~!industryplant.on, ~techlevel.high
 		Description: Stealthed Ground-Attack Bomber plane\nCannot attack air units\n Strong vs Buildings, Vehicles\n Weak vs Anti-Air, Aircraft
 	Valued:
 		Cost: 2400
@@ -668,7 +675,7 @@ SFIG:
 	AttackAircraft:
 		FacingTolerance: 20
 	Rearmable:
-		RearmActors: afld
+		RearmActors: afld, afld.britain, aircarr.deployed, aircarr.discount.deployed
 	Aircraft:
 		CruiseAltitude: 2560
 		InitialFacing: 192
@@ -712,7 +719,7 @@ FROG:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 6
-		Prerequisites: afld, techcenter, fix, ~airplanes.soviet, ~!industryplant.on, ~techlevel.high
+		Prerequisites: afld, techcenter, fix, ~airplanes.soviet, ~!player.is.subfaction, ~!industryplant.on, ~techlevel.high
 		Description: Ground-attack Bomber plane\nArmed with Chainguns and Bombs\n Strong vs Buildings, Infantry\n Weak vs Aircraft
 	Valued:
 		Cost: 2400
@@ -786,7 +793,7 @@ FROG:
 		Offset: -853,0,0
 		Interval: 2
 	Rearmable:
-		RearmActors: afld
+		RearmActors: afld, afld.britain
 	ProducibleWithLevel:
 		Prerequisites: airplanes.upgraded
 	AcceptsDeliveredExperience:
@@ -836,6 +843,17 @@ B52:
 	SpawnActorOnDeath:
 		Actor: B52.Husk
 
+BLMP:
+	Inherits: BADR
+	Tooltip:
+		Name: Blimp
+	SpawnActorOnDeath:
+		Actor: BLMP.Husk
+	Contrail@1:
+		Offset: -432,460,0
+	Contrail@2:
+		Offset: -432,-460,0
+
 BADR.Bomber:
 	Inherits: ^NeutralPlane
 	AttackBomber:
@@ -883,6 +901,35 @@ B52.Bomber:
 		Name: B-52
 	RenderSprites:
 		Image: b52
+
+B2.Bomber:
+	Inherits: B52.Bomber
+	Tooltip:
+		Name: B-2
+	-RenderSprites:
+	RenderSprites:
+		Image: b2
+	Cloak:
+		InitialDelay: 100
+		CloakDelay: 100
+		CloakSound: appear1.aud
+		UncloakSound: appear1.aud
+		IsPlayerPalette: true
+		PauseOnCondition: cloak-force-disabled || !airborne
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+
+BLMP.bomber:
+	Inherits: BADR.Bomber
+	Tooltip:
+		Name: Blimp
+	RenderSprites:
+		Image: blmp
+	Contrail@1:
+		Offset: -432,460,0
+	Contrail@2:
+		Offset: -432,-460,0
 
 BADR.Cruiser:
 	Inherits: ^NeutralPlane
@@ -1152,3 +1199,111 @@ KIROV:
 		RequiresCondition: !airborne
 	ProducibleWithLevel:
 		Prerequisites: helicopters.upgraded
+
+KIROV.carrier:
+	Inherits: ^Helicopter
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Buildable:
+		Queue: Aircraft
+		BuildPaletteOrder: 6
+		Prerequisites: afld, ~factory, ~techcenter, ~airplanes.soviet, ~player.belarus, ~!industryplant.on, ~techlevel.high
+		Description: Heavily armored Airship\nSends waves of Minimigs against it's target\nSelf-repairs when under 50% Health\n Strong vs Structures\n Weak vs Anti-Air
+	Valued:
+		Cost: 2800
+	Tooltip:
+		Name: Minsk Airship
+	Health:
+		HP: 60000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 7c0
+		Type: GroundPosition
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 5c0
+		Type: GroundPosition
+	Armament@PRIMARY:
+		Weapon: AirshipParaBomb
+		LocalOffset: -20,0,0
+		PauseOnCondition: !ammo
+	AttackFrontal:
+		Voice: Attack
+	AttackAircraft:
+		FacingTolerance: 20
+	Aircraft:
+		CruiseAltitude: 2c0
+		LandWhenIdle: false
+		InitialFacing: 192
+		TurnSpeed: 3
+		Speed: 50
+		Voice: Move
+		AltitudeVelocity: 0c50
+	AmmoPool:
+		Ammo: 4
+		PipCount: 4
+		AmmoCondition: ammo
+	ReloadAmmoPool:
+		Delay: 150
+		Count: 2
+	AutoTarget:
+		InitialStance: ReturnFire
+		InitialStanceAI: AttackAnything
+	SelectionDecorations:
+	Selectable:
+		Bounds: 46,28,0,2
+		DecorationBounds: 50,29,0,1
+	SpawnActorOnDeath:
+		Actor: KIROV.carrier.Husk
+	WithIdleOverlay@ROTOR1AIR:
+		Offset: -460,632,180
+		Sequence: rotor
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTOR1GROUND:
+		Offset: -460,632,180
+		Sequence: slow-rotor
+		RequiresCondition: !airborne
+	WithIdleOverlay@ROTOR2AIR:
+		Offset: -490,-632,180
+		Sequence: rotor
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTOR2GROUND:
+		Offset: -490,-632,180
+		Sequence: slow-rotor
+		RequiresCondition: !airborne
+	WithIdleOverlay@ROTOR3AIR:
+		Offset: -1240,992,180
+		Sequence: rotor-rear
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTOR3GROUND:
+		Offset: -1240,992,180
+		Sequence: slow-rotor-rear
+		RequiresCondition: !airborne
+	WithIdleOverlay@ROTOR4AIR:
+		Offset: -1240,-992,180
+		Sequence: rotor-rear
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTOR4GROUND:
+		Offset: -1240,-992,180
+		Sequence: slow-rotor-rear
+		RequiresCondition: !airborne
+	SmokeTrailWhenDamaged@1:
+		Offset: -100,500,100
+	SmokeTrailWhenDamaged@2:
+		Offset: -100,-500,100
+	SelfHealing:
+		Step: 100
+		Delay: 10
+		HealIfBelow: 50
+		DamageCooldown: 150
+	Voiced:
+		VoiceSet: KirovVoice
+	Explodes:
+		Weapon: UnitExplodePlane
+		RequiresCondition: !airborne
+	ProducibleWithLevel:
+		Prerequisites: helicopters.upgraded
+	Hovers@CRUISING:
+		RequiresCondition: cruising
+		OffsetModifier: -21

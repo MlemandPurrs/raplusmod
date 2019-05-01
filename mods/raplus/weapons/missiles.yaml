@@ -204,7 +204,7 @@ Stinger:
 	InvalidTargets: Water, Underwater
 	Projectile: Missile
 		Arm: 3
-		Inaccuracy: 0
+		Inaccuracy: 1c938
 		HorizontalRateOfTurn: 20
 		RangeLimit: 9c512
 		Speed: 170
@@ -224,6 +224,7 @@ StingerAA:
 	Projectile: Missile
 		Speed: 255
 		CloseEnough: 298
+		Inaccuracy: 0c512
 	Warhead@3Eff: CreateEffect
 		Explosions: med_explosion_air
 		ImpactSounds: kaboom25.aud
@@ -231,7 +232,8 @@ StingerAA:
 APTusk:
 	Inherits: ^AntiGroundMissile
 	ReloadDelay: 60
-	Range: 6c0
+	Range: 6c256
+	Burst: 2
 	Projectile: Missile
 		Speed: 298
 		TrailImage: smokey
@@ -240,9 +242,9 @@ APTusk:
 	Warhead@1Dam: SpreadDamage
 		Damage: 2500
 		Versus:
-			None: 28
-			Wood: 88
-			Light: 88
+			None: 30
+			Wood: 90
+			Light: 90
 			Heavy: 120
 			Concrete: 60
 
@@ -283,6 +285,13 @@ TorpTube:
 		ImpactSounds: splash9.aud
 		ValidTargets: Water
 		InvalidTargets: Ship, Structure, Underwater, Bridge
+
+TorpTubeVS:
+	Inherits: TorpTube
+	Range: 7c512
+	ValidTargets: Underwater
+	-Burst:
+	-BurstDelays:
 
 ^SubMissileDefault:
 	Inherits: ^AntiGroundMissile
@@ -436,6 +445,18 @@ SCUD.Badger:
 		ValidTargets: Water, Underwater
 		InvalidTargets: Ship, Structure, Bridge
 
+Rockets:
+	Inherits: ^MissileWeapon
+
+RocketsAA:
+	Inherits: Rockets
+	ValidTargets: Air
+	Projectile: Missile
+		Inaccuracy: 1c256
+	Warhead@1Dam: SpreadDamage
+		Versus:
+			Light: 90
+
 HellfireAG:
 	Inherits: ^MissileWeapon
 	ReloadDelay: 60
@@ -563,9 +584,6 @@ HellfireAAPlane:
 			Light: 75
 	Warhead@3Eff: CreateEffect
 		Explosions: med_explosion_air
-
-Rockets:
-	Inherits: ^MissileWeapon
 
 LtnkRockets:
 	Inherits: ^MissileWeapon
@@ -812,3 +830,81 @@ NuclearRocket:
 		InvalidTargets: Vehicle, Structure, Wall, Trees
 		Size: 4
 		Delay: 15
+
+Patriot:
+	Inherits: ^MissileWeapon
+	ReloadDelay: 30
+	Range: 12c512
+	MinRange: 2c0
+	Report: missile1.aud
+	ValidTargets: Air
+	Projectile: Missile
+		Image: PATRIOT
+		HorizontalRateOfTurn: 20
+		Speed: 300
+		RangeLimit: 13c819
+		Inaccuracy: 0
+	Warhead@1Dam: SpreadDamage
+		Spread: 682
+		Damage: 5000
+		ValidTargets: Air
+		Versus:
+			None: 20
+			Wood: 84
+			Light: 100
+			Heavy: 74
+	-Warhead@2Smu: LeaveSmudge
+	Warhead@4EffAir: CreateEffect
+		Explosions: med_explosion_air
+
+BikeRockets:
+	Inherits: ^MissileWeapon
+	ReloadDelay: 50
+	Range: 4c768
+	Report: bazook1.aud
+	ValidTargets: Ground, Water
+	InvalidTargets: Air
+	Burst: 2
+	BurstDelays: 5
+	Projectile: Missile
+		Arm: 0
+		Blockable: false
+		Inaccuracy: 128
+		Image: DRAGON
+		HorizontalRateOfTurn: 10
+		TrailImage: smokey
+		Speed: 280
+		RangeLimit: 6c0
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 3000
+		ValidTargets: Ground, Water
+		Versus:
+			None: 25
+			Wood: 75
+			Light: 100
+			Heavy: 100
+			Concrete: 50
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+	Warhead@3Eff: CreateEffect
+		Explosions: med_explosion
+		ImpactSounds: xplos.aud
+		ValidTargets: Ground, Air, Ship, Trees
+	Warhead@4EffWater: CreateEffect
+		Explosions: med_splash
+		ImpactSounds: splashm1.aud, splashm2.aud, splashm3.aud
+		ValidTargets: Water, Underwater
+		InvalidTargets: Ship, Structure, Bridge
+
+BikeRocketsAA:
+	Inherits: BikeRockets
+	Range: 5c512
+	ValidTargets: Air
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Air
+	Warhead@3Eff: CreateEffect
+		Explosions: med_explosion_air
+		ImpactSounds: xplos.aud
+		ValidTargets: Ground, Air, Ship, Trees

@@ -3,7 +3,7 @@ MCV:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 16
-		Prerequisites: factory, fix, ~!industryplant.on, ~techlevel.medium
+		Prerequisites: factory, fix, ~!player.britain, ~!industryplant.on, ~techlevel.medium
 		BuildDurationModifier: 50
 		Description: Deploys into another Construction Yard\n Unarmed
 	Valued:
@@ -100,13 +100,13 @@ HARV:
 		DamageCooldown: 150
 		RequiresCondition: !empdisable
 
-HARV.SOVIET:
+HARV.soviet:
 	Inherits: HARV
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
 		Queue: Vehicle, MWFVehicle
-		Prerequisites: factory, proc, ~!industryplant.on, ~vehicles.soviet, ~techlevel.infonly
+		Prerequisites: factory, proc, ~vehicles.soviet, ~!player.belarus, ~!industryplant.on, ~techlevel.infonly
 		Description: Collects Ore and Gems for processing\n Armed with Machine Gun
 	Tooltip:
 		Name: Armed Ore Truck
@@ -139,7 +139,7 @@ JEEP:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 2
-		Prerequisites: factory, ~!industryplant.on, ~vehicles.allies, ~techlevel.low
+		Prerequisites: factory, ~vehicles.allies, ~!player.usa, ~!industryplant.on, ~techlevel.low
 		Description: Fast scout & anti-infantry vehicle\nCan carry one infantry\nCan be carried by Chinook\n Strong vs Infantry\n Weak vs Vehicles, Aircraft
 	Valued:
 		Cost: 350
@@ -194,7 +194,7 @@ FTRK:
 	Buildable:
 		Queue: Vehicle, MWFVehicle
 		BuildPaletteOrder: 2
-		Prerequisites: factory, ~!industryplant.on, ~vehicles.soviet, ~techlevel.low
+		Prerequisites: factory, ~vehicles.soviet, ~!player.kyrgiz, ~!industryplant.on, ~techlevel.low
 		Description: Mobile unit with mounted Flak cannon\nCan be airlifted by Carryall\n Strong vs Infantry, Light armor, Aircraft\n Weak vs Tanks
 	Valued:
 		Cost: 425
@@ -309,7 +309,7 @@ BTR:
 	Buildable:
 		Queue: Vehicle, MWFVehicle
 		BuildPaletteOrder: 3
-		Prerequisites: factory, barracks, ~!industryplant.on, ~vehicles.soviet, ~techlevel.low
+		Prerequisites: factory, barracks, ~vehicles.soviet, ~!player.russia, ~!industryplant.on, ~techlevel.low
 		Description: Mobile infantry transport\nFaster but nimbler than its Allies counterpart\nCan transport up to 5 infantry\nCan be airlifted by Carryall\n Strong vs Infantry\n Weak vs Tanks, Aircraft
 	Valued:
 		Cost: 650
@@ -362,7 +362,7 @@ BTR:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 4
-		Prerequisites: factory, ~vehicles.allies, ~!player.is.subfaction, ~!industryplant.on, ~techlevel.low
+		Prerequisites: factory, ~vehicles.allies, ~player.not.tankbonus, ~!industryplant.on, ~techlevel.low
 		Description: Fast tank, good for scouting\nCan be carried by Chinook\nCan cross Rivers on its own\n Strong vs Light armor\n Weak vs Infantry, Tanks, Aircraft
 	Valued:
 		Cost: 500
@@ -376,7 +376,7 @@ BTR:
 	Armor:
 		Type: Heavy
 	Mobile:
-		Locomotor: tracked-amphibious
+		Locomotor: tracked-semi-amphibian
 		Speed: 128
 	RevealsShroud:
 		Range: 5c0
@@ -435,7 +435,7 @@ BTR:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 5
-		Prerequisites: factory, fix, ~vehicles.allies, ~!player.is.subfaction, ~!industryplant.on, ~techlevel.medium
+		Prerequisites: factory, fix, ~vehicles.allies, ~player.not.tankbonus, ~!industryplant.on, ~techlevel.medium
 		Description: Allied Main Battle Tank\nCan be carried by Chinook\n Strong vs Vehicles\n Weak vs Infantry, Aircraft
 	Valued:
 		Cost: 700
@@ -495,7 +495,7 @@ BTR:
 	Buildable:
 		Queue: Vehicle, MWFVehicle
 		BuildPaletteOrder: 4
-		Prerequisites: factory, fix, ~vehicles.soviet, ~!player.is.subfaction, ~!industryplant.on, ~techlevel.low
+		Prerequisites: factory, fix, ~vehicles.soviet, ~player.not.tankbonus, ~!industryplant.on, ~techlevel.low
 		Description: Soviet Main Battle Tank\nCan be airlifted by Carryall\n Strong vs Vehicles\n Weak vs Infantry, Aircraft
 	Tooltip:
 		Name: Medium Tank (Soviet)
@@ -526,7 +526,7 @@ TNKD:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 11
-		Prerequisites: factory, fix, dome, ~vehicles.allies, ~!player.is.subfaction, ~!industryplant.on, ~techlevel.medium
+		Prerequisites: factory, fix, dome, ~vehicles.allies, ~player.not.tankbonus, ~!industryplant.on, ~techlevel.medium
 		Description: Mobile anti-armor platform, sporting an big gun with long reload\n Strong vs Tanks, Vehicles\n Weak vs Infantry, Aircraft
 	Valued:
 		Cost: 900
@@ -546,7 +546,7 @@ TNKD:
 	RevealsShroud@GAPGEN:
 		Range: 4c0
 	Armament:
-		Weapon: 130mm
+		Weapon: 110mm
 		LocalOffset: 720,0,90
 		MuzzleSequence: muzzle
 		PauseOnCondition: empdisable
@@ -564,6 +564,52 @@ TNKD:
 		Weight: 2
 	AcceptsDeliveredExperience:
 
+TNKD.heavy:
+	Inherits: ^TrackedVehicle
+	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EJECTPILOT: ^EjectsPilotOnGround
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 14
+		Prerequisites: factory, fix, techcenter, ~vehicles.allies, ~player.usa, ~!industryplant.on, ~techlevel.high
+		Description: Mobile anti-armor platform, sporting an big gun with long reload\n Strong vs Tanks, Vehicles\n Weak vs Infantry, Aircraft
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Heavy Tank Destroyer
+		GenericName: Tank
+	Health:
+		HP: 67500
+	Armor:
+		Type: Heavy
+	Mobile:
+		TurnSpeed: 3
+		Speed: 56
+	RevealsShroud:
+		Range: 6c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 4c0
+	Armament:
+		Weapon: 130mm
+		LocalOffset: 720,0,90
+		PauseOnCondition: empdisable
+	AttackFrontal:
+		PauseOnCondition: empdisable
+	WithAttackAnimation:
+		Sequence: shoot
+	SpawnActorOnDeath:
+		Actor: TNKD.heavy.Husk
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
+	ProducibleWithLevel:
+		Prerequisites: vehicles.upgraded
+	Passenger:
+		CargoType: Vehicle
+		Weight: 3
+	AcceptsDeliveredExperience:
+
 3TNK:
 	Inherits: ^TrackedVehicle
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
@@ -572,7 +618,7 @@ TNKD:
 	Buildable:
 		Queue: Vehicle, MWFVehicle
 		BuildPaletteOrder: 5
-		Prerequisites: factory, fix, ~vehicles.soviet, ~!player.is.subfaction, ~!industryplant.on, ~techlevel.medium
+		Prerequisites: factory, fix, ~vehicles.soviet, ~player.not.tankbonus, ~!industryplant.on, ~techlevel.medium
 		Description: Soviet Main Battle Tank, with dual cannons\n Strong vs Vehicles\n Weak vs Infantry, Aircraft
 	Valued:
 		Cost: 1150
@@ -733,7 +779,7 @@ MRLS:
 		Name: Multiple Rocket Launcher System
 	Buildable:
 		BuildPaletteOrder: 12
-		Prerequisites: factory, dome, techcenter, ~vehicles.allies, ~!industryplant.on, ~techlevel.high
+		Prerequisites: factory, dome, techcenter, ~vehicles.allies, ~!player.is.subfaction, ~!industryplant.on, ~techlevel.high
 		Queue: Vehicle
 		Description: Long range rocket artillery\nCannot attack Air units\n Strong vs all Ground units
 	Mobile:
@@ -779,7 +825,7 @@ V2RL:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 12
-		Prerequisites: factory, dome, techcenter, ~vehicles.soviet, ~!industryplant.on, ~techlevel.high
+		Prerequisites: factory, dome, techcenter, ~vehicles.soviet, ~!player.ukraine, ~!industryplant.on, ~techlevel.high
 		Description: Long-range rocket artillery\n Strong vs Infantry, Buildings\n Weak vs Vehicles, Aircraft
 	Valued:
 		Cost: 900
@@ -882,7 +928,7 @@ PTNK:
 		GenericName: Tank
 	Buildable:
 		BuildPaletteOrder: 8
-		Prerequisites: factory, techcenter, ~vehicles.allies, ~!player.is.subfaction, ~!industryplant.on, ~techlevel.high
+		Prerequisites: factory, techcenter, ~vehicles.allies, ~player.france, ~!industryplant.on, ~techlevel.high
 		Queue: Vehicle
 		Description: Fast moving cloaked light tank, armed with cannon\nCan be carried by Chinook\n Strong vs Light Vehicles, Basic Defenses\n Weak vs massed Infantry, Tanks
 	Mobile:
@@ -965,15 +1011,28 @@ PAPC:
 	AutoTarget:
 		InitialStance: HoldFire
 		InitialStanceAI: ReturnFire
-	Armament:
+	Armament@PRIMARY:
+		Name: primary
 		Weapon: APTusk
+		LocalOffset: 85,384,176, 85,-384,176
+		PauseOnCondition: empdisable
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: StingerAA
 		LocalOffset: 192,0,176
 		PauseOnCondition: empdisable
-	Turreted:
+	Turreted@PRIMARY:
+		Turret: primary
 		TurnSpeed: 5
-	AttackTurreted:
+	Turreted@SECONDARY:
+		Turret: secondary
+		TurnSpeed: 255
+		Offset: 0,0,0
+	AttackFrontal:
 		PauseOnCondition: empdisable
 	WithSpriteTurret:
+		Turret: primary
+		Sequence: turret
 	Cargo:
 		Types: Infantry, Engineer
 		MaxWeight: 5
@@ -1174,8 +1233,8 @@ TTNK:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 11
-		Prerequisites: factory, fix, techcenter, ~vehicles.soviet, ~!player.is.subfaction, ~!industryplant.on, ~techlevel.high
-		Description: Large and slow tank, with anti-air capability\nCan crush concrete walls\nCan detect cloaked units at close range\n Strong vs Vehicles, Infantry, Helicopters\n Weak vs Ships, Airplanes
+		Prerequisites: factory, fix, techcenter, ~vehicles.soviet, ~player.not.tankbonus, ~!industryplant.on, ~techlevel.high
+		Description: Large and slow tank, with anti-air capability\nCan crush concrete walls\nSelf-repairs when under 50% Health\n Strong vs Vehicles, Infantry, Helicopters\n Weak vs Ships, Airplanes
 	Valued:
 		Cost: 1500
 	Tooltip:
@@ -1226,8 +1285,6 @@ TTNK:
 		DamageCooldown: 150
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
-	DetectCloaked:
-		Range: 3c0
 	SelectionDecorations:
 	Selectable:
 		DecorationBounds: 34,34,0,-3
@@ -1294,7 +1351,7 @@ QTNK:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 10
-		Prerequisites: factory, fix, techcenter, ~vehicles.soviet, ~!industryplant.on, ~techlevel.high
+		Prerequisites: factory, fix, techcenter, ~vehicles.soviet, ~!player.is.subfaction, ~!industryplant.on, ~techlevel.high
 		Description: Deals seismic damage to nearby vehicles and structures\n Strong vs Defenses, Buildings\n Weak vs Infantry, Aircraft
 	Valued:
 		Cost: 1800
@@ -1335,7 +1392,7 @@ MBUN:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 13
-		Prerequisites: factory, barracks, techcenter, ~vehicles.allies, ~!industryplant.on, ~techlevel.high
+		Prerequisites: factory, barracks, techcenter, ~vehicles.allies, ~!player.is.subfaction, ~!industryplant.on, ~techlevel.high
 		Description: Mobile Bunker Platform\nGarrisoned infantry can shoot out\nCan carry up to 5 Infantry into battle\n Strength and Weakness dependant on passengers\n Unarmed
 	Valued:
 		Cost: 1200
@@ -1384,7 +1441,7 @@ PRSM:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 14
-		Prerequisites: factory, techcenter, ~vehicles.allies, ~!player.is.subfaction, ~!industryplant.on, ~techlevel.high
+		Prerequisites: factory, techcenter, ~vehicles.allies, ~player.germany, ~!industryplant.on, ~techlevel.high
 		Description: Experimental vehicle armed with an Laser\n Strong vs Vehicles, Buildings\n Weak vs Infantry, Aircraft
 	Valued:
 		Cost: 1500
@@ -1629,7 +1686,7 @@ RA2.TTNK:
 	Health:
 		HP: 90000
 	Mobile:
-		Speed: 63
+		Speed: 64
 	Buildable:
 		BuildPaletteOrder: 10
 		Prerequisites: factory, fix, ftur, techcenter, ~vehicles.soviet, ~player.ukraine, ~!industryplant.on, ~techlevel.high
@@ -1728,3 +1785,252 @@ ICBM:
 		PingRadar: True
 	ProvidesPrerequisite@LIMITING:
 		Prerequisite: enough.icbm
+
+ADST:
+	Inherits: ^TrackedVehicle
+	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EJECTPILOT: ^EjectsPilotOnGround
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 14
+		Prerequisites: factory, syrd, techcenter, ~vehicles.allies, ~!player.is.subfaction, ~!industryplant.on, ~techlevel.high
+		Description: An amphibian Gunboat\nCapable of traversing Land and Sea\n Strong vs Light armor\n Weak vs Infantry, Tanks, Aircraft
+	Valued:
+		Cost: 1600
+	Tooltip:
+		Name: Amphibian Destroyer
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 36000
+	Armor:
+		Type: Heavy
+	Mobile:
+		Locomotor: tracked-amphibian
+		Speed: 56
+	RevealsShroud:
+		Range: 5c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 4c0
+	Turreted:
+		TurnSpeed: 5
+		Offset: 512,0,270
+	Armament@PRIMARY:
+		Weapon: 8InchSingular
+		LocalOffset: 208,0,48
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: DepthCharge
+		LocalOffset: 208,0,48
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	AttackTurreted:
+		PauseOnCondition: empdisable
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+	SpawnActorOnDeath:
+		Actor: ADST.Husk
+		RequiresCondition: !floating
+	ProducibleWithLevel:
+		Prerequisites: ships.upgraded
+	GrantConditionOnTerrain@SEA:
+		TerrainTypes: Water, River
+		Condition: floating
+	WithFacingSpriteBody:
+		RequiresCondition: !floating
+	WithFacingSpriteBody@SEA:
+		Name: floating
+		Sequence: idle-float
+		RequiresCondition: floating
+	Passenger:
+		CargoType: Vehicle
+		Weight: 1
+	Capturable:
+		RequiresCondition: !floating
+	AcceptsDeliveredExperience:
+
+BEHE:
+	Inherits: ^TrackedVehicle
+	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@EJECTPILOT: ^EjectsPilotOnGround
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 10
+		BuildLimit: 1
+		Prerequisites: factory, fix, techcenter, ~vehicles.soviet, !enough.behemoths, ~player.belarus, ~!industryplant.on, ~techlevel.high
+		Description: Artillery tank of majestic proportions\nCan crush concrete walls\nSelf-repairs when under 50% Health\nDetects cloaked units at close range\n Strong vs Vehicles, Infantry, Helicopters\n Weak vs Ships, Airplanes
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Behemoth Tank
+		GenericName: Tank
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 150000
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 56
+		TurnSpeed: 2
+		Locomotor: heavytracked
+	RevealsShroud:
+		Range: 6c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 4c0
+	Turreted:
+		TurnSpeed: 2
+	Armament@PRIMARY:
+		Weapon: 203mm
+		LocalOffset: 0,180,340
+		# LocalOffset: 0,180,340, 0,0,0, 0,-180,340
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	Armament@SECONDARY:
+		Weapon: 203mm
+		LocalOffset: 0,-180,340
+		# LocalOffset: 320,180,340, 320,0,0, 320,-180,340
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	AttackTurreted:
+		PauseOnCondition: empdisable
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+	SpawnActorOnDeath:
+		Actor: BEHE.Husk
+	SelfHealing:
+		Step: 500
+		Delay: 10
+		HealIfBelow: 50
+		DamageCooldown: 150
+	ProducibleWithLevel:
+		Prerequisites: vehicles.upgraded
+	DetectCloaked:
+		Range: 3c0
+	SelectionDecorations:
+	Selectable:
+		DecorationBounds: 34,34,0,-3
+	Passenger:
+		CargoType: Vehicle
+		Weight: 4
+	AcceptsDeliveredExperience:
+	ProvidesPrerequisite@LIMITING:
+		Prerequisite: enough.behemoths
+	RevealOnFire:
+		ArmamentNames: primary
+	RenderRangeCircle:
+
+MTNK:
+	Inherits: ^TrackedVehicle
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Main Battle Tank
+	Buildable:
+		BuildPaletteOrder: 11
+		Prerequisites: ~disabled
+		Queue: Vehicle
+		Description: Main Battle Tank, armed\nwith Cannon and Machinegun\n Strong vs Tanks, Vehicles\n Weak vs Anti-Armor, Defenses
+	Mobile:
+		Speed: 85
+	Health:
+		HP: 45000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 6c0
+	Turreted:
+		TurnSpeed: 5
+	Armament@PRIMARY:
+		Name: primary
+		Weapon: 130mm
+		Recoil: 128
+		RecoilRecovery: 26
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: M1CTank
+		MuzzleSequence: mg-muzzle
+		LocalOffset: 286,3,90
+		PauseOnCondition: empdisable
+	AttackTurreted:
+		Armaments: primary, secondary
+		PauseOnCondition: empdisable
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+		Sequence: turret
+	SpawnActorOnDeath:
+		Actor: MTNK.Husk
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
+	SelectionDecorations:
+	Selectable:
+		DecorationBounds: 28,28
+	Passenger:
+		CargoType: Vehicle
+		Weight: 3
+	ProducibleWithLevel:
+		Prerequisites: vehicles.upgraded
+
+RTRK:
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 20
+		Prerequisites: factory, fix, ~vehicles.soviet, ~techlevel.high
+		Description: Mechanized Engineers\nRepairs nearby vehicles\n Captures enemy structures\n Unarmed
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Mobile Repair Truck
+	Selectable:
+		Priority: 6
+	Health:
+		HP: 10000
+	Armor:
+		Type: Light
+	Voiced:
+		VoiceSet: EngineerVoice
+	Mobile:
+		Speed: 110
+	RevealsShroud:
+		Range: 3c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 2c0
+	Turreted:
+		TurnSpeed: 255
+		Offset: 0,0,450
+	AttackFrontal:
+		PauseOnCondition: empdisable
+	Armament:
+		Weapon: Repair
+		Cursor: repair
+		OutsideRangeCursor: repair
+		TargetStances: Ally
+		ForceTargetStances: None
+		PauseOnCondition: empdisable
+	WithSpriteTurret:
+		Sequence: turret
+	CaptureManager:
+	Captures@CAPTURES:
+		CaptureDelay: 90
+		CaptureTypes: building
+		PlayerExperience: 50
+		ConsumedByCapture: False
+	AutoTarget:
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: Vehicle, Ship
+	Passenger:
+		CargoType: Vehicle
+		Weight: 3

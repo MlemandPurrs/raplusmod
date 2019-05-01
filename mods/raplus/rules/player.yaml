@@ -165,6 +165,9 @@ Player:
 		AdviceInterval: 500
 	PlayerExperience:
 	ConditionManager:
+	ProvidesPrerequisite@Usa:
+		Factions: usa
+		Prerequisite: player.usa
 	ProvidesPrerequisite@Britain:
 		Factions: britain
 		Prerequisite: player.britain
@@ -174,6 +177,18 @@ Player:
 	ProvidesPrerequisite@Germany:
 		Factions: germany
 		Prerequisite: player.germany
+	ProvidesPrerequisite@Spain:
+		Factions: spain
+		Prerequisite: player.spain
+	ProvidesPrerequisite@Italy:
+		Factions: italy
+		Prerequisite: player.italy
+	ProvidesPrerequisite@Greece:
+		Factions: greece
+		Prerequisite: player.greece
+	ProvidesPrerequisite@Turkey:
+		Factions: turkey
+		Prerequisite: player.turkey
 	ProvidesPrerequisite@Russia:
 		Factions: russia
 		Prerequisite: player.russia
@@ -183,9 +198,30 @@ Player:
 	ProvidesPrerequisite@Kazakh:
 		Factions: kazakh
 		Prerequisite: player.kazakh
+	ProvidesPrerequisite@Kyrgiz:
+		Factions: kyrgiz
+		Prerequisite: player.kyrgiz
+	ProvidesPrerequisite@Belarus:
+		Factions: belarus
+		Prerequisite: player.belarus
+	ProvidesPrerequisite@Moldova:
+		Factions: moldova
+		Prerequisite: player.moldova
+	ProvidesPrerequisite@Lithuan:
+		Factions: lithuan
+		Prerequisite: player.lithuan
+	ProvidesPrerequisite@Karelia:
+		Factions: karelia
+		Prerequisite: player.karelia
+	ProvidesPrerequisite@Uzbekh:
+		Factions: uzbekh
+		Prerequisite: player.uzbekh
 	ProvidesPrerequisite@Countries:
-		Factions: britain, france, germany, russia, ukraine, kazakh
+		Factions: usa, britain, france, germany, spain, italy, greece, turkey, russia, ukraine, kazakh, kyrgiz, belarus, moldova, lithuan, karelia, uzbekh
 		Prerequisite: player.is.subfaction
 	ProvidesPrerequisite@vanillaorfrance:
 		Factions: allies, france
 		Prerequisite: player.can.fakes
+	ProvidesPrerequisite@usevanillatanks:
+		Factions: allies, soviet, usa, nether, greece, belarus
+		Prerequisite: player.not.tankbonus

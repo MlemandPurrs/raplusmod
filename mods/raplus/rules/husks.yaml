@@ -74,6 +74,17 @@ TNKD.Husk:
 	RenderSprites:
 		Image: tnkd.destroyed
 
+TNKD.heavy.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Tank Destroyer (Destroyed)
+	TransformOnCapture:
+		IntoActor: tnkd.heavy
+	InfiltrateForTransform:
+		IntoActor: tnkd.heavy
+	RenderSprites:
+		Image: tnkd.heavy.destroyed
+
 HARV.FullHusk:
 	Inherits: ^Husk
 	Tooltip:
@@ -455,6 +466,13 @@ HIND.Husk:
 	RenderSprites:
 		Image: hind
 
+COBRA.Husk:
+	Inherits: HIND.Husk
+	Tooltip:
+		Name: Cobra
+	RenderSprites:
+		Image: cbra
+
 HINDCARR.Husk:
 	Inherits: ^HelicopterHusk
 	Tooltip:
@@ -713,6 +731,31 @@ KIROV.Husk:
 	FallsToEarth:
 		Explosion: UnitExplodePlane
 
+KIROV.carrier.Husk:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+		Name: Airship (Minsk)
+	Aircraft:
+		TurnSpeed: 2
+		Speed: 30
+	FallsToEarth:
+		Spins: False
+	SmokeTrailWhenDamaged@0:
+		Offset: -432,560,0
+		Interval: 2
+		MinDamage: Undamaged
+	SmokeTrailWhenDamaged@1:
+		Offset: -432,-560,0
+		Interval: 2
+		MinDamage: Undamaged
+	RevealsShroud:
+		Range: 10c0
+		Type: CenterPosition
+	RenderSprites:
+		Image: kirov.carrier
+	FallsToEarth:
+		Explosion: UnitExplodePlane
+
 4TNK.Flame.Husk:
 	Inherits: ^Husk
 	Tooltip:
@@ -725,3 +768,53 @@ KIROV.Husk:
 		IntoActor: 4tnk.flame
 	RenderSprites:
 		Image: 4tnk.flame.destroyed
+
+ADST.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Amphibian Destroyer)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: adst
+	InfiltrateForTransform:
+		IntoActor: adst
+	RenderSprites:
+		Image: adst.destroyed
+
+MTNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Main Battle Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: mtnk
+	InfiltrateForTransform:
+		IntoActor: mtnk
+	RenderSprites:
+		Image: mtnk.destroyed
+
+RHIN.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Rhino Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: rhin
+	InfiltrateForTransform:
+		IntoActor: rhin
+	RenderSprites:
+		Image: rhin.destroyed
+
+SPG.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Self-propelled Gun (Destroyed)
+	TransformOnCapture:
+		IntoActor: spg
+	InfiltrateForTransform:
+		IntoActor: spg
+	RenderSprites:
+		Image: spg.destroyed

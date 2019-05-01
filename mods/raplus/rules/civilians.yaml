@@ -1253,6 +1253,32 @@ SNOWHUT.Husk:
 	Tooltip:
 		Name: Snow Hut (Destroyed)
 
+HOTEL:
+	Inherits: ^CivBuilding
+	MapEditorData:
+		RequireTilesets: SNOW
+	Building:
+		Footprint: xxx =x=
+		Dimensions: 3,2
+	HitShape:
+		UseTargetableCellsOffsets: false
+	Tooltip:
+		Name: Hotel
+	SpawnActorOnDeath:
+		Actor: HOTEL.Husk
+
+HOTEL.Husk:
+	Inherits: ^CivBuildingHusk
+	MapEditorData:
+		RequireTilesets: SNOW
+	Building:
+		Footprint: xxx =x=
+		Dimensions: 3,2
+	HitShape:
+		UseTargetableCellsOffsets: false
+	Tooltip:
+		Name: Hotel (Destroyed)
+
 LHUS:
 	Inherits: ^CivBuilding
 	MapEditorData:
