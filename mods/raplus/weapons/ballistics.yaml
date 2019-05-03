@@ -114,6 +114,12 @@ TurretGun.SPG:
 	Inherits: TurretGun
 	ReloadDelay: 50
 
+TurretGun.dual:
+	Inherits: TurretGun
+	ReloadDelay: 40
+	Burst: 2
+	BurstDelays: 4
+
 ^Artillery:
 	Inherits: ^Cannon
 	ReloadDelay: 85

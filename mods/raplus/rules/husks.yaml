@@ -246,6 +246,25 @@ BADR.Husk:
 		Image: badr
 	-RevealOnDeath:
 
+BLMP.Husk:
+	Inherits: ^PlaneHusk
+	Tooltip:
+		Name: Blimp
+	Aircraft:
+		TurnSpeed: 5
+		Speed: 149
+	SmokeTrailWhenDamaged@0:
+		Offset: -432,560,0
+		Interval: 2
+		MinDamage: Undamaged
+	SmokeTrailWhenDamaged@1:
+		Offset: -432,-560,0
+		Interval: 2
+		MinDamage: Undamaged
+	RenderSprites:
+		Image: blmp
+	-RevealOnDeath:
+
 COSSACK.Husk:
 	Inherits: ^PlaneHusk
 	Tooltip:
@@ -466,7 +485,7 @@ HIND.Husk:
 	RenderSprites:
 		Image: hind
 
-COBRA.Husk:
+CBRA.Husk:
 	Inherits: HIND.Husk
 	Tooltip:
 		Name: Cobra

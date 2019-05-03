@@ -1,0 +1,245 @@
+acom:
+	idle:
+	damaged-idle:
+		Start: 1
+	make: acom-make
+		Length: *
+		Tick: 80
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	icon: acomicon
+
+acom.husk:
+	idle: acom
+		Start: 1
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+
+hosp:
+	idle:
+		Length: 4
+		Tick: 100
+		Offset: 0,-2
+	damaged-idle:
+		Start: 4
+		Length: 4
+		Tick: 100
+		Offset: 0,-2
+	dead:
+		Start: 8
+		Tick: 800
+		Offset: 0,-2
+	make: hospmake
+		Length: *
+		Tick: 80
+		Offset: 0,-2
+	bib: mbHOSP
+		Length: *
+		UseTilesetExtension: true
+		Offset: 0,1
+	icon: hospicon
+
+hosp.husk:
+	idle: hosp
+		Start: 8
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+
+bio:
+	idle:
+	damaged-idle:
+		Start: 1
+	dead:
+		Start: 2
+		Tick: 800
+	make: biomake
+		Length: *
+		Tick: 80
+	idle-smoke: bio-smoke
+		Length: 40
+		Tick: 160
+		Offset: 0,-20
+	damaged-idle-smoke: bio-smoke-d
+		Length: 40
+		Tick: 160
+		Offset: 0,-20
+	bib: mbHOSP
+		Length: *
+		UseTilesetExtension: true
+		Offset: 0,1
+	icon: bioicon
+
+bio.husk:
+	idle: bio
+		Start: 2
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+
+oilb:
+	Defaults:
+		Offset: 0,-6
+	idle:
+	damaged-idle:
+		Start: 1
+		Length: *
+	make:
+	bib: bib3
+		Length: *
+		Offset: 0,0
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+
+oilb.husk:
+	Defaults:
+		Offset: 0,-6
+	idle: oilb
+		Start: 1
+		Length: *
+	bib: bib3
+		Length: *
+		Offset: 0,0
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+
+oilp:
+	Defaults:
+		Offset: 0,-6
+	idle:
+	damaged-idle:
+		Start: 0
+		Length: *
+	make:
+
+oilp.husk:
+	Defaults:
+		Offset: 0,-6
+	idle: oilp
+		Start: 0
+		Length: *
+
+miss:
+	idle:
+	damaged-idle:
+		Start: 1
+	dead:
+		Start: 2
+		Tick: 800
+	make: miss-make
+		Length: *
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+
+miss.husk:
+	idle: miss
+		Start: 2
+
+missgdi:
+	idle:
+		Offset: 0,-1
+	damaged-idle:
+		Start: 1
+		Offset: 0,-1
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+		Offset: 0,0
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	dead:
+		Start: 2
+		Tick: 800
+		Offset: 0,-1
+	idle-dish: antena2
+		Length: 16
+		Tick: 160
+		Offset: 18,5
+	damaged-idle-dish: antena2
+		Start: 16
+		Length: 16
+		Tick: 160
+		Offset: 18,5
+	idle-antena: antena1
+		Length: 31
+		Offset: -15,22
+		Tick: 160
+	damaged-idle-antena: antena1
+		Start: 32
+		Length: 1
+		Offset: -15,22
+		Tick: 160
+	dead-antena: antena1
+		Tick: 1000
+		Start: 32
+		Length: 1
+		Offset: -15,22
+
+missgdi.husk:
+	idle: missgdi
+		Start: 2
+	idle-antena: antena1
+		Start: 32
+		Length: 1
+		Offset: -15,22
+
+aprt:
+	idle:
+		Start: 18
+		Length: 1
+		ZOffset: -1023
+	damaged-idle:
+		Start: 18
+		Length: 1
+		ZOffset: -1023
+	make:
+		Start: 0
+		Length: *
+		ZOffset: -1023
+	bib: bib3
+		Length: *
+		Offset: 0,-20
+		UseTilesetExtension: true
+		TilesetOverrides:
+	icon: afldicon
+
+aprt.husk:
+	idle: aprt
+		Start: 18
+		Length: 1
+		ZOffset: -1023
+
+acad:
+	idle: wwi-aus-hq
+		Start: 7
+		Length: 1
+		Offset: -2, 10
+	damaged-idle: wwi-aus-hq
+		Start: 7
+		Length: 1
+		Offset: -2, 10
+	make: wwi-aus-hq
+		Start: 0
+		Length: *
+		Offset: -2, 10
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+
+acad.husk:
+	idle: wwi-aus-hq
+		Start: 7
+		Length: 1
+		Offset: -2, 10

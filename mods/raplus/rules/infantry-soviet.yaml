@@ -1,0 +1,601 @@
+SHOK:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 7
+		Prerequisites: ~barracks, tsla, ~infantry.soviet, ~!player.russia, ~!player.belarus, ~!industryplant.on, ~techlevel.high
+		Description: Versatile infantry with portable Tesla coils\n Strong vs Infantry, Vehicles\n Weak vs Aircraft
+	Valued:
+		Cost: 425
+	Tooltip:
+		Name: Shock Trooper
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 5000
+	Mobile:
+		Voice: Move
+	RevealsShroud:
+		Range: 5c0
+	Armament@PRIMARY:
+		Weapon: PortaTesla
+		LocalOffset: 427,0,341
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: PortaTesla
+	TakeCover:
+		ProneOffset: 227,0,-245
+	AttackFrontal:
+		Voice: Attack
+	AttackMove:
+		Voice: Move
+	Passenger:
+		Voice: Move
+	Guard:
+		Voice: Move
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		RequiresCondition: !parachute
+	WithInfantryBody@PARACHUTE:
+		StandSequences: parachute
+		RequiresCondition: parachute
+	Voiced:
+		VoiceSet: ShokVoice
+	ProducibleWithLevel:
+		Prerequisites: infantry.upgraded
+	Passenger:
+		PipType: Yellow
+		Weight: 2
+	Power: 
+		Amount: -2
+
+SHOKR1:
+	Inherits: SHOK
+	RenderSprites:
+		Image: SHOK
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	-Buildable:
+
+TTRP:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 100
+		Prerequisites: ~barracks, tsla, techcenter, ~!industryplant.on, ~player.russia, ~techlevel.high
+		Description: Heavily armored Infantry\n Amplified Tesla weaponry ensures\nbrief short-circuit on Vehicles\nCannot be crushed unless its Mammoth Tank\n Strong vs Infantry, Vehicles\n Weak vs Aircraft
+	Valued:
+		Cost: 650
+	Tooltip:
+		Name: Tesla Trooper
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 6500
+	Armor:
+		Type: Heavy
+	Mobile:
+		Voice: Move
+		Speed: 48
+	RevealsShroud:
+		Range: 5c0
+	Armament@PRIMARY:
+		Weapon: PortaTeslaHeavy
+		LocalOffset: 427,0,341
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: PortaTeslaHeavy
+	TakeCover:
+		ProneOffset: 227,0,-245
+	AttackFrontal:
+		Voice: Attack
+	AttackMove:
+		Voice: Move
+	Passenger:
+		Voice: Move
+	Guard:
+		Voice: Move
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		RequiresCondition: !parachute
+	WithInfantryBody@PARACHUTE:
+		StandSequences: parachute
+		RequiresCondition: parachute
+	Voiced:
+		VoiceSet: ShokVoice
+	ProducibleWithLevel:
+		Prerequisites: infantry.upgraded
+	Passenger:
+		PipType: Yellow
+		Weight: 3
+	Power: 
+		Amount: -2
+	Crushable:
+		CrushClasses: heavywall
+	-Cloneable:
+	Targetable:
+		RequiresCondition: !parachute
+		TargetTypes: Ground, HeavyInfantry, Disguise
+
+RPG:
+	Inherits: ^Soldier
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: RPG Trooper
+	Buildable:
+		BuildPaletteOrder: 8
+		Prerequisites: ~barracks, ftur, ~infantry.soviet, ~!player.belarus, ~!industryplant.on, ~techlevel.medium
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		Description: Soldier armed with thermobaric Napalm rockets\nCannot attack Air units\n Strong vs clustered Infantry, Structures\n Weak vs Anti-Infantry measures
+	Health:
+		HP: 4500
+	AutoTarget:
+		ScanRadius: 6
+	Armament@PRIMARY:
+		Weapon: Thermobaric
+		LocalOffset: 256,43,341
+		FireDelay: 5
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: Thermobaric
+	TakeCover:
+		ProneOffset: 180,0,-200
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	ProducibleWithLevel:
+		Prerequisites: infantry.upgraded
+	Passenger:
+		PipType: Yellow
+		Weight: 2
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+		DamageSource: Killer
+
+THF:
+	Inherits: ^Soldier
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~barracks, fix, ~infantry.soviet, ~!player.belarus, ~!player.moldova, ~!industryplant.on, ~techlevel.medium
+		Description: Steals enemy credits\nHijacks enemy vehicles\nCloaked when standing still\n Unarmed
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Thief
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Mobile:
+		Speed: 64
+	Health:
+		HP: 4500
+	RevealsShroud:
+		Range: 5c0
+	Passenger:
+		PipType: Blue
+	CaptureManager:
+	Captures:
+		CaptureTypes: vehicle
+		PlayerExperience: 50
+	Infiltrates:
+		Types: ThiefInfiltrate
+		Notification: BuildingInfiltrated
+		PlayerExperience: 50
+	Voiced:
+		VoiceSet: ThiefVoice
+	-TakeCover:
+	WithInfantryBody:
+		IdleSequences: idle
+		StandSequences: stand
+	Crushable:
+		WarnProbability: 95
+	Cloak:
+		InitialDelay: 250
+		CloakDelay: 120
+		UncloakOn: Attack, Unload, Infiltrate, Demolish, Move
+		CloakTypes: Cloak, Thief
+		IsPlayerPalette: true
+		PauseOnCondition: cloak-force-disabled
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+	Passenger:
+		PipType: Blue
+		Weight: 2
+	-Wanders:
+	-Cloneable:
+
+FTRP:
+	Inherits: E3
+	Buildable:
+		BuildPaletteOrder: 11
+		Prerequisites: ~barracks, fcom.buildable, ~infantry.soviet, ~!player.belarus, ~!industryplant.on, ~techlevel.medium
+		Description: Infantry armed with Flak-Gun\nCannot attack Ground units\n Strong vs Aircraft\n Weak vs Ground units
+	Tooltip:
+		Name: Flak Trooper
+	Armament@PRIMARY:
+		Weapon: FLAK-INF-AG
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: FLAK-INF-AA
+		LocalOffset: 0,0,555
+	Armament@GARRISONED:
+		Weapon: FLAK-INF-AE
+	Valued:
+		Cost: 600
+
+MRTR:
+	Inherits: ^Soldier
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 11
+		BuildAtProductionType: Soldier
+		Prerequisites: ~barracks, fcom.buildable, ~infantry.soviet, ~!player.is.subfaction, ~!industryplant.on, ~techlevel.high
+		Description: Infantry armed with a Mortar gun\nthat shoots napalm rounds\n Strong vs Buildings, Infantry\n Weak vs Vehicles, Aircraft
+	Valued:
+		Cost: 600
+	Mobile:
+		Speed: 42
+	Tooltip:
+		Name: Mortar Infantry
+	Health:
+		HP: 5250
+	Armament@PRIMARY:
+		Weapon: MortarNapalmInf
+		LocalOffset: 0,0,155
+		FireDelay: 15
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: MortarNapalmInf
+		FireDelay: 15
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: throw
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+		Chance: 50
+	Passenger:
+		PipType: Yellow
+		Weight: 2
+	ProducibleWithLevel:
+		Prerequisites: infantry.upgraded
+	-Wanders:
+	RevealOnFire:
+		ArmamentNames: primary
+
+VOLK:
+    Inherits: GNRL
+    Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+        Prerequisites: ~barracks, techcenter, ~infantry.soviet, !enough.commandos, ~!player.is.subfaction, ~techlevel.high
+		BuildPaletteOrder: 16
+		BuildLimit: 1
+		Description: Elite commando infantry armed with anti-tank gun and C4\nMaximum 1 can be trained\n Special ability: Durability\nCannot be crushed unless its Mammoth Tank\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
+    Valued:
+        Cost: 1500
+    Tooltip:
+        Name: Volkov
+    Health:
+        HP: 12000
+    Armor:
+        Type: Heavy
+    RevealsShroud:
+        Range: 6c0
+    Demolition:
+		DetonationDelay: 45
+		Voice: Demolish
+    Mobile:
+		Speed: 62
+		Voice: Move
+	Guard:
+		Voice: Move
+	Passenger:
+		PipType: Red
+		Weight: 3
+		Voice: Move
+    AttackFrontal:
+    Voiced:
+        VoiceSet: VolkovVoice
+    Armament:
+        Weapon: VolkovGun
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: VolkovGun
+		MuzzleSequence: garrison-muzzle
+    DetectCloaked:
+        CloakTypes: Cloak, Hijacker
+	Chronoshiftable:
+	ProducibleWithLevel:
+		Prerequisites: infantry.upgraded
+    RenderSprites:
+        Image: GNRL
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+	AnnounceOnKill:
+	Crushable:
+		CrushClasses: heavywall
+	-Cloneable:
+	MapEditorData:
+		Categories: Infantry
+	ProvidesPrerequisite@LIMITING:
+		Prerequisite: enough.commandos
+
+BORS:
+	Inherits@1: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+    Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+        Prerequisites: ~barracks, techcenter, ~infantry.soviet, !enough.commandos, ~!player.is.subfaction, ~techlevel.high
+		BuildPaletteOrder: 18
+		BuildLimit: 1
+		Description: Elite commando infantry armed with MG and C4\nMaximum 1 can be trained\n Special ability: Air Strike\nCant call in nuclear MiG to destroy structure as we lack trait code for it\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Boris
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 10000
+	Mobile:
+		Speed: 75
+	Passenger:
+		PipType: Red
+		Weight: 3
+		Voice: Move
+	RevealsShroud:
+		Range: 6c0
+	AttackFrontal:
+		Voice: Attack
+	Armament@Primary:
+		Weapon: AKM
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	Voiced:
+		VoiceSet: BorisVoice
+	ProducibleWithLevel:
+		Prerequisites: infantry.upgraded
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	ProvidesPrerequisite@LIMITING:
+		Prerequisite: enough.commandos
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+	AnnounceOnKill:
+	-Cloneable:
+    Demolition:
+		DetonationDelay: 45
+		Voice: Demolish
+	-Wanders:
+
+NTSH:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Natasha
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 17
+		Prerequisites: ~barracks, techcenter, ~infantry.soviet, !enough.commandos, ~!player.is.subfaction, ~techlevel.high
+		BuildLimit: 1
+		Description: Elite commando infantry\nArmed with Sniper and C4\nMaximum 1 can be trained\n Special ability: Snipe Driver\nCannot Snipe the driver off an vehicle as we lack trait code for it\n Strong vs Infantry, Buildings\n Weak vs Vehicles, Aircraft
+	Mobile:
+		Speed: 71
+		Voice: Move
+	Guard:
+		Voice: Move
+	Health:
+		HP: 10000
+	Passenger:
+		PipType: Red
+		Voice: Move
+		Weight: 3
+	RevealsShroud:
+		Range: 6c0
+	Demolition:
+		DetonationDelay: 45
+		Voice: Demolish
+	Armament@PRIMARY:
+		Weapon: SniperNatasha
+	Armament@DRIVER_SNIPE:
+		Name: driver_snipe
+		Weapon: SniperNatashaDS
+		PauseOnCondition: !ammo
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: SniperNatasha
+		MuzzleSequence: garrison-muzzle
+	AmmoPool:
+		Ammo: 1
+		Armaments: driver_snipe
+		Name: driver_snipe
+		AmmoCondition: ammo
+	ReloadAmmoPool:
+		AmmoPool: driver_snipe
+		Delay: 300
+	AttackFrontal:
+	AttackMove:
+	WithDeathAnimation:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		IdleSequences: idle1,idle2,idle3
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+	AnnounceOnKill:
+	Voiced:
+		VoiceSet: TanyaVoice
+	ProducibleWithLevel:
+		Prerequisites: infantry.upgraded
+	ProvidesPrerequisite@LIMITING:
+		Prerequisite: enough.commandos
+	-Cloneable:
+	-Wanders:
+
+DOG.bomb:
+	Inherits: ^Soldier
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Dog
+		BuildPaletteOrder: 100
+		Prerequisites: ~kenn, fix, ~infantry.soviet, ~player.ukraine, ~!industryplant.on, ~techlevel.medium
+		Description: Dog carrying an Bomb vest\n Strong vs Infantry\n Weak vs Vehicles, Aircraft
+	Valued:
+		Cost: 350
+	Tooltip:
+		Name: Bomb Dog
+		GenericName: Dog
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	SelectionDecorations:
+	Health:
+		HP: 1800
+	Mobile:
+		Speed: 99
+		Voice: Move
+		RequiresCondition: !attack-cooldown
+	Guard:
+		Voice: Move
+	Passenger:
+		Voice: Move
+	RevealsShroud:
+		Range: 3c512
+	Armament:
+		Weapon: DogJaw
+		ReloadingCondition: attack-cooldown
+	AttackLeap:
+		Voice: Attack
+		PauseOnCondition: attacking || attack-cooldown
+	AttackMove:
+		Voice: Move
+	GrantConditionWhileAiming:
+		Condition: run
+	AutoTarget:
+		InitialStance: AttackAnything
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: Infantry
+	Targetable:
+		TargetTypes: Ground, Infantry
+	WithInfantryBody:
+		MoveSequence: walk
+		StandSequences: stand
+		DefaultAttackSequence: eat
+		RequiresCondition: !run
+	WithInfantryBody@RUN:
+		MoveSequence: run
+		RequiresCondition: run
+	SpeedMultiplier:
+		Modifier: 150
+		RequiresCondition: run
+	IgnoresDisguise:
+	DetectCloaked:
+		CloakTypes: Cloak, Thief
+	Voiced:
+		VoiceSet: DogVoice
+	-TakeCover:
+	Passenger:
+		PipType: Red
+		Weight: 2
+	Explodes@UNITEXPLODES:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+		DamageSource: Killer
+	GrantConditionOnAttack:
+		Condition: triggered
+	GrantConditionOnDeploy:
+		DeployedCondition: triggered
+	KillsSelf:
+		RequiresCondition: triggered
+	-Cloneable:
+
+DESO:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 100
+		BuildLimit: 2
+		Prerequisites: ~barracks, bio.buildable, ~player.kazakh, ~techlevel.infonly
+		Description: Power armored Infantry armed\nwith Nuclear rocket launcher\nMaximum 2 can be built\nExplodes akin to V2 on death\nCannot attack Air units\n Strong vs Buildings, Vehicles\n Weak vs Defenses, Aircraft\nRequires an large minimum firing distance
+	Valued:
+		Cost: 1200
+	Mobile:
+		Speed: 42
+	Tooltip:
+		Name: Desolator
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 6500
+	Armament@PRIMARY:
+		Weapon: NuclearRocket
+		FireDelay: 9
+		LocalOffset: 0,0,555
+		PauseOnCondition: !ammo
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: NuclearRocket
+		FireDelay: 9
+		PauseOnCondition: !ammo
+	TakeCover:
+		ProneOffset: 384,0,-395
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		RequiresCondition: !parachute
+	WithInfantryBody@PARACHUTE:
+		StandSequences: parachute
+		RequiresCondition: parachute
+	ProducibleWithLevel:
+		Prerequisites: infantry.upgraded
+	AutoTarget:
+		ScanRadius: 5
+	Targetable:
+		RequiresCondition: !parachute
+		TargetTypes: Ground, HeavyInfantry, Disguise
+	Passenger:
+		PipType: Red
+		Weight: 4
+	RenderRangeCircle:
+	AmmoPool:
+		Armaments: primary
+		Ammo: 1
+		PipCount: 1
+		PipType: Blue
+		AmmoCondition: ammo
+	ReloadAmmoPool:
+		Delay: 150
+		Count: 1
+	ReloadArmamentsBar:
+	Explodes@UNITEXPLODES:
+		Weapon: V2Explode
+	-Wanders:
+	-Cloneable:

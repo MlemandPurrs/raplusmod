@@ -1,0 +1,77 @@
+mcv:
+	Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+	icon: mcvicon
+	fake-icon: mcvficon
+
+mcvhusk:
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -1023
+
+harv:
+	Inherits: emp-overlay
+	idle: harv-empty
+		Facings: 32
+		UseClassicFacingFudge: True
+	harvest: harv-empty
+		Start: 32
+		Length: 8
+		Facings: 8
+	empty-idle: harv-empty
+		Facings: 32
+		UseClassicFacingFudge: True
+	empty-harvest: harv-empty
+		Start: 32
+		Length: 8
+		Facings: 8
+	half-idle: harv-half
+		Facings: 32
+		UseClassicFacingFudge: True
+	half-harvest: harv-half
+		Start: 32
+		Length: 8
+		Facings: 8
+	full-idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+	full-harvest:
+		Start: 32
+		Length: 8
+		Facings: 8
+	dock:
+		Start: 96
+		Length: 8
+	dock-loop:
+		Start: 104
+		Length: 7
+	icon: harvicon
+
+truk:
+	Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+	icon: trukicon
+
+mnly:
+	Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+	icon: mnlyicon
+
+hhusk:
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -1023
+
+hhusk2:
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -1023

@@ -48,11 +48,19 @@ Packages:
 	raplus|bits/music
 	raplus|bits/naval
 	raplus|bits/projectiles
+	raplus|bits/projectiles/chemspray
+	raplus|bits/projectiles/flamespray
 	raplus|bits/resources
 	raplus|bits/scripts
 	raplus|bits/snow
 	raplus|bits/snowTD
 	raplus|bits/sounds
+	raplus|bits/sounds/arabs
+	raplus|bits/sounds/boris
+	raplus|bits/sounds/kirov
+	raplus|bits/sounds/rambo
+	raplus|bits/sounds/robot
+	raplus|bits/sounds/volkov
 	raplus|bits/subterran
 	raplus|bits/ss
 	raplus|bits/temperat
@@ -72,28 +80,37 @@ Rules:
 	raplus|rules/palettes.yaml
 	raplus|rules/world.yaml
 	raplus|rules/defaults.yaml
-	# raplus|rules/vehicles.yaml
-	raplus|rules/common-vehicles.yaml
-	raplus|rules/allies-vehicles.yaml
-	raplus|rules/soviet-vehicles.yaml
-	raplus|rules/arabs-vehicles.yaml
+	raplus|rules/vehicles-common.yaml
+	raplus|rules/vehicles-allies.yaml
+	raplus|rules/vehicles-soviet.yaml
+	raplus|rules/vehicles-arabs.yaml
 	raplus|rules/husks.yaml
 	raplus|rules/structures.yaml
-	raplus|rules/infantry.yaml
+	raplus|rules/structures-defense.yaml
+	raplus|rules/structures-neutral.yaml
+	raplus|rules/infantry-common.yaml
+	raplus|rules/infantry-allies.yaml
+	raplus|rules/infantry-soviet.yaml
 	raplus|rules/civilians.yaml
 	raplus|rules/decoration.yaml
 	raplus|rules/aircraft.yaml
 	raplus|rules/naval.yaml
 	raplus|rules/fakes.yaml
-	raplus|rules/tech.yaml
-	raplus|rules/country-unit-duplicates.yaml
+	raplus|rules/country-duplicates.yaml
 	raplus|rules/costreduction-duplicates.yaml
 
 Sequences:
 	raplus|sequences/naval.yaml
-	raplus|sequences/vehicles.yaml
+	raplus|sequences/vehicles-common.yaml
+	raplus|sequences/vehicles-allies.yaml
+	raplus|sequences/vehicles-soviet.yaml
+	raplus|sequences/vehicles-arabs.yaml
 	raplus|sequences/structures.yaml
-	raplus|sequences/infantry.yaml
+	raplus|sequences/structures-defenses.yaml
+	raplus|sequences/structures-neutral.yaml
+	raplus|sequences/infantry-common.yaml
+	raplus|sequences/infantry-allies.yaml
+	raplus|sequences/infantry-soviet.yaml
 	raplus|sequences/aircraft.yaml
 	raplus|sequences/misc.yaml
 	raplus|sequences/decorations.yaml

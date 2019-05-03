@@ -47,12 +47,12 @@ dd2:
 	Inherits: emp-overlay
 	idle:
 		Facings: 16
-	turret-aa: apctur
+	turret-aa: apc-tur
 		Facings: 32
 		UseClassicFacingFudge: True
 	turret-dc: mgun
 		Facings: 32
-	muzzle-aa: apcmuz
+	muzzle-aa: apc-muz
 		Length: 3
 		Stride: 6
 		Facings: 8

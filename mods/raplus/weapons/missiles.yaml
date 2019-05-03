@@ -784,7 +784,7 @@ NuclearRocket:
 		TrailImage: smokey
 		TrailDelay: 5
 		Inaccuracy: 213
-		Image: MISSILE
+		Image: NUKEMISSILE
 		Shadow: True
 		LaunchAngle: 62
 	Warhead@1Dam_impact: SpreadDamage
@@ -864,8 +864,6 @@ BikeRockets:
 	Report: bazook1.aud
 	ValidTargets: Ground, Water
 	InvalidTargets: Air
-	Burst: 2
-	BurstDelays: 5
 	Projectile: Missile
 		Arm: 0
 		Blockable: false
@@ -902,9 +900,20 @@ BikeRocketsAA:
 	Inherits: BikeRockets
 	Range: 5c512
 	ValidTargets: Air
+	-InvalidTargets:
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Air
 	Warhead@3Eff: CreateEffect
 		Explosions: med_explosion_air
 		ImpactSounds: xplos.aud
 		ValidTargets: Ground, Air, Ship, Trees
+
+BikeRockets.boost:
+	Inherits: BikeRockets
+	Burst: 2
+	BurstDelays: 5
+
+BikeRocketsAA.boost:
+	Inherits: BikeRocketsAA
+	Burst: 2
+	BurstDelays: 5

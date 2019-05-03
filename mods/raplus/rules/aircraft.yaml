@@ -56,7 +56,7 @@ TRAN:
 		UnloadingDelay: 15
 		LocalOffset: 0, 0, -128
 
-TRAN.SOVIET:
+TRAN.soviet:
 	Inherits: TRAN
 	Buildable:
 		Queue: Aircraft
@@ -66,6 +66,24 @@ TRAN.SOVIET:
 		Description: Fast Infantry Transport Helicopter\nCan carry up to 5 Infantry\n Unarmed
 	Tooltip:
 		Name: Yak-24
+	Cargo:
+		Types: Infantry, Engineer
+		MaxWeight: 5
+		PipCount: 5
+	-Carryall:
+	RenderSprites:
+		Image: tran
+
+TRAN.arab:
+	Inherits: TRAN
+	Buildable:
+		Queue: Aircraft
+		BuildAtProductionType: Helicopter
+		BuildPaletteOrder: 3
+		Prerequisites: hpad, fix, ~helicopters.arabs, ~!industryplant.on, ~techlevel.medium
+		Description: Fast Infantry Transport Helicopter\nCan carry up to 5 Infantry\n Unarmed
+	Tooltip:
+		Name: Mi-8
 	Cargo:
 		Types: Infantry, Engineer
 		MaxWeight: 5

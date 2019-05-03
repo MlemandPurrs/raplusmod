@@ -1,3 +1,43 @@
+resources:
+	Defaults:
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+			DESERTTD: DESERT
+			SNOWTD: SNOW
+			TEMPERATTD: TEMPERAT
+			JUNGLE: TEMPERAT
+			TROPIC: DESERT
+	gold01: gold01
+	gold02: gold02
+	gold03: gold03
+	gold04: gold04
+	gem01: gem01
+	gem02: gem02
+	gem03: gem03
+	gem04: gem04
+	scrap01: scrap01
+	scrap02: scrap02
+	scrap03: scrap03
+	scrap04: scrap04
+	scrap05: scrap05
+	scrap06: scrap06
+	scrap07: scrap07
+	scrap08: scrap08
+	scrap09: scrap09
+	scrap10: scrap10
+	scrap11: scrap11
+	scrap12: scrap12
+	scrap13: scrap13
+	scrap14: scrap14
+	scrap15: scrap15
+	scrap16: scrap16
+	scrap17: scrap17
+	scrap18: scrap18
+	scrap19: scrap19
+	scrap20: scrap20
+
 clock:
 	idle:
 		Length: *
@@ -246,6 +286,11 @@ bomb:
 
 missile:
 	idle:
+		Facings: 32
+		ZOffset: 1023
+
+nukemissile:
+	idle: missile-nuke
 		Facings: 32
 		ZOffset: 1023
 
@@ -648,46 +693,6 @@ editor-overlay:
 	paste: overlay
 		Start: 1
 
-resources:
-	Defaults:
-		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
-			DESERTTD: DESERT
-			SNOWTD: SNOW
-			TEMPERATTD: TEMPERAT
-			JUNGLE: TEMPERAT
-			TROPIC: DESERT
-	gold01: gold01
-	gold02: gold02
-	gold03: gold03
-	gold04: gold04
-	gem01: gem01
-	gem02: gem02
-	gem03: gem03
-	gem04: gem04
-	scrap01: scrap01
-	scrap02: scrap02
-	scrap03: scrap03
-	scrap04: scrap04
-	scrap05: scrap05
-	scrap06: scrap06
-	scrap07: scrap07
-	scrap08: scrap08
-	scrap09: scrap09
-	scrap10: scrap10
-	scrap11: scrap11
-	scrap12: scrap12
-	scrap13: scrap13
-	scrap14: scrap14
-	scrap15: scrap15
-	scrap16: scrap16
-	scrap17: scrap17
-	scrap18: scrap18
-	scrap19: scrap19
-	scrap20: scrap20
-
 shroud:
 	shroud: shadow
 		Length: *
@@ -743,18 +748,6 @@ gmine:
 			SUBTERRAN: TEMPERAT
 
 drillmine:
-	Defaults:
-		UseTilesetExtension: false
-		Offset: -1, -16
-	idle:
-		Start: 0
-		Length: 1
-	active:
-		Start: 0
-		Length: 32
-		Tick: 160
-
-deepdrill:
 	Defaults:
 		UseTilesetExtension: false
 		Offset: -1, -16

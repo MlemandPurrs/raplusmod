@@ -40,6 +40,25 @@ C10:
 	Voiced:
 		VoiceSet: CivilianFemaleVoice
 
+EINSTEIN:
+	Inherits: ^CivInfantry
+	-Wanders:
+	Tooltip:
+		Name: Prof. Einstein
+	Mobile:
+		Speed: 71
+	Voiced:
+		VoiceSet: EinsteinVoice
+
+CHAN:
+	Inherits: ^CivInfantry
+	Valued:
+		Cost: 500
+	Selectable:
+		Class: CHAN
+	Tooltip:
+		Name: Scientist
+
 V01:
 	Inherits: ^CivBuilding
 	Building:

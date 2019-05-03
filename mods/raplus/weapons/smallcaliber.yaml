@@ -410,7 +410,7 @@ Colt45:
 Sniper:
 	Inherits: ^SnipeWeapon
 	ReloadDelay: 70
-	Range: 10c0
+	Range: 9c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 14000
 
@@ -420,7 +420,7 @@ SniperCommando:
 	ValidTargets: Ground, Infantry, HeavyInfantry
 	InvalidTargets: Vehicle, Water, Structure, Wall, Husk
 	ReloadDelay: 40
-	Range: 10c0
+	Range: 9c0
 	Projectile: Bullet
 		Speed: 5c682
 	Warhead@1Dam: SpreadDamage
@@ -440,7 +440,7 @@ SniperNatasha:
 SniperNatashaDS:
 	Inherits: ^SnipeWeapon
 	ReloadDelay: 300
-	Range: 10c0
+	Range: 9c0
 	Report: ijarwe2a.wav
 	ValidTargets: Vehicle, Tank
 	InvalidTargets: Infantry, Structure, Wall, Husk, NoDriverKill
@@ -451,6 +451,10 @@ SniperNatashaDS:
 		Range: 0c512
 		ValidTargets: Vehicle, Tank
 		Condition: driver_killed
+
+Sniper.tower:
+	Inherits: ^SnipeWeapon
+	Range: 6c0
 
 M1CTank:
 	Inherits: M1Carbine

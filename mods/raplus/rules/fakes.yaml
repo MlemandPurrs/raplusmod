@@ -549,7 +549,7 @@ FACF:
 	Buildable:
 		BuildPaletteOrder: 3
 		Queue: Fakestructure
-		Prerequisites: fix, ~structures.allies, ~player.can.fakes, ~techlevel.medium
+		Prerequisites: ~disabled
 		Description: Looks like a Construction Yard
 		Icon: fake-icon
 	Tooltip:
@@ -558,8 +558,8 @@ FACF:
 		GenericVisibility: Enemy
 		GenericStancePrefix: False
 	Building:
-		Footprint: xxX xxx XxX ===
-		Dimensions: 3,4
+		Footprint: xxX xxx XxX
+		Dimensions: 3,3
 		LocalCenterOffset: 0,-512,0
 	WithBuildingBib:
 	RenderSprites:
@@ -575,6 +575,15 @@ FACF:
 		Type: Rectangle
 			TopLeft: -1536, -1536
 			BottomRight: 1536, 1536
+	Transforms:
+		RequiresCondition: factundeploy && !build-incomplete
+		PauseOnCondition: being-captured || being-demolished
+		IntoActor: mcvf
+		Offset: 1,1
+		Facing: 96
+	GrantConditionOnPrerequisite@GLOBALFACTUNDEPLOY:
+		Condition: factundeploy
+		Prerequisites: global-factundeploy
 
 FGAP:
 	Inherits: ^FakeBuilding
@@ -702,5 +711,41 @@ ARTF:
 	-WithMuzzleOverlay:
 	RenderSprites:
 		Image: ARTY
+	Voiced:
+		VoiceSet: RoboticVoice
+
+MCVF:
+	Inherits: MCV
+	Buildable:
+		BuildPaletteOrder: 999
+		Prerequisites: factory, fix, ~player.france
+		Description: Looks like a Mobile Construction Vehicle\nCan deploy into a fake Construction Yard
+		Icon: fake-icon
+	Tooltip:
+		Name: Fake MCV
+		GenericName: Mobile Construction Vehicle
+		GenericVisibility: Enemy
+		GenericStancePrefix: False
+	Valued:
+		Cost: 750
+	WithDecoration@fake:
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-fake
+		ReferencePoint: Top
+		ZOffset: 256
+	Explodes:
+		Weapon: Demolish
+		DamageThreshold: 70
+	-Transforms:
+	Transforms:
+		IntoActor: facf
+		Offset: -1,-1
+		Facing: 96
+		TransformSounds: placbldg.aud, build5.aud
+		NoTransformNotification: BuildingCannotPlaceAudio
+	-SpawnActorOnDeath:
+	RenderSprites:
+		Image: MCV
 	Voiced:
 		VoiceSet: RoboticVoice

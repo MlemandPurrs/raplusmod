@@ -53,6 +53,7 @@ TENT.britain.discount:
 		Cost: 265
 	RenderSprites:
 		Image: tent
+	-MapEditorData:
 
 BARR.discount:
 	Inherits: BARR
@@ -86,6 +87,7 @@ KENN.britain.discount:
 		Prerequisite: kenn
 	RenderSprites:
 		Image: kenn
+	-MapEditorData:
 
 SPMST.discount:
 	Inherits: SPMST
@@ -155,6 +157,7 @@ WEAP.britain.discount:
 		Prerequisite: weap
 	RenderSprites:
 		Image: weap
+	-MapEditorData:
 
 FIX.discount:
 	Inherits: FIX
@@ -450,6 +453,7 @@ PBOX.turkey.discount:
 		Value: 225
 	RenderSprites:
 		Image: pbox
+	-MapEditorData:
 
 HBOX.discount:
 	Inherits: HBOX
@@ -475,6 +479,7 @@ HBOX.turkey.discount:
 		Value: 300
 	RenderSprites:
 		Image: hbox
+	-MapEditorData:
 
 FTUR.discount:
 	Inherits: FTUR
@@ -506,25 +511,37 @@ GUN.turkey.discount:
 		Cost: 450
 	RenderSprites:
 		Image: gun
+	-MapEditorData:
 
 HTUR.discount:
 	Inherits: HTUR
+	Buildable:
+		Prerequisites: weap, techcenter, ~structures.soviet, ~industryplant.on, ~techlevel.high
+	Valued:
+		Cost: 675
+	RenderSprites:
+		Image: htur
+	-MapEditorData:
+
+GTUR.discount:
+	Inherits: GTUR
 	Buildable:
 		Prerequisites: techcenter, ~structures.allies, ~!player.turkey, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 1125
 	RenderSprites:
-		Image: htur
+		Image: gtur
 	-MapEditorData:
 
-HTUR.turkey.discount:
-	Inherits: HTUR
+GTUR.turkey.discount:
+	Inherits: GTUR
 	Buildable:
 		Prerequisites: techcenter, ~structures.allies, ~player.turkey, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 1125
 	RenderSprites:
-		Image: htur
+		Image: gtur
+	-MapEditorData:
 
 TSLA.discount:
 	Inherits: TSLA
@@ -567,6 +584,7 @@ SAM.turkey.discount:
 		Cost: 450
 	RenderSprites:
 		Image: sam
+	-MapEditorData:
 
 HSAM.discount:
 	Inherits: HSAM
@@ -1736,10 +1754,18 @@ TRAN.discount:
 		Image: tran
 	-MapEditorData:
 
-TRAN.SOVIET.discount:
-	Inherits: TRAN.SOVIET
+TRAN.soviet.discount:
+	Inherits: TRAN.soviet
 	Buildable:
 		Prerequisites: hpad, fix, ~helicopters.soviet, ~industryplant.on, ~techlevel.medium
+	Valued:
+		Cost: 675
+	-MapEditorData:
+
+TRAN.arab.discount:
+	Inherits: TRAN.arab
+	Buildable:
+		Prerequisites: hpad, fix, ~helicopters.arabs, ~industryplant.on, ~techlevel.medium
 	Valued:
 		Cost: 675
 	-MapEditorData:
