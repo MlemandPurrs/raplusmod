@@ -185,6 +185,26 @@ btr:
 		UseClassicFacingFudge: True
 		ZOffset: -512
 
+4tnk.tsla:
+	Inherits: emp-overlay
+	idle: 4tnk
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret: 4tnk-tsla
+		Facings: 32
+		UseClassicFacingFudge: True
+	icon: 4tnk-tsla-icon
+
+4tnk.tsla.destroyed:
+	idle: 4tnk
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+	turret: 4tnk-tsla
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+
 nona:
 	Inherits: emp-overlay
 	idle: bmp

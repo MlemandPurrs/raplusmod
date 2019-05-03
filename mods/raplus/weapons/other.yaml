@@ -191,6 +191,25 @@ TTankZapDual:
 		Condition: empdisable
 		ValidTargets: Ground, Vehicle, Ship
 
+TTankZapHeavy:
+	Inherits: ^TeslaWeapon
+	ReloadDelay: 120
+	Range: 6c0
+	Burst: 2
+	BurstDelays: 30
+
+TeslaCharge:
+	ReloadDelay: 120
+	Range: 1c0
+	Report: electro1.aud
+	ValidTargets: Charge
+	Projectile: TeslaZap
+	Warhead@CHARGE: GrantExternalCondition
+		Range: 0c256
+		Duration: 150
+		Condition: TeslaCharge
+		ValidTargets: Charge
+
 DogJaw:
 	ValidTargets: Infantry
 	ReloadDelay: 10

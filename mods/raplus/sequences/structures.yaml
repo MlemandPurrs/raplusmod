@@ -136,6 +136,29 @@ powr.husk:
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
 
+opwr:
+	idle:
+		Start: 0
+		Stride: 4
+		Tick: 100
+	damaged-idle:
+		Start: 5
+		Length: 4
+		Tick: 100
+	make: opwr-make
+		Length: *
+		Tick: 80
+	dead: opwr
+		Start: 5
+		Length: 1
+		Tick: 800
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	icon: opwricon
+
 apwr:
 	idle:
 		Offset: 0,-10

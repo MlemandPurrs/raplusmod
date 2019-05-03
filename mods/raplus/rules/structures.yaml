@@ -102,7 +102,7 @@ POWR:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 1
-		Prerequisites: ~!player.russia, ~!industryplant.on, ~techlevel.infonly
+		Prerequisites: ~!structures.arabs, ~!player.russia, ~!industryplant.on, ~techlevel.infonly
 		Description: Provides 75 power for other structures
 	Valued:
 		Cost: 300
@@ -144,16 +144,45 @@ POWR.Husk:
 	Tooltip:
 		Name: Power Plant (Destroyed)
 
-POWR2.Husk:
-	Inherits: ^CivBuildingHusk
-	Interactable:
+OPWR:
+	Inherits: ^Building
+	Inherits@POWER_OUTAGE: ^DisabledByPowerOutage
+	Inherits@shape: ^2x2Shape
+	Selectable:
 		Bounds: 48,48
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 640,-384,0, 640,512,0, -710,-512,0, -710,512,0
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1
+		Prerequisites: ~structures.arabs, ~!industryplant.on, ~techlevel.infonly
+		Description: Provides 50 power for other structures
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Power Plant (Arabs)
+	ProvidesPrerequisite:
+		Prerequisite: anypower
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
 		LocalCenterOffset: 0,-512,0
-	Tooltip:
-		Name: Power Plant (Destroyed)
+	Health:
+		HP: 40000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	WithBuildingBib:
+	Power:
+		Amount: 50
+	Targetable:
+		TargetTypes: Ground, Structure, C4, DetonateAttack, SpyInfiltrate
+	ScalePowerWithHealth:
+	WithDeathAnimation:
+		DeathSequence: dead
+		UseDeathTypeSuffix: false
 
 APWR:
 	Inherits: ^Building
@@ -164,7 +193,7 @@ APWR:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 15
-		Prerequisites: dome, ~!player.russia, ~!industryplant.on, ~techlevel.medium
+		Prerequisites: dome, ~!structures.arabs, ~!player.russia, ~!industryplant.on, ~techlevel.medium
 		Description: Provides double the power of a standard Power Plant
 	Valued:
 		Cost: 600
@@ -200,17 +229,6 @@ APWR:
 		Sequence: idle-smoke
 
 APWR.Husk:
-	Inherits: ^CivBuildingHusk
-	Interactable:
-		Bounds: 72,48
-	Building:
-		Footprint: xxx Xxx
-		Dimensions: 3,2
-		LocalCenterOffset: 0,-512,0
-	Tooltip:
-		Name: Advanced Power Plant (Destroyed)
-
-APWR2.Husk:
 	Inherits: ^CivBuildingHusk
 	Interactable:
 		Bounds: 72,48
@@ -1397,7 +1415,7 @@ AFLD:
 		ChargeInterval: 7500
 		Description: Paratroopers
 		LongDesc: A Blimp drops a squad of veteran\ninfantry anywhere on the map
-		DropItems: E1R1,E3R1,E1R1,E3R1,E1R1
+		DropItems: E2R1,E1R1,E2R1,E1R1,E2R1
 		ReinforcementsArrivedSpeechNotification: ReinforcementsArrived
 		SelectTargetSpeechNotification: SelectTarget
 		AllowImpassableCells: false
@@ -1749,7 +1767,7 @@ ATEK:
 		Queue: Building
 		BuildPaletteOrder: 17
 		BuildLimit: 1
-		Prerequisites: dome, techcenter, ~!industryplant.on, !enough.spro, ~techlevel.unrestricted
+		Prerequisites: dome, techcenter, ~!structures.arabs, ~!industryplant.on, !enough.spro, ~techlevel.unrestricted
 		Description: Provides access to Sattelite surveillance\nMaximum one can be built\n Special Ability: GPS Satellite\nReveals map terrain and provides tactical information\n Requires power and active radar to operate
 	Valued:
 		Cost: 1500

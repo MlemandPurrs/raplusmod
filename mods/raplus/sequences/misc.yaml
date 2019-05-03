@@ -335,7 +335,11 @@ select:
 		Start: 2
 
 poweroff:
-	offline:
+	offline: powerdown
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+	charging:
 		Length: *
 		Tick: 160
 		ZOffset: 2047

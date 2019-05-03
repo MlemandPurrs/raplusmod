@@ -1014,6 +1014,8 @@ TSLA.russia:
 		PauseOnCondition: disabled || on.maintenance
 	RenderSprites:
 		Image: tsla
+	ProvidesPrerequisite:
+		Prerequisite: tsla
 	-MapEditorData:
 
 PROC.belarus:

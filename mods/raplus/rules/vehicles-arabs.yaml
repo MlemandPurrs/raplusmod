@@ -81,7 +81,7 @@ BRDM:
 		LocalOffset: 213,128,120, 213,-128,120
 		LocalYaw: 100, -100
 		PauseOnCondition: empdisable
-		RequiresCondition: !ifv-mg && !ifv-flamer && !ifv-autocannon && !ifv-rockets && !ifv-healer && !ifv-repair
+		RequiresCondition: !ifv-mg && !ifv-flamer && !ifv-autocannon && !ifv-rockets && !ifv-healer && !ifv-repair && !ifv-detector
 	Armament@DefaultAA:
 		Name: rocket
 		Weapon: BikeRocketsAA
@@ -89,7 +89,7 @@ BRDM:
 		LocalOffset: 213,-128,120, 213,128,120
 		LocalYaw: 100, -100
 		PauseOnCondition: empdisable
-		RequiresCondition: !ifv-mg && !ifv-flamer && !ifv-autocannon && !ifv-rockets && !ifv-healer && !ifv-repair
+		RequiresCondition: !ifv-mg && !ifv-flamer && !ifv-autocannon && !ifv-rockets && !ifv-healer && !ifv-repair && !ifv-detector
 	Armament@BoostedAG:
 		Name: rocket-dual
 		Weapon: BikeRockets.boost

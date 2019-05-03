@@ -404,7 +404,7 @@ FTNK:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-		BuildPaletteOrder: 7
+		BuildPaletteOrder: 9
 		Prerequisites: factory, ftur, techcenter, ~vehicles.soviet, ~!player.ukraine, ~!industryplant.on, ~techlevel.high
 		Queue: Vehicle
 		Description: Heavily armored flame-throwing vehicle\n Strong vs Infantry and Buildings\n Weak vs Tanks
@@ -472,7 +472,7 @@ TTNK:
 	Inherits@EJECTPILOT: ^EjectsPilotOnGround
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 9
+		BuildPaletteOrder: 7
 		Prerequisites: factory, tsla, techcenter, ~vehicles.soviet, ~!industryplant.on, ~techlevel.high
 		Description: Tank with mounted Tesla coil\n Immune to EMP\n Strong vs Infantry, Vehicles, Buildings\n Weak vs Aircraft
 	Valued:
@@ -513,6 +513,55 @@ TTNK:
 		Amount: -4
 	AcceptsDeliveredExperience:
 
+RA2.TTNK:
+	Inherits: ^TrackedVehicle
+	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EJECTPILOT: ^EjectsPilotOnGround
+	Buildable:
+		Queue: Vehicle, MWFVehicle
+		BuildPaletteOrder: 100
+		Prerequisites: factory, tsla, techcenter, ~!industryplant.on, ~player.russia, ~techlevel.high
+		Description: Heavy Tank with dual tesla coils\n Immune to EMP\n Amplified Tesla weaponry ensures\nbrief short-circuit on Vehicles\n Strong vs Vehicles\n Weak vs Infantry, Aircraft
+	Valued:
+		Cost: 1850
+	Tooltip:
+		Name: Heavy Tesla Tank
+		GenericName: Tank
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 60000
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 71
+		RequiresCondition: !being-captured
+	RevealsShroud:
+		Range: 6c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 4c0
+	Turreted:
+		TurnSpeed: 5
+		Offset: 0,0,150
+	Armament@PRIMARY:
+		Weapon: TTankZapDual
+		LocalOffset: 768,170,120, 768,-170,120
+	AttackTurreted:
+	WithSpriteTurret:
+	ProducibleWithLevel:
+		Prerequisites: vehicles.upgraded
+	Selectable:
+		DecorationBounds: 30,30
+	SelectionDecorations:
+	Passenger:
+		CargoType: Vehicle
+		Weight: 3
+	Power: 
+		Amount: -8
+	AcceptsDeliveredExperience:
+
 4TNK:
 	Inherits: ^TrackedVehicle
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
@@ -522,7 +571,7 @@ TTNK:
 		Queue: Vehicle
 		BuildPaletteOrder: 11
 		Prerequisites: factory, fix, techcenter, ~vehicles.soviet, ~player.not.tankbonus, ~!industryplant.on, ~techlevel.high
-		Description: Large and slow tank, with anti-air capability\nCan crush concrete walls\nSelf-repairs when under 50% Health\n Strong vs Vehicles, Infantry, Helicopters\n Weak vs Ships, Airplanes
+		Description: Large and slow tank\nwith all-purpose rocket pods\nCan crush concrete walls\nSelf-repairs when under 50% Health\n Strong vs Vehicles, Infantry, Helicopters\n Weak vs Ships, Airplanes
 	Valued:
 		Cost: 1500
 	Tooltip:
@@ -580,6 +629,73 @@ TTNK:
 		CargoType: Vehicle
 		Weight: 4
 	AcceptsDeliveredExperience:
+
+4TNK.Flame:
+	Inherits: 4TNK
+	Tooltip:
+		Name: Mammoth KV-8
+	Valued:
+		Cost: 1200
+	Mobile:
+		Speed: 64
+	Buildable:
+		BuildPaletteOrder: 10
+		Prerequisites: factory, fix, ftur, techcenter, ~vehicles.soviet, ~player.ukraine, ~!industryplant.on, ~techlevel.high
+		Description: Heavy flamethrower tank\nwith anti-ground rockets\nCan crush concrete walls\nSelf-repairs when under 50% Health\n Strong vs Buildings, Infantry\n Weak vs Tanks
+	Armament@PRIMARY:
+		Weapon: KVFlame
+		LocalOffset: 900,180,340, 900,-180,340
+		Recoil: 171
+		RecoilRecovery: 30
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	Armament@SECONDARY:
+		Weapon: MammothTuskAT
+		LocalOffset: -85,384,340, -85,-384,340
+		LocalYaw: -100,100
+		Recoil: 43
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	SpawnActorOnDeath:
+		Actor: 4TNK.Flame.Husk
+	RenderSprites:
+		Image: 4tnk.flame
+
+4TNK.Tesla:
+	Inherits: 4TNK
+	Tooltip:
+		Name: Mammoth Tesla
+	Valued:
+		Cost: 1800
+	Buildable:
+		BuildPaletteOrder: 10
+		Prerequisites: factory, fix, tsla, techcenter, ~vehicles.soviet, ~player.russia, ~!industryplant.on, ~techlevel.high
+		Description: Heavy Tesla armed tank\nwith anti-air rockets\nCan crush concrete walls\nSelf-repairs when under 50% Health\n Immune to EMP\n Strong vs Vehicles, Buildings\n Weak vs Artillery
+		BuildDurationModifier: 50
+	Mobile:
+		RequiresCondition: !being-captured
+	Health:
+		HP: 81000
+	Armament@PRIMARY:
+		Weapon: TTankZapHeavy
+		LocalOffset: 900,0,340
+		Recoil: 43
+		RecoilRecovery: 30
+		PauseOnCondition: empdisable
+	Armament@SECONDARY:
+		Weapon: MammothTuskAA
+		LocalOffset: -85,384,340, -85,-384,340
+		LocalYaw: -100,100
+		Recoil: 43
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	SpawnActorOnDeath:
+		Actor: 4TNK.Tesla.Husk
+	RenderSprites:
+		Image: 4tnk.tsla
+	Power:
+		Amount: -16
+	-WithMuzzleOverlay:
 
 QTNK:
 	Inherits: ^TrackedVehicle
@@ -703,88 +819,6 @@ FIST:
 	Passenger:
 		CargoType: Vehicle
 		Weight: 4
-
-RA2.TTNK:
-	Inherits: ^TrackedVehicle
-	Inherits@GAINSEXPERIENCE: ^GainsExperience
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@EJECTPILOT: ^EjectsPilotOnGround
-	Buildable:
-		Queue: Vehicle, MWFVehicle
-		BuildPaletteOrder: 100
-		Prerequisites: factory, tsla, techcenter, ~!industryplant.on, ~player.russia, ~techlevel.high
-		Description: Heavy Tank with dual tesla coils\n Immune to EMP\n Amplified Tesla weaponry ensures\nbrief short-circuit on Vehicles\n Strong vs Vehicles\n Weak vs Infantry, Aircraft
-	Valued:
-		Cost: 1850
-	Tooltip:
-		Name: Heavy Tesla Tank
-		GenericName: Tank
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
-	Health:
-		HP: 60000
-	Armor:
-		Type: Heavy
-	Mobile:
-		Speed: 71
-		RequiresCondition: !being-captured
-	RevealsShroud:
-		Range: 6c0
-		RevealGeneratedShroud: False
-	RevealsShroud@GAPGEN:
-		Range: 4c0
-	Turreted:
-		TurnSpeed: 5
-		Offset: 0,0,150
-	Armament@PRIMARY:
-		Weapon: TTankZapDual
-		LocalOffset: 768,170,120, 768,-170,120
-	AttackTurreted:
-	WithSpriteTurret:
-	ProducibleWithLevel:
-		Prerequisites: vehicles.upgraded
-	Selectable:
-		DecorationBounds: 30,30
-	SelectionDecorations:
-	Passenger:
-		CargoType: Vehicle
-		Weight: 3
-	Power: 
-		Amount: -8
-	AcceptsDeliveredExperience:
-
-4TNK.Flame:
-	Inherits: 4TNK
-	Tooltip:
-		Name: Mammoth KV-8
-	Valued:
-		Cost: 1200
-	Health:
-		HP: 90000
-	Mobile:
-		Speed: 64
-	Buildable:
-		BuildPaletteOrder: 10
-		Prerequisites: factory, fix, ftur, techcenter, ~vehicles.soviet, ~player.ukraine, ~!industryplant.on, ~techlevel.high
-		Description: Heavy flamethrower tank\nwith anti-ground rockets\n Strong vs Buildings, Infantry\n Weak vs Tanks
-	Armament@PRIMARY:
-		Weapon: KVFlame
-		LocalOffset: 900,180,340, 900,-180,340
-		Recoil: 171
-		RecoilRecovery: 30
-		MuzzleSequence: muzzle
-		PauseOnCondition: empdisable
-	Armament@SECONDARY:
-		Weapon: MammothTuskAT
-		LocalOffset: -85,384,340, -85,-384,340
-		LocalYaw: -100,100
-		Recoil: 43
-		MuzzleSequence: muzzle
-		PauseOnCondition: empdisable
-	SpawnActorOnDeath:
-		Actor: 4TNK.Flame.Husk
-	RenderSprites:
-		Image: 4tnk.flame
 
 ICBM:
 	Inherits: ^Vehicle

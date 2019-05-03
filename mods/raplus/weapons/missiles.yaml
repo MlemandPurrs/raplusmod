@@ -159,6 +159,13 @@ MammothTuskAT:
 		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
 	-Warhead@5EffAir: CreateEffect
 
+MammothTuskAA:
+	Inherits: MammothTusk
+	ValidTargets: Air
+	Warhead@1Dam: SpreadDamage
+		Damage: 2500
+	-Warhead@3Eff: CreateEffect
+
 Nike:
 	Inherits: ^AntiAirMissile
 	ReloadDelay: 15

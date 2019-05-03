@@ -476,7 +476,7 @@ PBAT:
 
 TSLA:
 	Inherits: ^Defense
-	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
+	# Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
 		Queue: Defense
@@ -517,8 +517,59 @@ TSLA:
 		Amount: -80
 	DetectCloaked:
 		Range: 6c0
-		RequiresCondition: !disabled && !on.maintenance
+		RequiresCondition: !lowpower && !powerdown && !on.maintenance
 	ProvidesPrerequisite@buildingname:
+	Targetable@Normal:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, Defense, Charge
+		RequiresCondition: !TeslaOverCharge
+	Targetable@Charged:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, Defense
+		RequiresCondition: TeslaOverCharge
+	ExternalCondition@OverCharged:
+		Condition: TeslaCharge
+	GrantCondition@Overcharge:
+		Condition: TeslaOverCharge
+		RequiresCondition: TeslaCharge
+	WithDecoration@Charged:
+		Image: poweroff
+		Sequence: charging
+		ReferencePoint: Bottom, Right
+		RequiresCondition: TeslaCharge
+	TimedConditionBar@Charged:
+		Condition: TeslaCharge
+		Color: f4f442
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
+		RequiresCondition: !TeslaCharge
+	WithColoredOverlay@IDISABLE:
+		RequiresCondition: disabled
+		Palette: disabled
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || on.maintenance && !TeslaOverCharge
+		Condition: disabled
+	ToggleConditionOnOrder:
+		DisabledSound: EnablePower
+		EnabledSound: DisablePower
+		Condition: powerdown
+		OrderName: PowerDown
+		RequiresCondition: !TeslaCharge
+	WithDecoration@POWERDOWN:
+		Image: poweroff
+		Sequence: offline
+		Palette: chrome
+		RequiresCondition: powerdown
+		ReferencePoint: Center
+		Offsets:
+			repairing: 10, 0
+	PowerMultiplier@POWERDOWN:
+		RequiresCondition: powerdown
+		Modifier: 0
+	RepairableBuilding:
+		RepairCondition: repairing
+	WithBuildingRepairDecoration:
+		Offsets:
+			powerdown: -10, 0
 
 TSLA.Husk:
 	Inherits: ^CivBuildingHusk

@@ -63,6 +63,32 @@
 	RenderSprites:
 		Image: 4tnk.destroyed
 
+4TNK.Flame.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Mammoth KV-8)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 4tnk.flame
+	InfiltrateForTransform:
+		IntoActor: 4tnk.flame
+	RenderSprites:
+		Image: 4tnk.flame.destroyed
+
+4TNK.Tesla.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Mammoth Tesla)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 4tnk.tesla
+	InfiltrateForTransform:
+		IntoActor: 4tnk.tesla
+	RenderSprites:
+		Image: 4tnk.tsla.destroyed
+
 TNKD.Husk:
 	Inherits: ^Husk
 	Tooltip:
@@ -774,19 +800,6 @@ KIROV.carrier.Husk:
 		Image: kirov.carrier
 	FallsToEarth:
 		Explosion: UnitExplodePlane
-
-4TNK.Flame.Husk:
-	Inherits: ^Husk
-	Tooltip:
-		Name: Husk (Mammoth KV-8)
-	ThrowsParticle@turret:
-		Anim: turret
-	TransformOnCapture:
-		IntoActor: 4tnk.flame
-	InfiltrateForTransform:
-		IntoActor: 4tnk.flame
-	RenderSprites:
-		Image: 4tnk.flame.destroyed
 
 ADST.Husk:
 	Inherits: ^Husk

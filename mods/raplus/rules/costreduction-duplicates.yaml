@@ -1304,6 +1304,16 @@ TTNK.discount:
 		Image: ttnk
 	-MapEditorData:
 
+RA2.TTNK.discount:
+	Inherits: RA2.TTNK
+	Buildable:
+		Prerequisites: factory, tsla, techcenter, ~player.russia, ~industryplant.on, ~techlevel.high
+	Valued:
+		Cost: 1390
+	RenderSprites:
+		Image: ra2.ttnk
+	-MapEditorData:
+
 4TNK.discount:
 	Inherits: 4TNK
 	Buildable:
@@ -1334,6 +1344,26 @@ TTNK.discount:
 		Prerequisites: factory, fix, techcenter, ~vehicles.soviet, ~player.kazakh, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 1125
+
+4TNK.Flame.discount:
+	Inherits: 4TNK.Flame
+	Buildable:
+		Prerequisites: factory, fix, ftur, techcenter, ~vehicles.soviet, ~player.ukraine, ~industryplant.on, ~techlevel.high
+	Valued:
+		Cost: 900
+	RenderSprites:
+		Image: 4tnk.flame
+	-MapEditorData:
+
+4TNK.Tesla.discount:
+	Inherits: 4TNK.Tesla
+	Buildable:
+		Prerequisites: factory, fix, tsla, techcenter, ~vehicles.soviet, ~player.russia, ~industryplant.on, ~techlevel.high
+	Valued:
+		Cost: 1350
+	RenderSprites:
+		Image: 4tnk.tsla
+	-MapEditorData:
 
 CTNK.discount:
 	Inherits: CTNK
@@ -1438,26 +1468,6 @@ DTRK.ukraine.discount:
 		Cost: 1500
 	RenderSprites:
 		Image: dtrk
-
-RA2.TTNK.discount:
-	Inherits: RA2.TTNK
-	Buildable:
-		Prerequisites: factory, tsla, techcenter, ~industryplant.on, ~player.russia, ~techlevel.high
-	Valued:
-		Cost: 1390
-	RenderSprites:
-		Image: ra2.ttnk
-	-MapEditorData:
-
-4TNK.Flame.discount:
-	Inherits: 4TNK.Flame
-	Buildable:
-		Prerequisites: factory, fix, ftur, techcenter, ~vehicles.soviet, ~player.ukraine, ~industryplant.on, ~techlevel.high
-	Valued:
-		Cost: 900
-	RenderSprites:
-		Image: 4tnk.flame
-	-MapEditorData:
 
 BEHE.discount:
 	Inherits: BEHE

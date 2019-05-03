@@ -68,7 +68,7 @@ TTRP:
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 100
 		Prerequisites: ~barracks, tsla, techcenter, ~!industryplant.on, ~player.russia, ~techlevel.high
-		Description: Heavily armored Infantry\n Amplified Tesla weaponry ensures\nbrief short-circuit on Vehicles\nCannot be crushed unless its Mammoth Tank\n Strong vs Infantry, Vehicles\n Weak vs Aircraft
+		Description: Heavily armored Infantry\n Amplified Tesla weaponry can charge\npowerless Tesla Coils\nCannot be crushed unless its Mammoth Tank\n Strong vs Infantry, Vehicles\n Weak vs Aircraft
 	Valued:
 		Cost: 650
 	Tooltip:
@@ -87,6 +87,13 @@ TTRP:
 	Armament@PRIMARY:
 		Weapon: PortaTeslaHeavy
 		LocalOffset: 427,0,341
+	Armament@SECONDARY:
+		Weapon: TeslaCharge
+		LocalOffset: 427,0,341
+		Cursor: powerdown
+		OutsideRangeCursor: powerdown
+		TargetStances: Ally
+		ForceTargetStances: None
 	Armament@GARRISONED:
 		Name: garrisoned
 		Weapon: PortaTeslaHeavy
@@ -121,6 +128,7 @@ TTRP:
 	Targetable:
 		RequiresCondition: !parachute
 		TargetTypes: Ground, HeavyInfantry, Disguise
+	-Wanders:
 
 RPG:
 	Inherits: ^Soldier
