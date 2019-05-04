@@ -843,8 +843,6 @@ WEAP:
 	ProvidesPrerequisite@arabstructure:
 		RequiresPrerequisites: structures.arabs
 		Prerequisite: vehicles.arabs
-	ProvidesPrerequisite:
-		Prerequisite: factory
 	PrimaryBuilding:
 		PrimaryCondition: primary
 		SelectionNotification: PrimaryBuildingSelected
@@ -853,6 +851,10 @@ WEAP:
 	Power:
 		Amount: -30
 	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@VEHICLEPRODUCTION:
+		Prerequisite: factory
+	ProvidesPrerequisite@TECHPREQ:
+		Prerequisite: afldorweap
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 	InfiltrateForSupportPower:
@@ -1505,6 +1507,8 @@ AFLD:
 	Power:
 		Amount: -20
 	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@TECHPREQ:
+		Prerequisite: afldorweap
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 	InfiltrateForSupportPower:
@@ -1843,7 +1847,7 @@ STEK:
 		Queue: Building
 		BuildPaletteOrder: 14
 		BuildLimit: 1
-		Prerequisites: weap, dome, ~!industryplant.on, !enough.techcenter, ~techlevel.high
+		Prerequisites: afldorweap, dome, ~!industryplant.on, !enough.techcenter, ~techlevel.high
 		Description: Provides Advanced technologies\nMaximum 1 can be built\n Special Ability: Parabombs\nA trio of bombers drop parachuted bombs on your target
 	Valued:
 		Cost: 2000
@@ -2479,6 +2483,14 @@ FACTORY:
 		Name: Vehicle Production
 	Buildable:
 		Description: Vehicle Production
+
+AFLDORWEAP:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: War Factory or Airfield
+	Buildable:
+		Description: War Factory or Airfield
 
 TECHCENTER:
 	AlwaysVisible:

@@ -370,6 +370,55 @@ AGUN.Husk:
 	Tooltip:
 		Name: Flak Turret (Destroyed)
 
+HGUN:
+	Inherits: ^Defense
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
+	Inherits@AUTOTARGET: ^AutoTargetAir
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 12
+		Prerequisites: dome, techcenter, ~structures.soviet, ~!industryplant.on, ~techlevel.high
+		Description: Advanced Anti-Air base defense\n Strong vs Aircraft\n Weak vs Ground units
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Heavy Flak
+	Selectable:
+		Bounds: 24,24
+		DecorationBounds: 24,32,0,-4
+	SelectionDecorations:
+	Health:
+		HP: 60000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 7c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 5c0
+	WithBuildingBib:
+		HasMinibib: Yes
+	Turreted:
+		TurnSpeed: 15
+		InitialFacing: 224
+	-WithSpriteBody:
+	WithEmbeddedTurretSpriteBody:
+	Armament:
+		Weapon: FLAK-88-AA
+		LocalOffset: 980,0,410
+		MuzzleSequence: muzzle
+		PauseOnCondition: disabled || on.maintenance
+	AttackTurreted:
+		RequiresCondition: !build-incomplete
+		PauseOnCondition: disabled || on.maintenance
+	WithMuzzleOverlay:
+	RenderRangeCircle:
+		RangeCircleType: aa
+	Power:
+		Amount: -40
+	BodyOrientation:
+		UseClassicFacingFudge: True
+
 GTUR:
 	Inherits: ^Defense
 	Inherits@AUTOTARGET: ^AutoTargetGround

@@ -686,32 +686,25 @@ e7:
 rmbo:
 	stand:
 		Facings: 8
-	stand2:
-		Start: 8
-		Facings: 8
 	run:
-		Start: 16
+		Start: 8
 		Length: 6
 		Facings: 8
 		Tick: 100
 	shoot:
-		Start: 64
-		Length: 4
+		Start: 56
+		Length: 7
 		Facings: 8
 	liedown:
-		Start: 96
+		Start: 112
 		Length: 2
 		Facings: 8
 	standup:
-		Start: 144
+		Start: 160
 		Length: 2
 		Facings: 8
 	prone-stand:
-		Start: 112
-		Stride: 4
-		Facings: 8
-	prone-stand2:
-		Start: 112
+		Start: 128
 		Stride: 4
 		Facings: 8
 	prone-run:
@@ -720,44 +713,31 @@ rmbo:
 		Facings: 8
 		Tick: 100
 	prone-shoot:
-		Start: 160
-		Length: 4
+		Start: 176
+		Length: 7
 		Facings: 8
 	idle1:
-		Start: 192
-		Length: 16
-		Tick: 120
-	idle2:
-		Start: 208
-		Length: 16
-		Tick: 120
-	idle3:
-		Start: 224
-		Length: 15
-		Tick: 120
-	cheer:
-		Start: 396
-		Length: 3
-		Facings: 8
+		Start: 232
+		Length: 30
 		Tick: 120
 	die1:
-		Start: 318
+		Start: 262
 		Length: 8
 		Tick: 80
 	die2:
-		Start: 326
+		Start: 270
 		Length: 8
 		Tick: 80
 	die3:
-		Start: 334
+		Start: 278
 		Length: 8
 		Tick: 80
 	die4:
-		Start: 342
+		Start: 286
 		Length: 12
 		Tick: 80
 	die5:
-		Start: 354
+		Start: 298
 		Length: 18
 		Tick: 80
 	die6: electro

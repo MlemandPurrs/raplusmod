@@ -132,6 +132,19 @@ FLAK-INF-AE:
 		ValidTargets: Water, Underwater
 		InvalidTargets: Ship, Structure, Bridge
 
+FLAK-88-AA:
+	Inherits: ^AACannon
+	ReloadDelay: 30
+	Range: 10c0
+	Report: gun20.aud
+	Projectile:	Bullet
+		Inaccuracy: 1c938
+	Warhead@1Dam: SpreadDamage
+		Damage: 4000
+			Versus:
+				Light: 120
+				Heavy: 150
+
 ^HeavyMG:
 	ReloadDelay: 30
 	Range: 6c0

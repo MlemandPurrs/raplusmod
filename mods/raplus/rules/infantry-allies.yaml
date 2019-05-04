@@ -344,9 +344,6 @@ E7:
 		Weapon: Colt45
 		MuzzleSequence: garrison-muzzle
 	AttackFrontal:
-	WithInfantryBody:
-		DefaultAttackSequence: shoot
-		StandSequences: stand
 	ExternalCondition@PRODUCED:
 		Condition: produced
 	VoiceAnnouncement:
@@ -366,6 +363,8 @@ E7:
 		TargetTypes: Ground, Water, Infantry
 		RequiresCondition: !parachute && swimming
 	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		StandSequences: stand
 		RequiresCondition: !swimming
 	WithInfantryBody@SEA:
 		RequiresCondition: swimming

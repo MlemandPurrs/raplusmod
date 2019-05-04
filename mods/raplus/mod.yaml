@@ -136,7 +136,9 @@ Chrome:
 
 Assemblies:
 	common|OpenRA.Mods.Common.dll
+	# raplus|OpenRA.Mods.Shock.dll
 	common|OpenRA.Mods.Cnc.dll
+	# raplus|OpenRA.Mods.AS.dll
 
 ChromeLayout:
 	common|chrome/ingame.yaml
@@ -154,7 +156,7 @@ ChromeLayout:
 	common|chrome/ingame-perf.yaml
 	common|chrome/ingame-debug.yaml
 	common|chrome/ingame-infochat.yaml
-	common|chrome/mainmenu.yaml
+	raplus|chrome/mainmenu.yaml
 	common|chrome/settings.yaml
 	common|chrome/credits.yaml
 	common|chrome/lobby.yaml

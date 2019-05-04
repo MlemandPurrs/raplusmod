@@ -138,6 +138,29 @@ agun.husk:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			JUNGLE: TEMPERAT
+hgun:
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+		Offset: 0,-6
+	make: hgun-make
+		Length: *
+		Offset: 0,-6
+	damaged-idle:
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+		Offset: 0,-6
+	muzzle: gunfire2
+		Start: 1
+		Length: 4
+	bib: mbAGUN
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			JUNGLE: TEMPERAT
+		Offset: 0,-6
+	icon: hgunicon
 
 sam:
 	idle: sam2

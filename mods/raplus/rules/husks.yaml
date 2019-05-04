@@ -89,6 +89,19 @@
 	RenderSprites:
 		Image: 4tnk.tsla.destroyed
 
+BEHE.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Behemoth)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: behe
+	InfiltrateForTransform:
+		IntoActor: behe
+	RenderSprites:
+		Image: behe.destroyed
+
 TNKD.Husk:
 	Inherits: ^Husk
 	Tooltip:
@@ -813,19 +826,6 @@ ADST.Husk:
 		IntoActor: adst
 	RenderSprites:
 		Image: adst.destroyed
-
-MTNK.Husk:
-	Inherits: ^Husk
-	Tooltip:
-		Name: Husk (Main Battle Tank)
-	ThrowsParticle@turret:
-		Anim: turret
-	TransformOnCapture:
-		IntoActor: mtnk
-	InfiltrateForTransform:
-		IntoActor: mtnk
-	RenderSprites:
-		Image: mtnk.destroyed
 
 RHIN.Husk:
 	Inherits: ^Husk

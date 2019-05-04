@@ -294,7 +294,6 @@ RHIN:
 		Type: Heavy
 	Mobile:
 		Speed: 85
-		RequiresCondition: !empdisable
 	RevealsShroud:
 		Range: 6c0
 		RevealGeneratedShroud: False

@@ -1008,6 +1008,140 @@ SREP.Deployed:
 	Targetable:
 		TargetTypes: Ground, Water, Ship
 
+AIRCARR:
+	Inherits: ^Ship
+	Buildable:
+		Queue: Ship
+		BuildAtProductionType: Boat
+		BuildPaletteOrder: 9
+		Prerequisites: syrd, afld, fix, ~ships.allies, ~player.usa, ~!industryplant.on, ~techlevel.high
+		Description: Nautical Support vessel\n Can be deployed, becoming immobile\nto allow several capabilities:\nRearms and Repairs Aircraft at Sea\nCan produce Airplanes when deployed\nDetects submerged in a wide radius\n Unarmed
+	Valued:
+		Cost: 1750
+	Tooltip:
+		Name: Aircraft Carrier
+	Health:
+		HP: 50000
+	Armor:
+		Type: Heavy
+	Mobile:
+		TurnSpeed: 7
+		Speed: 85
+	RevealsShroud:
+		Range: 6c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 4c0
+	SelectionDecorations:
+	Selectable:
+		DecorationBounds: 48,48
+	WithMoveAnimation:
+		MoveSequence: move
+	Transforms:
+		IntoActor: aircarr.deployed
+		Offset: 0,0
+		Facing: 192
+
+AIRCARR.deployed:
+	Inherits: ^Building
+	-GivesBuildableArea:
+	-RepairableBuilding:
+	-WithBuildingRepairDecoration:
+	-EngineerRepairable:
+	-AcceptsDeliveredCash:
+	-WithMakeAnimation:
+	-CaptureManager:
+	-Capturable:
+	-CapturableProgressBar:
+	-CapturableProgressBlink:
+	-SpawnActorsOnSell:
+	-GpsDot:
+	GpsDot:
+		String: Ship
+	-Demolishable:
+	-Sellable:
+	-Explodes@BUILDINGEXPLODES:
+	Explodes@SHIPEXPLODES:
+		Weapon: UnitExplodeShip
+		EmptyWeapon: UnitExplodeShip
+	Selectable:
+		Bounds: 48,48
+	Valued:
+		Cost: 1750
+	Tooltip:
+		Name: Aircraft Carrier
+	Building:
+		Footprint: x
+		TerrainTypes: Water
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 999
+		Prerequisites: ~disabled
+		Description: Deployed Aircraft Carrier - Debug
+	RequiresBuildableArea:
+		AreaTypes: building
+	Health:
+		HP: 50000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 6c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 4c0
+	SelectionDecorations:
+	Selectable:
+		DecorationBounds: 48,48
+	Transforms:
+		IntoActor: aircarr
+		Offset: 0,0
+		PauseOnCondition: being-captured
+	RepairsUnits:
+		HpPerStep: 1000
+		StartRepairingNotification: Repairing
+		FinishRepairingNotification: UnitRepaired
+		PlayerExperience: 15
+	Reservable:
+	DetectCloaked:
+		CloakTypes: Underwater
+		Range: 8c0
+	RenderDetectionCircle:
+	WithDecoration@deployed:
+		Image: pips
+		Sequence: pip-deployed
+		ReferencePoint: Top
+		ZOffset: 256
+	Targetable:
+		TargetTypes: Ground, Water, Ship
+	Production:
+		Produces: MAfld
+	ProductionQueue:
+		Type: MAfld
+		Group: Aircraft
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
+	ProvidesPrerequisite@allies:
+		Factions: allies, usa, britain, france, nether, germany, spain, italy, greece, turkey
+		Prerequisite: airplanes.allies
+		ResetOnOwnerChange: True
+	ProvidesPrerequisite@soviet:
+		Factions: soviet, russia, ukraine, kazakh, kyrgiz, belarus, moldova, lithuan, karelia, uzbekh
+		Prerequisite: airplanes.soviet
+		ResetOnOwnerChange: True
+	ProductionBar:
+		ProductionType: Aircraft
+	ProvidesPrerequisite:
+		Prerequisite: afld
+	Exit@1:
+		RequiresCondition: !being-captured
+		ExitCell: 1,1
+		Facing: 192
+		MoveIntoWorld: false
+
 MGNM:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
@@ -1217,139 +1351,6 @@ ICBMSUB:
 		ScanRadius: 15
 	ProvidesPrerequisite@LIMITING:
 		Prerequisite: enough.icbm
-
-AIRCARR:
-	Inherits: ^Ship
-	Buildable:
-		Queue: Ship
-		BuildAtProductionType: Boat
-		BuildPaletteOrder: 9
-		Prerequisites: syrd, afld, fix, ~ships.allies, ~player.usa, ~!industryplant.on, ~techlevel.medium
-		Description: Nautical Support vessel\n Can be deployed, becoming immobile\nto allow several capabilities:\nRearms and Repairs Aircraft at Sea\nCan produce Airplanes when deployed\nDetects submerged in a wide radius\n Unarmed
-	Valued:
-		Cost: 1750
-	Tooltip:
-		Name: Aircraft Carrier
-	Health:
-		HP: 50000
-	Armor:
-		Type: Heavy
-	Mobile:
-		TurnSpeed: 7
-		Speed: 85
-	RevealsShroud:
-		Range: 6c0
-		RevealGeneratedShroud: False
-	RevealsShroud@GAPGEN:
-		Range: 4c0
-	SelectionDecorations:
-	Selectable:
-		DecorationBounds: 48,48
-	WithMoveAnimation:
-		MoveSequence: move
-	Transforms:
-		IntoActor: aircarr.deployed
-		Offset: 0,0
-		Facing: 192
-
-AIRCARR.Deployed:
-	Inherits: ^Building
-	-GivesBuildableArea:
-	-RepairableBuilding:
-	-WithBuildingRepairDecoration:
-	-EngineerRepairable:
-	-AcceptsDeliveredCash:
-	-WithMakeAnimation:
-	-CaptureManager:
-	-Capturable:
-	-CapturableProgressBar:
-	-CapturableProgressBlink:
-	-SpawnActorsOnSell:
-	-GpsDot:
-	GpsDot:
-		String: Ship
-	-Demolishable:
-	-Sellable:
-	-Explodes@BUILDINGEXPLODES:
-	Explodes@SHIPEXPLODES:
-		Weapon: UnitExplodeShip
-		EmptyWeapon: UnitExplodeShip
-	Selectable:
-		Bounds: 48,48
-	Valued:
-		Cost: 1750
-	Tooltip:
-		Name: Aircraft Carrier
-	Building:
-		Footprint: x
-		TerrainTypes: Water
-	Buildable:
-		Queue: Building
-		BuildPaletteOrder: 999
-		Prerequisites: ~disabled
-		Description: Deployed Aircraft Carrier - Debug
-	RequiresBuildableArea:
-		AreaTypes: building
-	Health:
-		HP: 50000
-	Armor:
-		Type: Heavy
-	RevealsShroud:
-		Range: 6c0
-		RevealGeneratedShroud: False
-	RevealsShroud@GAPGEN:
-		Range: 4c0
-	SelectionDecorations:
-	Selectable:
-		DecorationBounds: 48,48
-	Transforms:
-		IntoActor: srep
-		Offset: 0,0
-	RepairsUnits:
-		HpPerStep: 1000
-		StartRepairingNotification: Repairing
-		FinishRepairingNotification: UnitRepaired
-		PlayerExperience: 15
-	Reservable:
-	DetectCloaked:
-		CloakTypes: Underwater
-		Range: 8c0
-	RenderDetectionCircle:
-	WithDecoration@deployed:
-		Image: pips
-		Sequence: pip-deployed
-		ReferencePoint: Top
-		ZOffset: 256
-	Targetable:
-		TargetTypes: Ground, Water, Ship
-	Production:
-		Produces: MAfld
-	ProductionQueue:
-		Type: MAfld
-		Group: Aircraft
-		ReadyAudio: UnitReady
-		BlockedAudio: NoBuild
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-		LowPowerModifier: 300
-	ProvidesPrerequisite@allies:
-		Factions: allies, usa, britain, france, nether, germany, spain, italy, greece, turkey
-		Prerequisite: airplanes.allies
-		ResetOnOwnerChange: True
-	ProvidesPrerequisite@soviet:
-		Factions: soviet, russia, ukraine, kazakh, kyrgiz, belarus, moldova, lithuan, karelia, uzbekh
-		Prerequisite: airplanes.soviet
-		ResetOnOwnerChange: True
-	ProductionBar:
-		ProductionType: Aircraft
-	ProvidesPrerequisite:
-		Prerequisite: afld
-	Exit@1:
-		RequiresCondition: !being-captured
-		ExitCell: 1,1
-		Facing: 192
-		MoveIntoWorld: false
 
 PBT:
 	Inherits: ^Ship

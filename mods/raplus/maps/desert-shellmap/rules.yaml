@@ -1,0 +1,93 @@
+Player:
+	-ConquestVictoryConditions:
+	LobbyPrerequisiteCheckbox@GLOBALBOUNTY:
+		Enabled: False
+		Locked: True
+
+World:
+	-CrateSpawner:
+	-SpawnMPUnits:
+	-MPStartLocations:
+	MusicPlaylist:
+		BackgroundMusic: intro
+		DisableWorldSounds: true
+	ResourceType@ore:
+		ValuePerUnit: 0
+	LuaScript:
+		Scripts: desert-shellmap.lua
+	-StartGameNotification:
+
+^Vehicle:
+	GainsExperience:
+		Conditions:
+	DamageMultiplier@UNKILLABLE:
+		RequiresCondition: unkillable
+		Modifier: 0
+	ExternalCondition@UNKILLABLE:
+		Condition: unkillable
+
+^Infantry:
+	GainsExperience:
+		Conditions:
+	DeathSounds@NORMAL:
+		VolumeMultiplier: 0.1
+	DeathSounds@BURNED:
+		VolumeMultiplier: 0.1
+	DeathSounds@ZAPPED:
+		VolumeMultiplier: 0.1
+	DamageMultiplier@UNKILLABLE:
+		RequiresCondition: unkillable
+		Modifier: 0
+	ExternalCondition@UNKILLABLE:
+		Condition: unkillable
+
+^Ship:
+	GainsExperience:
+		Conditions:
+	DamageMultiplier@UNKILLABLE:
+		RequiresCondition: unkillable
+		Modifier: 0
+	ExternalCondition@UNKILLABLE:
+		Condition: unkillable
+
+^Plane:
+	DamageMultiplier@UNKILLABLE:
+		RequiresCondition: unkillable
+		Modifier: 0
+	ExternalCondition@UNKILLABLE:
+		Condition: unkillable
+
+^Building:
+	DamageMultiplier@UNKILLABLE:
+		RequiresCondition: unkillable
+		Modifier: 0
+	ExternalCondition@UNKILLABLE:
+		Condition: unkillable
+
+^Bridge:
+	DamageMultiplier:
+		Modifier: 0
+
+OILB:
+	CashTrickler:
+		ShowTicks: false
+
+TRAN.Husk2:
+	Burns:
+		Damage: 0
+
+MISS:
+	DamageMultiplier@INVULNERABLE:
+		Modifier: 0
+
+BTR:
+	Cargo:
+		InitialUnits: e1, e2, e3, e2, e1
+
+E7:
+	-AnnounceOnKill:
+
+powerproxy.paratroopers:
+	ParatroopersPower:
+		DisplayBeacon: false
+		DropItems: E1,E3,SHOK,E3,E1

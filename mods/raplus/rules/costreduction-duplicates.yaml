@@ -1732,6 +1732,31 @@ SREP.discount.deployed:
 		Image: srep.deployed
 	-MapEditorData:
 
+AIRCARR.discount:
+	Inherits: AIRCARR
+	Buildable:
+		Prerequisites: syrd, afld, fix, ~ships.allies, ~player.usa, ~industryplant.on, ~techlevel.high
+	Valued:
+		Cost: 1315
+	-Transforms:
+	Transforms:
+		IntoActor: aircarr.discount.deployed
+		Offset: 0,0
+	RenderSprites:
+		Image: aircarr
+	-MapEditorData:
+
+AIRCARR.discount.deployed:
+	Inherits: AIRCARR.deployed
+	-Transforms:
+	Transforms:
+		IntoActor: aircarr.discount
+		Offset: 0,0
+		PauseOnCondition: being-captured
+	RenderSprites:
+		Image: aircarr.deployed
+	-MapEditorData:
+
 MGNM.discount:
 	Inherits: MGNM
 	Buildable:
@@ -1745,7 +1770,7 @@ MGNM.discount:
 PBT.discount:
 	Inherits: PT
 	Buildable:
-		 Prerequisites: syrd, techcenter, ~ships.allies, ~player.german, ~industryplant.on, ~techlevel.high
+		 Prerequisites: syrd, techcenter, ~ships.allies, ~player.germany, ~industryplant.on, ~techlevel.high
 	Valued:
 		Cost: 360
 	RenderSprites:

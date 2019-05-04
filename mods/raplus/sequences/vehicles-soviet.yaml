@@ -205,6 +205,56 @@ btr:
 		UseClassicFacingFudge: True
 		ZOffset: -512
 
+behe:
+	Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret:
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	muzzle:
+		Combine:
+			behmuz-n:
+				Length: *
+				Offset: 0,0
+			behmuz-nw:
+				Length: *
+				Offset: 0,0
+			behmuz-w:
+				Length: *
+				Offset: 0,0
+			behmuz-sw:
+				Length: *
+				Offset: 0,0
+			behmuz-s:
+				Length: *
+				Offset: 0,0
+			behmuz-se:
+				Length: *
+				Offset: 0,0
+			behmuz-e:
+				Length: *
+				Offset: 0,0
+			behmuz-ne:
+				Length: *
+				Offset: 0,0
+		Facings: 8
+		Length: 10
+	icon: beheicon
+
+behe.destroyed:
+	idle: behe
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+	turret: behe
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+
 nona:
 	Inherits: emp-overlay
 	idle: bmp
@@ -331,42 +381,3 @@ fist.destroyed:
 		Facings: 32
 		UseClassicFacingFudge: True
 		ZOffset: -512
-
-behe:
-	Inherits: emp-overlay
-	idle:
-		Facings: 32
-		UseClassicFacingFudge: True
-	turret:
-		Start: 32
-		Facings: 32
-		UseClassicFacingFudge: True
-	muzzle:
-		Combine:
-			behmuz-n:
-				Length: *
-				Offset: 0,0
-			behmuz-nw:
-				Length: *
-				Offset: 0,0
-			behmuz-w:
-				Length: *
-				Offset: 0,0
-			behmuz-sw:
-				Length: *
-				Offset: 0,0
-			behmuz-s:
-				Length: *
-				Offset: 0,0
-			behmuz-se:
-				Length: *
-				Offset: 0,0
-			behmuz-e:
-				Length: *
-				Offset: 0,0
-			behmuz-ne:
-				Length: *
-				Offset: 0,0
-		Facings: 8
-		Length: 10
-	icon: beheicon
