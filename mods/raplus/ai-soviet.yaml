@@ -971,7 +971,7 @@ Player:
 		SquadSizeRandomBonus: 16
 		RushInterval: 400
 		AttackScanRadius: 16
-		ExcludeFromSquadsTypes: harv.soviet, mcv, mcv.ai, dog, ss, ss.ag, msub, msub.aa, tbt, yak.ai, mig.ai, e6, thf
+		ExcludeFromSquadsTypes: harv.soviet, mcv, mcv.ai, dog, ss, ss.ag, msub, msub.aa, tbt, yak.ai, mig.ai, e6, thf, hind
 		ConstructionYardTypes: fact
 	SquadManagerBotModule@russia.sea:
 		RequiresCondition: enable-ai-player && player.russia
@@ -979,7 +979,7 @@ Player:
 		SquadSizeRandomBonus: 4
 		RushInterval: 400
 		AttackScanRadius: 24
-		ExcludeFromSquadsTypes: harv.soviet, mcv, mcv.ai, dog, e1, e3, e4, volk, shok, ftrk, btr.russia, 3tnk.1b, 3tnk, 4tnk, v2rl, ttnk, yak.ai, mig.ai, e6, thf
+		ExcludeFromSquadsTypes: harv.soviet, mcv, mcv.ai, dog, e1, e3, e4, volk, shok, ftrk, btr.russia, 3tnk.1b, 3tnk, 4tnk, v2rl, ttnk, yak.ai, mig.ai, e6, thf, hind
 		NavalUnitsTypes: ss,ss.ag,msub,msub.aa,tbt
 		ConstructionYardTypes: fact
 		NavalProductionTypes: spen.russia
@@ -997,7 +997,7 @@ Player:
 		SquadSizeRandomBonus: 16
 		RushInterval: 400
 		AttackScanRadius: 16
-		ExcludeFromSquadsTypes: harv.soviet, mcv, mcv.ai, dog, ss, ss.ag, msub, msub.aa, fsub, yak.ai, mig.ai, e6, thf
+		ExcludeFromSquadsTypes: harv.soviet, mcv, mcv.ai, dog, ss, ss.ag, msub, msub.aa, fsub, yak.ai, mig.ai, e6, thf, hind
 		ConstructionYardTypes: fact
 	SquadManagerBotModule@ukraine.sea:
 		RequiresCondition: enable-ai-player && player.ukraine
@@ -1005,7 +1005,7 @@ Player:
 		SquadSizeRandomBonus: 4
 		RushInterval: 400
 		AttackScanRadius: 24
-		ExcludeFromSquadsTypes: harv.soviet, mcv, mcv.ai, dog, e1, e3, e4.ukraine, volk, ftrk, btr, 3tnk.1b.ukraine, 3tnk.ukraine, 4tnk.ukraine, v2rl.ukraine, yak.ai, mig.ai, e6, thf
+		ExcludeFromSquadsTypes: harv.soviet, mcv, mcv.ai, dog, e1, e3, e4.ukraine, volk, ftrk, btr, 3tnk.1b.ukraine, 3tnk.ukraine, 4tnk.ukraine, v2rl.ukraine, yak.ai, mig.ai, e6, thf, hind
 		NavalUnitsTypes: ss,ss.ag,msub,msub.aa,fsub
 		ConstructionYardTypes: fact
 		NavalProductionTypes: spen
@@ -1023,7 +1023,7 @@ Player:
 		SquadSizeRandomBonus: 16
 		RushInterval: 400
 		AttackScanRadius: 16
-		ExcludeFromSquadsTypes: harv.soviet, mcv, mcv.ai, dog, ss, ss.ag, msub, msub.aa, yak.ai, mig.ai, e6, thf
+		ExcludeFromSquadsTypes: harv.soviet, mcv, mcv.ai, dog, ss, ss.ag, msub, msub.aa, yak.ai, mig.ai, e6, thf, hind
 		ConstructionYardTypes: fact
 	SquadManagerBotModule@belarus.sea:
 		RequiresCondition: enable-ai-player && player.belarus
@@ -1031,7 +1031,7 @@ Player:
 		SquadSizeRandomBonus: 4
 		RushInterval: 400
 		AttackScanRadius: 24
-		ExcludeFromSquadsTypes: harv.soviet, mcv, mcv.ai, dog, e1, e3, e4, e5, volk, ftrk, btr, 3tnk.1b.belarus, 3tnk.belarus, 4tnk.belarus, v2rl, yak.belarus.ai, mig.ai, e6, thf
+		ExcludeFromSquadsTypes: harv.soviet, mcv, mcv.ai, dog, e1, e3, e4, e5, volk, ftrk, btr, 3tnk.1b.belarus, 3tnk.belarus, 4tnk.belarus, v2rl, yak.belarus.ai, mig.ai, e6, thf, hind
 		NavalUnitsTypes: ss,ss.ag,msub,msub.aa
 		ConstructionYardTypes: fact
 		NavalProductionTypes: spen
@@ -1049,7 +1049,7 @@ Player:
 		SquadSizeRandomBonus: 16
 		RushInterval: 400
 		AttackScanRadius: 16
-		ExcludeFromSquadsTypes: harv.soviet, mcv, mcv.ai, dog, ss, ss.ag, msub, msub.aa, fsub, yak.ai, mig.ai, e6, thf
+		ExcludeFromSquadsTypes: harv.soviet, mcv, mcv.ai, dog, ss, ss.ag, msub, msub.aa, fsub, yak.ai, mig.ai, e6, thf, hind
 		ConstructionYardTypes: fact
 	SquadManagerBotModule@karelia.sea:
 		RequiresCondition: enable-ai-player && player.karelia
@@ -1057,7 +1057,7 @@ Player:
 		SquadSizeRandomBonus: 4
 		RushInterval: 400
 		AttackScanRadius: 24
-		ExcludeFromSquadsTypes: harv.soviet, mcv, mcv.ai, dog, e1, e3, e4, volk, ftrk, btr, 2tnk, 3tnk, 4tnk, v2rl, yak.ai, mig.ai, e6, thf
+		ExcludeFromSquadsTypes: harv.soviet, mcv, mcv.ai, dog, e1, e3, e4, volk, ftrk, btr, 3tnk.1b, 3tnk, 4tnk, v2rl, yak.ai, mig.ai, e6, thf, hind
 		NavalUnitsTypes: ss,ss.ag,msub,msub.aa,fsub
 		ConstructionYardTypes: fact
 		NavalProductionTypes: spen
@@ -1067,7 +1067,7 @@ Player:
 		SquadSizeRandomBonus: 2
 		RushInterval: 400
 		AttackScanRadius: 24
-		ExcludeFromSquadsTypes: harv.soviet, mcv, mcv.ai, dog, e1, e3, e4, volk, ftrk, btr, 2tnk, 3tnk, 4tnk, v2rl, ss, ss.ag, msub, msub.aa, fsub, e6, thf
+		ExcludeFromSquadsTypes: harv.soviet, mcv, mcv.ai, dog, e1, e3, e4, volk, ftrk, btr, 3tnk.1b, 3tnk, 4tnk, v2rl, ss, ss.ag, msub, msub.aa, fsub, e6, thf
 		ConstructionYardTypes: fact
 	SquadManagerBotModule@kazakhstan:
 		RequiresCondition: enable-ai-player && player.kazakh
@@ -1075,7 +1075,7 @@ Player:
 		SquadSizeRandomBonus: 16
 		RushInterval: 400
 		AttackScanRadius: 16
-		ExcludeFromSquadsTypes: harv.soviet, mcv, mcv.ai, dog, ss, ss.ag, msub, msub.aa, scrp, yak.ai, mig.ai, e6, thf
+		ExcludeFromSquadsTypes: harv.soviet, mcv, mcv.ai, dog, ss, ss.ag, msub, msub.aa, scrp, yak.ai, mig.ai, e6, thf, hind
 		ConstructionYardTypes: fact
 	SquadManagerBotModule@kazakhstan.sea:
 		RequiresCondition: enable-ai-player && player.kazakh
@@ -1083,7 +1083,7 @@ Player:
 		SquadSizeRandomBonus: 4
 		RushInterval: 400
 		AttackScanRadius: 24
-		ExcludeFromSquadsTypes: harv.soviet, mcv, mcv.ai, dog, e1, e3, e4, volk, mrtr, ftrk.kazakh, btr, 3tnk.1b, 3tnk, 4tnk, v2rl, brdm, yak.ai, mig.ai, e6, thf
+		ExcludeFromSquadsTypes: harv.soviet, mcv, mcv.ai, dog, e1, e3, e4, volk, mrtr, ftrk.kazakh, btr, 3tnk.1b, 3tnk, 4tnk, v2rl, brdm, yak.ai, mig.ai, e6, thf, hind
 		NavalUnitsTypes: ss,ss.ag,msub,msub.aa,scrp
 		ConstructionYardTypes: fact
 		NavalProductionTypes: spen
@@ -1101,7 +1101,7 @@ Player:
 		SquadSizeRandomBonus: 16
 		RushInterval: 400
 		AttackScanRadius: 16
-		ExcludeFromSquadsTypes: harv.soviet, mcv.uzbek, mcv.uzbek.ai, dog, ss, ss.ag, msub, msub.aa, yak.ai, mig.ai, e6.uzbek, thf
+		ExcludeFromSquadsTypes: harv.soviet, mcv.uzbek, mcv.uzbek.ai, dog, ss, ss.ag, msub, msub.aa, yak.ai, mig.ai, e6.uzbek, thf, hind
 		ConstructionYardTypes: fact,fact.uzbek
 	SquadManagerBotModule@uzbekistan.sea:
 		RequiresCondition: enable-ai-player && player.uzbek
@@ -1109,7 +1109,7 @@ Player:
 		SquadSizeRandomBonus: 4
 		RushInterval: 400
 		AttackScanRadius: 24
-		ExcludeFromSquadsTypes: harv.soviet, mcv.uzbek, mcv.uzbek.ai, dog, e1, e2.uzbek, e3, e4, volk, rpg, ftrk, btr, 3tnk.1b, 3tnk, 4tnk, v2rl, yak.ai, mig.ai, e6.uzbek, thf
+		ExcludeFromSquadsTypes: harv.soviet, mcv.uzbek, mcv.uzbek.ai, dog, e1, e2.uzbek, e3, e4, volk, rpg, ftrk, btr, 3tnk.1b, 3tnk, 4tnk, v2rl, yak.ai, mig.ai, e6.uzbek, thf, hind
 		NavalUnitsTypes: ss,ss.ag,msub,msub.aa
 		ConstructionYardTypes: fact,fact.uzbek
 		NavalProductionTypes: spen
@@ -1127,7 +1127,7 @@ Player:
 		SquadSizeRandomBonus: 16
 		RushInterval: 400
 		AttackScanRadius: 16
-		ExcludeFromSquadsTypes: harv.soviet, mcv, mcv.ai, dog, ss, ss.ag, msub, msub.aa, yak.ai, mig.ai, e6, thf
+		ExcludeFromSquadsTypes: harv.soviet, mcv, mcv.ai, dog, ss, ss.ag, msub, msub.aa, yak.ai, mig.ai, e6, thf, hind
 		ConstructionYardTypes: fact
 	SquadManagerBotModule@turkmenistan.sea:
 		RequiresCondition: enable-ai-player && player.turkmen
@@ -1135,7 +1135,7 @@ Player:
 		SquadSizeRandomBonus: 4
 		RushInterval: 400
 		AttackScanRadius: 24
-		ExcludeFromSquadsTypes: harv.soviet, mcv, mcv.ai, dog, e1, e3, e4, volk, mark, ftrk, btr, 2tnk.turkmen, 3tnk, 4tnk, v2rl, spg, yak.ai, mig.ai, e6, thf
+		ExcludeFromSquadsTypes: harv.soviet, mcv, mcv.ai, dog, e1, e3, e4, volk, mark, ftrk, btr, 3tnk.1b.turkmen, 3tnk, 4tnk, v2rl, spg, yak.ai, mig.ai, e6, thf, hind
 		NavalUnitsTypes: ss,ss.ag,msub,msub.aa
 		ConstructionYardTypes: fact
 		NavalProductionTypes: spen
@@ -1145,7 +1145,7 @@ Player:
 		SquadSizeRandomBonus: 2
 		RushInterval: 400
 		AttackScanRadius: 24
-		ExcludeFromSquadsTypes: harv.soviet, mcv, mcv.ai, dog, e1, e3, e4, volk, mark, ftrk, btr, 2tnk.turkmen, 3tnk, 4tnk, v2rl, spg, ss, ss.ag, msub, msub.aa, e6, thf
+		ExcludeFromSquadsTypes: harv.soviet, mcv, mcv.ai, dog, e1, e3, e4, volk, mark, ftrk, btr, 3tnk.1b.turkmen, 3tnk, 4tnk, v2rl, spg, ss, ss.ag, msub, msub.aa, e6, thf
 		ConstructionYardTypes: fact
 	SquadManagerBotModule@afghanistan:
 		RequiresCondition: enable-ai-player && player.afghan
@@ -1153,7 +1153,7 @@ Player:
 		SquadSizeRandomBonus: 16
 		RushInterval: 400
 		AttackScanRadius: 16
-		ExcludeFromSquadsTypes: harv.soviet, mcv, mcv.ai, dog, ss, ss.ag, msub, msub.aa, yak.ai, mig.ai, e6, thf
+		ExcludeFromSquadsTypes: harv.soviet, mcv, mcv.ai, dog, ss, ss.ag, msub, msub.aa, yak.ai, mig.ai, e6, thf, hind.afghan
 		ConstructionYardTypes: fact
 	SquadManagerBotModule@afghanistan.sea:
 		RequiresCondition: enable-ai-player && player.afghan
@@ -1161,7 +1161,7 @@ Player:
 		SquadSizeRandomBonus: 4
 		RushInterval: 400
 		AttackScanRadius: 24
-		ExcludeFromSquadsTypes: harv.soviet, mcv, mcv.ai, dog, e1, e3, e4, volk, shok, ftrk, btr, 3tnk.1b, 3tnk, 4tnk, v2rl, ttnk, yak.ai, mig.ai, e6, thf
+		ExcludeFromSquadsTypes: harv.soviet, mcv, mcv.ai, dog, e1, e3, e4, volk, shok, ftrk, btr, 3tnk.1b, 3tnk, 4tnk, v2rl, ttnk, yak.ai, mig.ai, e6, thf, hind.afghan
 		NavalUnitsTypes: ss,ss.ag,msub,msub.aa,tbt
 		ConstructionYardTypes: fact
 		NavalProductionTypes: spen.russia
@@ -1224,11 +1224,13 @@ Player:
 		IdleBaseUnitsMaximum: 4
 		UnitQueues: Aircraft
 		UnitsToBuild:
-			yak.ai: 60
+			yak.ai: 40
 			mig.ai: 40
+			hind: 20
 		UnitLimits:
-			yak.ai: 6
+			yak.ai: 4
 			mig.ai: 4
+			hind: 2
 	UnitBuilderBotModule@ukraine:
 		RequiresCondition: enable-ai-player && player.ukraine
 		UnitQueues: Vehicle, Infantry
@@ -1279,10 +1281,12 @@ Player:
 		UnitQueues: Aircraft
 		UnitsToBuild:
 			yak.ai: 40
-			mig.ai: 60
+			mig.ai: 40
+			hind: 20
 		UnitLimits:
 			yak.ai: 4
-			mig.ai: 6
+			mig.ai: 4
+			hind: 2
 	UnitBuilderBotModule@belarus:
 		RequiresCondition: enable-ai-player && player.belarus
 		UnitQueues: Vehicle, Infantry
@@ -1332,11 +1336,13 @@ Player:
 		IdleBaseUnitsMaximum: 4
 		UnitQueues: Aircraft
 		UnitsToBuild:
-			yak.belarus.ai: 60
+			yak.belarus.ai: 40
 			mig.ai: 40
+			hind: 20
 		UnitLimits:
-			yak.belarus.ai: 6
+			yak.belarus.ai: 4
 			mig.ai: 4
+			hind: 2
 	UnitBuilderBotModule@karelia:
 		RequiresCondition: enable-ai-player && player.karelia
 		UnitQueues: Vehicle, Infantry
@@ -1349,7 +1355,7 @@ Player:
 			harv.soviet: 15
 			ftrk: 30
 			btr: 15
-			2tnk: 45
+			3tnk.1b: 45
 			3tnk: 35
 			v2rl: 40
 			4tnk: 25
@@ -1387,10 +1393,12 @@ Player:
 		UnitQueues: Aircraft
 		UnitsToBuild:
 			yak.ai: 40
-			mig.ai: 60
+			mig.ai: 40
+			hind: 20
 		UnitLimits:
 			yak.ai: 4
-			mig.ai: 6
+			mig.ai: 4
+			hind: 2
 	UnitBuilderBotModule@kazakhstan:
 		RequiresCondition: enable-ai-player && player.kazakh
 		UnitQueues: Vehicle, Infantry
@@ -1442,11 +1450,13 @@ Player:
 		IdleBaseUnitsMaximum: 4
 		UnitQueues: Aircraft
 		UnitsToBuild:
-			yak.ai: 60
+			yak.ai: 40
 			mig.ai: 40
+			hind: 20
 		UnitLimits:
-			yak.ai: 6
+			yak.ai: 4
 			mig.ai: 4
+			hind: 2
 	UnitBuilderBotModule@uzbekistan:
 		RequiresCondition: enable-ai-player && player.uzbek
 		UnitQueues: Vehicle, Infantry
@@ -1460,7 +1470,7 @@ Player:
 			harv.soviet: 15
 			ftrk: 30
 			btr: 15
-			2tnk: 45
+			3tnk.1b: 45
 			3tnk: 35
 			v2rl: 40
 			4tnk: 25
@@ -1496,11 +1506,13 @@ Player:
 		IdleBaseUnitsMaximum: 4
 		UnitQueues: Aircraft
 		UnitsToBuild:
-			yak.ai: 60
+			yak.ai: 40
 			mig.ai: 40
+			hind: 20
 		UnitLimits:
-			yak.ai: 6
+			yak.ai: 4
 			mig.ai: 4
+			hind: 2
 	UnitBuilderBotModule@turkmenistan:
 		RequiresCondition: enable-ai-player && player.turkmen
 		UnitQueues: Vehicle, Infantry
@@ -1513,7 +1525,7 @@ Player:
 			harv.soviet: 15
 			ftrk: 30
 			btr: 15
-			2tnk.turkmen: 45
+			3tnk.1b.turkmen: 45
 			3tnk: 35
 			v2rl: 40
 			4tnk: 25
@@ -1549,11 +1561,13 @@ Player:
 		IdleBaseUnitsMaximum: 4
 		UnitQueues: Aircraft
 		UnitsToBuild:
-			yak.ai: 60
+			yak.ai: 40
 			mig.ai: 40
+			hind: 20
 		UnitLimits:
-			yak.ai: 6
+			yak.ai: 4
 			mig.ai: 4
+			hind: 2
 	UnitBuilderBotModule@afghanistan:
 		RequiresCondition: enable-ai-player && player.afghan
 		UnitQueues: Vehicle, Infantry
@@ -1566,7 +1580,7 @@ Player:
 			harv.soviet: 15
 			ftrk: 30
 			btr: 15
-			2tnk: 45
+			3tnk.1b: 45
 			3tnk: 35
 			v2rl: 40
 			4tnk: 25
@@ -1601,8 +1615,10 @@ Player:
 		IdleBaseUnitsMaximum: 4
 		UnitQueues: Aircraft
 		UnitsToBuild:
-			yak.ai: 60
+			yak.ai: 40
 			mig.ai: 40
+			hind.afghan: 20
 		UnitLimits:
-			yak.ai: 6
+			yak.ai: 4
 			mig.ai: 4
+			hind.afghan: 2

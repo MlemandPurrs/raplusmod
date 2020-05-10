@@ -497,6 +497,7 @@ Player:
 			hbox: 4
 			gap: 4
 			fact: 3
+			afld.usa: 2
 		BuildingFractions:
 			proc.ercc: 15
 			tent.usa: 2
@@ -513,6 +514,7 @@ Player:
 			atek.usa: 1
 			mslo: 1
 			pdox: 1
+			afld.usa: 1
 	BaseBuilderBotModule@england:
 		RequiresCondition: enable-ai-player && player.england
 		MinimumExcessPower: 60
@@ -551,6 +553,7 @@ Player:
 			hbox: 4
 			gap: 4
 			fact: 3
+			afld.england: 2
 		BuildingFractions:
 			proc.ercc: 15
 			tent: 2
@@ -567,6 +570,7 @@ Player:
 			atek.england: 1
 			mslo: 1
 			pdox: 1
+			afld.england: 1
 	BaseBuilderBotModule@france:
 		RequiresCondition: enable-ai-player && player.france
 		MinimumExcessPower: 60
@@ -605,6 +609,7 @@ Player:
 			agun: 6
 			gap: 4
 			fact: 3
+			afld: 2
 		BuildingFractions:
 			proc.ercc: 15
 			tent: 2
@@ -621,6 +626,7 @@ Player:
 			atek.france: 1
 			mslo: 1
 			pdox: 1
+			afld: 1
 	BaseBuilderBotModule@germany:
 		RequiresCondition: enable-ai-player && player.germany
 		MinimumExcessPower: 60
@@ -659,6 +665,7 @@ Player:
 			agun: 6
 			gap: 4
 			fact: 3
+			afld: 2
 		BuildingFractions:
 			proc.ercc: 15
 			tent: 2
@@ -675,6 +682,7 @@ Player:
 			atek.germany: 1
 			mslo: 1
 			pdox: 1
+			afld: 1
 	BaseBuilderBotModule@spain:
 		RequiresCondition: enable-ai-player && player.spain
 		MinimumExcessPower: 60
@@ -713,6 +721,7 @@ Player:
 			agun: 6
 			gap: 4
 			fact: 3
+			afld: 2
 		BuildingFractions:
 			proc.ercc: 15
 			tent: 2
@@ -729,6 +738,7 @@ Player:
 			atek.spain: 1
 			mslo: 1
 			pdox: 1
+			afld: 1
 	BaseBuilderBotModule@italy:
 		RequiresCondition: enable-ai-player && player.italy
 		MinimumExcessPower: 60
@@ -767,6 +777,7 @@ Player:
 			hbox: 4
 			gap: 4
 			fact: 3
+			afld: 2
 		BuildingFractions:
 			proc.ercc: 15
 			tent: 2
@@ -783,6 +794,7 @@ Player:
 			atek.italy: 1
 			mslo: 1
 			pdox: 1
+			afld: 1
 	BaseBuilderBotModule@greece:
 		RequiresCondition: enable-ai-player && player.greece
 		MinimumExcessPower: 60
@@ -822,6 +834,7 @@ Player:
 			gap: 4
 			gtur: 3
 			fact: 3
+			afld: 2
 		BuildingFractions:
 			proc.ercc: 15
 			tent: 2
@@ -839,6 +852,7 @@ Player:
 			mslo: 1
 			pdox: 1
 			gtur: 1
+			afld: 1
 	BaseBuilderBotModule@turkey:
 		RequiresCondition: enable-ai-player && player.turkey
 		MinimumExcessPower: 60
@@ -878,6 +892,7 @@ Player:
 			gap: 4
 			gtwr: 4
 			fact: 3
+			afld: 2
 		BuildingFractions:
 			proc.ercc: 15
 			tent: 2
@@ -895,6 +910,7 @@ Player:
 			atek.turkey: 1
 			mslo: 1
 			pdox: 1
+			afld: 1
 	CaptureManagerBotModule@mech:
 		RequiresCondition: enable-ai-player && player.usa || player.england || player.france || player.germany || player.spain || player.italy || player.greece || player.turkey
 		CapturingActorTypes: mech,mech.germany
@@ -906,7 +922,7 @@ Player:
 		SquadSizeRandomBonus: 16
 		RushInterval: 400
 		AttackScanRadius: 16
-		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, pt, dd, ca, heli, iroq.ai, e6, mech
+		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, pt, dd, ca, heli, iroq.ai, e6, mech, torn
 		ConstructionYardTypes: fact
 	SquadManagerBotModule@usa.sea:
 		RequiresCondition: enable-ai-player && player.usa
@@ -914,7 +930,7 @@ Player:
 		SquadSizeRandomBonus: 4
 		RushInterval: 400
 		AttackScanRadius: 24
-		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, e1, e3, snip, jeep, apc, 1tnk, 2tnk, arty, atnk, e7.usa, heli, iroq.ai, e6, mech
+		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, e1, e3, snip, jeep, apc, 1tnk, 2tnk, arty, atnk, e7.usa, heli, iroq.ai, e6, mech, torn
 		NavalUnitsTypes: pt,dd,ca
 		ConstructionYardTypes: fact
 		NavalProductionTypes: syrd
@@ -932,7 +948,7 @@ Player:
 		SquadSizeRandomBonus: 16
 		RushInterval: 400
 		AttackScanRadius: 16
-		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, pt, dd, ca, heli, iroq.ai, e6, mech
+		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, pt, dd, ca, heli, iroq.ai, e6, mech, torn
 		ConstructionYardTypes: fact
 	SquadManagerBotModule@england.sea:
 		RequiresCondition: enable-ai-player && player.england
@@ -940,7 +956,7 @@ Player:
 		SquadSizeRandomBonus: 4
 		RushInterval: 400
 		AttackScanRadius: 24
-		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, e1, e3, snip, jeep, apc, 1tnk, 2tnk, arty, atnk, e7, heli, iroq.ai, e6, mech
+		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, e1, e3, snip, jeep, apc, 1tnk, 2tnk, arty, atnk, e7, heli, iroq.ai, e6, mech, torn
 		NavalUnitsTypes: pt,dd,ca
 		ConstructionYardTypes: fact
 		NavalProductionTypes: syrd
@@ -958,7 +974,7 @@ Player:
 		SquadSizeRandomBonus: 16
 		RushInterval: 400
 		AttackScanRadius: 16
-		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, pt, dd, ca, heli, iroq.ai, e6, mech
+		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, pt, dd, ca, heli, iroq.ai, e6, mech, torn
 		ConstructionYardTypes: fact
 	SquadManagerBotModule@france.sea:
 		RequiresCondition: enable-ai-player && player.france
@@ -966,7 +982,7 @@ Player:
 		SquadSizeRandomBonus: 4
 		RushInterval: 400
 		AttackScanRadius: 24
-		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, e1, e3, gren, jeep, apc, 1tnk, 2tnk, arty.france, atnk, stnk, e7, heli, iroq.ai, e6, mech
+		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, e1, e3, gren, jeep, apc, 1tnk, 2tnk, arty.france, atnk, stnk, e7, heli, iroq.ai, e6, mech, torn
 		NavalUnitsTypes: pt,dd,ca
 		ConstructionYardTypes: fact
 		NavalProductionTypes: syrd
@@ -984,7 +1000,7 @@ Player:
 		SquadSizeRandomBonus: 16
 		RushInterval: 400
 		AttackScanRadius: 16
-		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, pt, dd.germany, ca, heli, iroq.ai, e6, mech
+		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, pt, dd.germany, ca, heli, iroq.ai, e6, mech.germany, torn
 		ConstructionYardTypes: fact
 	SquadManagerBotModule@germany.sea:
 		RequiresCondition: enable-ai-player && player.germany
@@ -992,7 +1008,7 @@ Player:
 		SquadSizeRandomBonus: 4
 		RushInterval: 400
 		AttackScanRadius: 24
-		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, e1, e3, mgi, jeep, apc, 1tnk.germany, 2tnk.germany, arty, atnk.germany, ctnk, e7, heli, iroq.ai, e6, mech.germany
+		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, e1, e3, mgi, jeep, apc, 1tnk.germany, 2tnk.germany, arty, atnk.germany, ctnk, e7, heli, iroq.ai, e6, mech.germany, torn
 		NavalUnitsTypes: pt,dd.germany,ca
 		ConstructionYardTypes: fact
 		NavalProductionTypes: syrd
@@ -1002,7 +1018,7 @@ Player:
 		SquadSizeRandomBonus: 2
 		RushInterval: 400
 		AttackScanRadius: 24
-		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, e1, e3, mgi, jeep, apc, 1tnk.germany, 2tnk.germany, arty, atnk.germany, ctnk, e7, pt, dd.germany, ca, e6, mech
+		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, e1, e3, mgi, jeep, apc, 1tnk.germany, 2tnk.germany, arty, atnk.germany, ctnk, e7, pt, dd.germany, ca, e6, mech.germany
 		ConstructionYardTypes: fact
 	SquadManagerBotModule@spain:
 		RequiresCondition: enable-ai-player && player.spain
@@ -1010,7 +1026,7 @@ Player:
 		SquadSizeRandomBonus: 16
 		RushInterval: 400
 		AttackScanRadius: 16
-		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, pt, dd, ca, heli, iroq.ai, e6, mech
+		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, pt, dd, ca, heli, iroq.ai, e6, mech, torn
 		ConstructionYardTypes: fact
 	SquadManagerBotModule@spain.sea:
 		RequiresCondition: enable-ai-player && player.spain
@@ -1018,7 +1034,7 @@ Player:
 		SquadSizeRandomBonus: 4
 		RushInterval: 400
 		AttackScanRadius: 24
-		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, e1, e3, stng, jeep.spain, apc, 1tnk, 2tnk, arty, atnk, hell, e7, heli, iroq.ai, e6, mech
+		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, e1, e3, stng, jeep.spain, apc, 1tnk, 2tnk, arty, atnk, hell, e7, heli, iroq.ai, e6, mech, torn
 		NavalUnitsTypes: pt,dd,ca,hvrf
 		ConstructionYardTypes: fact
 		NavalProductionTypes: syrd
@@ -1036,7 +1052,7 @@ Player:
 		SquadSizeRandomBonus: 16
 		RushInterval: 400
 		AttackScanRadius: 16
-		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, pt, dd, ca, heli, iroq.ai, e6, mech
+		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, pt, dd, ca, heli, iroq.ai, e6, mech, torn
 		ConstructionYardTypes: fact
 	SquadManagerBotModule@italy.sea:
 		RequiresCondition: enable-ai-player && player.italy
@@ -1044,7 +1060,7 @@ Player:
 		SquadSizeRandomBonus: 4
 		RushInterval: 400
 		AttackScanRadius: 24
-		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, e1, e3, jeep, 1tnk.italy, 2tnk, arty, atnk.italy, e7, heli, iroq.ai, e6, mech
+		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, e1, e3, jeep, 1tnk.italy, 2tnk, arty, atnk.italy, e7, heli, iroq.ai, e6, mech, torn
 		NavalUnitsTypes: pt,dd,ca
 		ConstructionYardTypes: fact
 		NavalProductionTypes: syrd
@@ -1062,7 +1078,7 @@ Player:
 		SquadSizeRandomBonus: 16
 		RushInterval: 400
 		AttackScanRadius: 16
-		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, pt, dd, ca, bshp, heli, iroq.ai, e6, mech
+		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, pt, dd, ca, bshp, heli, iroq.ai, e6, mech, torn
 		ConstructionYardTypes: fact
 	SquadManagerBotModule@greece.sea:
 		RequiresCondition: enable-ai-player && player.greece
@@ -1070,7 +1086,7 @@ Player:
 		SquadSizeRandomBonus: 4
 		RushInterval: 400
 		AttackScanRadius: 24
-		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, e1, e3, atgm, jeep, apc.greece, 1tnk.greece, 2tnk, arty, atnk.greece, e7, heli, iroq.ai, e6, mech
+		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, e1, e3, atgm, jeep, apc.greece, 1tnk.greece, 2tnk, arty, atnk.greece, e7, heli, iroq.ai, e6, mech, torn
 		NavalUnitsTypes: pt,dd,ca,bshp
 		ConstructionYardTypes: fact
 		NavalProductionTypes: syrd
@@ -1088,7 +1104,7 @@ Player:
 		SquadSizeRandomBonus: 16
 		RushInterval: 400
 		AttackScanRadius: 16
-		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, pt, dd, ca, heli, iroq.turkey.ai, e6, mech
+		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, pt, dd, ca, heli, iroq.turkey.ai, e6, mech, torn
 		ConstructionYardTypes: fact
 	SquadManagerBotModule@turkey.sea:
 		RequiresCondition: enable-ai-player && player.turkey
@@ -1096,7 +1112,7 @@ Player:
 		SquadSizeRandomBonus: 4
 		RushInterval: 400
 		AttackScanRadius: 24
-		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, e1, e3, rmbo, jeep, apc, mapc, 1tnk, 2tnk, arty, atnk, e7, heli, iroq.turkey.ai, e6, mech
+		ExcludeFromSquadsTypes: harv, mcv, mcv.ai, dog, e1, e3, rmbo, jeep, apc, mapc, 1tnk, 2tnk, arty, atnk, e7, heli, iroq.turkey.ai, e6, mech, torn
 		NavalUnitsTypes: pt,dd,ca
 		ConstructionYardTypes: fact
 		NavalProductionTypes: syrd
@@ -1151,11 +1167,13 @@ Player:
 		IdleBaseUnitsMaximum: 4
 		UnitQueues: Aircraft
 		UnitsToBuild:
-			iroq.ai: 40
-			heli: 60
+			iroq.ai: 30
+			heli: 50
+			torn: 20
 		UnitLimits:
 			iroq.ai: 4
 			heli: 6
+			torn: 2
 	UnitBuilderBotModule@england:
 		RequiresCondition: enable-ai-player && player.england
 		UnitQueues: Vehicle, Infantry
@@ -1200,11 +1218,13 @@ Player:
 		IdleBaseUnitsMaximum: 4
 		UnitQueues: Aircraft
 		UnitsToBuild:
-			iroq.ai: 40
-			heli: 60
+			iroq.ai: 30
+			heli: 50
+			torn: 20
 		UnitLimits:
 			iroq.ai: 4
 			heli: 6
+			torn: 2
 	UnitBuilderBotModule@france:
 		RequiresCondition: enable-ai-player && player.france
 		UnitQueues: Vehicle, Infantry
@@ -1251,11 +1271,13 @@ Player:
 		IdleBaseUnitsMaximum: 4
 		UnitQueues: Aircraft
 		UnitsToBuild:
-			iroq.ai: 40
-			heli: 60
+			iroq.ai: 30
+			heli: 50
+			torn: 20
 		UnitLimits:
 			iroq.ai: 4
 			heli: 6
+			torn: 2
 	UnitBuilderBotModule@germany:
 		RequiresCondition: enable-ai-player && player.germany
 		UnitQueues: Vehicle, Infantry
@@ -1302,11 +1324,13 @@ Player:
 		IdleBaseUnitsMaximum: 4
 		UnitQueues: Aircraft
 		UnitsToBuild:
-			iroq.ai: 40
-			heli: 60
+			iroq.ai: 30
+			heli: 50
+			torn: 20
 		UnitLimits:
 			iroq.ai: 4
 			heli: 6
+			torn: 2
 	UnitBuilderBotModule@spain:
 		RequiresCondition: enable-ai-player && player.spain
 		UnitQueues: Vehicle, Infantry
@@ -1354,11 +1378,13 @@ Player:
 		IdleBaseUnitsMaximum: 4
 		UnitQueues: Aircraft
 		UnitsToBuild:
-			iroq.ai: 40
-			heli: 60
+			iroq.ai: 30
+			heli: 50
+			torn: 20
 		UnitLimits:
 			iroq.ai: 4
 			heli: 6
+			torn: 2
 	UnitBuilderBotModule@italy:
 		RequiresCondition: enable-ai-player && player.italy
 		UnitQueues: Vehicle, Infantry
@@ -1402,11 +1428,13 @@ Player:
 		IdleBaseUnitsMaximum: 4
 		UnitQueues: Aircraft
 		UnitsToBuild:
-			iroq.ai: 40
-			heli: 60
+			iroq.ai: 30
+			heli: 50
+			torn: 20
 		UnitLimits:
 			iroq.ai: 4
 			heli: 6
+			torn: 2
 	UnitBuilderBotModule@greece:
 		RequiresCondition: enable-ai-player && player.greece
 		UnitQueues: Vehicle, Infantry
@@ -1453,11 +1481,13 @@ Player:
 		IdleBaseUnitsMaximum: 4
 		UnitQueues: Aircraft
 		UnitsToBuild:
-			iroq.ai: 40
-			heli: 60
+			iroq.ai: 30
+			heli: 50
+			torn: 20
 		UnitLimits:
 			iroq.ai: 4
 			heli: 6
+			torn: 2
 	UnitBuilderBotModule@turkey:
 		RequiresCondition: enable-ai-player && player.turkey
 		UnitQueues: Vehicle, Infantry
@@ -1504,8 +1534,10 @@ Player:
 		IdleBaseUnitsMaximum: 4
 		UnitQueues: Aircraft
 		UnitsToBuild:
-			iroq.turkey.ai: 40
-			heli: 60
+			iroq.turkey.ai: 30
+			heli: 50
+			torn: 20
 		UnitLimits:
 			iroq.turkey.ai: 4
 			heli: 6
+			torn: 2
