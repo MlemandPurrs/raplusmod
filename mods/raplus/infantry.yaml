@@ -1,0 +1,1392 @@
+^RottingInfantry:
+	WithDeathAnimation@ROT:
+		DeathSequence: rot
+		DeathTypes:
+			DefaultDeath: 1
+			BulletDeath: 2
+			SmallExplosionDeath: 3
+			ExplosionDeath: 4
+
+E1:
+	Inherits@ROT: ^RottingInfantry
+	Inherits@BOMBEQUIP: ^AffectedByBombVests
+	Buildable:
+		BuildPaletteOrder: 1
+	Armament@PRIMARY:
+		PauseOnCondition: leaflet
+	Passenger:
+		PipType: Green
+	Cloneable:
+		Types: Soldier
+
+E1.Marine:
+	Inherits: E1
+	Buildable:
+		BuildPaletteOrder: 10
+		BuildAtProductionType: Soldier
+		Prerequisites: atek, ~player.usa, ~techlevel.medium
+		Description: Toughened General-purpose infantry.\nUses MG and throws Grenades.\n  Special ability: Amphibian\nCan swim through sea and river.\nCan only shoot MG when in water.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Tooltip:
+		Name: Marine
+	Valued:
+		Cost: 450
+	Health:
+		HP: 7000
+	Mobile:
+		Locomotor: foot-amphibious
+	AmmoPool:
+		Ammo: 2
+		PipCount: 0
+		AmmoCondition: ammo
+	Armament@PRIMARY:
+		PauseOnCondition: !ammo || leaflet
+	Armament@Secondary:
+		Name: secondary
+		Weapon: Grenade
+		LocalOffset: 0,0,555
+		FireDelay: 15
+		PauseOnCondition: !ammo || leaflet || swimming
+	ReloadAmmoPool:
+		PauseOnCondition: ammo
+		Delay: 4
+		Count: 1
+		ResetOnFire: False
+	AttackFrontal:
+	GrantConditionOnTerrain:
+		TerrainTypes: Water, River
+		Condition: swimming
+	Targetable:
+		RequiresCondition: !parachute && !swimming
+	Targetable@SEA:
+		TargetTypes: Ground, Water, Infantry
+		RequiresCondition: !parachute && swimming
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		AttackSequences:
+			primary: shoot
+			secondary: throw
+		StandSequences: stand
+		RequiresCondition: !swimming
+	WithInfantryBody@SEA:
+		RequiresCondition: !parachute && swimming
+		MoveSequence: swim
+		DefaultAttackSequence: swim_shoot
+		IdleSequences: swim_idle
+		StandSequences: swim_stand
+	WithDeathAnimation:
+		RequiresCondition: !swimming
+	WithIdleOverlay@WAVES:
+		Offset: 0,0,0
+		Sequence: wake
+		RequiresCondition: !parachute && swimming
+	RenderSprites:
+		Image: e1.marine
+	WithDeathAnimation@ROT:
+		RequiresCondition: !swimming
+	-Cloneable:
+
+E2:
+	Inherits@ROT: ^RottingInfantry
+	Buildable:
+		BuildPaletteOrder: 3
+		Prerequisites: ~barracks, ~!player.uzbek, ~techlevel.infonly
+	Valued:
+		Cost: 150
+	Health:
+		HP: 4500
+	Armament@PRIMARY:
+		PauseOnCondition: leaflet
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: GrenadeLauncher
+	Passenger:
+		PipType: Green
+	Cloneable:
+		Types: Soldier
+
+E2.Uzbek:
+	Inherits: E2
+	Buildable:
+		Prerequisites: ~barr, ~player.uzbek, ~!barracks.upgraded, ~techlevel.infonly
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	RenderSprites:
+		Image: e2
+	-MapEditorData:
+
+E2.UzbekR2:
+	Inherits: E2.Uzbek
+	Buildable:
+		Prerequisites: ~barr, ~player.uzbek, ~barracks.upgraded, ~techlevel.infonly
+		Icon: rank2-icon
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 2
+	RenderSprites:
+		Image: e2
+
+E2R1:
+	Inherits: E2
+	RenderSprites:
+		Image: E2
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	-Buildable:
+
+E3:
+	Inherits@ROT: ^RottingInfantry
+	Inherits@BOMBEQUIP: ^AffectedByBombVests
+	Buildable:
+		BuildPaletteOrder: 2
+		Description: Anti-tank/Anti-aircraft infantry.\nWhen inside Pillboxes can attack only Ground units.\n  Strong vs Vehicles, Aircraft\n  Weak vs Infantry
+	Passenger:
+		PipType: Green
+	AmmoPool:
+		Ammo: 1
+		PipCount: 0
+		AmmoCondition: ammo
+	Armament@PRIMARY:
+		PauseOnCondition: !ammo || leaflet
+	Armament@SECONDARY:
+		PauseOnCondition: !ammo || leaflet
+	ReloadAmmoPool:
+		PauseOnCondition: ammo
+	AutoTarget:
+		ScanRadius: -1
+	Cloneable:
+		Types: Soldier
+
+E4:
+	Buildable:
+		Prerequisites: ~barr, dome, ~!player.ukraine, ~techlevel.low
+		BuildPaletteOrder: 9
+	Valued:
+		Cost: 400
+	Armament@PRIMARY:
+		PauseOnCondition: leaflet
+	Passenger:
+		PipType: Green
+
+E4.Ukraine:
+	Inherits: E4
+	Buildable:
+		Prerequisites: ~barr, dome, ~player.ukraine, ~!barracks.upgraded, ~techlevel.low
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	RenderSprites:
+		Image: e4
+	-MapEditorData:
+
+E4.UkraineR2:
+	Inherits: E4.Ukraine
+	Buildable:
+		Prerequisites: ~barr, dome, ~player.ukraine, ~barracks.upgraded, ~techlevel.low
+		Icon: rank2-icon
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 2
+	RenderSprites:
+		Image: e4
+
+E6:
+	Inherits@ROT: ^RottingInfantry
+	Inherits@BOMBEQUIP: ^AffectedByBombVests
+	Buildable:
+		BuildPaletteOrder: 5
+		Prerequisites: ~barracks, proc, ~!player.uzbek, ~techlevel.infonly
+		Description: Infiltrates and captures Enemy structures.\nExternally captures Neutral structures.\nCan restore destroyed Tech buildings.\nCan repair destroyed Bridges.\n  Unarmed
+	Valued:
+		Cost: 500
+	-GrantConditionOnPrerequisite@GLOBALREUSABLEENGINEER:
+	-Captures:
+	-Captures@REUSABLE:
+	Captures@CAPTURESPLAYER:
+		CaptureTypes: building-sabotage
+		SabotageThreshold: 20
+		SabotageHPRemoval: 20
+		PlayerExperience: 0
+	Captures@CAPTURESNEUTRAL:
+		CaptureTypes: building, husk
+		PlayerExperience: 0
+		CaptureDelay: 100
+		ConsumedByCapture: false
+	Passenger:
+		PipType: Blue
+	#	Captures@RESTORENEUTRAL:
+	#	CaptureTypes: TechHusk
+	#	PlayerExperience: 25
+	Infiltrates@RESTORENEUTRAL:
+		Types: TechHusk
+		ValidStances: Neutral
+		EnterCursor: goldwrench
+		PlayerExperience: 25
+
+E6.Uzbek:
+	Inherits: E6
+	Buildable:
+		Prerequisites: ~barracks, proc, ~player.uzbek, ~techlevel.infonly
+		BuildDuration: 500
+	Valued:
+		Cost: 375
+	RenderSprites:
+		Image: e6
+
+MEDI:
+	Inherits@ROT: ^RottingInfantry
+	Inherits@BOMBEQUIP: ^AffectedByBombVests
+	Buildable:
+		BuildPaletteOrder: 9
+		Prerequisites: ~tent, dome, ~techlevel.low
+	Health:
+		HP: 6000
+	Valued:
+		Cost: 250
+	Passenger:
+		PipType: Blue
+
+MECH:
+	Inherits@ROT: ^RottingInfantry
+	Inherits@BOMBEQUIP: ^AffectedByBombVests
+	Health:
+		HP: 6000
+	Buildable:
+		Prerequisites: ~tent, fix, ~!player.germany, ~techlevel.medium
+		BuildPaletteOrder: 6
+	Passenger:
+		PipType: Blue
+
+MECH.Germany:
+	Inherits: MECH
+	Buildable:
+		Prerequisites: ~tent, fix, ~player.germany, ~techlevel.medium
+	Armament:
+		Weapon: Repair.germany
+		Cursor: repair
+		OutsideRangeCursor: repair
+		TargetStances: Ally
+		ForceTargetStances: None
+	RenderSprites:
+		Image: mech
+	-MapEditorData:
+
+SPY:
+	Inherits@ROT: ^RottingInfantry
+	Inherits@BOMBEQUIP: ^AffectedByBombVests
+	Buildable:
+		Prerequisites: ~tent, dome, ~!player.england, ~techlevel.medium
+		BuildPaletteOrder: 7
+		Description: Agent of the Intelligence Service.\nCan detect cloaked units and spies.\n  Special Ability: Hijacking\nCan steal enemy Vehicles when not disguised.\n  Special Ability: Espionage\nInfiltrates enemy production structures for rank bonus.\nSteals enemy credits from Refineries.\nInfiltrates enemy Power Plants to cut off base power.\nInfiltrates Radar Domes to reset their exploration.\nInfiltrates Tech Centers to unlock your country's Tech Unit.\n  Special Ability: Disguise\nCan disguise as enemy Infantry.\nLoses disguise when attacking.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Passenger:
+		PipType: Yellow
+	CaptureManager:
+	Captures@VEHICLE:
+		CaptureTypes: vehicle
+		PlayerExperience: 50
+		RequiresCondition: !disguise
+	Armament:
+		PauseOnCondition: leaflet
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: SilencedPPK
+		MuzzleSequence: garrison-muzzle
+
+SPY.England:
+	Buildable:
+		Prerequisites: ~tent, dome, ~player.england, ~!barracks.upgraded, ~techlevel.medium
+	Valued:
+		Cost: 500
+	GivesExperience:
+	DisguiseTooltip:
+		Name: Spy
+		GenericName: Soldier
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	-MapEditorData:
+
+SPY.England.R2:
+	Inherits: SPY.England
+	Buildable:
+		Prerequisites: ~tent, dome, ~player.england, ~barracks.upgraded, ~techlevel.medium
+		Icon: rank2-icon
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 2
+
+THF:
+	Inherits@ROT: ^RottingInfantry
+	Inherits@BOMBEQUIP: ^AffectedByBombVests
+	Buildable:
+		BuildPaletteOrder: 6
+		Description: Field operative of the Union.\n  Special Ability: Sabotage\nCan infiltrate enemy buildings to damage them.\nSteals enemy credits from Refineries.\nInfiltrates Tech Centers to unlock your country's Tech Unit.\n  Special Ability: Hijacking\nHijacks enemy vehicles.\n  Special Ability: Cloaking\nCloaks when standing still.\n  Unarmed
+	Tooltip:
+		Name: Saboteur
+	Health:
+		HP: 4500
+	Passenger:
+		PipType: Blue
+	CaptureManager:
+	Captures@SABOTAGE:
+		CaptureTypes: building-sabotage
+		SabotageThreshold: 1
+		SabotageHPRemoval: 20
+		PlayerExperience: 50
+
+E7:
+	Inherits@ROT: ^RottingInfantry
+	Inherits@BOMBEQUIP: ^AffectedByBombVests
+	Buildable:
+		BuildLimit: 1
+		Description: Elite commando infantry.\nArmed with dual pistols and C4.\nMaximum 1 can be trained.\n  Special ability: Amphibian\nCan swim through sea and river.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
+		BuildPaletteOrder: 8
+		Prerequisites: ~tent, atek, ~infantry.allies, ~!player.usa, ~techlevel.high
+	Mobile:
+		Locomotor: foot-amphibious
+		Speed: 71
+		Voice: Move
+	Health:
+		HP: 5000
+	Armament@PRIMARY:
+		PauseOnCondition: leaflet
+	Armament@SECONDARY:
+		PauseOnCondition: leaflet
+	GrantConditionOnTerrain:
+		TerrainTypes: Water, River
+		Condition: swimming
+	Targetable:
+		RequiresCondition: !parachute && !swimming
+	Targetable@SEA:
+		TargetTypes: Ground, Water, Infantry
+		RequiresCondition: !parachute && swimming
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		StandSequences: stand
+		RequiresCondition: !swimming
+	WithInfantryBody@SEA:
+		RequiresCondition: swimming
+		MoveSequence: swim
+		DefaultAttackSequence: swim_shoot
+		IdleSequences: swim_idle
+		StandSequences: swim_stand
+	WithDeathAnimation:
+		RequiresCondition: !swimming
+	Passenger:
+		PipType: Red
+	WithDeathAnimation@ROT:
+		RequiresCondition: !swimming
+
+E7.usa:
+	Inherits: E7
+	Buildable:
+		Prerequisites: ~tent, atek, ~infantry.allies, ~player.usa, ~techlevel.high
+	RenderSprites:
+		Image: E7
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	-MapEditorData:
+
+VOLK:
+	Inherits@ROT: ^RottingInfantry
+	Inherits: GNRL
+	Inherits@BOMBEQUIP: ^AffectedByBombVests
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		Prerequisites: ~barr, stek, ~infantry.soviet, ~techlevel.high
+		BuildPaletteOrder: 8
+		BuildLimit: 1
+		Description: Elite commando infantry armed with anti-tank gun and C4.\nMaximum 1 can be trained\n  Special ability: Durability\nCannot be crushed unless its Mammoth Tank\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Volkov
+	Health:
+		HP: 12000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 6c0
+	Demolition:
+		DetonationDelay: 45
+		Voice: Demolish
+	Mobile:
+		Speed: 62
+		Voice: Move
+	Guard:
+		Voice: Move
+	Passenger:
+		PipType: Red
+		Voice: Move
+	AttackFrontal:
+	Voiced:
+		VoiceSet: VolkovVoice
+	Armament:
+		Weapon: VolkovGun
+		PauseOnCondition: leaflet
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: VolkovGun
+		MuzzleSequence: garrison-muzzle
+	DetectCloaked:
+		CloakTypes: Cloak, Hijacker
+	Chronoshiftable:
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+	RenderSprites:
+		Image: VOLK
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+	AnnounceOnKill:
+	Crushable:
+		CrushClasses: heavywall
+	Targetable:
+		RequiresCondition: !parachute
+		TargetTypes: Ground, Infantry, Disguise, Cyborg
+	MapEditorData:
+		Categories: Infantry
+
+SNIP:
+	Inherits@ROT: ^RottingInfantry
+	Inherits: ^Soldier
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BOMBEQUIP: ^AffectedByBombVests
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Sniper
+	Buildable:
+		BuildPaletteOrder: 10
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		Prerequisites: ~tent, atek, ~infantry.allies, ~player.england, ~techlevel.high
+		Description: Sharpshooter infantry.\nNeeds to reload after every 5 shots.\n Detects cloaked units at close range.\n  Special Ability: Camouflage\nCloaks when standing still. Can be ordered to crawl around unseen.\n  Strong vs Infantry\n  Weak vs Anything Else
+	Health:
+		HP: 8000
+	Mobile:
+		Speed: 56
+	RevealsShroud:
+		Range: 6c0
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: ReturnFire
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: Infantry
+	Armament@PRIMARY:
+		Weapon: Sniper
+		PauseOnCondition: !ammo || leaflet
+	AmmoPool:
+		Armaments: primary
+		Ammo: 5
+		PipCount: 0
+		AmmoCondition: ammo
+	ReloadAmmoPool:
+		Delay: 125
+		Count: 5
+		RequiresCondition: !ammo
+	WithDecoration@ammoreplenish:
+		RequiresSelection: false
+		Image: pips
+		Sequence: tag-reload
+		ReferencePoint: Top
+		ZOffset: 256
+		RequiresCondition: !ammo
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: Sniper
+		MuzzleSequence: garrison-muzzle
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		RequiresCondition: !parachute && !iscrawling
+	WithInfantryBody@PARACHUTE:
+		StandSequences: parachute
+		RequiresCondition: parachute
+	WithInfantryBody@CRAWL:
+		RequiresCondition: !parachute && iscrawling
+		MoveSequence: prone-run
+		DefaultAttackSequence: prone-shoot
+		IdleSequences: prone-stand
+		StandSequences: prone-stand
+	Cloak@NORMAL:
+		InitialDelay: 250
+		CloakDelay: 120
+		CloakSound:
+		UncloakSound: appear1.aud
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Heal, Dock, SelfHeal, Demolish, Move
+		PauseOnCondition: cloak-force-disabled
+		RequiresCondition: !iscrawling
+	Cloak@CRAWLING:
+		InitialDelay: 250
+		CloakDelay: 120
+		CloakSound:
+		UncloakSound: appear1.aud
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Heal, Dock, SelfHeal, Demolish
+		PauseOnCondition: cloak-force-disabled
+		RequiresCondition: iscrawling
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+	TakeCover:
+		RequiresCondition: !iscrawling
+	GrantConditionOnDeploy:
+		DeployedCondition: iscrawling
+		SkipMakeAnimation: true
+	SpeedMultiplier@CRAWL:
+		Modifier: 50
+		RequiresCondition: iscrawling
+	DetectCloaked:
+		CloakTypes: Cloak, Thief
+		Range: 3c0
+	-MustBeDestroyed:
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+	RenderSprites:
+		Image: snip
+	Passenger:
+		PipType: Red
+	RenderRangeCircle:
+
+SNIP.r1:
+	Inherits: SNIP
+	RenderSprites:
+		Image: SNIP
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	-Buildable:
+	-MapEditorData:
+
+MARK:
+	Inherits: ^Soldier
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Marksman
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 7
+		Prerequisites: ~barr, dome, ~player.afghan, ~techlevel.medium
+		Description: Infantry armed with an Sniper rifle.\nNeeds to reload after every 5 shots.\nShoots Poison-coated rounds.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Health:
+		HP: 5000
+	Passenger:
+		PipType: Yellow
+	RevealsShroud:
+		Range: 6c0
+	AutoTarget:
+		InitialStance: Defend
+		InitialStanceAI: ReturnFire
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: Infantry
+	Armament@PRIMARY:
+		Weapon: Sniper.chem
+		PauseOnCondition: !ammo || leaflet
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: Sniper.chem
+		MuzzleSequence: garrison-muzzle
+	AmmoPool:
+		Armaments: primary
+		Ammo: 5
+		PipCount: 0
+		AmmoCondition: ammo
+	ReloadAmmoPool:
+		Delay: 125
+		Count: 5
+		RequiresCondition: !ammo
+	WithDecoration@ammoreplenish:
+		RequiresSelection: false
+		Image: pips
+		Sequence: tag-reload
+		ReferencePoint: Top
+		ZOffset: 256
+		RequiresCondition: !ammo
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	-MustBeDestroyed:
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+	RenderSprites:
+		Image: e1sniper
+	RenderRangeCircle:
+
+GREN:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Tooltip:
+		Name: Grenade Launcher
+	Valued:
+		Cost: 450
+	Health:
+		HP: 4500
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~tent, atek, ~infantry.allies, ~player.france, ~techlevel.high
+		Description: Infantry armed with long-range grenade launcher.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
+	Armament@PRIMARY:
+		Weapon: GrenadeLauncher
+		LocalOffset: 100,0,500
+		PauseOnCondition: leaflet
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: GrenadeLauncher
+	AttackFrontal:
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+		DamageSource: Killer
+	TakeCover:
+		ProneOffset: 160,0,-288
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		RequiresCondition: !parachute
+	WithInfantryBody@PARACHUTE:
+		StandSequences: parachute
+		RequiresCondition: parachute
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+	Passenger:
+		PipType: Red
+
+MGI:
+	Inherits@ROT: ^RottingInfantry
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BOMBEQUIP: ^AffectedByBombVests
+	Tooltip:
+		Name: Machine Gunner
+	Valued:
+		Cost: 400
+	Health:
+		HP: 6000
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~tent, atek, ~infantry.allies, ~player.germany, ~techlevel.high
+		Description: Infantry equipped with a rapid firing Machine Gun.\n  Strong vs Infantry\n  Weak vs Vehicles, Defenses
+	Armament@PRIMARY:
+		Weapon: M60mg.Inf
+		PauseOnCondition: leaflet
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: Vulcan
+		MuzzleSequence: garrison-muzzle
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		RequiresCondition: !parachute
+	WithInfantryBody@PARACHUTE:
+		StandSequences: parachute
+		RequiresCondition: parachute
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+	Passenger:
+		PipType: Red
+
+ATGM:
+	Inherits@ROT: ^RottingInfantry
+	Inherits: ^Soldier
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@BOMBEQUIP: ^AffectedByBombVests
+	Valued:
+		Cost: 550
+	Tooltip:
+		Name: ATGM Soldier
+	Buildable:
+		BuildPaletteOrder: 10
+		Prerequisites: ~tent, atek, ~infantry.allies, ~player.greece, ~techlevel.high
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		Description: Anti-armor rocket infantry.\nCannot attack Air units.\n Strong vs Tanks, Vehicles\n Weak vs everything Else
+	Mobile:
+		Speed: 42
+	Health:
+		HP: 4500
+	AutoTarget:
+		ScanRadius: 6
+	Armament@PRIMARY:
+		Weapon: Kornet
+		LocalOffset: 226,43,245
+		FireDelay: 4
+		PauseOnCondition: leaflet
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: Kornet
+	TakeCover:
+		ProneOffset: 180,0,-200
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: throw
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+	Passenger:
+		PipType: Red
+
+RMBO:
+	Inherits@ROT: ^RottingInfantry
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BOMBEQUIP: ^AffectedByBombVests
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Commando
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~tent, atek, ~infantry.allies, ~player.turkey, ~techlevel.high
+		Description: Elite commando infantry.\nArmed with assault rifle and C4.\n  Special Ability: Camouflage\nCloaks when standing still. Can be ordered to crawl around unseen.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
+	Mobile:
+		Speed: 71
+		Voice: Move
+	Guard:
+		Voice: Move
+	Health:
+		HP: 10000
+	Passenger:
+		PipType: Red
+		Voice: Move
+	RevealsShroud:
+		Range: 6c0
+	Demolition:
+		DetonationDelay: 45
+		Voice: Demolish
+	Armament:
+		Weapon: M1Carbine
+		PauseOnCondition: leaflet
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: Vulcan
+		MuzzleSequence: garrison-muzzle
+	AttackFrontal:
+		Voice: Attack
+	AttackMove:
+	WithDeathAnimation:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		IdleSequences: idle1,idle2
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+	AnnounceOnKill:
+	Voiced:
+		VoiceSet: CommandoVoice
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+	DetectCloaked:
+		CloakTypes: Cloak, Hijacker
+		Range: 3c0
+	Cloak@NORMAL:
+		InitialDelay: 250
+		CloakDelay: 120
+		CloakSound:
+		UncloakSound: appear1.aud
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Heal, Dock, SelfHeal, Demolish, Move
+		PauseOnCondition: cloak-force-disabled
+		RequiresCondition: !iscrawling
+	Cloak@CRAWLING:
+		InitialDelay: 250
+		CloakDelay: 120
+		CloakSound:
+		UncloakSound: appear1.aud
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Heal, Dock, SelfHeal, Demolish
+		PauseOnCondition: cloak-force-disabled
+		RequiresCondition: iscrawling
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+	TakeCover:
+		RequiresCondition: !iscrawling
+	GrantConditionOnDeploy:
+		DeployedCondition: iscrawling
+		SkipMakeAnimation: true
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		StandSequences: stand
+		RequiresCondition: !iscrawling
+	WithInfantryBody@CRAWL:
+		RequiresCondition: iscrawling
+		MoveSequence: prone-run
+		DefaultAttackSequence: prone-shoot
+		IdleSequences: prone-stand
+		StandSequences: prone-stand
+	SpeedMultiplier@CRAWL:
+		Modifier: 50
+		RequiresCondition: iscrawling
+
+SHOK:
+	Inherits@ROT: ^RottingInfantry
+	Inherits@BOMBEQUIP: ^AffectedByBombVests
+	Buildable:
+		BuildPaletteOrder: 7
+		Prerequisites: ~barr, stek, ~player.russia, ~techlevel.high
+		Description: Infantry with portable Tesla coils.\nWeapon doesnt work from within Pillboxes\ndue to structural insulation.\nCan charge powerless Tesla Coils.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
+	Valued:
+		Cost: 475
+	Health:
+		HP: 7000
+	-Armament@GARRISONED:
+	AttackFrontal:
+	Passenger:
+		PipType: Red
+	Armament@PRIMARY:
+		PauseOnCondition: leaflet
+	Armament@SECONDARY:
+		Weapon: TeslaCharge
+		LocalOffset: 427,0,341
+		Cursor: powerdown
+		OutsideRangeCursor: powerdown
+		TargetStances: Ally
+		ForceTargetStances: None
+		PauseOnCondition: leaflet
+	RevealsShroud:
+		Range: 5c0
+
+SHOK.r1:
+	Inherits: SHOK
+	-Buildable:
+	RenderSprites:
+		Image: SHOK
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	-MapEditorData:
+
+DOG.Bomb:
+	Inherits: ^Soldier
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 7
+		Prerequisites: proc, fix, ~player.ukraine, ~techlevel.medium
+		Description: Dog carrying an Bomb vest.\n  Is trained to run towards Vehicles.\n  Strong vs Infantry\n  Weak vs Vehicles, Defenses
+	Valued:
+		Cost: 625
+	Tooltip:
+		Name: Bomb Dog
+		GenericName: Dog
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	SelectionDecorations:
+	Health:
+		HP: 1800
+	Mobile:
+		Speed: 71
+		Voice: Move
+		PauseOnCondition: !(!attack-cooldown)
+	Guard:
+		Voice: Move
+	Passenger:
+		Voice: Move
+	RevealsShroud:
+		Range: 3c512
+	Armament:
+		Weapon: DogJaw.Bomber
+		ReloadingCondition: attack-cooldown
+	-AttackFrontal:
+	AttackLeap:
+		Voice: Attack
+		PauseOnCondition: attacking || attack-cooldown
+	AttackMove:
+		Voice: Move
+	GrantConditionWhileAiming:
+		Condition: run
+	AutoTarget:
+		InitialStance: AttackAnything
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: Infantry
+	Targetable:
+		TargetTypes: Ground, Infantry
+	WithInfantryBody:
+		MoveSequence: walk
+		StandSequences: stand
+		DefaultAttackSequence: eat
+		RequiresCondition: !run
+	WithInfantryBody@RUN:
+		MoveSequence: run
+		RequiresCondition: run
+	SpeedMultiplier:
+		Modifier: 150
+		RequiresCondition: run
+	IgnoresDisguise:
+	DetectCloaked:
+		CloakTypes: Cloak, Thief
+	Voiced:
+		VoiceSet: DogVoice
+	-TakeCover:
+	Passenger:
+		PipType: Yellow
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+		DamageSource: Killer
+	GrantConditionOnAttack:
+		Condition: triggered
+	GrantConditionOnDeploy:
+		DeployedCondition: triggered
+		Voice: Attack
+	KillsSelf:
+		RequiresCondition: triggered
+
+E5:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 7
+		Prerequisites: ~barr, stek, ~player.belarus, ~techlevel.high
+		Description: Close range, anti-everything Infantry.\nImmune to Mustard Gas.\n  Strong vs all Ground units and Structures.\n  Weak vs Anti-Infantry Defenses, Aircraft.
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Chemical Trooper
+	Health:
+		HP: 9000
+	WithDeathAnimation:
+	Passenger:
+		PipType: Red
+	Armament@PRIMARY:
+		Weapon: Chemspray
+		LocalOffset: 341,0,256
+		FireDelay: 3
+		MuzzleSequence: muzzle
+		MuzzlePalette: desert
+		PauseOnCondition: leaflet
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: Chemspray
+		MuzzleSequence: muzzle
+		MuzzlePalette: desert
+	TakeCover:
+		ProneOffset: 160,0,-288
+	Mobile:
+		Speed: 64
+	AttackFrontal:
+	-Crushable:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	WithInfantryBody@PARACHUTE:
+		StandSequences: parachute
+		RequiresCondition: parachute
+	WithMuzzleOverlay:
+	Explodes:
+		Weapon: UnitExplodeChemSmall
+		EmptyWeapon: UnitExplodeChemSmall
+		Chance: 30
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+	-WithColoredOverlay@GAS:
+	-ExternalCondition@GAS:
+	-SelfHealing@GAS:
+	Targetable:
+		RequiresCondition: !parachute
+		TargetTypes: Ground, Infantry, Disguise, Chem
+
+MRTR:
+	Inherits: ^Soldier
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 7
+		BuildAtProductionType: Soldier
+		Prerequisites: ~barr, dome, ~player.kazakh, ~techlevel.medium
+		Description: Infantry armed with a Mortar gun\nthat shoots napalm rounds.\n Strong vs Buildings, Infantry\n Weak vs Vehicles, Aircraft
+	Valued:
+		Cost: 500
+	Mobile:
+		Speed: 50
+	Tooltip:
+		Name: Mortar Infantry
+	Health:
+		HP: 5250
+	Armament@PRIMARY:
+		Weapon: MortarNapalm
+		LocalOffset: 0,0,155
+		FireDelay: 15
+		PauseOnCondition: leaflet
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: MortarNapalm
+		FireDelay: 15
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: throw
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+		Chance: 50
+	Passenger:
+		PipType: Yellow
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+
+RPG:
+	Inherits: ^Soldier
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: RPG Trooper
+	Buildable:
+		BuildPaletteOrder: 7
+		Prerequisites: ~barr, ftur, stek, ~player.uzbek, ~techlevel.medium
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		Description: Soldier armed with thermobaric Napalm rockets.\nCannot attack Air units.\n  Strong vs clustered Infantry, Structures\n  Weak vs Anti-Infantry measures
+	Selectable:
+		Class: E3
+	Health:
+		HP: 5500
+	AutoTarget:
+		ScanRadius: 6
+	Armament@PRIMARY:
+		Weapon: Thermobaric
+		LocalOffset: 256,43,341
+		FireDelay: 5
+		PauseOnCondition: leaflet
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: Thermobaric
+	TakeCover:
+		ProneOffset: 180,0,-200
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+	Passenger:
+		PipType: Red
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+		DamageSource: Killer
+
+C4:
+	RenderSprites:
+		Image: C4
+
+C5:
+	RenderSprites:
+		Image: C5
+
+C6:
+	RenderSprites:
+		Image: C6
+
+C7:
+	RenderSprites:
+		Image: C7
+
+C8:
+	RenderSprites:
+		Image: C8
+
+C9:
+	RenderSprites:
+		Image: C9
+
+C10:
+	RenderSprites:
+		Image: C10
+
+TECN:
+	Inherits@1: ^CivInfantry
+	Inherits@2: ^ArmedCivilian
+	Inherits@BOMBEQUIP: ^AffectedByBombVests
+	Tooltip:
+		Name: Technician
+	Passenger:
+		Weight: 1
+		PipType: Blue
+	RenderSprites:
+		Image: TECN
+	Armament:
+		PauseOnCondition: leaflet
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: M1Carbine
+		MuzzleSequence: garrison-muzzle
+
+DOG:
+	Inherits@BOMBEQUIP: ^AffectedByBombVests
+	Buildable:
+		BuildPaletteOrder: 4
+		BuildAtProductionType: Soldier
+		Prerequisites: proc, ~techlevel.infonly
+	Passenger:
+		PipType: Green
+	Health:
+		HP: 2000
+
+Ant:
+	Buildable:
+		Prerequisites: ~disabled
+	AttackWander:
+		WanderMoveRadius: 30
+	RenderSprites:
+		PlayerPalette: scoutant
+
+PLOT:
+	Inherits@ROT: ^RottingInfantry
+	Inherits@1: ^CivInfantry
+	Inherits@2: ^ArmedCivilian
+	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Inherits@BOMBEQUIP: ^AffectedByBombVests
+	Tooltip:
+		Name: Pilot
+	-ScaredyCat:
+	Passenger:
+		Weight: 1
+		PipType: Blue
+
+PLOT.R1:
+	Inherits: PLOT
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	DeliversExperience:
+	RenderSprites:
+		Image: plot
+
+PLOT.R2:
+	Inherits: PLOT
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 2
+	DeliversExperience:
+	RenderSprites:
+		Image: plot
+	-MapEditorData:
+
+PLOT.R3:
+	Inherits: PLOT
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 3
+	DeliversExperience:
+	RenderSprites:
+		Image: plot
+	-MapEditorData:
+
+PLOT.RE:
+	Inherits: PLOT
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 4
+	DeliversExperience:
+	RenderSprites:
+		Image: plot
+	-MapEditorData:
+
+STNG:
+	Inherits@ROT: ^RottingInfantry
+	Inherits: ^Soldier
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetAir
+	Inherits@BOMBEQUIP: ^AffectedByBombVests
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Anti-Air Soldier
+	Buildable:
+		BuildPaletteOrder: 10
+		Prerequisites: ~tent, atek, ~player.spain, ~techlevel.high
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		Description: Anti-aircraft rocket infantry.\nCannot attack Ground units.\nCannot fire out of Pillboxes.\n  Strong vs Aircraft\n  Weak vs everything Else
+	Selectable:
+		Class: STNG
+	Mobile:
+		Speed: 50
+	Health:
+		HP: 6000
+	AutoTarget:
+		ScanRadius: 6
+	Armament@PRIMARY:
+		Weapon: PortaNike
+		LocalOffset: 256,43,341
+		FireDelay: 5
+		PauseOnCondition: leaflet
+	TakeCover:
+		ProneOffset: 180,0,-200
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+	Passenger:
+		PipType: Red
+
+FTRP:
+	Inherits: E3
+	Buildable:
+		BuildPaletteOrder: 7
+		Prerequisites: ~barracks, stek, ~player.karelia, ~techlevel.medium
+		Description: Infantry armed with Flak-Gun.\nWhen inside Pillboxes can attack only Ground units.\n  Strong vs Aircraft\n  Weak vs Ground units
+	Tooltip:
+		Name: Flak Trooper
+	Armament@PRIMARY:
+		Weapon: FLAK-INF-AG
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: FLAK-INF-AA
+		LocalOffset: 0,0,555
+	Armament@GARRISONED:
+		Weapon: FLAK-INF-AG
+	Valued:
+		Cost: 600
+	-Cloneable:
+
+CINF:
+	Inherits@ROT: ^RottingInfantry
+	Inherits: ^Soldier
+	Inherits@BOMBEQUIP: ^AffectedByBombVests
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~tent, atek, ~player.italy, ~tech.stolen, ~techlevel.high
+		Description: High tech infantry unit capable of Teleporting.\nArmament shocks Vehicles, Ships and Structures\npreventing them from Movement or Fighting back.\n  Strong vs Everything on Ground\n  Weak vs Aircraft, Anti-Infantry
+	Valued:
+		Cost: 900
+	Tooltip:
+		Name: Chrono Soldier
+	Mobile:
+		Voice: Move
+	Health:
+		HP: 5000
+	Armament@PRIMARY:
+		Weapon: ChronoGun
+		LocalOffset: 427,0,341
+		PauseOnCondition: leaflet
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: ChronoGun
+	WithInfantryBody:
+		IdleSequences: idle1, idle2
+		StandSequences: stand, stand2
+		DefaultAttackSequence: shoot
+		MoveSequence: run
+	AttackFrontal:
+		FacingTolerance: 12
+		Armaments: primary
+		Voice: Attack
+	RenderSprites:
+		Image: cinf
+	AttackMove:
+		Voice: Move
+	Passenger:
+		Voice: Move
+	Guard:
+		Voice: Move
+	PortableChrono:
+		ChargeDelay: 250
+		Voice: Move
+	Chronoshiftable:
+		ExplodeInstead: False
+		ChronoshiftSound: chrono2.aud
+		ReturnToOrigin: False
+		TimeBarColor: ABB7E4
+	Voiced:
+		VoiceSet: ShokVoice
+	Passenger:
+		PipType: Red
+	RenderSprites:
+		Scale: 0.8
+
+DSHK:
+	Inherits: E1
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 7
+		Prerequisites: ~barr, stek, ~player.turkmen, ~techlevel.high
+		Description: Infantry that can deploy into an MG-Nest.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		Icon: dshk-icon
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Dushka Infantry
+	Mobile:
+		Speed: 50
+	Transforms:
+		IntoActor: mgnst
+		Offset: 0,0
+		Facing: 0
+		TransformSounds: mgnstdeploy.aud
+		NoTransformSounds: mgnstdeploy.aud
+		DeployCursor: deploy
+		DeployBlockedCursor: deploy-blocked
+		Voice: Action
+	Passenger:
+		PipType: Red
+	RenderSprites:
+		Image: e1
+
+SHOT:
+	Inherits@ROT: ^RottingInfantry
+	Inherits: ^Soldier
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BOMBEQUIP: ^AffectedByBombVests
+	Valued:
+		Cost: 225
+	Tooltip:
+		Name: Shotgunner
+	Buildable:
+		BuildPaletteOrder: 10
+		Prerequisites: ~tent, fix, ~player.italy, ~techlevel.high
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		Description: Fast infantry armed with shotgun.\n  Strong vs Infantry\n  Weak vs anything Else
+	Mobile:
+		Speed: 71
+	Health:
+		HP: 5000
+	Armament@PRIMARY:
+		Weapon: Shotgun
+		PauseOnCondition: leaflet
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: Shotgun
+		FireDelay: 1
+		MuzzleSequence: garrison-muzzle
+	TakeCover:
+	AttackFrontal:
+	WithInfantryBody:
+		IdleSequences: idle1,idle2
+		DefaultAttackSequence: shoot
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+
+#	was never supposed to be buildable, wtf
+Zombie:
+	Buildable:
+		Prerequisites: ~disabled

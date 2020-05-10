@@ -1,0 +1,23 @@
+# Retaliation Tracks
+journey: Journey
+# most of them are silly, some of them
+# contains announcer voice, ra 2 sounds, 
+# and unit quotes, so opted to leave out.
+crus226m_retal: Crush Remix
+	Hidden: true
+fac1226m_retal: No Mercy '98
+	Hidden: true
+hell226m_retal: Hell March Remix
+	Hidden: true
+radio2_retal: Radio 2 Remix
+	Hidden: true
+work226m_retal: Workmen Remix
+	Hidden: true
+mud_remix: Mud Remix
+	Hidden: true
+surfnomercy: Surf No Mercy
+	Hidden: true
+# theory is that this is causing the music cutoff bug
+hell226m: Hell March
+	Hidden: true
+	VolumeModifier: 0.7

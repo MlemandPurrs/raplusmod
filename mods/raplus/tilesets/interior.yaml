@@ -9,11 +9,11 @@ Terrain:
 		Type: Clear
 		TargetTypes: Ground
 		AcceptsSmudgeType: Crater, Scorch
-		Color: FFC9CA
+		Color: 000000
 	TerrainType@ClearNoSmudges:
 		Type: ClearNoSmudges
 		TargetTypes: Ground
-		Color: FFC9CA
+		Color: 000000
 	TerrainType@Gems:
 		Type: Gems
 		TargetTypes: Ground
@@ -41,9 +41,6 @@ Terrain:
 		AcceptsSmudgeType: Crater, Scorch
 		Color: A7B6BE
 		RestrictPlayerColor: true
-	TerrainType@Jumpjet:
-		Type: Jumpjet
-		Color: 745537
 
 Templates:
 	Template@255:

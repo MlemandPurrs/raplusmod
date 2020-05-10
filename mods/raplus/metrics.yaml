@@ -4,38 +4,31 @@ Metrics:
 	ColorPickerActorType: fact.colorpicker
 	ColorPickerRemapIndices: 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95
 	FactionSuffix-allies: allies
-	FactionSuffix-usa: allies
-	FactionSuffix-britain: allies
+	FactionSuffix-england: allies
 	FactionSuffix-france: allies
-	FactionSuffix-nether: allies
 	FactionSuffix-germany: allies
 	FactionSuffix-spain: allies
-	FactionSuffix-italy: allies
 	FactionSuffix-greece: allies
 	FactionSuffix-turkey: allies
-	FactionSuffix-soviet: soviet
+	FactionSuffix-italy: allies
+	FactionSuffix-usa: allies
 	FactionSuffix-russia: soviet
+	FactionSuffix-soviet: soviet
 	FactionSuffix-ukraine: soviet
-	FactionSuffix-kazakh: soviet
-	FactionSuffix-kyrgiz: soviet
-	FactionSuffix-belarus: soviet
-	FactionSuffix-moldova: soviet
-	FactionSuffix-lithuan: soviet
-	FactionSuffix-karelia: soviet
-	FactionSuffix-uzbekh: soviet
-	FactionSuffix-arabs: arabs
-	FactionSuffix-saudi: arabs
-	FactionSuffix-iraq: arabs
-	FactionSuffix-syria: arabs
-	FactionSuffix-jordan: arabs
-	FactionSuffix-egypt: arabs
-	FactionSuffix-emirates: arabs
-	FactionSuffix-libya: arabs
-	FactionSuffix-somali: arabs
-	FactionSuffix-qatar: arabs
+    FactionSuffix-belarus: soviet
+    FactionSuffix-kazakh: soviet
+    FactionSuffix-uzbek: soviet
+    FactionSuffix-turkmen: soviet
+    FactionSuffix-karelia: soviet
+	FactionSuffix-afghan: soviet
 	IncompatibleProtectedGameColor: B22222
 	IncompatibleVersionColor: D3D3D3
 	TextfieldColorHighlight: 562020
 	ChatLineSound: ChatLine
 	ClickDisabledSound: ClickDisabledSound
 	ClickSound: ClickSound
+	ChatMessageColor: FFFFFF
+	SystemMessageColor: FFFF00
+	NormalSelectionColor: FFFFFF
+	AltSelectionColor: 00FFFF
+	CtrlSelectionColor: FFFF00

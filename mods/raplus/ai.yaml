@@ -1,0 +1,28 @@
+Player:
+	ModularBot@aiplayer:
+		Name: AI Player
+		Type: normal
+	GrantConditionOnBotOwner@aiplayer:
+		Condition: enable-ai-player
+		Bots: normal
+	ProvidesPrerequisite@AIRESTRICTOR:
+		Prerequisite: aitoodumb
+		RequiresCondition: enable-ai-player
+	HarvesterBotModule@aiplayer:
+		RequiresCondition: enable-ai-player
+		HarvesterTypes: harv, harv.soviet
+		RefineryTypes: proc.ercc, proc.soviet, proc.russia
+	BuildingRepairBotModule@aiplayer:
+		RequiresCondition: enable-ai-player
+	McvManagerBotModule@aiplayer:
+		RequiresCondition: enable-ai-player
+		McvTypes: mcv,mcv.uzbek,mcv.ai,mcv.uzbek.ai
+		ConstructionYardTypes: fact,fact.uzbek
+		McvFactoryTypes: weap,weap.france,weap.germany
+		MaxBaseRadius: 40
+	CaptureManagerBotModule@engineer:
+		RequiresCondition: enable-ai-player
+		CapturingActorTypes: e6,e6.uzbek
+		CapturableActorTypes: oilb,bio,miss,fcom,hosp
+		CheckCaptureTargetsForVisibility: false
+		MaximumCaptureTargetOptions: 15

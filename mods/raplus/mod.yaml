@@ -1,14 +1,11 @@
+
 Metadata:
-	Title: Red Alert Plus
-	Version: alpha-006f
+	Title: Red Alert Plus (Full)
+	Version: v.1.3.7-beta-full
 	Website: https://www.openra.net
 	WebIcon32: https://www.openra.net/images/icons/ra_32x32.png
 
 PackageFormats: Mix
-
-ModCredits:
-	ModTabTitle: RA Plus Mod
-	ModCreditsFile: raplus|credits.yaml
 
 Packages:
 	~^Content/ra/v2/
@@ -16,7 +13,8 @@ Packages:
 	~^Content/ra/v2/cnc
 	~^Content/ra/v2/movies
 	.
-	$raplus: raplus
+	$ra: ra
+    $raplus: raplus
 	./mods/common: common
 	~main.mix
 	~conquer.mix
@@ -34,99 +32,73 @@ Packages:
 	~expand2.mix
 	~hires1.mix
 	~desert.mix
-	raplus|bits
-	raplus|bits/aircraft
-	raplus|bits/bib
-	raplus|bits/buildings
-	raplus|bits/civilians
-	raplus|bits/decorations
-	raplus|bits/desert
-	raplus|bits/effects
-	raplus|bits/icons
-	raplus|bits/infantry
-	raplus|bits/jungle
-	raplus|bits/music
-	raplus|bits/naval
-	raplus|bits/projectiles
-	raplus|bits/projectiles/chemspray
-	raplus|bits/projectiles/flamespray
-	raplus|bits/resources
-	raplus|bits/scripts
-	raplus|bits/snow
-	raplus|bits/snowTD
-	raplus|bits/sounds
-	raplus|bits/sounds/arabs
-	raplus|bits/sounds/boris
-	raplus|bits/sounds/kirov
-	raplus|bits/sounds/rambo
-	raplus|bits/sounds/robot
-	raplus|bits/sounds/volkov
-	raplus|bits/subterran
-	raplus|bits/ss
-	raplus|bits/temperat
-	raplus|bits/temperatTD
-	raplus|bits/tropic
-	raplus|bits/vehicles
-	raplus|uibits
+	ra|bits
+	ra|bits/desert
+    raplus|bits
+    raplus|bits/aircraft
+    raplus|bits/buildings
+    raplus|bits/icons
+    raplus|bits/infantry
+    raplus|bits/music
+    raplus|bits/naval
+    raplus|bits/resources
+    raplus|bits/sounds
+    raplus|bits/sounds/rambo
+    raplus|bits/sounds/robot
+    raplus|bits/sounds/volkov
+    raplus|bits/vehicle
+    raplus|uibits
 
 MapFolders:
+    ra|maps: System
 	raplus|maps: System
-	~^maps/ra/release-20190314: User
+	~^maps/raplusmod: User
 
 Rules:
-	raplus|rules/misc.yaml
-	raplus|rules/ai.yaml
-	raplus|rules/player.yaml
-	raplus|rules/palettes.yaml
-	raplus|rules/world.yaml
-	raplus|rules/defaults.yaml
-	raplus|rules/vehicles-common.yaml
-	raplus|rules/vehicles-allies.yaml
-	raplus|rules/vehicles-soviet.yaml
-	raplus|rules/vehicles-arabs.yaml
-	raplus|rules/husks.yaml
-	raplus|rules/structures.yaml
-	raplus|rules/structures-defense.yaml
-	raplus|rules/structures-neutral.yaml
-	raplus|rules/infantry-common.yaml
-	raplus|rules/infantry-allies.yaml
-	raplus|rules/infantry-soviet.yaml
-	raplus|rules/civilians.yaml
-	raplus|rules/decoration.yaml
-	raplus|rules/aircraft.yaml
-	raplus|rules/naval.yaml
-	raplus|rules/fakes.yaml
-	raplus|rules/country-duplicates.yaml
-	raplus|rules/costreduction-duplicates.yaml
+	ra|rules/misc.yaml
+	raplus|ai.yaml
+	raplus|ai-allies.yaml
+	raplus|ai-soviet.yaml
+	raplus|player.yaml
+	ra|rules/palettes.yaml
+	raplus|palettes.yaml
+	raplus|world.yaml
+	ra|rules/defaults.yaml
+	ra|rules/vehicles.yaml
+	ra|rules/husks.yaml
+	ra|rules/structures.yaml
+	ra|rules/infantry.yaml
+	ra|rules/civilian.yaml
+	ra|rules/decoration.yaml
+	ra|rules/aircraft.yaml
+	ra|rules/ships.yaml
+    raplus|aircraft.yaml
+    raplus|defaults.yaml
+	raplus|fakes.yaml
+    raplus|husks.yaml
+    raplus|infantry.yaml
+    raplus|naval.yaml    
+    raplus|structures.yaml
+    raplus|vehicles.yaml  
 
 Sequences:
-	raplus|sequences/naval.yaml
-	raplus|sequences/vehicles-common.yaml
-	raplus|sequences/vehicles-allies.yaml
-	raplus|sequences/vehicles-soviet.yaml
-	raplus|sequences/vehicles-arabs.yaml
-	raplus|sequences/structures.yaml
-	raplus|sequences/structures-defenses.yaml
-	raplus|sequences/structures-neutral.yaml
-	raplus|sequences/infantry-common.yaml
-	raplus|sequences/infantry-allies.yaml
-	raplus|sequences/infantry-soviet.yaml
-	raplus|sequences/aircraft.yaml
-	raplus|sequences/misc.yaml
-	raplus|sequences/decorations.yaml
-	raplus|sequences/civilians.yaml
+	ra|sequences/ships.yaml
+	ra|sequences/vehicles.yaml
+	ra|sequences/structures.yaml
+	ra|sequences/infantry.yaml
+	ra|sequences/aircraft.yaml
+	ra|sequences/misc.yaml
+	ra|sequences/decorations.yaml
+    raplus|sequences.yaml
+	raplus|sequences-infantry.yaml
+	raplus|sequences-structures.yaml
+	raplus|sequences-misc.yaml
 
 TileSets:
 	raplus|tilesets/snow.yaml
-	raplus|tilesets/snowTD.yaml
 	raplus|tilesets/interior.yaml
 	raplus|tilesets/temperat.yaml
-	raplus|tilesets/temperatTD.yaml
 	raplus|tilesets/desert.yaml
-	raplus|tilesets/desertTD.yaml
-	raplus|tilesets/jungle.yaml
-	raplus|tilesets/tropic.yaml
-	raplus|tilesets/subterran.yaml
 
 Cursors:
 	raplus|cursors.yaml
@@ -136,9 +108,7 @@ Chrome:
 
 Assemblies:
 	common|OpenRA.Mods.Common.dll
-	# raplus|OpenRA.Mods.Shock.dll
 	common|OpenRA.Mods.Cnc.dll
-	# raplus|OpenRA.Mods.AS.dll
 
 ChromeLayout:
 	common|chrome/ingame.yaml
@@ -150,13 +120,14 @@ ChromeLayout:
 	common|chrome/ingame-infoobjectives.yaml
 	common|chrome/ingame-infostats.yaml
 	common|chrome/ingame-menu.yaml
-	raplus|chrome/ingame-observer.yaml
-	common|chrome/ingame-observerstats.yaml
+	ra|chrome/ingame-observer.yaml
 	raplus|chrome/ingame-player.yaml
 	common|chrome/ingame-perf.yaml
 	common|chrome/ingame-debug.yaml
+	common|chrome/ingame-debuginfo.yaml
 	common|chrome/ingame-infochat.yaml
-	raplus|chrome/mainmenu.yaml
+	common|chrome/mainmenu.yaml
+	common|chrome/mainmenu-prompts.yaml
 	common|chrome/settings.yaml
 	common|chrome/credits.yaml
 	common|chrome/lobby.yaml
@@ -174,6 +145,8 @@ ChromeLayout:
 	common|chrome/multiplayer-directconnect.yaml
 	common|chrome/connection.yaml
 	common|chrome/replaybrowser.yaml
+	common|chrome/gamesave-browser.yaml
+	ra|chrome/gamesave-loading.yaml
 	common|chrome/dropdowns.yaml
 	common|chrome/musicplayer.yaml
 	common|chrome/tooltips.yaml
@@ -184,25 +157,27 @@ ChromeLayout:
 	common|chrome/playerprofile.yaml
 
 Weapons:
-	raplus|weapons/explosions.yaml
-	raplus|weapons/ballistics.yaml
-	raplus|weapons/missiles.yaml
-	raplus|weapons/other.yaml
-	raplus|weapons/smallcaliber.yaml
-	raplus|weapons/superweapons.yaml
-	raplus|weapons/country-weapon-duplicates.yaml
+	ra|weapons/explosions.yaml
+	ra|weapons/ballistics.yaml
+	ra|weapons/missiles.yaml
+	ra|weapons/other.yaml
+	ra|weapons/smallcaliber.yaml
+	ra|weapons/superweapons.yaml
+    raplus|weapons.yaml
 
 Voices:
-	raplus|audio/voices.yaml
+	ra|audio/voices.yaml
+    raplus|voices.yaml
 
 Notifications:
-	raplus|audio/notifications.yaml
+	ra|audio/notifications.yaml
 
 Music:
-	raplus|audio/music.yaml
+	ra|audio/music.yaml
+    raplus|music.yaml
 
 Translations:
-	raplus|languages/english.yaml
+	ra|languages/english.yaml
 
 Hotkeys:
 	common|hotkeys/game.yaml
@@ -214,6 +189,8 @@ Hotkeys:
 
 LoadScreen: LogoStripeLoadScreen
 	Image: raplus|uibits/loadscreen.png
+	Image2x: raplus|uibits/loadscreen-2x.png
+	Image3x: raplus|uibits/loadscreen-3x.png
 	Text: Filling Crates..., Charging Capacitors..., Reticulating Splines..., Planting Trees..., Building Bridges..., Aging Empires..., Compiling EVA..., Constructing Pylons..., Activating Skynet..., Splitting Atoms...
 
 ServerTraits:
@@ -230,33 +207,44 @@ Fonts:
 	Tiny:
 		Font: common|FreeSans.ttf
 		Size: 10
+		Ascender: 8
 	TinyBold:
 		Font: common|FreeSansBold.ttf
 		Size: 10
+		Ascender: 8
 	Small:
 		Font: common|FreeSans.ttf
 		Size: 12
+		Ascender: 9
 	Regular:
 		Font: common|FreeSans.ttf
 		Size: 14
+		Ascender: 11
 	Bold:
 		Font: common|FreeSansBold.ttf
 		Size: 14
+		Ascender: 11
 	MediumBold:
 		Font: common|FreeSansBold.ttf
 		Size: 18
+		Ascender: 14
 	BigBold:
 		Font: common|FreeSansBold.ttf
 		Size: 24
+		Ascender: 18
 	Title:
-		Font: raplus|ZoodRangmah.ttf
+		Font: ra|ZoodRangmah.ttf
 		Size: 48
+		Ascender: 26
+
+Missions:
+	ra|missions.yaml
 
 MapGrid:
 	TileSize: 24,24
 	Type: Rectangular
 
-SupportsMapsFrom: ra
+SupportsMapsFrom: ra, raplus
 
 SoundFormats: Aud, Wav
 
@@ -265,17 +253,14 @@ SpriteFormats: ShpD2, ShpTD, TmpRA, TmpTD, ShpTS
 SpriteSequenceFormat: TilesetSpecificSpriteSequence
 	TilesetExtensions:
 		TEMPERAT: .tem
-		TEMPERATTD: .tem
 		SNOW: .sno
-		SNOWTD: .sno
 		INTERIOR: .int
 		DESERT: .des
-		DESERTTD: .des
-		JUNGLE: .jun
-		TROPIC: .tro
-		SUBTERRAN: .sub
 
 ModelSequenceFormat: PlaceholderModelSequence
+
+AssetBrowser:
+	SupportedExtensions: .shp, .tmp, .tem, .des, .sno, .int, .vqa
 
 GameSpeeds:
 	slowest:
@@ -304,10 +289,10 @@ GameSpeeds:
 		OrderLatency: 6
 
 ColorValidator:
-	TeamColorPresets: ABB7E4, 2f86f2, FFFC01, 0CF7B2, 540081, A46F33, F5D378, 6B9493, DF74A1, FE1100, ff7a22, 5CC1A3, 253D8C, 8C5033, D1987C, B6F706
+	TeamColorPresets: F5D378, f50606, 98331f, f57606, f7bb06, f861a4, da06f3, ffc9ca, 06f739, cef7b2, D1987C, 253D8C, 2f86f2, 76d2f8, 34ba93, 07941B
 
 ModContent:
-	InstallPromptMessage: Red Alert Plus requires artwork and audio from the original game.\n\nQuick Install will automatically download this content (without music\nor videos) from a mirror of the 2008 Red Alert freeware release.\n\nAdvanced Install includes options for downloading the music and for\ncopying the videos and other content from an original game disc.
+	InstallPromptMessage: Red Alert Plus Lite requires artwork and audio from the original game.\n\nQuick Install will automatically download this content (without music\nor videos) from a mirror of the 2008 Red Alert freeware release.\n\nAdvanced Install includes options for downloading the music and for\ncopying the videos and other content from an original game disc.
 	QuickDownload: quickinstall
 	HeaderMessage: Game content may be extracted from the original game discs or an\nexisting digital install. OpenRA can also download the base game\nfiles from an online mirror of the 2008 freeware release of RA.
 	Packages:
@@ -343,12 +328,16 @@ ModContent:
 			TestFiles: ^Content/ra/v2/expand/await.aud, ^Content/ra/v2/expand/bog.aud, ^Content/ra/v2/expand/float_v2.aud, ^Content/ra/v2/expand/gloom.aud, ^Content/ra/v2/expand/grndwire.aud, ^Content/ra/v2/expand/rpt.aud, ^Content/ra/v2/expand/search.aud, ^Content/ra/v2/expand/traction.aud, ^Content/ra/v2/expand/wastelnd.aud
 			Sources: aftermath, aftermath-linux, ra-origin
 	Downloads:
-		raplus|installer/downloads.yaml
+		ra|installer/downloads.yaml
 	Sources:
-		raplus|installer/aftermath.yaml
-		raplus|installer/allies95.yaml
-		raplus|installer/cnc95.yaml
-		raplus|installer/counterstrike.yaml
-		raplus|installer/firstdecade.yaml
-		raplus|installer/origin.yaml
-		raplus|installer/soviet95.yaml
+		ra|installer/aftermath.yaml
+		ra|installer/allies95.yaml
+		ra|installer/cnc95.yaml
+		ra|installer/counterstrike.yaml
+		ra|installer/firstdecade.yaml
+		ra|installer/origin.yaml
+		ra|installer/soviet95.yaml
+
+ModCredits:
+	ModCreditsFile: raplus|credits.txt
+	ModTabTitle: Red Alert Plus Lite

@@ -1,0 +1,63 @@
+GenericVoice:
+	Variants:
+        spain: .v01,.v03
+        greece: .v01,.v03
+        turkey: .v01,.v03
+        italy: .v01,.v03
+		usa: .v01,.v03
+		belarus: .r01,.r03
+        kazakh: .r01,.r03
+        uzbek: .r01,.r03
+        turkmen: .r01,.r03
+        karelia: .r01,.r03
+	    afghan: .r01,.r03
+
+VehicleVoice:
+	Variants:
+        spain: .v00,.v02
+        greece: .v00,.v02
+        turkey: .v00,.v02
+        italy: .v00,.v02
+		usa: .v00,.v02
+		belarus: .r00,.r02
+        kazakh: .r00,.r02
+        uzbek: .r00,.r02
+        turkmen: .r00,.r02
+        karelia: .r00,.r02
+        afghan: .r00,.r02
+
+VolkovVoice:
+	DefaultVariant: .aud
+	Voices:
+		Select: sv2await,sv2ready,sv2report,sv2yessir
+		Move: sv2ackno,sv2affirm,sv2noprob,sv2overout,sv2ritaway,sv2roger,sv2ugotit
+		Action: sv2ackno,sv2affirm,sv2noprob,sv2overout,sv2ritaway,sv2roger,sv2ugotit
+		Attack: sv2ackno,sv2affirm,sv2noprob,sv2overout,sv2ritaway,sv2roger,sv2ugotit
+		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Burned: dedman10
+		Zapped: dedman6
+		Build: sv2ready
+		Kill: sv2ugotit,sv2noprob
+		Demolish: sv2ritaway,sv2overout
+
+RoboticVoice:
+	DefaultVariant: .wav
+	Voices:
+		Attack: vsenmova, vsenmovb, vsenmovc
+		Select: vsensela, vsenselb, vsenselc, vsenseld
+		Move: vsenmova, vsenmovb, vsenmovc
+		Action: vsenmova, vsenmovb, vsenmovc
+
+CommandoVoice:
+	Voices:
+		Select: ryeah1,ryes1,ryo1
+		Move: rcmon1,ronit1,rgotit1
+		Attack: ronit1,rgotit1,rnoprblm1
+		Action: ronit1,rgotit1,rnoprblm1
+		Demolish: rnoprblm1
+		Die: ramyell1
+		Burned: ramyell1
+		Zapped: ramyell1
+		Poisoned: ramyell1
+		Build: rrokroll1
+		Kill: rkeepem1,rlaugh1,rlefty1,rtuffguy1
