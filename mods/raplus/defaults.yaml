@@ -148,6 +148,7 @@
 		Prerequisites: fasterbuild
 
 ^Infantry:
+	Inherits@83: ^ProductionAIBoost
 	Inherits@84: ^AffectedByLeaflet
 	Inherits@85: ^AffectedByInflation
 	Inherits@88: ^AffectedByBounty
@@ -220,13 +221,10 @@
 ^ProductionAIBoost:
 	ProductionTimeMultiplier@productionboost:
 		Multiplier: 120
-		Prerequisites: owned-by-ai
+		Prerequisites: aitoodumb
 	ProductionCostMultiplier@productionboost:
 		Multiplier: 80
-		Prerequisites: owned-by-ai
-	GrantConditionOnBotOwner@incomeaiboost:
-		Condition: owned-by-ai
-		Bots: normal
+		Prerequisites: aitoodumb
 
 ^ProductionPlayerBoost:
 	ProductionCostMultiplier@IndustrialPlant:

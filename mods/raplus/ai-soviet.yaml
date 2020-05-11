@@ -566,6 +566,7 @@ Player:
 			sam: 4
 			hsam: 2
 			fact: 3
+			hpad: 2
 		BuildingFractions:
 			proc.soviet: 15
 			barr: 2
@@ -581,6 +582,7 @@ Player:
 			stek.russia: 1
 			mslo: 1
 			iron: 1
+			hpad: 1
 	BaseBuilderBotModule@ukraine:
 		RequiresCondition: enable-ai-player && player.ukraine
 		MinimumExcessPower: 50
@@ -620,6 +622,7 @@ Player:
 			sam: 4
 			hsam: 2
 			fact: 3
+			hpad: 2
 		BuildingFractions:
 			proc.soviet: 15
 			barr: 2
@@ -635,6 +638,7 @@ Player:
 			stek.ukraine: 1
 			mslo: 1
 			iron: 1
+			hpad: 1
 	BaseBuilderBotModule@belarus:
 		RequiresCondition: enable-ai-player && player.belarus
 		MinimumExcessPower: 60
@@ -674,6 +678,7 @@ Player:
 			sam: 4
 			hsam: 2
 			fact: 3
+			hpad: 2
 		BuildingFractions:
 			proc.soviet: 15
 			barr: 2
@@ -689,6 +694,7 @@ Player:
 			stek.belarus: 1
 			mslo: 1
 			iron: 1
+			hpad: 1
 	BaseBuilderBotModule@karelia:
 		RequiresCondition: enable-ai-player && player.karelia
 		MinimumExcessPower: 60
@@ -728,6 +734,7 @@ Player:
 			sam: 4
 			hsam: 2
 			fact: 3
+			hpad: 2
 		BuildingFractions:
 			proc.soviet: 15
 			barr: 2
@@ -743,6 +750,7 @@ Player:
 			stek.karelia: 1
 			mslo: 1
 			iron: 1
+			hpad: 1
 	BaseBuilderBotModule@kazakhstan:
 		RequiresCondition: enable-ai-player && player.kazakh
 		MinimumExcessPower: 60
@@ -782,6 +790,7 @@ Player:
 			sam: 4
 			hsam: 2
 			fact: 3
+			hpad: 2
 		BuildingFractions:
 			proc.soviet: 15
 			barr: 2
@@ -797,6 +806,7 @@ Player:
 			stek.kazakh: 1
 			mslo: 1
 			iron: 1
+			hpad: 1
 	BaseBuilderBotModule@uzbekistan:
 		RequiresCondition: enable-ai-player && player.uzbek
 		MinimumExcessPower: 60
@@ -836,6 +846,7 @@ Player:
 			sam.uzbek: 4
 			hsam.uzbek: 2
 			fact.uzbek: 2
+			hpad: 2
 		BuildingFractions:
 			proc.soviet: 15
 			barr: 2
@@ -851,6 +862,7 @@ Player:
 			stek.uzbek: 1
 			mslo: 1
 			iron: 1
+			hpad: 1
 	BaseBuilderBotModule@turkmenistan:
 		RequiresCondition: enable-ai-player && player.turkmen
 		MinimumExcessPower: 60
@@ -890,6 +902,7 @@ Player:
 			sam: 4
 			hsam: 2
 			fact: 3
+			hpad: 2
 		BuildingFractions:
 			proc.soviet: 15
 			barr: 2
@@ -905,6 +918,7 @@ Player:
 			stek.turkmen: 1
 			mslo: 1
 			iron: 1
+			hpad: 1
 	BaseBuilderBotModule@afghan:
 		RequiresCondition: enable-ai-player && player.afghan
 		MinimumExcessPower: 60
@@ -944,6 +958,7 @@ Player:
 			sam: 4
 			hsam: 2
 			fact: 3
+			hpad: 2
 		BuildingFractions:
 			proc.soviet: 15
 			barr: 2
@@ -959,6 +974,7 @@ Player:
 			stek.afghan: 1
 			mslo: 1
 			iron: 1
+			hpad: 1
 	CaptureManagerBotModule@thf:
 		RequiresCondition: enable-ai-player && player.russia || player.ukraine || player.belarus || player.karelia || player.kazakh || player.uzbek || player.turkmen || player.afghan
 		CapturingActorTypes: thf

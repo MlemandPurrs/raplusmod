@@ -311,7 +311,7 @@ TRAN.Soviet:
 
 IROQ:
 	Inherits: ^Helicopter
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Buildable:
 		Queue: Aircraft, MWFHeli
 		BuildAtProductionType: Helicopter
@@ -519,6 +519,8 @@ HELI:
 		Description: Helicopter gunship with multi-purpose\nChainguns and Missiles.\n  Strong vs Everything\n  Weak vs Anti-Air, Aircraft
 	Tooltip:
 		Name: Apache
+	Valued:
+		Cost: 1800
 	Health:
 		HP: 12000
 	Armament@TERTIARY:
@@ -665,7 +667,7 @@ U2.emp:
 	SpawnActorOnDeath:
 		Actor: U2.emp.Husk
 	Aircraft:
-		Speed: 223
+		#	Speed: 223
 	Targetable@AIRBORNE:
 		RequiresCondition: airborne
 		TargetTypes: Air
@@ -1016,7 +1018,7 @@ MIG.AI:
 
 TORN:
 	Inherits: ^Plane
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@AUTODAMAGE: ^KilledWithoutAirfield
 	Buildable:
 		Queue: Aircraft, MWFAir
@@ -1208,6 +1210,7 @@ HARR:
 		Armaments: primary, secondary
 		FacingTolerance: 20
 		PersistentTargeting: false
+		OpportunityFire: False
 	Aircraft:
 		CruiseAltitude: 2560
 		TurnSpeed: 4
