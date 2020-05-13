@@ -289,6 +289,17 @@
 		Prerequisites: player.usa
 	Repairable:
 		RepairActors: afld, afld.usa, afld.england, carr.usa.deployed
+	Sellable:
+		RefundPercent: 25
+		SellSounds: cashturn.aud
+		Cursor: sell2
+		ShowTicks: false
+		RequiresCondition: unit.sellable
+	ProximityExternalCondition:
+		Condition: unit.docked
+		Range: 1c0
+	ExternalCondition@Sellable:
+		Condition: unit.sellable
 
 ^Helicopter:
 	Aircraft:
@@ -332,6 +343,8 @@
 		Palette: effect
 		MinimumDamageState: Heavy
 		MaximumDamageState: Dead
+	AcceptsDeliveredCash:
+		ValidTypes: MoneyTransfer
 
 ^Defense:
 	Inherits@AI: ^ProductionAIBoost
@@ -390,6 +403,13 @@
 		RequiresCondition: empdisable
 	ExternalCondition@EMPTargeting:
 		Condition: EMPTank
+	Sellable:
+		SellSounds: cashturn.aud
+		Cursor: sell2
+		ShowTicks: false
+		RequiresCondition: ship.sellable
+	ExternalCondition@Sellable:
+		Condition: ship.sellable
 
 ^Submarine:
 	Inherits: ^Ship
@@ -443,6 +463,11 @@
 		CloakTypes: Underwater
 		Range: 3c0
 	RenderDetectionCircle:
+	Sellable:
+		SellSounds: cashturn.aud
+		Cursor: sell2
+		ShowTicks: false
+		RequiresCondition: ship.sellable && !underwater
 
 ^AffectedByGPSScrambler:
 	Cloak@GPSCRAMBLER:

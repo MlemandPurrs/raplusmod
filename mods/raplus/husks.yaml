@@ -61,6 +61,48 @@ HARV.Soviet.EmptyHusk:
 	ExternalCondition@recovery:
 		Condition: recovered
 
+1TNK.England.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Light Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 1tnk.England
+	InfiltrateForTransform:
+		IntoActor: 1tnk.England
+	RenderSprites:
+		Image: 1tnk.destroyed
+	SpawnActorOnDeath@recovery:
+		Actor: 1tnk.England
+		RequiresCondition: recovered
+	KillsSelf@recovery:
+		RequiresCondition: recovered
+	ExternalCondition@recovery:
+		Condition: recovered
+	-MapEditorData:
+
+1TNK.France.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Light Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 1tnk.France
+	InfiltrateForTransform:
+		IntoActor: 1tnk.France
+	RenderSprites:
+		Image: 1tnk.destroyed
+	SpawnActorOnDeath@recovery:
+		Actor: 1tnk.France
+		RequiresCondition: recovered
+	KillsSelf@recovery:
+		RequiresCondition: recovered
+	ExternalCondition@recovery:
+		Condition: recovered
+	-MapEditorData:
+
 1TNK.Germany.Husk:
 	Inherits: ^Husk
 	Tooltip:
@@ -75,6 +117,27 @@ HARV.Soviet.EmptyHusk:
 		Image: 1tnk.destroyed
 	SpawnActorOnDeath@recovery:
 		Actor: 1tnk.Germany
+		RequiresCondition: recovered
+	KillsSelf@recovery:
+		RequiresCondition: recovered
+	ExternalCondition@recovery:
+		Condition: recovered
+	-MapEditorData:
+
+1TNK.Spain.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Light Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 1tnk.Spain
+	InfiltrateForTransform:
+		IntoActor: 1tnk.Spain
+	RenderSprites:
+		Image: 1tnk.destroyed
+	SpawnActorOnDeath@recovery:
+		Actor: 1tnk.Spain
 		RequiresCondition: recovered
 	KillsSelf@recovery:
 		RequiresCondition: recovered
@@ -133,6 +196,48 @@ LTNK.Husk:
 	ExternalCondition@recovery:
 		Condition: recovered
 
+2TNK.England.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Medium Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 2tnk.England
+	InfiltrateForTransform:
+		IntoActor: 2tnk.England
+	RenderSprites:
+		Image: 2tnk.destroyed
+	SpawnActorOnDeath@recovery:
+		Actor: 2tnk.England
+		RequiresCondition: recovered
+	KillsSelf@recovery:
+		RequiresCondition: recovered
+	ExternalCondition@recovery:
+		Condition: recovered
+	-MapEditorData:
+
+2TNK.France.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Medium Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 2tnk.France
+	InfiltrateForTransform:
+		IntoActor: 2tnk.France
+	RenderSprites:
+		Image: 2tnk.destroyed
+	SpawnActorOnDeath@recovery:
+		Actor: 2tnk.France
+		RequiresCondition: recovered
+	KillsSelf@recovery:
+		RequiresCondition: recovered
+	ExternalCondition@recovery:
+		Condition: recovered
+	-MapEditorData:
+
 2TNK.Germany.Husk:
 	Inherits: ^Husk
 	Tooltip:
@@ -147,6 +252,27 @@ LTNK.Husk:
 		Image: 2tnk.destroyed
 	SpawnActorOnDeath@recovery:
 		Actor: 2tnk.Germany
+		RequiresCondition: recovered
+	KillsSelf@recovery:
+		RequiresCondition: recovered
+	ExternalCondition@recovery:
+		Condition: recovered
+	-MapEditorData:
+
+2TNK.Spain.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Medium Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 2tnk.Spain
+	InfiltrateForTransform:
+		IntoActor: 2tnk.Spain
+	RenderSprites:
+		Image: 2tnk.destroyed
+	SpawnActorOnDeath@recovery:
+		Actor: 2tnk.Spain
 		RequiresCondition: recovered
 	KillsSelf@recovery:
 		RequiresCondition: recovered
@@ -418,6 +544,48 @@ ATNK.Husk:
 	ExternalCondition@recovery:
 		Condition: recovered
 
+ATNK.England.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Flak Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: atnk.England
+	InfiltrateForTransform:
+		IntoActor: atnk.England
+	RenderSprites:
+		Image: atnk.destroyed
+	SpawnActorOnDeath@recovery:
+		Actor: atnk.England
+		RequiresCondition: recovered
+	KillsSelf@recovery:
+		RequiresCondition: recovered
+	ExternalCondition@recovery:
+		Condition: recovered
+	-MapEditorData:
+
+ATNK.France.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Flak Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: atnk.France
+	InfiltrateForTransform:
+		IntoActor: atnk.France
+	RenderSprites:
+		Image: atnk.destroyed
+	SpawnActorOnDeath@recovery:
+		Actor: atnk.France
+		RequiresCondition: recovered
+	KillsSelf@recovery:
+		RequiresCondition: recovered
+	ExternalCondition@recovery:
+		Condition: recovered
+	-MapEditorData:
+
 ATNK.Germany.Husk:
 	Inherits: ^Husk
 	Tooltip:
@@ -425,9 +593,30 @@ ATNK.Germany.Husk:
 	ThrowsParticle@turret:
 		Anim: turret
 	TransformOnCapture:
-		IntoActor: atnk.germany
+		IntoActor: atnk.Germany
 	InfiltrateForTransform:
-		IntoActor: atnk.germany
+		IntoActor: atnk.Germany
+	RenderSprites:
+		Image: atnk.destroyed
+	SpawnActorOnDeath@recovery:
+		Actor: atnk.Germany
+		RequiresCondition: recovered
+	KillsSelf@recovery:
+		RequiresCondition: recovered
+	ExternalCondition@recovery:
+		Condition: recovered
+	-MapEditorData:
+
+ATNK.Spain.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Flak Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: atnk.Spain
+	InfiltrateForTransform:
+		IntoActor: atnk.Spain
 	RenderSprites:
 		Image: atnk.destroyed
 	SpawnActorOnDeath@recovery:

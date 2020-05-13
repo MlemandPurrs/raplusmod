@@ -16,6 +16,9 @@ HARV:
 		RequiresCondition: !parachute
 	Passenger:
 		PipType: Blue
+	DeliversCash:
+		Payload: 600
+		Type: VehicleRefund
 
 HARV.drop:
 	Inherits: HARV
@@ -100,6 +103,9 @@ JEEP:
 	DetectCloaked:
 		Range: 2c0
 	RenderDetectionCircle:
+	DeliversCash:
+		Payload: 250
+		Type: VehicleRefund
 
 JEEP.Spain:
 	Inherits: JEEP
@@ -173,6 +179,9 @@ FTRK:
 		PipType: Green
 	Health:
 		HP: 15000
+	DeliversCash:
+		Payload: 300
+		Type: VehicleRefund
 
 FTRK.Kazakh:
 	Inherits: FTRK
@@ -255,6 +264,9 @@ FTRK.Repair:
 		LocalOffset: 0,0,100
 	Passenger:
 		PipType: Red
+	DeliversCash:
+		Payload: 350
+		Type: VehicleRefund
 
 APC:
 	Buildable:
@@ -293,6 +305,9 @@ APC:
 		Condition: produced
 	Passenger:
 		PipType: Green
+	DeliversCash:
+		Payload: 325
+		Type: VehicleRefund
 
 APC.Greece:
 	Inherits: APC
@@ -388,6 +403,9 @@ MBUN:
 	Targetable:
 		TargetTypes: Ground, Vehicle, VehicleDisguise
 		RequiresCondition: !parachute
+	DeliversCash:
+		Payload: 600
+		Type: VehicleRefund
 
 BTR:
 	Inherits: ^Vehicle
@@ -447,6 +465,9 @@ BTR:
 		RequiresCondition: !loaded
 	Passenger:
 		PipType: Green
+	DeliversCash:
+		Payload: 325
+		Type: VehicleRefund
 
 BTR.Russia:
 	Inherits: BTR
@@ -503,7 +524,7 @@ BTR.crate:
 	Buildable:
 		Queue: Vehicle, MWFVehicle
 		BuildPaletteOrder: 4
-		Prerequisites: ~vehicles.allies, ~!player.germany, ~!player.greece, ~!player.italy, ~techlevel.low
+		Prerequisites: ~vehicles.allies, ~!player.england, ~!player.france, ~!player.germany, ~!player.spain, ~!player.greece, ~!player.italy, ~techlevel.low
 	Valued:
 		Cost: 600
 	Health:
@@ -523,34 +544,6 @@ BTR.crate:
 		LocalOffset: 768,0,90
 		MuzzleSequence: muzzle
 		PauseOnCondition: empdisable || leaflet
-		RequiresCondition: !britishplayer && !frenchplayer && !spanishplayer
-	Armament@PRIMARYENGLAND:
-		Name: primary
-		Weapon: 25mm.britain
-		Recoil: 85
-		RecoilRecovery: 25
-		LocalOffset: 768,0,90
-		MuzzleSequence: muzzle
-		PauseOnCondition: empdisable || leaflet
-		RequiresCondition: britishplayer
-	Armament@PRIMARYFRANCE:
-		Name: primary
-		Weapon: 25mm.france
-		Recoil: 85
-		RecoilRecovery: 25
-		LocalOffset: 768,0,90
-		MuzzleSequence: muzzle
-		PauseOnCondition: empdisable || leaflet
-		RequiresCondition: frenchplayer
-	Armament@PRIMARYSPAIN:
-		Name: primary
-		Weapon: 25mm.spain
-		Recoil: 85
-		RecoilRecovery: 25
-		LocalOffset: 768,0,90
-		MuzzleSequence: muzzle
-		PauseOnCondition: empdisable || leaflet
-		RequiresCondition: spanishplayer
 	Armament@SECONDARY:
 		Name: secondary
 		Weapon: LtnkRockets
@@ -568,18 +561,53 @@ BTR.crate:
 		RequiresCondition: !parachute
 	Passenger:
 		PipType: Green
-	GrantConditionOnFaction@ENGLAND:
-		Condition: britishplayer
-		Factions: england
-	GrantConditionOnFaction@FRANCE:
-		Condition: frenchplayer
-		Factions: france
-	GrantConditionOnFaction@SPAIN:
-		Condition: spanishplayer
-		Factions: spain
-	ProductionCostMultiplier@ENGLANDMALUS:
-		Multiplier: 110
-		Prerequisites: player.england
+	DeliversCash:
+		Payload: 300
+		Type: VehicleRefund
+
+1TNK.England:
+	Inherits: 1TNK
+	Buildable:
+		Prerequisites: ~vehicles.allies, ~player.england, ~techlevel.low
+	Valued:
+		Cost: 650
+	-Armament@PRIMARY:
+	Armament@PRIMARYENGLAND:
+		Name: primary
+		Weapon: 25mm.britain
+		Recoil: 85
+		RecoilRecovery: 25
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable || leaflet
+	SpawnActorOnDeath:
+		Actor: 1TNK.England.Husk
+	RenderSprites:
+		Image: 1tnk
+	-DeliversCash:
+	DeliversCash:
+		Payload: 325
+		Type: VehicleRefund
+	-MapEditorData:
+
+1TNK.France:
+	Inherits: 1TNK
+	Buildable:
+		Prerequisites: ~vehicles.allies, ~player.france, ~techlevel.low
+	-Armament@PRIMARY:
+	Armament@PRIMARY:
+		Name: primary
+		Weapon: 25mm.france
+		Recoil: 85
+		RecoilRecovery: 25
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable || leaflet
+	SpawnActorOnDeath:
+		Actor: 1TNK.France.Husk
+	RenderSprites:
+		Image: 1tnk
+	-MapEditorData:
 
 1TNK.Germany:
 	Inherits: 1TNK
@@ -591,6 +619,25 @@ BTR.crate:
 		Speed: 90
 	SpawnActorOnDeath:
 		Actor: 1TNK.Germany.Husk
+	RenderSprites:
+		Image: 1tnk
+	-MapEditorData:
+
+1TNK.Spain:
+	Inherits: 1TNK
+	Buildable:
+		Prerequisites: ~vehicles.allies, ~player.spain, ~techlevel.low
+	-Armament@PRIMARY:
+	Armament@PRIMARYFRANCE:
+		Name: primary
+		Weapon: 25mm.spain
+		Recoil: 85
+		RecoilRecovery: 25
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable || leaflet
+	SpawnActorOnDeath:
+		Actor: 1TNK.Spain.Husk
 	RenderSprites:
 		Image: 1tnk
 	-MapEditorData:
@@ -692,12 +739,15 @@ LTNK:
 		RequiresCondition: !parachute
 	Passenger:
 		PipType: Yellow
+	DeliversCash:
+		Payload: 325
+		Type: VehicleRefund
 
 2TNK:
 	Buildable:
 		Queue: Vehicle, MWFVehicle
 		BuildPaletteOrder: 5
-		Prerequisites: fix, ~vehicles.allies, ~!player.germany, ~techlevel.medium
+		Prerequisites: fix, ~vehicles.allies, ~!player.england, ~!player.france, ~!player.germany, ~!player.spain, ~techlevel.medium
 	Valued:
 		Cost: 700
 	Health:
@@ -711,34 +761,6 @@ LTNK:
 		LocalOffset: 720,0,80
 		MuzzleSequence: muzzle
 		PauseOnCondition: empdisable || leaflet
-		RequiresCondition: !britishplayer && !frenchplayer && !spanishplayer
-	Armament@PRIMARYENGLAND:
-		Name: primary
-		Weapon: 90mm.britain
-		Recoil: 85
-		RecoilRecovery: 38
-		LocalOffset: 720,0,80
-		MuzzleSequence: muzzle
-		PauseOnCondition: empdisable || leaflet
-		RequiresCondition: britishplayer
-	Armament@PRIMARYFRANCE:
-		Name: primary
-		Weapon: 90mm.france
-		Recoil: 85
-		RecoilRecovery: 25
-		LocalOffset: 720,0,80
-		MuzzleSequence: muzzle
-		PauseOnCondition: empdisable || leaflet
-		RequiresCondition: frenchplayer
-	Armament@PRIMARYSPAIN:
-		Name: primary
-		Weapon: 90mm.spain
-		Recoil: 85
-		RecoilRecovery: 25
-		LocalOffset: 720,0,80
-		MuzzleSequence: muzzle
-		PauseOnCondition: empdisable || leaflet
-		RequiresCondition: spanishplayer
 	Armament@SECONDARY:
 		Name: secondary
 		Weapon: M1CTank
@@ -753,18 +775,52 @@ LTNK:
 		RequiresCondition: !parachute
 	Passenger:
 		PipType: Yellow
-	GrantConditionOnFaction@ENGLAND:
-		Condition: britishplayer
-		Factions: england
-	GrantConditionOnFaction@FRANCE:
-		Condition: frenchplayer
-		Factions: france
-	GrantConditionOnFaction@SPAIN:
-		Condition: spanishplayer
-		Factions: spain
-	ProductionCostMultiplier@ENGLANDMALUS:
-		Multiplier: 110
-		Prerequisites: player.england
+	DeliversCash:
+		Payload: 350
+		Type: VehicleRefund
+
+2TNK.England:
+	Inherits: 2TNK
+	Buildable:
+		Prerequisites: fix, ~vehicles.allies, ~player.england, ~techlevel.medium
+	Valued:
+		Cost: 750
+	-Armament@PRIMARY:	
+	Armament@PRIMARY:
+		Name: primary
+		Weapon: 90mm.britain
+		Recoil: 85
+		RecoilRecovery: 38
+		LocalOffset: 720,0,80
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable || leaflet
+	SpawnActorOnDeath:
+		Actor: 2TNK.England.Husk
+	RenderSprites:
+		Image: 2tnk
+	-MapEditorData:
+	-DeliversCash:
+	DeliversCash:
+		Payload: 325
+		Type: VehicleRefund
+
+2TNK.France:
+	Inherits: 2TNK
+	Buildable:
+		Prerequisites: fix, ~vehicles.allies, ~player.france, ~techlevel.medium
+	Armament@PRIMARY:
+		Name: primary
+		Weapon: 90mm.france
+		Recoil: 85
+		RecoilRecovery: 38
+		LocalOffset: 720,0,80
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable || leaflet
+	SpawnActorOnDeath:
+		Actor: 2TNK.France.Husk
+	RenderSprites:
+		Image: 2tnk
+	-MapEditorData:
 
 2TNK.Germany:
 	Inherits: 2TNK
@@ -776,6 +832,25 @@ LTNK:
 		Speed: 77
 	SpawnActorOnDeath:
 		Actor: 2TNK.Germany.Husk
+	RenderSprites:
+		Image: 2tnk
+	-MapEditorData:
+
+2TNK.Spain:
+	Inherits: 2TNK
+	Buildable:
+		Prerequisites: fix, ~vehicles.allies, ~player.spain, ~techlevel.medium
+	-Armament@PRIMARY:
+	Armament@PRIMARY:
+		Name: primary
+		Weapon: 90mm.spain
+		Recoil: 85
+		RecoilRecovery: 38
+		LocalOffset: 720,0,80
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable || leaflet
+	SpawnActorOnDeath:
+		Actor: 2TNK.Spain.Husk
 	RenderSprites:
 		Image: 2tnk
 	-MapEditorData:
@@ -818,6 +893,9 @@ LTNK:
 		PauseOnCondition: empdisable || leaflet
 	SpawnActorOnDeath:
 		Actor: 3TNK.1B.Husk
+	DeliversCash:
+		Payload: 425
+		Type: VehicleRefund
 
 3TNK.1B.Ukraine:
 	Inherits: 3TNK.1B
@@ -849,6 +927,10 @@ LTNK:
 	RenderSprites:
 		Image: 3tnk.1b
 	-MapEditorData:
+	-DeliversCash:
+	DeliversCash:
+		Payload: 382
+		Type: VehicleRefund
 
 3TNK.1B.Turkmen:
 	Inherits: 3TNK.1B
@@ -876,7 +958,7 @@ LTNK:
 	Buildable:
 		Queue: Vehicle, MWFVehicle
 		BuildPaletteOrder: 5
-		Prerequisites: fix, ~vehicles.soviet, ~!player.ukraine, ~!player.belarus, ~techlevel.medium
+		Prerequisites: fix, ~vehicles.soviet, ~!player.ukraine, ~!player.belarus, ~!player.turkmen, ~techlevel.medium
 		Description: Soviet Main Battle Tank, with dual cannons.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
 	Armament:
 		PauseOnCondition: empdisable || leaflet
@@ -884,6 +966,9 @@ LTNK:
 		PauseOnCondition: empdisable || leaflet
 	Passenger:
 		PipType: Yellow
+	DeliversCash:
+		Payload: 575
+		Type: VehicleRefund
 
 3TNK.Ukraine:
 	Inherits: 3TNK
@@ -915,6 +1000,31 @@ LTNK:
 	RenderSprites:
 		Image: 3tnk
 	-MapEditorData:
+	DeliversCash:
+		Payload: 517
+		Type: VehicleRefund
+
+3TNK.Turkmen:
+	Inherits: 3TNK
+	Buildable:
+		Prerequisites: fix, ~vehicles.soviet, ~player.turkmen, ~!vehicles.upgraded, ~techlevel.medium
+	RenderSprites:
+		Image: 3tnk
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	-MapEditorData:
+
+3TNK.Turkmen.R2:
+	Inherits: 3TNK.Turkmen
+	Buildable:
+		Prerequisites: fix, ~vehicles.soviet, ~player.turkmen, ~vehicles.upgraded, ~techlevel.medium
+		Icon: rank2-icon
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 2
+	RenderSprites:
+		Image: 3tnk
 
 3TNK.R1:
 	Inherits: 3TNK
@@ -941,6 +1051,9 @@ LTNK:
 		PauseOnCondition: empdisable || leaflet
 	AttackTurreted:
 		PauseOnCondition: empdisable || leaflet
+	DeliversCash:
+		Payload: 1000
+		Type: VehicleRefund
 
 4TNK.Ukraine:
 	Inherits: 4TNK
@@ -973,6 +1086,10 @@ LTNK:
 	RenderSprites:
 		Image: 4tnk
 	-MapEditorData:
+	-DeliversCash:
+	DeliversCash:
+		Payload: 900
+		Type: VehicleRefund
 
 4TNK.Tsla:
 	Inherits: 4TNK
@@ -1003,6 +1120,9 @@ LTNK:
 	SpawnActorOnDeath:
 		Actor: 4TNK.Tsla.Husk
 	-WithMuzzleOverlay:
+	DeliversCash:
+		Payload: 1200
+		Type: VehicleRefund
 
 4TNK.Flam:
 	Inherits: 4TNK
@@ -1032,6 +1152,9 @@ LTNK:
 		PauseOnCondition: empdisable || leaflet
 	SpawnActorOnDeath:
 		Actor: 4TNK.Flam.Husk
+	DeliversCash:
+		Payload: 800
+		Type: VehicleRefund
 
 ARTY:
 	Buildable:
@@ -1049,6 +1172,9 @@ ARTY:
 	RenderRangeCircle:
 	Passenger:
 		PipType: Yellow
+	DeliversCash:
+		Payload: 425
+		Type: VehicleRefund
 
 ARTY.France:
 	Inherits: ARTY
@@ -1120,6 +1246,9 @@ GCAN:
 	Targetable:
 		TargetTypes: Ground, Vehicle, VehicleDisguise
 		RequiresCondition: !parachute
+	DeliversCash:
+		Payload: 600
+		Type: VehicleRefund
 
 V2RL:
 	Buildable:
@@ -1145,6 +1274,9 @@ V2RL:
 	RenderRangeCircle:
 	Passenger:
 		PipType: Yellow
+	DeliversCash:
+		Payload: 450
+		Type: VehicleRefund
 
 MNLY:
 	Buildable:
@@ -1160,6 +1292,9 @@ MNLY:
 		RearmActors: fix, fix.usa, fix.spain, fix.italy, fix.greece, fix.turkey, fix.russia, fix.ukraine, fix.karelia, fix.kazakh, fix.uzbek, fix.turkmen, fix.afghan
 	Passenger:
 		PipType: Blue
+	DeliversCash:
+		Payload: 350
+		Type: VehicleRefund
 
 MNLY.Karelia:
 	Inherits: MNLY
@@ -1224,6 +1359,9 @@ MNLY.Mole:
 		InitialStanceAI: ReturnFire
 	RenderSprites:
 		Image: mnly.mole
+	DeliversCash:
+		Payload: 700
+		Type: VehicleRefund
 
 ATNK:
 	Inherits: ^TrackedVehicle
@@ -1232,7 +1370,7 @@ ATNK:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 8
-		Prerequisites: dome, fix, ~vehicles.allies, ~!player.germany, ~!player.greece, ~!player.italy, ~techlevel.high
+		Prerequisites: dome, fix, ~vehicles.allies, ~!player.england, ~!player.france, ~!player.germany, ~!player.spain, ~!player.greece, ~!player.italy, ~techlevel.high
 		Description: Mobile anti-air unit.\n  Strong vs Infantry, Aircraft\n  Weak vs Tanks
 	Valued:
 		Cost: 650
@@ -1258,56 +1396,12 @@ ATNK:
 		LocalOffset: 262,160,160, 262,-160,160
 		MuzzleSequence: muzzle
 		PauseOnCondition: empdisable || leaflet
-		RequiresCondition: !britishplayer && !frenchplayer && !spanishplayer
-	Armament@PRIMARYENGLAND:
-		Name: primary
-		Weapon: FLAK-23-AA.britain
-		LocalOffset: 262,160,160, 262,-160,160
-		MuzzleSequence: muzzle
-		PauseOnCondition: empdisable || leaflet
-		RequiresCondition: britishplayer
-	Armament@PRIMARYFRANCE:
-		Name: primary
-		Weapon: FLAK-23-AA.france
-		LocalOffset: 262,160,160, 262,-160,160
-		MuzzleSequence: muzzle
-		PauseOnCondition: empdisable || leaflet
-		RequiresCondition: frenchplayer
-	Armament@PRIMARYSPAIN:
-		Name: primary
-		Weapon: FLAK-23-AA.spain
-		LocalOffset: 262,160,160, 262,-160,160
-		MuzzleSequence: muzzle
-		PauseOnCondition: empdisable || leaflet
-		RequiresCondition: spanishplayer
 	Armament@SECONDARY:
 		Name: secondary
 		Weapon: FLAK-23-AG
 		LocalOffset: 262,160,160, 262,-160,160
 		MuzzleSequence: muzzle
 		PauseOnCondition: empdisable || leaflet
-		RequiresCondition: !britishplayer && !frenchplayer && !spanishplayer
-	Armament@SECONDARYENGLAND:
-		Name: secondary
-		Weapon: FLAK-23-AG.britain
-		LocalOffset: 262,160,160, 262,-160,160
-		MuzzleSequence: muzzle
-		PauseOnCondition: empdisable || leaflet
-		RequiresCondition: britishplayer
-	Armament@SECONDARYFRANCE:
-		Name: secondary
-		Weapon: FLAK-23-AG.france
-		LocalOffset: 262,160,160, 262,-160,160
-		MuzzleSequence: muzzle
-		PauseOnCondition: empdisable || leaflet
-		RequiresCondition: frenchplayer
-	Armament@SECONDARYSPAIN:
-		Name: secondary
-		Weapon: FLAK-23-AG.spain
-		LocalOffset: 262,160,160, 262,-160,160
-		MuzzleSequence: muzzle
-		PauseOnCondition: empdisable || leaflet
-		RequiresCondition: spanishplayer
 	Armament@TERTIARY:
 		Name: tertiary
 		Weapon: RedEye
@@ -1342,18 +1436,63 @@ ATNK:
 		RequiresCondition: !ammo
 	Passenger:
 		PipType: Red
-	GrantConditionOnFaction@ENGLAND:
-		Condition: britishplayer
-		Factions: england
-	GrantConditionOnFaction@FRANCE:
-		Condition: frenchplayer
-		Factions: france
-	GrantConditionOnFaction@SPAIN:
-		Condition: spanishplayer
-		Factions: spain
-	ProductionCostMultiplier@ENGLANDMALUS:
-		Multiplier: 110
-		Prerequisites: player.england
+	DeliversCash:
+		Payload: 325
+		Type: VehicleRefund
+
+ATNK.England:
+	Inherits: ATNK
+	Buildable:
+		Prerequisites: dome, fix, ~vehicles.allies, ~player.england, ~techlevel.high
+	Valued:
+		Cost: 700
+	-Armament@PRIMARY:	
+	Armament@PRIMARY:
+		Name: primary
+		Weapon: FLAK-23-AA.britain
+		LocalOffset: 262,160,160, 262,-160,160
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable || leaflet
+	-Armament@SECONDARY:
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: FLAK-23-AG.britain
+		LocalOffset: 262,160,160, 262,-160,160
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable || leaflet
+	SpawnActorOnDeath:
+		Actor: ATNK.England.Husk
+	RenderSprites:
+		Image: atnk
+	-MapEditorData:
+	-DeliversCash:
+	DeliversCash:
+		Payload: 350
+		Type: VehicleRefund
+
+ATNK.France:
+	Inherits: ATNK
+	Buildable:
+		Prerequisites: dome, fix, ~vehicles.allies, ~player.france, ~techlevel.high
+	-Armament@PRIMARY:	
+	Armament@PRIMARY:
+		Name: primary
+		Weapon: FLAK-23-AA.france
+		LocalOffset: 262,160,160, 262,-160,160
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable || leaflet
+	-Armament@SECONDARY:
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: FLAK-23-AG.france
+		LocalOffset: 262,160,160, 262,-160,160
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable || leaflet
+	SpawnActorOnDeath:
+		Actor: ATNK.France.Husk
+	RenderSprites:
+		Image: atnk
+	-MapEditorData:
 
 ATNK.Germany:
 	Inherits: ATNK
@@ -1365,6 +1504,30 @@ ATNK.Germany:
 		Speed: 90
 	SpawnActorOnDeath:
 		Actor: ATNK.Germany.Husk
+	RenderSprites:
+		Image: atnk
+	-MapEditorData:
+
+ATNK.Spain:
+	Inherits: ATNK
+	Buildable:
+		Prerequisites: dome, fix, ~vehicles.allies, ~player.spain, ~techlevel.high
+	-Armament@PRIMARY:	
+	Armament@PRIMARY:
+		Name: primary
+		Weapon: FLAK-23-AA.spain
+		LocalOffset: 262,160,160, 262,-160,160
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable || leaflet
+	-Armament@SECONDARY:
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: FLAK-23-AG.spain
+		LocalOffset: 262,160,160, 262,-160,160
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable || leaflet
+	SpawnActorOnDeath:
+		Actor: ATNK.Spain.Husk
 	RenderSprites:
 		Image: atnk
 	-MapEditorData:
@@ -1471,6 +1634,9 @@ TNKD:
 	Targetable:
 		TargetTypes: Ground, Vehicle, VehicleDisguise
 		RequiresCondition: !parachute
+	DeliversCash:
+		Payload: 600
+		Type: VehicleRefund
 
 SPG:
 	Inherits: ^TrackedVehicle
@@ -1521,13 +1687,16 @@ SPG:
 	Passenger:
 		Weight: 2
 		PipType: Red
+	DeliversCash:
+		Payload: 400
+		Type: VehicleRefund
 
 MRJ:
 	Buildable:
 		BuildPaletteOrder: 9
 		Prerequisites: atek, ~vehicles.allies, ~player.england, ~techlevel.high
 		BuildDurationModifier: 60
-		Description: Jams nearby enemy radar domes\nand deflects incoming missiles.\n  Continues to deflect missiles while in a Transport.\n  Unarmed
+		Description: Jams enemy radar domes\nand deflects incoming missiles.\nDoesnt appear on enemy Radar.\n  Continues to deflect missiles while in a Transport.\n  Unarmed
 	WithIdleOverlay@SPINNER:
 		PauseOnCondition: empdisable
 	ProximityExternalCondition@JAMMER:
@@ -1537,6 +1706,11 @@ MRJ:
 		RequiresCondition: !parachute
 	Passenger:
 		PipType: Blue
+	DeliversCash:
+		Payload: 1000
+		Type: VehicleRefund
+	AppearsOnRadar:
+		ValidStances: Ally
 
 MHQ:
 	Inherits: ^TrackedVehicle
@@ -1598,6 +1772,9 @@ MHQ:
 	RenderDetectionCircle:
 	RenderSprites:
 		Image: mrj
+	DeliversCash:
+		Payload: 500
+		Type: VehicleRefund
 
 CTNK:
 	Buildable:
@@ -1629,6 +1806,9 @@ CTNK:
 		RevealGeneratedShroud: False
 	RevealsShroud@GAPGEN:
 		Range: 4c0
+	DeliversCash:
+		Payload: 675
+		Type: VehicleRefund
 
 STNK:
 	Buildable:
@@ -1636,7 +1816,7 @@ STNK:
 		Prerequisites: atek, ~vehicles.allies, ~player.france, ~techlevel.high
 		BuildDurationModifier: 60
 	Valued:
-		Cost: 950
+		Cost: 850
 	Mobile:
 		PauseOnCondition: !(!empdisable && !notmobile && !being-captured)
 	-Armament:
@@ -1682,6 +1862,9 @@ STNK:
 		RevealGeneratedShroud: False
 	RevealsShroud@GAPGEN:
 		Range: 4c0
+	DeliversCash:
+		Payload: 425
+		Type: VehicleRefund
 
 HELL:
 	Inherits: ^Vehicle
@@ -1736,6 +1919,9 @@ HELL:
 		RequiresCondition: !parachute
 	GrantConditionWhileAiming:
 		Condition: stoptofire
+	DeliversCash:
+		Payload: 400
+		Type: VehicleRefund
 
 MAPC:
 	Inherits: ^TrackedVehicle
@@ -1795,6 +1981,9 @@ MAPC:
 		RequiresCondition: !parachute
 	Passenger:
 		PipType: Red
+	DeliversCash:
+		Payload: 400
+		Type: VehicleRefund
 
 MGG:
 	Buildable:
@@ -1824,6 +2013,9 @@ MGG:
 		RequiresCondition: !parachute
 	Passenger:
 		PipType: Blue
+	DeliversCash:
+		Payload: 400
+		Type: VehicleRefund
 
 MGG.afghan:
 	Inherits: MGG
@@ -1834,6 +2026,10 @@ MGG.afghan:
 	RenderSprites:
 		Image: mgg
 	-MapEditorData:
+	-DeliversCash:
+	DeliversCash:
+		Payload: 300
+		Type: VehicleRefund
 
 #   Disguise Tank
 DTNK:
@@ -1856,7 +2052,7 @@ DTNK:
 	DisguiseTooltip@default:
 		Name: Mirage Tank
 		GenericName: Tank
-		RequiresCondition: !jeep && !apc && !tnk1 && !tnk2 && !arty && !mnly && !atnk && !tnkd && !mrj && !stnk && !ctnk && !mcv && !harv && !truk && !mgg && !hell && !mrls && !mbun && !mapc && !gcan && !ptnk
+		RequiresCondition: !jeep && !apc && !tnk1 && !tnk2 && !arty && !mnly && !atnk && !tnkd && !mrj && !stnk && !ctnk && !mcv && !harv && !truk && !mgg && !hell && !mbun && !mapc && !gcan && !ptnk
 	DisguiseTooltip@jeep:
 		Name: Jeep
 		GenericName: Vehicle
@@ -2057,14 +2253,20 @@ DTNK:
 			apc.greece: apc
 			apc.greece.r2: apc
 			1tnk: tnk1
+			1tnk.england: tnk1
+			1tnk.france: tnk1
 			1tnk.germany: tnk1
+			1tnk.spain: tnk1
 			1tnk.italy: tnk1
 			1tnk.italy.r2: tnk1
 			1tnk.greece: tnk1
 			1tnk.r1: tnk1
 			1tnf: tnk1
 			2tnk: tnk2
+			2tnk.england: tnk2
+			2tnk.france: tnk2
 			2tnk.germany: tnk2
+			2tnk.spain: tnk2
 			2tnf: tnk2
 			2tnk.r1: tnk2
 			arty: arty
@@ -2073,7 +2275,10 @@ DTNK:
 			artf: arty
 			mnly: mnly
 			atnk: atnk
+			atnk.england: atnk
+			atnk.france: atnk
 			atnk.germany: atnk
+			atnk.spain: atnk
 			atnk.italy: atnk
 			atnk.italy.r2: atnk
 			atnk.greece: atnk
@@ -2277,6 +2482,9 @@ DTNK:
 		RequiresCondition: ptnk
 	Passenger:
 		PipType: Red
+	DeliversCash:
+		Payload: 675
+		Type: VehicleRefund
 
 MRLS:
 	Inherits: ^TrackedVehicle
@@ -2361,6 +2569,9 @@ MRLS:
 		ReferencePoint: Bottom, Left
 		ZOffset: 256
 		RequiresCondition: !deployed
+	DeliversCash:
+		Payload: 625
+		Type: VehicleRefund
 
 TTNK:
 	Buildable:
@@ -2372,6 +2583,9 @@ TTNK:
 		PauseOnCondition: !(!being-captured)
 	Passenger:
 		PipType: Red
+	DeliversCash:
+		Payload: 675
+		Type: VehicleRefund
 
 DTRK:
 	Buildable:
@@ -2416,6 +2630,9 @@ DTRK:
 		RequiresCondition: truk
 	Passenger:
 		PipType: Red
+	DeliversCash:
+		Payload: 1250
+		Type: VehicleRefund
 
 QTNK:
 	Buildable:
@@ -2440,6 +2657,9 @@ QTNK:
 		Condition: invulnerability
 		OrderName: deploy
 		RequiresCondition: invulnerability && !madweakness
+	DeliversCash:
+		Payload: 1000
+		Type: VehicleRefund
 
 BRDM:
 	Inherits: ^Vehicle
@@ -2489,6 +2709,9 @@ BRDM:
 		PipType: Red
 	Carryable:
 		LocalOffset: 0,0,100
+	DeliversCash:
+		Payload: 325
+		Type: VehicleRefund
 
 BRDM.R1:
 	Inherits: BRDM
@@ -2537,6 +2760,10 @@ BRDM.Scout:
 	DetectCloaked:
 		Range: 2c0
 	RenderDetectionCircle:
+	-DeliversCash:
+	DeliversCash:
+		Payload: 225
+		Type: VehicleRefund
 
 BEHE:
 	Inherits: ^TrackedVehicle
@@ -2605,6 +2832,9 @@ BEHE:
 		Weapon: MiniNuke
 		EmptyWeapon: MiniNuke
 		DamageSource: Killer
+	DeliversCash:
+		Payload: 1750
+		Type: VehicleRefund
 
 BEHE.tank:
 	Inherits: ^TrackedVehicle
@@ -2683,7 +2913,10 @@ BEHE.tank:
 		Weapon: MiniNuke
 		EmptyWeapon: MiniNuke
 		DamageSource: Killer
-	
+	DeliversCash:
+		Payload: 1500
+		Type: VehicleRefund
+
 HAPC:
 	Inherits: ^TrackedVehicle
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
@@ -2734,6 +2967,9 @@ HAPC:
 		Weapon: VisualExplode
 		EmptyWeapon: VisualExplode
 		Chance: 50
+	DeliversCash:
+		Payload: 400
+		Type: VehicleRefund
 
 MCV:
 	Buildable:
@@ -2750,6 +2986,9 @@ MCV:
 		RequiresCondition: !parachute
 	Transforms:
 		PauseOnCondition: empdisable
+	DeliversCash:
+		Payload: 2500
+		Type: VehicleRefund
 
 MCV.ai:
 	Inherits: MCV
@@ -2782,6 +3021,12 @@ MCV.uzbek:
 		Image: mcv
 	-MapEditorData:
 	-ProductionCostMultiplier@IndustrialPlant:
+	-ProductionTimeMultiplier@productionboost:
+	-ProductionCostMultiplier@productionboost:
+	-DeliversCash:
+	DeliversCash:
+		Payload: 1875
+		Type: VehicleRefund
 
 MCV.uzbek.ai:
 	Inherits: MCV.uzbek
@@ -2803,6 +3048,8 @@ TRUK:
 	Passenger:
 		PipType: Blue
 	-ProductionCostMultiplier@IndustrialPlant:
+	DeliversCash:
+		Type: MoneyTransfer
 
 FIST:
 	Inherits: ^Vehicle
@@ -2844,6 +3091,9 @@ FIST:
 		CargoType: Vehicle
 		Weight: 4
 		PipType: Blue
+	DeliversCash:
+		Payload: 1000
+		Type: VehicleRefund
 
 ICBM:
 	Inherits: ^Vehicle
@@ -2900,6 +3150,9 @@ ICBM:
 		PingRadar: True
 	ProvidesPrerequisite@LIMITING:
 		Prerequisite: enough.icbm
+	DeliversCash:
+		Payload: 1250
+		Type: VehicleRefund
 
 PTNK:
 	Inherits: 2TNK
@@ -2944,6 +3197,9 @@ PTNK:
 		PipType: Red
 	SpawnActorOnDeath:
 		Actor: PTNK.Husk
+	DeliversCash:
+		Payload: 450
+		Type: VehicleRefund
 
 MSS.soviet:
 	Inherits: ^Vehicle
@@ -2988,6 +3244,9 @@ MSS.soviet:
 		DecorationBounds: 28,28
 	RenderSprites:
 		Image: mss
+	DeliversCash:
+		Payload: 375
+		Type: VehicleRefund
 
 PRSM:
 	Inherits: ^TrackedVehicle
@@ -3035,6 +3294,9 @@ PRSM:
 	WithSpriteTurret:
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+	DeliversCash:
+		Payload: 750
+		Type: VehicleRefund
 
 IFV:
 	Inherits: ^Vehicle
@@ -3333,3 +3595,6 @@ IFV:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
+	DeliversCash:
+		Payload: 325
+		Type: VehicleRefund

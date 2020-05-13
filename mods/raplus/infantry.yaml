@@ -18,6 +18,9 @@ E1:
 		PipType: Green
 	Cloneable:
 		Types: Soldier
+	DeliversCash:
+		Payload: 25
+		Type: InfantryRefund
 
 E1.Marine:
 	Inherits: E1
@@ -84,6 +87,10 @@ E1.Marine:
 	WithDeathAnimation@ROT:
 		RequiresCondition: !swimming
 	-Cloneable:
+	-DeliversCash:
+	DeliversCash:
+		Payload: 112
+		Type: InfantryRefund
 
 E2:
 	Inherits@ROT: ^RottingInfantry
@@ -103,6 +110,9 @@ E2:
 		PipType: Green
 	Cloneable:
 		Types: Soldier
+	DeliversCash:
+		Payload: 37
+		Type: InfantryRefund
 
 E2.Uzbek:
 	Inherits: E2
@@ -151,12 +161,17 @@ E3:
 		PauseOnCondition: !ammo || leaflet
 	Armament@SECONDARY:
 		PauseOnCondition: !ammo || leaflet
+	Armament@GARRISONED:
+		LocalOffset: 0,0,277
 	ReloadAmmoPool:
 		PauseOnCondition: ammo
 	AutoTarget:
 		ScanRadius: -1
 	Cloneable:
 		Types: Soldier
+	DeliversCash:
+		Payload: 75
+		Type: InfantryRefund
 
 E4:
 	Buildable:
@@ -168,6 +183,9 @@ E4:
 		PauseOnCondition: leaflet
 	Passenger:
 		PipType: Green
+	DeliversCash:
+		Payload: 100
+		Type: InfantryRefund
 
 E4.Ukraine:
 	Inherits: E4
@@ -223,6 +241,9 @@ E6:
 		ValidStances: Neutral
 		EnterCursor: goldwrench
 		PlayerExperience: 25
+	DeliversCash:
+		Payload: 125
+		Type: InfantryRefund
 
 E6.Uzbek:
 	Inherits: E6
@@ -233,19 +254,29 @@ E6.Uzbek:
 		Cost: 375
 	RenderSprites:
 		Image: e6
+	-DeliversCash:
+	DeliversCash:
+		Payload: 93
+		Type: InfantryRefund
+	-ProductionTimeMultiplier@productionboost:
+	-ProductionCostMultiplier@productionboost:
+	-MapEditorData:
 
 MEDI:
 	Inherits@ROT: ^RottingInfantry
 	Inherits@BOMBEQUIP: ^AffectedByBombVests
 	Buildable:
 		BuildPaletteOrder: 9
-		Prerequisites: ~tent, dome, ~techlevel.low
+		Prerequisites: ~tent, dome, ~techlevel.
 	Health:
 		HP: 6000
 	Valued:
 		Cost: 250
 	Passenger:
 		PipType: Blue
+	DeliversCash:
+		Payload: 62
+		Type: InfantryRefund
 
 MECH:
 	Inherits@ROT: ^RottingInfantry
@@ -257,6 +288,9 @@ MECH:
 		BuildPaletteOrder: 6
 	Passenger:
 		PipType: Blue
+	DeliversCash:
+		Payload: 125
+		Type: InfantryRefund
 
 MECH.Germany:
 	Inherits: MECH
@@ -292,6 +326,9 @@ SPY:
 		Name: garrisoned
 		Weapon: SilencedPPK
 		MuzzleSequence: garrison-muzzle
+	DeliversCash:
+		Payload: 125
+		Type: InfantryRefund
 
 SPY.England:
 	Buildable:
@@ -334,6 +371,9 @@ THF:
 		SabotageThreshold: 1
 		SabotageHPRemoval: 20
 		PlayerExperience: 50
+	DeliversCash:
+		Payload: 125
+		Type: InfantryRefund
 
 E7:
 	Inherits@ROT: ^RottingInfantry
@@ -377,6 +417,9 @@ E7:
 		PipType: Red
 	WithDeathAnimation@ROT:
 		RequiresCondition: !swimming
+	DeliversCash:
+		Payload: 300
+		Type: InfantryRefund
 
 E7.usa:
 	Inherits: E7
@@ -392,6 +435,7 @@ E7.usa:
 VOLK:
 	Inherits@ROT: ^RottingInfantry
 	Inherits: GNRL
+	#	Inherits@83: ^ProductionAIBoost
 	Inherits@BOMBEQUIP: ^AffectedByBombVests
 	Buildable:
 		Queue: Infantry
@@ -451,6 +495,9 @@ VOLK:
 		TargetTypes: Ground, Infantry, Disguise, Cyborg
 	MapEditorData:
 		Categories: Infantry
+	DeliversCash:
+		Payload: 375
+		Type: InfantryRefund
 
 SNIP:
 	Inherits@ROT: ^RottingInfantry
@@ -555,6 +602,9 @@ SNIP:
 	Passenger:
 		PipType: Red
 	RenderRangeCircle:
+	DeliversCash:
+		Payload: 200
+		Type: InfantryRefund
 
 SNIP.r1:
 	Inherits: SNIP
@@ -623,6 +673,9 @@ MARK:
 	RenderSprites:
 		Image: e1sniper
 	RenderRangeCircle:
+	DeliversCash:
+		Payload: 175
+		Type: InfantryRefund
 
 GREN:
 	Inherits: ^Soldier
@@ -663,6 +716,9 @@ GREN:
 		Prerequisites: barracks.upgraded
 	Passenger:
 		PipType: Red
+	DeliversCash:
+		Payload: 112
+		Type: InfantryRefund
 
 MGI:
 	Inherits@ROT: ^RottingInfantry
@@ -699,6 +755,9 @@ MGI:
 		Prerequisites: barracks.upgraded
 	Passenger:
 		PipType: Red
+	DeliversCash:
+		Payload: 100
+		Type: InfantryRefund
 
 ATGM:
 	Inherits@ROT: ^RottingInfantry
@@ -739,6 +798,9 @@ ATGM:
 		Prerequisites: barracks.upgraded
 	Passenger:
 		PipType: Red
+	DeliversCash:
+		Payload: 137
+		Type: InfantryRefund
 
 RMBO:
 	Inherits@ROT: ^RottingInfantry
@@ -836,13 +898,16 @@ RMBO:
 	SpeedMultiplier@CRAWL:
 		Modifier: 50
 		RequiresCondition: iscrawling
+	DeliversCash:
+		Payload: 250
+		Type: InfantryRefund
 
 SHOK:
 	Inherits@ROT: ^RottingInfantry
 	Inherits@BOMBEQUIP: ^AffectedByBombVests
 	Buildable:
 		BuildPaletteOrder: 7
-		Prerequisites: ~barr, stek, ~player.russia, ~techlevel.high
+		Prerequisites: ~barr, tsla, ~player.russia, ~techlevel.high
 		Description: Infantry with portable Tesla coils.\nWeapon doesnt work from within Pillboxes\ndue to structural insulation.\nCan charge powerless Tesla Coils.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
 	Valued:
 		Cost: 475
@@ -864,6 +929,9 @@ SHOK:
 		PauseOnCondition: leaflet
 	RevealsShroud:
 		Range: 5c0
+	DeliversCash:
+		Payload: 118
+		Type: InfantryRefund
 
 SHOK.r1:
 	Inherits: SHOK
@@ -950,6 +1018,9 @@ DOG.Bomb:
 		Voice: Attack
 	KillsSelf:
 		RequiresCondition: triggered
+	DeliversCash:
+		Payload: 156
+		Type: InfantryRefund
 
 E5:
 	Inherits: ^Soldier
@@ -1006,6 +1077,9 @@ E5:
 	Targetable:
 		RequiresCondition: !parachute
 		TargetTypes: Ground, Infantry, Disguise, Chem
+	DeliversCash:
+		Payload: 175
+		Type: InfantryRefund
 
 MRTR:
 	Inherits: ^Soldier
@@ -1045,6 +1119,9 @@ MRTR:
 		PipType: Yellow
 	ProducibleWithLevel:
 		Prerequisites: barracks.upgraded
+	DeliversCash:
+		Payload: 125
+		Type: InfantryRefund
 
 RPG:
 	Inherits: ^Soldier
@@ -1087,6 +1164,9 @@ RPG:
 		Weapon: UnitExplodeSmall
 		EmptyWeapon: UnitExplodeSmall
 		DamageSource: Killer
+	DeliversCash:
+		Payload: 150
+		Type: InfantryRefund
 
 C4:
 	RenderSprites:
@@ -1133,6 +1213,9 @@ TECN:
 		Name: garrisoned
 		Weapon: M1Carbine
 		MuzzleSequence: garrison-muzzle
+	DeliversCash:
+		Payload: 25
+		Type: InfantryRefund
 
 DOG:
 	Inherits@BOMBEQUIP: ^AffectedByBombVests
@@ -1144,6 +1227,9 @@ DOG:
 		PipType: Green
 	Health:
 		HP: 2000
+	DeliversCash:
+		Payload: 50
+		Type: InfantryRefund
 
 Ant:
 	Buildable:
@@ -1165,6 +1251,9 @@ PLOT:
 	Passenger:
 		Weight: 1
 		PipType: Blue
+	DeliversCash:
+		Payload: 50
+		Type: InfantryRefund
 
 PLOT.R1:
 	Inherits: PLOT
@@ -1243,6 +1332,9 @@ STNG:
 		Prerequisites: barracks.upgraded
 	Passenger:
 		PipType: Red
+	DeliversCash:
+		Payload: 175
+		Type: InfantryRefund
 
 FTRP:
 	Inherits: E3
@@ -1263,6 +1355,10 @@ FTRP:
 	Valued:
 		Cost: 600
 	-Cloneable:
+	-DeliversCash:
+	DeliversCash:
+		Payload: 150
+		Type: InfantryRefund
 
 CINF:
 	Inherits@ROT: ^RottingInfantry
@@ -1320,6 +1416,9 @@ CINF:
 		PipType: Red
 	RenderSprites:
 		Scale: 0.8
+	DeliversCash:
+		Payload: 225
+		Type: InfantryRefund
 
 DSHK:
 	Inherits: E1
@@ -1349,6 +1448,10 @@ DSHK:
 		PipType: Red
 	RenderSprites:
 		Image: e1
+	-DeliversCash:
+	DeliversCash:
+		Payload: 175
+		Type: InfantryRefund
 
 SHOT:
 	Inherits@ROT: ^RottingInfantry
@@ -1385,6 +1488,9 @@ SHOT:
 		DefaultAttackSequence: shoot
 	ProducibleWithLevel:
 		Prerequisites: barracks.upgraded
+	DeliversCash:
+		Payload: 56
+		Type: InfantryRefund
 
 #	was never supposed to be buildable, wtf
 Zombie:

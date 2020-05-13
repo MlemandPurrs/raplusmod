@@ -122,6 +122,9 @@ BADR.buildable:
 		RearmActors: afld, afld.usa, afld.england, carr.usa.deployed
 	RenderSprites:
 		Image: badr
+	DeliversCash:
+		Payload: 750
+		Type: AircraftRefund
 
 B52:
 	Inherits: BADR
@@ -247,6 +250,9 @@ B52.buildable:
 		RearmActors: afld, afld.usa, afld.england, carr.usa.deployed
 	RenderSprites:
 		Image: ally-bdgr
+	DeliversCash:
+		Payload: 750
+		Type: AircraftRefund
 
 B2.Bomber:
 	Inherits: B52.Bomber
@@ -287,6 +293,15 @@ TRAN:
 		LocalOffset: 0, 0, -128
 	Health:
 		HP: 20000
+	DeliversCash:
+		Payload: 500
+		Type: AircraftRefund
+	Sellable:
+		RefundPercent: 25
+		SellSounds: cashturn.aud
+		Cursor: sell2
+		ShowTicks: false
+		RequiresCondition: unit.sellable && !loaded
 
 TRAN.Soviet:
 	Inherits: TRAN
@@ -405,6 +420,9 @@ IROQ:
 		DecorationBounds: 38,32
 	Rearmable:
 		RearmActors: hpad, hpad.usa, carr.deployed
+	DeliversCash:
+		Payload: 750
+		Type: AircraftRefund
 
 IROQ.Turkey:
 	Inherits: IROQ
@@ -481,6 +499,9 @@ MI2:
 		Condition: kazakh.player
 		Factions: kazakh
 		ResetOnOwnerChange: True
+	DeliversCash:
+		Payload: 300
+		Type: AircraftRefund
 
 MI2.scout:
 	Inherits: MI2
@@ -623,6 +644,9 @@ HIND:
 		ResetOnOwnerChange: True
 	Health:
 		HP: 12000
+	DeliversCash:
+		Payload: 375
+		Type: AircraftRefund
 
 HIND.afghan:
 	Inherits: HIND
@@ -809,6 +833,9 @@ YAK:
 		ResetOnOwnerChange: True
 	Contrail:
 		UsePlayerColor: false
+	DeliversCash:
+		Payload: 337
+		Type: AircraftRefund
 
 YAK.Belarus:
 	Inherits: YAK
@@ -969,6 +996,9 @@ SPIT:
 		RearmActors: afld, afld.usa, afld.england, carr.usa.deployed
 	RenderSprites:
 		Image: ally-yak
+	DeliversCash:
+		Payload: 225
+		Type: AircraftRefund
 
 MIG:
 	Inherits@AUTODAMAGE: ^KilledWithoutAirfield
@@ -1005,6 +1035,9 @@ MIG:
 		UsePlayerColor: false
 	Contrail@2:
 		UsePlayerColor: false
+	DeliversCash:
+		Payload: 450
+		Type: AircraftRefund
 
 MIG.AI:
 	Inherits: MIG
@@ -1085,6 +1118,9 @@ TORN:
 		RearmActors: afld, afld.usa, afld.england, carr.usa.deployed
 	RenderSprites:
 		Image: ally-mig
+	DeliversCash:
+		Payload: 375
+		Type: AircraftRefund
 
 COSSACK:
 	Inherits: ^Plane
@@ -1171,6 +1207,9 @@ COSSACK:
 		Condition: kazakh.player
 		Factions: kazakh
 		ResetOnOwnerChange: True
+	DeliversCash:
+		Payload: 687
+		Type: AircraftRefund
 
 HARR:
 	Inherits: ^Helicopter
@@ -1250,6 +1289,9 @@ HARR:
 		Prerequisites: aircraft.upgraded
 	Rearmable:
 		RearmActors: afld, afld.usa, afld.england, hpad, hpad.usa, carr.deployed, carr.usa.deployed
+	DeliversCash:
+		Payload: 375
+		Type: AircraftRefund
 
 MH60:
 	Buildable:

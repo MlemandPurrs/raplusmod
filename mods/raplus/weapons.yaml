@@ -95,6 +95,9 @@
 		Versus:
 			Heavy: 115
 
+120mm:
+	Range: 5c768
+
 LtnkRockets:
 	Inherits: ^AntiGroundMissile
 	Range: 4c768
@@ -114,7 +117,7 @@ LtnkRockets:
 M1CTank:
 	Inherits: M1Carbine
 	Range: 4c512
-	ReloadDelay: 20
+	ReloadDelay: 15
 	ValidTargets: Infantry
 
 APTusk:
@@ -367,15 +370,43 @@ TorpTube:
 			Heavy: 85
 			Concrete: 850
 
-SubMissile.Barrage:
+SubMissile.new:
 	Inherits: SubMissile
+	Burst: 4
+	#	BurstDelays: 0, 3, 71, 3
+
+SubMissile.barrage:
+	Inherits: SubMissile
+	Report: rocket1TD.aud
+	ReloadDelay: 600
 	Projectile: Bullet
 		Inaccuracy: 3c614
-		LaunchAngle: 90
-	Burst: 8
+		LaunchAngle: 180
+		Image: DRAGON
+		Shadow: true
+		TrailImage: smokey
+	Burst: 12
 	BurstDelays: 12
+	Warhead@1Dam: SpreadDamage
+		Spread: 683
+		Damage: 2500
+		ValidTargets: Ground
+		Versus:
+			None: 25
+			Wood: 60
+			Light: 100
+			Heavy: 50
+
+SubMissile.barrage.display:
+	ReloadDelay: 740
+	Range: 20c0
+	Projectile: Bullet
+		LaunchAngle: 180
+	Warhead@1Dam: SpreadDamage
+		Damage: 0
 
 SubMissileAA:
+	ReloadDelay: 150
 	TargetActorCenter: false
 	Warhead@3Eff: CreateEffect
 		Explosions: med_explosion_air
@@ -581,7 +612,7 @@ ScrapsExplosion:
 		Size: 1,1
 
 MammothTusk:
-	Range: 4c512
+	Range: 4c768
 	Projectile: Missile
 		Speed: 341
 		HorizontalRateOfTurn: 15
@@ -948,13 +979,13 @@ BombingRun.ag:
 		Image: 120mm
 		Shadow: true
 	Warhead@1Dam: SpreadDamage
-		Spread: 128
+		Spread: 512
 		Damage: 8000
 		Versus:
 			None: 100
 			Wood: 100
-			Light: 80
-			Heavy: 40
+			Light: 100
+			Heavy: 100
 			Concrete: 100
 		DamageTypes: Prone100Percent, TriggerProne, ExplosionDeath
 	Warhead@2Eff: CreateEffect
@@ -1139,6 +1170,16 @@ MortarNapalm:
 	ReloadDelay: 60
 	Burst: 2
 
+227mm.barrage:
+	ReloadDelay: 300
+	Range: 20c0
+	Burst: 12
+	BurstDelays: 12
+	Projectile: Bullet
+		Inaccuracy: 3c614
+		LaunchAngle: 180
+		Shadow: true
+
 Dragon.dual:
 	Inherits: Dragon
 	ReloadDelay: 60
@@ -1186,7 +1227,7 @@ SeaMineTargeting:
 		ValidTargets: SeaDetonateAttack
 
 ASMineMagnetic:
-	Inherits: ATMine
+	Inherits: ASMine
 	Warhead@1Dam: SpreadDamage
 		Spread: 1c0
 		Damage: 20000
@@ -2165,3 +2206,9 @@ BurnFX:
 	Warhead@3Eff: CreateEffect
 		Image: fire
 		Explosions: 3, 6, 7, 8
+
+Dragon.garrison:
+	Inherits: ^AntiGroundMissile
+	Projectile: Missile
+		TrailImage: smokey
+		MinimumLaunchAngle: 0

@@ -8,7 +8,7 @@ LST:
 		PassengerConditions:
 			mgg: mgg-inside
 			dtrk: demo-inside
-		LoadedCondition: Loaded
+		LoadedCondition: loaded
 	RepairableNear:
 		RepairActors: syrd, spen
 	CreatesShroud:
@@ -20,8 +20,10 @@ LST:
 		DamageSource: Killer
 		RequiresCondition: demo-inside
 	SpeedMultiplier@HALFCAPACITY:
-		RequiresCondition: Loaded >= 8
+		RequiresCondition: loaded >= 8
 		Modifier: 50
+	Sellable:
+		RequiresCondition: ship.sellable && !loaded
 
 PT:
 	Buildable:
@@ -560,7 +562,7 @@ CARR:
 		Offset: 0,0
 	RenderSprites:
 		Scale: 1.2
-	
+
 CARR.Deployed:
 	Inherits: ^Building
 	-GivesBuildableArea:
@@ -950,13 +952,19 @@ MSUB.new:
 		TurnSpeed: 3
 		Speed: 42
 	Armament@PRIMARY:
+		Name: primary
 		Weapon: SubMissile
 		LocalOffset: 0,-171,0, 0,171,0
 		FireDelay: 2
 		PauseOnCondition: empdisable
+	#	Armament@SECONDARY:
+	#	Name: secondary
+	#	Weapon: SubMissile
+	#	LocalOffset: 0,-171,0, 0,171,0
+	#	Fires from original Position after moving.
+	#	FireDelay: 77
+	#	PauseOnCondition: empdisable || !is-shooting
 	AttackFrontal:
-		TargetFrozenActors: True
-		ForceFireIgnoresActors: True
 		PauseOnCondition: empdisable
 	SelectionDecorations:
 	Selectable:
@@ -978,7 +986,21 @@ MSUB.new:
 		RevealGeneratedShroud: False
 	RevealsShroud@GAPGEN:
 		Range: 5c0
-	
+	#	Cloak:
+	#	CloakTypes: Underwater
+	#	InitialDelay: 0
+	#	CloakDelay: 50
+	#	CloakSound: subshow1.aud
+	#	UncloakSound: subshow1.aud
+	#	CloakedCondition: underwater
+	#	Palette: submerged
+	#	UncloakOn: Attack, Heal, Unload, Dock, SelfHeal, Demolish
+	#	PauseOnCondition: cloak-force-disabled || shallowcrossing || empdisable || minehit || is-shooting
+	#	GrantConditionOnAttack@UNCLOAK:
+	#	Condition: is-shooting
+	#	ArmamentNames: primary
+	#	RevokeDelay: 76
+
 MSUB.AA:
 	Inherits: MSUB.new
 	Buildable:
@@ -997,16 +1019,36 @@ MSUB.AA:
 	-Armament@PRIMARY:
 	Armament@PRIMARY:
 		Weapon: SubMissileAA
-		LocalOffset: 0,-171,0, 0,171,0
+		LocalOffset: 0,-171,101, 0,171,101
 		FireDelay: 2
 		PauseOnCondition: empdisable
 	-AttackFrontal:
-	AttackFrontal:
+	AttackTurreted:
 		Armaments: primary
 		PauseOnCondition: empdisable
+	Turreted:
+		TurnSpeed: 7
+		Offset: 461,0,-100
+	WithSpriteTurret:
+		RequiresCondition: !underwater
 	-WithMoveAnimation:
 	RenderSprites:
 		Image: MSUB
+	#	-Cloak:
+	#	Cloak:
+	#	CloakTypes: Underwater
+	#	InitialDelay: 0
+	#	CloakDelay: 50
+	#	CloakSound: subshow1.aud
+	#	UncloakSound: subshow1.aud
+	#	CloakedCondition: underwater
+	#	Palette: submerged
+	#	UncloakOn: Attack, Heal, Dock, SelfHeal, Demolish
+	#	PauseOnCondition: cloak-force-disabled || shallowcrossing || empdisable || minehit
+	#	RequiresCondition: !deployed
+	#	-GrantConditionOnAttack@UNCLOAK:
+	ReloadArmamentsBar:
+		Color: FFFF00
 
 TBT:
 	Inherits: ^Ship
@@ -1180,6 +1222,7 @@ FSUB:
 		Palette: submerged
 		UncloakOn: Attack, Heal, Unload, Dock, SelfHeal, Demolish
 		PauseOnCondition: cloak-force-disabled || shallowcrossing || empdisable || minehit || is-shooting
+		RequiresCondition: !deployed
 	GrantConditionOnAttack@UNCLOAK:
 		Condition: is-shooting
 		ArmamentNames: secondary
@@ -1260,6 +1303,8 @@ SCRP:
 		Condition: replenishsmine
 	RepairableNear:
 		RepairActors: syrd, spen
+	-Sellable:
+	-ExternalCondition@Sellable:
 
 MGNM:
 	Inherits: ^Ship
@@ -1334,6 +1379,8 @@ MGNM:
 		MoveSequence: move
 	Voiced:
 		VoiceSet: RoboticVoice
+	-Sellable:
+	-ExternalCondition@Sellable:
 
 HVRF:
 	Inherits: ^Vehicle
@@ -1399,17 +1446,17 @@ HVRF:
 		LoadingCondition: notmobile
 
 BSUB:
-	Inherits: ^Ship
+	Inherits: ^Submarine
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Ship
 		BuildAtProductionType: Submarine
-		BuildPaletteOrder: 6
-		#	Prerequisites: ~spen, stek, ~player.karelia, ~techlevel.high
-		Prerequisites: ~disabled
-		Description: Submersible siege unit armed with\nanti-ground missile battery.\n  Strong vs Ships, Buildings\n  Weak vs attacks at close range.\n  Special Ability: Submerge\nCan dive underwater to become invisible\nmove unseen and avoid damage of most weapons.\nCan be manually ordered to surface for Repairs.
+		BuildPaletteOrder: 7
+		BuildLimit: 1
+		Prerequisites: ~spen, stek, ~techlevel.high
+		Description: Submersible siege unit armed with\nanti-ground missile battery.\nMaximum 1 can be built.\n  Strong vs Ships, Buildings\n  Weak vs attacks at close range.\n  Special Ability: Submerge\nCan dive underwater to become invisible\nmove unseen and avoid damage of most weapons.\nCan be manually ordered to surface for Repairs.
 	Valued:
-		Cost: 2400
+		Cost: 3000
 	Tooltip:
 		Name: Ballistic Submarine
 	Health:
@@ -1421,70 +1468,38 @@ BSUB:
 		Speed: 42
 	Turreted:
 		TurnSpeed: 255
+		Offset: 0,0,0
 	RevealsShroud:
+		MinRange: 5c0
 		Range: 8c0
-		RequiresCondition: !underwater
-		RevealGeneratedShroud: false
+		RevealGeneratedShroud: False
 	RevealsShroud@GAPGEN:
 		Range: 5c0
-		RequiresCondition: !underwater
-	RevealsShroud@UNDERWATER:
-		Range: 4c0
-		RequiresCondition: underwater
 	Armament@PRIMARY:
-		Weapon: SubMissile.Barrage
+		Weapon: SubMissile.barrage
 		LocalOffset: 375,-151,80, 450,151,80, 525,-151,80, 600,151,80
 		FireDelay: 2
 		PauseOnCondition: empdisable
+	Armament@RELOAD:
+		Name: secondary
+		Weapon: SubMissile.barrage.display
+		LocalOffset: 0,0,0
+		FireDelay: 2
+		PauseOnCondition: empdisable
 	AttackTurreted:
-		Armaments: primary
+		Armaments: primary, secondary
 		TargetFrozenActors: True
 		ForceFireIgnoresActors: True
 		PauseOnCondition: empdisable
 	SelectionDecorations:
-	DetectCloaked:
-		CloakTypes: Underwater
-		Range: 4c0
-	RenderDetectionCircle:
 	Selectable:
-		DecorationBounds: 68,38
+		DecorationBounds: 44,44
 	RenderRangeCircle:
+	RenderDetectionCircle:
 	ReloadArmamentsBar:
-		Armaments: primary
+		Armaments: secondary
 		Color: FFFF00
 	AutoTarget:
 		InitialStance: HoldFire
 		InitialStanceAI: HoldFire
 		ScanRadius: 15
-	RepairableNear:
-		RepairActors: spen
-	Cloak:
-		CloakTypes: Underwater
-		InitialDelay: 0
-		CloakDelay: 50
-		CloakSound: subshow1.aud
-		UncloakSound: subshow1.aud
-		CloakedCondition: underwater
-		Palette: submerged
-		UncloakOn: Attack, Heal, Dock, SelfHeal, Demolish
-		PauseOnCondition: cloak-force-disabled || shallowcrossing || empdisable || minehit
-		RequiresCondition: !deployed
-	Targetable:
-		TargetTypes: Ground, Water, Ship, Submarine, SeaDetonateAttack
-		RequiresCondition: !underwater
-	Targetable@UNDERWATER:
-		TargetTypes: Underwater, Submarine, SeaDetonateAttack
-		RequiresCondition: underwater
-	Targetable@REPAIR:
-		RequiresCondition: !underwater && damaged
-		TargetTypes: Repair
-	GrantConditionOnTerrain@CROSSINGFORD:
-		Condition: shallowcrossing
-		TerrainTypes: Shallow
-	GrantConditionOnDamageState@UNCLOAK:
-		Condition: cloak-force-disabled
-		ValidDamageStates: Critical
-	GrantConditionOnDeploy:
-		DeployedCondition: deployed
-	ExternalCondition@MINEHIT:
-		Condition: minehit

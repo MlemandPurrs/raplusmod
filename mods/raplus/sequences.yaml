@@ -224,6 +224,7 @@ ptnk.destroyed:
   
 3tnk:
     Inherits: emp-overlay   
+    rank2-icon: 3tnkr2icon
 
 4tnk:
     Inherits: emp-overlay
@@ -730,6 +731,10 @@ advsub:
 
 msub:
     Inherits: emp-overlay
+	turret: brdm
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
 	icon: ssubicon
 
 advmsub:
@@ -748,7 +753,7 @@ bsub:
 		Facings: 16
 	turret: blank32
 		Facings: 16
-	icon: bsubicon
+	icon: bsubicon2
 
 pt:
     Inherits: emp-overlay
