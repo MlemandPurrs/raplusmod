@@ -2569,7 +2569,7 @@ AFLD:
 		Description: Produces, repairs and reloads Airplanes.\nCan be Infiltrated by an Spy resulting\nin Veterancy for enemy Aircraft.\n  Special Ability: Paratroopers\nA Plane drops a squad of\nVeteran infantry anywhere on the map.
 		BuildPaletteOrder: 7
 	Building:
-		Footprint: xxx xx+
+		Footprint: xxx xx=
 		Dimensions: 3,2
 	ProvidesPrerequisite@allies:
 		Factions: allies, usa, england, france, germany, spain, italy, greece, turkey
