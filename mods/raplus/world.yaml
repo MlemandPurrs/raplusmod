@@ -427,7 +427,7 @@ World:
 		ClassName: Heavy Support
 		Factions: soviet, russia, ukraine, belarus, karelia, kazakh, uzbek, turkmen, afghan
 		BaseActor: mcv
-		SupportActors: e1,e1,e1,e3,e3,ftrk,ftrk,2tnk.soviet,2tnk.soviet
+		SupportActors: e1,e1,e1,e3,e3,ftrk,ftrk,3tnk.1b,3tnk.1b
 		InnerSupportRadius: 3
 		OuterSupportRadius: 5
 	MPStartUnits@heavysovietb:

@@ -244,11 +244,17 @@ Cursors:
 		empstrike:
 			Start: 0
 			Length: 7
+		empstrike-minimap:
+			Start: 8
+			Length: 2
 	cursorparadrop.shp: cursor
 		airdrop:
 			Start: 0
-			Length: 4
+			Length: 5
 			Tick: 120
+		airdrop-minimap:
+			Start: 6
+			Length: 2
 	gpstargetcurs.shp: cursor
 		gps-target:
 			Start: 0

@@ -3458,7 +3458,7 @@ IFV:
 		RequiresCondition: gunturr || commturr
 		Sequence: turret
 	WithSpriteTurret@default:
-		RequiresCondition: !(gunturr || commturr || psamturr || samturr || spyturr || testurr || medturr || engturr || tecnturr || flamturr || chemturr || flakturr || thfturr || snipturr || volkturr || flagturr || fragturr)
+		RequiresCondition: !(gunturr || commturr || psamturr || spyturr || testurr || medturr || engturr || tecnturr || flamturr || chemturr || flakturr || thfturr || snipturr || volkturr || flagturr || fragturr)
 		Sequence: turret3
 	WithIdleOverlay@tes:
 		Sequence: turret4

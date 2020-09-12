@@ -63,6 +63,7 @@ e1:
 	dshk-icon: dshkicon
 
 e1.marine:
+	Inherits@PostDeath: ^Rot
 	stand: e1gren
 		Facings: 8
 	stand2: e1gren
