@@ -753,7 +753,7 @@ bsub:
 		Facings: 16
 	turret: blank32
 		Facings: 16
-	icon: bsubicon2
+	icon: bsubicon
 
 pt:
     Inherits: emp-overlay
