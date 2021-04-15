@@ -86,7 +86,6 @@ Player:
 					Attractiveness: 1
 					TargetMetric: None
 					CheckRadius: 1c0
-
 			UseParanukeAllies:
 				OrderName: AlliesParanuke
 				MinimumAttractiveness: 1
@@ -210,7 +209,46 @@ Player:
 					Attractiveness: 1
 					TargetMetric: None
 					CheckRadius: 5c0
-	BaseBuilderBotModule@allies:
+			UseChronoShiftAI:
+				OrderName: ChronoShiftAi
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
+			UseAlliesInterceptors:
+				OrderName: AlliesInterceptors
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Air
+					Attractiveness: 5
+					TargetMetric: Value
+					CheckRadius: 7c0
+				Consideration@2:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 2
+					TargetMetric: Value
+					CheckRadius: 3c0
+			UseDecoyPlane:
+				OrderName: DecoyPlane
+				MinimumAttractiveness: 1
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 5c0
+	BaseBuilderBotModuleCA@allies:
 		RequiresCondition: enable-ai-player && player.allies
 		MinimumExcessPower: 60
 		MaximumExcessPower: 160
@@ -219,13 +257,17 @@ Player:
 		CheckForWaterRadius: 8
 		ConstructionYardTypes: fact
 		RefineryTypes: proc
-		PowerTypes: powr,apwr,powr.greece,apwr.greece
+		MaxRefineries: 6
+		PowerTypes: powr,apwr
 		BarracksTypes: tent
 		VehiclesFactoryTypes: weap
 		ProductionTypes: tent,weap,hpad,afld
 		NavalProductionTypes: syrd
+		NewProductionCashThreshold: 4000
 		SiloTypes: silo
+		AntiAirTypes: agun,pbat
 		PlaceDefenseTowardsEnemyChance: 75
+		MaximumDefenseRadius: 10
 		MaxBaseRadius: 26
 		BuildingDelays:
 			syrd: 4500
@@ -253,6 +295,7 @@ Player:
 			gtur: 1
 			pbat: 1
 			pris: 4
+			pdox: 1
 		BuildingFractions:
 			proc: 15
 			tent: 2
@@ -274,12 +317,14 @@ Player:
 			gtur: 1
 			pbat: 1
 			pris: 5
-	CaptureManagerBotModule@mech:
+			iron: 1
+	CaptureManagerBotModuleCA@mech:
 		RequiresCondition: enable-ai-player && player.allies
 		CapturingActorTypes: mech
 		CapturableActorTypes: 2tnk.husk,2tnk.england.husk,2tnk.france.husk,2tnk.germany.husk,2tnk.spain.husk,2tnk.holland.husk,3tnk.husk,3tnk.ukraine.husk,3tnk.belarus.husk,3tnk.kazakh.husk,3tnk.turkmen.husk,3tnk.afghan.husk,4tnk.husk,4tnk.flame.husk,harv.fullhusk,harv.emptyhusk,harv.soviet.fullhusk,harv.soviet.emptyhusk
 		CheckCaptureTargetsForVisibility: true
 		MaximumCaptureTargetOptions: 15
+		EnemyAvoidanceRadius: 3
 	SquadManagerBotModule@allies.land:
 		RequiresCondition: enable-ai-player && player.allies
 		SquadSize: 12

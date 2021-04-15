@@ -25,10 +25,10 @@ HARV.Chrono:
 	WithHarvesterSpriteBody:
 		ImageByFullness: charv, charv, charv
 	ChronoResourceDelivery:
-		Image: dummy
+		Image: chronoteleport
 		Palette: effect
-		WarpInSequence: idle
-		WarpOutSequence: idle
+		WarpInSequence: appear
+		WarpOutSequence: disappear
 		WarpInSound: chrotnk1.aud
 		WarpOutSound: chrono2.aud
 	SpawnActorOnDeath:
@@ -704,7 +704,7 @@ CTNK:
 		PauseOnCondition: empdisable
 	AttackFrontal:
 		PauseOnCondition: empdisable
-	Chronoshiftable:
+	ChronoshiftableWithSpriteEffect:
 		ReturnToOrigin: False
 	PortableChrono:
 		ChargeDelay: 250
@@ -713,6 +713,24 @@ CTNK:
 	Passenger:
 		CustomPipType: pip-red
 	RenderRangeCircle:
+
+CTNK.Chrono:
+	Inherits: CTNK
+	-Buildable:
+	-Explodes:
+	RenderSprites:
+		Image: ctnk
+	-MapEditorData:
+	GrantTimedCondition@warpin:
+		Condition: warpin
+		Duration: 850
+	KillsSelf@warpout:
+		GrantsCondition: warpout
+		RequiresCondition: !warpin
+	Explodes@warpout:
+		Weapon: UnitExplodeWarpOut
+		EmptyWeapon: UnitExplodeWarpOut
+		RequiresCondition: warpout
 
 STNK:
 	Inherits: ^Vehicle

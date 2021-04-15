@@ -188,7 +188,7 @@ POWR:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 1
-		Prerequisites: ~!player.greece, ~techlevel.infonly
+		Prerequisites: ~!player.turkey, ~techlevel.infonly
 		Description: Provides Power for other structures.\nCan be Infiltrated by a Spy or Saboteur\nresulting in a temporary blackout.
 	Valued:
 		Cost: 300
@@ -256,7 +256,7 @@ APWR:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 13
-		Prerequisites: dome, ~!player.greece, ~techlevel.medium
+		Prerequisites: dome, ~!player.turkey, ~techlevel.medium
 		Description: Provides double the Power of\na standard Power Plant.\nCan be Infiltrated by a Spy or Saboteur\nresulting in a temporary blackout.
 	Valued:
 		Cost: 600
@@ -889,7 +889,7 @@ PROC:
 		RequiresSelection: true
 		PipCount: 17
 		FullSequence: pip-yellow
-	ResourcePurifier@incomeplayerboost:
+	ResourcePurifierCA@incomeplayerboost:
 		Modifier: 20
 		RequiresCondition: ore-purifier-on && !orecasting-on
 		ShowTicks: False
@@ -1961,6 +1961,22 @@ ATEK:
 		UseDirectionalTarget: True
 		DirectionArrowAnimation: paradirection
 		SupportPowerPaletteOrder: 3
+	RevealActorsPower@IntelligenceScan:
+		PauseOnCondition: disabled || lowpower
+		OrderName: IntelligenceScan
+		Prerequisites: spro, dome, player.england, ~!aitoodumb, ~techlevel.unrestricted
+		Icon: intlicon
+		ChargeInterval: 12000
+		Description: Intelligence Scan
+		LongDesc: Reveals all Base Buildings and Superweapons,\nbut not Defenses or Tech Buildings on the map.\nLasts for 2.5 minute. Does not reveal new Structures.
+		CameraActor: camera.intelscan
+		TargetActors: fact, powr, powr.turkey, apwr, apwr.turkey, tent, barr, barr.cloner, proc, orep, indp, weap, weap.mini, fix, fix.allies, fix.soviet, dome, dome.allies, dome.soviet, atek, stek, spro, spro.kazakh, afld, afld.ukraine, hpad, syrd, spen, pdox, iron, mslo
+		LifeTime: 3750
+		LaunchSound: bcmasela.aud
+		EffectImage: dummy
+		EffectSequence: idle
+		EffectPalette: effect
+		SupportPowerPaletteOrder: 9
 	ParatroopersPower@ChronoBomb:
 		PauseOnCondition: disabled || lowpower
 		OrderName: ChronoBomb
@@ -2776,6 +2792,54 @@ AFLD:
 		UseDirectionalTarget: True
 		DirectionArrowAnimation: paradirection
 		SupportPowerPaletteOrder: 4
+	AirstrikePower@DecoyPlane:
+		PauseOnCondition: disabled || lowpower
+		OrderName: DecoyPlane
+		Prerequisites: aircraft.allies, atek, player.france, ~techlevel.unrestricted
+		Icon: fakebdgricon
+		ChargeInterval: 7500
+		Description: Decoy Plane
+		LongDesc: A fake B-52 will fly to designated point, confusing the opponent.
+		SelectTargetSpeechNotification: SelectTarget
+		CameraActor: dummy.qtnk
+		CameraRemoveDelay: 150
+		UnitType: b52.decoy
+		QuantizedFacings: 8
+		SquadSize: 1
+		SquadOffset: 1792,1792,0
+		DisplayBeacon: true
+		BeaconPoster: fakebdgrbcon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		Cursor: airstrike
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+		SupportPowerPaletteOrder: 4
+	InterceptorPower@AlliesInterceptors:
+		OrderName: AlliesInterceptors
+		Prerequisites: aircraft.allies, atek, player.greece, ~techlevel.unrestricted
+		Icon: interceptor
+		ChargeInterval: 7500
+		Description: Interceptors
+		LongDesc: A squadron of Interceptors provides\nair cover over the selected target area.
+		SelectTargetSpeechNotification: SelectTarget
+		EndChargeSpeechNotification: SpyPlaneReady
+		CameraActor: camera
+		CameraRemoveDelay: 450
+		UnitType: torn.support
+		QuantizedFacings: 8
+		DisplayBeacon: true
+		BeaconPoster: intcbcon
+		SquadSize: 3
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+		GuardDuration: 500
+		Cordon: 5c0
+		SupportPowerPaletteOrder: 7
 	SupportPowerChargeBar:
 	GrantConditionOnFaction@soviet:
 		Condition: soviet.player

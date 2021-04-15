@@ -54,6 +54,9 @@ icon:
 	kennicon: kennicon
 	cvaticon: cvaticon
 	4tnknuke: 4tnk-arty-icon
+	interceptor: icpticon
+	fakebdgricon: badrficon
+	intlicon: intlicon
 
 clock:
 	idle:
@@ -132,6 +135,12 @@ beacon:
 		Length: *
 		Offset: 0,-42
 	kennbcon: kennbcon
+		Length: *
+		Offset: 0,-42
+	intcbcon: intcbcon
+		Length: *
+		Offset: 0,-42
+	fakebdgrbcon: badrfbcon
 		Length: *
 		Offset: 0,-42
 	clock: beaconclock

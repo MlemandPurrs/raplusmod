@@ -229,7 +229,15 @@ VOLK:
 		MuzzleSequence: garrison-muzzle
 	DetectCloaked:
 		CloakTypes: Cloak, Hijacker
-	Chronoshiftable:
+	ChronoshiftableWithSpriteEffect:
+		Image: chronoteleport
+		WarpInSequence: disappear-flip
+		WarpOutSequence: disappear
+		Palette: effect
+		ExplodeInstead: False
+		ChronoshiftSound: chrono2.aud
+		ReturnToOrigin: False
+		TimeBarColor: ABB7E4
 	ProducibleWithLevel:
 		Prerequisites: barracks.upgraded
 	RenderSprites:

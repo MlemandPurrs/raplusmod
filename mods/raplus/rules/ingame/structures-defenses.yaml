@@ -886,8 +886,8 @@ PDOX:
 		RequiresCondition: !disabled
 	WithBuildingBib:
 		HasMinibib: true
-	ChronoshiftPower@chronoshift:
-		OrderName: ChronoshiftPower
+	ChronoshiftPower@ChronoShift:
+		OrderName: ChronoShiftPower
 		PauseOnCondition: disabled
 		Icon: chrono
 		ChargeInterval: 4500
@@ -904,6 +904,29 @@ PDOX:
 		Footprint: xxx xxx xxx
 		SupportPowerPaletteOrder: 2
 		DisplayTimerRelationships: Ally
+	DetonateWeaponPower@ChronoShiftAI:
+		OrderName: ChronoShiftAI
+		PauseOnCondition: disabled
+		Prerequisites: aiplayer
+		Icon: chrono
+		Cursor: ability
+		ChargeInterval: 4500
+		Description: Chronoshift
+		ActivationDelay: 25
+		LongDesc: Summons a group of units across the map.
+		Weapon: ChronoAI
+		AirburstAltitude: 0c0
+		AllowMultiple: false
+		CameraActor: camera
+		CameraRemoveDelay: 375
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		BeginChargeSpeechNotification: ChronosphereCharging
+		EndChargeSpeechNotification: ChronosphereReady
+		DisplayTimerRelationships: Ally, Neutral, Enemy
+		DisplayRadarPing: True
+		LaunchSound: chrono2.aud
+		IncomingSound: chrono2.aud
 	SupportPowerChargeBar:
 	Power:
 		Amount: -200
@@ -1609,9 +1632,14 @@ SPMST:
 	Targetable@AIFixer:
 		TargetTypes: IgnoreThis
 	ProximityExternalCondition@JAMMER:
-		Range: 5c0
+		Range: 8c0
 		ValidRelationships: Enemy, Neutral
 		Condition: jammed
+		RequiresCondition: !disguised && holland.player
+	WithRangeCircle@JAMMER:
+		Type: jammer
+		Range: 8c0
+		Color: 0000FF80
 		RequiresCondition: !disguised && holland.player
 	GrantConditionOnFaction@NLBonus:
 		Condition: holland.player

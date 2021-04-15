@@ -422,3 +422,25 @@ icbmmiss:
 	idle: 380mm
 		ZOffset: 1023
 		IgnoreWorldTint: true
+
+chronoappear:
+	Defaults:
+		IgnoreWorldTint: true
+	idle: chronofade
+		Length: *
+
+chronodisappear:
+	Defaults:
+		IgnoreWorldTint: true
+	idle: chronofade-sml
+		Length: *
+
+chronoteleport:
+	Defaults:
+		IgnoreWorldTint: true
+	appear: chronofade
+		Length: *
+	disappear: chronofade-sml
+		Length: *
+	disappear-flip: chronofade-sml-rev
+		Length: *

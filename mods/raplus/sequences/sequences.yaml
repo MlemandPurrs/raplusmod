@@ -538,6 +538,7 @@ mrj:
 		UseClassicFacings: True
 	icon: mrjicon
 	mhqicon: mhqicon
+	samlicon: samlicon
 
 stnk:
     Inherits: emp-overlay

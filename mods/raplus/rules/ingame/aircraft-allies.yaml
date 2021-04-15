@@ -41,6 +41,13 @@ B52.Nuke:
 	RenderSprites:
 		Image: ally-bdgr
 
+B52.Decoy:
+	Inherits: B52.Bomber
+	Armament:
+		Weapon: DummyBomb
+	RenderSprites:
+		Image: ally-bdgr
+
 B52.buildable:
 	Inherits: ^Plane
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
@@ -700,6 +707,71 @@ TORN:
 	SpawnActorOnDeath@EMPEmpty:
 		Actor: TORN.Husk.EMP.Empty
 		RequiresCondition: airborne && ammo && empdisable
+
+TORN.Support:
+	Inherits: ^Plane
+	Inherits@AUTOTARGET: ^AutoTargetAir
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Tornado Interceptor
+	Health:
+		HP: 100
+	Armament:
+		Weapon: RedEye.2shot
+		LocalOffset: 0,-640,0, 0,640,0
+		LocalYaw: -40, 24
+		PauseOnCondition: !ammo
+	AttackBomberCA:
+	AttackAircraft:
+		PersistentTargeting: false
+		OpportunityFire: True
+		PauseOnCondition: empdisable
+	Aircraft:
+		CruiseAltitude: 2560
+		InitialFacing: 192
+		TurnSpeed: 16
+		Speed: 223
+		RepulsionSpeed: 40
+		MaximumPitch: 56
+		#	MoveIntoShroud: False
+	AmmoPool:
+		Ammo: 8
+		AmmoCondition: ammo
+	ReloadAmmoPool:
+		Delay: 250
+		Count: 2
+		ResetOnFire: true
+	-Selectable:
+	-Voiced:
+	RenderSprites:
+		Image: ally-mig
+	RejectsOrders:
+	Contrail@1:
+		Offset: -598,-683,0
+		TrailLength: 8
+		TrailWidth: 48
+		UsePlayerColor: false
+	Contrail@2:
+		Offset: -598,683,0
+		TrailLength: 8
+		TrailWidth: 48
+		UsePlayerColor: false
+	SpawnActorOnDeath:
+		Actor: TORN.Husk
+		RequiresCondition: airborne && !empdisable
+	SpawnActorOnDeath@EMP:
+		Actor: TORN.Husk.EMP
+		RequiresCondition: airborne && empdisable
+	SmokeTrailWhenDamaged:
+		Offset: -853,0,171
+		Interval: 2
+	Interactable:
+	#	GivesExperience:
+	#	Experience: 750
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: AttackAnything
 
 BMIN:
 	Inherits: ^Helicopter

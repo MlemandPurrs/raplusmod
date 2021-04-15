@@ -214,17 +214,17 @@
 		Name: Britain
 		InternalName: england
 		Side: Allies
-		Description: Britain\nFaction Variations:\n    - Tanks* deal more damage but are costlier to build.\n*Those Tanks being the Light and Medium Tanks.\n+10% damage dealt at the cost of being +50$ more expensive.\nThis bonus does not affect secondary weaponry.\n    - Sight and Detection +50% bonus for Radar Domes, at increased cost.\nVeterancy Bonus:\n    - Rifle Infantry and Jeep as Veteran.\nUnique Support Power:\n    - Parascouts (Airfield)\nA B-52 drops 2 veteran Jeeps anywhere on the map.\nBritain retains the usage of 'Precision Strike' support power.\nSpecial Units:\n    - Spy (Infantry)\nCapable agent that opens up wonderful possibilities.\n    - Tank Destroyer (Vehicle)\nSelf-propelled anti-tank Gun platform.\n    - Aircraft Carrier (Naval)\nCapable of deploying into Airfield at sea,\nProducing, Repairing and Resupplying Aircrafts.
+		Description: Britain\nFaction Variations:\n    - Tanks* deal more damage but are costlier to build.\n*Those Tanks being the Light and Medium Tanks.\n+10% damage dealt at the cost of being +50$ more expensive.\nThis bonus does not affect secondary weaponry.\n    - Sight and Detection +50% bonus for Radar Domes, at increased cost.\nVeterancy Bonus:\n    - Rifle Infantry and Jeep as Veteran.\nUnique Support Power:\n    - Parascouts (Airfield)\nA B-52 drops 2 veteran Jeeps anywhere on the map.\n    - Intelligence Scan (Tech Center)\nReveals all Base Buildings and Superweapons on the map for 2.5 minute.\nBritain retains the usage of 'Precision Strike' support power.\nSpecial Units:\n    - Spy (Infantry)\nCapable agent that opens up wonderful possibilities.\n    - Tank Destroyer (Vehicle)\nSelf-propelled anti-tank Gun platform.\n    - Aircraft Carrier (Naval)\nCapable of deploying into Airfield at sea,\nProducing, Repairing and Resupplying Aircrafts.
 	Faction@3:
 		Name: Netherl.
 		InternalName: holland
 		Side: Allies
-		Description: Netherlands\nFaction Variations:\n    - Tanks* move faster but have less Health.\n*Those Tanks being Light and Medium Tanks.\n    - Spy Masts also Jam radar but only when not Disguised as Tree.\nVeterancy Bonus:\n    - None. All units earn Veterancy twice as fast instead.\nUnique Support Power:\n    - Chrono Harvester (Tech Center)\nDeploys a prototype Harvester that is capable of Teleporting.\nSpecial Units:\n    - Chrono Soldier (Infantry)\nInfantry with EMP gun that is capable of Teleporting.\n    - Phase Tank (Vehicle)\nMedium Tank variant that is cloaked while out of combat.\n    - Patriot Battery (Defense)\nAnti-air Battery with superior range and damage.
+		Description: Netherlands\nFaction Variations:\n    - Tanks* move faster but have less Health.\n*Those Tanks being Light and Medium Tanks.\n    - Spy Masts also Jam radar when not Disguised.\nVeterancy Bonus:\n    - None. All units earn Veterancy twice as fast instead.\nUnique Support Power:\n    - Chrono Harvester (Tech Center)\nDeploys a prototype Harvester that is capable of Teleporting.\nSpecial Units:\n    - Chrono Soldier (Infantry)\nInfantry with EMP gun that is capable of Teleporting.\n    - Phase Tank (Vehicle)\nMedium Tank variant that is cloaked while out of combat.\n    - Patriot Battery (Defense)\nAnti-air Battery with superior range and damage.
 	Faction@4:
 		Name: France
 		InternalName: france
 		Side: Allies
-		Description: France\nFaction Variations:\n    - Tanks* fire faster but deal less damage.\n*Those Tanks being the Light and Medium Tanks.\n+10% faster rate of fire, deals -250/-500 damage per shot on affected Tanks.\nThis bonus does not affect secondary weaponry.\n    - Can build Fake structures.\nThis selection of fake structures look precisely\n as an real building to the enemy.\nVeterancy Bonus:\n    - Artillery gets built as Veteran.\nUnique Support Powers:\nFrance retains the usage of 'Decoy Army' support power\nSpecial Units:\n    - Medic (Infantry)\nInfantry capable of healing others during combat.\n    - Phase Transport (Vehicle)\nTransport that is cloaked when out of combat.\n    - Fake Vehicles\nCapable of producing fake doubles of MCV, Supply Truck and MGG.
+		Description: France\nFaction Variations:\n    - Tanks* fire faster but deal less damage.\n*Those Tanks being the Light and Medium Tanks.\n+10% faster rate of fire, deals -250/-500 damage per shot on affected Tanks.\nThis bonus does not affect secondary weaponry.\n    - Can build Fake structures.\nThis selection of fake structures look precisely\n as an real building to the enemy.\nVeterancy Bonus:\n    - Artillery gets built as Veteran.\nUnique Support Powers:\nFrance retains the usage of 'Decoy Army' support power.\n    - Decoy Plane (Airfield)\nA fake B-52 will fly to designated point, confusing the opponent.\nSpecial Units:\n    - Medic (Infantry)\nInfantry capable of healing others during combat.\n    - Phase Transport (Vehicle)\nTransport that is cloaked when out of combat.\n    - Fake Vehicles\nCapable of producing fake doubles of MCV, Supply Truck and MGG.
 	Faction@5:
 		Name: Germany
 		InternalName: germany
@@ -244,7 +244,7 @@
 		Name: Greece
 		InternalName: greece
 		Side: Allies
-		Description: Greece\nFaction Variations:\n    - Defenses have 20% increased Range and use 10% more Power.\nAffected are Gun Turret, Grand Turret, AA Gun.\n    - Power Plants generate more Power at increased cost.\nPower Plant generates +25, Advanced Power Plant +50 Power.\nCost of PP increased by 50 and 100 of Adv. PP\nBuild time of Power Plants remains the same as regular ones.\nVeterancy Bonus:\n    - Iroqouis and Gunboat gets built as Veteran.\nSpecial Units:\n    - ATGM Soldier (Infantry)\nInfantry armed with anti-tank rockets.\n    - Grand Turret (Defense)\nTriple-barreled Artillery base Defense
+		Description: Greece\nFaction Variations:\n    - Defenses have 20% increased Range and use 10% more Power.\nAffected are Gun Turret, Grand Turret, AA Gun.\nVeterancy Bonus:\n    - Iroqouis and Gunboat gets built as Veteran.\nUnique Support Powers:\n    - Interceptors (Tech Center)\nA squadron of Interceptors provides air cover over target area.\nSpecial Units:\n    - ATGM Soldier (Infantry)\nInfantry armed with anti-tank rockets.\n    - Grand Turret (Defense)\nTriple-barreled Artillery base Defense
 	Faction@9:
 		Name: Italy
 		InternalName: italy
@@ -254,7 +254,7 @@
 		Name: Turkey
 		InternalName: turkey
 		Side: Allies
-		Description: Turkey\nFaction Variations:\n    - Infantry is well-trained, considerably performing better.\nAll combat infantry take 10% less damage, deal out 10% more and move 10% faster.\nThis country cannot train Tanya.\nUnique Support Powers:\n    - Nuclear Minelayer (Service Depot with Tech Center)\nDelivers a Nuclear Minelayer at your primary War Factory.\nSpecial Units:\n    - Sniper (Infantry)\nMarksman with Sniper rifle.\n    - Grand Cannon (Vehicle)\nHeavy artillery with extreme range.
+		Description: Turkey\nFaction Variations:\n    - Infantry is well-trained, considerably performing better.\nAll combat infantry take 10% less damage, deal out 10% more and move 10% faster.\n    - Power Plants generate more Power at increased cost.\nPower Plant generates +25, Advanced Power Plant +50 Power.\nThis country cannot train Tanya.\nUnique Support Powers:\n    - Nuclear Minelayer (Service Depot with Tech Center)\nDelivers a Nuclear Minelayer at your primary War Factory.\nSpecial Units:\n    - Sniper (Infantry)\nMarksman with Sniper rifle.\n    - Grand Cannon (Vehicle)\nHeavy artillery with extreme range.
 	Faction@11:
 		Name: Soviet
 		InternalName: soviet
@@ -309,7 +309,7 @@
 		Name: China
 		InternalName: china
 		Side: Soviet
-		Description: People's Republic of China\nFaction Variations:\n    - Can build Flamer Truck instead Flak Truck, requires Flame Turret.\nUnique Support Powers:\n    - Cloning Facility (Tech Center)\nActivate to produce all basic Infantry in pairs until duration end.\n    - Nuclear Artillery (Service Depot with Tech Center)\nDelivers a Mammoth Artillery at your primary War Factory.\nVeterancy Bonus:\n    - Rifle Infantry gets built as Veteran.\nSpecial Units:\n    - Gattling Tank (Vehicle)\nLethal Anti-Air Measure that is equally effective against Infantry.\n    - MiG Bomber (Aircraft)\nAircraft equipped with Napalm bombs.\n    - Helicarrier (Naval)\nCan be deployed to Produce, Repair and re-arm Helicopters.
+		Description: People's Republic of China\nFaction Variations:\n    - Can build Flamer Truck instead Flak Truck, requires Flame Turret.\nUnique Support Powers:\n    - Cloning Facility (Tech Center)\nActivate to produce all basic Infantry in pairs until duration end.\n    - Nuclear Artillery (Service Depot with Tech Center)\nDelivers a Mammoth Artillery at your primary War Factory.\nVeterancy Bonus:\n    - Rocket Soldier gets trained as Veteran.\nSpecial Units:\n    - Gattling Tank (Vehicle)\nLethal Anti-Air Measure that is equally effective against Infantry.\n    - MiG Bomber (Aircraft)\nAircraft equipped with Napalm bombs.\n    - Helicarrier (Naval)\nCan be deployed to Produce, Repair and re-arm Helicopters.
 	ResourceType@ore:
 		Type: Ore
 		Name: Valuable Minerals

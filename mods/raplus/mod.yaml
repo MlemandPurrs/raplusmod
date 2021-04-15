@@ -1,7 +1,7 @@
 
 Metadata:
 	Title: Red Alert Plus
-	Version: v.1.4.0-beta
+	Version: v.1.4.0-test
 	Website: https://www.openra.net
 	WebIcon32: https://www.openra.net/images/icons/ra_32x32.png
 
@@ -55,8 +55,8 @@ Packages:
 
 MapFolders:
 	raplus|maps: System
-	~^SupportDir|maps/raplus: User
-	~^SupportDir|maps/ra/release-20210321: User
+	~^SupportDir|maps/v.1.4.0-test: User
+	~^SupportDir|maps/ra/v.1.4.0-test: User
 
 Rules:
 	raplus|rules/misc.yaml

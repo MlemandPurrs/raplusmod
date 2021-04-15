@@ -486,6 +486,13 @@ camera.minimum:
 	RevealsShroud:
 		Range: 1c0
 
+camera.intelscan:
+	Inherits: CAMERA
+	EditorOnlyTooltip:
+		Name: (support power proxy camera)
+	RevealsShroud:
+		Range: 5c0
+
 SONAR:
 	Inherits: camera.spyplane
 	EditorOnlyTooltip:

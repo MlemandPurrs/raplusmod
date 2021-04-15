@@ -882,7 +882,7 @@ FACF:
 		PauseOnCondition: being-captured || being-demolished
 		IntoActor: mcvf
 		Offset: 1,1
-		Facing: 96
+		Facing: 384
 	GrantConditionOnPrerequisite@GLOBALFACTUNDEPLOY:
 		Condition: factundeploy
 		Prerequisites: global-factundeploy
@@ -1049,7 +1049,7 @@ MCVF:
 	Transforms:
 		IntoActor: facf
 		Offset: -1,-1
-		Facing: 96
+		Facing: 384
 		TransformSounds: placbldg.aud, build5.aud
 		NoTransformNotification: BuildingCannotPlaceAudio
 	RenderSprites:

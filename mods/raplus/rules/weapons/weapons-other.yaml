@@ -811,3 +811,39 @@ FrogBomb:
 		Explosions: large_splash
 		ValidTargets: Water, Underwater
 		InvalidTargets: Ship, Structure, Bridge
+
+ChronoAI:
+	ReloadDelay: 1
+	Projectile: InstantExplode
+	Warhead@2Eff: CreateEffect
+		Explosions: invisblank
+		ExplosionPalette: effect
+		ValidTargets: Ground, Air, Water
+		ImpactSounds: chrono2.aud
+	Warhead@teleport: SpawnActor
+		Actors: ctnk.chrono, ctnk.chrono, ctnk.chrono, ctnk.chrono, ctnk.chrono
+		Range: 5
+		Image: chronoappear
+		Sequence: idle
+		ValidTargets: Air, Ground, Water
+	Warhead@3Flash: ChronoFlashEffect
+
+DummyBomb:
+	ReloadDelay: 8
+	Range: 3c0
+	Projectile: GravityBomb
+		Image: dummy
+		OpenSequence: idle
+		Velocity: 0, 0, -100
+		Acceleration: 0, 0, 0
+		Shadow: False
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 1
+		Versus:
+			None: 0
+			Light: 0
+			Heavy: 0
+			Wood: 0
+			Concrete: 0
+		DamageTypes: ExplosionDeath

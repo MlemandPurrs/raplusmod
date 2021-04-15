@@ -6,7 +6,7 @@ E1:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 1
-		Prerequisites: ~barracks, ~!player.england, ~!player.china, ~techlevel.infonly
+		Prerequisites: ~barracks, ~!player.england, ~techlevel.infonly
 		Description: General-purpose infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Selectable:
 		Class: E1
@@ -128,7 +128,7 @@ E3:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 2
-		Prerequisites: ~barracks, ~techlevel.infonly
+		Prerequisites: ~barracks, ~!player.china, ~techlevel.infonly
 		Description: Anti-tank/Anti-aircraft infantry.\n  Strong vs Vehicles, Aircraft\n  Weak vs Infantry
 	Selectable:
 		Class: E3

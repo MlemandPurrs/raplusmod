@@ -529,8 +529,8 @@ MGNM:
 		DeployedCondition: triggered
 	KillsSelf:
 		RequiresCondition: invulnerability || triggered
-	Chronoshiftable:
-		ExplodeInstead: true
+	ChronoshiftableWithSpriteEffect:
+		ExplodeInstead: True
 	Targetable:
 		TargetTypes: Ground, Water, Ship, Submarine
 		RequiresCondition: !underwater
@@ -613,3 +613,5 @@ SSML:
 			Radius: 341
 			PointA: 0, -676
 			PointB: 0, 876
+	Selectable:
+		DecorationBounds: 38,38

@@ -618,36 +618,6 @@ PT.Greece:
 		Image: pt
 	-MapEditorData:
 
-POWR.Greece:
-	Inherits: POWR
-	Buildable:
-		Prerequisites: ~player.greece, ~techlevel.infonly
-		BuildDuration: 300
-	Valued:
-		Cost: 350
-	Power:
-		Amount: 125
-	RenderSprites:
-		Image: powr
-	ProvidesPrerequisite@COPY:
-		Prerequisite: powr
-	-MapEditorData:
-
-APWR.Greece:
-	Inherits: APWR
-	Buildable:
-		Prerequisites: dome, ~player.greece, ~techlevel.medium
-		BuildDuration: 600
-	Power:
-		Amount: 250
-	Valued:
-		Cost: 700
-	RenderSprites:
-		Image: apwr
-	ProvidesPrerequisite@COPY:
-		Prerequisite: apwr
-	-MapEditorData:
-
 E2.Turkey:
 	Inherits: E2
 	Buildable:
@@ -685,6 +655,36 @@ SPIT.Turkey:
 		InitialLevels: 1
 	UpdatesPlayerStatistics:
 		OverrideActor: 3tnk.1b
+	-MapEditorData:
+
+POWR.Turkey:
+	Inherits: POWR
+	Buildable:
+		Prerequisites: ~player.turkey, ~techlevel.infonly
+		BuildDuration: 300
+	Valued:
+		Cost: 350
+	Power:
+		Amount: 125
+	RenderSprites:
+		Image: powr
+	ProvidesPrerequisite@COPY:
+		Prerequisite: powr
+	-MapEditorData:
+
+APWR.Turkey:
+	Inherits: APWR
+	Buildable:
+		Prerequisites: dome, ~player.turkey, ~techlevel.medium
+		BuildDuration: 600
+	Power:
+		Amount: 250
+	Valued:
+		Cost: 700
+	RenderSprites:
+		Image: apwr
+	ProvidesPrerequisite@COPY:
+		Prerequisite: apwr
 	-MapEditorData:
 
 3TNK.Russia:
@@ -1297,15 +1297,15 @@ HIND.Afghan:
 		Image: hind
 	-MapEditorData:
 
-E1.China:
-	Inherits: E1
+E3.China:
+	Inherits: E3
 	Buildable:
 		Prerequisites: ~barracks, ~infantry.soviet, ~player.china, ~techlevel.infonly
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
 	RenderSprites:
-		Image: e1
+		Image: e3
 	UpdatesPlayerStatistics:
-		OverrideActor: e1
+		OverrideActor: e3
 	-MapEditorData:

@@ -698,7 +698,11 @@ CINF:
 		Type: InfantryRefund
 	PortableChrono:
 		ChargeDelay: 250
-	Chronoshiftable:
+	ChronoshiftableWithSpriteEffect:
+		Image: chronoteleport
+		WarpInSequence: disappear-flip
+		WarpOutSequence: disappear
+		Palette: effect
 		ExplodeInstead: False
 		ChronoshiftSound: chrono2.aud
 		ReturnToOrigin: False

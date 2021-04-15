@@ -8,24 +8,27 @@ Player:
 	ProvidesPrerequisite@AIRESTRICTOR:
 		Prerequisite: aitoodumb
 		RequiresCondition: enable-ai-player
-	HarvesterBotModule@aiplayer:
+	HarvesterBotModuleCA@aiplayer:
 		RequiresCondition: enable-ai-player
 		HarvesterTypes: harv,harv.soviet,harv.crate,harv.soviet.crate
 		RefineryTypes: proc
 	BuildingRepairBotModule@aiplayer:
 		RequiresCondition: enable-ai-player
-	McvManagerBotModule@aiplayer:
+	PowerDownBotModuleCA@aiplayer:
+		RequiresCondition: enable-ai-player
+	McvManagerBotModuleCA@aiplayer:
 		RequiresCondition: enable-ai-player
 		McvTypes: mcv,mcv.ai
 		ConstructionYardTypes: fact
 		McvFactoryTypes: weap
 		MaxBaseRadius: 40
-	CaptureManagerBotModule@engineer:
+	CaptureManagerBotModuleCA@engineer:
 		RequiresCondition: enable-ai-player
 		CapturingActorTypes: e6
 		CapturableActorTypes: oilb,bio,miss,fcom,hosp
 		CheckCaptureTargetsForVisibility: false
 		MaximumCaptureTargetOptions: 15
+		EnemyAvoidanceRadius: 1
 	GrantConditionOnPrerequisite@NAVYDISABLER:
 		Condition: global-disablenavy
 		Prerequisites: global-disablenavy

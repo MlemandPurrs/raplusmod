@@ -647,7 +647,11 @@
 		ValidDamageStates: Light, Medium, Heavy, Critical
 	Repairable:
 		RepairActors: fix, fix.allies, fix.soviet
-	Chronoshiftable:
+	ChronoshiftableWithSpriteEffect:
+		Image: chronoteleport
+		WarpInSequence: appear
+		WarpOutSequence: disappear
+		Palette: effect
 	Passenger:
 		Weight: 2
 		CargoType: Vehicle
@@ -828,7 +832,11 @@
 		Notification: NavalUnitLost
 	ProximityCaptor:
 		Types: Ship
-	Chronoshiftable:
+	ChronoshiftableWithSpriteEffect:
+		Image: chronoteleport
+		WarpInSequence: appear
+		WarpOutSequence: disappear
+		Palette: effect
 	RepairableNear:
 		RepairActors: spen, syrd
 	GpsDot:
@@ -1564,7 +1572,11 @@
 	Targetable:
 		TargetTypes: Ground, Husk, NoAutoTarget
 		RequiresForceFire: true
-	Chronoshiftable:
+	ChronoshiftableWithSpriteEffect:
+		Image: chronoteleport
+		WarpInSequence: appear
+		WarpOutSequence: disappear
+		Palette: effect
 	Tooltip:
 		GenericName: Destroyed Vehicle
 

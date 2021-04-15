@@ -534,3 +534,11 @@ UnitExplodeChemSmall:
 	Warhead@4Smu: LeaveSmudge
 		SmudgeType: Scorch
 		InvalidTargets: Structure, Wall, Trees
+
+UnitExplodeWarpOut:
+	Inherits: ^Explosion
+	-Warhead@1Dam:
+	Warhead@2Eff: CreateEffect
+		Explosions: invisblank
+		ExplosionPalette: effect
+		ImpactSounds: chrono2.aud

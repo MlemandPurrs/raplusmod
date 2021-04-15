@@ -773,7 +773,7 @@ QTNK:
 		RequiresCondition: !madweakness
 		PauseOnCondition: being-captured
 		Speed: 56
-	Chronoshiftable:
+	ChronoshiftableWithSpriteEffect:
 		RequiresCondition: !madweakness && !being-captured
 	RevealsShroud:
 		MinRange: 4c0
@@ -879,6 +879,7 @@ SAML:
 		BuildPaletteOrder: 8
 		Prerequisites: stek, ~vehicles.soviet, ~player.karelia, ~techlevel.high
 		Description: Powerful anti-air unit.\nCannot attack Ground units.\n  Strong vs Aircraft\n  Weak vs everything Else
+		Icon: samlicon
 	Tooltip:
 		Name: SAM Launcher
 	Mobile:
@@ -1105,7 +1106,7 @@ GTNK:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 9
-		Prerequisites: stek, dome, ~vehicles.soviet, ~player.soviet, ~techlevel.high
+		Prerequisites: stek, dome, ~vehicles.soviet, ~player.china, ~techlevel.high
 		Description: Tank with Anti-Air battery mounted on it.\nHas Chaingun against ground units.\n  Strong vs Aircraft. Infantry\n  Weak vs anything Else
 	Valued:
 		Cost: 1200

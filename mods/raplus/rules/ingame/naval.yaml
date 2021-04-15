@@ -1,7 +1,7 @@
 LST:
 	Inherits: ^Ship
 	Inherits@CARGOPIPS: ^CargoPips
-	-Chronoshiftable:
+	-ChronoshiftableWithSpriteEffect:
 	Buildable:
 		Queue: Ship
 		BuildPaletteOrder: 1
