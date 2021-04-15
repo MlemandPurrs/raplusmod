@@ -1,0 +1,218 @@
+HARV.FullHusk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Ore Truck)
+	TransformOnCapture:
+		IntoActor: harv
+	InfiltrateForTransform:
+		IntoActor: harv
+	RenderSprites:
+		Image: hhusk
+
+HARV.EmptyHusk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Ore Truck)
+	TransformOnCapture:
+		IntoActor: harv
+	InfiltrateForTransform:
+		IntoActor: harv
+	RenderSprites:
+		Image: hhusk2
+
+HARV.Soviet.FullHusk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Armed Truck)
+	TransformOnCapture:
+		IntoActor: harv.soviet
+	InfiltrateForTransform:
+		IntoActor: harv.soviet
+	RenderSprites:
+		Image: hhusk.soviet
+
+HARV.Soviet.EmptyHusk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Armed Truck)
+	TransformOnCapture:
+		IntoActor: harv.soviet
+	InfiltrateForTransform:
+		IntoActor: harv.soviet
+	RenderSprites:
+		Image: hhusk2.soviet
+
+HARV.Chrono.EmptyHusk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Chrono Harvester)
+	TransformOnCapture:
+		IntoActor: harv.chrono
+	InfiltrateForTransform:
+		IntoActor: harv.chrono
+	RenderSprites:
+		Image: charv.husk
+
+MCV.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (MCV)
+	TransformOnCapture:
+		IntoActor: mcv
+	InfiltrateForTransform:
+		IntoActor: mcv
+	RenderSprites:
+		Image: mcvhusk
+
+1TNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Light Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 1tnk
+	InfiltrateForTransform:
+		IntoActor: 1tnk
+	RenderSprites:
+		Image: 1tnk.destroyed
+
+ATNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Flak Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: atnk
+	InfiltrateForTransform:
+		IntoActor: atnk
+	RenderSprites:
+		Image: atnk.destroyed
+
+2TNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Medium Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 2tnk
+	InfiltrateForTransform:
+		IntoActor: 2tnk
+	RenderSprites:
+		Image: 2tnk.destroyed
+
+2TNK.Stealth.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Phase Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 2tnk.stealth
+	InfiltrateForTransform:
+		IntoActor: 2tnk.stealth
+	RenderSprites:
+		Image: 2tnks.destroyed
+
+3TNK.1B.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Heavy Tank 1-B)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 3tnk.1B
+	InfiltrateForTransform:
+		IntoActor: 3tnk.1B
+	RenderSprites:
+		Image: 3tnk.1b.destroyed
+
+3TNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Heavy Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 3tnk
+	InfiltrateForTransform:
+		IntoActor: 3tnk
+	RenderSprites:
+		Image: 3tnk.destroyed
+
+4TNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Mammoth Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 4tnk
+	InfiltrateForTransform:
+		IntoActor: 4tnk
+	RenderSprites:
+		Image: 4tnk.destroyed
+
+4TNK.Flame.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Flame Mammoth)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 4tnk.flame
+	InfiltrateForTransform:
+		IntoActor: 4tnk.flame
+	RenderSprites:
+		Image: 4tnk-flame.destroyed
+
+5TNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Behemoth Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 5tnk
+	InfiltrateForTransform:
+		IntoActor: 5tnk
+	RenderSprites:
+		Image: 5tnk.destroyed
+
+TNKD.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Tank Destroyer)
+	TransformOnCapture:
+		IntoActor: tnkd
+	InfiltrateForTransform:
+		IntoActor: tnkd
+	RenderSprites:
+		Image: tnkd.destroyed
+
+MGG.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Mobile Gap Generator)
+	ThrowsParticle@spinner:
+		Anim: spinner-idle
+		Offset: -299,0,171
+	TransformOnCapture:
+		IntoActor: mgg
+	InfiltrateForTransform:
+		IntoActor: mgg
+	RenderSprites:
+		Image: mgg.destroyed
+
+ISU.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Siege Tank)
+	TransformOnCapture:
+		IntoActor: isu
+	InfiltrateForTransform:
+		IntoActor: isu
+	RenderSprites:
+		Image: isu.destroyed

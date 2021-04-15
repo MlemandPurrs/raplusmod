@@ -1,0 +1,1311 @@
+
+E7.Usa:
+	Inherits: E7
+	Buildable:
+		Prerequisites: ~tent, atek, ~infantry.allies, ~player.usa, ~techlevel.high
+	RenderSprites:
+		Image: E7
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	-MapEditorData:
+
+HELI.Usa:
+	Inherits: HELI
+	Buildable:
+		Prerequisites: ~hpad, atek, ~aircraft.allies, ~player.usa, ~techlevel.high
+	RenderSprites:
+		Image: HELI
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	-MapEditorData:
+
+E1.England:
+	Inherits: E1
+	Buildable:
+		Prerequisites: ~barracks, ~infantry.allies, ~player.england, ~techlevel.infonly
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	RenderSprites:
+		Image: e1
+	UpdatesPlayerStatistics:
+		OverrideActor: e1
+	-MapEditorData:
+
+JEEP.England:
+	Inherits: JEEP
+	Buildable:
+		Prerequisites: ~vehicles.allies, ~player.england, ~techlevel.low
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	UpdatesPlayerStatistics:
+		OverrideActor: jeep
+	RenderSprites:
+		Image: jeep
+	-MapEditorData:
+
+1TNK.England:
+	Inherits: 1TNK
+	-Armament@PRIMARY:
+	Buildable:
+		Prerequisites: proc, ~vehicles.allies, ~player.england, ~techlevel.low
+	Valued:
+		Cost: 650
+	Armament@PRIMARY:
+		Name: primary
+		Weapon: 25mm.britain
+		Recoil: 85
+		RecoilRecovery: 25
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	SpawnActorOnDeath:
+		Actor: 1TNK.England.Husk
+	UpdatesPlayerStatistics:
+		OverrideActor: 1tnk
+	RenderSprites:
+		Image: 1tnk
+	-MapEditorData:
+
+1TNK.England.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Light Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 1tnk.England
+	InfiltrateForTransform:
+		IntoActor: 1tnk.England
+	RenderSprites:
+		Image: 1tnk.destroyed
+	-MapEditorData:
+
+2TNK.England:
+	Inherits: 2TNK
+	-Armament@PRIMARY:
+	Buildable:
+		Prerequisites: fix, ~vehicles.allies, ~player.england, ~techlevel.medium
+	Valued:
+		Cost: 750
+	Armament@PRIMARY:
+		Name: primary
+		Weapon: 90mm.britain
+		Recoil: 85
+		RecoilRecovery: 38
+		LocalOffset: 720,0,80
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	SpawnActorOnDeath:
+		Actor: 2TNK.England.Husk
+	UpdatesPlayerStatistics:
+		OverrideActor: 2tnk
+	RenderSprites:
+		Image: 2tnk
+	-MapEditorData:
+
+2TNK.England.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Medium Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 2tnk.England
+	InfiltrateForTransform:
+		IntoActor: 2tnk.England
+	RenderSprites:
+		Image: 2tnk.destroyed
+	-MapEditorData:
+
+1TNK.Holland:
+	Inherits: 1TNK
+	Buildable:
+		Prerequisites: proc, ~vehicles.allies, ~player.holland, ~techlevel.low
+	Mobile:
+		Speed: 129
+	Health:
+		HP: 200
+	SpawnActorOnDeath:
+		Actor: 1TNK.Holland.Husk
+	UpdatesPlayerStatistics:
+		OverrideActor: 1tnk
+	RenderSprites:
+		Image: 1tnk
+	-MapEditorData:
+
+1TNK.Holland.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Medium Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 1tnk.Holland
+	InfiltrateForTransform:
+		IntoActor: 2tnk.Holland
+	RenderSprites:
+		Image: 1tnk.destroyed
+	-MapEditorData:
+
+2TNK.Holland:
+	Inherits: 2TNK
+	Buildable:
+		Prerequisites: fix, ~vehicles.allies, ~player.holland, ~techlevel.medium
+	Mobile:
+		Speed: 93
+	Health:
+		HP: 400
+	SpawnActorOnDeath:
+		Actor: 2TNK.Holland.Husk
+	RenderSprites:
+		Image: 2tnk
+	-MapEditorData:
+
+2TNK.Holland.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Medium Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 2tnk.Holland
+	InfiltrateForTransform:
+		IntoActor: 2tnk.Holland
+	RenderSprites:
+		Image: 2tnk.destroyed
+	-MapEditorData:
+
+1TNK.France:
+	Inherits: 1TNK
+	Buildable:
+		Prerequisites: proc, ~vehicles.allies, ~player.france, ~techlevel.low
+	-Armament@PRIMARY:
+	Armament@PRIMARY:
+		Name: primary
+		Weapon: 25mm.france
+		Recoil: 85
+		RecoilRecovery: 25
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	SpawnActorOnDeath:
+		Actor: 1TNK.France.Husk
+	UpdatesPlayerStatistics:
+		OverrideActor: 1tnk
+	RenderSprites:
+		Image: 1tnk
+	-MapEditorData:
+
+1TNK.France.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Light Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 1tnk.France
+	InfiltrateForTransform:
+		IntoActor: 1tnk.France
+	RenderSprites:
+		Image: 1tnk.destroyed
+	-MapEditorData:
+
+2TNK.France:
+	Inherits: 2TNK
+	Buildable:
+		Prerequisites: fix, ~vehicles.allies, ~player.france, ~techlevel.medium
+	Armament@PRIMARY:
+		Name: primary
+		Weapon: 90mm.france
+		Recoil: 85
+		RecoilRecovery: 38
+		LocalOffset: 720,0,80
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	SpawnActorOnDeath:
+		Actor: 2TNK.France.Husk
+	UpdatesPlayerStatistics:
+		OverrideActor: 2tnk
+	RenderSprites:
+		Image: 2tnk
+	-MapEditorData:
+
+2TNK.France.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Medium Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 2tnk.France
+	InfiltrateForTransform:
+		IntoActor: 2tnk.France
+	RenderSprites:
+		Image: 2tnk.destroyed
+	-MapEditorData:
+
+ARTY.France:
+	Inherits: ARTY
+	Buildable:
+		Prerequisites: dome, ~vehicles.allies, ~player.france, ~techlevel.medium
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	UpdatesPlayerStatistics:
+		OverrideActor: arty
+	RenderSprites:
+		Image: arty
+	-MapEditorData:
+
+1TNK.Germany:
+	Inherits: 1TNK
+	Buildable:
+		Prerequisites: proc, ~vehicles.allies, ~player.germany, ~techlevel.low
+	Health:
+		HP: 330
+	SpeedMultiplier@GermanyMalus:
+		Modifier: 90
+	SpawnActorOnDeath:
+		Actor: 1TNK.Germany.Husk
+	UpdatesPlayerStatistics:
+		OverrideActor: 1tnk
+	RenderSprites:
+		Image: 1tnk
+	-MapEditorData:
+
+1TNK.Germany.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Light Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 1tnk.Germany
+	InfiltrateForTransform:
+		IntoActor: 1tnk.Germany
+	RenderSprites:
+		Image: 1tnk.destroyed
+	-MapEditorData:
+
+2TNK.Germany:
+	Inherits: 2TNK
+	Buildable:
+		Prerequisites: fix, ~vehicles.allies, ~player.germany, ~techlevel.medium
+	Health:
+		HP: 440
+	SpeedMultiplier@GermanyMalus:
+		Modifier: 90
+	SpawnActorOnDeath:
+		Actor: 2TNK.Germany.Husk
+	UpdatesPlayerStatistics:
+		OverrideActor: 2tnk
+	RenderSprites:
+		Image: 2tnk
+	-MapEditorData:
+
+2TNK.Germany.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Medium Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 2tnk.Germany
+	InfiltrateForTransform:
+		IntoActor: 2tnk.Germany
+	RenderSprites:
+		Image: 2tnk.destroyed
+	-MapEditorData:
+
+APC.Germany:
+	Inherits: APC
+	Buildable:
+		Prerequisites: tent, ~vehicles.allies, ~player.germany, ~techlevel.low
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	UpdatesPlayerStatistics:
+		OverrideActor: apc
+	RenderSprites:
+		Image: apc
+	-MapEditorData:
+
+DD.Germany:
+	Inherits: DD
+	Buildable:
+		Prerequisites: ~syrd, dome, ~ships.allies, ~player.germany, ~techlevel.medium
+	RenderSprites:
+		Image: dd
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	UpdatesPlayerStatistics:
+		OverrideActor: dd
+	-MapEditorData:
+
+PDOX.Germany:
+	Inherits: PDOX
+	Buildable:
+		Prerequisites: atek, ~structures.allies, ~player.germany, ~techlevel.unrestricted	
+	Power:
+		Amount: -100
+	Health:
+		HP: 1500
+	RenderSprites:
+		Image: pdox
+	-MapEditorData:
+
+1TNK.Sweden:
+	Inherits: 1TNK
+	Buildable:
+		Prerequisites: proc, ~vehicles.allies, ~player.sweden, ~techlevel.low
+		Description: Fast tank, good for scouting.\n  Special ability: Amphibian\nCan swim through sea and river.\nTakes 20% more damage from all sources\nwhile in open water but not rivers.\n  Strong vs Light armor\n  Weak vs Infantry, Tanks, Aircraft
+	Mobile:
+		Locomotor: tracked-amphibious
+	GrantConditionOnTerrain@SEA:
+		TerrainTypes: Water, River
+		Condition: floating
+	GrantConditionOnTerrain@SEAMALUS:
+		TerrainTypes: Water
+		Condition: atsea
+	Targetable:
+		RequiresCondition: !floating
+	Targetable@SEA:
+		TargetTypes: Ground, Water, Ship, C4, Tank
+		RequiresCondition: floating
+	WithFacingSpriteBody:
+		RequiresCondition: !floating
+	WithFacingSpriteBody@SEA:
+		Name: floating
+		Sequence: idle-float
+		RequiresCondition: floating
+	DamageMultiplier:
+		Modifier: 120
+		RequiresCondition: atsea
+	SpawnActorOnDeath:
+		Actor: 1TNK.Sweden.Husk
+		RequiresCondition: !floating
+	RenderSprites:
+		Image: 1tnk
+	-MapEditorData:
+
+1TNK.Sweden.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Light Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 1tnk.Sweden
+	InfiltrateForTransform:
+		IntoActor: 1tnk.Sweden
+	RenderSprites:
+		Image: 1tnk.destroyed
+	-MapEditorData:
+
+2TNK.Sweden:
+	Inherits: 2TNK
+	Buildable:
+		Prerequisites: fix, ~vehicles.allies, ~player.sweden, ~techlevel.medium
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	RenderSprites:
+		Image: 2tnk
+	UpdatesPlayerStatistics:
+		OverrideActor: 2tnk
+	-MapEditorData:
+
+TORN.Sweden:
+	Inherits: TORN
+	Buildable:
+		Prerequisites: ~afld, atek, ~aircraft.allies, ~player.sweden, ~techlevel.high
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	RenderSprites:
+		Image: ally-mig
+	UpdatesPlayerStatistics:
+		OverrideActor: torn
+	-MapEditorData:
+
+THF.Spain:
+	Inherits: THF
+	-CaptureManager:
+	-Captures:
+	-Captures@SABOTAGE:
+	-Cloak:
+	-GrantConditionOnDamageState@UNCLOAK:
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 998
+		Prerequisites: ~disabled
+		Description: Can steal Credits out of Refineries.\n  Unarmed
+		Icon: vicon
+	Valued:
+		Cost: 475
+	Tooltip:
+		Name: Thief
+	RenderSprites:
+		Image: THF
+	-MapEditorData:
+
+1TNK.Spain:
+	Inherits: 1TNK
+	Buildable:
+		Prerequisites: proc, ~vehicles.allies, ~player.spain, ~techlevel.low
+	-Armament@PRIMARY:
+	Armament@PRIMARY:
+		Name: primary
+		Weapon: 25mm.spain
+		Recoil: 85
+		RecoilRecovery: 25
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	SpawnActorOnDeath:
+		Actor: 1TNK.Spain.Husk
+	RenderSprites:
+		Image: 1tnk
+	-MapEditorData:
+
+1TNK.Spain.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Light Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 1tnk.Spain
+	InfiltrateForTransform:
+		IntoActor: 1tnk.Spain
+	RenderSprites:
+		Image: 1tnk.destroyed
+	-MapEditorData:
+
+2TNK.Spain:
+	Inherits: 2TNK
+	Buildable:
+		Prerequisites: fix, ~vehicles.allies, ~player.spain, ~techlevel.medium
+	-Armament@PRIMARY:
+	Armament@PRIMARY:
+		Name: primary
+		Weapon: 90mm.spain
+		Recoil: 85
+		RecoilRecovery: 38
+		LocalOffset: 720,0,80
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	SpawnActorOnDeath:
+		Actor: 2TNK.Spain.Husk
+	UpdatesPlayerStatistics:
+		OverrideActor: 2tnk
+	RenderSprites:
+		Image: 2tnk
+	-MapEditorData:
+
+2TNK.Spain.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Light Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 2tnk.Spain
+	InfiltrateForTransform:
+		IntoActor: 2tnk.Spain
+	RenderSprites:
+		Image: 2tnk.destroyed
+	-MapEditorData:
+
+GAP.Spain:
+	Inherits: GAP
+	Buildable:
+		Prerequisites: dome, ~fact, ~player.spain, ~techlevel.medium
+	Valued:
+		Cost: 800
+	RenderSprites:
+		Image: gap
+	ProvidesPrerequisite@COPY:
+		Prerequisite: gap
+	-MapEditorData:
+
+MGG.Spain:
+	Inherits: MGG
+	Buildable:
+		Prerequisites: dome, ~weap, ~player.spain, ~techlevel.medium
+	Valued:
+		Cost: 600
+	RenderSprites:
+		Image: mgg
+	-MapEditorData:
+
+E4.Italy:
+	Inherits: E4
+	Buildable:
+		Prerequisites: ~tent, dome, ~infantry.allies, ~player.italy, ~techlevel.medium
+		BuildPaletteOrder: 6
+	RenderSprites:
+		Image: E4
+	-MapEditorData:
+
+1TNK.Italy:
+	Inherits: 1TNK
+	Buildable:
+		Prerequisites: proc, ~vehicles.allies, ~player.italy, ~techlevel.low
+	UpdatesPlayerStatistics:
+		OverrideActor: 1tnk
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	RenderSprites:
+		Image: 1tnk
+	-MapEditorData:
+
+CA.Italy:
+	Inherits: CA
+	Buildable:
+		Prerequisites: ~syrd, atek, ~ships.allies, ~player.italy, ~techlevel.high
+	UpdatesPlayerStatistics:
+		OverrideActor: ca
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	RenderSprites:
+		Image: ca
+	-MapEditorData:
+
+IROQ.Greece:
+	Inherits: IROQ
+	Buildable:
+		Prerequisites: ~hpad, ~aircraft.allies, ~!aitoodumb, ~player.greece, ~techlevel.medium
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	UpdatesPlayerStatistics:
+		OverrideActor: iroq
+	RenderSprites:
+		Image: iroq
+	-MapEditorData:	
+
+IROQ.AI.Greece:
+	Inherits: IROQ.AI
+	Buildable:
+		Prerequisites: ~hpad, ~aircraft.allies, ~aitoodumb, ~player.greece, ~techlevel.medium
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	UpdatesPlayerStatistics:
+		OverrideActor: iroq
+	RenderSprites:
+		Image: iroq
+
+PT.Greece:
+	Inherits: PT
+	Buildable:
+		Prerequisites: ~syrd, proc, ~ships.allies, ~player.greece, ~techlevel.low
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	UpdatesPlayerStatistics:
+		OverrideActor: pt
+	RenderSprites:
+		Image: pt
+	-MapEditorData:
+
+POWR.Greece:
+	Inherits: POWR
+	Buildable:
+		Prerequisites: ~player.greece, ~techlevel.infonly
+		BuildDuration: 300
+	Valued:
+		Cost: 350
+	Power:
+		Amount: 125
+	RenderSprites:
+		Image: powr
+	ProvidesPrerequisite@COPY:
+		Prerequisite: powr
+	-MapEditorData:
+
+APWR.Greece:
+	Inherits: APWR
+	Buildable:
+		Prerequisites: dome, ~player.greece, ~techlevel.medium
+		BuildDuration: 600
+	Power:
+		Amount: 250
+	Valued:
+		Cost: 700
+	RenderSprites:
+		Image: apwr
+	ProvidesPrerequisite@COPY:
+		Prerequisite: apwr
+	-MapEditorData:
+
+E2.Turkey:
+	Inherits: E2
+	Buildable:
+		Prerequisites: ~barracks, ~player.turkey, ~techlevel.infonly
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	UpdatesPlayerStatistics:
+		OverrideActor: e2
+	RenderSprites:
+		Image: e2
+	-MapEditorData:
+
+SPIT.Turkey:
+	Inherits: SPIT
+	Buildable:
+		Prerequisites: ~afld, dome, ~aircraft.allies, ~player.turkey, ~techlevel.medium
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	UpdatesPlayerStatistics:
+		OverrideActor: spit
+	RenderSprites:
+		Image: ally-yak
+	-MapEditorData:
+
+3TNK.1B.Russia:
+	Inherits: 3TNK.1B
+	Buildable:
+		Prerequisites: proc, ~vehicles.soviet, ~player.russia, ~techlevel.low
+	RenderSprites:
+		Image: 3tnk.1b
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	UpdatesPlayerStatistics:
+		OverrideActor: 3tnk.1b
+	-MapEditorData:
+
+3TNK.Russia:
+	Inherits: 3TNK
+	Buildable:
+		Prerequisites: fix, ~vehicles.soviet, ~player.russia, ~techlevel.medium
+	RenderSprites:
+		Image: 3tnk
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	UpdatesPlayerStatistics:
+		OverrideActor: 3tnk
+	-MapEditorData:
+
+3TNK.1B.Ukraine:
+	Inherits: 3TNK.1B
+	Buildable:
+		Prerequisites: proc, ~vehicles.soviet, ~player.ukraine, ~techlevel.low
+		BuildDurationModifier: 70
+	SpeedMultiplier@UkraineBonus:
+		Modifier: 110
+	SpawnActorOnDeath:
+		Actor: 3TNK.1B.Ukraine.Husk
+	UpdatesPlayerStatistics:
+		OverrideActor: 3tnk.1b
+	RenderSprites:
+		Image: 3tnk.1b
+	-MapEditorData:
+
+3TNK.1B.Ukraine.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Heavy Tank 1-B)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 3tnk.1B.Ukraine
+	InfiltrateForTransform:
+		IntoActor: 3tnk.1B.Ukraine
+	RenderSprites:
+		Image: 3tnk.1b.destroyed
+	-MapEditorData:
+
+3TNK.Ukraine:
+	Inherits: 3TNK
+	Buildable:
+		Prerequisites: fix, ~vehicles.soviet, ~player.ukraine, ~techlevel.medium
+		BuildDurationModifier: 70
+	SpeedMultiplier@UkraineBonus:
+		Modifier: 110
+	SpawnActorOnDeath:
+		Actor: 3TNK.Ukraine.Husk
+	UpdatesPlayerStatistics:
+		OverrideActor: 3tnk
+	RenderSprites:
+		Image: 3tnk
+	-MapEditorData:
+
+3TNK.Ukraine.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Heavy Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 3tnk.ukraine
+	InfiltrateForTransform:
+		IntoActor: 3tnk.ukraine
+	RenderSprites:
+		Image: 3tnk.destroyed
+	-MapEditorData:
+
+4TNK.Ukraine:
+	Inherits: 4TNK
+	Buildable:
+		Prerequisites: fix, stek, ~vehicles.soviet, ~player.ukraine, ~techlevel.high
+	RenderSprites:
+		Image: 4tnk
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	UpdatesPlayerStatistics:
+		OverrideActor: 4tnk
+	-MapEditorData:
+
+SS.Ukraine:
+	Inherits: SS
+	Buildable:
+		Prerequisites: ~spen, proc, ~ships.soviet, ~player.ukraine, ~techlevel.low
+	RenderSprites:
+		Image: ss
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	UpdatesPlayerStatistics:
+		OverrideActor: ss
+	-MapEditorData:
+
+3TNK.Belarus:
+	Inherits: 3TNK
+	Buildable:
+		Prerequisites: fix, ~vehicles.soviet, ~player.belarus, ~techlevel.medium
+	Health:
+		HP: 540
+	ProductionCostMultiplier@NationBonus:
+		Multiplier: 90
+		Prerequisites: !indp
+	ProductionCostMultiplier@NationBonusExtra:
+		Multiplier: 90
+		Prerequisites: indp, indplowpower
+	SpawnActorOnDeath:
+		Actor: 3TNK.Belarus.Husk
+	UpdatesPlayerStatistics:
+		OverrideActor: 3tnk
+	RenderSprites:
+		Image: 3tnk
+	-MapEditorData:
+
+3TNK.Belarus.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Heavy Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 3tnk.belarus
+	InfiltrateForTransform:
+		IntoActor: 3tnk.belarus
+	RenderSprites:
+		Image: 3tnk.destroyed
+	-MapEditorData:
+
+3TNK.1B.Belarus:
+	Inherits: 3TNK.1B
+	Buildable:
+		Prerequisites: proc, ~vehicles.soviet, ~player.belarus, ~techlevel.low
+	Health:
+		HP: 405
+	ProductionCostMultiplier@NationBonus:
+		Multiplier: 90
+		Prerequisites: !indp
+	ProductionCostMultiplier@NationBonusExtra:
+		Multiplier: 90
+		Prerequisites: indp, indplowpower
+	SpawnActorOnDeath:
+		Actor: 3TNK.1B.Belarus.Husk
+	UpdatesPlayerStatistics:
+		OverrideActor: 3tnk.1b
+	RenderSprites:
+		Image: 3tnk.1b
+	-MapEditorData:
+
+3TNK.1B.Belarus.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Heavy Tank 1-B)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 3tnk.1B.Belarus
+	InfiltrateForTransform:
+		IntoActor: 3tnk.1B.Belarus
+	RenderSprites:
+		Image: 3tnk.1b.destroyed
+	-MapEditorData:
+
+FTRK.Belarus:
+	Inherits: FTRK
+	Buildable:
+		Prerequisites: ~vehicles.soviet, ~player.belarus, ~techlevel.low
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	RenderSprites:
+		Image: ftrk
+	-MapEditorData:
+
+YAK.Belarus:
+	Inherits: YAK
+	Buildable:
+		Prerequisites: ~afld, dome, ~player.belarus, ~aircraft.soviet, ~!aitoodumb, ~techlevel.medium
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	UpdatesPlayerStatistics:
+		OverrideActor: yak
+	RenderSprites:
+		Image: yak
+	-MapEditorData:
+
+YAK.Belarus.AI:
+	Inherits: YAK.Belarus
+	Buildable:
+		Prerequisites: ~afld, dome, ~player.belarus, ~aircraft.soviet, ~aitoodumb, ~techlevel.medium
+		Description: Strafing Attack Plane armed with\ndual machine guns.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft
+	-Armament@TERTIARY:
+	-AmmoPool@2:
+	UpdatesPlayerStatistics:
+		OverrideActor: yak
+	RenderSprites:
+		Image: yak
+	AttackAircraft:
+		Armaments: primary, secondary
+
+APC.Karelia:
+	Inherits: APC.Soviet
+	Buildable:
+		Prerequisites: barr, ~vehicles.soviet, ~player.karelia, ~techlevel.low
+		Description: Tough and slow Infantry transport.\nCan transport up to 8 Infantry.\n  Strong vs Infantry, Buildings\n  Weak vs Tanks, Defenses
+	Cargo:
+		MaxWeight: 8
+	RenderSprites:
+		Image: apc
+	-MapEditorData:
+
+MNLY.Karelia:
+	Inherits: MNLY
+	Buildable:
+		Prerequisites: fix, ~player.karelia, ~techlevel.medium
+		Description: Carries and lays up to 8 Land Mines\nto destroy unwary enemy units.\nCan detect mines.\n  Unarmed
+	AmmoPool:
+		Ammo: 8
+	RenderSprites:
+		Image: mnly
+	-MapEditorData:
+
+MSUB.Karelia:
+	Inherits: MSUB
+	Buildable:
+		Prerequisites: ~spen, stek, ~ships.soviet, ~player.karelia, ~techlevel.high
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	UpdatesPlayerStatistics:
+		OverrideActor: msub
+	RenderSprites:
+		Image: ADVMSUB
+	-MapEditorData:
+
+FBOX.Karelia:
+	Inherits: FBOX
+	Buildable:
+		Prerequisites: barr, ~structures.soviet, ~player.karelia, ~techlevel.low
+	Health:
+		HP: 300
+	Power:
+		Amount: -15
+	RenderSprites:
+		Image: pbox
+	-MapEditorData:
+
+FTUR.Karelia:
+	Inherits: FTUR
+	Buildable:
+		Prerequisites: weap, ~structures.soviet, ~player.karelia, ~techlevel.low
+	Health:
+		HP: 300
+	Power:
+		Amount: -35
+	RenderSprites:
+		Image: ftur
+	ProvidesPrerequisite@COPY:
+		Prerequisite: ftur
+	-MapEditorData:
+
+TSLA.Karelia:
+	Inherits: TSLA
+	Buildable:
+		Prerequisites: dome, ~structures.soviet, ~player.karelia, ~techlevel.medium
+	Health:
+		HP: 300
+	Power:
+		Amount: -70
+	RenderSprites:
+		Image: tsla
+	ProvidesPrerequisite@COPY:
+		Prerequisite: tsla
+	-MapEditorData:
+
+SAM.Karelia:
+	Inherits: SAM
+	Buildable:
+		Prerequisites: dome, ~structures.soviet, ~player.karelia, ~techlevel.medium
+	Health:
+		HP: 300
+	Power:
+		Amount: -35
+	RenderSprites:
+		Image: sam
+	-MapEditorData:
+
+HSAM.Karelia:
+	Inherits: HSAM
+	Buildable:
+		Prerequisites: dome, stek, ~structures.soviet, ~player.karelia, ~techlevel.high
+	Health:
+		HP: 300
+	Power:
+		Amount: -35
+	RenderSprites:
+		Image: hsam
+	-MapEditorData:
+
+DOG.Moldova:
+	Inherits: DOG
+	Buildable:
+		Prerequisites: proc, ~player.moldova, ~techlevel.infonly
+	Mobile:
+		Locomotor: foot-amphibious
+	RenderSprites:
+		Image: dog
+	UpdatesPlayerStatistics:
+		OverrideActor: dog
+	-MapEditorData:
+
+APC.Moldova:
+	Inherits: APC.Soviet
+	Buildable:
+		Prerequisites: barr, ~vehicles.soviet, ~player.moldova, ~techlevel.low
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	RenderSprites:
+		Image: apc
+	UpdatesPlayerStatistics:
+		OverrideActor: apc.soviet
+	-MapEditorData:
+
+3TNK.1B.Kazakh:
+	Inherits: 3TNK.1B
+	-Armament:
+	Buildable:
+		Prerequisites: proc, ~vehicles.soviet, ~player.kazakh, ~techlevel.low
+	Armament:
+		Name: primary
+		Weapon: 105mm.Singular.kazakh
+		Recoil: 128
+		RecoilRecovery: 26
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	SpawnActorOnDeath:
+		Actor: 3TNK.1B.Kazakh.Husk
+	UpdatesPlayerStatistics:
+		OverrideActor: 3tnk.1b
+	RenderSprites:
+		Image: 3tnk.1b
+	-MapEditorData:
+
+3TNK.1B.Kazakh.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Heavy Tank 1-B)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 3tnk.1B.Kazakh
+	InfiltrateForTransform:
+		IntoActor: 3tnk.1B.Kazakh
+	RenderSprites:
+		Image: 3tnk.1b.destroyed
+	-MapEditorData:
+
+3TNK.Kazakh:
+	Inherits: 3TNK
+	-Armament:
+	Buildable:
+		Prerequisites: fix, ~vehicles.soviet, ~player.kazakh, ~techlevel.medium
+	Armament:
+		Weapon: 105mm.kazakh
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 768,85,90, 768,-85,90
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	SpawnActorOnDeath:
+		Actor: 3TNK.Kazakh.Husk
+	UpdatesPlayerStatistics:
+		OverrideActor: 3tnk
+	RenderSprites:
+		Image: 3tnk
+	-MapEditorData:
+
+3TNK.Kazakh.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Heavy Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 3tnk.kazakh
+	InfiltrateForTransform:
+		IntoActor: 3tnk.kazakh
+	RenderSprites:
+		Image: 3tnk.destroyed
+	-MapEditorData:
+
+APC.Soviet.Loaded:
+	Inherits: APC.Soviet
+	Buildable:
+		BuildPaletteOrder: 997
+		Prerequisites: ~disabled
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	UpdatesPlayerStatistics:
+		OverrideActor: apc.soviet
+	Cargo:
+		InitialUnits: e3r1,e3r1,e3r1,e3r1,e3r1
+	RenderSprites:
+		Image: apc
+	-MapEditorData:
+
+MIG.Kazakh:
+	Inherits: MIG
+	Buildable:
+		Prerequisites: ~afld, stek, ~aircraft.soviet, ~player.kazakh, ~techlevel.high
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	UpdatesPlayerStatistics:
+		OverrideActor: mig
+	RenderSprites:
+		Image: mig
+	-MapEditorData:
+
+SPRO.Kazakh:
+	Inherits: SPRO
+	Buildable:
+		Queue: Building
+		BuildLimit: 1
+		Prerequisites: techcenter, dome, ~player.kazakh, ~techlevel.unrestricted
+		Description: Provides GPS Sattelite uplink.\nMaximum one can be built.\nCan be Infiltrated by an Spy or Saboteur resulting\nin loss of map exploration.\n  Special Ability: GPS Satellite\nReveals map terrain and provides tactical information\n (Requires power and active radar to operate)
+		BuildPaletteOrder: 9
+	GpsPower:
+		ChargeInterval: 9000
+	RenderSprites:
+		Image: atek
+	-MapEditorData:
+
+VOLK.Uzbek:
+	Inherits: VOLK
+	Buildable:
+		Prerequisites: ~barr, stek, ~infantry.soviet, ~player.uzbek, ~techlevel.high
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	UpdatesPlayerStatistics:
+		OverrideActor: volk
+	RenderSprites:
+		Image: VOLK
+	-MapEditorData:
+
+3TNK.1B.Turkmen:
+	Inherits: 3TNK.1B
+	Buildable:
+		Prerequisites: proc, ~vehicles.soviet, ~player.turkmen, ~techlevel.low
+	Valued:
+		Cost: 925
+	Armament:
+		Name: primary
+		Weapon: 105mm.Singular.turkmen
+		Recoil: 128
+		RecoilRecovery: 26
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	SpawnActorOnDeath:
+		Actor: 3TNK.1B.Turkmen.Husk
+	UpdatesPlayerStatistics:
+		OverrideActor: 3tnk.1b
+	RenderSprites:
+		Image: 3tnk.1b
+	-MapEditorData:
+
+3TNK.1B.Turkmen.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Heavy Tank 1-B)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 3tnk.1B.Turkmen
+	InfiltrateForTransform:
+		IntoActor: 3tnk.1B.Turkmen
+	RenderSprites:
+		Image: 3tnk.1b.destroyed
+	-MapEditorData:
+
+3TNK.Turkmen:
+	Inherits: 3TNK
+	-Armament:
+	Buildable:
+		Prerequisites: fix, ~vehicles.soviet, ~player.turkmen, ~techlevel.medium
+	Valued:
+		Cost: 1225
+	Armament:
+		Weapon: 105mm.turkmen
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 768,85,90, 768,-85,90
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable
+	SpawnActorOnDeath:
+		Actor: 3TNK.Turkmen.Husk
+	RenderSprites:
+		Image: 3tnk
+	UpdatesPlayerStatistics:
+		OverrideActor: 3tnk
+	-MapEditorData:
+
+3TNK.Turkmen.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Heavy Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 3tnk.turkmen
+	InfiltrateForTransform:
+		IntoActor: 3tnk.turkmen
+	RenderSprites:
+		Image: 3tnk.destroyed
+	-MapEditorData:
+
+V2RL.Turkmen:
+	Inherits: V2RL
+	Buildable:
+		Prerequisites: dome, ~vehicles.soviet, ~player.turkmen, ~techlevel.medium
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	UpdatesPlayerStatistics:
+		OverrideActor: v2rl
+	RenderSprites:
+		Image: v2rl
+	-MapEditorData:
+
+3TNK.1B.Afghan:
+	Inherits: 3TNK.1B
+	Buildable:
+		Prerequisites: proc, ~vehicles.soviet, ~player.afghan, ~techlevel.low
+	Health:
+		HP: 580
+	Mobile:
+		Speed: 64
+	SpawnActorOnDeath:
+		Actor: 3TNK.1B.Afghan.Husk
+	UpdatesPlayerStatistics:
+		OverrideActor: 3tnk.1b
+	RenderSprites:
+		Image: 3tnk.1b
+	-MapEditorData:
+
+3TNK.1B.Afghan.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Heavy Tank 1-B)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 3tnk.1B.Afghan
+	InfiltrateForTransform:
+		IntoActor: 3tnk.1B.Afghan
+	RenderSprites:
+		Image: 3tnk.1b.destroyed
+	-MapEditorData:
+
+3TNK.Afghan:
+	Inherits: 3TNK
+	Buildable:
+		Prerequisites: fix, ~vehicles.soviet, ~player.afghan, ~techlevel.medium
+	Health:
+		HP: 700
+	Mobile:
+		Speed: 64
+	SpawnActorOnDeath:
+		Actor: 3TNK.Afghan.Husk
+	RenderSprites:
+		Image: 3tnk
+	UpdatesPlayerStatistics:
+		OverrideActor: 3tnk
+	-MapEditorData:
+
+3TNK.Afghan.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Heavy Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 3tnk.afghan
+	InfiltrateForTransform:
+		IntoActor: 3tnk.afghan
+	RenderSprites:
+		Image: 3tnk.destroyed
+	-MapEditorData:
+
+HIND.Afghan:
+	Inherits: HIND
+	Buildable:
+		Prerequisites: ~hpad, stek, ~aircraft.soviet, ~player.afghan, ~techlevel.high
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	UpdatesPlayerStatistics:
+		OverrideActor: hind
+	RenderSprites:
+		Image: hind
+	-MapEditorData:
+
+E1.China:
+	Inherits: E1
+	Buildable:
+		Prerequisites: ~barracks, ~infantry.soviet, ~player.china, ~techlevel.infonly
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	RenderSprites:
+		Image: e1
+	UpdatesPlayerStatistics:
+		OverrideActor: e1
+	-MapEditorData:

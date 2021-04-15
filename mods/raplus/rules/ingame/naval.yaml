@@ -1,0 +1,69 @@
+LST:
+	Inherits: ^Ship
+	Inherits@CARGOPIPS: ^CargoPips
+	-Chronoshiftable:
+	Buildable:
+		Queue: Ship
+		BuildPaletteOrder: 1
+		Prerequisites: ~techlevel.low
+		Description: General-purpose naval transport.\nCan carry up to 16 Infantry and Vehicles.\n  Unarmed
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Transport
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 350
+	Armor:
+		Type: Heavy
+	SelectionDecorations:
+	Selectable:
+		DecorationBounds: 36,36
+	Mobile:
+		Locomotor: lcraft
+		Speed: 100
+		PauseOnCondition: notmobile
+	RevealsShroud:
+		MinRange: 5c0
+		Range: 6c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 5c0
+	WithLandingCraftAnimation:
+		OpenTerrainTypes: Clear, Rough, Road, Ore, Gems, Beach
+	Cargo:
+		Types: Infantry, Vehicle
+		MaxWeight: 16
+		PassengerFacing: 0
+		LoadedCondition: loaded	
+		LoadingCondition: notmobile
+	RepairableNear:
+		RepairActors: syrd, spen
+	Sellable:
+		RequiresCondition: ship.sellable && !loaded
+
+MINS:
+	Inherits: ^Mine
+	Tooltip:
+		Name: Sea Mine
+	Health:
+		HP: 50
+		NotifyAppliedDamage: false
+	Cloak:
+		CloakTypes: Underwater
+		InitialDelay: 0
+		CloakDelay: 75
+		CloakSound: subshow1.aud
+		UncloakSound: subshow1.aud
+		Palette: submerged
+		IsPlayerPalette: false
+	RenderSprites:
+		Image: mins
+	Targetable:
+		TargetTypes: Underwater
+	Explodes:
+		Weapon: ASMine
+	GrantExternalConditionToCrusher:
+		OnCrushCondition: minehit
+		OnCrushDuration: 50

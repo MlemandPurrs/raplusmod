@@ -1,0 +1,39 @@
+
+SPY.England:
+	Inherits: SPY
+	-Buildable:
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	UpdatesPlayerStatistics:
+		OverrideActor: spy
+	RenderSprites:
+		Image: spy
+	-MapEditorData:
+
+AFLD.Ukraine:
+	Inherits: AFLD
+	-Buildable:
+	ProvidesPrerequisite@clone:
+		Prerequisite: afld
+	RenderSprites:
+		Image: afld
+	-MapEditorData:
+
+Sniper:
+	Inherits: E1
+	-Buildable:
+	Armament:
+		Weapon: Sniper
+	Armament@GARRISONED:
+		Weapon: Sniper
+	RenderSprites:
+		Image: e1
+	-MapEditorData:
+
+Zombie:
+	Inherits: DOG
+	-Buildable:
+	RenderSprites:
+		Image: DOG
+	-MapEditorData:

@@ -1,0 +1,66 @@
+OILB.Husk:
+	Inherits: ^TechBuildingHusk
+	Inherits@shape: ^2x2Shape
+	Interactable:
+		Bounds: 24,24
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: Oil Derrick (Destroyed)
+	InfiltrateForTransform:
+		IntoActor: oilb
+		ForceHealthPercentage: 25
+
+MISS.Husk:
+	Inherits: ^TechBuildingHusk
+	Interactable:
+		Bounds: 72,48
+	Building:
+		Footprint: XxX XxX ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Communications Center (Destroyed)
+	InfiltrateForTransform:
+		IntoActor: miss
+
+HOSP.Husk:
+	Inherits: ^TechBuildingHusk
+	Interactable:
+		Bounds: 48,48
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: Hospital (Destroyed)
+	InfiltrateForTransform:
+		IntoActor: hosp
+
+BIO.Husk:
+	Inherits: ^TechBuildingHusk
+	Interactable:
+		Bounds: 48,48
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: Nuclear Reactor (Destroyed)
+	InfiltrateForTransform:
+		IntoActor: bio
+
+FCOM.Husk:
+	Inherits: ^TechBuildingHusk
+	Inherits@shape: ^2x2Shape
+	Interactable:
+		Bounds: 48,48
+	Building:
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Forward Command (Destroyed)
+	RenderSprites:
+		Image: acom.husk
+	InfiltrateForTransform:
+		IntoActor: fcom

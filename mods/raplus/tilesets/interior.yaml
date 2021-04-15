@@ -24,7 +24,7 @@ Terrain:
 		Type: Ore
 		TargetTypes: Ground
 		AcceptsSmudgeType: Crater, Scorch
-		Color: 948060
+		Color: A1E21C
 		RestrictPlayerColor: true
 	TerrainType@Tree:
 		Type: Tree
@@ -41,6 +41,9 @@ Terrain:
 		AcceptsSmudgeType: Crater, Scorch
 		Color: A7B6BE
 		RestrictPlayerColor: true
+	TerrainType@Jumpjet:
+		Type: Jumpjet
+		Color: 745537
 
 Templates:
 	Template@255:

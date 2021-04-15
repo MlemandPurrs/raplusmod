@@ -1,4 +1,4 @@
-Red Alert Plus Developer:
+Developer of RA+ , RA Simple, CnC All mods:
 - MlemandPurrs
 
 Thanks to the OpenRA Development team
@@ -27,9 +27,7 @@ Lin Kuei Ominae, Bittah Commander, Rampastring,
 Kilkakon, Sadukar09, sgtmyers88, Messiah, Aquel,
 Mussuy, AchromicWhite, Templarfreak, ivicok,
 penev92, SilentPun, Violet-n-Red, tomsons26,
+ROB, PatrickWieth, MrFlibble, whiteshoes_N_gloves, 
 and anyone else i may have forgotten to put here...
-
-note: the credits above was accurate for the fullscale
-mod some stuff may not appear on Lite.
 
 <3 Cat

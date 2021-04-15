@@ -10,10 +10,6 @@ Terrain:
 		Type: Beach
 		TargetTypes: Ground
 		Color: B09C78
-	TerrainType@Shallow:
-		Type: Shallow
-		TargetTypes: Ground
-		Color: B09C78
 	TerrainType@Bridge:
 		Type: Bridge
 		TargetTypes: Ground, Bridge
@@ -36,6 +32,12 @@ Terrain:
 		TargetTypes: Ground
 		AcceptsSmudgeType: Crater, Scorch
 		Color: 948060
+		RestrictPlayerColor: true
+	TerrainType@Scraps:
+		Type: Scraps
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: A7B6BE
 		RestrictPlayerColor: true
 	TerrainType@River:
 		Type: River
@@ -69,12 +71,17 @@ Terrain:
 		TargetTypes: Water
 		Color: 5C74A4
 		RestrictPlayerColor: true
-	TerrainType@Scraps:
-		Type: Scraps
+	TerrainType@Tunnel:
+		Type: Tunnel
 		TargetTypes: Ground
-		AcceptsSmudgeType: Crater, Scorch
-		Color: A7B6BE
-		RestrictPlayerColor: true
+		Color: 606060
+	TerrainType@Ford:
+		Type: Ford
+		TargetTypes: Ground
+		Color: B09C78
+	TerrainType@Jumpjet:
+		Type: Jumpjet
+		Color: 745537
 
 Templates:
 	Template@255:
@@ -1873,7 +1880,7 @@ Templates:
 		Categories: Road
 		Tiles:
 			0: Clear
-			1: Clear
+			1: Rock
 			4: Road
 			5: Road
 			6: Road
@@ -1909,8 +1916,8 @@ Templates:
 			4: Clear
 			5: Road
 			6: Road
-			7: Rough
-			10: Rough
+			7: Rock
+			10: Rock
 			11: Road
 	Template@186:
 		Id: 186
@@ -1921,7 +1928,7 @@ Templates:
 			1: Clear
 			2: Road
 			3: Clear
-			4: Rough
+			4: Rock
 			5: Road
 			6: Road
 			7: Road
@@ -1954,7 +1961,7 @@ Templates:
 			5: Road
 			6: Road
 			7: Road
-			8: Rough
+			8: Rock
 	Template@189:
 		Id: 189
 		Images: d17.tem
@@ -1981,7 +1988,7 @@ Templates:
 			5: Clear
 			6: Clear
 			7: Road
-			8: Rough
+			8: Rock
 	Template@191:
 		Id: 191
 		Images: d19.tem
@@ -2017,7 +2024,7 @@ Templates:
 		Size: 3,2
 		Categories: Road
 		Tiles:
-			0: Rough
+			0: Rock
 			1: Road
 			2: Road
 			3: Clear
@@ -2099,7 +2106,7 @@ Templates:
 		Tiles:
 			0: Road
 			1: Road
-			2: Clear
+			2: Rough
 	Template@201:
 		Id: 201
 		Images: d29.tem
@@ -2142,7 +2149,7 @@ Templates:
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			1: Clear
+			1: Road
 			2: Road
 			3: Road
 	Template@206:
@@ -2220,7 +2227,7 @@ Templates:
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Rough
+			0: Rock
 			2: Road
 			3: Road
 	Template@214:
@@ -2513,12 +2520,12 @@ Templates:
 			1: Rock
 			2: Bridge
 			4: Rock
-			5: Bridge
-			6: Bridge
+			5: Rough
+			6: Rough
 			7: Rock
 			9: Bridge
-			10: Rock
-			11: Rock
+			10: Tunnel
+			11: Tunnel
 	Template@236:
 		Id: 236
 		Images: br1b.tem
@@ -2531,9 +2538,9 @@ Templates:
 			5: Rough
 			6: Rough
 			7: Rock
-			9: Rough
-			10: Rock
-			11: Rock
+			9: Bridge
+			10: Tunnel
+			11: Tunnel
 	Template@237:
 		Id: 237
 		Images: br1c.tem
@@ -2555,11 +2562,11 @@ Templates:
 		Size: 5,3
 		Categories: Bridge
 		Tiles:
-			1: Rock
+			1: Tunnel
 			2: Bridge
 			5: Rock
-			6: Bridge
-			7: Bridge
+			6: Rough
+			7: Rough
 			8: Rock
 			9: Rock
 			11: Bridge
@@ -2571,8 +2578,8 @@ Templates:
 		Size: 5,3
 		Categories: Bridge
 		Tiles:
-			1: Rock
-			2: Rough
+			1: Tunnel
+			2: Bridge
 			5: Rock
 			6: Rough
 			7: Rough
@@ -2603,44 +2610,44 @@ Templates:
 		Size: 4,2
 		Categories: Bridge
 		Tiles:
-			0: Rock
+			0: Tunnel
 			1: Bridge
 			5: Bridge
-			6: Rock
-			7: Rock
+			6: Tunnel
+			7: Tunnel
 	Template@242:
 		Id: 242
 		Images: br3b.tem
 		Size: 4,2
 		Categories: Bridge
 		Tiles:
-			0: Rock
+			0: Tunnel
 			1: Bridge
 			5: Bridge
-			6: Rock
-			7: Rock
+			6: Tunnel
+			7: Tunnel
 	Template@243:
 		Id: 243
 		Images: br3c.tem
 		Size: 4,2
 		Categories: Bridge
 		Tiles:
-			0: Rock
-			1: Rock
-			5: Rock
-			6: Rock
-			7: Rock
+			0: Tunnel
+			1: Tunnel
+			5: Tunnel
+			6: Tunnel
+			7: Tunnel
 	Template@244:
 		Id: 244
 		Images: br3d.tem
 		Size: 4,2
 		Categories: Bridge
 		Tiles:
-			0: River
-			1: Rock
-			5: River
-			6: River
-			7: River
+			0: Tunnel
+			1: Bridge
+			5: Tunnel
+			6: Tunnel
+			7: Tunnel
 	Template@245:
 		Id: 245
 		Images: br3e.tem
@@ -2649,7 +2656,7 @@ Templates:
 		Tiles:
 			0: Water
 			1: Water
-			5: Rock
+			5: Bridge
 			6: Water
 			7: Water
 	Template@246:
@@ -2670,7 +2677,7 @@ Templates:
 		Categories: Bridge
 		Tiles:
 			0: Rock
-			3: Road
+			3: Bridge
 			4: Clear
 			9: Rock
 			14: Water
@@ -2680,7 +2687,7 @@ Templates:
 		Size: 5,1
 		Categories: Bridge
 		Tiles:
-			0: Road
+			0: Bridge
 			4: Beach
 	Template@131:
 		Id: 131
@@ -2819,39 +2826,39 @@ Templates:
 			0: Rough
 			1: Road
 			2: Road
-			3: Shallow
-			4: Shallow
-			5: Shallow
-			6: Shallow
-			7: Shallow
-			8: Shallow
+			3: Beach
+			4: Beach
+			5: Beach
+			6: Ford
+			7: Ford
+			8: Ford
 	Template@248:
 		Id: 248
 		Images: f02.tem
 		Size: 3,3
 		Categories: Bridge
 		Tiles:
-			0: Shallow
-			1: Shallow
-			2: Shallow
-			3: Shallow
-			4: Shallow
-			5: Shallow
-			6: Shallow
-			7: Shallow
-			8: Shallow
+			0: Ford
+			1: Ford
+			2: Ford
+			3: Ford
+			4: Ford
+			5: Ford
+			6: Ford
+			7: Ford
+			8: Ford
 	Template@249:
 		Id: 249
 		Images: f03.tem
 		Size: 3,3
 		Categories: Bridge
 		Tiles:
-			0: Shallow
-			1: Shallow
-			2: Shallow
-			3: Shallow
-			4: Shallow
-			5: Shallow
+			0: Ford
+			1: Ford
+			2: Ford
+			3: Beach
+			4: Beach
+			5: Beach
 			6: Clear
 			7: Road
 			8: Clear
@@ -2862,43 +2869,43 @@ Templates:
 		Categories: Bridge
 		Tiles:
 			0: Clear
-			1: Shallow
-			2: Shallow
+			1: Beach
+			2: Ford
 			3: Road
-			4: Shallow
-			5: Shallow
+			4: Beach
+			5: Ford
 			6: Clear
-			7: Shallow
-			8: Shallow
+			7: Beach
+			8: Ford
 	Template@251:
 		Id: 251
 		Images: f05.tem
 		Size: 3,3
 		Categories: Bridge
 		Tiles:
-			0: Shallow
-			1: Shallow
-			2: Shallow
-			3: Shallow
-			4: Shallow
-			5: Shallow
-			6: Shallow
-			7: Shallow
-			8: Shallow
+			0: Ford
+			1: Ford
+			2: Ford
+			3: Ford
+			4: Ford
+			5: Ford
+			6: Ford
+			7: Ford
+			8: Ford
 	Template@252:
 		Id: 252
 		Images: f06.tem
 		Size: 3,3
 		Categories: Bridge
 		Tiles:
-			0: Shallow
-			1: Shallow
+			0: Ford
+			1: Beach
 			2: Clear
-			3: Shallow
-			4: Shallow
+			3: Ford
+			4: Beach
 			5: Road
-			6: Shallow
-			7: Shallow
+			6: Ford
+			7: Beach
 			8: Clear
 	Template@129:
 		Id: 129
@@ -3123,7 +3130,7 @@ Templates:
 		Size: 4,2
 		Categories: Debris
 		Tiles:
-			0: Clear
+			0: Rough
 			1: Clear
 			2: Clear
 			3: Clear
@@ -3437,6 +3444,65 @@ Templates:
 			13: River
 			14: River
 			15: Clear
+	Template@535:
+		Id: 535
+		Images: sbridge5.tem
+		Size: 4,2
+		Categories: Bridge
+		Tiles:
+			0: Rock
+			1: Bridge
+			2: Rock
+			3: River
+			4: River
+			5: Rock
+			6: Bridge
+			7: Rock
+	Template@536:
+		Id: 536
+		Images: sbridge5h.tem
+		Size: 4,2
+		Categories: Bridge
+		Tiles:
+			0: Rock
+			1: Bridge
+			2: Rock
+			3: River
+			4: River
+			5: Rock
+			6: Bridge
+			7: Rock
+	Template@537:
+		Id: 537
+		Images: sbridge5d.tem
+		Size: 4,2
+		Categories: Bridge
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: River
+			4: River
+			5: Rock
+			6: Rock
+			7: Rock
+	Template@538:
+		Id: 538
+		Images: sbridge5x.tem
+		Size: 5,5
+		Categories: Bridge
+		Tiles:
+			0: Road
+			1: Clear
+			2: Clear
+			3: River
+			15: River
+			16: River
+			17: Clear
+			18: Road
+			19: Clear
+			23: Clear
+			24: Road
 	Template@550:
 		Id: 550
 		Images: sccnr.tem
@@ -3694,3 +3760,1159 @@ Templates:
 		Tiles:
 			0: Rock
 			1: Rock
+			
+	Template@256:
+		Id: 256
+		Images: hw01.tem
+		Size: 2,2
+		Categories: Road
+		Tiles:
+			0: Road
+			1: Road
+			2: Road
+			3: Road
+	Template@257:
+		Id: 257
+		Images: hw02.tem
+		Size: 2,2
+		Categories: Road
+		Tiles:
+			0: Road
+			1: Road
+			2: Road
+			3: Road
+			
+	Template@258:
+		Id: 258
+		Images: hw03.tem
+		Size: 2,2
+		Categories: Road
+		Tiles:
+			0: Road
+			1: Road
+			2: Road
+			3: Road
+			
+	Template@259:
+		Id: 259
+		Images: hw04.tem
+		Size: 2,2
+		Categories: Road
+		Tiles:
+			0: Road
+			1: Road
+			2: Road
+			3: Road
+			
+	Template@260:
+		Id: 260
+		Images: hw05.tem
+		Size: 2,2
+		Categories: Road
+		Tiles:
+			0: Road
+			1: Road
+			2: Road
+			3: Road
+			
+	Template@261:
+		Id: 261
+		Images: hw06.tem
+		Size: 2,2
+		Categories: Road
+		Tiles:
+			0: Road
+			1: Road
+			2: Road
+			3: Road
+			
+	Template@262:
+		Id: 262
+		Images: hw07.tem
+		Size: 2,2
+		Categories: Road
+		Tiles:
+			0: Road
+			1: Road
+			2: Road
+			3: Road
+			
+	Template@263:
+		Id: 263
+		Images: hw08.tem
+		Size: 2,2
+		Categories: Road
+		Tiles:
+			0: Road
+			1: Road
+			2: Road
+			3: Road
+			
+	Template@264:
+		Id: 264
+		Images: hw09.tem
+		Size: 2,2
+		Categories: Road
+		Tiles:
+			0: Road
+			1: Road
+			2: Road
+			3: Road
+			
+	Template@265:
+		Id: 265
+		Images: hw10.tem
+		Size: 2,2
+		Categories: Road
+		Tiles:
+			0: Road
+			1: Road
+			2: Road
+			3: Road
+			
+	Template@266:
+		Id: 266
+		Images: hw11.tem
+		Size: 2,2
+		Categories: Road
+		Tiles:
+			0: Road
+			1: Road
+			2: Road
+			3: Road
+			
+	Template@267:
+		Id: 267
+		Images: hw12.tem
+		Size: 2,2
+		Categories: Road
+		Tiles:
+			0: Road
+			1: Road
+			2: Road
+			3: Road
+			
+	Template@268:
+		Id: 268
+		Images: hw13.tem
+		Size: 2,2
+		Categories: Road
+		Tiles:
+			0: Road
+			1: Road
+			2: Road
+			3: Road
+		
+	Template@269:
+		Id: 269
+		Images: hw14.tem
+		Size: 2,2
+		Categories: Road
+		Tiles:
+			0: Road
+			1: Road
+			2: Road
+			3: Road
+			
+	Template@270:
+		Id: 270
+		Images: hw15.tem
+		Size: 2,2
+		Categories: Road
+		Tiles:
+			0: Road
+			1: Road
+			2: Road
+			3: Road
+			
+	Template@271:
+		Id: 271
+		Images: hw16.tem
+		Size: 2,2
+		Categories: Road
+		Tiles:
+			0: Road
+			1: Road
+			2: Road
+			3: Road
+			
+	Template@272:
+		Id: 272
+		Images: hw17.tem
+		Size: 2,2
+		Categories: Road
+		Tiles:
+			0: Road
+			1: Road
+			2: Road
+			3: Road
+			
+	Template@273:
+		Id: 273
+		Images: hw18.tem
+		Size: 2,2
+		Categories: Road
+		Tiles:
+			0: Road
+			1: Road
+			2: Road
+			3: Road
+			
+	Template@274:
+		Id: 274
+		Images: hw19.tem
+		Size: 2,2
+		Categories: Road
+		Tiles:
+			0: Road
+			1: Road
+			2: Road
+			3: Road
+			
+	Template@275:
+		Id: 275
+		Images: hw20.tem
+		Size: 2,2
+		Categories: Road
+		Tiles:
+			0: Road
+			1: Road
+			2: Road
+			3: Road
+			
+	Template@276:
+		Id: 276
+		Images: hw21.tem
+		Size: 2,2
+		Categories: Road
+		Tiles:
+			0: Road
+			1: Road
+			2: Road
+			3: Road
+			
+	Template@277:
+		Id: 277
+		Images: hw22.tem
+		Size: 2,2
+		Categories: Road
+		Tiles:
+			0: Road
+			1: Road
+			2: Road
+			3: Road
+			
+	Template@278:
+		Id: 278
+		Images: hw23.tem
+		Size: 2,2
+		Categories: Road
+		Tiles:
+			0: Clear
+			1: Road
+			2: Road
+			3: Road
+			
+	Template@279:
+		Id: 279
+		Images: hw24.tem
+		Size: 2,2
+		Categories: Road
+		Tiles:
+			0: Road
+			1: Road
+			2: Road
+			3: Clear
+			
+	Template@280:
+		Id: 280
+		Images: hw25.tem
+		Size: 2,2
+		Categories: Road
+		Tiles:
+			0: Road
+			1: Road
+			2: Clear
+			3: Road
+			
+	Template@281:
+		Id: 281
+		Images: hw26.tem
+		Size: 2,2
+		Categories: Road
+		Tiles:
+			0: Road
+			1: Road
+			2: Clear
+			3: Road
+			
+	Template@800:
+		Id: 800
+		Images: b4.tem
+		Size: 1,1
+		Categories: Debris
+		Tiles:
+			0: Rock
+			
+	Template@801:
+		Id: 801
+		Images: b5.tem
+		Size: 1,1
+		Categories: Debris
+		Tiles:
+			0: Rock
+			
+	Template@802:
+		Id: 802
+		Images: b6.tem
+		Size: 1,1
+		Categories: Debris
+		Tiles:
+			0: Rough
+			
+	Template@803:
+		Id: 803
+		Images: b7.tem
+		Size: 1,1
+		Categories: Debris
+		Tiles:
+			0: Rock
+			
+	Template@804:
+		Id: 804
+		Images: b8.tem
+		Size: 1,1
+		Categories: Debris
+		Tiles:
+			0: Rough
+			
+	Template@805:
+		Id: 805
+		Images: b9.tem
+		Size: 1,1
+		Categories: Debris
+		Tiles:
+			0: Rock
+			
+	Template@806:
+		Id: 806
+		Images: b10.tem
+		Size: 6,3
+		Categories: Debris
+		Tiles:
+			1: Rock
+			2: Rock
+			3: Rock
+			4: Rock
+			6: Rock
+			7: Rock
+			8: Rock
+			9: Rock
+			10: Rock
+			11: Rock
+			12: Rock
+			13: Rock
+			14: Rock
+			15: Rock
+			16: Rock
+			17: Rock
+			
+	Template@807:
+		Id: 807
+		Images: b11.tem
+		Size: 4,3
+		Categories: Debris
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Clear
+			4: Rock
+			5: Rock
+			6: Rock
+			7: Rough
+			8: Rough
+			9: Clear
+			10: Clear
+			11: Clear
+			
+	Template@808:
+		Id: 808
+		Images: b12.tem
+		Size: 3,2
+		Categories: Debris
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rough
+			
+	Template@809:
+		Id: 809
+		Images: b13.tem
+		Size: 2,1
+		Categories: Debris
+		Tiles:
+			0: Rock
+			1: Rock
+			
+	Template@810:
+		Id: 810
+		Images: b14.tem
+		Size: 3,1
+		Categories: Debris
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			
+	Template@811:
+		Id: 811
+		Images: b15.tem
+		Size: 2,1
+		Categories: Debris
+		Tiles:
+			0: Rock
+			1: Rock
+			
+	Template@812:
+		Id: 812
+		Images: b16.tem
+		Size: 2,1
+		Categories: Debris
+		Tiles:
+			0: Rock
+			1: Rock
+			
+	Template@813:
+		Id: 813
+		Images: b17.tem
+		Size: 3,2
+		Categories: Debris
+		Tiles:
+			0: Rock
+			1: Rock
+			3: Rock
+			4: Rock
+			5: Rock
+			
+	Template@814:
+		Id: 814
+		Images: p15.tem
+		Size: 3,3
+		Categories: Debris
+		Tiles:
+			0: Rough
+			1: Rough
+			2: Rough
+			3: Rough
+			4: Rough
+			5: Rough
+			6: Rough
+			7: Rough
+	Template@815:
+		Id: 815
+		Images: p16.tem
+		Size: 2,2
+		Categories: Debris
+		Tiles:
+			0: Rough
+			1: Rough
+			2: Rough
+			3: Rough
+			
+	Template@816:
+		Id: 816
+		Images: p17.tem
+		Size: 3,3
+		Categories: Debris
+		Tiles:
+			1: Rock
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rock
+			6: Rock
+			7: Rock
+			8: Rock
+			
+	Template@817:
+		Id: 817
+		Images: p18.tem
+		Size: 5,3
+		Categories: Debris
+		Tiles:
+			0: Clear
+			1: Rock
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rock
+			6: Rock
+			7: Rock
+			8: Rock
+			9: Rock
+			10: Rock
+			11: Rock
+			12: Rock
+			13: Rock
+			14: Clear
+			
+	Template@818:
+		Id: 818
+		Images: p19.tem
+		Size: 5,3
+		Categories: Debris
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			6: Rock
+			7: Rock
+			8: Rock
+			12: Rock
+			13: Rock
+			14: Rock
+			
+	Template@819:
+		Id: 819
+		Images: p20.tem
+		Size: 7,3
+		Categories: Debris
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			7: Rock
+			8: Rock
+			9: Rock
+			10: Rock
+			11: Rock
+			12: Rock
+			16: Rock
+			17: Rock
+			18: Rock
+			19: Rock
+			20: Rock
+			
+	Template@820:
+		Id: 820
+		Images: p21.tem
+		Size: 4,2
+		Categories: Debris
+		Tiles:
+			0: Clear
+			1: Rock
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rock
+			6: Rock
+			7: Clear
+			
+	Template@821:
+		Id: 821
+		Images: p22.tem
+		Size: 5,2
+		Categories: Debris
+		Tiles:
+			1: Rock
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rock
+			6: Rock
+			7: Rock
+			
+	Template@822:
+		Id: 822
+		Images: p23.tem
+		Size: 3,2
+		Categories: Debris
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rock
+	Template@700:
+		Id: 700
+		Images: bridgec1.tem
+		Frames: 0, 0, 1, 0, 2, 3, 4, 5, 6, 7, 8
+		Size: 4,3
+		Categories: Bridge
+		Tiles:
+			1: Bridge
+			2: Rock
+			4: Rock
+			5: Rough
+			6: Rough
+			7: Rock
+			8: Water
+			9: Tunnel
+			10: Bridge
+	Template@701:
+		Id: 701
+		Images: bridgecd1.tem
+		Frames: 0, 0, 1, 0, 2, 3, 4, 5, 6, 7, 8
+		Size: 4,3
+		Categories: Bridge
+		Tiles:
+			1: Rough
+			2: Rock
+			4: Rock
+			5: Rough
+			6: Rough
+			7: Rock
+			8: Water
+			9: Tunnel
+			10: Bridge
+	Template@702:
+		Id: 702
+		Images: bridgecb1.tem
+		Frames: 0, 0, 1, 0, 2, 3, 4, 5, 6, 7, 8
+		Size: 4,3
+		Categories: Bridge
+		Tiles:
+			1: Rock
+			2: Rock
+			4: Rock
+			5: Rock
+			6: Rock
+			7: Rock
+			8: Rock
+			9: Rock
+			10: Rock
+	Template@703:
+		Id: 703
+		Images: bridgec2.tem
+		Frames: 0, 0, 0, 1, 0, 2, 3, 4, 5, 6, 0, 7, 8, 9
+		Size: 5,3
+		Categories: Bridge
+		Tiles:
+			2: Bridge
+			3: Tunnel
+			5: Rock
+			6: Rock
+			7: Bridge
+			8: Bridge
+			9: Rock
+			11: Rock
+			12: Rock
+			13: Rough
+	Template@704:
+		Id: 704
+		Images: bridgecd2.tem
+		Frames: 0, 0, 0, 1, 0, 2, 3, 4, 5, 6, 0, 7, 8, 9
+		Size: 5,3
+		Categories: Bridge
+		Tiles:
+			2: Bridge
+			3: Tunnel
+			5: Rock
+			6: Rock
+			7: Bridge
+			8: Bridge
+			9: Rock
+			11: Rock
+			12: Rock
+			13: Rough
+	Template@705:
+		Id: 705
+		Images: bridgecb2.tem
+		Frames: 0, 0, 0, 1, 0, 2, 3, 4, 5, 6, 0, 7, 8, 9
+		Size: 5,3
+		Categories: Bridge
+		Tiles:
+			2: Water
+			3: Water
+			5: Rock
+			6: Rock
+			7: Rock
+			8: Rock
+			9: Rock
+			11: Rock
+			12: Rock
+			13: Rock
+	Template@706:
+		Id: 706
+		Images: bridgec3.tem
+		Frames: 0, 0, 0, 1, 2, 3, 4
+		Size: 4,2
+		Categories: Bridge
+		Tiles:
+			2: Bridge
+			3: Tunnel
+			4: Tunnel
+			5: Tunnel
+			6: Bridge
+	Template@707:
+		Id: 707
+		Images: bridgecd3.tem
+		Frames: 0, 0, 0, 1, 2, 3, 4
+		Size: 4,2
+		Categories: Bridge
+		Tiles:
+			2: Bridge
+			3: Tunnel
+			4: Tunnel
+			5: Tunnel
+			6: Bridge
+	Template@708:
+		Id: 708
+		Images: bridgecb3.tem
+		Frames: 0, 0, 0, 1, 2, 3, 4
+		Size: 4,2
+		Categories: Bridge
+		Tiles:
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rock
+			6: Rock
+	Template@709:
+		Id: 709
+		Images: bridgecb4.tem
+		Frames: 0, 0, 0, 1, 2, 3, 4
+		Size: 4,2
+		Categories: Bridge
+		Tiles:
+			2: Rock
+			3: Rock
+			4: River
+			5: Water
+			6: Water
+	Template@710:
+		Id: 710
+		Images: bridgecb5.tem
+		Frames: 0, 0, 0, 1, 2, 3, 4
+		Size: 4,2
+		Categories: Bridge
+		Tiles:
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Rock
+	Template@711:
+		Id: 711
+		Images: br3f.tem
+		Frames: 0, 0, 0, 1, 5, 6, 7
+		Size: 4,2
+		Categories: Bridge
+		Tiles:
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Water
+	Template@712:
+		Id: 712
+		Images: bridgect1.tem
+		Frames: 0, 1, 0, 0, 2, 3, 0, 0, 0, 0, 4
+		Size: 5,3
+		Categories: Bridge
+		Tiles:
+			0: Clear
+			1: Bridge
+			4: Rock
+			5: Rock
+			10: Water
+	Template@713:
+		Id: 713
+		Images: bridgect2.tem
+		Frames: 0, 0, 0, 0, 1
+		Size: 5,1
+		Categories: Bridge
+		Tiles:
+			0: Beach
+			4: Bridge		
+	Template@714:
+		Id: 714
+		Images: bridgev1.tem
+		Size: 4,3
+		Categories: Bridge
+		Tiles:
+			0: Clear
+			1: Bridge
+			2: Bridge
+			3: Clear
+			4: Rock
+			5: Rough
+			6: Rough
+			7: Rock
+			8: Tunnel
+			9: Bridge
+			10: Bridge
+			11: Tunnel
+	Template@715:
+		Id: 715
+		Images: bridgevd1.tem
+		Size: 4,3
+		Categories: Bridge
+		Tiles:
+			0: Clear
+			1: Bridge
+			2: Bridge
+			3: Clear
+			4: Rock
+			5: Rough
+			6: Rough
+			7: Rock
+			8: Tunnel
+			9: Bridge
+			10: Bridge
+			11: Tunnel
+	Template@716:
+		Id: 716
+		Images: bridgevb1.tem
+		Size: 4,3
+		Categories: Bridge
+		Tiles:
+			0: Clear
+			1: Road
+			2: Road
+			3: Clear
+			4: Rock
+			5: Rock
+			6: Rock
+			7: Rock
+			8: Rock
+			9: Rock
+			10: Rock
+			11: Rock
+	Template@717:
+		Id: 717
+		Images: bridgev2.tem
+		Size: 4,3
+		Categories: Bridge
+		Tiles:
+			0: Tunnel
+			1: Bridge
+			2: Bridge
+			3: Tunnel
+			4: Rock
+			5: Rough
+			6: Rough
+			7: Rock
+			8: Clear
+			9: Bridge
+			10: Bridge
+			11: Clear
+	Template@718:
+		Id: 718
+		Images: bridgevd2.tem
+		Size: 4,3
+		Categories: Bridge
+		Tiles:
+			0: Tunnel
+			1: Bridge
+			2: Bridge
+			3: Tunnel
+			4: Rock
+			5: Rough
+			6: Rough
+			7: Rock
+			8: Clear
+			9: Bridge
+			10: Bridge
+			11: Clear
+	Template@719:
+		Id: 719
+		Images: bridgevb2.tem
+		Size: 4,3
+		Categories: Bridge
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water
+			4: Rock
+			5: Rock
+			6: Rock
+			7: Rock
+			8: Clear
+			9: Bridge
+			10: Bridge
+			11: Clear
+	Template@720:
+		Id: 720
+		Images: bridgev3.tem
+		Size: 4,2
+		Categories: Bridge
+		Tiles:
+			0: Tunnel
+			1: Bridge
+			2: Bridge
+			3: Tunnel
+			4: Tunnel
+			5: Bridge
+			6: Bridge
+			7: Tunnel
+	Template@721:
+		Id: 721
+		Images: bridgevd3.tem
+		Size: 4,2
+		Categories: Bridge
+		Tiles:
+			0: Tunnel
+			1: Bridge
+			2: Bridge
+			3: Tunnel
+			4: Tunnel
+			5: Bridge
+			6: Bridge
+			7: Tunnel
+	Template@722:
+		Id: 722
+		Images: bridgevb3.tem
+		Size: 4,2
+		Categories: Bridge
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rock
+			6: Rock
+			7: Rock
+	Template@723:
+		Id: 723
+		Images: bridgevb4.tem
+		Size: 4,2
+		Categories: Bridge
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+	Template@724:
+		Id: 724
+		Images: bridgevb5.tem
+		Size: 4,2
+		Categories: Bridge
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water
+			4: Rock
+			5: Rock
+			6: Rock
+			7: Rock
+	Template@725:
+		Id: 725
+		Images: br3f.tem
+		Frames: 0, 1, 0, 0, 0, 5, 6, 7
+		Size: 4,2
+		Categories: Bridge
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Water
+	Template@726:
+		Id: 726
+		Images: bridgeh1.tem
+		Size: 3,4
+		Categories: Bridge
+		Tiles:
+			0: Beach
+			1: Rock
+			2: Tunnel
+			3: Bridge
+			4: Rough
+			5: Bridge
+			6: Bridge
+			7: Rough
+			8: Bridge
+			9: Beach
+			10: Rock
+			11: Tunnel
+	Template@727:
+		Id: 727
+		Images: bridgehd1.tem
+		Size: 3,4
+		Categories: Bridge
+		Tiles:
+			0: Beach
+			1: Rock
+			2: Tunnel
+			3: Bridge
+			4: Rough
+			5: Bridge
+			6: Bridge
+			7: Rough
+			8: Bridge
+			9: Beach
+			10: Rock
+			11: Tunnel
+	Template@728:
+		Id: 728
+		Images: bridgehb1.tem
+		Size: 3,4
+		Categories: Bridge
+		Tiles:
+			0: Beach
+			1: Rock
+			2: Water
+			3: Bridge
+			4: Rock
+			5: Rock
+			6: Bridge
+			7: Rock
+			8: Rock
+			9: Beach
+			10: Rock
+			11: Water
+	Template@729:
+		Id: 729
+		Images: bridgeh2.tem
+		Size: 3,4
+		Categories: Bridge
+		Tiles:
+			0: Tunnel
+			1: Rock
+			2: Beach
+			3: Bridge
+			4: Rough
+			5: Bridge
+			6: Bridge
+			7: Rough
+			8: Bridge
+			9: Tunnel
+			10: Rock
+			11: Beach
+	Template@730:
+		Id: 730
+		Images: bridgehd2.tem
+		Size: 3,4
+		Categories: Bridge
+		Tiles:
+			0: Tunnel
+			1: Rock
+			2: Beach
+			3: Bridge
+			4: Rough
+			5: Bridge
+			6: Bridge
+			7: Rough
+			8: Bridge
+			9: Tunnel
+			10: Rock
+			11: Beach
+	Template@731:
+		Id: 731
+		Images: bridgehb2.tem
+		Size: 3,4
+		Categories: Bridge
+		Tiles:
+			0: Water
+			1: Rock
+			2: Beach
+			3: Rock
+			4: Rock
+			5: Road
+			6: Rock
+			7: Rock
+			8: Road
+			9: Rock
+			10: Rock
+			11: Beach
+	Template@732:
+		Id: 732
+		Images: bridgeh3.tem
+		Size: 2,4
+		Categories: Bridge
+		Tiles:
+			0: Tunnel
+			1: Tunnel
+			2: Bridge
+			3: Bridge
+			4: Bridge
+			5: Bridge
+			6: Tunnel
+			7: Tunnel
+	Template@733:
+		Id: 733
+		Images: bridgehd3.tem
+		Size: 2,4
+		Categories: Bridge
+		Tiles:
+			0: Tunnel
+			1: Tunnel
+			2: Bridge
+			3: Bridge
+			4: Bridge
+			5: Bridge
+			6: Tunnel
+			7: Tunnel
+	Template@734:
+		Id: 734
+		Images: bridgehb3.tem
+		Size: 2,4
+		Categories: Bridge
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rock
+			6: Rock
+			7: Rock
+	Template@735:
+		Id: 735
+		Images: bridgehb4.tem
+		Size: 2,4
+		Categories: Bridge
+		Tiles:
+			0: Rock
+			1: Water
+			2: Rock
+			3: Water
+			4: Rock
+			5: Water
+			6: Rock
+			7: Water
+	Template@736:
+		Id: 736
+		Images: bridgehb5.tem
+		Size: 2,4
+		Categories: Bridge
+		Tiles:
+			0: Water
+			1: Rock
+			2: Water
+			3: Rock
+			4: Water
+			5: Rock
+			6: Water
+			7: Rock
+	Template@737:
+		Id: 737
+		Images: br3f.tem
+		Frames: 0, 1, 0, 0, 0, 5, 6, 7
+		Size: 2,4
+		Categories: Bridge
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Water
+			7: Water

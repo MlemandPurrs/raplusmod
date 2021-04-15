@@ -163,7 +163,6 @@ Cursors:
 			Start: 130
 		joystick-tl-blocked:
 			Start: 131
-		# Cursors that need minimap variants
 		deploy:
 			Start: 59
 			Length: 9
@@ -228,10 +227,6 @@ Cursors:
 			Start: 17
 		assaultmove-blocked-minimap:
 			Start: 19
-	ioncannoncurs.shp: cursor
-		ioncannon:
-			Start: 0
-			Length: 16
 	cursorairstrike.shp: cursor
 		airstrike:
 			Start: 0
@@ -240,13 +235,6 @@ Cursors:
 		airstrike-minimap:
 			Start: 4
 			Length: 4
-	cursoremp.shp: cursor	
-		empstrike:
-			Start: 0
-			Length: 7
-		empstrike-minimap:
-			Start: 8
-			Length: 2
 	cursorparadrop.shp: cursor
 		airdrop:
 			Start: 0
@@ -255,54 +243,17 @@ Cursors:
 		airdrop-minimap:
 			Start: 6
 			Length: 2
-	gpstargetcurs.shp: cursor
-		gps-target:
-			Start: 0
-			Length: 8
-	cmisscurs.shp: cursor
-		cmiss-target:
+	cursoremp.shp: cursor	
+		empstrike:
 			Start: 0
 			Length: 7
+		empstrike-minimap:
+			Start: 8
+			Length: 2
 	sonarbox.shp: cursor
 		sonar-target:
 			Start: 6
 			Length: 9
-	armor.shp: cursor
-		armor-target:
-			Start: 4
-			Length: 16
-	stealth2.shp: cursor
-		grid-target:
-			Start: 12
-			Length: 3
-	speed.shp: cursor
-		nitro-target:
-			Start: 4
-			Length: 13
-	chronbox.shp: cursor
-		time-stop:
-			Start: 24
-			Length: 1
-	deviator.shp: cursor
-		missile-generic:
-			Start: 4
-			Length: 3
-	dollar.shp: cursor
-		dollar-target:
-			Start: 4
-			Length: 14
-	earth.shp: cursor
-		earth-target:
-			Start: 4
-			Length: 1
-	empulse.shp: cursor
-		emp-target-old:
-			Start: 1
-			Length: 10
-	fpower.shp: cursor
-		fpower-target:
-			Start: 10
-			Length: 11
 	invulbox.shp: cursor
 		invul-target:
 			Start: 7
@@ -311,18 +262,11 @@ Cursors:
 		invun-target:
 			Start: 24
 			Length: 10
-	missile2.shp: cursor
-		missile-target:
+	speed.shp: cursor
+		nitro-target:
 			Start: 4
+			Length: 13
+	stealth2.shp: cursor
+		grid-target:
+			Start: 12
 			Length: 3
-	rapid.shp: cursor
-		skull-target:
-			Start: 4
-			Length: 16
-	select.shp: cursor
-		generic-target:
-			Start: 1
-			Length: 1
-		wrench-target:
-			Start: 2
-			Length: 1
