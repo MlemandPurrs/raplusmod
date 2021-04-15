@@ -1,0 +1,433 @@
+HARV:
+	Inherits: ^Vehicle
+	Inherits@selection: ^SelectableEconomicUnit
+	-Tooltip:
+	-GpsDot:
+	Buildable:
+		Queue: Vehicle, MWFVehicle
+		BuildPaletteOrder: 1
+		Prerequisites: proc, ~vehicles.allies, ~techlevel.infonly
+		Description: Collects Ore and Gems for processing.\n  Unarmed
+	Valued:
+		Cost: 1200
+	Tooltip@sidebar:
+		Name: Ore Truck
+		RequiresCondition: !produced
+	Tooltip@ingame:
+		Name: Harvester
+		RequiresCondition: produced
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	Selectable:
+		DecorationBounds: 42,42
+	Targetable@ISHARVESTER:
+		TargetTypes: Harvester
+	Harvester:
+		Capacity: 30
+		Resources: Ore,Gems,Scraps
+		BaleUnloadDelay: 1
+		SearchFromProcRadius: 16
+		SearchFromHarvesterRadius: 8
+		HarvestFacings: 8
+		EmptyCondition: no-ore
+	WithHarvesterPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		RequiresSelection: true
+		PipCount: 9
+		ResourceSequences:
+			Ore: pip-yellow
+			Gems: pip-red
+			Scraps: pip-gray
+	Health:
+		HP: 600
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 85
+		Locomotor: heavywheeled
+	RevealsShroud:
+		Range: 4c0
+	WithHarvestAnimation:
+	WithDockingAnimation:
+	GpsDot:
+		String: Harvester
+	SpawnActorOnDeath:
+		Actor: HARV.EmptyHusk
+		OwnerType: InternalName
+	HarvesterHuskModifier:
+		FullHuskActor: HARV.FullHusk
+		FullnessThreshold: 50
+	ChangesHealth:
+		Step: 10
+		Delay: 28
+		StartIfBelow: 50
+		DamageCooldown: 500
+		RequiresCondition: !empdisable
+	Explodes:
+		RequiresCondition: !no-ore
+		Weapon: OreExplosion
+	WithHarvesterSpriteBody:
+		ImageByFullness: harvempty, harvhalf, harv
+	-WithFacingSpriteBody:
+	Passenger:
+		CustomPipType: pip-blue
+	ProximityExternalCondition@DOCKED:
+		Condition: dockinprocess
+		Range: 1c0
+		ValidRelationships: Ally
+	ExternalCondition@DOCKED:
+		Condition: docked
+	RejectsOrders:
+		RequiresCondition: docked
+	-Crushable:
+
+HARV.Crate:
+	Inherits: HARV
+	-Buildable:
+	-Tooltip@sidebar:
+	-Tooltip@ingame:
+	-ExternalCondition@PRODUCED:
+	Tooltip:
+		Name: Harvester
+	RenderSprites:
+		Image: harv
+	-MapEditorData:
+
+MCV:
+	Inherits: ^Vehicle
+	Inherits@selection: ^SelectableSupportUnit
+	Inherits@CHEAPER: ^AffectedByUzbek
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 10
+		Prerequisites: fix, ~!aitoodumb, ~techlevel.medium
+		BuildDurationModifier: 60
+		Description: Deploys into another Construction Yard.\n  Unarmed
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Mobile Construction Vehicle
+	Selectable:
+		DecorationBounds: 42,42
+	Health:
+		HP: 600
+	Armor:
+		Type: Light
+	Mobile:
+		Speed: 71
+		Locomotor: heavywheeled
+	RevealsShroud:
+		Range: 4c0
+	Transforms:
+		IntoActor: fact
+		Offset: -1,-1
+		Facing: 384
+		TransformSounds: placbldg.aud, build5.aud
+		NoTransformNotification: BuildingCannotPlaceAudio
+		PauseOnCondition: empdisable
+	TransferTimedExternalConditionOnTransform:
+		Condition: invulnerability
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	BaseBuilding:
+	SpawnActorOnDeath:
+		Actor: MCV.Husk
+		OwnerType: InternalName
+	Passenger:
+		Weight: 4
+		CustomPipType: pip-blue
+	GpsDot:
+		String: MCV
+	-Crushable:
+
+MCV.ai:
+	Inherits: MCV
+	Buildable:
+		BuildLimit: 2
+		Prerequisites: fix, ~aitoodumb, ~techlevel.medium
+	RenderSprites:
+		Image: mcv
+	-MapEditorData:
+
+TRUK:
+	Inherits: ^Vehicle
+	Inherits@selection: ^SelectableSupportUnit
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 11
+		Prerequisites: proc, ~techlevel.low
+		Description: Transports cash to other players.\n  Unarmed
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Supply Truck
+	Health:
+		HP: 110
+	Targetable:
+		TargetTypes: Ground, Vehicle, VehicleDisguise, DemoDisguise
+		RequiresCondition: !parachute
+	Armor:
+		Type: Light
+	Mobile:
+		Speed: 128
+	RevealsShroud:
+		Range: 4c0
+	DeliversCash:
+		Payload: 500
+		Type: MoneyTransfer
+		PlayerExperience: 50
+	SpawnActorOnDeath:
+		Actor: moneycrate
+	Carryable:
+		LocalOffset: 0,0,100
+	Passenger:
+		CustomPipType: pip-blue
+
+DTRK:
+	Inherits: ^Vehicle
+	-WithFacingSpriteBody:
+	-DamageMultiplier@IRONCURTAIN:
+	-ClassicFacingBodyOrientation:
+	BodyOrientation:
+	WithFacingSpriteBody@Default:
+		PauseOnCondition: truk
+		RequiresCondition: !truk
+	WithFacingSpriteBody@Truk:
+		Name: truk
+		Sequence: truk-body
+		RequiresCondition: truk
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 14
+		Prerequisites: stek, ~vehicles.soviet, ~soviet.or.ukraine, ~techlevel.high
+		Description: Truck with actively armed nuclear\nexplosives. Has very weak armor.\n  Detonates when Iron Curtained or Chronoshifted.\n Can disguise as enemy Supply Truck.
+	Valued:
+		Cost: 2400
+	Tooltip:
+		Name: Demolition Truck
+		GenericName: Vehicle
+	-Tooltip:
+	DisguiseTooltip@default:
+		Name: Demolition Truck
+		GenericName: Vehicle
+		RequiresCondition: !truk
+	DisguiseTooltip@truk:
+		Name: Supply Truck
+		GenericName: Vehicle
+		RequiresCondition: truk
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Selectable:
+		Class: DemoDisguise
+	Health:
+		HP: 110
+	Targetable:
+		TargetTypes: Ground, Vehicle, VehicleDisguise, DemoDisguise
+		RequiresCondition: !parachute
+	Armor:
+		Type: Light
+	Mobile:
+		Speed: 85
+	RevealsShroud:
+		Range: 4c0
+	Disguise:
+		DisguisedCondition: disguise
+		ValidRelationships: Neutral, Enemy
+		TargetTypes: DemoDisguise
+		DisguisedAsConditions:
+			truk: truk
+	WithDecoration@disguise:
+		Image: pips
+		Sequence: pip-disguise
+		Palette: effect
+		Position: Top
+		Margin: 0, 1
+		RequiresCondition: disguise
+	IgnoresDisguise:
+	Explodes:
+		Weapon: MiniNuke
+		EmptyWeapon: MiniNuke
+		DamageSource: Killer
+	AttackFrontal:
+		FacingTolerance: 128
+	Armament@PRIMARY:
+		Weapon: DemoTruckTargeting
+	GrantConditionOnAttack:
+		Condition: triggered
+	GrantConditionOnDeploy:
+		DeployedCondition: triggered
+	KillsSelf@DETONATE:
+		RequiresCondition: invulnerability || triggered
+	Chronoshiftable:
+		ExplodeInstead: true
+	Passenger:
+		CustomPipType: pip-red
+	GpsDot:
+		String: Nuke
+	-Crushable:
+
+MNLY:
+	Inherits: ^TrackedVehicle
+	Inherits@selection: ^SelectableSupportUnit
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 7
+		Prerequisites: fix, ~!player.karelia, ~techlevel.medium
+		Description: Carries and lays up to 5 Land Mines\nto destroy unwary enemy units.\nCan detect mines.\n  Unarmed
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Minelayer
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 300
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 128
+	Targetable:
+		TargetTypes: Ground, Vehicle, Mine, VehicleDisguise
+	RevealsShroud:
+		Range: 4c0
+	Minelayer:
+		Mine: MINV
+		TileUnknownName: build-valid
+		TerrainTypes: Clear, Road, Beach, Ore, Gems, Rough, Bridge
+	MineImmune:
+	AmmoPool:
+		Ammo: 5
+		RearmSound: minelay1.aud
+		ReloadDelay: 35
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		RequiresSelection: true
+	Rearmable:
+		RearmActors: fix, fix.allies, fix.soviet
+	DetectCloaked:
+		Range: 5c0
+		CloakTypes: Mine
+	RenderDetectionCircle:
+	Explodes:
+		Weapon: ATMine
+	Passenger:
+		CustomPipType: pip-blue
+	RenderSprites:
+		Image: MNLY
+	Carryable:
+		LocalOffset: 0,0,100
+
+MNLY.Nuke:
+	Inherits: MNLY
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 14
+		Prerequisites: ~disabled
+		Description: Carries and lays one Nuclear Mine.\nThere can be only one Nuclear Mine,\nthe Last will Detonate in 15sec in case of multiple.\nCan detect mines.\n  Unarmed
+	Valued:
+		Cost: 2400
+	Tooltip:
+		Name: Nuclear Minelayer
+	Minelayer:
+		Mine: MINN
+	AmmoPool:
+		Ammo: 1
+		ReloadDelay: 175
+		AmmoCondition: ammo
+	WithAmmoPipsDecoration:
+		FullSequence: pip-red
+	RenderSprites:
+		Image: MNLYNUKE
+	ProvidesPrerequisite@LIMITING:
+		Prerequisite: has.nmnly
+	Explodes:
+		RequiresCondition: !ammo
+	Explodes@GG:
+		Weapon: MiniNuke
+		EmptyWeapon: MiniNuke
+		DamageSource: Killer
+		RequiresCondition: ammo
+
+MGG:
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 12
+		Prerequisites: techcenter, ~!player.spain, ~techlevel.high
+		Description: Regenerates the shroud nearby,\nobscuring the area.\n  Can be toggled on/off via deploy command.\n  Unarmed
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Mobile Gap Generator
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 220
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 85
+	WithIdleOverlay@SPINNER:
+		Offset: -299,0,171
+		Sequence: spinner
+		PauseOnCondition: empdisable || deployed
+	RevealsShroud:
+		Range: 4c0
+	CreatesShroud:
+		Range: 6c0
+		RequiresCondition: !empdisable && !deployed
+	WithRangeCircle@Normal:
+		Color: 008B8B
+		Width: 1
+		BorderColor: 000000
+		BorderWidth: 3
+		Range: 6c0
+		RequiresCondition: !deployed
+	GrantConditionOnDeploy:
+		DeployedCondition: deployed
+		SkipMakeAnimation: true
+	WithDecoration@offline:
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-hold
+		Position: Top
+		Margin: 0, -6
+		RequiresCondition: deployed
+	SpawnActorOnDeath:
+		Actor: MGG.Husk
+		OwnerType: InternalName
+	Passenger:
+		CustomPipType: pip-blue
+
+MHQ.Start:
+	Inherits: ^TrackedVehicle
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Mobile HQ
+	Health:
+		HP: 150
+	Armor:
+		Type: Light
+	Mobile:
+		Speed: 85
+	RevealsShroud:
+		MinRange: 6c0
+		Range: 9c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 6c0
+	WithIdleOverlay@SPINNER:
+		Sequence: spinner
+		Offset: -128,0,256
+		PauseOnCondition: empdisable
+	Passenger:
+		CustomPipType: pip-red
+	Explodes@UNITEXPLODES:
+		Weapon: BarrelExplode
+	RenderSprites:
+		Image: mrj
+	MustBeDestroyed:
+		RequiredForShortGame: true

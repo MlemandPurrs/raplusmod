@@ -1,0 +1,234 @@
+GenericVoice:
+	Variants:
+		allies: .v01,.v03
+		usa: .v01,.v03
+		england: .v01,.v03
+		holland: .v01,.v03
+		france: .v01,.v03
+		germany: .v01,.v03
+		sweden: .v01,.v03
+		spain: .v01,.v03
+		italy: .v01,.v03
+		greece: .v01,.v03
+		turkey: .v01,.v03
+		soviet: .r01,.r03
+		russia: .r01,.r03
+		ukraine: .r01,.r03
+		belarus: .r01,.r03
+		karelia: .r01,.r03
+		moldova: .r01,.r03
+		kazakh: .r01,.r03
+		uzbek: .r01,.r03
+		china: .r01,.r03
+		turkmen: .r01,.r03
+		afghan: .r01,.r03
+	Voices:
+		Select: await1,ready,report1,yessir1
+		Action: ackno,affirm1,noprob,overout,ritaway,roger,ugotit
+		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Burned: dedman10
+		Zapped: dedman6
+	DisableVariants: Die, Burned, Zapped
+
+VehicleVoice:
+	Variants:
+		allies: .v00,.v02
+		usa: .v00,.v02
+		england: .v00,.v02
+		france: .v00,.v02
+		holland: .v00,.v02
+		germany: .v00,.v02
+		sweden: .v00,.v02
+		spain: .v00,.v02
+		italy: .v00,.v02
+		greece: .v00,.v02
+		turkey: .v00,.v02
+		soviet: .r00,.r02
+		russia: .r00,.r02
+		ukraine: .r00,.r02
+		belarus: .r00,.r02
+		karelia: .r00,.r02
+		moldova: .r00,.r02
+		kazakh: .r00,.r02
+		uzbek: .r00,.r02
+		china: .r00,.r02
+		turkmen: .r00,.r02
+		afghan: .r00,.r02
+	Voices:
+		Select: vehic1,yessir1,report1,await1
+		Action: ackno,affirm1
+
+EngineerVoice:
+	Voices:
+		Select: eengin1,eyessir1
+		Action: eaffirm1,emovout1
+		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Burned: dedman10
+		Zapped: dedman6
+
+MedicVoice:
+	Voices:
+		Select: mrespon1,myessir1
+		Action: maffirm1,mmovout1
+		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Burned: dedman10
+		Zapped: dedman6
+
+MechanicVoice:
+	Voices:
+		Select: mhuh1,mhowdy1,myes1
+		Move: mboss1,mhear1,myes1,mrise1
+		Action: mhotdig1,mwrench1,myeehaw1
+		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Burned: dedman10
+		Zapped: dedman6
+
+ThiefVoice:
+	Voices:
+		Select: swhat1,syeah1
+		Action: saffirm1,smout1,sokay1
+		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Burned: dedman10
+		Zapped: dedman6
+		Attack: candy,pickclean,fivefinger
+
+TanyaVoice:
+	Voices:
+		Select: yo1,yes1,yeah1
+		Move: onit1,cmon1,rokroll1
+		Action: tuffguy1,bombit1
+		Die: tandeth1
+		Burned: tandeth1
+		Zapped: tandeth1
+		Build: laugh1
+		Kill: gotit1,lefty1
+		Demolish: keepem1,tuffguy1
+
+VolkovVoice:
+	DefaultVariant: .aud
+	Voices:
+		Select: sv2await,sv2ready,sv2report,sv2yessir
+		Move: sv2ackno,sv2affirm,sv2noprob,sv2overout,sv2ritaway,sv2roger,sv2ugotit
+		Action: sv2ackno,sv2affirm,sv2noprob,sv2overout,sv2ritaway,sv2roger,sv2ugotit
+		Attack: sv2ackno,sv2affirm,sv2noprob,sv2overout,sv2ritaway,sv2roger,sv2ugotit
+		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Burned: dedman10
+		Zapped: dedman6
+		Build: sv2ready
+		Kill: sv2ugotit,sv2noprob
+		Demolish: sv2ritaway,sv2overout
+
+DogVoice:
+	Voices:
+		Select: dogw3px
+		Move: dogy1
+		Attack: dogg5p
+		Die: dogw5,dogw7
+		Burned: dogw6
+		Zapped: dogw6
+
+SpyVoice:
+	Voices:
+		Select: syessir1,scomnd1
+		Move: sonway1,sindeed1
+		Action: sking1
+		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Burned: dedman10
+		Zapped: dedman6
+
+CivilianMaleVoice:
+	Voices:
+		Select: guyyeah1
+		Action: guyokay1
+		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Burned: dedman10
+		Zapped: dedman6
+
+CivilianFemaleVoice:
+	Voices:
+		Select: girlyeah
+		Action: girlokay
+		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Burned: dedman10
+		Zapped: dedman6
+
+EinsteinVoice:
+	Voices:
+		Select: einah1
+		Action: einok1,einyes1
+		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Burned: dedman10
+		Zapped: dedman6
+
+ShokVoice:
+	Voices:
+		Select: jjuice1,jjump1,jyes1
+		Move: jdance1,jchrge1,jpower1
+		Attack: jburn1,jcrisp1,jshock1,jlight1
+		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Burned: dedman10
+		Zapped: dedman6
+
+AntVoice:
+	Voices:
+		Select: antbite
+		Action: antbite
+		Die: antdie
+		Burned: antdie
+		Zapped: antdie
+
+StavrosVoice:
+	Voices:
+		Select: stavcmdr
+		Move: stavcrse, stavyes, stavmov
+		Attack: stavcrse, stavyes
+		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Burned: dedman10
+		Zapped: dedman6
+
+RoboticVoice:
+	DefaultVariant: .wav
+	Voices:
+		Attack: vsenmova, vsenmovb, vsenmovc
+		Select: vsensela, vsenselb, vsenselc, vsenseld
+		Move: vsenmova, vsenmovb, vsenmovc
+		Action: vsenmova, vsenmovb, vsenmovc
+
+DesolatorVoice:
+	DefaultVariant: .aud
+	Voices:
+		Select: idesseb,idessec,idessed,idessee
+		Move: idesmoa,idesmob,idesmoc,idesmod,idesmoe
+		Attack: idesata,idesatb,idesatc,idesatd,idesate,idesatf
+		Action:  idesmoa,idesmob,idesmoc,idesmod,idesmoe
+		Build: idessea
+		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Burned: dedman10
+		Zapped: dedman6
+
+GDISoldier:
+	DefaultVariant: .aud
+	Voices:
+		Select: gdisoldiergotyourback, gdisoldierholding, gdisoldierfriendlyfire1
+		Move: gdisoldieraffirmative1, gdisoldieraffirmative2, gdisoldieraffirmative3, gdisoldiermovingout
+		Action: gdisoldieraffirmative1, gdisoldieraffirmative2, gdisoldieraffirmative3
+		Attack: gdisoldieraffirmative1, gdisoldieraffirmative2, gdisoldieraffirmative3
+		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Burned: dedman10
+		Zapped: dedman6
+		Build: gdisoldiermovingout
+		Kill: gdisoldierincoming
+
+CommandoVoice:
+	Voices:
+		Select: ryeah1,ryes1,ryo1
+		Move: rcmon1,ronit1,rgotit1
+		Attack: ronit1,rgotit1,rnoprblm1
+		Action: ronit1,rgotit1,rnoprblm1
+		Demolish: rnoprblm1
+		Die: ramyell1
+		Burned: ramyell1
+		Zapped: ramyell1
+		Poisoned: ramyell1
+		Build: rrokroll1
+		Kill: rkeepem1,rlaugh1,rlefty1,rtuffguy1

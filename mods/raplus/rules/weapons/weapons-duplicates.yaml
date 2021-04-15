@@ -1,0 +1,281 @@
+
+M1Carbine.Tank:
+	Inherits: M1Carbine
+	Report: mgun11.aud
+	Range: 4c512
+	ValidTargets: Infantry
+
+M1Carbine.Vehicle:
+	Inherits: M1Carbine
+	Report: mgun11.aud
+
+M60mg.Inf:
+	Inherits: M60mg
+	Report: mguninf1.aud
+	BurstDelays: 5
+	Warhead@1Dam: SpreadDamage
+		Damage: 24
+	FirstBurstTargetOffset: -64,0,0
+	FollowingBurstTargetOffset: 128,0,0
+	Projectile: Bullet
+		Inaccuracy: 256
+
+Vulcan.ship:
+	Inherits: Vulcan
+	ReloadDelay: 45
+
+Vulcan.bomber:
+	Inherits: Vulcan
+	Range: 8c0
+	Burst: 9
+	BurstDelays: 2
+	FirstBurstTargetOffset: -2984,0,0
+	FollowingBurstTargetOffset: 746,0,0
+	ReloadDelay: 125
+	Report: gun5TD.aud
+	Warhead@1Dam: SpreadDamage
+		Spread: 426
+		Damage: 50
+		Versus:
+			Wood: 25
+			Light: 100
+			Heavy: 50
+
+25mm.britain:
+	Inherits: 25mm
+	Warhead@1Dam: SpreadDamage
+		Damage: 27
+
+25mm.france:
+	Inherits: 25mm
+	ReloadDelay: 18
+	Warhead@1Dam: SpreadDamage
+		Damage: 22
+
+25mm.spain:
+	Inherits: 25mm
+	ReloadDelay: 24
+	Range: 5c768
+
+25mm.decoy:
+	ReloadDelay: 21
+	Range: 4c768
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Damage: 0
+
+90mm.britain:
+	Inherits: 90mm
+	Warhead@1Dam: SpreadDamage
+		Damage: 45
+
+90mm.france:
+	Inherits: 90mm
+	ReloadDelay: 37
+	Warhead@1Dam: SpreadDamage
+		Damage: 35
+
+90mm.spain:
+	Inherits: 90mm
+	ReloadDelay: 56
+	Range: 5c768
+
+90mm.decoy:
+	ReloadDelay: 42
+	Range: 4c768
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Damage: 0
+
+90mm.decoy.zero:
+	Inherits: 90mm.decoy
+	ReloadDelay: 1
+
+105mm.Singular:
+	Inherits: 105mm
+	ReloadDelay: 48
+	-Burst:
+
+120mm.Singular:
+	Inherits: 120mm
+	-Burst:
+
+105mm.Singular.kazakh:
+	Inherits: 105mm.kazakh
+	ReloadDelay: 52
+	-Burst:
+
+105mm.kazakh:
+	Inherits: 105mm
+	Range: 5c768
+	ReloadDelay: 70
+
+105mm.turkmen:
+	Inherits: 105mm
+	ReloadDelay: 58
+
+105mm.Singular.turkmen:
+	Inherits: 105mm.Singular
+	ReloadDelay: 58
+
+TurretGun.tnkd:
+	Inherits: TurretGun
+	ReloadDelay: 50
+
+155mm.b52:
+	Inherits: 155mm
+	TargetActorCenter: false
+	Projectile: Bullet
+		Speed: 204
+		LaunchAngle: -35
+		Inaccuracy: 768
+
+155mm.decoy:
+	ReloadDelay: 85
+	Range: 12c0
+	MinRange: 4c0
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Damage: 0
+
+155mm.barrage:
+	Inherits: 155mm
+	Burst: 4
+	BurstDelays: 28
+	FirstBurstTargetOffset: -2984,0,0
+	FollowingBurstTargetOffset: 746,0,0
+	TargetActorCenter: false
+	Projectile: Bullet
+		Speed: 204
+		LaunchAngle: -35
+		Inaccuracy: 768
+
+203mm.2shot:
+	Inherits: 203mm
+	ReloadDelay: 104
+	Burst: 2
+	BurstDelays: 52
+
+8Inch.singular:
+	Inherits: 8Inch
+	ReloadDelay: 65
+	-Burst:
+
+2Inch.burst:
+	Inherits: 2Inch
+	Range: 6c0
+	ReloadDelay: 60
+	Burst: 3
+	BurstDelays: 9
+	Projectile:
+		Inaccuracy: 0c768
+
+DepthChargeDual:
+	Inherits: DepthCharge
+	Burst: 2
+	BurstDelays: 4
+
+HeliDepthCharge:
+	Inherits: DepthCharge
+	Burst: 2
+	Range: 0c826
+	Projectile: Bullet
+		Inaccuracy: 64
+
+MaverickHind:
+	Inherits: Maverick
+	ReloadDelay: 40
+	Range: 5c0
+	InvalidTargets: Infantry
+
+Dragon.Ltnk:
+	Inherits: Dragon
+	Range: 4c768
+	ReloadDelay: 300
+
+HellfireAA.rapid:
+	Inherits: HellfireAA
+	Burst: 2
+	BurstDelays: 7
+	Range: 6c0
+	Projectile: Missile
+		RangeLimit: 7c0
+
+HellfireAG.airstrike:
+	Inherits: HellfireAG
+	Burst: 8
+	BurstDelays: 0
+	Range: 7c0
+	Projectile: Missile
+		Inaccuracy: 768
+
+Nike.6shot:
+	Inherits: Nike
+	ReloadDelay: 90
+	Burst: 6
+	BurstDelays: 15
+
+RedEye.2shot:
+	Inherits: RedEye
+	Burst: 2
+	BurstDelays: 7
+	Range: 11c0	
+	MinRange: 3c0
+	Projectile: Missile
+		Speed: 304
+		Inaccuracy: 512
+		RangeLimit: 14c410
+
+APTusk.stnk:
+	Inherits: APTusk
+	ReloadDelay: 96
+	Warhead@1Dam: SpreadDamage
+		Damage: 75
+
+FireballLauncher.Single:
+	Inherits: FireballLauncher
+	ReloadDelay: 50
+	-Burst:
+	-BurstDelays:
+
+Napalm.inferno:
+	Inherits: Napalm
+	Range: 4c512
+
+ParaBomb.burst:
+	Inherits: ParaBomb
+	Range: 5c0
+	ReloadDelay: 50
+	Burst: 5
+	BurstDelays: 8
+	TargetActorCenter: true
+
+SCUD.Badger:
+	Inherits: SCUD
+	Range: 20c0
+	Burst: 2
+	BurstDelays: 12
+	ReloadDelay: 120
+	Projectile: Bullet
+		Inaccuracy: 1c512
+		LaunchAngle: 0
+
+Stinger.continous:
+	Inherits: Stinger
+	BurstDelays: 33
+
+8Inch.gcan:
+	Inherits: 8Inch
+	ReloadDelay: 120
+	-Burst:
+
+FLAK-23-AA-FBOX:
+	Range: 6c0
+
+FLAK-23-AA-Dual:
+	Inherits: FLAK-23-AA
+	Burst: 2
+
+FLAK-23-AG-Dual:
+	Inherits: FLAK-23-AG
+	Burst: 2

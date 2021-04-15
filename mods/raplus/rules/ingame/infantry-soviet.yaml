@@ -1,0 +1,459 @@
+E4:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 9
+		Prerequisites: ~barr, ftur, ~infantry.soviet, ~soviet.or.ukraine, ~techlevel.medium
+		Description: Close-range anti-structure unit.\nMay explode on death 30% chance.\n  Immune to Fire-based weaponry.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
+	Tooltip:
+		Name: Flamethrower
+	Valued:
+		Cost: 400
+	Mobile:
+		PauseOnCondition: dont-move
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 40
+	Armor:
+		Type: Flak
+	Targetable:
+		RequiresCondition: !parachute
+		TargetTypes: Ground, Infantry, Disguise, Flamer
+	Armament@PRIMARY:
+		Weapon: Flamespray
+		MuzzleSequence: muzzle
+		LocalOffset: 500,0,300
+		FireDelay: 4
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: Flamespray
+	WithMuzzleOverlay:
+	GrantConditionOnAttack:
+		Condition: dont-move
+		RevokeDelay: 16
+		RevokeOnNewTarget: False
+		RevokeAll: True
+	TakeCover:
+		ProneOffset: 160,0,-288
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+		DamageSource: Killer
+		Chance: 30
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		RequiresCondition: !parachute
+	WithInfantryBody@PARACHUTE:
+		StandSequences: parachute
+		RequiresCondition: parachute
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+	Passenger:
+		CustomPipType: pip-yellow
+	DeliversCash:
+		Payload: 100
+		Type: InfantryRefund
+
+E5:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Inherits@ROT: ^RottingInfantry
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 16
+		Prerequisites: stek, ~infantry.soviet, ~soviet.or.turkmen, ~techlevel.high
+		Description: Close range, anti-everything Infantry.\nWeapon poisons Infantry for 10 seconds.\n  Strong vs all Ground units and Structures.\n  Weak vs Anti-Infantry Defenses, Aircraft.
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Chemical Trooper
+	Health:
+		HP: 90
+	Armor:
+		Type: Flak
+	WithDeathAnimation:
+	Passenger:
+		CustomPipType: pip-red
+	Armament@PRIMARY:
+		Weapon: Chemspray
+		LocalOffset: 341,0,256
+		FireDelay: 3
+		MuzzleSequence: muzzle
+		MuzzlePalette: desert
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: Chemspray
+		MuzzleSequence: muzzle
+		MuzzlePalette: desert
+	TakeCover:
+		ProneOffset: 160,0,-288
+	Mobile:
+		Speed: 64
+		PauseOnCondition: dont-move
+	GrantConditionOnAttack:
+		Condition: dont-move
+		RevokeDelay: 12
+		RevokeOnNewTarget: False
+		RevokeAll: True
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	WithInfantryBody@PARACHUTE:
+		StandSequences: parachute
+		RequiresCondition: parachute
+	WithMuzzleOverlay:
+	Explodes:
+		Weapon: UnitExplodeChemSmall
+		EmptyWeapon: UnitExplodeChemSmall
+		Chance: 30
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+	RenderSprites:
+		Image: e5
+	DeliversCash:
+		Payload: 150
+		Type: InfantryRefund
+	Targetable:
+		RequiresCondition: !parachute
+		TargetTypes: Ground, Infantry, Disguise, Chem
+
+THF:
+	Inherits: ^Soldier	
+	Inherits@selection: ^SelectableSupportUnit
+	Inherits@ROT: ^RottingInfantry
+	-AttackFrontal:
+	-TakeCover:
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 6
+		Prerequisites: ~barr, dome, ~infantry.soviet, ~soviet.or.belarus, ~techlevel.medium
+		Description: Field operative of the Union.\n  Special Ability: Hijacking\nSteals enemy vehicles.\n  Special Ability: Sabotage\nEnters enemy production structures to Demolish them.\nEnters enemy Refineries to steal Credits.\nEnters enemy Power Plants to disable them.\nEnters enemy Radar to reset exploration.\nEnters enemy Tech Centers to unlock Behemoth Tank.\nEnters enemy Superweapons to reset timer.\n  Special Ability: Cloaking\nCloaks when standing still.\n  Unarmed
+	Tooltip:
+		Name: Saboteur
+	Valued:
+		Cost: 475
+	Mobile:
+		Speed: 71
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 45
+	RevealsShroud:
+		Range: 5c0
+	CaptureManager:
+	Captures:
+		CaptureTypes: vehicle
+		PlayerExperience: 50
+		Voice: Attack
+	Captures@SABOTAGE:
+		CaptureTypes: demolish-sabotage
+		CaptureDelay: 45
+		SabotageThreshold: 1
+		SabotageHPRemoval: 100
+		PlayerExperience: 0
+		SabotageCursor: c4
+		Voice: Action
+	Infiltrates:
+		Types: ThiefInfiltrate
+		Notification: BuildingInfiltrated
+		PlayerExperience: 50
+		Voice: Attack
+	WithInfantryBody:
+		IdleSequences: idle
+		StandSequences: stand
+	Crushable:
+		WarnProbability: 95
+	Cloak:
+		InitialDelay: 250
+		CloakDelay: 120
+		UncloakOn: Attack, Unload, Infiltrate, Demolish, Move
+		CloakTypes: Cloak
+		IsPlayerPalette: true
+		PauseOnCondition: cloak-force-disabled
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+	Voiced:
+		VoiceSet: ThiefVoice
+	Passenger:
+		CustomPipType: pip-blue
+	DeliversCash:
+		Payload: 118
+		Type: InfantryRefund
+
+VOLK:
+	Inherits@ROT: ^RottingInfantry
+	Inherits: GNRL
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		Prerequisites: ~barr, stek, ~infantry.soviet, ~!player.uzbek, ~techlevel.high
+		BuildPaletteOrder: 8
+		BuildLimit: 1
+		Description: Elite commando infantry armed with anti-tank gun and C4.\nMaximum 1 can be trained\n  Special ability: Durability\nCannot be crushed unless its Mammoth Tank\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Volkov
+	Mobile:
+		Speed: 62
+		Locomotor: foot
+		Voice: Move
+	Health:
+		HP: 120
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 6c0
+	Demolition:
+		DetonationDelay: 45
+		Voice: Demolish
+	Guard:
+		Voice: Move
+	Passenger:
+		CustomPipType: pip-red
+		Voice: Move
+	AttackFrontal:
+	Voiced:
+		VoiceSet: VolkovVoice
+	Armament:
+		Weapon: VolkovGun
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: VolkovGun
+		MuzzleSequence: garrison-muzzle
+	DetectCloaked:
+		CloakTypes: Cloak, Hijacker
+	Chronoshiftable:
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+	RenderSprites:
+		Image: VOLK
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+	AnnounceOnKill:
+	Crushable:
+		CrushClasses: heavywall
+	Targetable:
+		RequiresCondition: !parachute
+		TargetTypes: Ground, Infantry, Disguise, Cyborg
+	MapEditorData:
+		Categories: Infantry
+	DeliversCash:
+		Payload: 375
+		Type: InfantryRefund
+	GpsDot:
+		String: Commando
+
+SHOK:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@ROT: ^RottingInfantry
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 7
+		Prerequisites: ~barr, tsla, ~infantry.soviet, ~soviet.or.russia, ~techlevel.high
+		Description: Infantry with portable Tesla coils.\nCan charge powerless Tesla Coils.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
+	Tooltip:
+		Name: Shock Trooper
+	Valued:
+		Cost: 475
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 70
+	Armor:
+		Type: Kevlar
+	Mobile:
+		Voice: Move
+	RevealsShroud:
+		Range: 5c0
+	Armament@PRIMARY:
+		Weapon: PortaTesla
+		LocalOffset: 427,0,341
+	Armament@SECONDARY:
+		Weapon: TeslaCharge
+		LocalOffset: 427,0,341
+		Cursor: powerdown
+		OutsideRangeCursor: powerdown
+		TargetRelationships: Ally
+		ForceTargetRelationships: None
+	TakeCover:
+		ProneOffset: 227,0,-245
+	AttackFrontal:
+		Voice: Attack
+	AttackMove:
+		Voice: Move
+	Passenger:
+		Voice: Move
+		CustomPipType: pip-red
+	Guard:
+		Voice: Move
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		RequiresCondition: !parachute
+	WithInfantryBody@PARACHUTE:
+		StandSequences: parachute
+		RequiresCondition: parachute
+	Voiced:
+		VoiceSet: ShokVoice
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+	DeliversCash:
+		Payload: 118
+		Type: InfantryRefund
+		Voice: Move
+
+SHOKR1:
+	Inherits: SHOK
+	RenderSprites:
+		Image: SHOK
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	UpdatesPlayerStatistics:
+		OverrideActor: shok
+	-Buildable:
+	-MapEditorData:
+
+RPG:
+	Inherits: ^Soldier
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: RPO Trooper
+	Buildable:
+		BuildPaletteOrder: 12
+		Prerequisites: ~barr, ftur, ~soviet.or.kazakh, ~techlevel.medium
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		Description: Soldier that shoots balls of Fire.\nCannot attack Air units.\n  Strong vs clustered Infantry, Structures\n  Weak vs Anti-Infantry measures
+	Selectable:
+		Class: E3
+	Health:
+		HP: 55
+	AutoTarget:
+		ScanRadius: 6
+	Armament@PRIMARY:
+		Weapon: FireballLauncher.Single
+		LocalOffset: 256,43,341
+		FireDelay: 5
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: FireballLauncher.Single
+	TakeCover:
+		ProneOffset: 180,0,-200
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+	Passenger:
+		CustomPipType: pip-red
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+		DamageSource: Killer
+	DeliversCash:
+		Payload: 150
+		Type: InfantryRefund
+
+DESO:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@ROT: ^RottingInfantry
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 130
+		Prerequisites: ~barr, stek, ~infantry.soviet, ~soviet.or.uzbek, ~techlevel.medium
+		Description: Anti-infantry unit, with Radiation Beam weaponry.\n  Strong vs Infantry, Light Armor\n  Weak vs Tanks, Aircraft\n  Special Ability: Desolate Ground\nCan be deployed to scorch and poison ground around itself.
+	Valued:
+		Cost: 675
+	Tooltip:
+		Name: Gamma Trooper
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 200
+	Mobile:
+		Voice: Move
+		PauseOnCondition: !undeployed
+	RevealsShroud:
+		Range: 5c0
+	Armament@PRIMARY:
+		Weapon: RadBeamWeapon
+		LocalOffset: 427,0,341
+	Armament@Garrison:
+		Name: garrisoned
+		Weapon: RadBeamWeapon
+	TakeCover:
+		ProneOffset: 384,0,-395
+	AttackFrontal:
+		Voice: Attack
+		PauseOnCondition: !undeployed
+	AttackMove:
+		Voice: Move
+	Passenger:
+		Voice: Move
+	Guard:
+		Voice: Move
+	Voiced:
+		VoiceSet: DesolatorVoice
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+	-Crushable:
+	GrantConditionOnDeploy:
+		DeployedCondition: deployed
+		UndeployedCondition: undeployed
+		UndeployOnMove: True
+		Facing: 92
+		Voice: Attack
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		RequiresCondition: undeployed
+	WithSpriteBody@DEPLOYED:
+		Sequence: deployed
+		RequiresCondition: !undeployed
+		Name: deployed
+	WithMakeAnimation:
+		Sequence: deploy
+		BodyNames: deployed
+	AmbientSound:
+		SoundFiles: idesat2a.aud
+		Interval: 60
+		RequiresCondition: deployed
+	ProximityExternalCondition@DEPLOYED:
+		Range: 5c0
+		ValidRelationships: Enemy, Neutral
+		Condition: onfire
+		RequiresCondition: deployed
+	ProximityExternalCondition@DEPLOYED:
+		Range: 5c0
+		ValidRelationships: Enemy, Neutral
+		Condition: hitbychem
+		RequiresCondition: deployed
+	WithRangeCircle@DEPLOYED:
+		Range: 5c0
+		Color: 008C00
+		RequiresCondition: deployed
+	Targetable:
+		RequiresCondition: !parachute
+		TargetTypes: Ground, Infantry, Disguise, Chem
+	RenderSprites:
+		PlayerPalette: player-td
+	WithDeathAnimation:
+		DeathSequencePalette: player-td
+	Passenger:
+		CustomPipType: pip-red

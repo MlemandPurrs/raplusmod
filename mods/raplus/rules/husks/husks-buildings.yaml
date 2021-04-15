@@ -1,0 +1,214 @@
+FACT.Husk:
+	Inherits: ^BuildingHusk
+	Interactable:
+		Bounds: 72,72
+	Building:
+		Footprint: xxX xxx XxX
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Construction Yard (Destroyed)
+
+POWR.Husk:
+	Inherits: ^BuildingHusk
+	Interactable:
+		Bounds: 48,48
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Power Plant (Destroyed)
+	RenderSprites:
+		Image: powr.husk
+		FactionImages:
+			allies: powrgrey.husk
+			england: powrgrey.husk
+			france: powrgrey.husk		
+			germany: powrgrey.husk
+
+APWR.Husk:
+	Inherits: ^BuildingHusk
+	Interactable:
+		Bounds: 72,48
+	Building:
+		Footprint: xxx Xxx
+		Dimensions: 3,2
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Advanced Power Plant (Destroyed)
+	RenderSprites:
+		Image: apwr.husk
+		FactionImages:
+			allies: apwrgrey.husk
+			england: apwrgrey.husk
+			france: apwrgrey.husk		
+			germany: apwrgrey.husk
+
+TENT.Husk:
+	Inherits: ^BuildingHusk
+	Interactable:
+		Bounds: 48,48
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: Barracks (Destroyed)
+
+BARR.Husk:
+	Inherits: ^BuildingHusk
+	Interactable:
+		Bounds: 48,48
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: Barracks (Destroyed)
+
+KENN.Husk:
+	Inherits: ^BuildingHusk
+	Interactable:
+		Bounds: 24,24
+	Tooltip:
+		Name: Kennel (Destroyed)
+
+PROC.Husk:
+	Inherits: ^BuildingHusk
+	Interactable:
+		Bounds: 72,45,0,-14
+	Building:
+		Footprint: =Xx x== ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,0,0
+	Tooltip:
+		Name: Ore Refinery (Destroyed)
+
+SILO.Husk:
+	Inherits: ^BuildingHusk
+	Interactable:
+		Bounds: 24,24
+	Tooltip:
+		Name: Ore Silo (Destroyed)
+
+WEAP.Husk:
+	Inherits: ^BuildingHusk
+	Interactable:
+		Bounds: 72,48
+	Building:
+		Footprint: xxx xxx ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Weapons Factory (Destroyed)
+
+FIX.Husk:
+	Inherits: ^BuildingHusk
+	Interactable:
+		Bounds: 68,34,0,3
+	Building:
+		Footprint: =+= +++ =+=
+		Dimensions: 3,3
+	Tooltip:
+		Name: Service Depot (Destroyed)
+
+SYRD.Husk:
+	Inherits: ^BuildingHusk
+	Interactable:
+		Bounds: 72,48
+	Building:
+		Footprint: XXX xxx XXX
+		Dimensions: 3,3
+		TerrainTypes: Water
+	Tooltip:
+		Name: Ship Yard (Destroyed)
+
+SPEN.Husk:
+	Inherits: ^BuildingHusk
+	Interactable:
+		Bounds: 72,48
+	Building:
+		Footprint: XXX xxx XXX
+		Dimensions: 3,3
+		TerrainTypes: Water
+	Tooltip:
+		Name: Sub Pen (Destroyed)
+
+AFLD.Husk:
+	Inherits: ^BuildingHusk
+	Interactable:
+		Bounds: 72,48
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Tooltip:
+		Name: Airfield (Destroyed)
+	RenderSprites:
+		Image: afld.husk
+
+HPAD.Husk:
+	Inherits: ^BuildingHusk
+	Interactable:
+		Bounds: 48,48
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Helipad (Destroyed)
+
+DOME.Husk:
+	Inherits: ^BuildingHusk
+	Interactable:
+		Bounds: 48,48
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Radar Dome (Destroyed)
+
+ATEK.Husk:
+	Inherits: ^BuildingHusk
+	Interactable:
+		Bounds: 48,48
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Space Program (Destroyed)
+
+STEK.Husk:
+	Inherits: ^BuildingHusk
+	Interactable:
+		Bounds: 72,48
+	Building:
+		Footprint: XxX XxX
+		Dimensions: 3,2
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Soviet Tech Center (Destroyed)
+
+ATEKNEW.Husk:
+	Inherits: ^BuildingHusk
+	Interactable:
+		Bounds: 72,48
+	Building:
+		Footprint: XxX XxX
+		Dimensions: 3,2
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Allied Tech Center (Destroyed)
+
+MINIWEAP.Husk:
+	Inherits: ^BuildingHusk
+	Interactable:
+		Bounds: 72,48
+	Building:
+		Footprint: ___ xxx
+		Dimensions: 3,2
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Mobile War Factory (Destroyed)
+	RenderSprites:
+		Image: miniweap.husk

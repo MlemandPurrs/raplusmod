@@ -1,0 +1,813 @@
+FireballLauncher:
+	Inherits: ^FireWeapon
+	MinRange: 1c513
+	Burst: 2
+	BurstDelays: 20
+	Projectile: Bullet
+		Speed: 250
+		TrailImage: fb2
+		Image: FB1
+		Blockable: false
+	Warhead@1Dam: SpreadDamage
+		InvalidTargets: Flamer
+		Versus:
+			Light: 50
+	Warhead@Flames: FireCluster
+		Weapon: BurnFx
+		RandomClusterCount: 3
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+		ValidTargets: Ground
+		InvalidTargets: Water
+
+Flamer:
+	Inherits: ^FireWeapon
+	ReloadDelay: 50
+	Burst: 15
+	BurstDelays: 1
+	Projectile: Bullet
+		Speed: 170
+		TrailImage: fb4
+		Image: fb3
+		LaunchAngle: 62
+		Inaccuracy: 853
+	Warhead@1Dam: SpreadDamage
+		Spread: 341
+		Damage: 40
+		Versus:
+			None: 70
+			Kevlar: 80
+			Flak: 60
+			Wood: 80
+			Light: 40
+			Heavy: 20
+			Concrete: 10
+	Warhead@3Eff: CreateEffect
+		Explosions: small_napalm
+	Warhead@Flames: FireCluster
+		Weapon: BurnFx
+		RandomClusterCount: 1
+		Dimensions: 1,1
+		Footprint: x
+		ValidTargets: Ground
+		InvalidTargets: Water
+
+BigFlamer:
+	Inherits: ^FireWeapon
+	ReloadDelay: 50
+	Burst: 2
+	BurstDelays: 25
+	Warhead@1Dam: SpreadDamage
+		Spread: 400
+		Damage: 80
+		Versus:
+			None: 80
+			Kevlar: 90
+			Flak: 70
+			Wood: 75
+			Light: 75
+			Heavy: 20
+	Warhead@Flames: FireCluster
+		Weapon: BurnFx
+		RandomClusterCount: 1
+		Dimensions: 1,1
+		Footprint: x
+		ValidTargets: Ground
+		InvalidTargets: Water
+
+Napalm:
+	Inherits: ^FireWeapon
+	ReloadDelay: 90
+	Range: 0c968
+	Burst: 2
+	BurstDelays: 2
+	Projectile: Bullet
+		Image: BOMBLET
+		Speed: 170
+		Blockable: false
+	Warhead@1Dam: SpreadDamage
+		Spread: 170
+		Damage: 60
+		Versus:
+			Wood: 100
+			Concrete: 50
+
+Napalm.bomber:
+	Inherits: ^FireWeapon
+	ReloadDelay: 4
+	Range: 2c0
+	Burst: 2
+	BurstDelays: 2
+	Projectile: GravityBomb
+		Image: BOMBLET
+		Shadow: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 341
+		Damage: 30
+		Falloff: 1000, 368, 135, 50, 18, 7, 0
+		Versus:
+			Wood: 35
+			Heavy: 80
+	Warhead@3Eff: CreateEffect
+		Explosions: napalm
+		ImpactSounds: firebl3.aud
+	Warhead@4EffWater: CreateEffect
+		Explosions: large_splash
+		ValidTargets: Water, Underwater
+		InvalidTargets: Ship, Structure, Bridge
+
+Flamespray:
+	ValidTargets: Ground, Water, Trees
+	ReloadDelay: 50
+	Range: 2c256
+	Projectile: Bullet
+		Speed: 341
+	Report: flamer2.aud
+	Warhead@1Dam: SpreadDamage
+		Spread: 468
+		Damage: 40
+		ValidTargets: Ground, Water, Trees
+		InvalidTargets: Wall, Flamer
+		Versus:
+			None: 120
+			Kevlar: 120
+			Flak: 80
+			Wood: 100
+			Light: 100
+			Heavy: 50
+			Concrete: 50
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Structure, Wall
+	Warhead@3Eff: CreateEffect
+		Explosions: invisblank
+		ImpactSounds: firebl3.aud
+		ImpactActors: false
+	Warhead@Flames: FireCluster
+		Weapon: BurnFx
+		RandomClusterCount: 1
+		Dimensions: 1,1
+		Footprint: x
+		ValidTargets: Ground
+		InvalidTargets: Water
+	Warhead@Fire: GrantExternalCondition
+		Range: 1c256
+		Duration: 67
+		Condition: onfire
+		ValidTargets: Structure, Trees
+		ValidRelationships: Ally, Enemy, Neutral
+
+Flamespray.dual:
+	ValidTargets: Ground, Water, Trees
+	ReloadDelay: 50
+	Range: 1c768
+	Projectile: Bullet
+		Speed: 341
+	Burst: 2
+	BurstDelays: 25
+	InvalidTargets: Wall, Flamer
+	Report: flamer2.aud
+	Warhead@1Dam: SpreadDamage
+		Spread: 468
+		Damage: 40
+		ValidTargets: Ground, Water, Trees
+		Versus:
+			None: 120
+			Kevlar: 120
+			Flak: 80
+			Wood: 100
+			Light: 100
+			Heavy: 50
+			Concrete: 50
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Structure, Wall
+	Warhead@3Eff: CreateEffect
+		Explosions: invisblank
+		ImpactSounds: firebl3.aud
+		ImpactActors: false
+	Warhead@Flames: FireCluster
+		Weapon: BurnFx
+		RandomClusterCount: 1
+		Dimensions: 1,1
+		Footprint: x
+		ValidTargets: Ground
+		InvalidTargets: Water
+
+TeslaZap:
+	Inherits: ^TeslaWeapon
+	InvalidTargets: EMPTank
+	Warhead@1Dam: SpreadDamage
+		Versus:
+			Wood: 60
+	Warhead@2: GrantExternalCondition
+		Range: 0c256
+		Duration: 25
+		Condition: empdisable
+		ValidTargets: Vehicle, Ship, Submarine
+		InvalidTargets: EMPInvalid, InvulNoEMP
+
+PortaTesla:
+	Inherits: ^TeslaWeapon
+	ReloadDelay: 70
+	Range: 6c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 50
+		Versus:
+			Wood: 60
+			Heavy: 80
+
+TeslaCharge:
+	ReloadDelay: 120
+	Range: 1c0
+	Report: electro1.aud
+	ValidTargets: Charge
+	Projectile: TeslaZap
+	Warhead@CHARGE: GrantExternalCondition
+		Range: 0c256
+		Duration: 150
+		Condition: TeslaChargeApplied
+		ValidTargets: Charge
+
+TTankZap:
+	Inherits: ^TeslaWeapon
+	InvalidTargets: EMPTank
+	ReloadDelay: 120
+	Range: 7c512
+	Warhead@2: GrantExternalCondition
+		Range: 0c256
+		Duration: 25
+		Condition: empdisable
+		ValidTargets: Vehicle, Ship, Submarine
+		InvalidTargets: EMPInvalid, InvulNoEMP
+
+DogJaw:
+	ValidTargets: Infantry
+	ReloadDelay: 10
+	Range: 2c0
+	Report: dogg5p.aud
+	TargetActorCenter: true
+	Projectile: InstantHit
+	Warhead@1Dam: TargetDamage
+		Damage: 1000
+		ValidTargets: Infantry
+		InvalidTargets: Ant
+		DamageTypes: DefaultDeath
+
+Heal:
+	ReloadDelay: 70
+	Range: 2c0
+	Report: heal2.aud
+	ValidTargets: Heal
+	Projectile: Bullet
+		Speed: 1c682
+	Warhead@1Dam: SpreadDamage
+		Spread: 213
+		Damage: -40
+		ValidRelationships: Ally
+		ValidTargets: Heal
+		DebugOverlayColor: 00FF00
+
+Repair:
+	Inherits: Heal
+	Report: fixit1.aud
+	ValidTargets: Repair
+	Warhead@1Dam: SpreadDamage
+		Damage: -25
+		ValidTargets: Repair
+
+Demolish:
+	Warhead@1Dam: SpreadDamage
+		DamageTypes: DefaultDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: building
+		ImpactSounds: kaboom25.aud
+
+Claw:
+	ReloadDelay: 30
+	Range: 1c512
+	Projectile: Bullet
+		Speed: 1c682
+	Warhead@1Dam: SpreadDamage
+		Spread: 213
+		Damage: 30
+		Versus:
+			None: 90
+			Kevlar: 90
+			Flak: 90
+			Wood: 10
+			Light: 30
+			Heavy: 10
+			Concrete: 10
+		DamageTypes: Prone50Percent, TriggerProne, DefaultDeath
+
+Mandible:
+	Inherits: Claw
+	ReloadDelay: 10
+	Burst: 2
+	BurstDelays: 14
+	StartBurstReport: antbite.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: 60
+		Versus:
+			None: 90
+		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
+
+MandibleHeavy:
+	Inherits: Claw
+	ReloadDelay: 15
+	Burst: 2
+	BurstDelays: 20
+	StartBurstReport: antbite.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: 100
+		Versus:
+			None: 100
+			Light: 90
+			Heavy: 35
+			Concrete: 20
+		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
+
+AntFireball:
+	Inherits: FireballLauncher
+	Report: antbite.aud
+	ReloadDelay: 50
+	Burst: 2
+	BurstDelays: 20
+	Range: 4c0
+	Projectile: Bullet
+		Speed: 200
+	Warhead@1Dam: SpreadDamage
+		Spread: 213
+		Damage: 40
+		Versus:
+			None: 80
+			Kevlar: 100
+			Flak: 60
+			Wood: 85
+			Light: 45
+			Heavy: 20
+			Concrete: 15
+
+DemoTruckTargeting:
+	ValidTargets: DetonateAttack
+	Range: 2c0
+	Projectile: InstantHit
+	Warhead@1Dam: TargetDamage
+		ValidTargets: DetonateAttack
+
+MADTankThump:
+	InvalidTargets: MADTank
+	ValidTargets: Structure
+	Warhead@1Dam: HealthPercentageDamage
+		Spread: 8c0
+		Damage: 1
+		InvalidTargets: MADTank
+		ValidTargets: Structure, Infantry
+		Versus:
+			None: 50
+		DamageTypes: Prone50Percent, TriggerProne
+	Warhead@Shake: ShakeScreen
+		Duration: 10
+		Intensity: 2
+		Multiplier: 1,0
+	Warhead@3: GrantExternalCondition
+		Range: 8c0
+		Duration: 24
+		Condition: thumpsnare
+		ValidTargets: Vehicle
+
+MADTankDetonate:
+	InvalidTargets: MADTank
+	ValidTargets: Structure
+	Warhead@1Dam: HealthPercentageDamage
+		Spread: 8c0
+		Damage: 20
+		InvalidTargets: MADTank
+		ValidTargets: Structure
+	Warhead@2Dam: HealthPercentageDamage
+		Spread: 8c0
+		Damage: 20
+		InvalidTargets: MADTank
+		ValidTargets: Vehicle
+		Versus:
+			Light: 50
+			Heavy: 50
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: Crater
+		Size: 8,7
+	Warhead@4Eff: CreateEffect
+		Explosions: med_explosion
+		ImpactSounds: mineblo1.aud
+		ImpactActors: false
+
+BombingRun.ag:
+	ReloadDelay: 60
+	Burst: 5
+	BurstDelays: 6
+	Range: 2c512
+	TargetActorCenter: true
+	Report: bwhis.aud
+	Projectile: GravityBomb
+		Velocity: 72, 0, -90
+		Acceleration: 0, 0, -8
+		Image: 120mm
+		Shadow: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 512
+		Damage: 90
+		Versus:
+			None: 90
+			Kevlar: 110
+			Flak: 70
+			Wood: 75
+			Light: 60
+			Heavy: 50
+			Concrete: 100
+		DamageTypes: Prone100Percent, TriggerProne, ExplosionDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: artillery_explosion
+		ImpactSounds: kaboom15.aud
+		ValidTargets: Ground, Ship, Trees
+	Warhead@3EffWater: CreateEffect
+		Explosions: large_splash
+		ImpactSounds: splashl1.aud, splashl2.aud
+		ValidTargets: Water, Underwater
+		InvalidTargets: Ship, Structure, Bridge
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Building, Wall
+
+BombingRun.dc:
+	ReloadDelay: 60
+	Burst: 5
+	BurstDelays: 6
+	Range: 2c512
+	ValidTargets: Underwater
+	Projectile: GravityBomb
+		Velocity: 72, 0, -90
+		Acceleration: 0, 0, -8
+		Image: BOMB
+		Shadow: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 80
+		ValidTargets: Submarine
+		Versus:
+			Light: 75
+		DamageTypes: ExplosionDeath
+	Warhead@4EffWater: CreateEffect
+		Explosions: large_splash
+		ImpactSounds: h2obomb2.aud
+		ValidTargets: Water, Underwater
+	Warhead@3Eff: CreateEffect
+		Explosions: small_explosion
+		ImpactSounds: kaboom15.aud
+		ValidTargets: Submarine
+
+PrismLaser:
+	ValidTargets: Ground, Water
+	ReloadDelay: 50
+	Range: 8c512
+	Report: prisfire.aud
+	Projectile: LaserZap
+		Width: 35
+		HitAnim: laserfire
+		Color: 00FFFFC8
+		ZOffset: 2047
+		SecondaryBeam: true
+		SecondaryBeamWidth: 65
+		SecondaryBeamZOffset: 2047
+		SecondaryBeamColor: ECFCFE
+	Warhead@1Dam: SpreadDamage
+		Spread: 512
+		Damage: 130
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+		Versus:
+			None: 100
+			Kevlar: 100
+			Flak: 100
+			Wood: 70
+			Light: 80
+			Heavy: 65
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees, Creep
+	Warhead@3Eff: CreateEffect
+		ImpactSounds: xplos.aud
+		ValidTargets: Ground, Water, Ship, Trees
+	Warhead@Burst: FireCluster
+		Weapon: PrisBurst
+		RandomClusterCount: 3
+		Dimensions: 3,3
+		Footprint: xxx x_x xxx
+
+ai.targeting.helper:
+	ReloadDelay: 1
+	Range: 7c0
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Damage: 0
+
+ai.targeting.helper.noattack:
+	Inherits: ai.targeting.helper
+	ValidTargets: None
+
+KamikazeTargeting:
+	ReloadDelay: 1
+	ValidTargets: Vehicle, Infantry, Wall, Structure, Cyborg
+	Range: 1c768
+	TargetActorCenter: true
+	Projectile: InstantHit
+	Warhead@1Dam: TargetDamage
+		Damage: 0
+		ValidTargets: Vehicle, Infantry, Wall, Structure, Cyborg
+
+DropDummy:
+	ValidTargets: Ground
+	InvalidTargets: Infantry, Ship, Tank, Structure, Air
+	ReloadDelay: 50
+	Range: 4c0
+	Projectile: Bullet
+		Speed: 200
+	Warhead: SpreadDamage
+		Spread: 56
+		Damage: 1
+
+SeaMineTargeting:
+	ValidTargets: Ship, Submarine
+	Range: 1c768
+	TargetActorCenter: true
+	Projectile: InstantHit
+	Warhead@1Dam: TargetDamage
+		Damage: 0
+		ValidTargets: Ship, Submarine
+
+AirMineTargeting:
+	ValidTargets: AirDetonateAttack
+	Range: 0c768
+	Projectile: InstantHit
+	Warhead@1Dam: TargetDamage
+		ValidTargets: AirDetonateAttack
+
+SubMissile.barrage.display:
+	ReloadDelay: 740
+	Range: 20c0
+	Projectile: Bullet
+		LaunchAngle: 180
+	Warhead@1Dam: SpreadDamage
+		Damage: 0
+
+RadBeamWeapon:
+	ValidTargets: Ground, Water
+	InvalidTargets: Air
+	Range: 6c0
+	ReloadDelay: 100
+	Report: idesat1a.aud
+	Projectile: Railgun
+		DamageActorsInLine: true
+		Inaccuracy: 0c256
+		InaccuracyType: PerCellIncrement
+		Duration: 10
+		Blockable: true
+		BeamColor: 00C400
+		BeamWidth: 40
+		HelixThickness: 16
+		HelixColor: 00FC00
+		HelixRadius: 10
+		ZOffset: 2046
+		QuantizationCount: 4
+		BeamAlphaDeltaPerTick: -16
+		HelixAlphaDeltaPerTick: -16
+		HelixRadiusDeltaPerTick: 16
+		HelixAngleDeltaPerTick: 16
+	Warhead@1Dam: SpreadDamage
+		Range: 0, 32
+		Falloff: 100, 100
+		Damage: 80
+		AffectsParent: false
+		Versus:
+			None: 75
+			Kevlar: 75
+			Flak: 75
+			Light: 50
+			Heavy: 30
+			Wood: 15
+			Concrete: 15
+		DamageTypes: Prone100Percent, FireDeath, Incendiary
+	Warhead@Fire: GrantExternalCondition
+		Range: 1c256
+		Duration: 67
+		Condition: onfire
+		ValidTargets: Structure
+	#	this crashes the game...
+	#	Warhead@Chem: GrantExternalCondition
+	#	Range: 0c768
+	#	Duration: 125
+	#	Condition: hitbychem
+	#	ValidTargets: Infantry
+	#	InvalidTargets: Cyborg, Chem, HasPoison
+
+PrisLaser:
+	ValidTargets: Ground, Water
+	ReloadDelay: 3
+	Range: 7c512
+	Report: prisfire.aud
+	Projectile: LaserZap
+		Width: 35
+		HitAnim: laserfire
+		Color: 00FFFFC8
+		ZOffset: 2047
+		SecondaryBeam: true
+		SecondaryBeamWidth: 65
+		SecondaryBeamZOffset: 2047
+		SecondaryBeamColor: ECFCFE
+	Warhead@1Dam: SpreadDamage
+		Spread: 512
+		Damage: 130
+		DamageTypes: Prone100Percent, TriggerProne, ExplosionDeath
+		Versus:
+			None: 55
+			Wood: 70
+			Light: 75
+			Heavy: 70
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees, Creep
+	Warhead@3Eff: CreateEffect
+		ImpactSounds: xplos.aud
+		ValidTargets: Ground, Water, Ship, Trees
+	Warhead@Burst: FireCluster
+		Weapon: PrisBurst
+		RandomClusterCount: 3
+		Dimensions: 3,3
+		Footprint: xxx x_x xxx
+
+PrisLaserSupport:
+	ValidTargets: Ground, Water
+	ReloadDelay: 3
+	Range: 5c0
+	Report: bpriat1a.aud
+	Projectile: LaserZap
+		Width: 35
+		Color: 00FFFFC8
+		ZOffset: 2047
+		SecondaryBeam: true
+		SecondaryBeamWidth: 65
+		SecondaryBeamZOffset: 2047
+		SecondaryBeamColor: 75D1FF
+	Warhead@1Dam: SpreadDamage
+		Damage: 0
+	AirThreshold: 1000
+
+PrisBurst:
+	Inherits: PrisTLaser
+	-Report:
+	Range: 3c0
+	Projectile: LaserZap
+		-HitAnim:
+	Warhead@1Dam: SpreadDamage
+		Spread: 256
+		Damage: 65
+	-Warhead@Burst:
+	Warhead@3Eff: CreateEffect
+		Explosions: small_explosion
+		-ImpactSounds:
+		ValidTargets: Ground, Water, Ship, Trees
+
+PrisTLaser:
+	Inherits: PrismLaser
+	Report: ptnkfire.aud
+	ReloadDelay: 45
+	Range: 9c0
+	Projectile: LaserZap
+		Blockable: true
+	Warhead@1Dam: SpreadDamage
+		Damage: 32
+		Versus:
+			None: 150
+			Kevlar: 150
+			Flak: 150
+			Wood: 90
+			Concrete: 100
+			Light: 80
+			Heavy: 60
+	Warhead@Burst: FireCluster
+		Weapon: PrisTBurst
+
+PrisTBurst:
+	Inherits: PrisBurst
+	Warhead@1Dam: SpreadDamage
+		Damage: 21
+
+PortaMicro:
+	ValidTargets: Ground, Water
+	InvalidTargets: Air
+	TargetActorCenter: true
+	ReloadDelay: 100
+	Range: 5c0
+	Report: corefir1.aud
+	Projectile: Railgun
+		Duration: 5
+		Blockable: true
+		DamageActorsInLine: false
+		BeamColor: FFFFFFFF
+		BeamWidth: 0c0
+		HelixThickness: 0c32
+		HelixRadius: 0c16
+		HelixAngleDeltaPerTick: 64
+		QuantizationCount: 64
+		ZOffset: 2046
+	Warhead@1Dam: SpreadDamage
+		InvalidTargets: Air
+		Spread: 512
+		Damage: 50
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath
+		Versus:
+			None: 400
+			Kevlar: 400
+			Flak: 400
+			Wood: 45
+			Concrete: 50
+			Light: 70
+			Heavy: 85
+	Warhead@emp: GrantExternalCondition
+		Range: 0c256
+		Duration: 90
+		Condition: empdisable
+		ValidTargets: Structure, Vehicle, Ship, Submarine
+		InvalidTargets: EMPInvalid, InvulNoEMP
+
+PortaMicroZapSound:
+	Inherits: PortaMicro
+	Report: coreup1.aud
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Damage: 1
+		Versus:
+			None: 0
+			Wood: 0
+			Concrete: 0
+			Light: 0
+			Heavy: 0
+			Brick: 0
+	-Warhead@emp:
+
+Chemspray:
+	Inherits: Flamespray
+	ReloadDelay: 75
+	Warhead@1Dam: SpreadDamage
+		Damage: 68
+		InvalidTargets: Wall, Chem
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Structure, Wall
+	-Warhead@Flames:
+	-Warhead@Fire:
+	Warhead@Chem: GrantExternalCondition
+		Range: 0c768
+		Duration: 125
+		Condition: hitbychem
+		ValidTargets: Infantry
+		InvalidTargets: Cyborg, Chem, HasPoison
+
+HarrierLauncher:
+	ReloadDelay: 175
+	Burst: 5
+	BurstDelays: 15
+	Range: 25c0
+	ValidTargets: Ground, Water
+	Projectile: InstantHit
+	Warhead@1Dam: TargetDamage
+		ValidTargets: Ground, Water
+
+FrogBomb:
+	Inherits: ^FireWeapon
+	ReloadDelay: 50
+	Range: 2c0
+	Burst: 3
+	BurstDelays: 4
+	FirstBurstTargetOffset: -768,0,0
+	FollowingBurstTargetOffset: 512,0,0
+	Projectile: GravityBomb
+		Image: BOMBLET
+		Velocity: 25, 0, -74
+		Acceleration: 0, 0, 0
+		Shadow: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 341
+		Damage: 30
+		Falloff: 1000, 368, 135, 50, 18, 7, 0
+		Versus:
+			Wood: 30
+			Heavy: 80
+	Warhead@3Eff: CreateEffect
+		Explosions: napalm
+		ImpactSounds: firebl3.aud
+	Warhead@4EffWater: CreateEffect
+		Explosions: large_splash
+		ValidTargets: Water, Underwater
+		InvalidTargets: Ship, Structure, Bridge
