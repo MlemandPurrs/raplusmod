@@ -75,14 +75,13 @@ dtnk:
         Start: 0
 		Facings: 32
 		UseClassicFacings: True	
-	turret-msam: stnk
-        Start: 32
-		Facings: 32
-		UseClassicFacings: True	
+	turret-msam: ssam
+        Facings: 32
+        UseClassicFacings: False
 	turret-saml: ssm
 		Start: 32
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret-gtnk: gtnk
         Start: 32
 		Facings: 32
@@ -208,10 +207,10 @@ dtnk:
 dtnk.destroyed:
 	idle: mnly
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		ZOffset: -512
 	turret: 2tnk
 		Start: 32
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		ZOffset: -512

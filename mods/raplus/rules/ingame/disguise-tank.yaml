@@ -86,11 +86,11 @@ DTNK:
 			1tnf: tnk1
 			1tnk.england: tnk1
 			1tnk.france: tnk1
-			1tnk.sweden: tnk1
 			1tnk.germany: tnk1
 			1tnk.spain: tnk1
 			1tnk.italy: tnk1
 			1tnk.holland: tnk1
+			1tnk.sweden: tnk1
 			atnk: atnk
 			2tnk: tnk2
 			2tnf: tnk2
@@ -203,7 +203,7 @@ DTNK:
 		Name: APC
 		GenericName: APC
 		RequiresCondition: apc
-	DisguiseTooltip@apc:
+	DisguiseTooltip@rapc:
 		Name: Rocket APC
 		GenericName: Rocket APC
 		RequiresCondition: rapc
@@ -673,12 +673,12 @@ DTNK:
 		TurnSpeed: 28
 	Turreted@other:
 		Turret: invis-turret
-		TurnSpeed: 5
+		TurnSpeed: 20
 	#	The weaponry itself, while disguised
 	#	it must keep an dummy weaponry on
 	#	to prevent getting stuck in disguise
 	AttackTurreted:
-		Armaments: defaultarm, disguisearm
+		Armaments: defaultarm, harvsvyt-arm, jeep-arm, ftrk-arm, ftrkgun-arm, ftrkrep-arm, ftrkflam-arm, apcsvyt-arm, rapc-arm, 1tnk-arm, atnk-arm, 2tnk-arm, 2tnks-arm, 3tnk-arm, 3tnk1b-arm, 4tnk-arm, 4tnkflam-arm, nrty-arm, 5tnk-arm, prsm-arm, mrj-arm, msam-arm, saml-arm, gtnk-arm, invis-arm
 		# the turrets from above
 		Turrets: default-turret, harvsvyt-turret, jeep-turret, ftrk-turret, ftrkgun-turret, ftrkrep-turret, ftrkflam-turret, apc-turret, rapc-turret, 1tnk-turret, gapc-turret, 2tnk-turret, 2tnks-turret, 3tnk-turret, 3tnk1b-turret, 4tnk-turret, 4tnkflam-turret, nrty-turret, 5tnk-turret, prsm-turret, msam-turret, mrj-turret, saml-turret, gtnk-turret, invis-turret
 		PauseOnCondition: empdisable
@@ -692,15 +692,203 @@ DTNK:
 		MuzzleSequence: muzzle
 		PauseOnCondition: empdisable
 		#	break disguise before attacking
-		RequiresCondition: !mcv && !harv && !harvsvyt && !harvchrn && !truk && !dtrk && !mwf && !jeep && !ftrk && !ftrkgun && !ftrkrep && !ftrkflam && !apc && !rapc && !apcsvyt && !batf && !tnk1 && !atnk && tnk2 && !tnk2s && !tnk3 && !tnk31b && !tnk4 && !tnk4flam && !nrty && !tnk5 && !prsm && !arty && !gcan && !v2rl && !icbm && !mnly && !mnlynuke && !mgg && !msam && !mrj && !mhqciv && !tnkd && !ctnk && !stnk && !ttnk && !qtnk && !saml && !isu && !gtnk
+		#	RequiresCondition: !mcv && !harv && !harvsvyt && !harvchrn && !truk && !dtrk && !mwf && !jeep && !ftrk && !ftrkgun && !ftrkrep && !ftrkflam && !apc && !rapc && !apcsvyt && !batf && !tnk1 && !atnk && tnk2 && !tnk2s && !tnk3 && !tnk31b && !tnk4 && !tnk4flam && !nrty && !tnk5 && !prsm && !arty && !gcan && !v2rl && !icbm && !mnly && !mnlynuke && !mgg && !msam && !mrj && !mhqciv && !tnkd && !ctnk && !stnk && !ttnk && !qtnk && !saml && !isu && !gtnk
+		RequiresCondition: !disguise
 	#	everything else defaults to using this ^^
+	#	^ nvm that, doesnt work anymore
 	Armament@disguised0:
-		Name: disguisearm
+		Name: harvsvyt-arm
 		Weapon: 90mm.decoy.zero
 		Recoil: 0
+		Turret: harvsvyt-turret
 		LocalOffset: 768,0,90
 		PauseOnCondition: empdisable
-		RequiresCondition: mcv && harv && harvsvyt && harvchrn && truk && dtrk && mwf && jeep && ftrk && ftrkgun && ftrkrep && ftrkflam && apc && rapc && apcsvyt && batf && tnk1 && atnk && tnk2 && tnk2s && tnk3 && tnk31b && tnk4 && tnk4flam && nrty && tnk5 && prsm && arty && gcan && v2rl && icbm && mnly && mnlynuke && mgg && msam && mrj && mhqciv && tnkd && ctnk && stnk && ttnk && qtnk && saml && isu && gtnk
+		RequiresCondition: harvsvyt
+	#	oh what, do i need to a version for each turret now ?
+	Armament@disguised1:
+		Name: jeep-arm
+		Weapon: 90mm.decoy.zero
+		Recoil: 0
+		Turret: jeep-turret
+		LocalOffset: 768,0,90
+		PauseOnCondition: empdisable
+		RequiresCondition: jeep
+	Armament@disguised2:
+		Name: ftrk-arm
+		Weapon: 90mm.decoy.zero
+		Recoil: 0
+		Turret: ftrk-turret
+		LocalOffset: 768,0,90
+		PauseOnCondition: empdisable
+		RequiresCondition: ftrk
+	Armament@disguised3:
+		Name: ftrkgun-arm
+		Weapon: 90mm.decoy.zero
+		Recoil: 0
+		Turret: ftrkgun-turret
+		LocalOffset: 768,0,90
+		PauseOnCondition: empdisable
+		RequiresCondition: ftrkgun
+	Armament@disguised4:
+		Name: ftrkrep-arm
+		Weapon: 90mm.decoy.zero
+		Recoil: 0
+		Turret: ftrkrep-turret
+		LocalOffset: 768,0,90
+		PauseOnCondition: empdisable
+		RequiresCondition: ftrkrep
+	Armament@disguised5:
+		Name: ftrkflam-arm
+		Weapon: 90mm.decoy.zero
+		Recoil: 0
+		Turret: ftrkflam-turret
+		LocalOffset: 768,0,90
+		PauseOnCondition: empdisable
+		RequiresCondition: ftrkflam
+	Armament@disguised6:
+		Name: apcsvyt-arm
+		Weapon: 90mm.decoy.zero
+		Recoil: 0
+		Turret: apc-turret
+		LocalOffset: 768,0,90
+		PauseOnCondition: empdisable
+		RequiresCondition: apcsvyt
+	Armament@disguised7:
+		Name: rapc-arm
+		Weapon: 90mm.decoy.zero
+		Recoil: 0
+		Turret: rapc-turret
+		LocalOffset: 768,0,90
+		PauseOnCondition: empdisable
+		RequiresCondition: rapc
+	Armament@disguised8:
+		Name: 1tnk-arm
+		Weapon: 90mm.decoy.zero
+		Recoil: 0
+		Turret: 1tnk-turret
+		LocalOffset: 768,0,90
+		PauseOnCondition: empdisable
+		RequiresCondition: tnk1
+	Armament@disguised9:
+		Name: atnk-arm
+		Weapon: 90mm.decoy.zero
+		Recoil: 0
+		Turret: gapc-turret
+		LocalOffset: 768,0,90
+		PauseOnCondition: empdisable
+		RequiresCondition: atnk
+	Armament@disguised10:
+		Name: 2tnk-arm
+		Weapon: 90mm.decoy.zero
+		Recoil: 0
+		Turret: 2tnk-turret
+		LocalOffset: 768,0,90
+		PauseOnCondition: empdisable
+		RequiresCondition: tnk2
+	Armament@disguised11:
+		Name: 2tnks-arm
+		Weapon: 90mm.decoy.zero
+		Recoil: 0
+		Turret: 2tnks-turret
+		LocalOffset: 768,0,90
+		PauseOnCondition: empdisable
+		RequiresCondition: tnk2s
+	Armament@disguised12:
+		Name: 3tnk-arm
+		Weapon: 90mm.decoy.zero
+		Recoil: 0
+		Turret: 3tnk-turret
+		LocalOffset: 768,0,90
+		PauseOnCondition: empdisable
+		RequiresCondition: tnk3
+	Armament@disguised13:
+		Name: 3tnk1b-arm
+		Weapon: 90mm.decoy.zero
+		Recoil: 0
+		Turret: 3tnk1b-turret
+		LocalOffset: 768,0,90
+		PauseOnCondition: empdisable
+		RequiresCondition: tnk31b
+	Armament@disguised14:
+		Name: 4tnk-arm
+		Weapon: 90mm.decoy.zero
+		Recoil: 0
+		Turret: 4tnk-turret
+		LocalOffset: 768,0,90
+		PauseOnCondition: empdisable
+		RequiresCondition: tnk4
+	Armament@disguised15:
+		Name: 4tnkflam-arm
+		Weapon: 90mm.decoy.zero
+		Recoil: 0
+		Turret: 4tnkflam-turret
+		LocalOffset: 768,0,90
+		PauseOnCondition: empdisable
+		RequiresCondition: tnk4flam
+	Armament@disguised16:
+		Name: nrty-arm
+		Weapon: 90mm.decoy.zero
+		Recoil: 0
+		Turret: nrty-turret
+		LocalOffset: 768,0,90
+		PauseOnCondition: empdisable
+		RequiresCondition: nrty
+	Armament@disguised17:
+		Name: 5tnk-arm
+		Weapon: 90mm.decoy.zero
+		Recoil: 0
+		Turret: 5tnk-turret
+		LocalOffset: 768,0,90
+		PauseOnCondition: empdisable
+		RequiresCondition: tnk5
+	Armament@disguised18:
+		Name: prsm-arm
+		Weapon: 90mm.decoy.zero
+		Recoil: 0
+		Turret: prsm-turret
+		LocalOffset: 768,0,90
+		PauseOnCondition: empdisable
+		RequiresCondition: prsm
+	Armament@disguised19:
+		Name: mrj-arm
+		Weapon: 90mm.decoy.zero
+		Recoil: 0
+		Turret: mrj-turret
+		LocalOffset: 768,0,90
+		PauseOnCondition: empdisable
+		RequiresCondition: mrj
+	Armament@disguised20:
+		Name: msam-arm
+		Weapon: 90mm.decoy.zero
+		Recoil: 0
+		Turret: msam-turret
+		LocalOffset: 768,0,90
+		PauseOnCondition: empdisable
+		RequiresCondition: msam
+	Armament@disguised21:
+		Name: saml-arm
+		Weapon: 90mm.decoy.zero
+		Recoil: 0
+		Turret: saml-turret
+		LocalOffset: 768,0,90
+		PauseOnCondition: empdisable
+		RequiresCondition: saml
+	Armament@disguised22:
+		Name: gtnk-arm
+		Weapon: 90mm.decoy.zero
+		Recoil: 0
+		Turret: gtnk-turret
+		LocalOffset: 768,0,90
+		PauseOnCondition: empdisable
+		RequiresCondition: gtnk
+	Armament@disguised23:
+		Name: invis-arm
+		Weapon: 90mm.decoy.zero
+		Recoil: 0
+		Turret: invis-turret
+		LocalOffset: 768,0,90
+		PauseOnCondition: empdisable
+		RequiresCondition: mcv || harv || harvchrn || truk || dtrk || mwf || apc || batf || arty || gcan || v2rl || icbm || mnly || mnlynuke || mgg || mhqciv || tnkd || ctnk || stnk || ttnk || qtnk || isu
 
 DTNK.Husk:
 	Inherits: ^Husk

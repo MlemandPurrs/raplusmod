@@ -244,7 +244,7 @@
 		Name: Greece
 		InternalName: greece
 		Side: Allies
-		Description: Greece\nFaction Variations:\n    - Defenses have 20% increased Range and use 10% more Power.\nAffected are Gun Turret, Grand Turret, AA Gun.\nVeterancy Bonus:\n    - Iroqouis and Gunboat gets built as Veteran.\nUnique Support Powers:\n    - Interceptors (Tech Center)\nA squadron of Interceptors provides air cover over target area.\nSpecial Units:\n    - ATGM Soldier (Infantry)\nInfantry armed with anti-tank rockets.\n    - Grand Turret (Defense)\nTriple-barreled Artillery base Defense
+		Description: Greece\nFaction Variations:\n    - Defenses have 20% increased Range and use 10% more Power.\nAffected are Gun Turret, Grand Turret, AA Gun.\nVeterancy Bonus:\n    - Iroqouis and Gunboat gets built as Veteran.\nUnique Support Powers:\n    - Interceptors (Tech Center)\nA squadron of Interceptors provides air cover over target area.\nSpecial Units:\n    - ATGM Soldier (Infantry)\nInfantry armed with anti-tank rockets.\n    - Grand Turret (Defense)\nTriple-barreled Artillery base Defense.
 	Faction@9:
 		Name: Italy
 		InternalName: italy

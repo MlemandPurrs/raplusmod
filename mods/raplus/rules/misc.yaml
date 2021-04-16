@@ -18,26 +18,32 @@ MINN:
 		Weapon: MiniNuke
 	Tooltip:
 		Name: Nuclear Mine
-	#	when more than one present, let last one activate to force-detonate
-	#	grant condition on deploy at minelayer that passes deactivator to new mine
-	#	this would require to be lua triggered, i guess
-	#	ProvidesPrerequisite@LIMITING:
-	#	Prerequisite: enough.nukemine
-	#	this did not work well, the Minelayer itself becomes unselectable upon laying the mine
-	#	Selectable:
-	#	GrantConditionOnDeploy:
-	#	DeployedCondition: triggered
+	#	this wouldnt stack...
+	#	ProvidesPrerequisite@NukeMineLimiter:
+	#	Prerequisite: hasnukemine
+	#	RequiresCondition:	!preventdetonate
+	#	ExternalCondition@PreventNewDetonate:
+	#	Condition: notthisone
+	#	GrantTimedCondition@PreventNewDetonate:
+	#	Condition: preventdetonate
+	#	Duration: 251
 	#	PauseOnCondition: triggered
+	#	GrantConditionOnPrerequisite@NukeMineLimiter:
+	#	Condition: triggered
+	#	Prerequisites: enoughnukemine
 	#	KillsSelf@DETONATE:
-	#	RequiresCondition: triggered
+	#	RequiresCondition: triggered && !preventdetonate
 	#	Delay: 250
 	#	WithIdleOverlay@DETONATE:
 	#	Sequence: active
-	#	RequiresCondition: triggered
+	#	RequiresCondition: triggered && !preventdetonate
 	#	AmbientSound@DETONATE:
-	#	SoundFiles:madchrg2.aud
+	#	SoundFiles: madchrg2.aud
 	#	Interval: 251
-	#	RequiresCondition: triggered
+	#	RequiresCondition: triggered && !preventdetonate
+	#	the mine will have timed life of 250 x 2
+	#	ProvidesPrerequisite@unitname:
+	#	RequiresCondition: !preventdetonate
 
 CRATE:
 	Inherits: ^Crate

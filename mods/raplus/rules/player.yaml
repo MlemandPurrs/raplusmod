@@ -374,6 +374,26 @@ Player:
 	GrantConditionOnPrerequisite@GLOBALJAM:
 		Condition: isbeingjammed
 		Prerequisites: isbeingjammed
+	#	Player has Nuke Mine on board
+	#	ProvidesPrerequisite@HasNukeMine:
+	#	RequiresPrerequisites: minn
+	#	Prerequisite: hasnukemine
+	#	GrantConditionOnPrerequisite@NukeMineLimiter:
+	#	Condition: nukeminelimiter
+	#	Prerequisites: hasnukemine
+	#	ProvidesPrerequisite@NukeMineLimiter:
+	#	Prerequisite: enoughnukemine
+	#	RequiresCondition: nukeminelimiter
+	#	This type of condition cannot stack
+	#	RequiresCondition: nukeminelimiter == 2
+	#	ProximityExternalCondition@NukeMineLimiter2:
+	#	AffectsParent: true
+	#	Condition: nukeminelimiter
+	#	permanently applied, not of use
+	#	ExternalCondition@NukeMineLimiter2:
+	#	Condition: nukeminelimiter
+	#	SourceCap: 2
+	#	TotalCap: 2
 	LobbyPrerequisiteCheckbox@GLOBALSCRAPS:
 		ID: scraps
 		Label: Scrap Metal

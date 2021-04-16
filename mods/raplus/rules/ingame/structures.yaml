@@ -717,6 +717,9 @@ BARR.Cloner:
 		Range: 2c512
 	ProvidesPrerequisite@Limiting:
 		Prerequisite: cloner.plug
+	WithIdleOverlay@LITNING:
+		RequiresCondition: !build-incomplete && !disabled
+		Sequence: idle-litning
 	RenderSprites:
 		Image: cybr-barr
 
@@ -1600,7 +1603,8 @@ FIX.Allies:
 		ChargeInterval: 6000
 		Icon: mnlynuke
 		Description: Nuclear Minelayer
-		LongDesc: Carries and lays one Nuclear Mine.\nThe Nuclear Mine can be remotely Detonated in addition.\nMaximum one can be built.\nCan detect mines.\n  Unarmed
+		LongDesc: Carries and lays one Nuclear Mine.\nMaximum one can be built.\nCan detect mines.\n  Unarmed
+		#	LongDesc: Carries and lays one Nuclear Mine.\nThere can be only one Nuclear Mine,\nthe Last will Detonate in 15sec in case of multiple.\nMaximum one can be built.\nCan detect mines.\n  Unarmed
 		Type: Vehicle
 		ReadyAudio: ReinforcementsArrived
 		BlockedAudio: NoBuild

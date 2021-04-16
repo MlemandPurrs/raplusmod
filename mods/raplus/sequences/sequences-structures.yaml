@@ -419,16 +419,25 @@ cloner.plug:
 	place: cybr-barr
 		Start: 1
 		Length: 1
-		Offset: 0,-6
+		Offset: 12,-6
 	icon: barricon
 
 cybr-barr:
 	Inherits: emp-overlay
     idle:
+		Start: 0
+		Length: 1
+		Offset: 0,-6
+    damaged-idle:
+		Start: 10
+		Length: 1
+		Offset: 0,-6
+	idle-litning:
+		Start: 0
 		Length: 10
 		Offset: 0,-6
-        Tick: 100
-    damaged-idle:
+        Tick: 100	
+	damaged-idle-litning:
 		Start: 10
 		Length: 10
 		Offset: 0,-6
@@ -436,11 +445,6 @@ cybr-barr:
 	place: cybr-barr-make
 		Start: 24
 		Offset: 0,-6
-	#	make: cybr-barr-make
-	#	Start: 11
-	#	Length: *
-	#	Offset: 0,-6
-    #	Tick: 80
 	make: cybr-barr-make
 		Length: *
 		Offset: 0,-6

@@ -734,7 +734,6 @@ TORN.Support:
 		Speed: 223
 		RepulsionSpeed: 40
 		MaximumPitch: 56
-		#	MoveIntoShroud: False
 	AmmoPool:
 		Ammo: 8
 		AmmoCondition: ammo
@@ -767,8 +766,6 @@ TORN.Support:
 		Offset: -853,0,171
 		Interval: 2
 	Interactable:
-	#	GivesExperience:
-	#	Experience: 750
 	AutoTarget:
 		InitialStance: HoldFire
 		InitialStanceAI: AttackAnything

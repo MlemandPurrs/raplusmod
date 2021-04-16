@@ -295,7 +295,7 @@ HBOX:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 5
-		Prerequisites: barracks, dome, ~structures.allies, ~techlevel.medium
+		Prerequisites: barr, dome, ~structures.allies, ~techlevel.medium
 		Description: Camouflaged static defense\nwith a Sniper inside.\nCan detect cloaked units.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft
 	Tooltip:
 		Name: Camo Pillbox
