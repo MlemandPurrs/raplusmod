@@ -21,7 +21,7 @@ Ant:
 	Health:
 		HP: 75
 	Mobile:
-		Speed: 99
+		Speed: 92
 		TurnSpeed: 12
 		Locomotor: lighttracked
 	AutoTarget:
@@ -53,7 +53,7 @@ FireAnt:
 		Name: Fire Ant
 		GenericVisibility: none
 	Mobile:
-		Speed: 80
+		Speed: 68
 	Armament:
 		Weapon: AntFireball
 	Health:
@@ -83,7 +83,7 @@ WarriorAnt:
 		Name: Warrior Ant
 		GenericVisibility: none
 	Mobile:
-		Speed: 65
+		Speed: 56
 	Health:
 		HP: 125
 	Armor:

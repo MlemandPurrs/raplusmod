@@ -93,7 +93,7 @@ E5:
 	TakeCover:
 		ProneOffset: 160,0,-288
 	Mobile:
-		Speed: 64
+		Speed: 68
 		PauseOnCondition: dont-move
 	GrantConditionOnAttack:
 		Condition: dont-move
@@ -138,7 +138,7 @@ THF:
 	Valued:
 		Cost: 475
 	Mobile:
-		Speed: 71
+		Speed: 68
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -201,7 +201,7 @@ VOLK:
 	Tooltip:
 		Name: Volkov
 	Mobile:
-		Speed: 62
+		Speed: 68
 		Locomotor: foot
 		Voice: Move
 	Health:

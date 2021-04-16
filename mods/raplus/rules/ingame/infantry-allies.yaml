@@ -17,7 +17,7 @@ MGI:
 		HP: 50
 	Mobile:
 		Locomotor: foot-amphibious
-		Speed: 64
+		Speed: 68
 		Voice: Move
 	Guard:
 		Voice: Move
@@ -106,7 +106,7 @@ MEDI:
 	Armor:
 		Type: Kevlar
 	Mobile:
-		Speed: 50
+		Speed: 49
 	RevealsShroud:
 		Range: 3c0
 	Armament:
@@ -152,7 +152,7 @@ MECH:
 	Armor:
 		Type: Flak
 	Mobile:
-		Speed: 50
+		Speed: 49
 		Voice: Move
 	RevealsShroud:
 		Range: 3c0
@@ -287,7 +287,7 @@ E7:
 		RequiresCondition: !parachute && swimming
 	Mobile:
 		Locomotor: foot-amphibious
-		Speed: 71
+		Speed: 68
 		Voice: Move
 	Guard:
 		Voice: Move
@@ -359,7 +359,7 @@ RMBO:
 		Prerequisites: ~disabled
 		Description: Elite commando infantry.\nArmed with assault rifle and C4.\n  Special Ability: Camouflage\nCloaks when standing still. Can be ordered to crawl around unseen.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
 	Mobile:
-		Speed: 71
+		Speed: 68
 		Voice: Move
 	Guard:
 		Voice: Move
@@ -459,7 +459,7 @@ SHOT:
 		BuildAtProductionType: Soldier
 		Description: Fast infantry armed with shotgun.\n  Strong vs Infantry\n  Weak vs anything Else
 	Mobile:
-		Speed: 71
+		Speed: 68
 	Health:
 		HP: 50
 	Armor:
@@ -603,7 +603,6 @@ MRTR:
 	Valued:
 		Cost: 600
 	Mobile:
-		Speed: 50
 		PauseOnCondition: dont-move
 	Tooltip:
 		Name: Mortar Soldier
@@ -631,7 +630,7 @@ MRTR:
 		Type: InfantryRefund
 	GrantConditionOnAttack:
 		Condition: dont-move
-		RevokeDelay: 12
+		RevokeDelay: 16
 		RevokeOnNewTarget: False
 		RevokeAll: True
 
@@ -670,7 +669,7 @@ CINF:
 	TakeCover:
 		ProneOffset: 160,0,-288
 	Mobile:
-		Speed: 64
+		Speed: 68
 		PauseOnCondition: dont-move
 	GrantConditionOnAttack:
 		Condition: dont-move

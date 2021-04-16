@@ -14,130 +14,130 @@
 		Crushes: mine, crate
 		SharesCell: true
 		TerrainSpeeds:
-			Clear: 90
-			Rough: 80
-			Road: 100
-			Bridge: 100
-			Ore: 80
-			Gems: 80
-			Scraps: 80
-			Beach: 80
-			Ford: 80
+			Clear: 100
+			Rough: 90
+			Road: 110
+			Bridge: 110
+			Ore: 90
+			Gems: 90
+			Scraps: 90
+			Beach: 90
+			Ford: 90
 	Locomotor@FOOT_AMPHIBIOUS:
 		Name: foot-amphibious
 		Crushes: mine, crate
 		SharesCell: true
 		TerrainSpeeds:
-			Clear: 90
-			Rough: 80
-			Road: 100
-			Bridge: 100
-			Ore: 80
-			Gems: 80
-			Scraps: 80
-			Beach: 80
-			Ford: 80
+			Clear: 100
+			Rough: 90
+			Road: 110
+			Bridge: 110
+			Ore: 90
+			Gems: 90
+			Scraps: 90
+			Beach: 90
+			Ford: 90
 			Water: 80
 			River: 80
 	Locomotor@WHEELED:
 		Name: wheeled
 		Crushes: mine, crate
 		TerrainSpeeds:
-			Clear: 80
-			Rough: 40
-			Road: 100
-			Bridge: 100
-			Ore: 70
-			Gems: 70
-			Scraps: 70
-			Beach: 40
-			Ford: 40
+			Clear: 100
+			Rough: 50
+			Road: 125
+			Bridge: 125
+			Ore: 90
+			Gems: 90
+			Scraps: 90
+			Beach: 50
+			Ford: 75
 	Locomotor@HEAVYWHEELED:
 		Name: heavywheeled
 		Crushes: wall, mine, crate, infantry
 		TerrainSpeeds:
-			Clear: 80
-			Rough: 40
-			Road: 100
-			Bridge: 100
-			Ore: 70
-			Gems: 70
-			Scraps: 70
-			Beach: 40
-			Ford: 40
+			Clear: 100
+			Rough: 50
+			Road: 125
+			Bridge: 125
+			Ore: 90
+			Gems: 90
+			Scraps: 90
+			Beach: 50
+			Ford: 75
 	Locomotor@LIGHTTRACKED:
 		Name: lighttracked
 		Crushes: wall, mine, crate
 		TerrainSpeeds:
-			Clear: 80
-			Rough: 70
-			Road: 100
-			Bridge: 100
-			Ore: 70
-			Gems: 70
-			Scraps: 70
-			Beach: 70
-			Ford: 70
+			Clear: 100
+			Rough: 90
+			Road: 125
+			Bridge: 125
+			Ore: 90
+			Gems: 90
+			Scraps: 90
+			Beach: 90
+			Ford: 80
 	Locomotor@TRACKED:
 		Name: tracked
 		Crushes: wall, infantry, mine, crate
 		TerrainSpeeds:
-			Clear: 80
-			Rough: 70
-			Road: 100
-			Bridge: 100
-			Ore: 70
-			Gems: 70
-			Scraps: 70
-			Beach: 70
-			Ford: 70
+			Clear: 100
+			Rough: 90
+			Road: 125
+			Bridge: 125
+			Ore: 90
+			Gems: 90
+			Scraps: 90
+			Beach: 90
+			Ford: 80
 	Locomotor@HEAVYTRACKED:
 		Name: heavytracked
 		Crushes: wall, infantry, mine, crate, heavywall
 		TerrainSpeeds:
-			Clear: 80
-			Rough: 70
-			Road: 100
-			Bridge: 100
-			Ore: 70
-			Gems: 70
-			Scraps: 70
-			Beach: 70
-			Ford: 70
+			Clear: 100
+			Rough: 90
+			Road: 125
+			Bridge: 125
+			Ore: 90
+			Gems: 90
+			Scraps: 90
+			Beach: 90
+			Ford: 80
 	Locomotor@SUPERHEAVYTRACKED:
 		Name: superheavytracked
 		Crushes: wall, infantry, tank, mine, crate, heavywall
 		TerrainSpeeds:
-			Clear: 80
-			Rough: 70
-			Road: 100
-			Bridge: 100
-			Ore: 70
-			Gems: 70
-			Scraps: 70
-			Beach: 70
-			Ford: 70
+			Clear: 100
+			Rough: 90
+			Road: 125
+			Bridge: 125
+			Ore: 90
+			Gems: 90
+			Scraps: 90
+			Beach: 90
+			Ford: 80
 	Locomotor@TRACKED_AMPHIBIOUS:
 		Name: tracked-amphibious
 		Crushes: infantry, mine, crate
 		TerrainSpeeds:
-			Clear: 80
-			Rough: 70
-			Road: 100
-			Bridge: 100
-			Ore: 70
-			Gems: 70
-			Scraps: 70
-			Beach: 70
-			Ford: 70
-			Water: 50
-			River: 30
+			Clear: 100
+			Rough: 90
+			Road: 125
+			Bridge: 125
+			Ore: 90
+			Gems: 90
+			Scraps: 90
+			Beach: 90
+			Ford: 80
+			Water: 80
+			River: 80
 	Locomotor@NAVAL:
 		Name: naval
 		Crushes: mine, crate
 		TerrainSpeeds:
 			Water: 100
-			Ford: 70
+			Ford: 90
 			Tunnel: 100
 	Locomotor@LANDINGCRAFT:
 		Name: lcraft
@@ -145,23 +145,8 @@
 		TerrainSpeeds:
 			Water: 100
 			Beach: 70
-			Ford: 70
-			Tunnel: 100
-	Locomotor@AMPHIBIOUS:
-		Name: amphibious
-		Crushes: infantry, mine, crate
-		TerrainSpeeds:
-			Clear: 80
-			Rough: 70
-			Road: 90
-			Bridge: 60
-			Ore: 50
-			Gems: 50
-			Scraps: 50
-			Beach: 80
 			Ford: 80
-			Water: 90
-			River: 70
+			Tunnel: 100
 	Locomotor@IMMOBILE:
 		Name: immobile
 		TerrainSpeeds:
@@ -176,18 +161,18 @@
 		FogVariants: shroud
 		Index: 255, 16, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 20, 40, 56, 65, 97, 130, 148, 194, 24, 33, 66, 132, 28, 41, 67, 134, 1, 2, 4, 8, 3, 6, 12, 9, 7, 14, 13, 11, 5, 10, 15, 255
 		UseExtendedIndex: true
-	Faction@randomside:
-		Name: Any Side
-		InternalName: Random
-		RandomFactionMembers: allies, soviet
-		Side: Random
-		Description: Random Side\nA random vanilla side will be chosen when the game starts.
 	Faction@randomcountry:
 		Name: Any Count.
-		InternalName: RandomCountry
+		InternalName: Random
 		RandomFactionMembers: RandomAllies, RandomSoviet
 		Side: Random
 		Description: Random Country\nA random country will be chosen when the game starts.
+	Faction@randomside:
+		Name: Any Side
+		InternalName: RandomSide
+		RandomFactionMembers: allies, soviet
+		Side: Random
+		Description: Random Side\nA random vanilla side will be chosen when the game starts.
 	Faction@randomallies:
 		Name: Any Allies
 		InternalName: RandomAllies

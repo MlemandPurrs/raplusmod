@@ -61,7 +61,7 @@ EINSTEIN:
 	Tooltip:
 		Name: Prof. Einstein
 	Mobile:
-		Speed: 71
+		Speed: 68
 	Voiced:
 		VoiceSet: EinsteinVoice
 
@@ -71,7 +71,7 @@ DELPHI:
 	Tooltip:
 		Name: Agent Delphi
 	Mobile:
-		Speed: 71
+		Speed: 68
 
 CHAN:
 	Inherits: ^CivInfantry

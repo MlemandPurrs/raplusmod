@@ -17,7 +17,7 @@ HARV.Chrono:
 	Health:
 		HP: 800
 	Mobile:
-		Speed: 85
+		Speed: 72
 	Harvester:
 		Capacity: 20
 	WithHarvesterPipsDecoration:
@@ -147,7 +147,7 @@ APC:
 	Armor:
 		Type: Heavy
 	Mobile:
-		Speed: 142
+		Speed: 128
 		PauseOnCondition: !(!empdisable && !notmobile && !being-captured)
 	RevealsShroud:
 		MinRange: 4c0
@@ -237,7 +237,7 @@ RAPC:
 	Armor:
 		Type: Heavy
 	Mobile:
-		Speed: 118
+		Speed: 113
 	RevealsShroud:
 		MinRange: 3c0
 		Range: 5c0
@@ -309,7 +309,7 @@ RAPC:
 	Armor:
 		Type: Heavy
 	Mobile:
-		Speed: 85
+		Speed: 72
 	RevealsShroud:
 		MinRange: 4c0
 		Range: 6c0
@@ -421,7 +421,7 @@ ARTY:
 		Type: Light
 	Mobile:
 		TurnSpeed: 8
-		Speed: 85
+		Speed: 72
 		Locomotor: lighttracked
 	RevealsShroud:
 		MinRange: 4c0
@@ -473,7 +473,7 @@ MSAM:
 		Type: Light
 	Mobile:
 		TurnSpeed: 28
-		Speed: 96
+		Speed: 72
 		PauseOnCondition: !(!empdisable && !being-captured)
 	RevealsShroud:
 		MinRange: 4c0
@@ -525,7 +525,7 @@ ATNK:
 	Armor:
 		Type: Heavy
 	Mobile:
-		Speed: 118
+		Speed: 113
 	RevealsShroud:
 		MinRange: 4c0
 		Range: 6c0
@@ -534,7 +534,7 @@ ATNK:
 		Range: 4c0
 	Turreted:
 		TurnSpeed: 28
-		Offset: -40,0,0
+		Offset: -36,0,-68
 	Armament@PRIMARY:
 		Name: primary
 		Weapon: FLAK-23-AA-Dual
@@ -624,7 +624,7 @@ MRJ:
 	Armor:
 		Type: Heavy
 	Mobile:
-		Speed: 85
+		Speed: 68
 	RevealsShroud:
 		Range: 7c0
 	Turreted:
@@ -684,7 +684,7 @@ CTNK:
 	Armor:
 		Type: Light
 	Mobile:
-		Speed: 71
+		Speed: 86
 		Locomotor: heavywheeled
 	RevealsShroud:
 		MinRange: 4c0
@@ -761,7 +761,7 @@ STNK:
 	Armor:
 		Type: Light
 	Mobile:
-		Speed: 142
+		Speed: 128
 		Locomotor: heavywheeled
 		PauseOnCondition: !(!empdisable && !notmobile && !being-captured)
 	RevealsShroud:
@@ -833,7 +833,7 @@ TNKD:
 		Type: Heavy
 	Mobile:
 		TurnSpeed: 9
-		Speed: 85
+		Speed: 72
 	RevealsShroud:
 		MinRange: 4c0
 		Range: 6c0
@@ -876,7 +876,7 @@ PRSM:
 	Armor:
 		Type: Heavy
 	Mobile:
-		Speed: 56
+		Speed: 60
 	RevealsShroud:
 		MinRange: 4c0
 		Range: 6c0
@@ -921,7 +921,7 @@ GCAN:
 		Type: Heavy
 	Mobile:
 		TurnSpeed: 8
-		Speed: 85
+		Speed: 72
 	RevealsShroud:
 		MinRange: 4c0
 		Range: 5c0

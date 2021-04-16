@@ -22,7 +22,7 @@ LST:
 		DecorationBounds: 36,36
 	Mobile:
 		Locomotor: lcraft
-		Speed: 100
+		Speed: 128
 		PauseOnCondition: notmobile
 	RevealsShroud:
 		MinRange: 5c0

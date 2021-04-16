@@ -83,7 +83,7 @@ FTRK:
 		Type: Light
 	Mobile:
 		TurnSpeed: 28
-		Speed: 118
+		Speed: 113
 		PauseOnCondition: !(!empdisable && !notmobile && !being-captured)
 	RevealsShroud:
 		MinRange: 4c0
@@ -189,7 +189,7 @@ FTRK.Repair:
 		VoiceSet: EngineerVoice
 	Mobile:
 		TurnSpeed: 28
-		Speed: 110
+		Speed: 113
 	RevealsShroud:
 		Range: 4c0
 	Turreted:
@@ -286,7 +286,7 @@ APC.Soviet:
 	Armor:
 		Type: Heavy
 	Mobile:
-		Speed: 96
+		Speed: 92
 		PauseOnCondition: !(!empdisable && !notmobile && !being-captured)
 	RevealsShroud:
 		MinRange: 4c0
@@ -332,8 +332,6 @@ APC.Soviet:
 		Name: Heavy Tank 1-B
 	Valued:
 		Cost: 850
-	Mobile:
-		Speed: 71
 	Health:
 		HP: 525
 	Armament:
@@ -374,7 +372,7 @@ APC.Soviet:
 	Armor:
 		Type: Heavy
 	Mobile:
-		Speed: 71
+		Speed: 60
 	RevealsShroud:
 		MinRange: 4c0
 		Range: 6c0
@@ -435,7 +433,7 @@ APC.Soviet:
 	Armor:
 		Type: Heavy
 	Mobile:
-		Speed: 56
+		Speed: 43
 		TurnSpeed: 12
 		Locomotor: heavytracked
 	RevealsShroud:
@@ -571,7 +569,7 @@ NRTY:
 	Armor:
 		Type: Heavy
 	Mobile:
-		Speed: 56
+		Speed: 43
 		TurnSpeed: 9
 		Locomotor: superheavytracked
 	RevealsShroud:
@@ -668,7 +666,7 @@ V2RL:
 	Armor:
 		Type: Light
 	Mobile:
-		Speed: 85
+		Speed: 72
 	RevealsShroud:
 		MinRange: 4c0
 		Range: 5c0
@@ -718,7 +716,7 @@ TTNK:
 	Armor:
 		Type: Light
 	Mobile:
-		Speed: 99
+		Speed: 92
 		PauseOnCondition: !(!being-captured)
 	RevealsShroud:
 		MinRange: 5c0
@@ -772,7 +770,7 @@ QTNK:
 	Mobile:
 		RequiresCondition: !madweakness
 		PauseOnCondition: being-captured
-		Speed: 56
+		Speed: 46
 	ChronoshiftableWithSpriteEffect:
 		RequiresCondition: !madweakness && !being-captured
 	RevealsShroud:
@@ -822,7 +820,7 @@ ICBM:
 	Armor:
 		Type: Light
 	Mobile:
-		Speed: 56
+		Speed: 46
 		TurnSpeed: 9
 	RevealsShroud:
 		MinRange: 4c0
@@ -883,7 +881,7 @@ SAML:
 	Tooltip:
 		Name: SAM Launcher
 	Mobile:
-		Speed: 85
+		Speed: 68
 		TurnSpeed: 16
 	Health:
 		HP: 7500
@@ -955,7 +953,7 @@ MWF:
 	Armor:
 		Type: Light
 	Mobile:
-		Speed: 71
+		Speed: 60
 		Locomotor: heavywheeled
 	RevealsShroud:
 		Range: 5c0
@@ -994,7 +992,7 @@ ISU:
 		Type: Heavy
 	Mobile:
 		TurnSpeed: 8
-		Speed: 56
+		Speed: 60
 		Locomotor: heavytracked
 	RevealsShroud:
 		MinRange: 4c0
@@ -1119,7 +1117,7 @@ GTNK:
 	Armor:
 		Type: Heavy
 	Mobile:
-		Speed: 71
+		Speed: 72
 	RevealsShroud:
 		MinRange: 4c0
 		Range: 6c0

@@ -23,7 +23,7 @@ DTNK:
 	Armor:
 		Type: Light
 	Mobile:
-		Speed: 128
+		Speed: 113
 		PauseOnCondition: !(!empdisable && !being-captured)
 	RevealsShroud:
 		MinRange: 4c0

@@ -497,7 +497,7 @@ camera.intelscan:
 	EditorOnlyTooltip:
 		Name: (support power proxy camera)
 	RevealsShroud:
-		Range: 5c0
+		Range: 3c0
 
 SONAR:
 	Inherits: camera.spyplane

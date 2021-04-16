@@ -44,7 +44,7 @@ HARV:
 	Armor:
 		Type: Heavy
 	Mobile:
-		Speed: 85
+		Speed: 72
 		Locomotor: heavywheeled
 	RevealsShroud:
 		Range: 4c0
@@ -115,7 +115,7 @@ MCV:
 	Armor:
 		Type: Light
 	Mobile:
-		Speed: 71
+		Speed: 60
 		Locomotor: heavywheeled
 	RevealsShroud:
 		Range: 4c0
@@ -170,7 +170,7 @@ TRUK:
 	Armor:
 		Type: Light
 	Mobile:
-		Speed: 128
+		Speed: 113
 	RevealsShroud:
 		Range: 4c0
 	DeliversCash:
@@ -228,7 +228,7 @@ DTRK:
 	Armor:
 		Type: Light
 	Mobile:
-		Speed: 85
+		Speed: 72
 	RevealsShroud:
 		Range: 4c0
 	Disguise:
@@ -286,7 +286,7 @@ MNLY:
 	Armor:
 		Type: Heavy
 	Mobile:
-		Speed: 128
+		Speed: 113
 	Targetable:
 		TargetTypes: Ground, Vehicle, Mine, VehicleDisguise
 	RevealsShroud:
@@ -372,7 +372,7 @@ MGG:
 	Armor:
 		Type: Heavy
 	Mobile:
-		Speed: 85
+		Speed: 72
 	WithIdleOverlay@SPINNER:
 		Offset: -299,0,171
 		Sequence: spinner
@@ -416,7 +416,7 @@ MHQ.Start:
 	Armor:
 		Type: Light
 	Mobile:
-		Speed: 85
+		Speed: 68
 	RevealsShroud:
 		MinRange: 6c0
 		Range: 9c0

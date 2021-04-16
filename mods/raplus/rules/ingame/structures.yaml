@@ -354,6 +354,18 @@ TENT:
 		SpawnOffset: -725,640,0
 		ExitCell: 0,2
 		ProductionTypes: Soldier, Infantry, Dog
+	Exit@3:
+		RequiresCondition: !being-captured
+		SpawnOffset: -42,810,0
+		ExitCell: -1,2
+		ProductionTypes: Soldier, Infantry, Dog
+		Priority: 0
+	Exit@4:
+		RequiresCondition: !being-captured
+		SpawnOffset: -725,640,0
+		ExitCell: 2,2
+		ProductionTypes: Soldier, Infantry, Dog
+		Priority: 0
 	Production:
 		Produces: Infantry, Soldier, Dog
 		PauseOnCondition: disabled || build-incomplete
@@ -535,6 +547,18 @@ BARR:
 		SpawnOffset: -725,640,0
 		ExitCell: 0,2
 		ProductionTypes: Soldier, Infantry, Dog
+	Exit@3:
+		RequiresCondition: !being-captured
+		SpawnOffset: -170,810,0
+		ExitCell: -1,2
+		ProductionTypes: Soldier, Infantry, Dog
+		Priority: 0
+	Exit@4:
+		RequiresCondition: !being-captured
+		SpawnOffset: -725,640,0
+		ExitCell: 2,2
+		ProductionTypes: Soldier, Infantry, Dog
+		Priority: 0
 	Production:
 		Produces: Infantry, Soldier, Dog
 		PauseOnCondition: disabled || build-incomplete
@@ -1974,7 +1998,7 @@ ATEK:
 		Description: Intelligence Scan
 		LongDesc: Reveals all Base Buildings and Superweapons,\nbut not Defenses or Tech Buildings on the map.\nLasts for 2.5 minute. Does not reveal new Structures.
 		CameraActor: camera.intelscan
-		TargetActors: fact, powr, powr.turkey, apwr, apwr.turkey, tent, barr, barr.cloner, proc, orep, indp, weap, weap.mini, fix, fix.allies, fix.soviet, dome, dome.allies, dome.soviet, atek, stek, spro, spro.kazakh, afld, afld.ukraine, hpad, syrd, spen, pdox, iron, mslo
+		TargetActors: fact, powr, powr.turkey, apwr, apwr.turkey, tent, barr, barr.cloner, proc, orep, indp, weap, weap.mini, fix, fix.allies, fix.soviet, dome, dome.allies, dome.soviet, atek, stek, spro, spro.kazakh, afld, afld.ukraine, hpad, syrd, spen, pdox, iron, fpwr, fapw, tenf, barf, prof, weaf, fixf, syrf, spef, aflf, hpaf, domf, sprf, atef, stef, pdof, irof, facf
 		LifeTime: 3750
 		LaunchSound: bcmasela.aud
 		EffectImage: dummy
@@ -2681,7 +2705,7 @@ AFLD:
 	ParatroopersPower@ParaMines:
 		PauseOnCondition: disabled || lowpower
 		OrderName: SovietParaMines
-		Prerequisites: aircraft.soviet, fix, player.belarus, ~techlevel.unrestricted
+		Prerequisites: aircraft.soviet, fix, player.belarus, ~!aitoodumb, ~techlevel.unrestricted
 		Icon: paramines
 		ChargeInterval: 7500
 		Description: Paramines
@@ -3350,6 +3374,8 @@ SYRD:
 	SupportPowerChargeBar:
 	GpsDot:
 		String: Naval
+	Targetable@sonarhelper:
+		TargetTypes: WaterProduction
 
 SPEN:
 	Inherits: ^Building
@@ -3568,6 +3594,8 @@ SPEN:
 	SupportPowerChargeBar:
 	GpsDot:
 		String: Naval
+	Targetable@sonarhelper:
+		TargetTypes: WaterProduction
 
 ANYPOWER:
 	AlwaysVisible:

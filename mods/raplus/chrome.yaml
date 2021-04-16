@@ -376,10 +376,10 @@ strategic:
 flags:
 	Inherits: ^Flags
 	Regions:
-		RandomCountry: 30, 180, 30, 15
+		Random: 30, 180, 30, 15
 		RandomAllies: 0, 165, 30, 15
 		RandomSoviet: 30, 165, 30, 15
-		Random: 0, 180, 30, 15
+		RandomSide: 0, 180, 30, 15
 		spectator: 0, 195, 30, 15
 
 		allies: 0, 150, 30, 15

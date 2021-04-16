@@ -248,6 +248,21 @@ Player:
 					Attractiveness: 1
 					TargetMetric: None
 					CheckRadius: 5c0
+			UseSonarPulse:
+				OrderName: SonarPulse
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: SonarTarget
+					Attractiveness: 2
+					TargetMetric: None
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Enemy
+					Types: WaterProduction
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 10c0
 	BaseBuilderBotModuleCA@allies:
 		RequiresCondition: enable-ai-player && player.allies
 		MinimumExcessPower: 60

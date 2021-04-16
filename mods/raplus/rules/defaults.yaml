@@ -461,7 +461,7 @@
 	RevealsShroud:
 		Range: 4c0
 	Mobile:
-		Speed: 56
+		Speed: 54
 		AlwaysTurnInPlace: true
 		Locomotor: foot
 	SelectionDecorations:
@@ -964,6 +964,9 @@
 		String: Submarine
 	Wanders@NOIDLENAVY:
 		RequiresCondition: (botowner && crossing-ford) ||  (botowner && under-bridge)
+	Targetable@sonarhelper:
+		TargetTypes: SonarTarget
+		RequiresCondition: !underwater
 
 ^NeutralPlane:
 	Inherits@1: ^ExistsInWorld

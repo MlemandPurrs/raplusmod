@@ -100,7 +100,7 @@ MSUB:
 		Type: Light
 	Mobile:
 		TurnSpeed: 12
-		Speed: 46
+		Speed: 48
 	Armament@PRIMARY:
 		Weapon: SubMissile.2shot
 		LocalOffset: 100,-171,46
@@ -162,7 +162,7 @@ SSAM:
 		HP: 250
 	Mobile:
 		TurnSpeed: 16
-		Speed: 68
+		Speed: 56
 	Armament@PRIMARY:
 		Weapon: SubMissileAA.cluster
 		LocalOffset: 0,0,101
@@ -207,7 +207,7 @@ NSUB:
 		Type: Light
 	Mobile:
 		TurnSpeed: 12
-		Speed: 46
+		Speed: 48
 	Armament@AS:
 		Name: primary
 		Weapon: TorpNuke
@@ -343,7 +343,7 @@ CARR:
 		Type: Heavy
 	Mobile:
 		TurnSpeed: 255
-		Speed: 82
+		Speed: 56
 	RevealsShroud:
 		MinRange: 5c0
 		Range: 6c0
@@ -509,7 +509,7 @@ MGNM:
 		Type: Heavy
 	Mobile:
 		TurnSpeed: 20
-		Speed: 82
+		Speed: 56
 	RevealsShroud:
 		Range: 4c0
 	Explodes@UNITEXPLODES:
@@ -518,7 +518,7 @@ MGNM:
 	Armament:
 		Weapon: SeaMineTargeting
 	AttackLeap:
-		Speed: 142
+		Speed: 92
 		Voice: Action
 		PauseOnCondition: attacking
 	Selectable:
@@ -579,7 +579,7 @@ SSML:
 		Type: Light
 	Mobile:
 		TurnSpeed: 12
-		Speed: 46
+		Speed: 48
 	Turreted:
 		TurnSpeed: 255
 		Offset: 525,0,80

@@ -75,7 +75,7 @@ E2:
 	Armor:
 		Type: Kevlar
 	Mobile:
-		Speed: 71
+		Speed: 68
 	Armament@PRIMARY:
 		Weapon: Grenade
 		LocalOffset: 0,0,555
@@ -212,7 +212,7 @@ DOG:
 	Health:
 		HP: 25
 	Mobile:
-		Speed: 99
+		Speed: 100
 		Voice: Move
 		PauseOnCondition: attack-cooldown || eating
 	Guard:
