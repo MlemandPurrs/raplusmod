@@ -6,7 +6,7 @@ Maverick:
 	Report: missile7.aud
 	Burst: 2
 	BurstDelays: 7
-	Projectile: Missile
+	Projectile: MissileCA
 		Speed: 256
 		Inaccuracy: 316
 		CruiseAltitude: 2c0
@@ -27,7 +27,7 @@ MaverickAA:
 	BurstDelays: 7
 	Range: 11c0
 	MinRange: 3c0
-	Projectile: Missile
+	Projectile: MissileCA
 		Speed: 304
 		Inaccuracy: 512
 		RangeLimit: 14c410
@@ -47,8 +47,9 @@ MaverickAA:
 
 Dragon:
 	Inherits: ^AntiGroundMissile
-	Projectile: Missile
+	Projectile: MissileCA
 		TrailImage: smokey
+		Blockable: true
 
 HellfireAG:
 	Inherits: ^AntiGroundMissile
@@ -56,7 +57,7 @@ HellfireAG:
 	MinRange: 1c256
 	Burst: 2
 	BurstDelays: 7
-	Projectile: Missile
+	Projectile: MissileCA
 		Speed: 256
 		HorizontalRateOfTurn: 40
 		RangeLimit: 8c512
@@ -75,7 +76,7 @@ HellfireAA:
 	Range: 4c0
 	Burst: 2
 	BurstDelays: 10
-	Projectile: Missile
+	Projectile: MissileCA
 		Speed: 492
 		Inaccuracy: 128
 		HorizontalRateOfTurn: 100
@@ -96,7 +97,7 @@ MammothTusk:
 	Range: 4c512
 	Burst: 2
 	ValidTargets: Air, Infantry
-	Projectile: Missile
+	Projectile: MissileCA
 		Speed: 341
 		HorizontalRateOfTurn: 60
 		RangeLimit: 6c256
@@ -122,7 +123,7 @@ Nike:
 	ReloadDelay: 15
 	Range: 7c512
 	Report: missile1.aud
-	Projectile: Missile
+	Projectile: MissileCA
 		Arm: 3
 		Inaccuracy: 0
 		Image: MISSILE
@@ -141,7 +142,7 @@ Nike:
 RedEye:
 	Inherits: Nike
 	ReloadDelay: 50
-	Projectile: Missile
+	Projectile: MissileCA
 		Inaccuracy: 0
 		HorizontalRateOfTurn: 80
 		Speed: 298
@@ -158,7 +159,7 @@ Stinger:
 	Burst: 2
 	BurstDelays: 0
 	InvalidTargets: Underwater
-	Projectile: Missile
+	Projectile: MissileCA
 		Arm: 3
 		Inaccuracy: 0
 		HorizontalRateOfTurn: 80
@@ -177,7 +178,7 @@ Stinger:
 StingerAA:
 	Inherits: Stinger
 	ValidTargets: Air
-	Projectile: Missile
+	Projectile: MissileCA
 		Speed: 255
 		CloseEnough: 298
 	Warhead@3Eff: CreateEffect
@@ -190,7 +191,7 @@ APTusk:
 	Burst: 2
 	BurstDelays: 7
 	Range: 6c0
-	Projectile: Missile
+	Projectile: MissileCA
 		Speed: 298
 		TrailImage: smokey
 		HorizontalRateOfTurn: 40
@@ -210,7 +211,7 @@ TorpTube:
 	ValidTargets: Water, Underwater, Bridge
 	Burst: 2
 	BurstDelays: 20
-	Projectile: Missile
+	Projectile: MissileCA
 		Image: torpedo
 		Arm: 3
 		Speed: 85
@@ -362,7 +363,7 @@ Patriot:
 	MinRange: 2c0
 	Report: missile1.aud
 	ValidTargets: Air
-	Projectile: Missile
+	Projectile: MissileCA
 		Image: PATRIOT
 		HorizontalRateOfTurn: 42
 		Speed: 300
@@ -381,7 +382,7 @@ Patriot:
 
 Gainful:
 	Inherits: Patriot
-	Projectile: Missile
+	Projectile: MissileCA
 		Image: hjm
 		HorizontalRateOfTurn: 80
 		ContrailLength: 6

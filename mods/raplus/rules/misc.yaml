@@ -18,32 +18,26 @@ MINN:
 		Weapon: MiniNuke
 	Tooltip:
 		Name: Nuclear Mine
-	#	this wouldnt stack...
-	#	ProvidesPrerequisite@NukeMineLimiter:
-	#	Prerequisite: hasnukemine
-	#	RequiresCondition:	!preventdetonate
 	#	ExternalCondition@PreventNewDetonate:
 	#	Condition: notthisone
-	#	GrantTimedCondition@PreventNewDetonate:
-	#	Condition: preventdetonate
-	#	Duration: 251
-	#	PauseOnCondition: triggered
-	#	GrantConditionOnPrerequisite@NukeMineLimiter:
-	#	Condition: triggered
-	#	Prerequisites: enoughnukemine
-	#	KillsSelf@DETONATE:
-	#	RequiresCondition: triggered && !preventdetonate
-	#	Delay: 250
-	#	WithIdleOverlay@DETONATE:
-	#	Sequence: active
-	#	RequiresCondition: triggered && !preventdetonate
-	#	AmbientSound@DETONATE:
-	#	SoundFiles: madchrg2.aud
-	#	Interval: 251
-	#	RequiresCondition: triggered && !preventdetonate
-	#	the mine will have timed life of 250 x 2
-	#	ProvidesPrerequisite@unitname:
-	#	RequiresCondition: !preventdetonate
+	GrantTimedCondition@PreventNewDetonate:
+		Condition: preventdetonate
+		Duration: 251
+	KillsSelf@DETONATE:
+		RequiresCondition: triggered && !preventdetonate
+		Delay: 250
+	WithIdleOverlay@DETONATE:
+		Sequence: active
+		RequiresCondition: triggered && !preventdetonate
+	AmbientSound@DETONATE:
+		SoundFiles: madchrg2.aud
+		Interval: 251
+		RequiresCondition: triggered && !preventdetonate
+	GrantExternalConditionToOwner@NukeMineLimiter:
+		Condition: hasnukemine
+	GrantConditionOnPrerequisite@NukeMineLimiter:
+		Condition: triggered
+		Prerequisites: enoughnukemine
 
 CRATE:
 	Inherits: ^Crate
@@ -731,7 +725,7 @@ tech.stolen:
 	ProvidesPrerequisite:
 	Interactable:
 	Tooltip:
-		Name: enemy Tech Center infiltrated
+		Name: enemy Tech Center captured
 	Buildable:
 		Description: Tech Unit
 

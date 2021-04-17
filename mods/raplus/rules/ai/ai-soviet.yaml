@@ -339,9 +339,9 @@ Player:
 			hsam.karelia: 1
 			spro: 1
 			spro.kazakh: 1
-	CaptureManagerBotModule@thf:
+	CaptureManagerBotModule@sab:
 		RequiresCondition: enable-ai-player && player.soviet
-		CapturingActorTypes: thf
+		CapturingActorTypes: sab
 		CapturableActorTypes: harv,harv.crate,harv.soviet,harv.soviet.crate,mcv,v2rl,v2rl.turkmen,arty,arty.france,4tnk,4tnk.ukraine,4tnk.flame,nrty,ttnk,ctnk,mrj,5tnk,prsm
 		CheckCaptureTargetsForVisibility: true
 		MaximumCaptureTargetOptions: 15
@@ -351,7 +351,7 @@ Player:
 		SquadSizeRandomBonus: 6
 		RushInterval: 400
 		AttackScanRadius: 16
-		ExcludeFromSquadsTypes: e6, thf, dog, dog.moldova, ftrk.scout, harv.soviet, harv.soviet.crate, mcv, mcv.ai, ss, ss.ukraine, msub, msub.karelia, ssam, fsub, nsub, ssml, yak.ai, yak.belarus.ai, mig, mig.kazakh, hind, hind.afghan, cmig
+		ExcludeFromSquadsTypes: e6, sab, dog, dog.moldova, ftrk.scout, harv.soviet, harv.soviet.crate, mcv, mcv.ai, ss, ss.ukraine, msub, msub.karelia, ssam, fsub, nsub, ssml, yak.ai, yak.belarus.ai, mig, mig.kazakh, hind, hind.afghan, cmig
 		ConstructionYardTypes: fact
 		DangerScanRadius: 1
 		IgnoredEnemyTargetTypes: IgnoreThis
@@ -361,7 +361,7 @@ Player:
 		SquadSizeRandomBonus: 4
 		RushInterval: 400
 		AttackScanRadius: 24
-		ExcludeFromSquadsTypes: harv.soviet, harv.soviet.crate, mcv, mcv.ai, dog, dog.moldova, e1, e2, e3, e3.china, e4, e5, e6, thf, volk, volk.uzbek, rpg, deso, shok, ftrk, ftrk.belarus, ftrk.scout, ftrk.flame, apc.soviet, apc.soviet.loaded, apc.karelia, apc.moldova, 3tnk.1b, 3tnk.1b.russia, 3tnk.1b.ukraine, 3tnk.1b.belarus, 3tnk.1b.kazakh, 3tnk.1b.turkmen, 3tnk.1b.afghan, 3tnk, 3tnk.russia, 3tnk.ukraine, 3tnk.belarus, 3tnk.kazakh, 3tnk.turkmen, 3tnk.afghan, 4tnk, 4tnk.ukraine, 4tnk.flame, 5tnk, icbm, v2rl, v2rl.turkmen, ttnk, yak.ai, yak.belarus.ai, mig, mig.kazakh, hind, hind.afghan, cmig
+		ExcludeFromSquadsTypes: harv.soviet, harv.soviet.crate, mcv, mcv.ai, dog, dog.moldova, e1, e2, e3, e3.china, e4, e5, e6, sab, volk, volk.uzbek, rpg, deso, shok, ftrk, ftrk.belarus, ftrk.scout, ftrk.flame, apc.soviet, apc.soviet.loaded, apc.karelia, apc.moldova, 3tnk.1b, 3tnk.1b.russia, 3tnk.1b.ukraine, 3tnk.1b.belarus, 3tnk.1b.kazakh, 3tnk.1b.turkmen, 3tnk.1b.afghan, 3tnk, 3tnk.russia, 3tnk.ukraine, 3tnk.belarus, 3tnk.kazakh, 3tnk.turkmen, 3tnk.afghan, 4tnk, 4tnk.ukraine, 4tnk.flame, 5tnk, icbm, v2rl, v2rl.turkmen, ttnk, yak.ai, yak.belarus.ai, mig, mig.kazakh, hind, hind.afghan, cmig
 		NavalUnitsTypes: ss,ss.ukraine,msub,msub.karelia,ssam,fsub,nsub,ssml
 		ConstructionYardTypes: fact
 		NavalProductionTypes: spen
@@ -372,7 +372,7 @@ Player:
 		SquadSizeRandomBonus: 2
 		RushInterval: 400
 		AttackScanRadius: 48
-		ExcludeFromSquadsTypes: harv.soviet, harv.soviet.crate, mcv, mcv.ai, dog, dog.moldova, e1, e2, e3, e3.china, e4, e5, e6, thf, volk, volk.uzbek, rpg, deso, shok, ftrk, ftrk.belarus, ftrk.scout, ftrk.flame, apc.soviet, apc.soviet.loaded, apc.karelia, apc.moldova, 3tnk.1b, 3tnk.1b.russia, 3tnk.1b.ukraine, 3tnk.1b.belarus, 3tnk.1b.kazakh, 3tnk.1b.turkmen, 3tnk.1b.afghan, 3tnk, 3tnk.russia, 3tnk.ukraine, 3tnk.belarus, 3tnk.kazakh, 3tnk.turkmen, 3tnk.afghan, 4tnk, 4tnk.ukraine, 4tnk.flame, 5tnk, icbm, v2rl, v2rl.turkmen, ttnk, ss, ss.ukraine, msub, msub.karelia, ssam, fsub, nsub, ssml
+		ExcludeFromSquadsTypes: harv.soviet, harv.soviet.crate, mcv, mcv.ai, dog, dog.moldova, e1, e2, e3, e3.china, e4, e5, e6, sab, volk, volk.uzbek, rpg, deso, shok, ftrk, ftrk.belarus, ftrk.scout, ftrk.flame, apc.soviet, apc.soviet.loaded, apc.karelia, apc.moldova, 3tnk.1b, 3tnk.1b.russia, 3tnk.1b.ukraine, 3tnk.1b.belarus, 3tnk.1b.kazakh, 3tnk.1b.turkmen, 3tnk.1b.afghan, 3tnk, 3tnk.russia, 3tnk.ukraine, 3tnk.belarus, 3tnk.kazakh, 3tnk.turkmen, 3tnk.afghan, 4tnk, 4tnk.ukraine, 4tnk.flame, 5tnk, icbm, v2rl, v2rl.turkmen, ttnk, ss, ss.ukraine, msub, msub.karelia, ssam, fsub, nsub, ssml
 		ConstructionYardTypes: fact
 		IgnoredEnemyTargetTypes: Submarine, IgnoreThis
 	UnitBuilderBotModule@soviet:
@@ -423,7 +423,7 @@ Player:
 			volk: 1
 			volk.uzbek: 1
 			e6: 2
-			thf: 2
+			sab: 2
 			mcv.ai: 1
 			icbm: 1
 			saml: 5
@@ -438,7 +438,7 @@ Player:
 			volk: 1
 			volk.uzbek: 1
 			e6: 2
-			thf: 2
+			sab: 2
 			mcv.ai: 1
 			deso: 2
 			rpg: 2

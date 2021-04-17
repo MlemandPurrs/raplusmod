@@ -54,6 +54,18 @@
 			800: rank-veteran
 			1200: rank-veteran
 		LevelUpImage: crate-effects
+	GivesExperienceMultiplier@RANK-1:
+		Modifier: 110
+		RequiresCondition: rank-veteran == 1
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 120
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-3:
+		Modifier: 130
+		RequiresCondition: rank-veteran == 3
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 140
+		RequiresCondition: rank-veteran == 4
 	GrantCondition@RANK-ELITE:
 		RequiresCondition: rank-veteran >= 4
 		Condition: rank-elite
@@ -1055,7 +1067,9 @@
 		Payload: 0
 		Type: AircraftRefund
 	Aircraft:
-		TakeOffOnCreation: False
+		IdleBehavior: ReturnToBase
+		TakeOffOnResupply: false
+		TakeOffOnCreation: false
 
 ^Helicopter:
 	Inherits: ^Plane

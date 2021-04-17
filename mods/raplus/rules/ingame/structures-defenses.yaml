@@ -268,6 +268,7 @@ PBOX:
 		LocalOffset: 448,0,0
 		PauseOnCondition: build-incomplete
 	AttackTurreted:
+		PauseOnCondition: build-incomplete
 	WithMuzzleOverlay:
 	RenderRangeCircle:
 	Power:
@@ -295,7 +296,7 @@ HBOX:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 5
-		Prerequisites: barr, dome, ~structures.allies, ~techlevel.medium
+		Prerequisites: tent, dome, ~structures.allies, ~techlevel.medium
 		Description: Camouflaged static defense\nwith a Sniper inside.\nCan detect cloaked units.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft
 	Tooltip:
 		Name: Camo Pillbox
@@ -334,6 +335,7 @@ HBOX:
 		LocalOffset: 448,0,0
 		PauseOnCondition: build-incomplete
 	AttackTurreted:
+		PauseOnCondition: build-incomplete
 	WithMuzzleOverlay:
 	RenderRangeCircle:
 	Power:
@@ -347,6 +349,11 @@ FBOX:
 	Inherits: PBOX
 	-Armament:
 	-SpawnActorOnDeath:
+	-AutoTarget:
+	-AutoTargetPriority@DEFAULT:
+	-AutoTargetPriority@LOWER:
+	-AutoTargetPriority@ATTACKANYTHING:
+	Inherits@AUTOTARGET: ^AutoTargetGroundAntiInfandAirDefense
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 2
@@ -361,16 +368,20 @@ FBOX:
 		TurnSpeed: 24
 		Offset: 300,0,-20
 		InitialFacing: 326
-	Armament@AA:
-		Weapon: FLAK-23-AA-FBOX
-		Recoil: 42
-		LocalOffset: 512,0,192
-		MuzzleSequence: fbox-muzzle
 	Armament@AG:
+		Name: primary
 		Weapon: FLAK-23-AG
 		Recoil: 42
 		LocalOffset: 512,0,192
 		MuzzleSequence: fbox-muzzle
+	Armament@AA:
+		Name: secondary
+		Weapon: FLAK-23-AA-FBOX
+		Recoil: 42
+		LocalOffset: 512,0,192
+		MuzzleSequence: fbox-muzzle
+	AttackTurreted:
+		Armaments: primary, secondary
 	WithSpriteTurret:
 		Sequence: fbox-turret
 		RequiresCondition: !build-incomplete
@@ -1444,7 +1455,7 @@ SPMST:
 	DetectCloaked:
 		Range: 3c768
 		RequiresCondition: !build-incomplete && !disabled
-	RenderDetectionCircle:	
+	RenderDetectionCircle:
 	Disguise:
 		DisguisedCondition: disguised
 		Voice: none
@@ -1496,10 +1507,11 @@ SPMST:
 		GenericName: Tree (Burnt)
 		RequiresCondition: isatree01husk && isatree02husk && isatree03husk && isatree05husk && isatree06husk && isatree07husk && isatree08husk && isatree10husk && isatree11husk && isatree12husk && isatree13husk && isatree14husk && isatree15husk && isatree16husk && isatree17husk
 	Targetable:
-		TargetTypes: Ground, Structure
+		TargetTypes: Ground, Structure, TreeDisguise
 		RequiresCondition: !disguised
 	Targetable@disguised:
-		TargetTypes: Tree
+		TargetTypes: Ground, Tree, TreeDisguise
+		RequiresForceFire: true
 		RequiresCondition: disguised
 	-WithSpriteBody:
 	WithSpriteBody@Default:
@@ -1635,16 +1647,19 @@ SPMST:
 		Range: 8c0
 		ValidRelationships: Enemy, Neutral
 		Condition: jammed
-		RequiresCondition: !disguised && holland.player
+		RequiresCondition: !lowpower && holland.player
 	WithRangeCircle@JAMMER:
 		Type: jammer
 		Range: 8c0
 		Color: 0000FF80
-		RequiresCondition: !disguised && holland.player
+		RequiresCondition: !lowpower && holland.player
 	GrantConditionOnFaction@NLBonus:
 		Condition: holland.player
-		Factions: hollland
+		Factions: holland
 		ResetOnOwnerChange: True
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
 
 SPMST.summon:
 	Inherits: ^SummonBase

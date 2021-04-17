@@ -727,6 +727,18 @@ MIG:
 		LocalOffset: 0,-640,0, 0,640,0
 		Weapon: MaverickAA
 		PauseOnCondition: !switch-ammo || !ammo
+	#	causes to become practically Invincible vs. AA Rockets
+	#	Armament@TERTIARY:
+	#	Name: tertiary
+	#	Weapon: PointLaser
+	#	LocalOffset: -480,0,-90
+	#	PauseOnCondition: empdisable || !flareammo
+	#	ForceTargetRelationships: Enemy
+	#	PointDefense:
+	#	Armament: tertiary
+	#	PointDefenseTypes: AAMissile
+	#	RequiresCondition: airborne
+	#	ValidRelationships: Enemy
 	GrantConditionOnDeploy@PURPOSESWITCH:
 		DeployedCondition: switch-ammo
 		PauseOnCondition: !onground
@@ -751,11 +763,17 @@ MIG:
 		Ammo: 8
 		AmmoCondition: ammo
 		Armaments: primary, secondary
+	#	AmmoPool@2:
+	#	Name: flareammo
+	#	Ammo: 4
+	#	AmmoCondition: flareammo
+	#	Armaments: tertiary
 	WithAmmoPipsDecoration:
 		Position: BottomLeft
 		Margin: 4, 3
 		PipCount: 4
 		RequiresSelection: true
+		AmmoPools: migammo
 	Rearmable:
 		AmmoPools: migammo
 		RearmActors: afld, afld.ukraine, acar.deployed

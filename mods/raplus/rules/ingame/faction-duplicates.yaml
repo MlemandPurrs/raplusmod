@@ -433,28 +433,6 @@ TORN.Sweden:
 		OverrideActor: torn
 	-MapEditorData:
 
-THF.Spain:
-	Inherits: THF
-	-CaptureManager:
-	-Captures:
-	-Captures@SABOTAGE:
-	-Cloak:
-	-GrantConditionOnDamageState@UNCLOAK:
-	Buildable:
-		Queue: Infantry
-		BuildAtProductionType: Soldier
-		BuildPaletteOrder: 998
-		Prerequisites: ~disabled
-		Description: Can steal Credits out of Refineries.\n  Unarmed
-		Icon: vicon
-	Valued:
-		Cost: 475
-	Tooltip:
-		Name: Thief
-	RenderSprites:
-		Image: THF
-	-MapEditorData:
-
 1TNK.Spain:
 	Inherits: 1TNK
 	Buildable:

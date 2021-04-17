@@ -1,0 +1,28 @@
+Description: Agent of the Intelligence Service.\n  Special Abilities:\nCan Disguise as enemy Infantry. Loses disguise on Attacking.\nCan Steal enemy Vehicles, but only when not Disguised.\nCan Enter enemy Structures, performing different functions:\n  - Production: Rank bonus for newly produced units.\n  - Refineries: Steals 50% of stored Credits.\n  - Powerplants: Disables them causing Power outage.\n  - Radar Dome: Enemy mapview gets Shrouded\n  - Tech Center: Unlocks Battle Fortress unit.\n  - Superweapons: Reset preperation timer of weapon.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+
+Description: Agent of the Intelligence Service.
+\n  Special Abilities:
+\nCan Disguise as enemy Infantry. Loses disguise on Attacking.
+\nCan Steal enemy Vehicles, but only when not Disguised.
+\nCan Enter enemy Structures, performing different functions:
+\n  - Production: Rank bonus for newly produced units.
+\n  - Refineries: Steals 50% of stored Credits.
+\n  - Powerplants: Disables them causing Power outage.
+\n  - Radar Dome: Enemy mapview gets Shrouded.
+\n  - Tech Center: Unlocks Battle Fortress unit.
+\n  - Superweapons: Reset preperation timer of weapon.
+\n  Strong vs Infantry
+\n  Weak vs Vehicles, Aircraft
+
+Description: Field operative of the Union.
+\n  Special Abilities:
+\nCan be deployed to turn Invisible for a limited time.
+\nCan Steal enemy Vehicles, even while Invisible.
+\nCan Enter enemy Structures, performing different functions:
+\n  - Production: Disables the structure for one minute.
+\n  - Refineries: Steals 50% of stored Credits.
+\n  - Powerplants: Disables them causing Power outage.
+\n  - Radar Dome: Enemy mapview gets Shrouded.
+\n  - Tech Center: Unlocks Behemoth Tank unit.
+\n  - Superweapons: Reset preperation timer of weapon.
+\n  Unarmed

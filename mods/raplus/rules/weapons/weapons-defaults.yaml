@@ -199,7 +199,7 @@
 	Range: 5c0
 	MinRange: 0c512
 	Report: missile6.aud
-	Projectile: Missile
+	Projectile: MissileCA
 		Speed: 213
 		Arm: 2
 		Blockable: false
@@ -209,6 +209,7 @@
 		Shadow: True
 		HorizontalRateOfTurn: 20
 		RangeLimit: 6c0
+		PointDefenseType: AAMissile
 	Warhead@1Dam: SpreadDamage
 		Spread: 128
 		Damage: 50
@@ -236,17 +237,55 @@
 		InvalidTargets: Ship, Structure, Bridge
 
 ^AntiAirMissile:
-	Inherits: ^AntiGroundMissile
+	ReloadDelay: 50
+	Range: 5c0
+	MinRange: 0c512
 	ValidTargets: Air
+	Report: missile6.aud
+	Projectile: MissileCA
+		Speed: 213
+		Arm: 2
+		Blockable: false
+		ContrailLength: 8
+		Inaccuracy: 128
+		Image: DRAGON
+		Shadow: True
+		HorizontalRateOfTurn: 20
+		RangeLimit: 6c0
+		PointDefenseType: AAMissile
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 50
+		ValidTargets: Ground, Water, Air
+		Versus:
+			None: 10
+			Kevlar: 20
+			Flak: 10
+			Wood: 75
+			Light: 35
+			Heavy: 100
+			Concrete: 50
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees
 	Warhead@3Eff: CreateEffect
+		Explosions: med_explosion
+		ImpactSounds: kaboom25.aud
 		ImpactActors: false
+		ValidTargets: Ground, Air, Ship, Trees
+	Warhead@4EffWater: CreateEffect
+		Explosions: med_splash
+		ImpactSounds: splash9.aud
+		ValidTargets: Water, Underwater
+		InvalidTargets: Ship, Structure, Bridge
 
 ^SubMissileDefault:
 	Inherits: ^AntiGroundMissile
 	ReloadDelay: 300
 	Range: 8c0
 	Burst: 2
-	Projectile: Missile
+	Projectile: MissileCA
 		Speed: 234
 		Inaccuracy: 0c614
 		HorizontalRateOfTurn: 60
@@ -254,6 +293,7 @@
 		Image: MISSILE
 		TrailImage: smokey
 		ContrailLength: 30
+		PointDefenseType: AAMissile
 	Warhead@1Dam: SpreadDamage
 		Spread: 426
 		Damage: 25

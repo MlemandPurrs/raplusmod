@@ -325,7 +325,7 @@ MNLY.Nuke:
 		Queue: Vehicle
 		BuildPaletteOrder: 14
 		Prerequisites: ~disabled
-		#	Description: Carries and lays one Nuclear Mine.\nThere can be only one Nuclear Mine,\nthe Last will Detonate in 15sec in case of multiple.\nCan detect mines.\n  Unarmed
+		#	Description: Carries and lays one Nuclear Mine.\nThere can be only one Nuclear Mine,\nthe Last will Detonate in 10sec in case of multiple.\nCan detect mines.\n  Unarmed
 		Description: Carries and lays one Nuclear Mine.\nMaximum one can be built.\nCan detect mines.\n  Unarmed
 	Valued:
 		Cost: 2400
@@ -350,6 +350,7 @@ MNLY.Nuke:
 		EmptyWeapon: MiniNuke
 		DamageSource: Killer
 		RequiresCondition: ammo
+	#	hmm, it simply works, dont ask...
 	#	ProximityExternalCondition:
 	#	Condition: notthisone
 	#	Range: 1c0

@@ -1128,7 +1128,7 @@ GTNK:
 		TurnSpeed: 28
 	Armament@AG:
 		Name: primary
-		Weapon: Chaingun
+		Weapon: Chaingun.Ground
 		LocalOffset: 320,140,160
 		MuzzleSequence: muzzle-mg
 	Armament@AA:

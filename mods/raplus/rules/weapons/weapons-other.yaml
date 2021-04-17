@@ -469,8 +469,8 @@ BombingRun.dc:
 
 PrismLaser:
 	ValidTargets: Ground, Water
-	ReloadDelay: 50
-	Range: 8c512
+	ReloadDelay: 58
+	Range: 7c512
 	Report: prisfire.aud
 	Projectile: LaserZap
 		Width: 35
@@ -593,15 +593,15 @@ RadBeamWeapon:
 			Kevlar: 75
 			Flak: 75
 			Light: 50
-			Heavy: 30
-			Wood: 15
-			Concrete: 15
+			Heavy: 80
+			Wood: 30
+			Concrete: 30
 		DamageTypes: Prone100Percent, FireDeath, Incendiary
-	Warhead@Fire: GrantExternalCondition
-		Range: 1c256
-		Duration: 67
-		Condition: onfire
-		ValidTargets: Structure
+	#	Warhead@Fire: GrantExternalCondition
+	#	Range: 1c256
+	#	Duration: 67
+	#	Condition: onfire
+	#	ValidTargets: Structure
 	#	this crashes the game...
 	#	Warhead@Chem: GrantExternalCondition
 	#	Range: 0c768
@@ -847,3 +847,30 @@ DummyBomb:
 			Wood: 0
 			Concrete: 0
 		DamageTypes: ExplosionDeath
+
+PointLaser:
+	ReloadDelay: 100
+	ValidTargets: AAMissile
+	#	InvalidTargets: Infantry, Vehicle, Structure, Wall
+	Range: 0c768
+	Report: vpalwe2d.aud
+	Projectile: LaserZap
+		Width: 30
+		Duration: 3
+		Color: 03f0fc
+		ZOffset: 2047
+		SecondaryBeam: true
+		SecondaryBeamWidth: 50
+		SecondaryBeamZOffset: 2047
+		SecondaryBeamColor: 03fcfc30
+		Blockable: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 42
+		Damage: 1
+		DamageTypes: DefaultDeath
+		Versus:
+			None: 250
+			Light: 100
+			Wood: 60
+			Heavy: 100
+			Concrete: 90

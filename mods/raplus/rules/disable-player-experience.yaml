@@ -21,6 +21,10 @@ MECH:
 THF:
 	Captures:
 		PlayerExperience: 0
+
+SAB:
+	Captures:
+		PlayerExperience: 0
 	Infiltrates:
 		PlayerExperience: 0
 

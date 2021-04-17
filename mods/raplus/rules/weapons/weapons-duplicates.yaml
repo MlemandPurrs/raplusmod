@@ -41,6 +41,19 @@ Vulcan.bomber:
 			Light: 100
 			Heavy: 50
 
+ChainGun.Ground:
+	Inherits: ChainGun
+	Projectile: InstantHit
+		Blockable: true
+
+ChainGun.5tnk:
+	Inherits: ChainGun
+	Projectile: InstantHit
+		Blockable: true
+	Burst: 3
+	BurstDelays: 5
+	ReloadDelay: 40
+
 25mm.britain:
 	Inherits: 25mm
 	Warhead@1Dam: SpreadDamage
@@ -198,7 +211,7 @@ HellfireAA.rapid:
 	Burst: 2
 	BurstDelays: 7
 	Range: 6c0
-	Projectile: Missile
+	Projectile: MissileCA
 		RangeLimit: 7c0
 
 HellfireAG.airstrike:
@@ -206,7 +219,7 @@ HellfireAG.airstrike:
 	Burst: 8
 	BurstDelays: 0
 	Range: 7c0
-	Projectile: Missile
+	Projectile: MissileCA
 		Inaccuracy: 768
 
 Nike.6shot:
@@ -221,7 +234,7 @@ RedEye.2shot:
 	BurstDelays: 7
 	Range: 11c0	
 	MinRange: 3c0
-	Projectile: Missile
+	Projectile: MissileCA
 		Speed: 304
 		Inaccuracy: 512
 		RangeLimit: 14c410
@@ -229,6 +242,8 @@ RedEye.2shot:
 APTusk.stnk:
 	Inherits: APTusk
 	ReloadDelay: 96
+	Projectile: MissileCA
+		Blockable: true
 	Warhead@1Dam: SpreadDamage
 		Damage: 75
 
@@ -270,6 +285,7 @@ Stinger.continous:
 	-Burst:
 
 FLAK-23-AA-FBOX:
+	Inherits: FLAK-23-AA
 	Range: 6c0
 
 FLAK-23-AA-Dual:

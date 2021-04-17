@@ -223,7 +223,7 @@ RAPC:
 	Buildable:
 		Queue: Vehicle, MWFVehicle
 		BuildPaletteOrder: 4
-		Prerequisites: proc, ~vehicles.allies, ~!player.england, ~!player.france, ~!player.germany, ~!player.italy, ~!player.sweden, ~!player.holland, ~techlevel.low
+		Prerequisites: proc, ~vehicles.allies, ~!player.england, ~!player.france, ~!player.germany, ~!player.spain, ~!player.italy, ~!player.sweden, ~!player.holland, ~techlevel.low
 		Description: Fast tank, good for scouting.\n  Strong vs Light armor\n  Weak vs Infantry, Tanks, Aircraft
 	Valued:
 		Cost: 600
@@ -390,6 +390,7 @@ RAPC:
 		IsPlayerPalette: true
 		UncloakOn: Attack, Dock, Damage, Heal
 		PauseOnCondition: cloak-force-disabled && empdisable
+		RequiresCondition: !harambe
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
@@ -399,6 +400,11 @@ RAPC:
 		Actor: 2TNK.Stealth.Husk
 	RenderSprites:
 		Image: 2tnks
+	#	some bogus condition to debug the cloak, 
+	#	why is it just not working ?!? 
+	GrantConditionOnMovement:
+		Condition: harambe
+		ValidMovementTypes: None
 
 ARTY:
 	Inherits: ^TrackedVehicle
@@ -973,9 +979,9 @@ BATF:
 		FacingTolerance: 24
 		PauseOnCondition: empdisable
 	Armament:
-		Weapon: ChainGun
+		Weapon: ChainGun.Ground
 		MuzzleSequence: muzzle
-		LocalOffset: 712,0,196
+		LocalOffset: 746,0,196
 		RequiresCondition: !loaded
 		PauseOnCondition: empdisable
 		Turret:

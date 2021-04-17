@@ -204,7 +204,7 @@
 		Name: Netherl.
 		InternalName: holland
 		Side: Allies
-		Description: Netherlands\nFaction Variations:\n    - Tanks* move faster but have less Health.\n*Those Tanks being Light and Medium Tanks.\n    - Spy Masts also Jam radar when not Disguised.\nVeterancy Bonus:\n    - None. All units earn Veterancy twice as fast instead.\nUnique Support Power:\n    - Chrono Harvester (Tech Center)\nDeploys a prototype Harvester that is capable of Teleporting.\nSpecial Units:\n    - Chrono Soldier (Infantry)\nInfantry with EMP gun that is capable of Teleporting.\n    - Phase Tank (Vehicle)\nMedium Tank variant that is cloaked while out of combat.\n    - Patriot Battery (Defense)\nAnti-air Battery with superior range and damage.
+		Description: Netherlands\nFaction Variations:\n    - Tanks* move faster but have less Health.\n*Those Tanks being Light and Medium Tanks.\n    - Spy Masts also Jam radar aslong not Low on Power.\nVeterancy Bonus:\n    - None. All units earn Veterancy twice as fast instead.\nUnique Support Power:\n    - Chrono Harvester (Tech Center)\nDeploys a prototype Harvester that is capable of Teleporting.\nSpecial Units:\n    - Chrono Soldier (Infantry)\nInfantry with EMP gun that is capable of Teleporting.\n    - Phase Tank (Vehicle)\nMedium Tank variant that is cloaked while out of combat.\n    - Patriot Battery (Defense)\nAnti-air Battery with superior range and damage.
 	Faction@4:
 		Name: France
 		InternalName: france
@@ -229,7 +229,7 @@
 		Name: Greece
 		InternalName: greece
 		Side: Allies
-		Description: Greece\nFaction Variations:\n    - Defenses have 20% increased Range and use 10% more Power.\nAffected are Gun Turret, Grand Turret, AA Gun.\nVeterancy Bonus:\n    - Iroqouis and Gunboat gets built as Veteran.\nUnique Support Powers:\n    - Interceptors (Tech Center)\nA squadron of Interceptors provides air cover over target area.\nSpecial Units:\n    - ATGM Soldier (Infantry)\nInfantry armed with anti-tank rockets.\n    - Grand Turret (Defense)\nTriple-barreled Artillery base Defense.
+		Description: Greece\nFaction Variations:\n    - Defenses have 20% increased Range and use 10% more Power.\nAffected are Gun Turret, Grand Turret, AA Gun.\n    - Improved Sonar Pulse lasts longer.\nVeterancy Bonus:\n    - Iroqouis and Gunboat gets built as Veteran.\nUnique Support Powers:\n    - Interceptors (Tech Center)\nA squadron of Interceptors provides air cover over target area.\nSpecial Units:\n    - ATGM Soldier (Infantry)\nInfantry armed with anti-tank rockets.\n    - Grand Turret (Defense)\nTriple-barreled Artillery base Defense.
 	Faction@9:
 		Name: Italy
 		InternalName: italy

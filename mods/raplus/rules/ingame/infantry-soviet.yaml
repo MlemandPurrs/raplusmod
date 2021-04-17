@@ -121,7 +121,7 @@ E5:
 		RequiresCondition: !parachute
 		TargetTypes: Ground, Infantry, Disguise, Chem
 
-THF:
+SAB:
 	Inherits: ^Soldier	
 	Inherits@selection: ^SelectableSupportUnit
 	Inherits@ROT: ^RottingInfantry
@@ -131,12 +131,13 @@ THF:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 6
-		Prerequisites: ~barr, dome, ~infantry.soviet, ~soviet.or.belarus, ~techlevel.medium
-		Description: Field operative of the Union.\n  Special Ability: Hijacking\nSteals enemy vehicles.\n  Special Ability: Sabotage\nEnters enemy production structures to Demolish them.\nEnters enemy Refineries to steal Credits.\nEnters enemy Power Plants to disable them.\nEnters enemy Radar to reset exploration.\nEnters enemy Tech Centers to unlock Behemoth Tank.\nEnters enemy Superweapons to reset timer.\n  Special Ability: Cloaking\nCloaks when standing still.\n  Unarmed
+		#	Prerequisites: ~barr, dome, ~infantry.soviet, ~soviet.or.belarus, ~techlevel.medium
+		Prerequisites: ~barr, dome, ~infantry.soviet, ~techlevel.medium
+		Description: Field operative of the Union.\n  Special Abilities:\nCan be deployed to turn Invisible for a limited time.\nCan Steal enemy Vehicles, even while Invisible.\nCan Enter enemy Structures, performing different functions:\n  - Production: Disables the structure for 30 seconds.\n  - Refineries: Steals 50% of stored Credits.\n  - Powerplants: Disables them causing Power outage.\n  - Radar Dome: Enemy mapview gets Shrouded.\n  - Tech Center: Unlocks Behemoth Tank unit.\n  - Superweapons: Reset preperation timer of weapon.\n  Unarmed
 	Tooltip:
 		Name: Saboteur
 	Valued:
-		Cost: 475
+		Cost: 500
 	Mobile:
 		Speed: 68
 	UpdatesPlayerStatistics:
@@ -150,30 +151,79 @@ THF:
 		CaptureTypes: vehicle
 		PlayerExperience: 50
 		Voice: Attack
-	Captures@SABOTAGE:
-		CaptureTypes: demolish-sabotage
-		CaptureDelay: 45
-		SabotageThreshold: 1
-		SabotageHPRemoval: 100
-		PlayerExperience: 0
-		SabotageCursor: c4
-		Voice: Action
 	Infiltrates:
 		Types: ThiefInfiltrate
 		Notification: BuildingInfiltrated
 		PlayerExperience: 50
-		Voice: Attack
+		Voice: Action
 	WithInfantryBody:
 		IdleSequences: idle
 		StandSequences: stand
 	Crushable:
 		WarnProbability: 95
+	#	Mailaender method of Ordos Saboteur cloak. ERROR WITH
+	#	SyncAttribute on member of unhashable type: OpenRA.Mods.Common.Traits.TimedDeployState
+	#	GrantChargeDrainCondition:
+	#	DeployedCondition: deployed
+	#	ChargeTicks: 1250
+	#	DrainTicks: 375
+	#	MustaphaTR method of Ordos Saboteur cloak
+	#	at begin has no indicator of filling up, appears
+	#	like undeployable might confuse player.
+	#	issue: remains indefinetely cloaked after
+	#	duration bar ends, until gets toggled off
+	#	manually by the player, unit never uncloaks
+	#	by itself. 
+	#	GrantConditionOnDeploy@TIMEDCLOAK:
+	#	PauseOnCondition: !charged
+	#	UndeployOnCondition: !discharging
+	#	DeployedCondition: deployed
+	#	DeploySound: appear1.aud
+	#	GrantDelayedCondition@CHARGE:
+	#	RequiresCondition: !deployed
+	#	Condition: charged
+	#	Delay: 1250
+	#	RevokeOnDisabled: true
+	#	GrantTimedCondition@DISCHARGE:
+	#	RequiresCondition: deployed
+	#	Condition: discharging
+	#	Duration: 375
+	#	TimedConditionBar@DISCHARGE:
+	#	Condition: discharging
+	#	Color: FF8B008B
+	
+	#	this works, could be better
+	#	GrantConditionOnDeploy:
+	#	PauseOnCondition: discharge
+	#	UndeployedCondition: charging
+	#	DeployedCondition: discharging
+	#	GrantTimedCondition@CHARGE:
+	#	RequiresCondition: charging
+	#	Condition: charge
+	#	Duration: 1250
+	#	TimedConditionBar@CHARGE:
+	#	Condition: charge
+	#	Color: 8B0000
+	#	GrantTimedCondition@DISCHARGE:
+	#	RequiresCondition: discharging
+	#	Condition: discharge
+	#	Duration: 375
+	#	TimedConditionBar@DISCHARGE:
+	#	Condition: discharge
+	#	Color: 8B008B
+	
+	GrantTimedConditionOnDeploy:
+		DeployedCondition: cloakison
+		CooldownTicks: 1250
+		DeployedTicks: 375
+		DeploySound: appear1.aud
 	Cloak:
-		InitialDelay: 250
-		CloakDelay: 120
-		UncloakOn: Attack, Unload, Infiltrate, Demolish, Move
-		CloakTypes: Cloak
+		InitialDelay: 0
+		CloakDelay: 65
+		CloakSound: appear1.aud
+		UncloakOn: Attack, Unload, Infiltrate, Demolish, Damage, Heal
 		IsPlayerPalette: true
+		RequiresCondition: cloakison
 		PauseOnCondition: cloak-force-disabled
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
@@ -183,7 +233,7 @@ THF:
 	Passenger:
 		CustomPipType: pip-blue
 	DeliversCash:
-		Payload: 118
+		Payload: 125
 		Type: InfantryRefund
 
 VOLK:

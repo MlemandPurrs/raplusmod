@@ -28,7 +28,7 @@ FLAK-23-AG:
 	Range: 6c0
 	ValidTargets: Ground, Water
 	Projectile: InstantHit
-		Blockable: true
+		#	Blockable: true
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Air, Ground, Water
 	Warhead@2Eff: CreateEffect
@@ -170,7 +170,7 @@ ChainGun.AA:
 	Range: 5c0
 	ValidTargets: Helicopter
 	MinRange: 1c256
-	Projectile: Bullet
+	Projectile: InstantHit
 		Blockable: false
 		Inaccuracy: 0c768
 	Warhead@1Dam: SpreadDamage
@@ -179,12 +179,6 @@ ChainGun.AA:
 	Warhead@2Eff: CreateEffect
 		ValidTargets: Helicopter
 		ImpactActors: false
-
-Chaingun.5tnk:
-	Inherits: ChainGun
-	Burst: 3
-	BurstDelays: 5
-	ReloadDelay: 40
 
 ChainGun.Hind:
 	Inherits: ChainGun

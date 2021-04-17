@@ -285,7 +285,7 @@ BSHP:
 		Offset: -761,0,128
 	Armament@PRIMARY:
 		Turret: primary
-		Weapon: 8Inch.singular
+		Weapon: 155mm
 		LocalOffset: 480,0,40
 		Recoil: 85
 		RecoilRecovery: 34
@@ -528,6 +528,7 @@ ACAR.Deployed:
 		Range: 5c0
 	Transforms:
 		IntoActor: acar
+		TransformSounds: null
 		Offset: 1,0
 		Facing: 768
 	Reservable:
@@ -540,7 +541,7 @@ ACAR.Deployed:
 		TargetTypes: Ground, Water, Ship
 	WithResupplyAnimation:
 	ChangesHealth:
-		Step: -100
+		Step: -50
 		Delay: 3
 		StartIfBelow: 100
 		DamageCooldown: 0

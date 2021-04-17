@@ -161,7 +161,7 @@ TorpNuke:
 	MinRange: 3c512
 	Report: torpedo1.aud
 	ValidTargets: Water, Underwater
-	Projectile: Missile
+	Projectile: MissileCA
 		Image: torpedo
 		Arm: 0
 		Speed: 100

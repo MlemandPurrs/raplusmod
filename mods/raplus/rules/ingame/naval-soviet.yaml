@@ -548,6 +548,7 @@ MGNM:
 		UncloakOn: Attack, Demolish, Move
 		CloakedCondition: underwater
 		PauseOnCondition: cloak-force-disabled || crossing-ford || empdisable
+		RequiresCondition: !harambe
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
@@ -558,6 +559,9 @@ MGNM:
 		MoveSequence: move
 	Voiced:
 		VoiceSet: RoboticVoice
+	GrantConditionOnMovement:
+		Condition: harambe
+		ValidMovementTypes: None
 
 SSML:
 	Inherits: ^Submarine
