@@ -291,7 +291,7 @@ Player:
 		PowerTypes: powr,apwr
 		BarracksTypes: tent
 		VehiclesFactoryTypes: weap
-		ProductionTypes: tent,weap,hpad,afld
+		ProductionTypes: tent,weap,hpad,afld,afld.usa,afld.england,afld.france,afld.germany,afld.italy,afld.greece
 		NavalProductionTypes: syrd
 		NewProductionCashThreshold: 4000
 		SiloTypes: silo
@@ -303,15 +303,28 @@ Player:
 			syrd: 4500
 			agun: 6000
 			atek: 7500
+			atek.allies: 7500
+			atek.usa: 7500
+			atek.england: 7500
+			atek.germany: 7500
 		BuildingLimits:
 			proc: 4
 			tent: 2
 			dome.allies: 1
+			dome.spain: 1
 			weap: 3
 			syrd: 1
 			hpad: 4
 			atek: 1
+			atek.allies: 1
+			atek.usa: 1
+			atek.england: 1
+			atek.germany: 1
+			fix: 1
 			fix.allies: 1
+			fix.holland: 1
+			fix.sweden: 1
+			fix.turkey: 1
 			mslo: 1
 			agun: 6
 			gun: 6
@@ -321,6 +334,12 @@ Player:
 			gap.spain: 3
 			fact: 3
 			afld: 2
+			afld.usa: 2
+			afld.england: 2
+			afld.france: 2
+			afld.germany: 2
+			afld.italy: 2
+			afld.greece: 2
 			spro: 1
 			gtur: 1
 			pbat: 1
@@ -330,6 +349,7 @@ Player:
 			proc: 15
 			tent: 2
 			dome.allies: 1
+			dome.spain: 1
 			weap: 6
 			hpad: 4
 			syrd: 1
@@ -338,11 +358,25 @@ Player:
 			gun: 5
 			gap: 2
 			gap.spain: 2
+			fix: 1
 			fix.allies: 1
+			fix.holland: 1
+			fix.sweden: 1
+			fix.turkey: 1
 			agun: 5
 			atek: 1
+			atek.allies: 1
+			atek.usa: 1
+			atek.england: 1
+			atek.germany: 1
 			mslo: 1
 			afld: 1
+			afld.usa: 1
+			afld.england: 1
+			afld.france: 1
+			afld.germany: 1
+			afld.italy: 1
+			afld.greece: 1
 			spro: 1
 			gtur: 1
 			pbat: 1

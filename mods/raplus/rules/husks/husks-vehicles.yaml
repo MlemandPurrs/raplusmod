@@ -216,3 +216,16 @@ ISU.Husk:
 		IntoActor: isu
 	RenderSprites:
 		Image: isu.destroyed
+
+GTNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Gattling Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: gtnk
+	InfiltrateForTransform:
+		IntoActor: gtnk
+	RenderSprites:
+		Image: gtnk.destroyed

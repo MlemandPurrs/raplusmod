@@ -748,9 +748,13 @@ THF:
 		InitialDelay: 0
 		CloakDelay: 65
 		CloakSound: appear1.aud
-		UncloakOn: Attack, Unload, Infiltrate, Demolish, Damage, Heal
+		UncloakOn: Attack, Unload, Move, Infiltrate, Demolish, Damage, Heal
 		IsPlayerPalette: true
 		PauseOnCondition: cloak-force-disabled
+		RequiresCondition: !harambe
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
+	GrantConditionOnMovement:
+		Condition: harambe
+		ValidMovementTypes: None

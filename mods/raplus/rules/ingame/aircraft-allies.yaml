@@ -156,7 +156,7 @@ B52.buildable:
 		PipCount: 5
 		RequiresSelection: true
 	Rearmable:
-		RearmActors: afld, afld.ukraine, acar.deployed
+		RearmActors: afld, acar.deployed, afld.russia, afld.ukraine, afld.belarus, afld.turkmen, afld.usa, afld.england, afld.france, afld.germany, afld.italy, afld.greece
 	Contrail@1:
 		TrailLength: 8
 		TrailWidth: 48
@@ -581,7 +581,7 @@ SPIT:
 		FullSequence: pip-yellow
 		RequiresSelection: true
 	Rearmable:
-		RearmActors: afld, afld.ukraine, acar.deployed
+		RearmActors: afld, acar.deployed, afld.russia, afld.ukraine, afld.belarus, afld.turkmen, afld.usa, afld.england, afld.france, afld.germany, afld.italy, afld.greece
 	WithMuzzleOverlay:
 	Contrail:
 		Offset: -853,0,0
@@ -677,7 +677,7 @@ TORN:
 		PipCount: 4
 		RequiresSelection: true
 	Rearmable:
-		RearmActors: afld, afld.ukraine, acar.deployed
+		RearmActors: afld, acar.deployed, afld.russia, afld.ukraine, afld.belarus, afld.turkmen, afld.usa, afld.england, afld.france, afld.germany, afld.italy, afld.greece
 	Contrail@1:
 		Offset: -598,-683,0
 		TrailLength: 8

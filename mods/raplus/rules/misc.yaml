@@ -725,7 +725,7 @@ tech.stolen:
 	ProvidesPrerequisite:
 	Interactable:
 	Tooltip:
-		Name: enemy Tech Center captured
+		Name: enemy Tech Center infiltrated
 	Buildable:
 		Description: Tech Unit
 

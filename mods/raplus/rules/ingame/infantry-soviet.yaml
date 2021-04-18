@@ -133,7 +133,7 @@ SAB:
 		BuildPaletteOrder: 6
 		#	Prerequisites: ~barr, dome, ~infantry.soviet, ~soviet.or.belarus, ~techlevel.medium
 		Prerequisites: ~barr, dome, ~infantry.soviet, ~techlevel.medium
-		Description: Field operative of the Union.\n  Special Abilities:\nCan be deployed to turn Invisible for a limited time.\nCan Steal enemy Vehicles, even while Invisible.\nCan Enter enemy Structures, performing different functions:\n  - Production: Disables the structure for 30 seconds.\n  - Refineries: Steals 50% of stored Credits.\n  - Powerplants: Disables them causing Power outage.\n  - Radar Dome: Enemy mapview gets Shrouded.\n  - Tech Center: Unlocks Behemoth Tank unit.\n  - Superweapons: Reset preperation timer of weapon.\n  Unarmed
+		Description: Field operative of the Union.\n  Special Abilities:\nCan be deployed to turn Invisible for a limited time.\nCan Steal enemy Vehicles, but not while Invisible.\nCan Enter enemy Structures, performing different functions:\n  - Production: Disables the structure for 30 seconds.\n  - Refineries: Steals 50% of stored Credits.\n  - Powerplants: Disables them causing Power outage.\n  - Radar Dome: Enemy mapview gets Shrouded.\n  - Tech Center: Unlocks Behemoth Tank unit.\n  - Superweapons: Reset preperation timer of weapon.\n  Unarmed
 	Tooltip:
 		Name: Saboteur
 	Valued:
@@ -151,6 +151,7 @@ SAB:
 		CaptureTypes: vehicle
 		PlayerExperience: 50
 		Voice: Attack
+		RequiresCondition: !cloakison
 	Infiltrates:
 		Types: ThiefInfiltrate
 		Notification: BuildingInfiltrated
@@ -161,57 +162,6 @@ SAB:
 		StandSequences: stand
 	Crushable:
 		WarnProbability: 95
-	#	Mailaender method of Ordos Saboteur cloak. ERROR WITH
-	#	SyncAttribute on member of unhashable type: OpenRA.Mods.Common.Traits.TimedDeployState
-	#	GrantChargeDrainCondition:
-	#	DeployedCondition: deployed
-	#	ChargeTicks: 1250
-	#	DrainTicks: 375
-	#	MustaphaTR method of Ordos Saboteur cloak
-	#	at begin has no indicator of filling up, appears
-	#	like undeployable might confuse player.
-	#	issue: remains indefinetely cloaked after
-	#	duration bar ends, until gets toggled off
-	#	manually by the player, unit never uncloaks
-	#	by itself. 
-	#	GrantConditionOnDeploy@TIMEDCLOAK:
-	#	PauseOnCondition: !charged
-	#	UndeployOnCondition: !discharging
-	#	DeployedCondition: deployed
-	#	DeploySound: appear1.aud
-	#	GrantDelayedCondition@CHARGE:
-	#	RequiresCondition: !deployed
-	#	Condition: charged
-	#	Delay: 1250
-	#	RevokeOnDisabled: true
-	#	GrantTimedCondition@DISCHARGE:
-	#	RequiresCondition: deployed
-	#	Condition: discharging
-	#	Duration: 375
-	#	TimedConditionBar@DISCHARGE:
-	#	Condition: discharging
-	#	Color: FF8B008B
-	
-	#	this works, could be better
-	#	GrantConditionOnDeploy:
-	#	PauseOnCondition: discharge
-	#	UndeployedCondition: charging
-	#	DeployedCondition: discharging
-	#	GrantTimedCondition@CHARGE:
-	#	RequiresCondition: charging
-	#	Condition: charge
-	#	Duration: 1250
-	#	TimedConditionBar@CHARGE:
-	#	Condition: charge
-	#	Color: 8B0000
-	#	GrantTimedCondition@DISCHARGE:
-	#	RequiresCondition: discharging
-	#	Condition: discharge
-	#	Duration: 375
-	#	TimedConditionBar@DISCHARGE:
-	#	Condition: discharge
-	#	Color: 8B008B
-	
 	GrantTimedConditionOnDeploy:
 		DeployedCondition: cloakison
 		CooldownTicks: 1250

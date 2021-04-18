@@ -769,7 +769,6 @@ GTUR:
 GAP:
 	Inherits: ^ScienceBuilding
 	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
-	-AcceptsDeliveredCash:
 	-Capturable:
 	-Capturable@2:
 	-CaptureManager:
@@ -1445,7 +1444,6 @@ SPMST:
 	-SoundOnDamageTransition:
 	-Sellable:
 	-GivesBuildableArea:
-	-AcceptsDeliveredCash:
 	Explodes:
 		Weapon: SmallBuildingExplode
 		EmptyWeapon: SmallBuildingExplode

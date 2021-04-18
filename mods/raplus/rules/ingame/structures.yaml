@@ -141,7 +141,7 @@ FACT:
 		RequiresForceMove: true
 	TransformsIntoRepairable:
 		RequiresCondition: factundeploy
-		RepairActors: fix, fix.allies, fix.soviet
+		RepairActors: fix, fix.allies, fix.soviet, fix.holland, fix.sweden, fix.turkey, fix.kazakh, fix.china, fix.moldova
 		RequiresForceMove: true
 	TransformsIntoTransforms:
 		RequiresCondition: factundeploy && build-incomplete
@@ -176,6 +176,15 @@ FACT:
 		RequiresCondition: !chrono-vortex
 	TimedConditionBar@Sabotage:
 		Condition: sabotaged
+	AcceptsDeliveredCash:
+		ValidTypes: MoneyTransfer
+	WithAcceptDeliveredCashAnimation:
+		Sequence: open-for-money
+		RequiresCondition: !chrono-vortex && !notwhileproducing
+	GrantConditionOnProduction:
+		Condition: notwhileproducing
+		Actors:
+		ShowSelectionBar: false
 
 POWR:
 	Inherits: ^Building
@@ -332,7 +341,7 @@ TENT:
 		Queue: Building
 		BuildPaletteOrder: 2
 		Prerequisites: ~structures.allies, ~techlevel.infonly
-		Description: Trains and Heals Infantry units.\nDecomissions Infantry for 1/4 of cost.\nCan be Infiltrated by an Spy resulting\nin Veterancy for enemy Infantry.\nCan be Infiltrated by an Saboteur\nresulting in its Destruction.\n Special: Free Guards\nEach Barracks comes with two free Rifle Infantry.
+		Description: Trains and Heals Infantry units.\nDecomissions Infantry for 1/4 of cost.\nCan be Infiltrated by an Spy resulting\nin Veterancy for enemy Infantry.\nCan be Infiltrated by an Saboteur\nresulting in getting Disabled temporarily.\n Special: Free Guards\nEach Barracks comes with two free Rifle Infantry.
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -517,7 +526,7 @@ BARR:
 		Queue: Building
 		BuildPaletteOrder: 2
 		Prerequisites: ~structures.soviet, ~techlevel.infonly
-		Description: Trains and Heals Infantry units.\nDecomissions Infantry for 1/4 of cost.\nCan be Infiltrated by an Spy resulting\nin Veterancy for enemy Infantry.\nCan be Infiltrated by an Saboteur\nresulting in its Destruction.\n Special: Free Guards\nEach Barracks comes with two free Rifle Infantry.
+		Description: Trains and Heals Infantry units.\nDecomissions Infantry for 1/4 of cost.\nCan be Infiltrated by an Spy resulting\nin Veterancy for enemy Infantry.\nCan be Infiltrated by an Saboteur\nresulting in getting Disabled temporarily.\n Special: Free Guards\nEach Barracks comes with two free Rifle Infantry.
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -784,7 +793,7 @@ CLONER.Plug:
 		Prerequisites: stek, !cloner.plug, ~structures.soviet, ~soviet.or.china, ~!aitoodumb, ~techlevel.high
 		Queue: Building
 		BuildLimit: 1
-		Description: Clones produced Basic Infantry when the relevant ability\ngets activated at Tech Center.
+		Description: Clones produced Basic Infantry when the relevant\nSupport Power gets activated at the Tech Center.
 	Plug:
 		Type: clonerupgrade
 	Power:
@@ -906,7 +915,7 @@ PROC:
 		Queue: Building
 		BuildPaletteOrder: 4
 		Prerequisites: ~techlevel.infonly
-		Description: Refines Ore and Gems\ninto credits.\nCan be Infiltrated resulting in 50% loss of credits stored.\n Special: Free Harvester\nEach Refinery comes with one free Ore Truck.
+		Description: Refines Ore and Gems\ninto credits.\nCan be Infiltrated by Spy or Saboteur\nresulting in 50% loss of credits stored.\n Special: Free Harvester\nEach Refinery comes with one free Ore Truck.
 	Valued:
 		Cost: 1500
 	Tooltip:
@@ -1231,7 +1240,7 @@ WEAP:
 		Queue: Building
 		BuildPaletteOrder: 5
 		Prerequisites: anypower, ~techlevel.low
-		Description: Produces Vehicle units.\nCan be Infiltrated by an Spy resulting\nin Veterancy for enemy Vehicles.\nCan be Infiltrated by an Saboteur\nresulting in its destruction.
+		Description: Produces Vehicle units.\nCan be Infiltrated by an Spy resulting\nin Veterancy for enemy Vehicles.\nCan be Infiltrated by an Saboteur\nresulting in getting Disabled temporarily.
 	Valued:
 		Cost: 2000
 	Tooltip:
@@ -1548,8 +1557,8 @@ FIX:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 8
-		Prerequisites: ~disabled
-		Description: Repairs Vehicles for credits.\nEnables Airfield and Helipads\nwithin radius to Repair Aircraft.\nVehicle and Aircraft can\nbe sold here for half value.\n (their value scaling with health)
+		Prerequisites: weap, ~fact, ~!allies.or.france, ~!player.holland, ~!player.sweden, ~!player.turkey, ~!vanilla.soviet, ~!player.kazakh, ~!player.china, ~!player.moldova, ~techlevel.medium
+		Description: Repairs Vehicles for credits.\nVehicle and Aircraft can\nbe sold here for half value.\n (their value scaling with health)
 	Valued:
 		Cost: 800
 	Tooltip:
@@ -1599,19 +1608,19 @@ FIX:
 		RequiresCondition: !unit.docked && !build-incomplete && !being-captured && !being-demolished
 	GpsDot:
 		String: Repair
-	ProximityExternalCondition@AIRCRAFTREPAIR:
-		Condition: aircraft-repair
-		Range: 9c768
-		RequiresCondition: !disabled && !build-incomplete && !being-captured && !being-demolished
-	WithRangeCircle@AIRCRAFTREPAIR:
-		Color: 888899AA
-		Range: 9c768
+	#	ProximityExternalCondition@AIRCRAFTREPAIR:
+	#	Condition: aircraft-repair
+	#	Range: 9c768
+	#	RequiresCondition: !disabled && !build-incomplete && !being-captured && !being-demolished
+	#	WithRangeCircle@AIRCRAFTREPAIR:
+	#	Color: 888899AA
+	#	Range: 9c768
 
 FIX.Allies:
 	Inherits: FIX
 	Buildable:
-		Prerequisites: weap, ~structures.allies, ~techlevel.medium
-		Description: Repairs Vehicles for credits.\nEnables Airfields and Helipads\nwithin radius to Repair Aircraft.\nVehicle and Aircraft can\nbe sold here for half value.\n (their value scaling with health)\n  Special Ability: Decoy Army\nDelivers an group of Fake units at your primary War Factory\nThose remote-controlled units armed with dummy weaponry\nwill look identical to real units for the opponent.\n (requires War Factory)
+		Prerequisites: weap, ~structures.allies, ~allies.or.france, ~techlevel.medium
+		Description: Repairs Vehicles for credits.\nVehicle and Aircraft can\nbe sold here for half value.\n (their value scaling with health)\n  Special Ability: Decoy Army\nDelivers an group of Fake units at your primary War Factory\nThose remote-controlled units armed with dummy weaponry\nwill look identical to real units for the opponent.\n (requires War Factory)
 	ProduceActorPower@DecoyArmy:
 		PauseOnCondition: disabled || lowpower
 		OrderName: DecoyArmy
@@ -1646,7 +1655,7 @@ FIX.Allies:
 		Icon: pboxicon
 		ChargeInterval: 6000
 		Description: Instant Bunker
-		LongDesc: An empty Pillbox gets instantly constructed on the spot\nchecking Terrain of build spot.
+		LongDesc: An empty Pillbox gets instantly constructed on the spot.
 		DropItems: pbox.summon
 		ReinforcementsArrivedSpeechNotification: ReinforcementsArrived
 		SelectTargetSpeechNotification: SelectTarget
@@ -1686,12 +1695,12 @@ FIX.Allies:
 FIX.Soviet:
 	Inherits: FIX
 	Buildable:
-		Prerequisites: weap, ~structures.soviet, ~techlevel.medium
-		Description: Repairs Vehicles for credits.\nEnables Airfields and Helipads\nwithin radius to Repair Aircraft.\nVehicle and Aircraft can\nbe sold here for half value.\n (their value scaling with health)\n  Special ability: Field Repairs\nAffected vehicles self-repair for 1% of their\nmaximum health per second for 15 second duration.
+		Prerequisites: weap, ~structures.soviet, ~vanilla.soviet, ~techlevel.medium
+		Description: Repairs Vehicles for credits.\nVehicle and Aircraft can\nbe sold here for half value.\n (their value scaling with health)\n  Special ability: Field Repairs\nAffected vehicles self-repair for 1% of their\nmaximum health per second for 15 second duration.
 	GrantExternalConditionPower@FieldRepairs:
 		PauseOnCondition: disabled || lowpower
 		OrderName: FieldRepairPower
-		Prerequisites: ~weap, ~techlevel.unrestricted
+		Prerequisites: ~weap, vanilla.soviet, ~techlevel.unrestricted
 		Icon: fieldrepair
 		ChargeInterval: 6000
 		Dimensions: 3, 3
@@ -1730,6 +1739,27 @@ FIX.Soviet:
 		Type: Vehicle
 		ReadyAudio: ReinforcementsArrived
 		BlockedAudio: NoBuild
+		SupportPowerPaletteOrder: 7
+	ParatroopersPower@RemoteKennel:
+		PauseOnCondition: disabled || lowpower
+		OrderName: RemoteKennel
+		Prerequisites: ~structures.soviet, player.moldova, ~techlevel.unrestricted
+		Icon: kennicon
+		ChargeInterval: 7500
+		Description: Remote Kennel
+		LongDesc: A Kennel gets instantly constructed on the spot.\nThis Kennel can remotely train Attack Dogs.
+		DropItems: kenn.summon
+		ReinforcementsArrivedSpeechNotification: ReinforcementsArrived
+		SelectTargetSpeechNotification: SelectTarget
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.minimum
+		UnitType: unit.summoner
+		DisplayBeacon: true
+		BeaconPoster: kennbcon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
 		SupportPowerPaletteOrder: 7
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
@@ -1810,7 +1840,7 @@ DOME.Allies:
 	Inherits: DOME
 	Inherits@ENBonus: ^AffectedByBritain
 	Buildable:
-		Prerequisites: proc, ~structures.allies, ~techlevel.medium
+		Prerequisites: proc, ~structures.allies, ~!player.spain, ~techlevel.medium
 		Description: Provides an overview\nof the battlefield.\nCan detect cloaked units.\nCan be Infiltrated by an Spy or Saboteur\nresulting in loss of map exploration.\nCan detect cloaked units.\n  Special Ability: Spy Mast\nDeploys a Spy Mast anywhere on the map\nthat provides vision and detects nearby cloaked.\nThe Spy Mast can disguise to appear as an Tree to the enemy.\n (requires Service Depot)
 	RenderSprites:
 		Image: dome
@@ -1856,7 +1886,7 @@ DOME.Allies:
 DOME.Soviet:
 	Inherits: DOME
 	Buildable:
-		Prerequisites: proc, ~structures.soviet, ~techlevel.medium
+		Prerequisites: proc, ~structures.soviet, ~!player.belarus, ~!player.karelia, ~techlevel.medium
 		Description: Provides an overview\nof the battlefield.\nCan detect cloaked units.\nCan be Infiltrated by an Spy or Saboteur\nresulting in loss of map exploration.\nCan detect cloaked units.\n  Special Ability: Spy Plane\nReveals an area of the map\nand cloaked enemy units there.\n (requires Airfield)
 	RenderSprites:
 		Image: dome
@@ -1947,8 +1977,8 @@ ATEK:
 		Queue: Building
 		BuildPaletteOrder: 12
 		BuildLimit: 1
-		Prerequisites: proc, afldorweap, ~structures.allies, ~techlevel.high
-		Description: Provides Allied advanced technologies.\nMaximum one can be built.\nCan be Infiltrated for unlocking Tech unit production.\n  Special Ability: Precision Strike\nA Precision Bomber delivers an Rocket Barrage on target.
+		Prerequisites: proc, afldorweap, ~structures.allies, ~!vanilla.allies, ~!player.usa, ~!player.england, !player.germany, ~techlevel.high
+		Description: Provides Allied advanced technologies.\nMaximum one can be built.\nCan be Infiltrated for unlocking Tech unit production.
 	Valued:
 		Cost: 2000
 	Tooltip:
@@ -2038,7 +2068,7 @@ ATEK:
 		Description: Intelligence Scan
 		LongDesc: Reveals all Base Buildings and Superweapons,\nbut not Defenses or Tech Buildings on the map.\nLasts for 2.5 minute. Does not reveal new Structures.
 		CameraActor: camera.intelscan
-		TargetActors: fact, powr, powr.turkey, apwr, apwr.turkey, tent, barr, barr.cloner, proc, orep, indp, weap, weap.mini, fix, fix.allies, fix.soviet, dome, dome.allies, dome.soviet, atek, stek, spro, spro.kazakh, afld, afld.ukraine, hpad, syrd, spen, pdox, iron, fpwr, fapw, tenf, barf, prof, weaf, fixf, syrf, spef, aflf, hpaf, domf, sprf, atef, stef, pdof, irof, facf
+		TargetActors: fact, powr, powr.turkey, apwr, apwr.turkey, tent, barr, barr.cloner, proc, orep, indp, weap, weap.mini, fix, fix.allies, fix.soviet, fix.holland, fix.sweden, fix.turkey, fix.kazakh, fix.china, fix.moldova, dome, dome.allies, dome.soviet, dome.spain, dome.belarus, dome.karelia, atek, stek, atek.usa, atek.england, atek.germany, stek.russia, stek.ukraine, stek.karelia, stek.uzbek, spro, spro.kazakh, afld, afld.russia, afld.ukraine, afld.belarus, afld.turkmen, afld.usa, afld.england, afld.france, afld.germany, afld.italy, afld.greece, hpad, syrd, spen, pdox, iron, fpwr, fapw, tenf, barf, prof, weaf, fixf, syrf, spef, aflf, hpaf, domf, sprf, atef, stef, pdof, irof, facf
 		LifeTime: 3750
 		LaunchSound: bcmasela.aud
 		EffectImage: dummy
@@ -2118,8 +2148,8 @@ STEK:
 		Queue: Building
 		BuildPaletteOrder: 12
 		BuildLimit: 1
-		Description: Provides Soviet advanced technologies.\nMaximum one can be built.\nCan be Infiltrated for unlocking Tech unit production.\n  Special Ability: Parabombs\nA squad of Badgers drop parachuted\nbombs on your target.
-		Prerequisites: proc, afldorweap, ~structures.soviet, ~techlevel.high
+		Prerequisites: proc, afldorweap, ~structures.soviet, ~!vanilla.soviet, ~!player.russia, ~!player.ukraine, ~!player.karelia, ~!player.uzbek, ~!player.moldova, ~techlevel.high
+		Description: Provides Soviet advanced technologies.\nMaximum one can be built.\nCan be Infiltrated for unlocking Tech unit production.
 	Valued:
 		Cost: 2000
 	Tooltip:
@@ -2231,7 +2261,7 @@ STEK:
 		SquadSize: 1
 		QuantizedFacings: 8
 		Description: Paranuke
-		LongDesc: A Badger drops an Paranuke on your target.\nThe warhead is an low yield nuclear detonation,\nthat is more effective against units rather than structures.
+		LongDesc: A Badger drops an Parachuted nuke on your target.\nThe warhead is an low yield nuclear detonation,\nthat is more effective against units rather than structures.
 		SelectTargetSpeechNotification: SelectTarget
 		UnitType: badr.nuke
 		CameraActor: camera.paradrop
@@ -2252,7 +2282,7 @@ STEK:
 		Icon: fturicon
 		ChargeInterval: 7500
 		Description: Lone Tower
-		LongDesc: A Flame Turret gets instantly constructed on the spot\nchecking against Terrain of build spot.\nThis Flame Turret remains cloaked when out of combat.
+		LongDesc: A Flame Turret gets instantly constructed on the spot.\nThis Flame Turret remains cloaked when out of combat.
 		DropItems: ftur.summon
 		ReinforcementsArrivedSpeechNotification: ReinforcementsArrived
 		SelectTargetSpeechNotification: SelectTarget
@@ -2262,27 +2292,6 @@ STEK:
 		UnitType: unit.summoner
 		DisplayBeacon: true
 		BeaconPoster: fturbcon
-		ArrowSequence: arrow
-		ClockSequence: clock
-		CircleSequence: circles
-		SupportPowerPaletteOrder: 3
-	ParatroopersPower@RemoteKennel:
-		PauseOnCondition: disabled || lowpower
-		OrderName: RemoteKennel
-		Prerequisites: ~structures.soviet, player.moldova, ~techlevel.unrestricted
-		Icon: kennicon
-		ChargeInterval: 7500
-		Description: Remote Kennel
-		LongDesc: A Kennel gets instantly constructed on the spot\nchecking against Terrain of build spot.\nThis Kennel can remotely train Attack Dogs.
-		DropItems: kenn.summon
-		ReinforcementsArrivedSpeechNotification: ReinforcementsArrived
-		SelectTargetSpeechNotification: SelectTarget
-		AllowImpassableCells: false
-		QuantizedFacings: 8
-		CameraActor: camera.minimum
-		UnitType: unit.summoner
-		DisplayBeacon: true
-		BeaconPoster: kennbcon
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
@@ -2404,8 +2413,8 @@ AFLD:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 7
-		Prerequisites: anypower, ~techlevel.medium
-		Description: Produces, repairs and reloads Airplanes.\nCan be Infiltrated by an Spy resulting\nin Veterancy for enemy Aircraft.\nCan be Infiltrated by an Saboteur\nresulting in its Destruction.\n  Special Ability: Paratroopers\nA Plane drops a squad of\nVeteran infantry anywhere on the map.
+		Prerequisites: anypower, ~!player.russia, ~!player.ukraine, ~!player.belarus, ~!player.turkmen, ~!player.usa, ~!player.england, ~!player.france, ~!player.germany, ~!player.italy, ~!player.greece, ~techlevel.medium
+		Description: Produces, repairs and reloads Airplanes.\nCan be Infiltrated by an Spy resulting\nin Veterancy for enemy Aircraft.\nCan be Infiltrated by an Saboteur\nresulting in getting Disabled temporarily.\n  Special Ability: Paratroopers\nA Plane drops a squad of\nVeteran infantry anywhere on the map.
 	Valued:
 		Cost: 750
 	Tooltip:
@@ -2456,26 +2465,27 @@ AFLD:
 		FinishRepairingNotification: UnitRepaired
 		PlayerExperience: 15
 		PauseOnCondition: disabled || build-incomplete || sabotaged
-		RequiresCondition: aircraft-repair && !invulnerability
-	ExternalCondition@AIRCRAFTREPAIR:
-		Condition: aircraft-repair
-	WithDecoration@AIRCRAFTREPAIR:
-		Image: select
-		Palette: chrome
-		Sequence: repair-small
-		Position: TopLeft
-		Margin: 6, 4
-		BlinkInterval: 15
-		BlinkPattern: on, off
-		RequiresCondition: aircraft-repair
-		RequiresSelection: True
-		ValidRelationships: Ally, Neutral
+		#	RequiresCondition: aircraft-repair && !invulnerability
+		RequiresCondition: !disabled && !sabotaged && !invulnerability
+	#	ExternalCondition@AIRCRAFTREPAIR:
+	#	Condition: aircraft-repair
+	#	WithDecoration@AIRCRAFTREPAIR:
+	#	Image: select
+	#	Palette: chrome
+	#	Sequence: repair-small
+	#	Position: TopLeft
+	#	Margin: 6, 4
+	#	BlinkInterval: 15
+	#	BlinkPattern: on, off
+	#	RequiresCondition: aircraft-repair
+	#	RequiresSelection: True
+	#	ValidRelationships: Ally, Neutral
 	Reservable:
 	WithResupplyAnimation:
 		RequiresCondition: !build-incomplete
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@allies:
-		Factions: allies, usa, england, holland, france, germany, spain, italy, greece, turkey
+		Factions: allies, usa, england, holland, france, germany, sweden, spain, italy, greece, turkey
 		Prerequisite: aircraft.allies
 	ProvidesPrerequisite@usa:
 		Factions: usa
@@ -2806,7 +2816,7 @@ AFLD:
 	ParatroopersPower@ParaJeeps:
 		PauseOnCondition: disabled || lowpower
 		OrderName: AlliedParaScouts
-		Prerequisites: aircraft.allies, player.england, ~techlevel.unrestricted
+		Prerequisites: aircraft.allies, weap, player.england, ~techlevel.unrestricted
 		Icon: parajeep
 		ChargeInterval: 7500
 		Description: Parascouts
@@ -3003,7 +3013,7 @@ HPAD:
 		Queue: Building
 		BuildPaletteOrder: 10
 		Prerequisites: proc, ~techlevel.medium
-		Description: Produces and reloads Helicopters.\nCan be Infiltrated by an Spy resulting\nin Veterancy for enemy Aircraft.\nCan be Infiltrated by an Saboteur\nresulting in its Destruction.
+		Description: Produces and reloads Helicopters.\nCan be Infiltrated by an Spy resulting\nin Veterancy for enemy Aircraft.\nCan be Infiltrated by an Saboteur\nresulting in getting Disabled temporarily.
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -3019,7 +3029,6 @@ HPAD:
 		Types: ThiefInfiltrate
 		Condition: sabotaged
 		Duration: 750
-		#	RequiresCondition: !maintenance && !powerdown
 	TimedConditionBar@Sabotage:
 		Condition: sabotaged
 	InfiltrateForSupportPower:
@@ -3047,20 +3056,21 @@ HPAD:
 		FinishRepairingNotification: UnitRepaired
 		PlayerExperience: 15
 		PauseOnCondition: disabled || build-incomplete || sabotaged
-		RequiresCondition: aircraft-repair && !invulnerability
-	ExternalCondition@AIRCRAFTREPAIR:
-		Condition: aircraft-repair
-	WithDecoration@AIRCRAFTREPAIR:
-		Image: select
-		Palette: chrome
-		Sequence: repair-small
-		Position: TopLeft
-		Margin: 6, 4
-		BlinkInterval: 15
-		BlinkPattern: on, off
-		RequiresCondition: aircraft-repair
-		RequiresSelection: True
-		ValidRelationships: Ally, Neutral
+		#	RequiresCondition: aircraft-repair && !invulnerability
+		RequiresCondition: !disabled && !sabotaged && !invulnerability
+	#	ExternalCondition@AIRCRAFTREPAIR:
+	#	Condition: aircraft-repair
+	#	WithDecoration@AIRCRAFTREPAIR:
+	#	Image: select
+	#	Palette: chrome
+	#	Sequence: repair-small
+	#	Position: TopLeft
+	#	Margin: 6, 4
+	#	BlinkInterval: 15
+	#	BlinkPattern: on, off
+	#	RequiresCondition: aircraft-repair
+	#	RequiresSelection: True
+	#	ValidRelationships: Ally, Neutral
 	Reservable:
 	WithResupplyAnimation:
 		RequiresCondition: !build-incomplete

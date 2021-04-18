@@ -11,24 +11,11 @@ SPY.England:
 		Image: spy
 	-MapEditorData:
 
-AFLD.Ukraine:
-	Inherits: AFLD
-	-Buildable:
-	ProvidesPrerequisite@clone:
-		Prerequisite: afld
-	RenderSprites:
-		Image: afld
-	-MapEditorData:
-
 Sniper:
-	Inherits: E1
+	Inherits: SNIP
 	-Buildable:
-	Armament:
-		Weapon: Sniper
-	Armament@GARRISONED:
-		Weapon: Sniper
 	RenderSprites:
-		Image: e1
+		Image: snip
 	-MapEditorData:
 
 Zombie:

@@ -96,6 +96,7 @@ Rules:
 	raplus|rules/ingame/vehicles-soviet.yaml
 	raplus|rules/ingame/disguise-tank.yaml
 	raplus|rules/ingame/faction-duplicates.yaml
+	raplus|rules/ingame/structures-tooltip-duplicates.yaml
     raplus|rules/map-compatibility.yaml  
 
 Sequences:

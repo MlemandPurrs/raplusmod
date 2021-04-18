@@ -1168,3 +1168,6 @@ GTNK:
 		DecorationBounds: 28,28
 	Passenger:
 		CustomPipType: pip-yellow
+	SpawnActorOnDeath:
+		Actor: GTNK.Husk
+		OwnerType: InternalName

@@ -273,7 +273,7 @@ Player:
 		PowerTypes: powr,apwr
 		BarracksTypes: barr
 		VehiclesFactoryTypes: weap
-		ProductionTypes: barr,weap,afld,hpad
+		ProductionTypes: barr,weap,afld,afld.russia,afld.ukraine,afld.belarus,afld.turkmen,hpad
 		NavalProductionTypes: spen
 		NewProductionCashThreshold: 4000
 		SiloTypes: silo
@@ -290,16 +290,36 @@ Player:
 			hsam: 9000
 			hsam.karelia: 9000
 			stek: 7500
+			stek.soviet: 7500
+			stek.russia: 7500
+			stek.ukraine: 7500
+			stek.karelia: 7500
+			stek.uzbek: 7500
 		BuildingLimits:
 			proc: 4
 			barr: 2
 			weap: 3
+			fix: 1
 			fix.soviet: 1
+			fix.kazakh: 1
+			fix.china: 1
+			fix.moldova: 1
 			spen: 1
 			dome.soviet: 1
+			dome.belarus: 1
+			dome.karelia: 1
 			afld: 4
+			afld.russia: 4
+			afld.ukraine: 4
+			afld.belarus: 4
+			afld.turkmen: 4
 			hpad: 2
 			stek: 1
+			stek.soviet: 1
+			stek.russia: 1
+			stek.ukraine: 1
+			stek.karelia: 1
+			stek.uzbek: 1
 			iron: 1
 			mslo: 1
 			fbox: 2
@@ -319,12 +339,27 @@ Player:
 			proc: 15
 			barr: 2
 			weap: 6
+			fix: 1
 			fix.soviet: 1
+			fix.kazakh: 1
+			fix.china: 1
+			fix.moldova: 1
 			spen: 1
 			dome.soviet: 1
-			afld: 4
+			dome.belarus: 1
+			dome.karelia: 1
+			afld: 5
+			afld.russia: 5
+			afld.ukraine: 5
+			afld.belarus: 5
+			afld.turkmen: 5
 			hpad: 1
 			stek: 1
+			stek.soviet: 1
+			stek.russia: 1
+			stek.ukraine: 1
+			stek.karelia: 1
+			stek.uzbek: 1
 			mslo: 1
 			iron: 1
 			fbox: 1

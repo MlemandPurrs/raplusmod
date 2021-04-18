@@ -27,6 +27,9 @@ fact:
 			INTERIOR: TEMPERAT
 	icon: facticon
 	fake-icon: facficon
+	open-for-money: fact-cash-accept
+		Length: *
+		Tick: 80
 
 fact.husk:
 	idle: fact-dead
@@ -942,6 +945,8 @@ miniweap:
 		Tick: 80
 	bib: bib2
 		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
 		Length: *
 	icon: miniweapicon
 

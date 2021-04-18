@@ -39,6 +39,8 @@ hosp:
 		Length: *
 		Offset: 0,1
 		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
 	icon: hospicon
 
 hosp.husk:

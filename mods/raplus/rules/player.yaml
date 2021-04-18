@@ -173,6 +173,9 @@ Player:
 	GrantConditionOnPrerequisite@Allies:
 		Condition: player.allies
 		Prerequisites: player.allies
+	ProvidesPrerequisite@VanillaAllies:
+		Factions: allies
+		Prerequisite: vanilla.allies
 	ProvidesPrerequisite@USA:
 		Factions: usa
 		Prerequisite: player.usa
@@ -239,6 +242,9 @@ Player:
 	GrantConditionOnPrerequisite@Soviet:
 		Condition: player.soviet
 		Prerequisites: player.soviet
+	ProvidesPrerequisite@VanillaSoviet:
+		Factions: soviet
+		Prerequisite: vanilla.soviet
 	ProvidesPrerequisite@Russia:
 		Factions: russia
 		Prerequisite: player.russia

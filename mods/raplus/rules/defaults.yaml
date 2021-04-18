@@ -658,7 +658,7 @@
 		Condition: damaged
 		ValidDamageStates: Light, Medium, Heavy, Critical
 	Repairable:
-		RepairActors: fix, fix.allies, fix.soviet
+		RepairActors: fix, fix.allies, fix.soviet, fix.holland, fix.sweden, fix.turkey, fix.kazakh, fix.china, fix.moldova
 	ChronoshiftableWithSpriteEffect:
 		Image: chronoteleport
 		WarpInSequence: appear
@@ -1062,7 +1062,7 @@
 	Inherits@USABonus: ^AffectedByUSA
 	-EjectOnDeath:
 	Repairable:
-		RepairActors: afld, afld.ukraine, acar.deployed
+		RepairActors: afld, acar.deployed, afld.russia, afld.ukraine, afld.belarus, afld.turkmen, afld.usa, afld.england, afld.france, afld.germany, afld.italy, afld.greece
 	DeliversCash:
 		Payload: 0
 		Type: AircraftRefund
@@ -1078,6 +1078,7 @@
 	Tooltip:
 		GenericName: Helicopter
 	Aircraft:
+		IdleBehavior: None
 		CanHover: True
 		CruisingCondition: cruising
 		WaitDistanceFromResupplyBase: 4c0
@@ -1192,8 +1193,6 @@
 		PlayerExperience: 25
 		RepairingNotification: Repairing
 	EngineerRepairable:
-	AcceptsDeliveredCash:
-		ValidTypes: MoneyTransfer
 	WithMakeAnimation:
 		Condition: build-incomplete
 	CaptureManager:
@@ -1235,7 +1234,6 @@
 	Inherits@AI: ^ProductionAIBoost
 	Inherits@selection: ^SelectableCombatBuilding
 	-GivesBuildableArea:
-	-AcceptsDeliveredCash:
 	-ProductionCostMultiplier@Russia:
 	-Explodes@RUMALUS:
 	-GrantConditionOnPrerequisite@RUMALUS:

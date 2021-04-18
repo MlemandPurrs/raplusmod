@@ -488,7 +488,6 @@ ACAR.Deployed:
 	-RepairableBuilding:
 	-WithBuildingRepairDecoration:
 	-EngineerRepairable:
-	-AcceptsDeliveredCash:
 	-WithMakeAnimation:
 	-CaptureManager:
 	-Capturable:

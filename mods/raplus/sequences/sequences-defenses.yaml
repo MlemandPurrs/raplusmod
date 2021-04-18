@@ -472,6 +472,8 @@ mslo:
 mslo.husk:
 	Defaults:
 		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
 	idle: mslo
 		Start: 12
 		Length: 1

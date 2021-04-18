@@ -769,3 +769,14 @@ gtnk:
 	muzzle: gunfire2
 		Length: 2
 	icon: gtnkicon
+
+gtnk.destroyed:
+	idle: gtnk
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+	turret: gtnk
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512

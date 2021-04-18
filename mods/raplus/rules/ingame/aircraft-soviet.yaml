@@ -209,7 +209,7 @@ BADR.buildable:
 		RequiresSelection: true
 		FullSequence: pip-yellow
 	Rearmable:
-		RearmActors: afld, afld.ukraine, acar.deployed
+		RearmActors: afld, acar.deployed, afld.russia, afld.ukraine, afld.belarus, afld.turkmen, afld.usa, afld.england, afld.france, afld.germany, afld.italy, afld.greece
 	Contrail@1:
 		TrailLength: 8
 		TrailWidth: 48
@@ -622,7 +622,7 @@ YAK:
 		FullSequence: pip-blue
 		AmmoPools: ammodc
 	Rearmable:
-		RearmActors: afld, afld.ukraine, acar.deployed
+		RearmActors: afld, acar.deployed, afld.russia, afld.ukraine, afld.belarus, afld.turkmen, afld.usa, afld.england, afld.france, afld.germany, afld.italy, afld.greece
 		AmmoPools: ammogun, ammodc
 	Contrail:
 		Offset: -853,0,0
@@ -776,7 +776,7 @@ MIG:
 		AmmoPools: migammo
 	Rearmable:
 		AmmoPools: migammo
-		RearmActors: afld, afld.ukraine, acar.deployed
+		RearmActors: afld, acar.deployed, afld.russia, afld.ukraine, afld.belarus, afld.turkmen, afld.usa, afld.england, afld.france, afld.germany, afld.italy, afld.greece
 	Contrail@1:
 		Offset: -598,-683,0
 		TrailLength: 6
@@ -874,7 +874,7 @@ NEBR:
 		FullSequence: pip-red
 		AmmoPools: nuke
 	Rearmable:
-		RearmActors: afld, afld.ukraine, acar.deployed
+		RearmActors: afld, acar.deployed, afld.russia, afld.ukraine, afld.belarus, afld.turkmen, afld.usa, afld.england, afld.france, afld.germany, afld.italy, afld.greece
 		AmmoPools: nuke
 	Contrail@1:
 		TrailLength: 6
@@ -1021,7 +1021,7 @@ CMIG:
 		FullSequence: pip-yellow
 		RequiresSelection: true
 	Rearmable:
-		RearmActors: afld, afld.ukraine, acar.deployed
+		RearmActors: afld, acar.deployed, afld.russia, afld.ukraine, afld.belarus, afld.turkmen, afld.usa, afld.england, afld.france, afld.germany, afld.italy, afld.greece
 	Contrail@1:
 		Offset: -598,-683,0
 		TrailLength: 6
