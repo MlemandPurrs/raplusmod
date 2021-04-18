@@ -89,7 +89,7 @@ Napalm:
 		Spread: 170
 		Damage: 60
 		Versus:
-			Wood: 100
+			Wood: 75
 			Concrete: 50
 
 Napalm.bomber:

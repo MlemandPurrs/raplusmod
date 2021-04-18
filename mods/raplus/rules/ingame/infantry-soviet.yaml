@@ -465,3 +465,98 @@ DESO:
 		DeathSequencePalette: player-td
 	Passenger:
 		CustomPipType: pip-red
+
+#	the mission unit Saboteur had the base rigged for Detonation. 
+DEMO:
+	Inherits: ^Soldier
+	Inherits@ROT: ^RottingInfantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	-Tooltip:
+	-Guard:
+	-WithInfantryBody:
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 991
+		Prerequisites: ~barr, ~infantry.soviet, fix, ~techlevel.high
+		Description: Specialist Infantry armed with bouncing explosives.\n  Special abilities:\nCan Disguise as enemy Infantry. Loses disguise on Infiltrating.\nEnters enemy Structures to Demolish them.\nBooby traps Tech Buildings to blow up on Capture.\n  Strong vs Buildings\n  Weak vs everything Else
+	Valued:
+		Cost: 600
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 50
+	Mobile:
+		Speed: 56
+		Voice: Move
+	AttackMove:
+		Voice: Move
+	Passenger:
+		CustomPipType: pip-red
+		Voice: Move
+	#	Guard:
+	#	Voice: Move
+	Armament@PRIMARY:
+		Weapon: FireBomb
+		LocalOffset: 0,0,555
+		FireDelay: 15
+	Armament@Garrison:
+		Name: mounted
+		Weapon: FireBomb
+		FireDelay: 15
+	TakeCover:
+		ProneOffset: 256,64,-331
+	AttackFrontal:
+		Voice: Attack
+	WithInfantryBody:
+		DefaultAttackSequence: throw
+	Explodes:
+		Weapon: ArtilleryExplode
+		EmptyWeapon: ArtilleryExplode
+		Chance: 100
+		DamageSource: Killer
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+	Voiced:
+		VoiceSet: CommandoVoice
+	DeliversCash:
+		Payload: 150
+		Type: InfantryRefund
+	GpsDot:
+		String: Commando
+	#	15 seconds to diffuse
+	#	uhh for diffuse need rework
+	#	using warhead of CA
+	Demolition:
+		DetonationDelay: 250
+		Flashes: 61
+		FlashInterval: 4
+		Voice: Demolish
+		EnterBehaviour: Dispose
+	Infiltrates:
+		Types: DemoInfiltrate
+		Notification:
+		EnterBehaviour: Exit
+		PlayerExperience: 0
+	DisguiseTooltip:
+		Name: Demolitionist
+		GenericName: Soldier
+	Disguise:
+		DisguisedCondition: disguise
+		RevealDisguiseOn: Attack, Demolish, Infiltrate
+	WithDisguisingInfantryBody:
+		DefaultAttackSequence: throw
+		IdleSequences: idle1,idle2
+		StandSequences: stand,stand2
+	WithDecoration@disguise:
+		Image: pips
+		Sequence: pip-disguise
+		Palette: effect
+		Position: TopRight
+		Margin: 0, 4
+		RequiresCondition: disguise
+	IgnoresDisguise:
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: HoldFire
+		ScanRadius: 5

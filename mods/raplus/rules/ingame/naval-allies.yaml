@@ -46,20 +46,20 @@ PT:
 		Weapon: 2Inch
 		LocalOffset: 216,0,48
 		MuzzleSequence: muzzle
-		PauseOnCondition: empdisable
+		PauseOnCondition: under-bridge || empdisable
 	Armament@SECONDARY:
 		Turret: secondary
 		Name: secondary
 		Weapon: DepthCharge
 		MuzzleSequence: muzzle
-		PauseOnCondition: empdisable
+		PauseOnCondition: under-bridge || empdisable
 	Armament@TERTIARY:
 		Name: tertiary
 		Turret: secondary
 		Weapon: M60mg
 		LocalOffset: 128,0,43
 		MuzzleSequence: mg-muzzle
-		PauseOnCondition: empdisable
+		PauseOnCondition: under-bridge || empdisable
 	AttackTurreted:
 		Armaments: primary, secondary, tertiary
 		Turrets: primary, secondary
@@ -122,7 +122,7 @@ RSHP:
 		TargetRelationships: Ally
 		ForceTargetRelationships: None
 		Turret: primary
-		PauseOnCondition: empdisable
+		PauseOnCondition: under-bridge || empdisable
 	AttackTurreted:
 		PauseOnCondition: empdisable
 	WithSpriteTurret:
@@ -212,21 +212,21 @@ DD:
 		Weapon: Stinger
 		LocalOffset: 0,-100,0, 0,100,0
 		LocalYaw: 64, -64
-		PauseOnCondition: empdisable
+		PauseOnCondition: under-bridge || empdisable
 	Armament@SECONDARY:
 		Turret: primary
 		Name: secondary
 		Weapon: StingerAA
 		LocalOffset: 0,-100,0, 0,100,0
 		LocalYaw: 64, -64
-		PauseOnCondition: empdisable
+		PauseOnCondition: under-bridge || empdisable
 	Armament@TERTIARY:
 		Turret: secondary
 		Name: tertiary
 		Weapon: DepthChargeDual
 		LocalOffset: 0,-100,0, 0,100,0
 		LocalYaw: 80, -80
-		PauseOnCondition: empdisable
+		PauseOnCondition: under-bridge || empdisable
 	AttackTurreted:
 		Armaments: primary, secondary, tertiary
 		Turrets: primary, secondary
@@ -289,19 +289,20 @@ BSHP:
 		LocalOffset: 480,0,40
 		Recoil: 85
 		RecoilRecovery: 34
-		PauseOnCondition: empdisable
+		PauseOnCondition: under-bridge || empdisable
 		MuzzleSequence: muzzle
 	Armament@SECONDARY:
 		Name: secondary
 		Turret: secondary
 		Weapon: DepthCharge
-		PauseOnCondition: empdisable
+		PauseOnCondition: under-bridge || empdisable
 	Armament@TERTIARY:
 		Name: tertiary
 		Turret: secondary
 		Weapon: M1Carbine.Vehicle
 		LocalOffset: 128,0,43
 		MuzzleSequence: mg-muzzle
+		PauseOnCondition: under-bridge || empdisable
 	AttackTurreted:
 		Armaments: primary, secondary, tertiary
 		Turrets: primary, secondary
@@ -378,7 +379,7 @@ CA:
 		Recoil: 171
 		RecoilRecovery: 34
 		MuzzleSequence: muzzle
-		PauseOnCondition: empdisable
+		PauseOnCondition: under-bridge || empdisable
 	Armament@SECONDARY:
 		Name: secondary
 		Turret: secondary
@@ -387,7 +388,7 @@ CA:
 		Recoil: 171
 		RecoilRecovery: 34
 		MuzzleSequence: muzzle
-		PauseOnCondition: empdisable
+		PauseOnCondition: under-bridge || empdisable
 	AttackTurreted:
 		Turrets: primary, secondary
 		TargetFrozenActors: True
@@ -439,6 +440,7 @@ ACAR:
 		IntoActor: acar.deployed
 		Offset: -1,0
 		Facing: 768
+		PauseOnCondition: under-bridge
 	RenderSprites:
 		Image: acar
 		Scale: 0.9
@@ -563,11 +565,11 @@ ACAR.Deployed:
 		CancelledAudio: Cancelled
 		LowPowerModifier: 300
 	ProvidesPrerequisite@allies:
-		Factions: allies, england, france, germany, spain, greece, turkey
+		Factions: allies, usa, england, holland, france, germany, sweden, spain, italy, greece, turkey
 		Prerequisite: aircraft.allies
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@soviet:
-		Factions: soviet, russia, ukraine, belarus, karelia, kazakh, uzbek
+		Factions: soviet, russia, ukraine, belarus, karelia, moldova, kazakh, uzbek, turkmen, afghan, china
 		Prerequisite: aircraft.soviet
 		ResetOnOwnerChange: True
 	ProductionBar:
@@ -594,12 +596,4 @@ ACAR.Deployed:
 		StartRepairingNotification: Repairing
 		FinishRepairingNotification: UnitRepaired
 		PlayerExperience: 15
-	CarrierMaster:
-		Actors: harr, harr, harr
-		RearmTicks: 150
-		RespawnTicks: 500
-		InstantRepair: true
-		SlaveDisposalOnKill: KillSlaves
-		SpawnAllAtOnce: false
-		RequiresCondition: !empdisable
 	-MapEditorData:

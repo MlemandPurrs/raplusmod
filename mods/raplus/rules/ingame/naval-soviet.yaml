@@ -27,14 +27,14 @@ SS:
 		Weapon: TorpTube
 		LocalOffset: 0,-171,0, 0,171,0
 		FireDelay: 2
-		PauseOnCondition: empdisable
+		PauseOnCondition: empdisable || under-bridge
 	Armament@SECONDARY:
 		Name: secondary
 		Turret: secondary
 		Weapon: GrenadeLauncher
 		LocalOffset: 132,0,96
 		MuzzleSequence: muzzle
-		PauseOnCondition: empdisable
+		PauseOnCondition: empdisable || under-bridge
 	AttackFrontal:
 		Armaments: primary, secondary
 		PauseOnCondition: empdisable
@@ -105,13 +105,13 @@ MSUB:
 		Weapon: SubMissile.2shot
 		LocalOffset: 100,-171,46
 		FireDelay: 2
-		PauseOnCondition: empdisable
+		PauseOnCondition: empdisable || under-bridge
 	Armament@SECONDARY:
 		Name: secondary
 		Weapon: SubMissile.2shot
 		LocalOffset: 100,171,46
 		FireDelay: 2
-		PauseOnCondition: empdisable
+		PauseOnCondition: empdisable || under-bridge
 	AttackFrontal:
 		TargetFrozenActors: True
 		ForceFireIgnoresActors: True
@@ -167,7 +167,7 @@ SSAM:
 		Weapon: SubMissileAA.cluster
 		LocalOffset: 0,0,101
 		FireDelay: 2
-		PauseOnCondition: empdisable
+		PauseOnCondition: empdisable || under-bridge
 	AttackTurreted:
 		Armaments: primary
 		PauseOnCondition: empdisable
@@ -213,13 +213,13 @@ NSUB:
 		Weapon: TorpNuke
 		LocalOffset: 612,-171,0, 612,171,0
 		FireDelay: 2
-		PauseOnCondition: !ammo
+		PauseOnCondition: !ammo || empdisable || under-bridge
 	Armament@AG:
 		Name: secondary
 		Weapon: SubNuke
 		LocalOffset: 0,0,0
 		FireDelay: 2
-		PauseOnCondition: !ammo
+		PauseOnCondition: !ammo || empdisable || under-bridge
 	AmmoPool:
 		Armaments: primary, secondary
 		Ammo: 1
@@ -289,7 +289,7 @@ FSUB:
 	Armament:
 		Weapon: FireballLauncher.Single
 		LocalOffset: 512,0,88
-		PauseOnCondition: empdisable
+		PauseOnCondition: empdisable || under-bridge
 	Turreted:
 		TurnSpeed: 255
 		Offset: 525,0,-46
@@ -355,6 +355,7 @@ CARR:
 	Transforms:
 		IntoActor: carr.deployed
 		Offset: 0,0
+		PauseOnCondition: under-bridge
 	RenderSprites:
 		Scale: 1.2
 
@@ -516,6 +517,7 @@ MGNM:
 		DamageSource: Killer
 	Armament:
 		Weapon: SeaMineTargeting
+		PauseOnCondition: under-bridge
 	AttackLeap:
 		Speed: 92
 		Voice: Action
@@ -526,6 +528,7 @@ MGNM:
 		Condition: triggered
 	GrantConditionOnDeploy:
 		DeployedCondition: triggered
+		PauseOnCondition: under-bridge || empdisable
 	KillsSelf:
 		RequiresCondition: invulnerability || triggered
 	ChronoshiftableWithSpriteEffect:
@@ -596,7 +599,7 @@ SSML:
 		Weapon: SubMissile.barrage
 		LocalOffset: 0,-151,0, 0,0,0, 0,151,0, -151,151,0, -151,0,0, -151,-151,0
 		FireDelay: 2
-		PauseOnCondition: empdisable
+		PauseOnCondition: empdisable || under-bridge
 	AttackTurreted:
 		Armaments: primary, secondary
 		TargetFrozenActors: True

@@ -7,8 +7,6 @@ OILB:
 	Selectable:
 		Priority: 0
 		Bounds: 48,48
-	OwnerLostAction:
-		Action: ChangeOwner
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -16,12 +14,6 @@ OILB:
 		HP: 800
 	RevealsShroud:
 		Range: 4c0
-	CaptureManager:
-	Capturable:
-		Types: building
-	CapturableProgressBar:
-	CapturableProgressBlink:
-	EngineerRepairable:
 	CashTrickler:
 		Interval: 375
 		Amount: 100
@@ -61,8 +53,6 @@ MISS:
 	Selectable:
 		Priority: 0
 		Bounds: 72,48
-	OwnerLostAction:
-		Action: ChangeOwner
 	Building:
 		Footprint: xxx xxx ===
 		Dimensions: 3,3
@@ -86,12 +76,6 @@ MISS:
 		Description: Capture to give visual range.
 		ValidRelationships: Neutral, Enemy
 	WithBuildingBib:
-	CaptureManager:
-	Capturable:
-		Types: building
-	CapturableProgressBar:
-	CapturableProgressBlink:
-	EngineerRepairable:
 	WithDeathAnimation:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
@@ -106,8 +90,6 @@ MISS:
 HOSP:
 	Inherits: ^TechBuilding
 	Inherits@shape: ^2x2Shape
-	OwnerLostAction:
-		Action: ChangeOwner
 	Selectable:
 		Priority: 0
 		Bounds: 48,48
@@ -116,12 +98,6 @@ HOSP:
 		Dimensions: 2,2
 	Health:
 		HP: 800
-	CaptureManager:
-	Capturable:
-		Types: building
-	CapturableProgressBar:
-	CapturableProgressBlink:
-	EngineerRepairable:
 	Tooltip:
 		Name: Hospital
 	TooltipDescription@ally:
@@ -199,19 +175,11 @@ BIO:
 	Inherits@POWER_OUTAGE: ^DisabledByPowerOutage
 	Selectable:
 		Bounds: 48,48
-	OwnerLostAction:
-		Action: ChangeOwner
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
 	RevealsShroud:
 		Range: 4c0
-	CaptureManager:
-	CapturableProgressBlink:
-	Capturable:
-		Types: building
-	CapturableProgressBar:
-	EngineerRepairable:
 	Power:
 		Amount: 300
 	Tooltip:
@@ -286,18 +254,11 @@ FCOM:
 	RevealsShroud@GAPGEN:
 		Range: 4c0
 	WithBuildingBib:
-	CaptureManager:
-		BeingCapturedCondition: being-captured
-	Capturable:
-		Types: building
-	CapturableProgressBar:
-	CapturableProgressBlink:
 	GivesBuildableArea:
 		AreaTypes: building
 	BaseProvider:
 		PauseOnCondition: being-captured
 		Range: 8c0
-	EngineerRepairable:
 	Power:
 		Amount: 30
 	ProvidesPrerequisite@buildingname:

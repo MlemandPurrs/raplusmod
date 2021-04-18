@@ -692,7 +692,6 @@ DTNK:
 		MuzzleSequence: muzzle
 		PauseOnCondition: empdisable
 		#	break disguise before attacking
-		#	RequiresCondition: !mcv && !harv && !harvsvyt && !harvchrn && !truk && !dtrk && !mwf && !jeep && !ftrk && !ftrkgun && !ftrkrep && !ftrkflam && !apc && !rapc && !apcsvyt && !batf && !tnk1 && !atnk && tnk2 && !tnk2s && !tnk3 && !tnk31b && !tnk4 && !tnk4flam && !nrty && !tnk5 && !prsm && !arty && !gcan && !v2rl && !icbm && !mnly && !mnlynuke && !mgg && !msam && !mrj && !mhqciv && !tnkd && !ctnk && !stnk && !ttnk && !qtnk && !saml && !isu && !gtnk
 		RequiresCondition: !disguise
 	#	everything else defaults to using this ^^
 	#	^ nvm that, doesnt work anymore

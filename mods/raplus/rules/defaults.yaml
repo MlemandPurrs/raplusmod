@@ -1348,15 +1348,25 @@
 
 ^TechBuilding:
 	Inherits: ^BasicBuilding
+	Inherits@DemolitionistMechanics: ^AffectedByBoobyTrap
 	Huntable:
 	Health:
 		HP: 400
 	Armor:
 		Type: Wood
 	Tooltip:
-		Name: Civilian Building
+		Name: Tech Building
 		GenericVisibility: None
 	FrozenUnderFog:
+	OwnerLostAction:
+		Action: ChangeOwner
+	CaptureManager:
+		BeingCapturedCondition: being-captured
+	Capturable:
+		Types: building
+	CapturableProgressBar:
+	CapturableProgressBlink:
+	EngineerRepairable:
 	MapEditorData:
 		Categories: Tech building
 
@@ -1433,7 +1443,17 @@
 		Bounds: 24,24
 
 ^CivBuilding:
-	Inherits: ^TechBuilding
+	Inherits: ^BasicBuilding
+	-Demolishable:
+	Huntable:
+	Health:
+		HP: 400
+	Armor:
+		Type: Wood
+	Tooltip:
+		Name: Civilian Building
+		GenericVisibility: None
+	FrozenUnderFog:
 	RenderSprites:
 		Palette: player
 	MapEditorData:
@@ -1462,7 +1482,6 @@
 	-Selectable:
 	-SelectionDecorations:
 	-Targetable:
-	-Demolishable:
 	-ChangesHealth@BurnDamage:
 	-ExternalCondition@BurnDamage:
 	-WithDamageOverlay@SmallBurn:
@@ -1470,7 +1489,6 @@
 	-WithDamageOverlay@LargeBurn:
 	Tooltip:
 		Name: Field
-
 	MapEditorData:
 		ExcludeTilesets: INTERIOR
 	Interactable:
@@ -2550,3 +2568,27 @@ unit.summoner:
 	Interactable:
 	RenderSprites:
 		Image: dummy
+
+^AffectedByBoobyTrap:
+	Targetable@Demolitionist:	
+		TargetTypes: DemoInfiltrate
+		RequiresCondition: !booby-trapped
+	GrantConditionOnInfiltration@Demolitionist:
+		Types: DemoInfiltrate
+		Condition: booby-trapped
+	GrantDelayedCondition:
+		Condition: capfailer
+		Delay: 100
+		PauseOnCondition: !being-captured
+	KillsSelf@BoobyTrap:
+		Delay: 0
+		RemoveInstead: false
+		RequiresCondition: booby-trapped && capfailer
+	WithDecoration@BoobyTrap:
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-explosive
+		Position: Center
+		Margin: 0, 4
+		ValidRelationships: Neutral
+		RequiresCondition: booby-trapped

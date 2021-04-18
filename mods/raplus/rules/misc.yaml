@@ -768,10 +768,11 @@ fact.colorpicker:
 		Palette: colorpicker
 
 CTFLAG:
-	Inherits: ^TechBuilding
+	Inherits: ^CivBuilding
 	-HitShape:
 	-Health:
 	-Explodes:
+	-Explodes@CIVPANIC:
 	-Selectable:
 	-SelectionDecorations:
 	-Targetable:

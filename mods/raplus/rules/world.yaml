@@ -138,6 +138,7 @@
 		TerrainSpeeds:
 			Water: 100
 			Ford: 90
+			Bridge: 100
 			Tunnel: 100
 	Locomotor@LANDINGCRAFT:
 		Name: lcraft
@@ -146,6 +147,7 @@
 			Water: 100
 			Beach: 70
 			Ford: 80
+			Bridge: 100
 			Tunnel: 100
 	Locomotor@IMMOBILE:
 		Name: immobile

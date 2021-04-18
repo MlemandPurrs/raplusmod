@@ -352,3 +352,36 @@ Mortar:
 		Duration: 5
 		Intensity: 1
 		Multiplier: 0.5,0.5
+
+FireBomb:
+	Inherits: Grenade
+	ReloadDelay: 80
+	Range: 3c725
+	Report: grenade1.aud
+	Projectile: Bullet
+		Speed: 136
+		Inaccuracy: 0
+		Image: TNT
+		BounceCount: 2
+		BounceRangeModifier: 40
+		ValidBounceBlockerRelationships: Ally, Neutral, Enemy
+	Warhead@1Dam: SpreadDamage
+		Spread: 341
+		Falloff: 1000, 368, 135, 50, 18, 7, 0
+		Damage: 30
+		Versus:
+			None: 60
+			Kevlar: 50
+			Flak: 70
+			Wood: 100
+			Light: 35
+			Heavy: 35
+			Concrete: 100
+	Warhead@3Eff: CreateEffect
+		Explosions: napalm
+		ImpactSounds: firebl3.aud
+	Warhead@Flames: FireCluster
+		Weapon: BurnFx
+		RandomClusterCount: 3
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx

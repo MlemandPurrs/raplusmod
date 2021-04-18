@@ -158,7 +158,6 @@ V19.Husk:
 	Inherits: ^CivBuilding
 	-Selectable:
 	-Targetable:
-	-Demolishable:
 	-HitShape:
 	-Health:
 	-Explodes:

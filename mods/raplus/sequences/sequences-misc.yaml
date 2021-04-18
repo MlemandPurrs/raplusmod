@@ -313,6 +313,8 @@ pips:
 		Offset: 0, 0
     tag-cloner: tag-cloner
         Offset: 0, 2
+    tag-explosive: tag-explosive
+        Offset: 0, 2
 
 pip-ammored:
 	oneshot:
@@ -595,3 +597,8 @@ dummy.visual:
 wake-infantry:
 	idle:
 		Length: *
+
+tnt:
+	idle: tnt
+		Length: *
+		ZOffset: 1023
