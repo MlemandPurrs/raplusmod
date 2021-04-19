@@ -1,0 +1,130 @@
+minicameos:
+	powricon: lores|powricon
+	apwricon: lores|apwricon
+	procicon: lores|procicon
+	siloicon: lores|siloicon
+	tenticon: lores|tenticon
+	barricon: lores|barricon
+	kennicon: lores|kennicon
+	weapicon: lores|weapicon
+	fixicon: lores|fixicon
+	domeicon: lores|domeicon
+	hpadicon: lores|hpadicon
+	afldicon: lores|afldicon	
+	syrdicon: lores|syrdicon
+	spenicon: lores|spenicon
+	atekicon: loresateknewicon
+	stekicon: lores|stekicon
+	sproicon: lores|atekicon
+	orepicon: loresorepicon
+	indpicon: loresindpicon
+	sbagicon: lores|sbagicon
+	fencicon: lores|fencicon
+	brikicon: lores|brikicon
+	gatvicon: loresgatvicon
+	gathicon: loresgathicon
+	pboxicon: lores|pboxicon
+	hboxicon: lores|hboxicon
+	gunicon: lores|gunicon
+	fboxicon: loresfboxicon
+	fturicon: lores|fturicon
+	tslaicon: lores|tslaicon
+	agunicon: lores|agunicon
+	samicon: lores|samicon
+	hsamicon: loreshsamicon
+	pdoxicon: lores|pdoxicon
+	ironicon: lores|ironicon
+	msloicon: lores|msloicon
+	gturicon: loresgturicon
+	prisicon: loresprisicon
+	pbaticon: lorespbaticon
+
+	e1icon: lores|e1icon
+	e2icon: lores|e2icon
+	e3icon: lores|e3icon
+	e4icon: lores|e4icon
+	e5icon: lorese5icon
+	e6icon: lores|e6icon
+	e7icon: lores|e7icon
+	mediicon: lores|mediicon
+	mechicon: loresmechicon
+	spyicon: lores|spyicon
+	#	sabicon: loressabicon
+	thficon: lores|thficon
+	dogicon: lores|dogicon
+	shokicon: loresshokicon
+	#	volkicon: loresvolkicon
+	#	rpgicon: loresrpgicon
+	#	desoicon: loresdesoicon
+	#	mgiicon: loresmgiicon
+	#	shoticon: loreshoticon
+	#	atgmicon: loresatgmicon
+	#	snipicon: loressnipicon
+	#	mrtricon: loresmrtricon
+	#	cinficon: lorescinficon
+	mcvicon: lores|mcvicon
+	harvicon: lores|harvicon
+	trukicon: lores|trukicon
+	mnlyicon: lores|mnlyicon
+	dtnkicon: loresdtnkicon
+	jeepicon: lores|jeepicon
+	ftrkicon: loresftrkicon
+	ftrkrepicon: loresftrkrepicon
+	ftrkflamicon: loresftrkflamicon
+	#	gtnkicon: loresgtnkicon
+	apcicon: lores|apcicon
+	apcsvyticon: loresapcsvyticon
+	rapcicon: loresrapcicon
+	1tnkicon: lores|1tnkicon
+	atnkicon: loresatnkicon
+	2tnkicon: lores|2tnkicon
+	#	2tnksicon: lores2tnksicon
+	3tnkicon: lores|3tnkicon
+	3tnk1bicon: lores3tnk1bicon
+	4tnkicon: lores|4tnkicon
+	#	4tnkflamicon: lores4tnkflamicon
+	#	5nkicon: lores5tnkicon
+	artyicon: lores|artyicon
+	gcanicon: loresgcanicon
+	#	isuicon: loresisuicon
+	v2rlicon: lores|v2rlicon
+	icbmicon: loresicbmicon
+	ctnkicon: loresctnkicon
+	stnkicon: loresstnkicon
+	#	tnkdicon: lorestnkdicon
+	mrjicon: lores|mrjicon
+	mggicon: lores|mggicon
+	msamicon: loresmsamicon
+	samlicon: loressamlicon
+	ttnkicon: loresttnkicon
+	dtrkicon: loresdtrkicon
+	qtnkicon: loresqtnkicon
+	prsmicon: loresprsmicon
+
+	lsticon: lores|lsticon
+	pticon: lores|pticon
+	rshpicon: loresrshpicon
+	ddicon: lores|ddicon
+	bshpicon: loresbshpicon
+	caicon: lores|caicon
+	ssicon: lores|ssicon
+	fsubicon: loresfsubicon
+	msubicon: loresmsubicon
+	ssamicon: loresssamicon
+	carricon: lorescarricon
+	mgnmicon: loresmgnmicon
+
+	tranicon: lores|tranicon
+	heliicon: lores|heliicon
+	hindicon: lores|hindicon
+	#	iroqicon: loresiroqicon
+	#	mi2icon: loresmi2icon
+	yakicon: lores|yakicon
+	migicon: lores|migicon
+	spiticon: loresspiticon
+	tornicon: lorestornicon
+	badricon: lores|badricon
+	b52icon: loresb52icon
+	bminicon: lores|pinficon
+	nebricon: loresnebricon
+	smigicon: lores|smigicon

@@ -48,6 +48,8 @@ hosp.husk:
 		Start: 8
 	bib: bib3
 		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
 		Length: *
 
 bio:

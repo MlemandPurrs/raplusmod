@@ -37,6 +37,7 @@ Packages:
     raplus|bits/buildings
 	raplus|bits/desert
     raplus|bits/icons
+    raplus|bits/icons/lores
     raplus|bits/infantry
 	raplus|bits/interior
     raplus|bits/music
@@ -97,7 +98,8 @@ Rules:
 	raplus|rules/ingame/disguise-tank.yaml
 	raplus|rules/ingame/faction-duplicates.yaml
 	raplus|rules/ingame/structures-tooltip-duplicates.yaml
-    raplus|rules/map-compatibility.yaml  
+    raplus|rules/ingame/classic-spy-mechanic.yaml
+    raplus|rules/map-compatibility.yaml
 
 Sequences:
     raplus|sequences/sequences.yaml
@@ -111,7 +113,8 @@ Sequences:
 	raplus|sequences/sequences-neutral.yaml
 	raplus|sequences/sequences-structures.yaml
 	raplus|sequences/sequences-disguise-tank.yaml
-
+    raplus|sequences/classic-spy-sequences.yaml
+	
 TileSets:
 	raplus|tilesets/snow.yaml
 	raplus|tilesets/interior.yaml

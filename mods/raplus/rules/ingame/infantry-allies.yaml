@@ -258,6 +258,68 @@ SPY:
 	DeliversCash:
 		Payload: 125
 		Type: InfantryRefund
+	Targetable@AIFixer:
+		TargetTypes: IgnoreThis
+		RequiresCondition: disguised
+
+SPY.Classic:
+	Inherits: ^Soldier
+	Inherits@ROT: ^RottingInfantry
+	-Tooltip:
+	-Guard:
+	-WithInfantryBody:
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 7
+		Prerequisites: ~disabled
+		Description: Agent of the Intelligence Service.\n  Special Abilities:\nCan Disguise as enemy Infantry. Loses disguise on Attacking.\nCan Enter enemy Structures, performing different functions:\n  - Powerplants: Disables them causing Power outage.\n  - Tech Center: Unlocks Battle Fortress unit.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Valued:
+		Cost: 500
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Mobile:
+		Voice: Move
+	RevealsShroud:
+		Range: 5c0
+	DisguiseTooltip:
+		Name: Classic Spy
+		GenericName: Soldier
+	Disguise:
+		DisguisedCondition: disguise
+	WithDisguisingInfantryBody:
+		DefaultAttackSequence: shoot
+		IdleSequences: idle1,idle2
+		StandSequences: stand,stand2
+	WithDecoration@disguise:
+		Image: pips
+		Sequence: pip-disguise
+		Palette: effect
+		Position: TopRight
+		Margin: 0, 4
+		RequiresCondition: disguise
+	IgnoresDisguise:
+	#	Infiltrates:
+	#	Types: SpyInfiltrate
+	#	Notification: BuildingInfiltrated
+	#	PlayerExperience: 50
+	Voiced:
+		VoiceSet: SpyVoice
+	Passenger:
+		CustomPipType: pip-blue
+		Voice: Move
+	DeliversCash:
+		Payload: 125
+		Type: InfantryRefund
+	ProximityExternalCondition@SpyMechanic:
+		Condition: reveal_secrets
+		Range: 5c768
+		ValidRelationships: Enemy
+	RenderSprites:
+		Image: spy
+	Targetable@AIFixer:
+		TargetTypes: IgnoreThis
+		RequiresCondition: disguised
 
 E7:
 	Inherits: ^Soldier

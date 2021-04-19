@@ -1,6 +1,7 @@
 FACT:
 	Inherits: ^Building
 	Inherits@CHEAPER: ^AffectedByUzbek
+	Inherits@ESPIONAGE: ^RevealStructureandDefenseProduction
 	GrantConditionOnPrerequisite@GLOBALFACTUNDEPLOY:
 		Condition: factundeploy
 		Prerequisites: global-factundeploy
@@ -327,6 +328,7 @@ TENT:
 	Inherits@shape: ^2x2Shape
 	Inherits@PRIMARY: ^PrimaryBuilding
 	Inherits@USAMalus: ^AffectedByUSAMalus
+	Inherits@ESPIONAGE: ^RevealInfantryProduction
 	-ActorPreviewPlaceBuildingPreview:
 	Selectable:
 		Bounds: 48,48
@@ -512,6 +514,7 @@ BARR:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape
 	Inherits@PRIMARY: ^PrimaryBuilding
+	Inherits@ESPIONAGE: ^RevealInfantryProduction
 	-ActorPreviewPlaceBuildingPreview:
 	Selectable:
 		Bounds: 48,48
@@ -1226,6 +1229,7 @@ WEAP:
 	Inherits@PRIMARY: ^PrimaryBuilding
 	Inherits@IDISABLE: ^DisableOnPowerDown
 	Inherits@USAMalus: ^AffectedByUSAMalus
+	Inherits@ESPIONAGE: ^RevealVehicleProduction
 	-ActorPreviewPlaceBuildingPreview:
 	SequencePlaceBuildingPreview:
 		Sequence: place
@@ -2400,6 +2404,7 @@ AFLD:
 	Inherits@PRIMARY: ^PrimaryBuilding
 	Inherits@shape: ^3x2Shape
 	Inherits@USAMalus: ^AffectedByUSAMalus
+	Inherits@ESPIONAGE: ^RevealAircraftProduction
 	-ActorPreviewPlaceBuildingPreview:
 	SequencePlaceBuildingPreview:
 		Sequence: place
@@ -3000,6 +3005,7 @@ HPAD:
 	Inherits@PRIMARY: ^PrimaryBuilding
 	Inherits@shape: ^2x2Shape
 	Inherits@USAMalus: ^AffectedByUSAMalus
+	Inherits@ESPIONAGE: ^RevealAircraftProduction
 	Selectable:
 		Bounds: 48,48
 	HitShape:
@@ -3256,6 +3262,7 @@ SYRD:
 	Inherits: ^Building
 	Inherits@PRIMARY: ^PrimaryBuilding
 	Inherits@USAMalus: ^AffectedByUSAMalus
+	Inherits@ESPIONAGE: ^RevealNavalProduction
 	-SpawnActorsOnSell:
 	-GivesBuildableArea:
 	RequiresBuildableArea:
@@ -3471,6 +3478,7 @@ SYRD:
 SPEN:
 	Inherits: ^Building
 	Inherits@PRIMARY: ^PrimaryBuilding
+	Inherits@ESPIONAGE: ^RevealNavalProduction
 	-SpawnActorsOnSell:
 	-GivesBuildableArea:
 	RequiresBuildableArea:

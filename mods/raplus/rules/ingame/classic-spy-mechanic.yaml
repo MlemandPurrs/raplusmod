@@ -1,0 +1,1212 @@
+
+#	The following needs its own icon:
+#	Marine
+#	Shotgunner
+#	ATGM Soldier
+#	Sniper
+#	Mortar Trooper
+#	Chrono Soldier
+#	Volkov
+#	RPO Trooper
+#	Desolator
+#	Demolitionist (could be edited from Commando, maybe)
+#	Phase Tank
+#	Flame Mammoth
+#	Behemoth Tank
+#	Battle Fortress
+#	Tank Destroyer
+#	Siege Tank
+#	Iroqouis
+#	MI-2 Scout
+#	Aircraft Carrier
+#	Ballistic Submarine
+
+#	Does not work during Production, but after
+#	... possibly needs new trait
+
+^RevealStructureandDefenseProduction:
+	ExternalCondition@visible:
+		Condition: reveal_secrets
+	Inherits@STRUCTURESPROD: ^RevealStructureProduction
+	Inherits@DEFENSESPROD: ^RevealDefenseProduction
+
+^RevealStructureProduction:
+	GrantConditionOnProduction@powr:
+		Condition: powr_ICO
+		Actors: powr, powr.turkey
+	WithDecoration@powr:
+		Position: Left
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: powricon
+		RequiresCondition: reveal_secrets && powr_ICO
+	GrantConditionOnProduction@apwr:
+		Condition: apwr_ICO
+		Actors: apwr, apwr.turkey
+	WithDecoration@apwr:
+		Position: Left
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: apwricon
+		RequiresCondition: reveal_secrets && apwr_ICO
+	GrantConditionOnProduction@tent:
+		Condition: tent_ICO
+		Actors: tent
+	WithDecoration@tent:
+		Position: Left
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: tenticon
+		RequiresCondition: reveal_secrets && tent_ICO
+	GrantConditionOnProduction@barr:
+		Condition: barr_ICO
+		Actors: barr
+	WithDecoration@barr:
+		Position: Left
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: tenticon
+		RequiresCondition: reveal_secrets && barr_ICO
+	GrantConditionOnProduction@kenn:
+		Condition: kenn_ICO
+		Actors: kenn
+	WithDecoration@kenn:
+		Position: Left
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: kennicon
+		RequiresCondition: reveal_secrets && kenn_ICO
+	GrantConditionOnProduction@proc:
+		Condition: proc_ICO
+		Actors: proc
+	WithDecoration@proc:
+		Position: Left
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: procicon
+		RequiresCondition: reveal_secrets && proc_ICO
+	GrantConditionOnProduction@weap:
+		Condition: weap_ICO
+		Actors: weap
+	WithDecoration@weap:
+		Position: Left
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: weapicon
+		RequiresCondition: reveal_secrets && weap_ICO		
+	GrantConditionOnProduction@fix:
+		Condition: fix_ICO
+		Actors: fix, fix.allies, fix.soviet, fix.holland, fix.sweden, fix.turkey, fix.kazakh, fix.china, fix.moldova
+	WithDecoration@fix:
+		Position: Left
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: fixicon
+		RequiresCondition: reveal_secrets && fix_ICO
+	GrantConditionOnProduction@syrd:
+		Condition: syrd_ICO
+		Actors: syrd
+	WithDecoration@syrd:
+		Position: Left
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: syrdicon
+		RequiresCondition: reveal_secrets && syrd_ICO
+	GrantConditionOnProduction@spen:
+		Condition: spen_ICO
+		Actors: spen
+	WithDecoration@spen:
+		Position: Left
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: spenicon
+		RequiresCondition: reveal_secrets && spen_ICO
+	GrantConditionOnProduction@hpad:
+		Condition: hpad_ICO
+		Actors: hpad
+	WithDecoration@hpad:
+		Position: Left
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: hpadicon
+		RequiresCondition: reveal_secrets && hpad_ICO
+	GrantConditionOnProduction@afld:
+		Condition: afld_ICO
+		Actors: afld, afld.russia, afld.ukraine, afld.belarus, afld.turkmen, afld.usa, afld.england, afld.france, afld.germany, afld.italy, afld.greece
+	WithDecoration@afld:
+		Position: Left
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: afldicon
+		RequiresCondition: reveal_secrets && afld_ICO
+	GrantConditionOnProduction@dome:
+		Condition: dome_ICO
+		Actors: dome
+	WithDecoration@dome:
+		Position: Left
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: domeicon
+		RequiresCondition: reveal_secrets && dome_ICO
+	GrantConditionOnProduction@atek:
+		Condition: atek_ICO
+		Actors: atek, atek.allies, atek.usa, atek.england, atek.germany
+	WithDecoration@atek:
+		Position: Left
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: atekicon
+		RequiresCondition: reveal_secrets && atek_ICO
+	GrantConditionOnProduction@stek:
+		Condition: stek_ICO
+		Actors: stek, stek.soviet, stek.russia, stek.ukraine, stek.karelia, stek.uzbek
+	WithDecoration@stek:
+		Position: Left
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: stekicon
+		RequiresCondition: reveal_secrets && stek_ICO
+	GrantConditionOnProduction@spro:
+		Condition: spro_ICO
+		Actors: spro
+	WithDecoration@spro:
+		Position: Left
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: sproicon
+		RequiresCondition: reveal_secrets && spro_ICO
+	GrantConditionOnProduction@orep:
+		Condition: orep_ICO
+		Actors: orep
+	WithDecoration@orep:
+		Position: Left
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: orepicon
+		RequiresCondition: reveal_secrets && orep_ICO
+	GrantConditionOnProduction@indp:
+		Condition: indp_ICO
+		Actors: indp
+	WithDecoration@indp:
+		Position: Left
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: indpicon
+		RequiresCondition: reveal_secrets && indp_ICO
+
+^RevealDefenseProduction:
+	GrantConditionOnProduction@sbag:
+		Condition: sbag_ICO
+		Actors: sbag
+	WithDecoration@sbag:
+		Position: Right
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: sbagicon
+		RequiresCondition: reveal_secrets && sbag_ICO
+	GrantConditionOnProduction@fenc:
+		Condition: fenc_ICO
+		Actors: fenc
+	WithDecoration@fenc:
+		Position: Right
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: fencicon
+		RequiresCondition: reveal_secrets && fenc_ICO
+	GrantConditionOnProduction@brik:
+		Condition: brik_ICO
+		Actors: brik
+	WithDecoration@brik:
+		Position: Right
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: brikicon
+		RequiresCondition: reveal_secrets && brik_ICO
+	GrantConditionOnProduction@gatv:
+		Condition: gatv_ICO
+		Actors: vgate
+	WithDecoration@gatv:
+		Position: Right
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: gatvicon
+		RequiresCondition: reveal_secrets && gatv_ICO
+	GrantConditionOnProduction@gath:
+		Condition: gath_ICO
+		Actors: hgate
+	WithDecoration@gath:
+		Position: Right
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: gathicon
+		RequiresCondition: reveal_secrets && gath_ICO
+	GrantConditionOnProduction@silo:
+		Condition: silo_ICO
+		Actors: silo
+	WithDecoration@silo:
+		Position: Right
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: siloicon
+		RequiresCondition: reveal_secrets && silo_ICO
+	GrantConditionOnProduction@pbox:
+		Condition: pbox_ICO
+		Actors: pbox
+	WithDecoration@pbox:
+		Position: Right
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: pboxicon
+		RequiresCondition: reveal_secrets && pbox_ICO
+	GrantConditionOnProduction@hbox:
+		Condition: hbox_ICO
+		Actors: hbox
+	WithDecoration@hbox:
+		Position: Right
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: hboxicon
+		RequiresCondition: reveal_secrets && hbox_ICO
+	GrantConditionOnProduction@gun:
+		Condition: gun_ICO
+		Actors: gun
+	WithDecoration@gun:
+		Position: Right
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: gunicon
+		RequiresCondition: reveal_secrets && gun_ICO
+	GrantConditionOnProduction@fbox:
+		Condition: fbox_ICO
+		Actors: fbox, fbox.karelia
+	WithDecoration@fbox:
+		Position: Right
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: fboxicon
+		RequiresCondition: reveal_secrets && fbox_ICO
+	GrantConditionOnProduction@ftur:
+		Condition: ftur_ICO
+		Actors: ftur, ftur.karelia
+	WithDecoration@ftur:
+		Position: Right
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: fturicon
+		RequiresCondition: reveal_secrets && ftur_ICO
+	GrantConditionOnProduction@tsla:
+		Condition: tsla_ICO
+		Actors: tsla, tsla.karelia
+	WithDecoration@tsla:
+		Position: Right
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: tslaicon
+		RequiresCondition: reveal_secrets && tsla_ICO
+	GrantConditionOnProduction@agun:
+		Condition: agun_ICO
+		Actors: agun
+	WithDecoration@agun:
+		Position: Right
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: agunicon
+		RequiresCondition: reveal_secrets && agun_ICO
+	GrantConditionOnProduction@sam:
+		Condition: sam_ICO
+		Actors: sam, sam.karelia
+	WithDecoration@sam:
+		Position: Right
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: samicon
+		RequiresCondition: reveal_secrets && sam_ICO
+	GrantConditionOnProduction@hsam:
+		Condition: hsam_ICO
+		Actors: hsam, hsam.karelia
+	WithDecoration@hsam:
+		Position: Right
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: hsamicon
+		RequiresCondition: reveal_secrets && hsam_ICO
+	GrantConditionOnProduction@pdox:
+		Condition: pdox_ICO
+		Actors: pdox
+	WithDecoration@pdox:
+		Position: Right
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: pdoxicon
+		RequiresCondition: reveal_secrets && pdox_ICO
+	GrantConditionOnProduction@iron:
+		Condition: iron_ICO
+		Actors: iron
+	WithDecoration@iron:
+		Position: Right
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: ironicon
+		RequiresCondition: reveal_secrets && iron_ICO
+	GrantConditionOnProduction@mslo:
+		Condition: mslo_ICO
+		Actors: mslo
+	WithDecoration@mslo:
+		Position: Right
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: msloicon
+		RequiresCondition: reveal_secrets && mslo_ICO
+	GrantConditionOnProduction@gtur:
+		Condition: gtur_ICO
+		Actors: gtur
+	WithDecoration@gtur:
+		Position: Right
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: gturicon
+		RequiresCondition: reveal_secrets && gtur_ICO
+	GrantConditionOnProduction@pris:
+		Condition: pris_ICO
+		Actors: pris
+	WithDecoration@pris:
+		Position: Right
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: prisicon
+		RequiresCondition: reveal_secrets && pris_ICO
+	GrantConditionOnProduction@pbat:
+		Condition: pbat_ICO
+		Actors: pbat
+	WithDecoration@pbat:
+		Position: Right
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: pbaticon
+		RequiresCondition: reveal_secrets && pbat_ICO
+
+^RevealInfantryProduction:
+	ExternalCondition@visible:
+		Condition: reveal_secrets
+	GrantConditionOnProduction@e1:
+		Condition: e1_ICO
+		Actors: e1, e1.england
+	WithDecoration@e1:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: e1icon
+		RequiresCondition: reveal_secrets && e1_ICO
+	GrantConditionOnProduction@e2:
+		Condition: e2_ICO
+		Actors: e2, e2.turkey
+	WithDecoration@e2:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: e2icon
+		RequiresCondition: reveal_secrets && e2_ICO
+	GrantConditionOnProduction@e3:
+		Condition: e3_ICO
+		Actors: e3, e3.china
+	WithDecoration@e3:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: e3icon
+		RequiresCondition: reveal_secrets && e3_ICO
+	GrantConditionOnProduction@e4:
+		Condition: e4_ICO
+		Actors: e4, e4.italy
+	WithDecoration@e4:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: e4icon
+		RequiresCondition: reveal_secrets && e4_ICO
+	GrantConditionOnProduction@e5:
+		Condition: e5_ICO
+		Actors: e5
+	WithDecoration@e5:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: e5icon
+		RequiresCondition: reveal_secrets && e5_ICO
+	GrantConditionOnProduction@e6:
+		Condition: e6_ICO
+		Actors: e6
+	WithDecoration@e6:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: e6icon
+		RequiresCondition: reveal_secrets && e6_ICO
+	GrantConditionOnProduction@e7:
+		Condition: e7_ICO
+		Actors: e7, e7.usa
+	WithDecoration@e7:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: e7icon
+		RequiresCondition: reveal_secrets && e7_ICO
+	GrantConditionOnProduction@medi:
+		Condition: medi_ICO
+		Actors: medi
+	WithDecoration@medi:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: mediicon
+		RequiresCondition: reveal_secrets && medi_ICO
+	GrantConditionOnProduction@mech:
+		Condition: mech_ICO
+		Actors: mech
+	WithDecoration@mech:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: mechicon
+		RequiresCondition: reveal_secrets && mech_ICO
+	GrantConditionOnProduction@spy:
+		Condition: spy_ICO
+		Actors: spy
+	WithDecoration@spy:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: spyicon
+		RequiresCondition: reveal_secrets && spy_ICO
+	GrantConditionOnProduction@sab:
+		Condition: sab_ICO
+		Actors: sab
+	WithDecoration@sab:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: thficon
+		RequiresCondition: reveal_secrets && sab_ICO
+	GrantConditionOnProduction@dog:
+		Condition: dog_ICO
+		Actors: dog, dog.moldova
+	WithDecoration@dog:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: dogicon
+		RequiresCondition: reveal_secrets && dog_ICO
+	GrantConditionOnProduction@shok:
+		Condition: shok_ICO
+		Actors: shok
+	WithDecoration@shok:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: shokicon
+		RequiresCondition: reveal_secrets && shok_ICO
+	GrantConditionOnProduction@volk:
+		Condition: volk_ICO
+		Actors: volk, volk.uzbek
+	WithDecoration@volk:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: e7icon
+		RequiresCondition: reveal_secrets && volk_ICO
+	GrantConditionOnProduction@rpg:
+		Condition: rpg_ICO
+		Actors: rpg
+	WithDecoration@rpg:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: e3icon
+		RequiresCondition: reveal_secrets && rpg_ICO
+	GrantConditionOnProduction@deso:
+		Condition: deso_ICO
+		Actors: deso
+	WithDecoration@deso:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: e5icon
+		RequiresCondition: reveal_secrets && deso_ICO
+	GrantConditionOnProduction@mgi:
+		Condition: mgi_ICO
+		Actors: mgi
+	WithDecoration@mgi:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: e1icon
+		RequiresCondition: reveal_secrets && mgi_ICO
+	GrantConditionOnProduction@shot:
+		Condition: shot_ICO
+		Actors: shot
+	WithDecoration@shot:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: e1icon
+		RequiresCondition: reveal_secrets && shot_ICO
+	GrantConditionOnProduction@atgm:
+		Condition: atgm_ICO
+		Actors: atgm
+	WithDecoration@atgm:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: e3icon
+		RequiresCondition: reveal_secrets && atgm_ICO
+	GrantConditionOnProduction@snip:
+		Condition: snip_ICO
+		Actors: snip
+	WithDecoration@snip:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: shokicon
+		RequiresCondition: reveal_secrets && snip_ICO
+	GrantConditionOnProduction@mrtr:
+		Condition: mrtr_ICO
+		Actors: mrtr
+	WithDecoration@mrtr:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: e2icon
+		RequiresCondition: reveal_secrets && mrtr_ICO
+	GrantConditionOnProduction@cinf:
+		Condition: cinf_ICO
+		Actors: cinf
+	WithDecoration@cinf:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: e3icon
+		RequiresCondition: reveal_secrets && cinf_ICO
+
+^RevealVehicleProduction:
+	ExternalCondition@visible:
+		Condition: reveal_secrets
+	GrantConditionOnProduction@mcv:
+		Condition: mcv_ICO
+		Actors: mcv
+	WithDecoration@mcv:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: mcvicon
+		RequiresCondition: reveal_secrets && mcv_ICO
+	GrantConditionOnProduction@harv:
+		Condition: harv_ICO
+		Actors: harv, harv.soviet
+	WithDecoration@harv:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: harvicon
+		RequiresCondition: reveal_secrets && harv_ICO
+	GrantConditionOnProduction@truk:
+		Condition: truk_ICO
+		Actors: truk
+	WithDecoration@truk:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: trukicon
+		RequiresCondition: reveal_secrets && truk_ICO
+	GrantConditionOnProduction@mnly:
+		Condition: mnly_ICO
+		Actors: mnly, mnly.karelia
+	WithDecoration@mnly:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: mnlyicon
+		RequiresCondition: reveal_secrets && mnly_ICO
+	GrantConditionOnProduction@jeep:
+		Condition: jeep_ICO
+		Actors: jeep, jeep.england
+	WithDecoration@jeep:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: jeepicon
+		RequiresCondition: reveal_secrets && jeep_ICO
+	GrantConditionOnProduction@ftrk:
+		Condition: ftrk_ICO
+		Actors: ftrk, ftrk.belarus
+	WithDecoration@ftrk:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: ftrkicon
+		RequiresCondition: reveal_secrets && ftrk_ICO
+	GrantConditionOnProduction@ftrkflam:
+		Condition: ftrkflam_ICO
+		Actors: ftrk.flamer
+	WithDecoration@ftrkflam:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: ftrkflamicon
+		RequiresCondition: reveal_secrets && ftrkflam_ICO
+	GrantConditionOnProduction@ftrkrep:
+		Condition: ftrkrep_ICO
+		Actors: ftrk.repair
+	WithDecoration@ftrkrep:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: ftrkrepicon
+		RequiresCondition: reveal_secrets && ftrkrep_ICO
+	GrantConditionOnProduction@apc:
+		Condition: apc_ICO
+		Actors: apc, apc.germany
+	WithDecoration@apc:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: apcicon
+		RequiresCondition: reveal_secrets && apc_ICO
+	GrantConditionOnProduction@apcsvyt:
+		Condition: apcsvyt_ICO
+		Actors: apc.soviet, apc.karelia, apc.moldova
+	WithDecoration@apcsvyt:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: apcsvyticon
+		RequiresCondition: reveal_secrets && apcsvyt_ICO
+	GrantConditionOnProduction@rapc:
+		Condition: rapc_ICO
+		Actors: rapc
+	WithDecoration@rapc:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: rapcicon
+		RequiresCondition: reveal_secrets && rapc_ICO
+	GrantConditionOnProduction@1tnk:
+		Condition: tnk1_ICO
+		Actors: 1tnk, 1tnk.england, 1tnk.france, 1tnk.germany, 1tnk.spain, 1tnk.italy, 1tnk.sweden, 1tnk.holland
+	WithDecoration@1tnk:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: 1tnkicon
+		RequiresCondition: reveal_secrets && tnk1_ICO
+	GrantConditionOnProduction@atnk:
+		Condition: atnk_ICO
+		Actors: atnk
+	WithDecoration@atnk:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: atnkicon
+		RequiresCondition: reveal_secrets && atnk_ICO
+	GrantConditionOnProduction@2tnk:
+		Condition: tnk2_ICO
+		Actors: 2tnk, 2tnk.england, 2tnk.france, 2tnk.germany, 2tnk.spain, 2tnk.sweden, 2tnk.holland
+	WithDecoration@2tnk:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: 2tnkicon
+		RequiresCondition: reveal_secrets && tnk2_ICO
+	GrantConditionOnProduction@2tnks:
+		Condition: tnk2s_ICO
+		Actors: 2tnk.stealth
+	WithDecoration@2tnks:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: 2tnkicon
+		RequiresCondition: reveal_secrets && tnk2s_ICO
+	GrantConditionOnProduction@3tnk:
+		Condition: tnk3_ICO
+		Actors: 3tnk, 3tnk.russia, 3tnk.ukraine, 3tnk.belarus, 3tnk.kazakh, 3tnk.turkmen, 3tnk.afghan
+	WithDecoration@3tnk:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: 3tnkicon
+		RequiresCondition: reveal_secrets && tnk3_ICO
+	GrantConditionOnProduction@3tnk1b:
+		Condition: tnk31b_ICO
+		Actors: 3tnk.1b, 3tnk.1b.russia, 3tnk.1b.ukraine, 3tnk.1b.belarus, 3tnk.1b.kazakh, 3tnk.1b.turkmen, 3tnk.1b.afghan
+	WithDecoration@3tnk1b:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: 3tnk1bicon
+		RequiresCondition: reveal_secrets && tnk31b_ICO
+	GrantConditionOnProduction@4tnk:
+		Condition: tnk4_ICO
+		Actors: 4tnk, 4tnk.ukraine
+	WithDecoration@4tnk:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: 4tnkicon
+		RequiresCondition: reveal_secrets && tnk4_ICO
+	GrantConditionOnProduction@4tnkflam:
+		Condition: tnk4flam_ICO
+		Actors: 4tnk.flame
+	WithDecoration@4tnkflam:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: 4tnkicon
+		RequiresCondition: reveal_secrets && tnk4flam_ICO
+	GrantConditionOnProduction@5tnk:
+		Condition: tnk5_ICO
+		Actors: 5tnk
+	WithDecoration@5tnk:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: 4tnkicon
+		RequiresCondition: reveal_secrets && tnk5_ICO
+	GrantConditionOnProduction@arty:
+		Condition: arty_ICO
+		Actors: arty, arty.france
+	WithDecoration@arty:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: artyicon
+		RequiresCondition: reveal_secrets && arty_ICO
+	GrantConditionOnProduction@gcan:
+		Condition: gcan_ICO
+		Actors: gcan
+	WithDecoration@gcan:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: gcanicon
+		RequiresCondition: reveal_secrets && gcan_ICO
+	GrantConditionOnProduction@v2rl:
+		Condition: v2rl_ICO
+		Actors: v2rl, v2rl.turkmen
+	WithDecoration@v2rl:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: v2rlicon
+		RequiresCondition: reveal_secrets && v2rl_ICO
+	GrantConditionOnProduction@ctnk:
+		Condition: ctnk_ICO
+		Actors: ctnk
+	WithDecoration@ctnk:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: ctnkicon
+		RequiresCondition: reveal_secrets && ctnk_ICO
+	GrantConditionOnProduction@stnk:
+		Condition: stnk_ICO
+		Actors: stnk
+	WithDecoration@stnk:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: stnkicon
+		RequiresCondition: reveal_secrets && stnk_ICO
+	GrantConditionOnProduction@tnkd:
+		Condition: tnkd_ICO
+		Actors: tnkd
+	WithDecoration@tnkd:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: 2tnkicon
+		RequiresCondition: reveal_secrets && tnkd_ICO
+	GrantConditionOnProduction@mrj:
+		Condition: mrj_ICO
+		Actors: mrj
+	WithDecoration@mrj:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: mrjicon
+		RequiresCondition: reveal_secrets && mrj_ICO
+	GrantConditionOnProduction@mgg:
+		Condition: mgg_ICO
+		Actors: mgg
+	WithDecoration@mgg:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: mggicon
+		RequiresCondition: reveal_secrets && mgg_ICO
+	GrantConditionOnProduction@msam:
+		Condition: msam_ICO
+		Actors: msam
+	WithDecoration@msam:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: msamicon
+		RequiresCondition: reveal_secrets && msam_ICO
+	GrantConditionOnProduction@dtnk:
+		Condition: dtnk_ICO
+		Actors: dtnk
+	WithDecoration@dtnk:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: mnlyicon
+		RequiresCondition: reveal_secrets && dtnk_ICO
+	GrantConditionOnProduction@batf:
+		Condition: batf_ICO
+		Actors: batf
+	WithDecoration@batf:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: apcicon
+		RequiresCondition: reveal_secrets && batf_ICO
+	GrantConditionOnProduction@ttnk:
+		Condition: ttnk_ICO
+		Actors: ttnk
+	WithDecoration@ttnk:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: ttnkicon
+		RequiresCondition: reveal_secrets && ttnk_ICO
+	GrantConditionOnProduction@dtrk:
+		Condition: dtrk_ICO
+		Actors: dtrk
+	WithDecoration@dtrk:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: dtrkicon
+		RequiresCondition: reveal_secrets && dtrk_ICO
+	GrantConditionOnProduction@qtnk:
+		Condition: qtnk_ICO
+		Actors: qtnk
+	WithDecoration@qtnk:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: qtnkicon
+		RequiresCondition: reveal_secrets && qtnk_ICO
+	GrantConditionOnProduction@prsm:
+		Condition: prsm_ICO
+		Actors: prsm
+	WithDecoration@prsm:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: prsmicon
+		RequiresCondition: reveal_secrets && prsm_ICO
+	GrantConditionOnProduction@icbm:
+		Condition: icbm_ICO
+		Actors: icbm
+	WithDecoration@icbm:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: icbmicon
+		RequiresCondition: reveal_secrets && icbm_ICO
+	GrantConditionOnProduction@saml:
+		Condition: saml_ICO
+		Actors: saml
+	WithDecoration@saml:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: samlicon
+		RequiresCondition: reveal_secrets && saml_ICO
+	GrantConditionOnProduction@gtnk:
+		Condition: gtnk_ICO
+		Actors: gtnk
+	WithDecoration@gtnk:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: 2tnkicon
+		RequiresCondition: reveal_secrets && gtnk_ICO
+	GrantConditionOnProduction@isu:
+		Condition: isu_ICO
+		Actors: isu
+	WithDecoration@isu:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: artyicon
+		RequiresCondition: reveal_secrets && isu_ICO
+
+^RevealAircraftProduction:
+	ExternalCondition@visible:
+		Condition: reveal_secrets
+	GrantConditionOnProduction@tran:
+		Condition: tran_ICO
+		Actors: tran, tran.allies, tran.soviet
+	WithDecoration@tran:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: tranicon
+		RequiresCondition: reveal_secrets && tran_ICO		
+	GrantConditionOnProduction@heli:
+		Condition: heli_ICO
+		Actors: heli, heli.usa
+	WithDecoration@heli:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: heliicon
+		RequiresCondition: reveal_secrets && heli_ICO
+	GrantConditionOnProduction@hind:
+		Condition: hind_ICO
+		Actors: hind, hind.afghan
+	WithDecoration@hind:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: hindicon
+		RequiresCondition: reveal_secrets && hind_ICO
+	GrantConditionOnProduction@iroq:
+		Condition: iroq_ICO
+		Actors: iroq, iroq.greece
+	WithDecoration@iroq:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: heliicon
+		RequiresCondition: reveal_secrets && iroq_ICO		
+	GrantConditionOnProduction@mi2:
+		Condition: mi2_ICO
+		Actors: mi2
+	WithDecoration@mi2:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: hindicon
+		RequiresCondition: reveal_secrets && mi2_ICO
+	GrantConditionOnProduction@yak:
+		Condition: yak_ICO
+		Actors: yak, yak.ai, yak.belarus, yak.belarus.ai
+	WithDecoration@yak:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: yakicon
+		RequiresCondition: reveal_secrets && yak_ICO		
+	GrantConditionOnProduction@spit:
+		Condition: spit_ICO
+		Actors: spit, spit.turkey
+	WithDecoration@spit:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: spiticon
+		RequiresCondition: reveal_secrets && spit_ICO		
+	GrantConditionOnProduction@torn:
+		Condition: torn_ICO
+		Actors: torn, torn.sweden
+	WithDecoration@torn:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: tornicon
+		RequiresCondition: reveal_secrets && torn_ICO
+	GrantConditionOnProduction@mig:
+		Condition: mig_ICO
+		Actors: mig, mig.kazakh
+	WithDecoration@mig:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: migicon
+		RequiresCondition: reveal_secrets && mig_ICO
+	GrantConditionOnProduction@badr:
+		Condition: badr_ICO
+		Actors: badr.buildable
+	WithDecoration@badr:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: badricon
+		RequiresCondition: reveal_secrets && badr_ICO
+	GrantConditionOnProduction@b52:
+		Condition: b52_ICO
+		Actors: b52.buildable
+	WithDecoration@b52:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: b52icon
+		RequiresCondition: reveal_secrets && b52_ICO
+	GrantConditionOnProduction@bmin:
+		Condition: bmin_ICO
+		Actors: bmin
+	WithDecoration@bmin:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: bminicon
+		RequiresCondition: reveal_secrets && bmin_ICO
+	GrantConditionOnProduction@nebr:
+		Condition: nebr_ICO
+		Actors: nebr
+	WithDecoration@nebr:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: nebricon
+		RequiresCondition: reveal_secrets && nebr_ICO
+	GrantConditionOnProduction@cmig:
+		Condition: cmig_ICO
+		Actors: cmig
+	WithDecoration@cmig:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: smigicon
+		RequiresCondition: reveal_secrets && cmig_ICO
+
+^RevealNavalProduction:
+	ExternalCondition@visible:
+		Condition: reveal_secrets
+	GrantConditionOnProduction@lst:
+		Condition: lst_ICO
+		Actors: lst
+	WithDecoration@lst:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: lsticon
+		RequiresCondition: reveal_secrets && lst_ICO
+	GrantConditionOnProduction@pt:
+		Condition: pt_ICO
+		Actors: pt, pt.greece
+	WithDecoration@pt:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: pticon
+		RequiresCondition: reveal_secrets && pt_ICO
+	GrantConditionOnProduction@rshp:
+		Condition: rshp_ICO
+		Actors: rshp
+	WithDecoration@rshp:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: rshpicon
+		RequiresCondition: reveal_secrets && rshp_ICO
+	GrantConditionOnProduction@dd:
+		Condition: dd_ICO
+		Actors: dd, dd.germany
+	WithDecoration@dd:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: ddicon
+		RequiresCondition: reveal_secrets && dd_ICO
+	GrantConditionOnProduction@bshp:
+		Condition: bshp_ICO
+		Actors: bshp
+	WithDecoration@bshp:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: bshpicon
+		RequiresCondition: reveal_secrets && bshp_ICO
+	GrantConditionOnProduction@ca:
+		Condition: ca_ICO
+		Actors: ca, ca.italy
+	WithDecoration@ca:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: caicon
+		RequiresCondition: reveal_secrets && ca_ICO
+	GrantConditionOnProduction@acar:
+		Condition: acar_ICO
+		Actors: acar
+	WithDecoration@acar:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: carricon
+		RequiresCondition: reveal_secrets && acar_ICO
+	GrantConditionOnProduction@ss:
+		Condition: ss_ICO
+		Actors: ss, ss.ukraine
+	WithDecoration@ss:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: ssicon
+		RequiresCondition: reveal_secrets && ss_ICO
+	GrantConditionOnProduction@fsub:
+		Condition: fsub_ICO
+		Actors: fsub
+	WithDecoration@fsub:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: ssicon
+		RequiresCondition: reveal_secrets && fsub_ICO
+	GrantConditionOnProduction@msub:
+		Condition: msub_ICO
+		Actors: msub, msub.karelia
+	WithDecoration@msub:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: msubicon
+		RequiresCondition: reveal_secrets && msub_ICO
+	GrantConditionOnProduction@ssam:
+		Condition: ssam_ICO
+		Actors: ssam
+	WithDecoration@ssam:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: ssamicon
+		RequiresCondition: reveal_secrets && ssam_ICO
+	GrantConditionOnProduction@nsub:
+		Condition: nsub_ICO
+		Actors: nsub
+	WithDecoration@nsub:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: ssicon
+		RequiresCondition: reveal_secrets && nsub_ICO
+	GrantConditionOnProduction@ssml:
+		Condition: ssml_ICO
+		Actors: ssml
+	WithDecoration@ssml:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: ssicon
+		RequiresCondition: reveal_secrets && ssml_ICO
+	GrantConditionOnProduction@carr:
+		Condition: carr_ICO
+		Actors: carr
+	WithDecoration@carr:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: carricon
+		RequiresCondition: reveal_secrets && carr_ICO
+	GrantConditionOnProduction@mgnm:
+		Condition: mgnm_ICO
+		Actors: mgnm
+	WithDecoration@mgnm:
+		Position: Center
+		ValidRelationships: Enemy, Neutral
+		Image: minicameos
+		Sequence: mgnmicon
+		RequiresCondition: reveal_secrets && mgnm_ICO

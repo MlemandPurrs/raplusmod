@@ -888,6 +888,9 @@ DTNK:
 		LocalOffset: 768,0,90
 		PauseOnCondition: empdisable
 		RequiresCondition: mcv || harv || harvchrn || truk || dtrk || mwf || apc || batf || arty || gcan || v2rl || icbm || mnly || mnlynuke || mgg || mhqciv || tnkd || ctnk || stnk || ttnk || qtnk || isu
+	Targetable@AIFixer:
+		TargetTypes: IgnoreThis
+		RequiresCondition: disguised
 
 DTNK.Husk:
 	Inherits: ^Husk

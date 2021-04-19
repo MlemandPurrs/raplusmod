@@ -478,7 +478,8 @@ DEMO:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 991
-		Prerequisites: ~barr, ~infantry.soviet, fix, ~techlevel.high
+		#	Prerequisites: ~barr, ~infantry.soviet, fix, ~techlevel.high
+		Prerequisites: ~disabled
 		Description: Specialist Infantry armed with bouncing explosives.\n  Special abilities:\nCan Disguise as enemy Infantry. Loses disguise on Infiltrating.\nEnters enemy Structures to Demolish them.\nBooby traps Tech Buildings to blow up on Capture.\n  Strong vs Buildings\n  Weak vs everything Else
 	Valued:
 		Cost: 600
