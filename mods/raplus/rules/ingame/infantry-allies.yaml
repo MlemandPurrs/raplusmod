@@ -260,7 +260,7 @@ SPY:
 		Type: InfantryRefund
 	Targetable@AIFixer:
 		TargetTypes: IgnoreThis
-		RequiresCondition: disguised
+		RequiresCondition: disguise
 
 SPY.Classic:
 	Inherits: ^Soldier
@@ -319,7 +319,7 @@ SPY.Classic:
 		Image: spy
 	Targetable@AIFixer:
 		TargetTypes: IgnoreThis
-		RequiresCondition: disguised
+		RequiresCondition: disguise
 
 E7:
 	Inherits: ^Soldier

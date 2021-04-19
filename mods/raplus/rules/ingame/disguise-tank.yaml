@@ -890,7 +890,7 @@ DTNK:
 		RequiresCondition: mcv || harv || harvchrn || truk || dtrk || mwf || apc || batf || arty || gcan || v2rl || icbm || mnly || mnlynuke || mgg || mhqciv || tnkd || ctnk || stnk || ttnk || qtnk || isu
 	Targetable@AIFixer:
 		TargetTypes: IgnoreThis
-		RequiresCondition: disguised
+		RequiresCondition: disguise
 
 DTNK.Husk:
 	Inherits: ^Husk
