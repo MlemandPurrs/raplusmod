@@ -770,7 +770,7 @@ QTNK:
 	Mobile:
 		RequiresCondition: !madweakness
 		PauseOnCondition: being-captured
-		Speed: 46
+		Speed: 43
 	ChronoshiftableWithSpriteEffect:
 		RequiresCondition: !madweakness && !being-captured
 	RevealsShroud:
@@ -820,7 +820,7 @@ ICBM:
 	Armor:
 		Type: Light
 	Mobile:
-		Speed: 46
+		Speed: 52
 		TurnSpeed: 9
 	RevealsShroud:
 		MinRange: 4c0

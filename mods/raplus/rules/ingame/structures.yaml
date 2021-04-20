@@ -2152,7 +2152,7 @@ STEK:
 		Queue: Building
 		BuildPaletteOrder: 12
 		BuildLimit: 1
-		Prerequisites: proc, afldorweap, ~structures.soviet, ~!vanilla.soviet, ~!player.russia, ~!player.ukraine, ~!player.karelia, ~!player.uzbek, ~!player.moldova, ~techlevel.high
+		Prerequisites: proc, afldorweap, ~structures.soviet, ~!vanilla.soviet, ~!player.russia, ~!player.ukraine, ~!player.karelia, ~!player.uzbek, ~techlevel.high
 		Description: Provides Soviet advanced technologies.\nMaximum one can be built.\nCan be Infiltrated for unlocking Tech unit production.
 	Valued:
 		Cost: 2000

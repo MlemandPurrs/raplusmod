@@ -154,6 +154,12 @@ Atomic:
 	Warhead@22FlashEffect: FlashPaletteEffect
 		Duration: 20
 		FlashType: Nuke
+	Warhead@23Radio: CreateTintedCells
+		Spread: 1c0
+		Level: 350
+		Falloff: 100, 75, 52, 37, 24, 15, 2
+		MaxLevel: 750
+		LayerName: radioactivity.strong
 
 TorpNuke:
 	ReloadDelay: 1500
@@ -329,6 +335,12 @@ SubNuke:
 	Warhead@22FlashEffect: FlashPaletteEffect
 		Duration: 10
 		FlashType: Nuke
+	Warhead@23Radio: CreateTintedCells
+		Spread: 1c0
+		Level: 350
+		Falloff: 100, 75, 52, 37, 24, 15, 2
+		MaxLevel: 750
+		LayerName: radioactivity.strong
 
 ParaNuke:
 	ReloadDelay: 0
@@ -408,6 +420,12 @@ ParaNuke:
 	Warhead@22FlashEffect: FlashPaletteEffect
 		Duration: 10
 		FlashType: Nuke
+	Warhead@18Radio: CreateTintedCells
+		Spread: 1c0
+		Level: 350
+		Falloff: 100, 70, 37, 15, 2
+		MaxLevel: 750
+		LayerName: radioactivity.strong
 
 TankNuke:
 	ValidTargets: Ground, Water, Bridge
@@ -479,6 +497,12 @@ TankNuke:
 	Warhead@22FlashEffect: FlashPaletteEffect
 		Duration: 10
 		FlashType: Nuke
+	Warhead@18Radio: CreateTintedCells
+		Spread: 1c0
+		Level: 350
+		Falloff: 100, 70, 37, 15, 2
+		MaxLevel: 750
+		LayerName: radioactivity.strong
 
 AtomicFake:
 	ValidTargets: Ground, Trees, Water, Underwater, Air
@@ -648,6 +672,12 @@ ICBM:
 	Warhead@22FlashEffect: FlashPaletteEffect
 		Duration: 10
 		FlashType: Nuke
+	Warhead@18Radio: CreateTintedCells
+		Spread: 1c0
+		Level: 350
+		Falloff: 100, 75, 52, 37, 24, 15, 2
+		MaxLevel: 750
+		LayerName: radioactivity.medium
 
 ArtyNuke:
 	Inherits: ^Artillery
@@ -740,3 +770,9 @@ ArtyNuke:
 	Warhead@22FlashEffect: FlashPaletteEffect
 		Duration: 10
 		FlashType: Nuke
+	Warhead@18Radio: CreateTintedCells
+		Spread: 1c0
+		Level: 350
+		Falloff: 100, 70, 37, 15, 2
+		MaxLevel: 750
+		LayerName: radioactivity.strong

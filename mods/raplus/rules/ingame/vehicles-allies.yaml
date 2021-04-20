@@ -972,7 +972,7 @@ BATF:
 		Type: Heavy
 	Mobile:
 		TurnSpeed: 9
-		Speed: 56
+		Speed: 52
 		PauseOnCondition: !(!empdisable && !notmobile && !being-captured)
 		Locomotor: heavytracked
 	AttackFrontal:

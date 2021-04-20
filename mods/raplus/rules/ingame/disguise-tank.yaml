@@ -25,6 +25,34 @@ DTNK:
 	Mobile:
 		Speed: 113
 		PauseOnCondition: !(!empdisable && !being-captured)
+	#	actually, it shouldnt able to speed-up, thats silly
+	#	SpeedMultiplier@speed170:
+	#	Modifier: 151
+	#	RequiresCondition: jeep || ftrkgun
+	SpeedMultiplier@speed128:
+		Modifier: 114
+		RequiresCondition: apc || rapc || stnk
+	SpeedMultiplier@speed92:
+		Modifier: 81
+		RequiresCondition: apcsvyt || ttnk
+	SpeedMultiplier@speed86:
+		Modifier: 76
+		RequiresCondition: ctnk
+	SpeedMultiplier@speed72:
+		Modifier: 63
+		RequiresCondition: harv || harvsvyt || harvchrn || dtrk || mgg || tnk2 || tnk2s || arty || msam || tnkd || gcan || v2rl || gtnk
+	SpeedMultiplier@speed68:
+		Modifier: 60
+		RequiresCondition: mrj || saml
+	SpeedMultiplier@speed60:
+		Modifier: 53
+		RequiresCondition: mcv || prsm || tnk3 || tnk31b || mwf || isu
+	SpeedMultiplier@speed52:
+		Modifier: 46
+		RequiresCondition: batf || icbm
+	SpeedMultiplier@speed43:
+		Modifier: 38
+		RequiresCondition: tnk4 || tnk4flam || nrty || tnk5 || qtnk
 	RevealsShroud:
 		MinRange: 4c0
 		Range: 6c0

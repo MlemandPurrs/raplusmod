@@ -504,12 +504,12 @@ MGNM:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
-		HP: 5000
+		HP: 50
 	Armor:
 		Type: Heavy
 	Mobile:
 		TurnSpeed: 20
-		Speed: 56
+		Speed: 68
 	RevealsShroud:
 		Range: 4c0
 	Explodes@UNITEXPLODES:

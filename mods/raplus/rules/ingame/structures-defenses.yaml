@@ -792,7 +792,7 @@ GAP:
 		Queue: Building
 		BuildPaletteOrder: 11
 		Prerequisites: techcenter, ~fact, ~!player.spain, ~techlevel.high
-		Description: Obscures the enemy's view with shroud.\nRequires power to operate.\n  Special ability: Can be manually toggled\nto obscure an even greater area\nat cost of increased Power usage.
+		Description: Obscures the enemy's view with shroud.\nRequires power to operate.\n  Special ability: Can be Deployed when Charged\nto obscure an even greater area\nat cost of increased Power usage.
 	Tooltip:
 		Name: Gap Generator
 	Valued:
@@ -810,10 +810,10 @@ GAP:
 		Range: 5c0
 	WithBuildingBib:
 		HasMinibib: true
-	CreatesShroud:
+	CreatesShroud@Normal:
 		Range: 9c0
 		RequiresCondition: !disabled && !build-incomplete && !deployed
-	CreatesShroud:
+	CreatesShroud@Deployed:
 		Range: 12c0
 		RequiresCondition: !disabled && !build-incomplete && deployed
 	WithRangeCircle@Normal:
@@ -846,9 +846,12 @@ GAP:
 		OwnerType: InternalName
 	Sellable:
 		RequiresCondition: !build-incomplete && !being-demolished
-	GrantConditionOnDeploy:
+	GrantTimedConditionOnDeploy:
 		DeployedCondition: deployed
-		SkipMakeAnimation: true
+		CooldownTicks: 1500
+		DeployedTicks: 750
+		#	DeploySound: appear1.aud
+		PauseOnCondition: !build-incomplete || !disabled
 	WithDecoration@Deployed:
 		RequiresSelection: true
 		Image: pips

@@ -2,7 +2,7 @@
 Metadata:
 	Title: Red Alert Plus
 	Version: v.1.4.0-test
-	Website: https://www.openra.net
+	Website: https://www.moddb.com/mods/ra-plus-mod
 	WebIcon32: https://www.openra.net/images/icons/ra_32x32.png
 
 PackageFormats: Mix
@@ -64,6 +64,8 @@ Rules:
 	raplus|rules/ai/ai.yaml
 	raplus|rules/ai/ai-allies.yaml
 	raplus|rules/ai/ai-soviet.yaml
+	raplus|rules/ai/ai-simpleton-allies.yaml
+	raplus|rules/ai/ai-simpleton-soviet.yaml
 	raplus|rules/bridges.yaml
 	raplus|rules/player.yaml
 	raplus|rules/palettes.yaml

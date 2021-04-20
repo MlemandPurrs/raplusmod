@@ -2,28 +2,34 @@ Player:
 	ModularBot@aiplayer:
 		Name: AI Player
 		Type: normal
+	ModularBot@simpleton:
+		Name: Simpleton AI
+		Type: easy
 	GrantConditionOnBotOwner@aiplayer:
 		Condition: enable-ai-player
 		Bots: normal
+	GrantConditionOnBotOwner@wimpai:
+		Condition: enable-wimp-ai
+		Bots: easy
 	ProvidesPrerequisite@AIRESTRICTOR:
 		Prerequisite: aitoodumb
-		RequiresCondition: enable-ai-player
+		RequiresCondition: enable-ai-player || enable-wimp-ai
 	HarvesterBotModuleCA@aiplayer:
-		RequiresCondition: enable-ai-player
+		RequiresCondition: enable-ai-player || enable-wimp-ai
 		HarvesterTypes: harv,harv.soviet,harv.crate,harv.soviet.crate
 		RefineryTypes: proc
 	BuildingRepairBotModule@aiplayer:
-		RequiresCondition: enable-ai-player
+		RequiresCondition: enable-ai-player || enable-wimp-ai
 	PowerDownBotModuleCA@aiplayer:
-		RequiresCondition: enable-ai-player
+		RequiresCondition: enable-ai-player || enable-wimp-ai
 	McvManagerBotModuleCA@aiplayer:
-		RequiresCondition: enable-ai-player
+		RequiresCondition: enable-ai-player || enable-wimp-ai
 		McvTypes: mcv,mcv.ai
 		ConstructionYardTypes: fact
 		McvFactoryTypes: weap
 		MaxBaseRadius: 40
 	CaptureManagerBotModuleCA@engineer:
-		RequiresCondition: enable-ai-player
+		RequiresCondition: enable-ai-player || enable-wimp-ai
 		CapturingActorTypes: e6
 		CapturableActorTypes: oilb,bio,miss,fcom,hosp
 		CheckCaptureTargetsForVisibility: false
@@ -32,3 +38,7 @@ Player:
 	GrantConditionOnPrerequisite@NAVYDISABLER:
 		Condition: global-disablenavy
 		Prerequisites: global-disablenavy
+	GrantRandomCondition@WimpAIVarietyAllies:
+		Conditions: rush-strat, heli-strat, bomb-strat
+	GrantRandomCondition@WimpAIVarietySoviet:
+		Conditions: tank-strat, mamy-strat, flak-strat

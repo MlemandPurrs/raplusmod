@@ -560,56 +560,6 @@ SubMissile.barrage.display:
 	Warhead@1Dam: SpreadDamage
 		Damage: 0
 
-RadBeamWeapon:
-	ValidTargets: Ground, Water
-	InvalidTargets: Air
-	Range: 6c0
-	ReloadDelay: 100
-	Report: idesat1a.aud
-	Projectile: Railgun
-		DamageActorsInLine: true
-		Inaccuracy: 0c256
-		InaccuracyType: PerCellIncrement
-		Duration: 10
-		Blockable: true
-		BeamColor: 00C400
-		BeamWidth: 40
-		HelixThickness: 16
-		HelixColor: 00FC00
-		HelixRadius: 10
-		ZOffset: 2046
-		QuantizationCount: 4
-		BeamAlphaDeltaPerTick: -16
-		HelixAlphaDeltaPerTick: -16
-		HelixRadiusDeltaPerTick: 16
-		HelixAngleDeltaPerTick: 16
-	Warhead@1Dam: SpreadDamage
-		Range: 0, 32
-		Falloff: 100, 100
-		Damage: 80
-		AffectsParent: false
-		Versus:
-			None: 75
-			Kevlar: 75
-			Flak: 75
-			Light: 50
-			Heavy: 80
-			Wood: 30
-			Concrete: 30
-		DamageTypes: Prone100Percent, FireDeath, Incendiary
-	#	Warhead@Fire: GrantExternalCondition
-	#	Range: 1c256
-	#	Duration: 67
-	#	Condition: onfire
-	#	ValidTargets: Structure
-	#	this crashes the game...
-	#	Warhead@Chem: GrantExternalCondition
-	#	Range: 0c768
-	#	Duration: 125
-	#	Condition: hitbychem
-	#	ValidTargets: Infantry
-	#	InvalidTargets: Cyborg, Chem, HasPoison
-
 PrisLaser:
 	ValidTargets: Ground, Water
 	ReloadDelay: 3
@@ -759,7 +709,7 @@ Chemspray:
 	Inherits: Flamespray
 	ReloadDelay: 75
 	Warhead@1Dam: SpreadDamage
-		Damage: 68
+		Damage: 52
 		InvalidTargets: Wall, Chem
 		DamageTypes: Prone50Percent, TriggerProne, FireDeath
 	Warhead@2Smu: LeaveSmudge
@@ -874,3 +824,69 @@ PointLaser:
 			Wood: 60
 			Heavy: 100
 			Concrete: 90
+
+RadBeamWeapon:
+	ValidTargets: Ground, Water
+	InvalidTargets: Air
+	Range: 6c0
+	ReloadDelay: 100
+	Report: idesat1a.aud
+	Projectile: RadBeam
+		Amplitude: 176
+		WaveLength: 384
+		Thickness: 32
+		QuantizationCount: 4
+		ZOffset: 2046
+		Color: 00C400
+	#	Projectile: Railgun
+	#	DamageActorsInLine: true
+	#	Inaccuracy: 0c256
+	#	InaccuracyType: PerCellIncrement
+	#	Duration: 10
+	#	Blockable: true
+	#	BeamColor: 00C400
+	#	BeamWidth: 40
+	#	HelixThickness: 16
+	#	HelixColor: 00FC00
+	#	HelixRadius: 10
+	#	ZOffset: 2046
+	#	QuantizationCount: 4
+	#	BeamAlphaDeltaPerTick: -16
+	#	HelixAlphaDeltaPerTick: -16
+	#	HelixRadiusDeltaPerTick: 16
+	#	HelixAngleDeltaPerTick: 16
+	Warhead@1Dam: SpreadDamage
+		Range: 0, 32
+		Falloff: 100, 100
+		Damage: 32
+		AffectsParent: false
+		Versus:
+			None: 50
+			Kevlar: 50
+			Flak: 50
+			Light: 65
+			Heavy: 80
+			Wood: 30
+			Concrete: 30
+		DamageTypes: Prone100Percent, RadiationDeath, Incendiary
+	Warhead@8Radiation: CreateTintedCells
+		Spread: 1c0
+		Falloff: 100, 75, 55, 30, 0
+		Level: 125
+		MaxLevel: 750
+		LayerName: radioactivity.weak
+	Warhead@Fire: GrantExternalCondition
+		Range: 1c256
+		Duration: 67
+		Condition: onfire
+		ValidTargets: Structure
+
+RadEruptionWeapon:
+	ReloadDelay: 60
+	Report: idesat2a.aud
+	Warhead@1Radiation: CreateTintedCells
+		Spread: 1c0
+		Falloff: 100, 75, 55, 30, 0
+		Level: 250
+		MaxLevel: 750
+		LayerName: radioactivity.strong

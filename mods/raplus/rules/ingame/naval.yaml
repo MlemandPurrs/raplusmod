@@ -42,9 +42,10 @@ LST:
 		RepairActors: syrd, spen
 	Sellable:
 		RequiresCondition: ship.sellable && !loaded
-	Hovers:
-		BobDistance: -35
-		RequiresCondition: !empdisable
+	#	no Ship else Bobs, so disabling it
+	#	Hovers:
+	#	BobDistance: -35
+	#	RequiresCondition: !empdisable
 
 MINS:
 	Inherits: ^Mine

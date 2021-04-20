@@ -1,6 +1,6 @@
 Player:
-	SupportPowerBotModule@soviet:
-		RequiresCondition: enable-ai-player && player.soviet
+	SupportPowerBotModule@easysoviet:
+		RequiresCondition: enable-wimp-ai && player.soviet
 		Decisions:
 			UseSpyPlane:
 				OrderName: SovietSpyPlane
@@ -261,8 +261,27 @@ Player:
 					Attractiveness: 1
 					TargetMetric: None
 					CheckRadius: 10c0
-	BaseBuilderBotModuleCA@soviet:
-		RequiresCondition: enable-ai-player && player.soviet
+	CaptureManagerBotModuleCA@wimp-sab:
+		RequiresCondition: enable-wimp-ai && player.soviet
+		CapturingActorTypes: sab
+		CapturableActorTypes: harv,harv.crate,harv.soviet,harv.soviet.crate,mcv,v2rl,v2rl.turkmen,arty,arty.france,4tnk,4tnk.ukraine,4tnk.flame,nrty,ttnk,ctnk,mrj,5tnk,prsm
+		CheckCaptureTargetsForVisibility: true
+		MaximumCaptureTargetOptions: 15
+		EnemyAvoidanceRadius: 1
+	SquadManagerBotModule@wimp-soviet:
+		RequiresCondition: enable-wimp-ai && player.soviet
+		SquadSize: 16
+		SquadSizeRandomBonus: 8
+		RushInterval: 400
+		AttackScanRadius: 16
+		ExcludeFromSquadsTypes: harv.soviet, harv.soviet.crate, mcv, mcv.ai, e6, sab, ftrk.scout
+		ConstructionYardTypes: fact
+		NavalProductionTypes: spen
+		NavalUnitsTypes: ss,ss.ukraine
+		DangerScanRadius: 1
+		IgnoredEnemyTargetTypes: IgnoreThis
+	BaseBuilderBotModuleCA@tank-strat:
+		RequiresCondition: enable-wimp-ai && player.soviet && tank-strat || flak-strat
 		MinimumExcessPower: 60
 		MaximumExcessPower: 160
 		ExcessPowerIncrement: 40
@@ -273,32 +292,126 @@ Player:
 		PowerTypes: powr,apwr
 		BarracksTypes: barr
 		VehiclesFactoryTypes: weap
-		ProductionTypes: barr,weap,afld,afld.russia,afld.ukraine,afld.belarus,afld.turkmen,hpad
+		ProductionTypes: barr,weap,afld,afld.russia,afld.ukraine,afld.belarus,afld.turkmen
 		NavalProductionTypes: spen
 		NewProductionCashThreshold: 4000
 		SiloTypes: silo
-		AntiAirTypes: sam,hsam,sam.karelia,hsam.karelia
+		AntiAirTypes: sam,sam.karelia
 		PlaceDefenseTowardsEnemyChance: 75
 		MaximumDefenseRadius: 10
 		MaxBaseRadius: 26
-		BuildingDelays:
-			spen: 4500
-			tsla: 3000
-			tsla.karelia: 3000
-			sam: 6000
-			sam.karelia: 6000
-			hsam: 9000
-			hsam.karelia: 9000
-			stek: 7500
-			stek.soviet: 7500
-			stek.russia: 7500
-			stek.ukraine: 7500
-			stek.karelia: 7500
-			stek.uzbek: 7500
 		BuildingLimits:
 			proc: 4
+			barr: 3
+			dome: 1
+			dome.soviet: 1
+			dome.belarus: 1
+			dome.karelia: 1
+			weap: 6
+			spen: 2
+			afld: 6
+			afld.russia: 6
+			afld.ukraine: 6
+			afld.belarus: 6
+			afld.turkmen: 6
+			fix: 1
+			fix.soviet: 1
+			fix.kazakh: 1
+			fix.china: 1
+			fix.moldova: 1
+			stek: 1
+			stek.soviet: 1
+			stek.russia: 1
+			stek.ukraine: 1
+			stek.karelia: 1
+			stek.uzbek: 1
+			iron: 1
+		BuildingFractions:
+			proc: 15
 			barr: 2
-			weap: 3
+			weap: 6
+			fix: 1
+			fix.soviet: 1
+			fix.kazakh: 1
+			fix.china: 1
+			fix.moldova: 1
+			spen: 1
+			dome: 1
+			dome.soviet: 1
+			dome.belarus: 1
+			dome.karelia: 1
+			afld: 5
+			afld.russia: 5
+			afld.ukraine: 5
+			afld.belarus: 5
+			afld.turkmen: 5
+			stek: 1
+			stek.soviet: 1
+			stek.russia: 1
+			stek.ukraine: 1
+			stek.karelia: 1
+			stek.uzbek: 1
+			iron: 1
+			ftur: 10
+			ftur.karelia: 1
+			sam: 3
+			sam.karelia: 1
+	UnitBuilderBotModuleCA@tankstrat:
+		RequiresCondition: enable-wimp-ai && player.soviet && tank-strat
+		IdleBaseUnitsMaximum: 6
+		MaxAircraft: 6
+		UnitQueues: Vehicle, Infantry, Ship, Aircraft
+		UnitsToBuild:
+			e6: 2
+			sab: 2
+			e3: 30
+			e3.china: 30
+			v2rl: 40
+			v2rl.turkmen: 40
+			3tnk: 50
+			3tnk.russia: 45
+			3tnk.ukraine: 45
+			3tnk.belarus: 45
+			3tnk.kazakh: 45
+			3tnk.turkmen: 45
+			3tnk.afghan: 45
+			yak.ai: 30
+			yak.belarus.ai: 30
+			ss: 10
+			ss.ukraine: 10
+		UnitLimits:
+			e6: 2
+			sab: 2
+			v2rl: 8
+			v2rl.turkmen: 8
+			ss: 4
+			ss.ukraine: 4
+			yak.ai: 6
+			yak.belarus.ai: 6
+	BaseBuilderBotModuleCA@mamy-strat:
+		RequiresCondition: enable-wimp-ai && player.soviet && mamy-strat
+		MinimumExcessPower: 60
+		MaximumExcessPower: 160
+		ExcessPowerIncrement: 40
+		ExcessPowerIncreaseThreshold: 4
+		CheckForWaterRadius: 8
+		ConstructionYardTypes: fact
+		RefineryTypes: proc
+		PowerTypes: powr,apwr
+		BarracksTypes: barr
+		VehiclesFactoryTypes: weap
+		ProductionTypes: barr,weap,hpad
+		NavalProductionTypes: spen
+		NewProductionCashThreshold: 4000
+		SiloTypes: silo
+		AntiAirTypes: sam,sam.karelia
+		PlaceDefenseTowardsEnemyChance: 75
+		MaximumDefenseRadius: 10
+		MaxBaseRadius: 26
+		BuildingLimits:
+			proc: 4
+			barr: 3
+			weap: 6
 			fix: 1
 			fix.soviet: 1
 			fix.kazakh: 1
@@ -308,12 +421,7 @@ Player:
 			dome.soviet: 1
 			dome.belarus: 1
 			dome.karelia: 1
-			afld: 4
-			afld.russia: 4
-			afld.ukraine: 4
-			afld.belarus: 4
-			afld.turkmen: 4
-			hpad: 2
+			hpad: 4
 			stek: 1
 			stek.soviet: 1
 			stek.russia: 1
@@ -321,20 +429,15 @@ Player:
 			stek.karelia: 1
 			stek.uzbek: 1
 			iron: 1
-			mslo: 1
-			fbox: 2
-			fbox.karelia: 2
 			ftur: 6
 			ftur.karelia: 6
-			tsla: 4
-			tsla.karelia: 4
 			sam: 4
 			sam.karelia: 4
-			hsam: 2
-			hsam.karelia: 2
-			fact: 3
-			spro: 1
-			spro.kazakh: 1
+			afld: 1
+			afld.russia: 1
+			afld.ukraine: 1
+			afld.belarus: 1
+			afld.turkmen: 1
 		BuildingFractions:
 			proc: 15
 			barr: 2
@@ -348,94 +451,68 @@ Player:
 			dome.soviet: 1
 			dome.belarus: 1
 			dome.karelia: 1
-			afld: 5
-			afld.russia: 5
-			afld.ukraine: 5
-			afld.belarus: 5
-			afld.turkmen: 5
-			hpad: 1
+			hpad: 10
 			stek: 1
 			stek.soviet: 1
 			stek.russia: 1
 			stek.ukraine: 1
 			stek.karelia: 1
 			stek.uzbek: 1
-			mslo: 1
 			iron: 1
-			fbox: 1
-			fbox.karelia: 1
 			ftur: 10
 			ftur.karelia: 1
-			tsla: 5
-			tsla.karelia: 1
 			sam: 3
 			sam.karelia: 1
-			hsam: 1
-			hsam.karelia: 1
-			spro: 1
-			spro.kazakh: 1
-	CaptureManagerBotModuleCA@sab:
-		RequiresCondition: enable-ai-player && player.soviet
-		CapturingActorTypes: sab
-		CapturableActorTypes: harv,harv.crate,harv.soviet,harv.soviet.crate,mcv,v2rl,v2rl.turkmen,arty,arty.france,4tnk,4tnk.ukraine,4tnk.flame,nrty,ttnk,ctnk,mrj,5tnk,prsm
-		CheckCaptureTargetsForVisibility: true
-		MaximumCaptureTargetOptions: 15
-		EnemyAvoidanceRadius: 1
-	SquadManagerBotModule@soviet.land:
-		RequiresCondition: enable-ai-player && player.soviet
-		SquadSize: 12
-		SquadSizeRandomBonus: 6
-		RushInterval: 400
-		AttackScanRadius: 16
-		ExcludeFromSquadsTypes: e6, sab, dog, dog.moldova, ftrk.scout, harv.soviet, harv.soviet.crate, mcv, mcv.ai, ss, ss.ukraine, msub, msub.karelia, ssam, fsub, nsub, ssml, yak.ai, yak.belarus.ai, mig, mig.kazakh, hind, hind.afghan, cmig
-		ConstructionYardTypes: fact
-		DangerScanRadius: 1
-		IgnoredEnemyTargetTypes: IgnoreThis
-	SquadManagerBotModule@soviet.sea:
-		RequiresCondition: enable-ai-player && player.soviet && !global-disablenavy
-		SquadSize: 4
-		SquadSizeRandomBonus: 4
-		RushInterval: 400
-		AttackScanRadius: 24
-		ExcludeFromSquadsTypes: harv.soviet, harv.soviet.crate, mcv, mcv.ai, dog, dog.moldova, e1, e2, e3, e3.china, e4, e5, e6, sab, volk, volk.uzbek, rpg, deso, shok, ftrk, ftrk.belarus, ftrk.scout, ftrk.flame, apc.soviet, apc.soviet.loaded, apc.karelia, apc.moldova, 3tnk.1b, 3tnk.1b.russia, 3tnk.1b.ukraine, 3tnk.1b.belarus, 3tnk.1b.kazakh, 3tnk.1b.turkmen, 3tnk.1b.afghan, 3tnk, 3tnk.russia, 3tnk.ukraine, 3tnk.belarus, 3tnk.kazakh, 3tnk.turkmen, 3tnk.afghan, 4tnk, 4tnk.ukraine, 4tnk.flame, 5tnk, icbm, v2rl, v2rl.turkmen, ttnk, yak.ai, yak.belarus.ai, mig, mig.kazakh, hind, hind.afghan, cmig
-		NavalUnitsTypes: ss,ss.ukraine,msub,msub.karelia,ssam,fsub,nsub,ssml
-		ConstructionYardTypes: fact
-		NavalProductionTypes: spen
-		IgnoredEnemyTargetTypes: IgnoreThis
-	SquadManagerBotModule@soviet.air:
-		RequiresCondition: enable-ai-player && player.soviet
-		SquadSize: 1
-		SquadSizeRandomBonus: 2
-		RushInterval: 400
-		AttackScanRadius: 48
-		ExcludeFromSquadsTypes: harv.soviet, harv.soviet.crate, mcv, mcv.ai, dog, dog.moldova, e1, e2, e3, e3.china, e4, e5, e6, sab, volk, volk.uzbek, rpg, deso, shok, ftrk, ftrk.belarus, ftrk.scout, ftrk.flame, apc.soviet, apc.soviet.loaded, apc.karelia, apc.moldova, 3tnk.1b, 3tnk.1b.russia, 3tnk.1b.ukraine, 3tnk.1b.belarus, 3tnk.1b.kazakh, 3tnk.1b.turkmen, 3tnk.1b.afghan, 3tnk, 3tnk.russia, 3tnk.ukraine, 3tnk.belarus, 3tnk.kazakh, 3tnk.turkmen, 3tnk.afghan, 4tnk, 4tnk.ukraine, 4tnk.flame, 5tnk, icbm, v2rl, v2rl.turkmen, ttnk, ss, ss.ukraine, msub, msub.karelia, ssam, fsub, nsub, ssml
-		ConstructionYardTypes: fact
-		IgnoredEnemyTargetTypes: Submarine, IgnoreThis
-	UnitBuilderBotModule@soviet:
-		RequiresCondition: enable-ai-player && player.soviet
-		UnitQueues: Vehicle, Infantry
-		UnitDelays:
-			mcv.ai: 13500
+			afld: 1
+			afld.russia: 1
+			afld.ukraine: 1
+			afld.belarus: 1
+			afld.turkmen: 1
+	UnitBuilderBotModuleCA@mamystrat:
+		RequiresCondition: enable-wimp-ai && player.soviet && mamy-strat
+		IdleBaseUnitsMaximum: 6
+		MaxAircraft: 4
+		UnitQueues: Vehicle, Infantry, Ship, Aircraft
 		UnitsToBuild:
-			e1: 65
-			e2: 15
+			e6: 2
+			sab: 2
 			e3: 30
 			e3.china: 30
-			e4: 15
-			e5: 15
-			dog: 15
-			dog.moldova: 15
-			shok: 15
-			rpg: 15
-			deso: 5
-			harv.soviet: 15
-			ftrk: 30
-			ftrk.belarus: 30
-			ftrk.repair: 10
-			ftrk.flame: 15
 			apc.soviet: 15
 			apc.karelia: 15
 			apc.moldova: 15
+			v2rl: 40
+			v2rl.turkmen: 40
+			4tnk: 25
+			4tnk.ukraine: 25
+			hind: 30
+			hind.afghan: 30
+			ss: 10
+			ss.ukraine: 10
+		UnitLimits:
+			e6: 2
+			sab: 2
+			v2rl: 8
+			v2rl.turkmen: 8
+			ss: 4
+			ss.ukraine: 4
+			hind: 4
+			hind.afghan: 4
+	UnitBuilderBotModuleCA@flakstrat:
+		RequiresCondition: enable-wimp-ai && player.soviet && flak-strat
+		IdleBaseUnitsMaximum: 6
+		MaxAircraft: 6
+		UnitQueues: Vehicle, Infantry, Ship, Aircraft
+		UnitsToBuild:
+			e6: 2
+			sab: 2
+			e3: 30
+			e3.china: 30
+			ftrk: 30
+			ftrk.belarus: 30
+			ftrk.flame: 15
+			v2rl: 40
+			v2rl.turkmen: 40
 			3tnk.1b: 30
 			3tnk.1b.russia: 30
 			3tnk.1b.ukraine: 30
@@ -443,86 +520,23 @@ Player:
 			3tnk.1b.kazakh: 30
 			3tnk.1b.turkmen: 30
 			3tnk.1b.afghan: 30
-			3tnk: 45
-			3tnk.russia: 45
-			3tnk.ukraine: 45
-			3tnk.belarus: 45
-			3tnk.kazakh: 45
-			3tnk.turkmen: 45
-			3tnk.afghan: 45
-			4tnk: 25
-			4tnk.ukraine: 25
-			4tnk.flame: 25
-			v2rl: 40
-			v2rl.turkmen: 40
-			ttnk: 25
-			volk: 1
-			volk.uzbek: 1
+			mig: 30
+			mig.kazakh: 30
+			ss: 10
+			ss.ukraine: 10
+		UnitLimits:
 			e6: 2
 			sab: 2
-			mcv.ai: 1
-			icbm: 1
-			saml: 5
-			gtnk: 10
-			isu: 5
-		UnitLimits:
-			dog: 4
-			dog.moldova: 4
-			harv.soviet: 8
-			ftrk: 6
-			ftrk.flame: 3
-			volk: 1
-			volk.uzbek: 1
-			e6: 2
-			sab: 2
-			mcv.ai: 1
-			deso: 2
-			rpg: 2
-			icbm: 1
-			saml: 1
-			ftrk.repair: 2
-			e5: 3
-			isu: 3
-			gtnk: 4
-	UnitBuilderBotModule@soviet.sea:
-		RequiresCondition: enable-ai-player && player.soviet && !global-disablenavy
-		IdleBaseUnitsMaximum: 6
-		UnitQueues: Ship
-		UnitsToBuild:
-			ss: 30
-			ss.ukraine: 30
-			msub: 20
-			msub.karelia: 20
-			ssam: 20
-			nsub: 1
-			fsub: 15
-			ssml: 1
-		UnitLimits:
+			3tnk.1b: 4
+			3tnk.1b.russia: 4
+			3tnk.1b.ukraine: 4
+			3tnk.1b.belarus: 4
+			3tnk.1b.kazakh: 4
+			3tnk.1b.turkmen: 4
+			3tnk.1b.afghan: 4
+			v2rl: 8
+			v2rl.turkmen: 8
 			ss: 4
 			ss.ukraine: 4
-			msub: 4
-			msub.karelia: 4
-			ssam: 2
-			fsub: 2
-			nsub: 1
-			ssml: 1
-	UnitBuilderBotModule@soviet.air:
-		RequiresCondition: enable-ai-player && player.soviet
-		IdleBaseUnitsMaximum: 0
-		UnitQueues: Aircraft
-		UnitsToBuild:
-			yak.ai: 60
-			yak.belarus.ai: 60
-			mig: 40
-			mig.kazakh: 40
-			hind: 100
-			hind.afghan: 100
-			cmig: 20
-		UnitLimits:
-			yak.ai: 6
-			yak.belarus.ai: 6
-			mig: 4
-			mig.kazakh: 4
-			hind: 2
-			hind.afghan: 2
-			cmig: 2
+			mig: 6
+			mig.kazakh: 6

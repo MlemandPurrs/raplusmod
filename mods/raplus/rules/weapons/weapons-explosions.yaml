@@ -282,6 +282,12 @@ CrateNuke:
 	Warhead@22FlashEffect: FlashPaletteEffect
 		Duration: 10
 		FlashType: Nuke
+	Warhead@18Radio: CreateTintedCells
+		Spread: 1c0
+		Level: 350
+		Falloff: 100, 75, 52, 37, 24, 15, 2
+		MaxLevel: 750
+		LayerName: radioactivity.strong
 
 MiniNuke:
 	ValidTargets: Ground, Trees, Water, Underwater, Air
@@ -368,6 +374,12 @@ MiniNuke:
 	Warhead@22FlashEffect: FlashPaletteEffect
 		Duration: 10
 		FlashType: Nuke
+	Warhead@18Radio: CreateTintedCells
+		Spread: 1c0
+		Level: 350
+		Falloff: 100, 75, 52, 37, 24, 15, 2
+		MaxLevel: 750
+		LayerName: radioactivity.strong
 
 ScrapsExplosion:
 	Warhead@1Dam: SpreadDamage

@@ -461,6 +461,7 @@
 	Inherits@PoisonMechanic: ^AffectedByChemicals
 	Inherits@ConcussionMechanic: ^Concussion
 	Inherits@handicaps: ^PlayerHandicaps
+	Inherits@Radiation: ^DamagedByRadiation
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -501,7 +502,7 @@
 			ExplosionDeath: 4
 			FireDeath: 5
 			ElectricityDeath: 6
-			TiberiumDeath: 7
+			RadiationDeath: 7
 		CrushedSequence: die-crushed
 	AttackMove:
 	Passenger:
@@ -632,6 +633,7 @@
 	Inherits@USABonus: ^AffectedByUSA
 	Inherits@ConcussionMechanic: ^Concussion
 	Inherits@handicaps: ^PlayerHandicaps
+	Inherits@Radiation: ^DamagedByRadiation
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -2335,9 +2337,9 @@ unit.summoner:
 
 ^BuildingAffectedByFire:
 	ChangesHealth@BurnDamage:
-		Step: -6
+		Step: -5
 		StartIfBelow: 101
-		Delay: 8
+		Delay: 11
 		DamageCooldown: 0
 		RequiresCondition: onfire
 	ExternalCondition@BurnDamage:
@@ -2592,3 +2594,69 @@ unit.summoner:
 		Margin: 0, 4
 		ValidRelationships: Neutral
 		RequiresCondition: booby-trapped
+
+^DamagedByRadiation:
+	DamagedByTintedCells@RADSTRONG:
+		Damage: 19
+		DamageInterval: 16
+		DamageTypes: RadiationDeath
+		LayerName: radioactivity.strong
+		RequiresCondition: !parachute	
+	DamagedByTintedCells@RADMED:
+		Damage: 7
+		DamageInterval: 16
+		DamageTypes: RadiationDeath
+		LayerName: radioactivity.medium
+		RequiresCondition: !parachute
+	DamagedByTintedCells@RADWEAK:
+		Damage: 5
+		DamageInterval: 16
+		DamageTypes: RadiationDeath
+		LayerName: radioactivity.weak
+		RequiresCondition: !parachute
+
+#	^InfantryDamagedByRadiation:
+#	DamagedByTintedCells@RADSTRONG:
+#		Damage: 38
+#		DamageInterval: 16
+#		DamageTypes: RadiationDeath
+#		LayerName: radioactivity.strong
+#		RequiresCondition: !(hazmatsuits || parachute)
+#	DamagedByTintedCells@RADSTRONGHAZMAT:
+#		Damage: 19
+#		DamageInterval: 16
+#		DamageTypes: RadiationDeath
+#		LayerName: radioactivity.strong
+#		RequiresCondition: hazmatsuits && !parachute
+#	DamagedByTintedCells@RADMED:
+#		Damage: 25
+#		DamageInterval: 16
+#		DamageTypes: RadiationDeath
+#		LayerName: radioactivity.medium
+#		RequiresCondition: !(hazmatsuits || parachute)
+#	DamagedByTintedCells@RADMEDHAZMAT:
+#		Damage: 7
+#		DamageInterval: 16
+#		DamageTypes: RadiationDeath
+#		LayerName: radioactivity.medium
+#		RequiresCondition: hazmatsuits && !parachute
+#	DamagedByTintedCells@RADWEAK:
+#		Damage: 10
+#		DamageInterval: 16
+#		DamageTypes: RadiationDeath
+#		LayerName: radioactivity.weak
+#		RequiresCondition: !(hazmatsuits || parachute)
+#	DamagedByTintedCells@RADWEAKHAZMAT:
+#		Damage: 5
+#		DamageInterval: 16
+#		DamageTypes: RadiationDeath
+#		LayerName: radioactivity.weak
+#		RequiresCondition: hazmatsuits && !parachute
+
+#	^InfantryRadiationImmune:
+#	-DamagedByTintedCells@RADSTRONG:
+#	-DamagedByTintedCells@RADSTRONGHAZMAT:
+#	-DamagedByTintedCells@RADMED:
+#	-DamagedByTintedCells@RADMEDHAZMAT:
+#	-DamagedByTintedCells@RADWEAK:
+#	-DamagedByTintedCells@RADWEAKHAZMAT:

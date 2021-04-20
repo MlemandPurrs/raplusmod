@@ -1,6 +1,6 @@
 Player:
-	SupportPowerBotModule@allies:
-		RequiresCondition: enable-ai-player && player.allies
+	SupportPowerBotModule@easyallies:
+		RequiresCondition: enable-wimp-ai && player.allies
 		Decisions:
 			UseParatroopers:
 				OrderName: AlliedParatroopers
@@ -278,8 +278,27 @@ Player:
 					Attractiveness: 1
 					TargetMetric: None
 					CheckRadius: 10c0
-	BaseBuilderBotModuleCA@allies:
-		RequiresCondition: enable-ai-player && player.allies
+	CaptureManagerBotModuleCA@wimp-mech:
+		RequiresCondition: enable-wimp-ai && player.allies
+		CapturingActorTypes: mech
+		CapturableActorTypes: 2tnk.husk,2tnk.england.husk,2tnk.france.husk,2tnk.germany.husk,2tnk.spain.husk,2tnk.holland.husk,3tnk.husk,3tnk.ukraine.husk,3tnk.belarus.husk,3tnk.kazakh.husk,3tnk.turkmen.husk,3tnk.afghan.husk,4tnk.husk,4tnk.flame.husk,harv.fullhusk,harv.emptyhusk,harv.soviet.fullhusk,harv.soviet.emptyhusk
+		CheckCaptureTargetsForVisibility: true
+		MaximumCaptureTargetOptions: 15
+		EnemyAvoidanceRadius: 3
+	SquadManagerBotModule@wimp-allies:
+		RequiresCondition: enable-wimp-ai && player.allies
+		SquadSize: 16
+		SquadSizeRandomBonus: 8
+		RushInterval: 400
+		AttackScanRadius: 16
+		ExcludeFromSquadsTypes: harv, harv.crate, mcv, mcv.ai, e6, mech, jeep.scout
+		ConstructionYardTypes: fact
+		NavalProductionTypes: syrd
+		NavalUnitsTypes: pt,pt.greece
+		DangerScanRadius: 1
+		IgnoredEnemyTargetTypes: IgnoreThis
+	BaseBuilderBotModuleCA@rush-strat:
+		RequiresCondition: enable-wimp-ai && player.allies && rush-strat
 		MinimumExcessPower: 60
 		MaximumExcessPower: 160
 		ExcessPowerIncrement: 40
@@ -287,89 +306,37 @@ Player:
 		CheckForWaterRadius: 8
 		ConstructionYardTypes: fact
 		RefineryTypes: proc
-		MaxRefineries: 6
-		PowerTypes: powr,apwr
+		PowerTypes: powr,powr.turkey,apwr,apwr.turkey
 		BarracksTypes: tent
 		VehiclesFactoryTypes: weap
-		ProductionTypes: tent,weap,hpad,afld,afld.usa,afld.england,afld.france,afld.germany,afld.italy,afld.greece
+		ProductionTypes: tent,weap,hpad
 		NavalProductionTypes: syrd
 		NewProductionCashThreshold: 4000
 		SiloTypes: silo
-		AntiAirTypes: agun,pbat
+		AntiAirTypes: agun
 		PlaceDefenseTowardsEnemyChance: 75
 		MaximumDefenseRadius: 10
 		MaxBaseRadius: 26
-		BuildingDelays:
-			syrd: 4500
-			agun: 6000
-			atek: 7500
-			atek.allies: 7500
-			atek.usa: 7500
-			atek.england: 7500
-			atek.germany: 7500
 		BuildingLimits:
 			proc: 4
-			tent: 2
-			dome.allies: 1
-			dome.spain: 1
-			weap: 3
-			syrd: 1
+			tent: 3
 			hpad: 4
-			atek: 1
-			atek.allies: 1
-			atek.usa: 1
-			atek.england: 1
-			atek.germany: 1
-			fix: 1
-			fix.allies: 1
-			fix.holland: 1
-			fix.sweden: 1
-			fix.turkey: 1
-			mslo: 1
-			agun: 6
-			gun: 6
-			pbox: 8
-			hbox: 4
-			gap: 3
-			gap.spain: 3
-			fact: 3
-			afld: 2
-			afld.usa: 2
-			afld.england: 2
-			afld.france: 2
-			afld.germany: 2
-			afld.italy: 2
-			afld.greece: 2
-			spro: 1
-			gtur: 1
-			pbat: 1
-			pris: 4
-			pdox: 1
-		BuildingFractions:
-			proc: 15
-			tent: 2
+			dome: 1
 			dome.allies: 1
 			dome.spain: 1
 			weap: 6
-			hpad: 4
-			syrd: 1
-			pbox: 7
-			hbox: 3
-			gun: 5
-			gap: 2
-			gap.spain: 2
+			syrd: 2
 			fix: 1
 			fix.allies: 1
 			fix.holland: 1
 			fix.sweden: 1
 			fix.turkey: 1
-			agun: 5
 			atek: 1
 			atek.allies: 1
 			atek.usa: 1
 			atek.england: 1
 			atek.germany: 1
-			mslo: 1
+			pdox: 1
 			afld: 1
 			afld.usa: 1
 			afld.england: 1
@@ -377,78 +344,45 @@ Player:
 			afld.germany: 1
 			afld.italy: 1
 			afld.greece: 1
-			spro: 1
-			gtur: 1
-			pbat: 1
-			pris: 5
-			iron: 1
-	CaptureManagerBotModuleCA@mech:
-		RequiresCondition: enable-ai-player && player.allies
-		CapturingActorTypes: mech
-		CapturableActorTypes: 2tnk.husk,2tnk.england.husk,2tnk.france.husk,2tnk.germany.husk,2tnk.spain.husk,2tnk.holland.husk,3tnk.husk,3tnk.ukraine.husk,3tnk.belarus.husk,3tnk.kazakh.husk,3tnk.turkmen.husk,3tnk.afghan.husk,4tnk.husk,4tnk.flame.husk,harv.fullhusk,harv.emptyhusk,harv.soviet.fullhusk,harv.soviet.emptyhusk
-		CheckCaptureTargetsForVisibility: true
-		MaximumCaptureTargetOptions: 15
-		EnemyAvoidanceRadius: 3
-	SquadManagerBotModule@allies.land:
-		RequiresCondition: enable-ai-player && player.allies
-		SquadSize: 12
-		SquadSizeRandomBonus: 6
-		RushInterval: 400
-		AttackScanRadius: 16
-		ExcludeFromSquadsTypes: e6, mech, dog, jeep.scout, harv, harv.crate, harv.chrono, mcv, mcv.ai, pt, pt.greece, dd, dd.germany, ca, ca.italy, bshp, iroq.ai, iroq.ai.greece, heli, heli.usa, spit, spit.turkey, thf
-		ConstructionYardTypes: fact
-		DangerScanRadius: 1
-		IgnoredEnemyTargetTypes: IgnoreThis
-	SquadManagerBotModule@allies.sea:
-		RequiresCondition: enable-ai-player && player.allies && !global-disablenavy
-		SquadSize: 4
-		SquadSizeRandomBonus: 4
-		RushInterval: 400
-		AttackScanRadius: 24
-		ExcludeFromSquadsTypes: harv, harv.crate, harv.chrono, mcv, mcv.ai, dog, e1, e1.england, e2, e2.turkey, e3, e4.italy, e6, e7, e7.usa, medi, mech, shot, atgm, snip, mrtr, cinf, jeep, jeep.england, jeep.scout, apc, apc.germany, rapc, 1tnk, 1tnk.england, 1tnk.france, 1tnk.holland, 1tnk.germany, 1tnk.italy, 1tnk.spain, 1tnk.sweden, atnk, 2tnk, 2tnk.england, 2tnk.france, 2tnk.germany, 2tnk.spain, 2tnk.sweden, 2tnk.holland, 2tnk.stealth, arty, arty.france, gcan, msam, mrj, stnk, ctnk, tnkd, batf, heli, heli.usa, iroq.ai, iroq.greece.ai, spit, spit.turkey, 1tnf, 2tnf, artf, thf, prsm
-		NavalUnitsTypes: pt,pt.greece,dd,dd.germany,ca,ca.italy,bshp
-		ConstructionYardTypes: fact
-		NavalProductionTypes: syrd
-		IgnoredEnemyTargetTypes: IgnoreThis
-	SquadManagerBotModule@allies.air:
-		RequiresCondition: enable-ai-player && player.allies
-		SquadSize: 1
-		SquadSizeRandomBonus: 2
-		RushInterval: 400
-		AttackScanRadius: 48
-		ExcludeFromSquadsTypes: harv, harv.crate, harv.chrono, mcv, mcv.ai, dog, e1, e1.england, e2, e2.turkey, e3, e4.italy, e6, e7, e7.usa, medi, mech, shot, atgm, snip, mrtr, cinf, jeep, jeep.england, jeep.scout, apc, apc.germany, rapc, 1tnk, 1tnk.england, 1tnk.france, 1tnk.holland, 1tnk.germany, 1tnk.italy, 1tnk.spain, 1tnk.sweden, atnk, 2tnk, 2tnk.england, 2tnk.france, 2tnk.germany, 2tnk.spain, 2tnk.sweden, 2tnk.holland, 2tnk.stealth, arty, arty.france, gcan, msam, mrj, stnk, ctnk, tnkd, batf, pt, pt.greece, dd, dd.germany, ca, ca.italy, bshp, 1tnf, 2tnf, artf, thf, prsm
-		ConstructionYardTypes: fact
-		IgnoredEnemyTargetTypes: Submarine, IgnoreThis
-	UnitBuilderBotModule@allies.land:
-		RequiresCondition: enable-ai-player && player.allies
-		UnitQueues: Vehicle, Infantry
-		UnitDelays:
-			mcv.ai: 13500
+			agun: 5
+			gun: 6
+			pbox: 7
+		BuildingFractions:
+			proc: 15
+			tent: 3
+			weap: 6
+			hpad: 4
+			fix: 1
+			fix.allies: 1
+			fix.holland: 1
+			fix.sweden: 1
+			fix.turkey: 1
+			syrd: 1
+			dome: 1
+			dome.allies: 1
+			dome.spain: 1
+			afld: 1
+			afld.usa: 1
+			afld.england: 1
+			afld.france: 1
+			afld.germany: 1
+			afld.italy: 1
+			afld.greece: 1
+			pdox: 1
+			agun: 5
+			gun: 5
+			pbox: 7
+	UnitBuilderBotModuleCA@rush-strat:
+		RequiresCondition: enable-wimp-ai && player.allies && rush-strat
+		IdleBaseUnitsMaximum: 6
+		MaxAircraft: 4
+		UnitQueues: Vehicle, Infantry, Ship, Aircraft
 		UnitsToBuild:
-			e1: 65
-			e1.england: 65
-			mgi: 30
+			harv: 15
 			e2: 15
 			e2.turkey: 15
-			e3: 30
-			e4.italy: 15
-			e6: 2
-			e7: 1
-			e7.usa: 1
-			medi: 2
-			mech: 2
-			dog: 15
-			shot: 15
-			atgm: 15
-			snip: 15
-			mrtr: 15
-			cinf: 15
-			harv: 15
 			jeep: 20
 			jeep.england: 20
-			apc: 30
-			apc.germany: 30
-			rapc: 30
 			1tnk: 40
 			1tnk.england: 40
 			1tnk.france: 40
@@ -457,6 +391,108 @@ Player:
 			1tnk.sweden: 40
 			1tnk.spain: 40
 			1tnk.italy: 40
+			arty: 15
+			arty.france: 15
+			iroq.ai: 30
+			iroq.ai.greece: 30
+			pt: 10
+			pt.greece: 10
+		UnitLimits:
+			jeep: 4
+			jeep.england: 4
+			arty: 8
+			arty.france: 8
+			pt: 7
+			pt.greece: 7
+			iroq.ai: 4
+			iroq.ai.greece: 4
+	BaseBuilderBotModuleCA@heli-strat:
+		RequiresCondition: enable-wimp-ai && player.allies && heli-strat
+		MinimumExcessPower: 60
+		MaximumExcessPower: 160
+		ExcessPowerIncrement: 40
+		ExcessPowerIncreaseThreshold: 4
+		CheckForWaterRadius: 8
+		ConstructionYardTypes: fact
+		RefineryTypes: proc
+		PowerTypes: powr,powr.turkey,apwr,apwr.turkey
+		BarracksTypes: tent
+		VehiclesFactoryTypes: weap
+		ProductionTypes: tent,weap,hpad
+		NavalProductionTypes: syrd
+		NewProductionCashThreshold: 4000
+		SiloTypes: silo
+		AntiAirTypes: agun
+		PlaceDefenseTowardsEnemyChance: 75
+		MaximumDefenseRadius: 10
+		MaxBaseRadius: 26
+		BuildingLimits:
+			proc: 4
+			tent: 3
+			hpad: 6
+			dome: 1
+			dome.allies: 1
+			dome.spain: 1
+			weap: 6
+			syrd: 2
+			fix: 1
+			fix.allies: 1
+			fix.holland: 1
+			fix.sweden: 1
+			fix.turkey: 1
+			atek: 1
+			atek.allies: 1
+			atek.usa: 1
+			atek.england: 1
+			atek.germany: 1
+			pdox: 1
+			afld: 1
+			afld.usa: 1
+			afld.england: 1
+			afld.france: 1
+			afld.germany: 1
+			afld.italy: 1
+			afld.greece: 1
+			agun: 4
+			gun: 5
+			pbox: 6
+		BuildingFractions:
+			proc: 15
+			tent: 3
+			weap: 6
+			hpad: 6
+			fix: 1
+			fix.allies: 1
+			fix.holland: 1
+			fix.sweden: 1
+			fix.turkey: 1
+			syrd: 1
+			dome: 1
+			dome.allies: 1
+			dome.spain: 1
+			afld: 1
+			afld.usa: 1
+			afld.england: 1
+			afld.france: 1
+			afld.germany: 1
+			afld.italy: 1
+			afld.greece: 1
+			pdox: 1
+			agun: 5
+			gun: 5
+			pbox: 7
+	UnitBuilderBotModuleCA@heli-strat:
+		RequiresCondition: enable-wimp-ai && player.allies && heli-strat
+		IdleBaseUnitsMaximum: 6
+		MaxAircraft: 8
+		UnitQueues: Vehicle, Infantry, Ship, Aircraft
+		UnitsToBuild:
+			harv: 15
+			e6: 2
+			mech: 2
+			e3: 30
+			jeep: 20
+			jeep.england: 20
 			2tnk: 50
 			2tnk.england: 50
 			2tnk.france: 50
@@ -467,73 +503,136 @@ Player:
 			2tnk.sweden: 50
 			arty: 15
 			arty.france: 15
-			gcan: 5
-			msam: 1
-			atnk: 15
-			mrj: 1
-			stnk: 5
-			ctnk: 10
-			tnkd: 15
-			prsm: 5
-			mcv.ai: 1
+			heli: 35
+			heli.usa: 35
+			pt: 10
+			pt.greece: 10
 		UnitLimits:
 			e6: 2
-			e7: 1
-			e7.usa: 1
-			medi: 3
 			mech: 2
-			dog: 4
-			harv: 8
 			jeep: 4
 			jeep.england: 4
-			msam: 2
-			mrj: 1
-			stnk: 3
-			ctnk: 5
-			mcv.ai: 1
-			gcan: 2
-			prsm: 3
-			cinf: 2
-			2tnk.stealth: 3
-			mrtr: 5
-	UnitBuilderBotModule@allies.sea:
-		RequiresCondition: enable-ai-player && player.allies && !global-disablenavy
+			arty: 8
+			arty.france: 8
+			pt: 7
+			pt.greece: 7
+			heli: 8
+			heli.usa: 8
+	BaseBuilderBotModuleCA@bomb-strat:
+		RequiresCondition: enable-wimp-ai && player.allies && rush-strat
+		MinimumExcessPower: 60
+		MaximumExcessPower: 160
+		ExcessPowerIncrement: 40
+		ExcessPowerIncreaseThreshold: 4
+		CheckForWaterRadius: 8
+		ConstructionYardTypes: fact
+		RefineryTypes: proc
+		PowerTypes: powr,powr.turkey,apwr,apwr.turkey
+		BarracksTypes: tent
+		VehiclesFactoryTypes: weap
+		ProductionTypes: tent,weap,hpad
+		NavalProductionTypes: syrd
+		NewProductionCashThreshold: 4000
+		SiloTypes: silo
+		AntiAirTypes: agun
+		PlaceDefenseTowardsEnemyChance: 75
+		MaximumDefenseRadius: 10
+		MaxBaseRadius: 26
+		BuildingLimits:
+			proc: 4
+			tent: 3
+			dome: 1
+			dome.allies: 1
+			dome.spain: 1
+			weap: 6
+			syrd: 2
+			fix: 1
+			fix.allies: 1
+			fix.holland: 1
+			fix.sweden: 1
+			fix.turkey: 1
+			atek: 1
+			atek.allies: 1
+			atek.usa: 1
+			atek.england: 1
+			atek.germany: 1
+			pdox: 1
+			afld: 6
+			afld.usa: 6
+			afld.england: 6
+			afld.france: 6
+			afld.germany: 6
+			afld.italy: 6
+			afld.greece: 6
+			agun: 5
+			gun: 6
+			pbox: 7
+		BuildingFractions:
+			proc: 15
+			tent: 3
+			weap: 6
+			fix: 1
+			fix.allies: 1
+			fix.holland: 1
+			fix.sweden: 1
+			fix.turkey: 1
+			syrd: 1
+			dome: 1
+			dome.allies: 1
+			dome.spain: 1
+			afld: 4
+			afld.usa: 4
+			afld.england: 4
+			afld.france: 4
+			afld.germany: 4
+			afld.italy: 4
+			afld.greece: 4
+			pdox: 1
+			agun: 5
+			gun: 5
+			pbox: 7	
+	UnitBuilderBotModuleCA@bomb-strat:
+		RequiresCondition: enable-wimp-ai && player.allies && bomb-strat
 		IdleBaseUnitsMaximum: 6
-		UnitQueues: Ship
+		MaxAircraft: 6
+		UnitQueues: Vehicle, Infantry, Ship, Aircraft
 		UnitsToBuild:
-			pt: 50
-			pt.greece: 50
-			dd: 30
-			dd.germany: 30
-			ca: 20
-			ca.italy: 20
-			bshp: 15
+			harv: 15
+			e6: 2
+			mech: 2
+			e3: 30
+			apc: 30
+			apc.germany: 30
+			rapc: 30
+			1tnk: 20
+			1tnk.england: 20
+			1tnk.france: 20
+			1tnk.germany: 20
+			1tnk.holland: 20
+			1tnk.sweden: 20
+			1tnk.spain: 20
+			1tnk.italy: 20
+			2tnk: 25
+			2tnk.england: 25
+			2tnk.france: 25
+			2tnk.germany: 25
+			2tnk.spain: 25
+			2tnk.holland: 25
+			2tnk.sweden: 25
+			arty: 15
+			arty.france: 15
+			spit: 35
+			spit.turkey: 35
+			pt: 10
+			pt.greece: 10
 		UnitLimits:
-			pt: 8
-			pt.greece: 8
-			dd: 6
-			dd.germany: 6
-			ca: 4
-			ca.italy: 4
-			bshp: 3
-	UnitBuilderBotModule@allies.air:
-		RequiresCondition: enable-ai-player && player.allies
-		IdleBaseUnitsMaximum: 0
-		UnitQueues: Aircraft
-		UnitDelays:
-			spit: 7500
-			spit.turkey: 7500
-		UnitsToBuild:
-			iroq.ai: 40
-			iroq.ai.greece: 40
-			heli: 60
-			heli.usa: 60
-			spit: 100
-			spit.turkey: 100
-		UnitLimits:
-			iroq.ai: 4
-			iroq.ai.greece: 4
-			heli: 6
-			heli.usa: 6
-			spit: 2
-			spit.turkey: 2
+			e6: 2
+			mech: 2
+			jeep: 4
+			jeep.england: 4
+			arty: 8
+			arty.france: 8
+			pt: 7
+			pt.greece: 7
+			spit: 6
+			spit.turkey: 6

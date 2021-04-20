@@ -201,7 +201,7 @@
 		Name: Britain
 		InternalName: england
 		Side: Allies
-		Description: Britain\nFaction Variations:\n    - Tanks* deal more damage but are costlier to build.\n*Those Tanks being the Light and Medium Tanks.\n+10% damage dealt at the cost of being +50$ more expensive.\nThis bonus does not affect secondary weaponry.\n    - Sight and Detection +50% bonus for Radar Domes, at increased cost.\nVeterancy Bonus:\n    - Rifle Infantry and Jeep as Veteran.\nUnique Support Power:\n    - Parascouts (Airfield)\nA B-52 drops 2 veteran Jeeps anywhere on the map.\n    - Intelligence Scan (Tech Center)\nReveals all Base Buildings and Superweapons on the map for 2.5 minute.\nBritain retains the usage of 'Precision Strike' support power.\nSpecial Units:\n    - Spy (Infantry)\nCapable agent that opens up wonderful possibilities.\n    - Tank Destroyer (Vehicle)\nSelf-propelled anti-tank Gun platform.\n    - Aircraft Carrier (Naval)\nCapable of deploying into Airfield at sea,\nProducing, Repairing and Resupplying Aircrafts.
+		Description: Britain\nFaction Variations:\n    - Tanks* deal more damage but are costlier to build.\n*Those Tanks being the Light and Medium Tanks.\n+10% damage dealt at the cost of being +50$ more expensive.\nThis bonus does not affect secondary weaponry.\n    - Sight and Detection +50% bonus for Radar Domes, at increased cost.\nVeterancy Bonus:\n    - Rifle Infantry and Jeep as Veteran.\nUnique Support Power:\n    - Parascouts (Airfield)\nA B-52 drops 2 veteran Jeeps anywhere on the map.\n    - Intelligence Scan (Tech Center)\nReveals all Base Buildings and Superweapons on the map for 2.5 minute.\nBritain retains the usage of 'Precision Strike' support power.\nSpecial Units:\n    - Tank Destroyer (Vehicle)\nSelf-propelled anti-tank Gun platform.\n    - Aircraft Carrier (Naval)\nCapable of deploying into Airfield at sea,\nProducing, Repairing and Resupplying Aircrafts.
 	Faction@3:
 		Name: Netherl.
 		InternalName: holland
@@ -261,7 +261,7 @@
 		Name: Belarus
 		InternalName: belarus
 		Side: Soviet
-		Description: Belarus\nFaction Variations:\n    - Tanks* are cheaper to build but have less health.\n*Those Tanks being both types of Heavy Tanks.\n10% cheaper to build at the cost of having 10% less Hitpoints.\n    - Paratroopers available twice as frequent.\nVeterancy Bonus:\n    - Yak Plane and Flak Truck gets built as Veteran.\nUnique Support Powers:\n    - Paramines (Airfield)\nA Badger paradrops one Minelayer anywhere on the map.\n    - Extra Spyplane (Tech Center)\nOne more Spy Plane becomes available with a Tech Center.\nBelarus retains the usage of 'Parabombs' support power.\nSpecial Units:\n    - Saboteur (Infantry)\nCapable agent that opens up wonderful possibilities.\n    - MAD Tank (Vehicle)\nDevice capable of emitting seismic waves when deployed that damage structures.\n    - Nuclear Bomber (Aircraft)\nUnits capable of delivering tactical Nuclear warheads.
+		Description: Belarus\nFaction Variations:\n    - Tanks* are cheaper to build but have less health.\n*Those Tanks being both types of Heavy Tanks.\n10% cheaper to build at the cost of having 10% less Hitpoints.\n    - Paratroopers available twice as frequent.\nVeterancy Bonus:\n    - Yak Plane and Flak Truck gets built as Veteran.\nUnique Support Powers:\n    - Paramines (Airfield)\nA Badger paradrops one Minelayer anywhere on the map.\n    - Extra Spyplane (Tech Center)\nOne more Spy Plane becomes available with a Tech Center.\nBelarus retains the usage of 'Parabombs' support power.\nSpecial Units:\n    - MAD Tank (Vehicle)\nDevice capable of emitting seismic waves when deployed that damage structures.\n    - Nuclear Bomber (Aircraft)\nUnits capable of delivering tactical Nuclear warheads.
 	Faction@15:
 		Name: Karelia
 		InternalName: karelia
@@ -271,7 +271,7 @@
 		Name: Transnist.
 		InternalName: moldova
 		Side: Soviet
-		Description: Transnistria\nFaction Variations:\n    - Attack Dogs are amphibian and explode on Death.\nVeterancy Bonus:\n    - Heavy APC gets built as Veteran.\nUnique Support Power:\n  Special Ability: Remote Kennel (Service Depot)\nDeploys a Kennel with seperate queue anywhere on the map.\nSpecial Units:\n    - Mobile Repair Truck (Vehicle)\nMechanized Engineers capable of Capturing and Repairs.
+		Description: Transnistria\nFaction Variations:\n    - Attack Dogs are amphibian and explode on Death.\nVeterancy Bonus:\n    - Heavy APC gets built as Veteran.\nUnique Support Power:\n  Special Ability: Remote Kennel (Service Depot)\nDeploys a Kennel with seperate queue anywhere on the map.\nSpecial Units:\n    - Demolitionist (Infantry)\nExplosives expert capable of blowing up and booby-trapping Structures.\n    - Mobile Repair Truck (Vehicle)\nMechanized Engineers capable of Capturing and Repairs.
 	Faction@17:
 		Name: Kazakhst.
 		InternalName: kazakh
@@ -373,6 +373,24 @@ World:
 		SmokeSequences: idle
 	ResourceLayer:
 	ResourceClaimLayer:
+	TintedCellsLayer@RADSTRONG:
+		Color: 00FF00
+		Brightest: 54
+		FadeoutDelay: 400
+		ZOffset: 0
+		Name: radioactivity.strong
+	TintedCellsLayer@RADMED:
+		Color: 00FF00
+		Brightest: 54
+		FadeoutDelay: 300
+		ZOffset: 0
+		Name: radioactivity.medium
+	TintedCellsLayer@RADWEAK:
+		Color: 00FF00
+		Brightest: 54
+		FadeoutDelay: 200
+		ZOffset: 0
+		Name: radioactivity.weak
 	WarheadDebugOverlay:
 	SpawnMapActors:
 	MapBuildRadius:

@@ -510,6 +510,12 @@ weap:
 			INTERIOR: TEMPERAT
 	dead: weap-dead
 		Tick: 800
+	harvicon: lores|harvicon
+		ZOffset: 2048
+	jeepicon: lores|jeepicon
+		ZOffset: 2048
+	apcicon: lores|apcicon
+		ZOffset: 2048
 	icon: weapicon
 	fake-icon: weaficon
 

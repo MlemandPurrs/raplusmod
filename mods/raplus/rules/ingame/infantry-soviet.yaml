@@ -381,10 +381,13 @@ DESO:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@ROT: ^RottingInfantry
+	-DamagedByTintedCells@RADSTRONG:
+	-DamagedByTintedCells@RADMED:
+	-DamagedByTintedCells@RADWEAK:
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
-		BuildPaletteOrder: 130
+		BuildPaletteOrder: 14
 		Prerequisites: ~barr, stek, ~infantry.soviet, ~soviet.or.uzbek, ~techlevel.medium
 		Description: Anti-infantry unit, with Radiation Beam weaponry.\n  Strong vs Infantry, Light Armor\n  Weak vs Tanks, Aircraft\n  Special Ability: Desolate Ground\nCan be deployed to scorch and poison ground around itself.
 	Valued:
@@ -422,6 +425,10 @@ DESO:
 	ProducibleWithLevel:
 		Prerequisites: barracks.upgraded
 	-Crushable:
+	PeriodicExplosion:
+		Weapon: RadEruptionWeapon
+		RequiresCondition: deployed
+		InitialDelay: 20
 	GrantConditionOnDeploy:
 		DeployedCondition: deployed
 		UndeployedCondition: undeployed
@@ -443,17 +450,12 @@ DESO:
 		Interval: 60
 		RequiresCondition: deployed
 	ProximityExternalCondition@DEPLOYED:
-		Range: 5c0
+		Range: 4c0
 		ValidRelationships: Enemy, Neutral
 		Condition: onfire
 		RequiresCondition: deployed
-	ProximityExternalCondition@DEPLOYED:
-		Range: 5c0
-		ValidRelationships: Enemy, Neutral
-		Condition: hitbychem
-		RequiresCondition: deployed
 	WithRangeCircle@DEPLOYED:
-		Range: 5c0
+		Range: 4c0
 		Color: 008C00
 		RequiresCondition: deployed
 	Targetable:
@@ -477,12 +479,12 @@ DEMO:
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
-		BuildPaletteOrder: 991
-		#	Prerequisites: ~barr, ~infantry.soviet, fix, ~techlevel.high
-		Prerequisites: ~disabled
-		Description: Specialist Infantry armed with bouncing explosives.\n  Special abilities:\nCan Disguise as enemy Infantry. Loses disguise on Infiltrating.\nEnters enemy Structures to Demolish them.\nBooby traps Tech Buildings to blow up on Capture.\n  Strong vs Buildings\n  Weak vs everything Else
+		BuildPaletteOrder: 16
+		BuildLimit: 1
+		Prerequisites: ~barr, fix, ~infantry.soviet, ~soviet.or.moldova, ~techlevel.high
+		Description: Specialist Infantry armed with bouncing explosives.\nMaximum 1 can be built.\n  Special abilities:\nCan Disguise as enemy Infantry. Loses disguise on Infiltrating.\nEnters enemy Structures to Demolish them.\nBooby traps Tech Buildings to blow up on Capture.\n  Strong vs Buildings\n  Weak vs everything Else
 	Valued:
-		Cost: 600
+		Cost: 750
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -495,8 +497,6 @@ DEMO:
 	Passenger:
 		CustomPipType: pip-red
 		Voice: Move
-	#	Guard:
-	#	Voice: Move
 	Armament@PRIMARY:
 		Weapon: FireBomb
 		LocalOffset: 0,0,555
@@ -533,7 +533,7 @@ DEMO:
 		Flashes: 61
 		FlashInterval: 4
 		Voice: Demolish
-		EnterBehaviour: Dispose
+		EnterBehaviour: Exit
 	Infiltrates:
 		Types: DemoInfiltrate
 		Notification:
