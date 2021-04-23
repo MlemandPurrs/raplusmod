@@ -59,7 +59,7 @@ FCOM.Husk:
 		Dimensions: 2,3
 		LocalCenterOffset: 0,-512,0
 	Tooltip:
-		Name: Forward Command (Destroyed)
+		Name: Expansion Post (Destroyed)
 	RenderSprites:
 		Image: acom.husk
 	InfiltrateForTransform:

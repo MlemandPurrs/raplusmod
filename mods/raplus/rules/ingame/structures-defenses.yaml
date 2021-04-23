@@ -1,7 +1,7 @@
 SBAG:
 	Inherits: ^Wall
 	Buildable:
-		Queue: Defense
+		Queue: Defense, DefenseSeperate
 		BuildPaletteOrder: 1
 		Prerequisites: fact, ~!structures.soviet, ~techlevel.low
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.\nBuilds further than Concrete walls.
@@ -26,7 +26,7 @@ SBAG:
 FENC:
 	Inherits: ^Wall
 	Buildable:
-		Queue: Defense
+		Queue: Defense, DefenseSeperate
 		BuildPaletteOrder: 1
 		Prerequisites: fact, ~structures.soviet, ~techlevel.low
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.\nBuilds further than Concrete walls.
@@ -51,7 +51,7 @@ FENC:
 BARB:
 	Inherits: ^Wall
 	Buildable:
-		Queue: Defense
+		Queue: Defense, DefenseSeperate
 		BuildPaletteOrder: 1
 		Prerequisites: ~disabled
 		Description: Stops infantry and light vehicles.\nCan be crushed by tracked vehicles.
@@ -102,7 +102,7 @@ WOOD:
 BRIK:
 	Inherits: ^Wall
 	Buildable:
-		Queue: Defense
+		Queue: Defense, DefenseSeperate
 		BuildPaletteOrder: 14
 		Prerequisites: weap, ~techlevel.medium
 		Description: Stop units and blocks enemy fire.\nCan be crushed by Mammoth Tanks.
@@ -140,7 +140,7 @@ HGATE:
 		Footprint: xxx
 		Dimensions: 3,1
 	Buildable:
-		Queue: Defense
+		Queue: Defense, DefenseSeperate
 		BuildPaletteOrder: 15
 		Prerequisites: weap, ~techlevel.medium
 		Description: Places an horizontal gate.\nThe gate automatically opens for friendly units.\nBlocks enemy access into your base.
@@ -197,7 +197,7 @@ VGATE:
 		Footprint: x x x
 		Dimensions: 1,3
 	Buildable:
-		Queue: Defense
+		Queue: Defense, DefenseSeperate
 		BuildPaletteOrder: 16
 		Prerequisites: weap, ~techlevel.medium
 		Description: Places an vertical gate.\nThe gate automatically opens for friendly units.\nBlocks enemy access into your base.
@@ -233,7 +233,7 @@ PBOX:
 		QuantizedFacings: 8
 	Building:
 	Buildable:
-		Queue: Defense
+		Queue: Defense, DefenseSeperate
 		BuildPaletteOrder: 2
 		Prerequisites: tent, ~structures.allies, ~techlevel.low
 		Description: Static defense with\nMG emplacement.\nCan detect cloaked units.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft
@@ -294,7 +294,7 @@ HBOX:
 		QuantizedFacings: 8
 	Building:
 	Buildable:
-		Queue: Defense
+		Queue: Defense, DefenseSeperate
 		BuildPaletteOrder: 5
 		Prerequisites: tent, dome, ~structures.allies, ~techlevel.medium
 		Description: Camouflaged static defense\nwith a Sniper inside.\nCan detect cloaked units.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft
@@ -355,7 +355,7 @@ FBOX:
 	-AutoTargetPriority@ATTACKANYTHING:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiInfandAirDefense
 	Buildable:
-		Queue: Defense
+		Queue: Defense, DefenseSeperate
 		BuildPaletteOrder: 2
 		Prerequisites: barr, ~structures.soviet, ~!player.karelia, ~techlevel.low
 		Description: Static defense with\nFlak emplacement.\nCan detect cloaked units.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft
@@ -401,7 +401,7 @@ FTUR:
 		QuantizedFacings: 8
 	Building:
 	Buildable:
-		Queue: Defense
+		Queue: Defense, DefenseSeperate
 		BuildPaletteOrder: 4
 		Prerequisites: weap, ~structures.soviet, ~!player.karelia, ~techlevel.medium
 		Description: Anti-Infantry base defense.\nCan detect cloaked units.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft
@@ -472,7 +472,7 @@ TSLA:
 		Bounds: 24,24
 		DecorationBounds: 24,40,0,-8
 	Buildable:
-		Queue: Defense
+		Queue: Defense, DefenseSeperate
 		BuildPaletteOrder: 5
 		Prerequisites: dome, ~structures.soviet, ~!player.karelia, ~techlevel.medium
 		Description: Advanced base defense.\nTesla briefly short-circuits Vehicle and Ships.\nCan detect cloaked units.\n  Strong vs Vehicles, Infantry\n  Weak vs Aircraft
@@ -548,7 +548,7 @@ PRIS:
 	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
-		Queue: Defense
+		Queue: Defense, DefenseSeperate
 		BuildPaletteOrder: 8
 		Prerequisites: atek, ~structures.allies, ~allies.or.usa, ~techlevel.high
 		Description: Advanced experimental base defense.\n  Can detect cloaked units.\n  Strong vs Vehicles, Infantry\n  Weak vs Aircraft
@@ -636,18 +636,18 @@ GUN:
 	Inherits: ^Defense
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiTankDefense
 	Inherits@RangeBonus: ^AffectedByGreece
-	-WithSpriteBody:
+	#	-WithSpriteBody:
 	-SpawnActorsOnSell:
 	-ActorPreviewPlaceBuildingPreview:
 	-BodyOrientation:
 	SequencePlaceBuildingPreview:
 		Sequence: place
 		SequencePalette: placebuilding
-	WithEmbeddedTurretSpriteBody:
+	#	WithEmbeddedTurretSpriteBody:
 	ClassicFacingBodyOrientation:
 	Building:
 	Buildable:
-		Queue: Defense
+		Queue: Defense, DefenseSeperate
 		BuildPaletteOrder: 4
 		Prerequisites: weap, ~structures.allies, ~techlevel.medium
 		Description: Anti-Armor base defense.\nCan detect cloaked units.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
@@ -674,6 +674,8 @@ GUN:
 	Turreted:
 		TurnSpeed: 32
 		InitialFacing: 192
+		RealignDelay: -1
+		RequiresCondition: !build-incomplete
 	Armament:
 		Weapon: TurretGun
 		LocalOffset: 512,0,112
@@ -682,6 +684,11 @@ GUN:
 	AttackTurreted:
 		PauseOnCondition: disabled
 		RequiresCondition: !build-incomplete
+	WithSpriteTurret:
+		RequiresCondition: !build-incomplete
+		Recoils: false
+	WithTurretAttackAnimation:
+		Sequence: recoil
 	WithMuzzleOverlay:
 	Power:
 		Amount: -40
@@ -699,7 +706,7 @@ GTUR:
 	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
 	Inherits@shape: ^2x1Shape
 	Inherits@RangeBonus: ^AffectedByGreece
-	-WithSpriteBody:
+	#	-WithSpriteBody:
 	-SpawnActorsOnSell:
 	-ActorPreviewPlaceBuildingPreview:
 	-BodyOrientation:
@@ -714,7 +721,7 @@ GTUR:
 		Dimensions: 2,1
 		LocalCenterOffset: 0,-256,0
 	Buildable:
-		Queue: Defense
+		Queue: Defense, DefenseSeperate
 		BuildPaletteOrder: 7
 		BuildLimit: 1
 		Prerequisites: atek, ~structures.allies, ~allies.or.greece, ~techlevel.high
@@ -741,8 +748,12 @@ GTUR:
 		TurnSpeed: 20
 		InitialFacing: 0
 		RealignDelay: -1
-	WithEmbeddedTurretSpriteBody:
-		PauseOnCondition: empdisable
+		RequiresCondition: !build-incomplete
+	#	WithEmbeddedTurretSpriteBody:
+	#	PauseOnCondition: empdisable
+	WithSpriteTurret:
+		RequiresCondition: !build-incomplete
+		Recoils: false
 	WithBuildingBib:
 		HasMinibib: true
 	AttackTurreted:
@@ -789,10 +800,10 @@ GAP:
 			TopLeft: -512, -512
 			BottomRight: 512, 512
 	Buildable:
-		Queue: Building
+		Queue: Building, BuildingSeperate
 		BuildPaletteOrder: 11
 		Prerequisites: techcenter, ~fact, ~!player.spain, ~techlevel.high
-		Description: Obscures the enemy's view with shroud.\nRequires power to operate.\n  Special ability: Can be Deployed when Charged\nto obscure an even greater area\nat cost of increased Power usage.
+		Description: Obscures the enemy's view with shroud.\nRequires power to operate.\n  Special ability: Shroud Overcharge\nCan be Deployed when Charged\nto obscure an even greater area\nat cost of increased Power usage.
 	Tooltip:
 		Name: Gap Generator
 	Valued:
@@ -851,7 +862,7 @@ GAP:
 		CooldownTicks: 1500
 		DeployedTicks: 750
 		#	DeploySound: appear1.aud
-		PauseOnCondition: !build-incomplete || !disabled
+		PauseOnCondition: build-incomplete || disabled
 	WithDecoration@Deployed:
 		RequiresSelection: true
 		Image: pips
@@ -872,7 +883,7 @@ PDOX:
 		Dimensions: 2,2
 		TerrainTypes: Clear,Road
 	Buildable:
-		Queue: Defense
+		Queue: Defense, DefenseSeperate
 		BuildPaletteOrder: 11
 		BuildLimit: 1
 		Prerequisites: atek, ~structures.allies, ~!player.germany, ~techlevel.unrestricted
@@ -902,6 +913,7 @@ PDOX:
 	ChronoshiftPower@ChronoShift:
 		OrderName: ChronoShiftPower
 		PauseOnCondition: disabled
+		Prerequisites: !aitoodumb
 		Icon: chrono
 		ChargeInterval: 4500
 		Description: Chronoshift
@@ -920,7 +932,7 @@ PDOX:
 	DetonateWeaponPower@ChronoShiftAI:
 		OrderName: ChronoShiftAI
 		PauseOnCondition: disabled
-		Prerequisites: aiplayer
+		Prerequisites: aitoodumb
 		Icon: chrono
 		Cursor: ability
 		ChargeInterval: 4500
@@ -967,7 +979,7 @@ IRON:
 		Dimensions: 2,1
 		TerrainTypes: Clear,Road
 	Buildable:
-		Queue: Defense
+		Queue: Defense, DefenseSeperate
 		BuildPaletteOrder: 11
 		BuildLimit: 1
 		Prerequisites: stek, ~structures.soviet, ~techlevel.unrestricted
@@ -1040,7 +1052,7 @@ MSLO:
 		Dimensions: 2,1
 		TerrainTypes: Clear,Road
 	Buildable:
-		Queue: Defense
+		Queue: Defense, DefenseSeperate
 		BuildPaletteOrder: 12
 		BuildLimit: 1
 		Prerequisites: techcenter, ~techlevel.unrestricted
@@ -1153,10 +1165,10 @@ AGUN:
 	Inherits@AUTOTARGET: ^AutoTargetAir
 	Inherits@RangeBonus: ^AffectedByGreece
 	-SpawnActorsOnSell:
-	-WithSpriteBody:
+	#	-WithSpriteBody:
 	-ActorPreviewPlaceBuildingPreview:
 	-BodyOrientation:
-	WithEmbeddedTurretSpriteBody:
+	#	WithEmbeddedTurretSpriteBody:
 	SequencePlaceBuildingPreview:
 		Sequence: place
 		SequencePalette: placebuilding
@@ -1165,7 +1177,7 @@ AGUN:
 		Bounds: 24,24
 		DecorationBounds: 24,32,0,-4
 	Buildable:
-		Queue: Defense
+		Queue: Defense, DefenseSeperate
 		BuildPaletteOrder: 6
 		Prerequisites: dome, ~structures.allies, ~techlevel.medium
 		Description: Anti-Air base defense.\nRequires power to operate.\n  Strong vs Aircraft\n  Weak vs Ground units
@@ -1188,6 +1200,13 @@ AGUN:
 	Turreted:
 		TurnSpeed: 40
 		InitialFacing: 820
+		RealignDelay: -1
+		RequiresCondition: !build-incomplete
+	WithSpriteTurret:
+		RequiresCondition: !build-incomplete
+		Recoils: false
+	WithTurretAttackAnimation:
+		Sequence: recoil
 	Armament:
 		Name: primary
 		Weapon: ZSU-23
@@ -1236,7 +1255,7 @@ PBAT:
 	-WithSpriteBody:
 	-SpawnActorsOnSell:
 	Buildable:
-		Queue: Defense
+		Queue: Defense, DefenseSeperate
 		BuildPaletteOrder: 9
 		BuildLimit: 1
 		Prerequisites: atek, ~structures.allies, ~allies.or.holland, ~techlevel.high
@@ -1299,10 +1318,8 @@ SAM:
 	Inherits@AUTOTARGET: ^AutoTargetAir
 	Inherits@shape: ^2x1Shape
 	-SpawnActorsOnSell:
-	-WithSpriteBody:
 	-ActorPreviewPlaceBuildingPreview:
 	-BodyOrientation:
-	WithEmbeddedTurretSpriteBody:
 	SequencePlaceBuildingPreview:
 		Sequence: place
 		SequencePalette: placebuilding
@@ -1316,7 +1333,7 @@ SAM:
 		Footprint: xx
 		Dimensions: 2,1
 	Buildable:
-		Queue: Defense
+		Queue: Defense, DefenseSeperate
 		BuildPaletteOrder: 6
 		Prerequisites: dome, ~structures.soviet, ~!player.karelia, ~techlevel.medium
 		Description: Anti-Air base defense.\nRequires power to operate.\n  Strong vs Aircraft\n  Weak vs Ground units
@@ -1339,6 +1356,11 @@ SAM:
 	Turreted:
 		TurnSpeed: 40
 		InitialFacing: 0
+		RealignDelay: -1
+		RequiresCondition: !build-incomplete
+	WithSpriteTurret:
+		RequiresCondition: !build-incomplete
+		Recoils: false
 	Armament:
 		Weapon: Nike
 		LocalOffset: 0,0,320
@@ -1386,8 +1408,11 @@ HSAM:
 	-AttackTurreted:
 	-WithBuildingBib:
 	-SpawnActorOnDeath:
+	-WithSpriteBody:
+	-WithSpriteTurret:
+	WithEmbeddedTurretSpriteBody:
 	Buildable:
-		Queue: Defense
+		Queue: Defense, DefenseSeperate
 		BuildPaletteOrder: 13
 		Prerequisites: dome, stek, ~structures.soviet, ~!player.karelia, ~techlevel.high
 		Description: Cloaked Anti-Air base defense.\n  Strong vs Aircraft.\n  Weak vs Ground units.
@@ -1511,7 +1536,7 @@ SPMST:
 		TargetTypes: Ground, Structure, TreeDisguise
 		RequiresCondition: !disguised
 	Targetable@disguised:
-		TargetTypes: Ground, Tree, TreeDisguise
+		TargetTypes: Ground, Trees, TreeDisguise, NoAutoTarget
 		RequiresForceFire: true
 		RequiresCondition: disguised
 	-WithSpriteBody:
@@ -1662,13 +1687,26 @@ SPMST:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
 
+#	SPMST.summon:
+#	Inherits: ^SummonBase
+#	SpawnActorOnDeath:
+#	Actor: spmst
+#	RequiresCondition: !parachute
+#	KillsSelf:
+#	RequiresCondition: !parachute
+#	RenderSprites:
+#	Image: dummy
+
 SPMST.summon:
-	Inherits: ^SummonBase
+	Inherits: ^SummonBuilding
+	GrantDelayedCondition:
+		Condition: detonatetospawn
+		Delay: 6
 	SpawnActorOnDeath:
 		Actor: spmst
-		RequiresCondition: !parachute
+		RequiresCondition: detonatetospawn
 	KillsSelf:
-		RequiresCondition: !parachute
+		RequiresCondition: detonatetospawn
 	RenderSprites:
 		Image: dummy
 
@@ -1707,12 +1745,15 @@ FTUR.popup:
 	BodyOrientation:
 
 FTUR.summon:
-	Inherits: ^SummonBase
+	Inherits: ^SummonBuilding
+	GrantDelayedCondition:
+		Condition: detonatetospawn
+		Delay: 3
 	SpawnActorOnDeath:
 		Actor: ftur.popup
-		RequiresCondition: !parachute
+		RequiresCondition: detonatetospawn
 	KillsSelf:
-		RequiresCondition: !parachute
+		RequiresCondition: detonatetospawn
 	RenderSprites:
 		Image: dummy
 
@@ -1779,11 +1820,14 @@ PBOX.empty:
 		Image: pbox
 
 PBOX.summon:
-	Inherits: ^SummonBase
+	Inherits: ^SummonBuilding
+	GrantDelayedCondition:
+		Condition: detonatetospawn
+		Delay: 3
 	SpawnActorOnDeath:
 		Actor: pbox.empty
-		RequiresCondition: !parachute
+		RequiresCondition: detonatetospawn
 	KillsSelf:
-		RequiresCondition: !parachute
+		RequiresCondition: detonatetospawn
 	RenderSprites:
 		Image: dummy

@@ -286,10 +286,22 @@ Player:
 		MaximumCaptureTargetOptions: 15
 		EnemyAvoidanceRadius: 3
 	SquadManagerBotModule@wimp-allies:
-		RequiresCondition: enable-wimp-ai && player.allies
+		RequiresCondition: enable-wimp-ai && player.allies && heli-strat || bomb-strat
 		SquadSize: 16
 		SquadSizeRandomBonus: 8
 		RushInterval: 400
+		AttackScanRadius: 16
+		ExcludeFromSquadsTypes: harv, harv.crate, harv.soviet, harv.soviet.crate, mcv, mcv.ai, e6, mech, jeep.scout
+		ConstructionYardTypes: fact
+		NavalProductionTypes: syrd
+		NavalUnitsTypes: pt,pt.greece
+		DangerScanRadius: 1
+		IgnoredEnemyTargetTypes: IgnoreThis
+	SquadManagerBotModule@rush-strat:
+		RequiresCondition: enable-wimp-ai && player.allies && rush-strat
+		SquadSize: 8
+		SquadSizeRandomBonus: 4
+		RushInterval: 200
 		AttackScanRadius: 16
 		ExcludeFromSquadsTypes: harv, harv.crate, mcv, mcv.ai, e6, mech, jeep.scout
 		ConstructionYardTypes: fact
@@ -312,15 +324,16 @@ Player:
 		ProductionTypes: tent,weap,hpad
 		NavalProductionTypes: syrd
 		NewProductionCashThreshold: 4000
-		SiloTypes: silo
+		SiloTypes: e3
 		AntiAirTypes: agun
 		PlaceDefenseTowardsEnemyChance: 75
 		MaximumDefenseRadius: 10
 		MaxBaseRadius: 26
+		BuildingQueues: BuildingSeperate
+		DefenseQueues: DefenseSeperate
 		BuildingLimits:
 			proc: 4
 			tent: 3
-			hpad: 4
 			dome: 1
 			dome.allies: 1
 			dome.spain: 1
@@ -331,6 +344,7 @@ Player:
 			fix.holland: 1
 			fix.sweden: 1
 			fix.turkey: 1
+			hpad: 6
 			atek: 1
 			atek.allies: 1
 			atek.usa: 1
@@ -375,8 +389,8 @@ Player:
 	UnitBuilderBotModuleCA@rush-strat:
 		RequiresCondition: enable-wimp-ai && player.allies && rush-strat
 		IdleBaseUnitsMaximum: 6
-		MaxAircraft: 4
-		UnitQueues: Vehicle, Infantry, Ship, Aircraft
+		MaxAircraft: 6
+		UnitQueues: VehicleSeperate, InfantrySeperate, ShipSeperate, AircraftSeperate
 		UnitsToBuild:
 			harv: 15
 			e2: 15
@@ -404,8 +418,8 @@ Player:
 			arty.france: 8
 			pt: 7
 			pt.greece: 7
-			iroq.ai: 4
-			iroq.ai.greece: 4
+			iroq.ai: 6
+			iroq.ai.greece: 6
 	BaseBuilderBotModuleCA@heli-strat:
 		RequiresCondition: enable-wimp-ai && player.allies && heli-strat
 		MinimumExcessPower: 60
@@ -421,11 +435,13 @@ Player:
 		ProductionTypes: tent,weap,hpad
 		NavalProductionTypes: syrd
 		NewProductionCashThreshold: 4000
-		SiloTypes: silo
+		SiloTypes: e3
 		AntiAirTypes: agun
 		PlaceDefenseTowardsEnemyChance: 75
 		MaximumDefenseRadius: 10
 		MaxBaseRadius: 26
+		BuildingQueues: BuildingSeperate
+		DefenseQueues: DefenseSeperate
 		BuildingLimits:
 			proc: 4
 			tent: 3
@@ -485,7 +501,7 @@ Player:
 		RequiresCondition: enable-wimp-ai && player.allies && heli-strat
 		IdleBaseUnitsMaximum: 6
 		MaxAircraft: 8
-		UnitQueues: Vehicle, Infantry, Ship, Aircraft
+		UnitQueues: VehicleSeperate, InfantrySeperate, ShipSeperate, AircraftSeperate
 		UnitsToBuild:
 			harv: 15
 			e6: 2
@@ -519,7 +535,7 @@ Player:
 			heli: 8
 			heli.usa: 8
 	BaseBuilderBotModuleCA@bomb-strat:
-		RequiresCondition: enable-wimp-ai && player.allies && rush-strat
+		RequiresCondition: enable-wimp-ai && player.allies && bomb-strat
 		MinimumExcessPower: 60
 		MaximumExcessPower: 160
 		ExcessPowerIncrement: 40
@@ -533,11 +549,13 @@ Player:
 		ProductionTypes: tent,weap,hpad
 		NavalProductionTypes: syrd
 		NewProductionCashThreshold: 4000
-		SiloTypes: silo
+		SiloTypes: e3
 		AntiAirTypes: agun
 		PlaceDefenseTowardsEnemyChance: 75
 		MaximumDefenseRadius: 10
 		MaxBaseRadius: 26
+		BuildingQueues: BuildingSeperate
+		DefenseQueues: DefenseSeperate
 		BuildingLimits:
 			proc: 4
 			tent: 3
@@ -595,7 +613,7 @@ Player:
 		RequiresCondition: enable-wimp-ai && player.allies && bomb-strat
 		IdleBaseUnitsMaximum: 6
 		MaxAircraft: 6
-		UnitQueues: Vehicle, Infantry, Ship, Aircraft
+		UnitQueues: VehicleSeperate, InfantrySeperate, ShipSeperate, AircraftSeperate
 		UnitsToBuild:
 			harv: 15
 			e6: 2

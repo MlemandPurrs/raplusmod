@@ -131,7 +131,7 @@ BADR.buildable:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@AUTODAMAGE: ^KilledWithoutAirfield
 	Buildable:
-		Queue: Aircraft, MWFAir
+		Queue: Aircraft, MWFAir, AircraftSeperate
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 3
 		BuildLimit: 1
@@ -263,7 +263,7 @@ TRAN.Soviet:
 MI2:
 	Inherits: ^Helicopter
 	Buildable:
-		Queue: Aircraft, MWFHeli
+		Queue: Aircraft, MWFHeli, AircraftSeperate
 		BuildAtProductionType: Helicopter
 		BuildPaletteOrder: 7
 		Prerequisites: ~hpad, fix, ~aircraft.soviet, ~soviet.or.kazakh, ~techlevel.medium
@@ -344,7 +344,7 @@ HIND:
 		InitialStance: HoldFire
 		InitialStanceAI: HoldFire
 	Buildable:
-		Queue: Aircraft, MWFHeli
+		Queue: Aircraft, MWFHeli, AircraftSeperate
 		BuildAtProductionType: Helicopter
 		BuildPaletteOrder: 6
 		Prerequisites: ~hpad, stek, ~aircraft.soviet, ~!player.afghan, ~techlevel.high
@@ -518,7 +518,7 @@ YAK:
 		InitialStance: HoldFire
 		InitialStanceAI: HoldFire
 	Buildable:
-		Queue: Aircraft, MWFAir
+		Queue: Aircraft, MWFAir, AircraftSeperate
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 1
 		Prerequisites: ~afld, dome, ~aircraft.soviet, ~!aitoodumb, ~!player.belarus, ~techlevel.medium
@@ -668,11 +668,11 @@ MIG:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiTankandAir
 	Inherits@AUTODAMAGE: ^KilledWithoutAirfield
 	Buildable:
-		Queue: Aircraft, MWFAir
+		Queue: Aircraft, MWFAir, AircraftSeperate
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 2
 		Prerequisites: ~afld, stek, ~aircraft.soviet, ~!player.kazakh, ~techlevel.high
-		Description: Fast Multi-Role Attack Plane.\nCan be toggled while on Airfield\nto engage Air or Ground targets.\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft\n  Known Issue:\nYou need to take-off and re-land the Aircraft manually\nupon toggling AG-AA modes as it ceases reloading ammo.
+		Description: Fast Multi-Role Attack Plane.\nCan be toggled while on Airfield\nto engage Air or Ground targets.\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft\n  Known Issue:\nYou need to manually re-issue dock order to Aircraft\nupon toggling AG-AA modes as it ceases reloading ammo.
 	Tooltip:
 		Name: MiG Attack Plane
 	Valued:
@@ -734,6 +734,8 @@ MIG:
 	#	LocalOffset: -480,0,-90
 	#	PauseOnCondition: empdisable || !flareammo
 	#	ForceTargetRelationships: Enemy
+	#	weapon assigned to PointDefense seems to ignore Ammo mechanic,
+	#	or ReloadDelay on weapon for that matter.
 	#	PointDefense:
 	#	Armament: tertiary
 	#	PointDefenseTypes: AAMissile
@@ -765,9 +767,15 @@ MIG:
 		Armaments: primary, secondary
 	#	AmmoPool@2:
 	#	Name: flareammo
-	#	Ammo: 4
+	#	Ammo: 1
 	#	AmmoCondition: flareammo
 	#	Armaments: tertiary
+	#	ReloadAmmoPool@flare:
+	#	AmmoPool: flareammo
+	#	Delay: 300
+	#	Count: 1
+	#	Sound: minelay1.aud
+	#	RequiresCondition: !flareammo
 	WithAmmoPipsDecoration:
 		Position: BottomLeft
 		Margin: 4, 3
@@ -808,7 +816,7 @@ MIG:
 NEBR:
 	Inherits: ^Plane
 	Buildable:
-		Queue: Aircraft
+		Queue: Aircraft, AircraftSeperate
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 6
 		BuildLimit: 1
@@ -957,7 +965,7 @@ CMIG:
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@AUTODAMAGE: ^KilledWithoutAirfield
 	Buildable:
-		Queue: Aircraft, MWFAir
+		Queue: Aircraft, MWFAir, AircraftSeperate
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 7
 		Prerequisites: ~afld, stek, ~aircraft.soviet, ~player.china, ~techlevel.high

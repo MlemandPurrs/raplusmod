@@ -274,7 +274,7 @@ Player:
 		SquadSizeRandomBonus: 8
 		RushInterval: 400
 		AttackScanRadius: 16
-		ExcludeFromSquadsTypes: harv.soviet, harv.soviet.crate, mcv, mcv.ai, e6, sab, ftrk.scout
+		ExcludeFromSquadsTypes: harv,harv.crate,harv.soviet,harv.soviet.crate,mcv,mcv.ai,e6,sab,ftrk.scout
 		ConstructionYardTypes: fact
 		NavalProductionTypes: spen
 		NavalUnitsTypes: ss,ss.ukraine
@@ -295,11 +295,13 @@ Player:
 		ProductionTypes: barr,weap,afld,afld.russia,afld.ukraine,afld.belarus,afld.turkmen
 		NavalProductionTypes: spen
 		NewProductionCashThreshold: 4000
-		SiloTypes: silo
+		SiloTypes: e3
 		AntiAirTypes: sam,sam.karelia
 		PlaceDefenseTowardsEnemyChance: 75
 		MaximumDefenseRadius: 10
 		MaxBaseRadius: 26
+		BuildingQueues: BuildingSeperate
+		DefenseQueues: DefenseSeperate
 		BuildingLimits:
 			proc: 4
 			barr: 3
@@ -360,7 +362,7 @@ Player:
 		RequiresCondition: enable-wimp-ai && player.soviet && tank-strat
 		IdleBaseUnitsMaximum: 6
 		MaxAircraft: 6
-		UnitQueues: Vehicle, Infantry, Ship, Aircraft
+		UnitQueues: VehicleSeperate, InfantrySeperate, ShipSeperate, AircraftSeperate
 		UnitsToBuild:
 			e6: 2
 			sab: 2
@@ -403,11 +405,13 @@ Player:
 		ProductionTypes: barr,weap,hpad
 		NavalProductionTypes: spen
 		NewProductionCashThreshold: 4000
-		SiloTypes: silo
+		SiloTypes: e3
 		AntiAirTypes: sam,sam.karelia
 		PlaceDefenseTowardsEnemyChance: 75
 		MaximumDefenseRadius: 10
 		MaxBaseRadius: 26
+		BuildingQueues: BuildingSeperate
+		DefenseQueues: DefenseSeperate
 		BuildingLimits:
 			proc: 4
 			barr: 3
@@ -472,7 +476,7 @@ Player:
 		RequiresCondition: enable-wimp-ai && player.soviet && mamy-strat
 		IdleBaseUnitsMaximum: 6
 		MaxAircraft: 4
-		UnitQueues: Vehicle, Infantry, Ship, Aircraft
+		UnitQueues: VehicleSeperate, InfantrySeperate, ShipSeperate, AircraftSeperate
 		UnitsToBuild:
 			e6: 2
 			sab: 2
@@ -483,6 +487,13 @@ Player:
 			apc.moldova: 15
 			v2rl: 40
 			v2rl.turkmen: 40
+			3tnk.1b: 30
+			3tnk.1b.russia: 30
+			3tnk.1b.ukraine: 30
+			3tnk.1b.belarus: 30
+			3tnk.1b.kazakh: 30
+			3tnk.1b.turkmen: 30
+			3tnk.1b.afghan: 30
 			4tnk: 25
 			4tnk.ukraine: 25
 			hind: 30
@@ -502,7 +513,7 @@ Player:
 		RequiresCondition: enable-wimp-ai && player.soviet && flak-strat
 		IdleBaseUnitsMaximum: 6
 		MaxAircraft: 6
-		UnitQueues: Vehicle, Infantry, Ship, Aircraft
+		UnitQueues: VehicleSeperate, InfantrySeperate, ShipSeperate, AircraftSeperate
 		UnitsToBuild:
 			e6: 2
 			sab: 2
@@ -527,13 +538,6 @@ Player:
 		UnitLimits:
 			e6: 2
 			sab: 2
-			3tnk.1b: 4
-			3tnk.1b.russia: 4
-			3tnk.1b.ukraine: 4
-			3tnk.1b.belarus: 4
-			3tnk.1b.kazakh: 4
-			3tnk.1b.turkmen: 4
-			3tnk.1b.afghan: 4
 			v2rl: 8
 			v2rl.turkmen: 8
 			ss: 4

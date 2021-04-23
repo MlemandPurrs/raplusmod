@@ -2,7 +2,7 @@ PT:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetNavalAssaultMove
 	Buildable:
-		Queue: Ship
+		Queue: Ship, SeperateShip
 		BuildAtProductionType: Boat
 		BuildPaletteOrder: 2
 		Prerequisites: ~syrd, proc, ~ships.allies, ~!player.greece, ~techlevel.low
@@ -82,7 +82,7 @@ RSHP:
 	Inherits: ^Ship
 	Inherits@selection: ^SelectableSupportUnit
 	Buildable:
-		Queue: Ship
+		Queue: Ship, SeperateShip
 		BuildAtProductionType: Boat
 		BuildPaletteOrder: 5
 		Prerequisites: ~syrd, fix, ~ships.allies, ~allies.or.germany, ~techlevel.medium
@@ -169,7 +169,7 @@ DD:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetNavalAssaultMove
 	Buildable:
-		Queue: Ship
+		Queue: Ship, SeperateShip
 		BuildAtProductionType: Boat
 		BuildPaletteOrder: 3
 		Prerequisites: ~syrd, dome, ~ships.allies, ~!player.germany, ~techlevel.medium
@@ -251,7 +251,7 @@ BSHP:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetNavalAssaultMove
 	Buildable:
-		Queue: Ship
+		Queue: Ship, SeperateShip
 		BuildAtProductionType: Boat
 		BuildPaletteOrder: 6
 		Prerequisites: ~syrd, fix, dome, ~ships.allies, ~allies.or.spain, ~techlevel.medium
@@ -338,7 +338,7 @@ CA:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetNavalAssaultMove
 	Buildable:
-		Queue: Ship
+		Queue: Ship, SeperateShip
 		BuildAtProductionType: Boat
 		BuildPaletteOrder: 4
 		Prerequisites: ~syrd, atek, ~ships.allies, ~!player.italy, ~techlevel.high
@@ -409,10 +409,87 @@ CA:
 			PointA: 0, -576
 			PointB: 0, 576
 
+DRED:
+	Inherits: ^Ship
+	Inherits@AUTOTARGET: ^AutoTargetNavalAssaultMove
+	Buildable:
+		Queue: Ship, SeperateShip
+		BuildAtProductionType: Boat
+		BuildPaletteOrder: 7
+		BuildLimit: 1
+		Prerequisites: ~syrd, atek, ~ships.allies, ~techlevel.high
+		Description: Capital ship, sporting two triple-barreled 203mm batteries.\nMaximum 1 can be built.\n  Strong vs anything on Ground\n  Weak vs Submarines, Aircraft
+	Valued:
+		Cost: 3000
+	Tooltip:
+		Name: Dreadnought
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Selectable:
+		DecorationBounds: 44,44
+	Health:
+		HP: 1200
+	Armor:
+		Type: Heavy
+	Mobile:
+		TurnSpeed: 12
+		Speed: 48
+	RevealsShroud:
+		MinRange: 5c0
+		Range: 7c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 5c0
+	Turreted@PRIMARY:
+		Turret: primary
+		#	Offset: -956,0,128
+		Offset: -1132,0,128
+		TurnSpeed: 12
+	Turreted@SECONDARY:
+		Turret: secondary
+		Offset: 836,0,128
+		TurnSpeed: 12
+	Armament@PRIMARY:
+		Turret: primary
+		Weapon: 203mm
+		LocalOffset: 480,-100,40, 480,0,40, 480,100,40
+		Recoil: 171
+		RecoilRecovery: 34
+		MuzzleSequence: muzzle
+		PauseOnCondition: under-bridge || empdisable
+	Armament@SECONDARY:
+		Name: secondary
+		Turret: secondary
+		Weapon: 203mm
+		LocalOffset: 480,-100,40, 480,0,40, 480,100,40
+		Recoil: 171
+		RecoilRecovery: 34
+		MuzzleSequence: muzzle
+		PauseOnCondition: under-bridge || empdisable
+	AttackTurreted:
+		Turrets: primary, secondary
+		TargetFrozenActors: True
+		ForceFireIgnoresActors: True
+		PauseOnCondition: empdisable
+	ReloadArmamentsBar:
+		Color: FFFF00
+	WithMuzzleOverlay:
+	RenderRangeCircle:
+	WithSpriteTurret@PRIMARY:
+		Turret: primary
+	WithSpriteTurret@SECONDARY:
+		Turret: secondary
+	HitShape:
+		TargetableOffsets: 576,0,0, -576,0,0
+		Type: Capsule
+			Radius: 341
+			PointA: 0, -576
+			PointB: 0, 576
+
 ACAR:
 	Inherits: ^Ship
 	Buildable:
-		Queue: Ship
+		Queue: Ship, SeperateShip
 		BuildAtProductionType: Boat
 		BuildPaletteOrder: 6
 		Prerequisites: ~syrd, dome, atek, ~ships.allies, ~allies.or.england, ~techlevel.high
@@ -517,6 +594,8 @@ ACAR.Deployed:
 		Dimensions: 3,1
 		TerrainTypes: Water
 		RequiresBaseProvider: False
+		#	where the hell is this building sold sound coming from ?!?
+		UndeploySounds: 
 	Health:
 		HP: 650
 	Armor:

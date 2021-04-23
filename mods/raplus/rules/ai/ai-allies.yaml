@@ -210,7 +210,7 @@ Player:
 					TargetMetric: None
 					CheckRadius: 5c0
 			UseChronoShiftAI:
-				OrderName: ChronoShiftAi
+				OrderName: ChronoShiftAI
 				MinimumAttractiveness: 5
 				Consideration@1:
 					Against: Enemy
@@ -288,7 +288,7 @@ Player:
 		ConstructionYardTypes: fact
 		RefineryTypes: proc
 		MaxRefineries: 6
-		PowerTypes: powr,apwr
+		PowerTypes: powr,apwr.powr.turkey,apwr.turkey
 		BarracksTypes: tent
 		VehiclesFactoryTypes: weap
 		ProductionTypes: tent,weap,hpad,afld,afld.usa,afld.england,afld.france,afld.germany,afld.italy,afld.greece
@@ -299,6 +299,8 @@ Player:
 		PlaceDefenseTowardsEnemyChance: 75
 		MaximumDefenseRadius: 10
 		MaxBaseRadius: 26
+		BuildingQueues: BuildingSeperate
+		DefenseQueues: DefenseSeperate
 		BuildingDelays:
 			syrd: 4500
 			agun: 6000
@@ -382,6 +384,7 @@ Player:
 			pbat: 1
 			pris: 5
 			iron: 1
+			pdox: 1
 	CaptureManagerBotModuleCA@mech:
 		RequiresCondition: enable-ai-player && player.allies
 		CapturingActorTypes: mech
@@ -421,7 +424,7 @@ Player:
 		IgnoredEnemyTargetTypes: Submarine, IgnoreThis
 	UnitBuilderBotModule@allies.land:
 		RequiresCondition: enable-ai-player && player.allies
-		UnitQueues: Vehicle, Infantry
+		UnitQueues: VehicleSeperate, InfantrySeperate
 		UnitDelays:
 			mcv.ai: 13500
 		UnitsToBuild:
@@ -499,7 +502,7 @@ Player:
 	UnitBuilderBotModule@allies.sea:
 		RequiresCondition: enable-ai-player && player.allies && !global-disablenavy
 		IdleBaseUnitsMaximum: 6
-		UnitQueues: Ship
+		UnitQueues: Ship, ShipSeperate
 		UnitsToBuild:
 			pt: 50
 			pt.greece: 50
@@ -519,7 +522,7 @@ Player:
 	UnitBuilderBotModule@allies.air:
 		RequiresCondition: enable-ai-player && player.allies
 		IdleBaseUnitsMaximum: 0
-		UnitQueues: Aircraft
+		UnitQueues: Aircraft, AircraftSeperate
 		UnitDelays:
 			spit: 7500
 			spit.turkey: 7500

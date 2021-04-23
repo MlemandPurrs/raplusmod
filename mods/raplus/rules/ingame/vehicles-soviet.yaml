@@ -67,7 +67,7 @@ FTRK:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiInfandAir
 	Buildable:
-		Queue: Vehicle, MWFVehicle
+		Queue: Vehicle, MWFVehicle, VehicleSeperate
 		BuildPaletteOrder: 2
 		Prerequisites: ~vehicles.soviet, ~!player.belarus, ~!player.china, ~techlevel.low
 		Description: Mobile unit with mounted Flak cannon.\nCan carry one Infantry.\n  Strong vs Infantry, Light armor, Aircraft\n  Weak vs Tanks
@@ -172,7 +172,7 @@ FTRK.Repair:
 	Inherits: ^Vehicle
 	Inherits@selection: ^SelectableSupportUnit
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, VehicleSeperate
 		BuildPaletteOrder: 9
 		Prerequisites: fix, ~vehicles.soviet, ~player.moldova, ~techlevel.high
 		Description: Mechanized Engineers.\nRepairs friendly vehicles.\nCan externally capture structures.\n  Unarmed
@@ -232,7 +232,7 @@ FTRK.Flamer:
 	-Armament@AA:
 	-Armament@AG:
 	Buildable:
-		Queue: Vehicle, MWFVehicle
+		Queue: Vehicle, MWFVehicle, VehicleSeperate
 		BuildPaletteOrder: 3
 		Prerequisites: ~vehicles.soviet, ftur, ~player.china, ~techlevel.medium
 		Description: Mobile unit with mounted Flamer.\nCan carry one Infantry.\n  Strong vs Infantry, Building\n  Weak vs Tanks, Aircraft
@@ -270,7 +270,7 @@ APC.Soviet:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiInf
 	Buildable:
-		Queue: Vehicle, MWFVehicle
+		Queue: Vehicle, MWFVehicle, VehicleSeperate
 		BuildPaletteOrder: 3
 		Prerequisites: barr, ~vehicles.soviet, ~!player.karelia, ~!player.moldova, ~techlevel.low
 		Description: Tough and slow Infantry transport.\nCan transport up to 5 Infantry.\n  Strong vs Infantry, Buildings\n  Weak vs Tanks, Defenses
@@ -354,7 +354,7 @@ APC.Soviet:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiTank
 	Buildable:
-		Queue: Vehicle, MWFVehicle
+		Queue: Vehicle, MWFVehicle, VehicleSeperate
 		BuildPaletteOrder: 5
 		Prerequisites: fix, ~vehicles.soviet, ~!player.russia, ~!player.ukraine, ~!player.belarus, ~!player.kazakh, ~!player.turkmen, ~!player.afghan, ~techlevel.medium
 		Description: Soviet Main Battle Tank, with dual cannons.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
@@ -415,7 +415,7 @@ APC.Soviet:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiTankandAir
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, VehicleSeperate
 		BuildPaletteOrder: 8
 		Prerequisites: fix, stek, ~vehicles.soviet, ~!player.ukraine, ~!player.afghan, ~techlevel.high
 		Description: Big and slow tank, with anti-air capability.\nCan crush concrete walls.\nSelf-repairs when below 50% of maximum Health.\n  Strong vs Vehicles, Infantry, Buildings\n  Weak vs Artillery
@@ -552,7 +552,7 @@ NRTY:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, VehicleSeperate
 		BuildPaletteOrder: 15
 		BuildLimit: 1
 		Prerequisites: stek, ~vehicles.soviet, ~player.soviet, tech.stolen, ~techlevel.high
@@ -649,7 +649,7 @@ V2RL:
 		Sequence: empty-idle
 		Name: reloading
 	Buildable:
-		Queue: Vehicle, MWFVehicle
+		Queue: Vehicle, MWFVehicle, VehicleSeperate
 		BuildPaletteOrder: 6
 		Prerequisites: dome, ~vehicles.soviet, ~!player.turkmen, ~techlevel.medium
 		Description: Long-range rocket artillery.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
@@ -696,7 +696,7 @@ TTNK:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiStructure
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, VehicleSeperate
 		BuildPaletteOrder: 9
 		Prerequisites: stek, ~vehicles.soviet, ~soviet.or.russia, ~techlevel.high
 		Description: Tank with mounted Tesla coil.\nTesla briefly short-circuits Vehicle and Ships.\n  Immune to EMP\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft
@@ -748,7 +748,7 @@ TTNK:
 QTNK:
 	Inherits: ^TrackedVehicle
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, VehicleSeperate
 		BuildPaletteOrder: 13
 		Prerequisites: stek, ~vehicles.soviet, ~soviet.or.belarus, ~techlevel.high
 		Description: Mutually assured Destruction vehicle that quakes the ground.\nIts delicate components require the effects of Iron Curtain be repelled in order to function.\nDeals disruptive seismic damage to nearby Structures and Infantry during buildup,\nand significant damage on moment of detonation to Structures,\nwhile its dealing negligible damage to Vehicles but slowing them down.\n  Strong vs Buildings\n  Weak vs Infantry, Aircraft, Vehicles
@@ -806,7 +806,7 @@ ICBM:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiStructure
 	-Explodes:
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, VehicleSeperate
 		BuildPaletteOrder: 9
 		BuildLimit: 1
 		Prerequisites: stek, ~vehicles.soviet, ~player.kazakh, ~techlevel.high
@@ -873,7 +873,7 @@ SAML:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, VehicleSeperate
 		BuildPaletteOrder: 8
 		Prerequisites: stek, ~vehicles.soviet, ~player.karelia, ~techlevel.high
 		Description: Powerful anti-air unit.\nCannot attack Ground units.\n  Strong vs Aircraft\n  Weak vs everything Else
@@ -937,7 +937,7 @@ MWF:
 	Inherits: ^Vehicle
 	Inherits@selection: ^SelectableSupportUnit
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, VehicleSeperate
 		BuildPaletteOrder: 13
 		Prerequisites: fix, stek, ~vehicles.soviet, !weap.mini, ~player.uzbek, ~techlevel.high
 		BuildLimit: 1
@@ -976,7 +976,7 @@ ISU:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, VehicleSeperate
 		BuildPaletteOrder: 9
 		Prerequisites: dome, ~vehicles.soviet, ~player.afghan, ~techlevel.medium
 		Description: Powerful medium-range artillery.\n  Strong vs Defenses, Buildings, Infantry\n  Weak vs Aircraft\n  Special Ability: Concussion Shells
@@ -1034,7 +1034,7 @@ ZSU:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAir
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, VehicleSeperate
 		BuildPaletteOrder: 9
 		Prerequisites: ~disabled
 		Description: Tank with Anti-Air battery mounted on it.\nCan attack Aircraft only.\n  Strong vs Aircraft\n  Weak vs anything Else
@@ -1102,7 +1102,7 @@ GTNK:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAir
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, VehicleSeperate
 		BuildPaletteOrder: 9
 		Prerequisites: stek, dome, ~vehicles.soviet, ~player.china, ~techlevel.high
 		Description: Tank with Anti-Air battery mounted on it.\nHas Chaingun against ground units.\n  Strong vs Aircraft. Infantry\n  Weak vs anything Else

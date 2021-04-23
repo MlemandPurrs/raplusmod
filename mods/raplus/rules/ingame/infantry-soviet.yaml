@@ -2,7 +2,7 @@ E4:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 9
 		Prerequisites: ~barr, ftur, ~infantry.soviet, ~soviet.or.ukraine, ~techlevel.medium
@@ -63,7 +63,7 @@ E5:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@ROT: ^RottingInfantry
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 16
 		Prerequisites: stek, ~infantry.soviet, ~soviet.or.turkmen, ~techlevel.high
@@ -128,7 +128,7 @@ SAB:
 	-AttackFrontal:
 	-TakeCover:
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 6
 		#	Prerequisites: ~barr, dome, ~infantry.soviet, ~soviet.or.belarus, ~techlevel.medium
@@ -190,7 +190,7 @@ VOLK:
 	Inherits@ROT: ^RottingInfantry
 	Inherits: GNRL
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		Prerequisites: ~barr, stek, ~infantry.soviet, ~!player.uzbek, ~techlevel.high
 		BuildPaletteOrder: 8
@@ -266,7 +266,7 @@ SHOK:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@ROT: ^RottingInfantry
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 7
 		Prerequisites: ~barr, tsla, ~infantry.soviet, ~soviet.or.russia, ~techlevel.high
@@ -344,7 +344,7 @@ RPG:
 	Buildable:
 		BuildPaletteOrder: 12
 		Prerequisites: ~barr, ftur, ~soviet.or.kazakh, ~techlevel.medium
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		Description: Soldier that shoots balls of Fire.\nCannot attack Air units.\n  Strong vs clustered Infantry, Structures\n  Weak vs Anti-Infantry measures
 	Selectable:
@@ -385,19 +385,22 @@ DESO:
 	-DamagedByTintedCells@RADMED:
 	-DamagedByTintedCells@RADWEAK:
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 14
 		Prerequisites: ~barr, stek, ~infantry.soviet, ~soviet.or.uzbek, ~techlevel.medium
-		Description: Anti-infantry unit, with Radiation Beam weaponry.\n  Strong vs Infantry, Light Armor\n  Weak vs Tanks, Aircraft\n  Special Ability: Desolate Ground\nCan be deployed to scorch and poison ground around itself.
+		Description: Anti-infantry unit, with Radiation Beam weaponry.\nWeapon irradiates ground, Vehicles explode Radiation on kill.\n  Strong vs Infantry, Light Armor\n  Weak vs Tanks, Aircraft\n  Special Ability: Desolate Ground\nCan be deployed to irradiate ground around itself.
 	Valued:
 		Cost: 675
+	DeliversCash:
+		Payload: 168
+		Type: InfantryRefund
 	Tooltip:
 		Name: Gamma Trooper
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
-		HP: 200
+		HP: 140
 	Mobile:
 		Voice: Move
 		PauseOnCondition: !undeployed
@@ -477,7 +480,7 @@ DEMO:
 	-Guard:
 	-WithInfantryBody:
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 16
 		BuildLimit: 1
@@ -509,8 +512,6 @@ DEMO:
 		ProneOffset: 256,64,-331
 	AttackFrontal:
 		Voice: Attack
-	WithInfantryBody:
-		DefaultAttackSequence: throw
 	Explodes:
 		Weapon: ArtilleryExplode
 		EmptyWeapon: ArtilleryExplode
@@ -521,7 +522,7 @@ DEMO:
 	Voiced:
 		VoiceSet: CommandoVoice
 	DeliversCash:
-		Payload: 150
+		Payload: 187
 		Type: InfantryRefund
 	GpsDot:
 		String: Commando

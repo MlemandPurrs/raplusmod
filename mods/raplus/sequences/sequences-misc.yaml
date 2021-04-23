@@ -146,6 +146,9 @@ beacon:
 	clock: beaconclock
 		Length: *
 		Offset: 0,-42
+	dummy: blank32
+		Length: *
+		Offset: 0,-42
 
 overlay:
 	Defaults: trans.icn
@@ -247,34 +250,34 @@ pips:
 		Start: 2
 		Offset: 0, 2
 	zero:
-		Start: 9
+		Start: 8
 		Offset: 0, 2
 	one:
-		Start: 10
+		Start: 9
 		Offset: 0, 2
 	two:
-		Start: 11
+		Start: 10
 		Offset: 0, 2
 	three:
-		Start: 12
+		Start: 11
 		Offset: 0, 2
 	four:
-		Start: 13
+		Start: 12
 		Offset: 0, 2
 	five:
-		Start: 14
+		Start: 13
 		Offset: 0, 2
 	six:
-		Start: 15
+		Start: 14
 		Offset: 0, 2
 	seven:
-		Start: 16
+		Start: 15
 		Offset: 0, 2
 	eight:
-		Start: 17
+		Start: 16
 		Offset: 0, 2
 	nine:
-		Start: 18
+		Start: 17
 		Offset: 0, 2
 	pip-empty: pips2
 	pip-green: pips2

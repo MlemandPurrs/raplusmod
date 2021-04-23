@@ -1,7 +1,7 @@
 
 Metadata:
 	Title: Red Alert Plus
-	Version: v.1.4.0-test
+	Version: v.1.4.1-newqueues
 	Website: https://www.moddb.com/mods/ra-plus-mod
 	WebIcon32: https://www.openra.net/images/icons/ra_32x32.png
 
@@ -56,8 +56,8 @@ Packages:
 
 MapFolders:
 	raplus|maps: System
-	~^SupportDir|maps/v.1.4.0-test: User
-	~^SupportDir|maps/ra/v.1.4.0-test: User
+	~^SupportDir|maps/ra: User
+	~^SupportDir|maps/raplus: User
 
 Rules:
 	raplus|rules/misc.yaml

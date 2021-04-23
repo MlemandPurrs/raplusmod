@@ -355,7 +355,7 @@ Mortar:
 
 FireBomb:
 	Inherits: Grenade
-	ReloadDelay: 80
+	ReloadDelay: 90
 	Range: 3c725
 	Report: grenade1.aud
 	Projectile: Bullet
@@ -371,12 +371,12 @@ FireBomb:
 		Damage: 30
 		Versus:
 			None: 60
-			Kevlar: 50
-			Flak: 70
-			Wood: 100
+			Kevlar: 70
+			Flak: 50
+			Wood: 40
 			Light: 35
 			Heavy: 35
-			Concrete: 100
+			Concrete: 45
 	Warhead@3Eff: CreateEffect
 		Explosions: napalm
 		ImpactSounds: firebl3.aud

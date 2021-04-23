@@ -144,11 +144,20 @@ ftur.husk:
 
 gun:
     Inherits: emp-overlay
-	idle:
+	idle: gunmake
+	turret:
+		Facings: 32
+		UseClassicFacings: True
+	damaged-turret:
+		Start: 64
 		Facings: 32
 		UseClassicFacings: True
 	recoil:
 		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+	damaged-recoil:
+		Start: 96
 		Facings: 32
 		UseClassicFacings: True
 	make: gunmake
@@ -157,14 +166,6 @@ gun:
 	place: gunmake
 		Start: 19
 		Length: 1
-	damaged-idle:
-		Start: 64
-		Facings: 32
-		UseClassicFacings: True
-	damaged-recoil:
-		Start: 96
-		Facings: 32
-		UseClassicFacings: True
 	muzzle: gunfire2
 		Length: 5
 	bib: mbGUN
@@ -182,11 +183,12 @@ gun.husk:
 
 gtur:
 	Inherits: emp-overlay
-	idle: gtur
+	idle: gunmake
+	turret:
 		Facings: 32
 		UseClassicFacings: True
 		Offset: 0,-5
-	damaged-idle: gtur
+	damaged-turret:
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
@@ -248,12 +250,23 @@ tsla.husk:
 
 agun:
     Inherits: emp-overlay
-	idle:
+	idle: gunmake
+	turret:
+		Facings: 32
+		UseClassicFacings: True
+		Offset: 0,-13
+	damaged-turret:
+		Start: 64
 		Facings: 32
 		UseClassicFacings: True
 		Offset: 0,-13
 	recoil:
 		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+		Offset: 0,-13
+	damaged-recoil:
+		Start: 96
 		Facings: 32
 		UseClassicFacings: True
 		Offset: 0,-13
@@ -264,16 +277,6 @@ agun:
 	place: agunmake
 		Start: 9
 		Length: 1
-		Offset: 0,-13
-	damaged-idle:
-		Start: 64
-		Facings: 32
-		UseClassicFacings: True
-		Offset: 0,-13
-	damaged-recoil:
-		Start: 96
-		Facings: 32
-		UseClassicFacings: True
 		Offset: 0,-13
 	muzzle: gunfire2
 		Start: 1
@@ -295,11 +298,12 @@ agun.husk:
 
 sam:
     Inherits: emp-overlay
-	idle: sam2
+	idle:  gunmake
+	turret: sam2
 		Facings: 32
 		UseClassicFacings: True
 		Offset: -1,-2
-	damaged-idle: sam2
+	damaged-turret: sam2
 		Start: 34
 		Facings: 32
 		UseClassicFacings: True

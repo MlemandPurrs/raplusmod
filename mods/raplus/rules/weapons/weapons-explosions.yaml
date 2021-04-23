@@ -554,3 +554,10 @@ UnitExplodeWarpOut:
 		Explosions: invisblank
 		ExplosionPalette: effect
 		ImpactSounds: chrono2.aud
+
+GeneratedRadExplode:
+	Inherits: DummyExplode
+	Warhead@Radio: CreateTintedCells
+		Level: 125
+		Falloff: 100, 55, 32, 5
+		LayerName: radioactivity.weak

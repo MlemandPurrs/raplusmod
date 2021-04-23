@@ -8,7 +8,7 @@ General:
 Terrain:
 	TerrainType@Beach:
 		Type: Beach
-		TargetTypes: Ground
+		TargetTypes: Ground, Terrain
 		Color: B09C78
 	TerrainType@Bridge:
 		Type: Bridge
@@ -17,83 +17,71 @@ Terrain:
 		Color: 606060
 	TerrainType@Brush:
 		Type: Brush
-		TargetTypes: Ground
+		TargetTypes: Ground, Terrain
 		Color: 1C2024
 	TerrainType@Clear:
 		Type: Clear
-		TargetTypes: Ground
+		TargetTypes: Ground, Terrain
 		AcceptsSmudgeType: Crater, Scorch
 		Color: 865F45
 		RestrictPlayerColor: true
 	TerrainType@Gems:
 		Type: Gems
-		TargetTypes: Ground
+		TargetTypes: Ground, Terrain
 		AcceptsSmudgeType: Crater, Scorch
 		Color: 8470FF
 		RestrictPlayerColor: true
 	TerrainType@Ore:
 		Type: Ore
-		TargetTypes: Ground
+		TargetTypes: Ground, Terrain
 		AcceptsSmudgeType: Crater, Scorch
 		Color: 948060
 		RestrictPlayerColor: true
 	TerrainType@Scraps:
 		Type: Scraps
-		TargetTypes: Ground
+		TargetTypes: Ground, Terrain
 		AcceptsSmudgeType: Crater, Scorch
 		Color: A7B6BE
 		RestrictPlayerColor: true
 	TerrainType@River:
 		Type: River
-		TargetTypes: Ground
+		TargetTypes: Ground, Terrain
 		Color: 6F848B
 	TerrainType@Road:
 		Type: Road
-		TargetTypes: Ground
+		TargetTypes: Ground, Terrain
 		AcceptsSmudgeType: Crater, Scorch
 		Color: A87B53
 	TerrainType@Rock:
 		Type: Rock
-		TargetTypes: Ground
+		TargetTypes: Ground, Terrain
 		Color: 745A3F
 	TerrainType@Rough:
 		Type: Rough
-		TargetTypes: Ground
+		TargetTypes: Ground, Terrain
 		AcceptsSmudgeType: Crater, Scorch
 		Color: 44443C
 	TerrainType@Tree:
 		Type: Tree
-		TargetTypes: Ground
+		TargetTypes: Ground, Terrain
 		Color: 1C2024
 	TerrainType@Wall:
 		Type: Wall
-		TargetTypes: Ground
+		TargetTypes: Ground, Terrain
 		AcceptsSmudgeType: Crater, Scorch
 		Color: D0C0A0
 	TerrainType@Water:
 		Type: Water
-		TargetTypes: Water
+		TargetTypes: Water, Terrain
 		Color: 5DA5CE
-		RestrictPlayerColor: true
-	TerrainType@BlueTiberium:
-		Type: BlueTiberium
-		TargetTypes: Ground
-		AcceptsSmudgeType: Crater, Scorch
-		Color: 54FCFC
-		RestrictPlayerColor: true
-	TerrainType@Tiberium:
-		Type: Tiberium
-		TargetTypes: Ground
-		AcceptsSmudgeType: Crater, Scorch
-		Color: A1E21C
 		RestrictPlayerColor: true
 	TerrainType@Ford:
 		Type: Ford
-		TargetTypes: Ground
+		TargetTypes: Ground, Terrain
 		Color: B09C78
 	TerrainType@Tunnel:
 		Type: Tunnel
-		TargetTypes: Ground
+		TargetTypes: Ground, Terrain
 		Color: 606060
 	TerrainType@Jumpjet:
 		Type: Jumpjet

@@ -153,7 +153,7 @@ Flamespray:
 		InvalidTargets: Water
 	Warhead@Fire: GrantExternalCondition
 		Range: 1c256
-		Duration: 67
+		Duration: 62
 		Condition: onfire
 		ValidTargets: Structure, Trees
 		ValidRelationships: Ally, Enemy, Neutral
@@ -654,7 +654,7 @@ PrisTBurst:
 
 PortaMicro:
 	ValidTargets: Ground, Water
-	InvalidTargets: Air
+	InvalidTargets: EMPTank
 	TargetActorCenter: true
 	ReloadDelay: 100
 	Range: 5c0
@@ -799,6 +799,9 @@ DummyBomb:
 		DamageTypes: ExplosionDeath
 
 PointLaser:
+	#	ReloadDelay: 900
+	#	ReloadDelay: 300
+	#	all had the same result
 	ReloadDelay: 100
 	ValidTargets: AAMissile
 	#	InvalidTargets: Infantry, Vehicle, Structure, Wall
@@ -813,7 +816,7 @@ PointLaser:
 		SecondaryBeamWidth: 50
 		SecondaryBeamZOffset: 2047
 		SecondaryBeamColor: 03fcfc30
-		Blockable: true
+		Blockable: false
 	Warhead@1Dam: SpreadDamage
 		Spread: 42
 		Damage: 1
@@ -869,24 +872,72 @@ RadBeamWeapon:
 			Wood: 30
 			Concrete: 30
 		DamageTypes: Prone100Percent, RadiationDeath, Incendiary
-	Warhead@8Radiation: CreateTintedCells
-		Spread: 1c0
-		Falloff: 100, 75, 55, 30, 0
-		Level: 125
-		MaxLevel: 750
+	Warhead@Radio: CreateTintedCells
+		Level: 25
+		Falloff: 100, 55, 32, 5
 		LayerName: radioactivity.weak
+		ValidTargets: Terrain
+	Warhead@2irrad: GrantExternalCondition
+		Range: 0c256
+		Duration: 100
+		Condition: irradiated
+		ValidTargets: Vehicle
 	Warhead@Fire: GrantExternalCondition
 		Range: 1c256
-		Duration: 67
+		Duration: 62
 		Condition: onfire
 		ValidTargets: Structure
 
 RadEruptionWeapon:
-	ReloadDelay: 60
+	ReloadDelay: 90
 	Report: idesat2a.aud
 	Warhead@1Radiation: CreateTintedCells
 		Spread: 1c0
 		Falloff: 100, 75, 55, 30, 0
-		Level: 250
+		Level: 100
 		MaxLevel: 750
-		LayerName: radioactivity.strong
+		LayerName: radioactivity.weak
+
+LockOnLaser:
+	ReloadDelay: 1
+	Range: 7c512
+	MinRange: 0c512
+	ValidTargets: Vehicle
+	TargetActorCenter: true
+	Projectile: LaserZap
+		Width: 45
+		Duration: 8
+		SecondaryBeamWidth: 65
+		SecondaryBeamColor: FF000030
+		ZOffset: 4096
+	Warhead@1Dam: TargetDamage
+		ValidTargets: Vehicle
+	Warhead@2Con: GrantExternalCondition
+		ValidTargets: Vehicle
+		Range: 0c32
+		Duration: 8
+		Condition: laser-designated
+
+SummonLP:
+	ReloadDelay: 1
+	Projectile: InstantExplode
+	Warhead@spawn: SpawnBuilding
+		Range: 0
+		Buildings: spmst.summon
+		ValidTargets: Ground
+
+SummonFTUR:
+	ReloadDelay: 1
+	Projectile: InstantExplode
+	Warhead@spawn: SpawnBuilding
+		Range: 0
+		Buildings: ftur.summon
+		ValidTargets: Ground
+
+SummonPBOX:
+	ReloadDelay: 1
+	Projectile: InstantExplode
+	Warhead@spawn: SpawnBuilding
+		Range: 0
+		Buildings: pbox.summon
+		ValidTargets: Ground

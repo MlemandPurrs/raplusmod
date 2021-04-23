@@ -281,6 +281,8 @@ Player:
 		PlaceDefenseTowardsEnemyChance: 75
 		MaximumDefenseRadius: 10
 		MaxBaseRadius: 26
+		BuildingQueues: BuildingSeperate
+		DefenseQueues: DefenseSeperate
 		BuildingDelays:
 			spen: 4500
 			tsla: 3000
@@ -413,7 +415,7 @@ Player:
 		IgnoredEnemyTargetTypes: Submarine, IgnoreThis
 	UnitBuilderBotModule@soviet:
 		RequiresCondition: enable-ai-player && player.soviet
-		UnitQueues: Vehicle, Infantry
+		UnitQueues: VehicleSeperate, InfantrySeperate
 		UnitDelays:
 			mcv.ai: 13500
 		UnitsToBuild:
@@ -487,7 +489,7 @@ Player:
 	UnitBuilderBotModule@soviet.sea:
 		RequiresCondition: enable-ai-player && player.soviet && !global-disablenavy
 		IdleBaseUnitsMaximum: 6
-		UnitQueues: Ship
+		UnitQueues: ShipSeperate
 		UnitsToBuild:
 			ss: 30
 			ss.ukraine: 30
@@ -509,7 +511,7 @@ Player:
 	UnitBuilderBotModule@soviet.air:
 		RequiresCondition: enable-ai-player && player.soviet
 		IdleBaseUnitsMaximum: 0
-		UnitQueues: Aircraft
+		UnitQueues: AircraftSeperate
 		UnitsToBuild:
 			yak.ai: 60
 			yak.belarus.ai: 60

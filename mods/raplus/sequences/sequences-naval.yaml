@@ -177,3 +177,13 @@ ssml:
 	idle:
 		Facings: 16
 	icon: ssmlicon
+
+dred:
+    Inherits: emp-overlay
+	idle: cs
+		Facings: 16
+	turret: triple-tur
+		Facings: 32
+	muzzle: gunfire2
+		Length: 5
+	icon: dredicon

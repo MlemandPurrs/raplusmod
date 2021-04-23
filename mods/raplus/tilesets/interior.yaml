@@ -7,37 +7,37 @@ General:
 Terrain:
 	TerrainType@Clear:
 		Type: Clear
-		TargetTypes: Ground
+		TargetTypes: Ground, Terrain
 		AcceptsSmudgeType: Crater, Scorch
 		Color: 000000
 	TerrainType@ClearNoSmudges:
 		Type: ClearNoSmudges
-		TargetTypes: Ground
+		TargetTypes: Ground, Terrain
 		Color: 000000
 	TerrainType@Gems:
 		Type: Gems
-		TargetTypes: Ground
+		TargetTypes: Ground, Terrain
 		AcceptsSmudgeType: Crater, Scorch
 		Color: 8470FF
 		RestrictPlayerColor: true
 	TerrainType@Ore:
 		Type: Ore
-		TargetTypes: Ground
+		TargetTypes: Ground, Terrain
 		AcceptsSmudgeType: Crater, Scorch
 		Color: A1E21C
 		RestrictPlayerColor: true
 	TerrainType@Tree:
 		Type: Tree
-		TargetTypes: Ground
+		TargetTypes: Ground, Terrain
 		Color: 1C2024
 	TerrainType@Wall:
 		Type: Wall
-		TargetTypes: Ground
+		TargetTypes: Ground, Terrain
 		Color: D0C0A0
 		RestrictPlayerColor: true
 	TerrainType@Scraps:
 		Type: Scraps
-		TargetTypes: Ground
+		TargetTypes: Ground, Terrain
 		AcceptsSmudgeType: Crater, Scorch
 		Color: A7B6BE
 		RestrictPlayerColor: true

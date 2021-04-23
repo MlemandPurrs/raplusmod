@@ -10,7 +10,7 @@ FPWR:
 		TargetableOffsets: 0,0,0, 640,-384,0, 640,512,0, -710,-512,0, -710,512,0
 	Buildable:
 		BuildPaletteOrder: 1
-		Queue: Fakestructure
+		Queue: Fakestructure, FakeSeperate
 		Prerequisites: ~structures.allies, ~allies.or.france, ~techlevel.infonly
 		Description: Looks like a Power Plant.
 		Icon: fake-icon
@@ -61,7 +61,7 @@ FAPW:
 		TargetableOffsets: -355,-1024,0
 	Buildable:
 		BuildPaletteOrder: 13
-		Queue: Fakestructure
+		Queue: Fakestructure, FakeSeperate
 		Prerequisites: dome, ~structures.allies, ~allies.or.france, ~techlevel.medium
 		Description: Looks like an Advanced Power Plant.
 		Icon: fake-icon
@@ -121,7 +121,7 @@ TENF:
 		GenericStancePrefix: False
 	Buildable:
 		BuildPaletteOrder: 2
-		Queue: Fakestructure
+		Queue: Fakestructure, FakeSeperate
 		Prerequisites: ~structures.allies, ~allies.or.france, ~techlevel.infonly
 		Description: Looks like an Allied Barracks.
 		Icon: fake-icon
@@ -167,7 +167,7 @@ BARF:
 		GenericStancePrefix: False
 	Buildable:
 		BuildPaletteOrder: 17
-		Queue: Fakestructure
+		Queue: Fakestructure, FakeSeperate
 		Prerequisites: ~disabled
 		Description: Looks like an Soviet Barracks.
 		Icon: fake-icon
@@ -211,7 +211,7 @@ KENF:
 		GenericStancePrefix: False
 	Buildable:
 		BuildPaletteOrder: 11
-		Queue: Fakestructure
+		Queue: Fakestructure, FakeSeperate
 		Prerequisites: ~disabled
 		Description: Looks like an Kennel.
 		Icon: fake-icon
@@ -243,7 +243,7 @@ PROF:
 	Buildable:
 		BuildPaletteOrder: 4
 		Prerequisites: proc, ~structures.allies, ~allies.or.france, ~techlevel.low
-		Queue: Fakestructure
+		Queue: Fakestructure, FakeSeperate
 		Description: Looks like a Ore Refinery.
 		Icon: fake-icon
 	Tooltip:
@@ -294,7 +294,7 @@ WEAF:
 	Buildable:
 		BuildPaletteOrder: 5
 		Prerequisites: anypower, ~structures.allies, ~allies.or.france, ~techlevel.low
-		Queue: Fakestructure
+		Queue: Fakestructure, FakeSeperate
 		Description: Looks like a Weapons Factory.
 		Icon: fake-icon
 	Tooltip:
@@ -341,7 +341,7 @@ FIXF:
 		DecorationBounds: 72,48
 	Buildable:
 		BuildPaletteOrder: 8
-		Queue: Fakestructure
+		Queue: Fakestructure, FakeSeperate
 		Prerequisites: weap, ~structures.allies, ~allies.or.france, ~techlevel.medium
 		Description: Looks like a Service Depot.
 		Icon: fake-icon
@@ -374,7 +374,7 @@ SYRF:
 		Bounds: 72,48
 	Buildable:
 		BuildPaletteOrder: 3
-		Queue: Fakestructure
+		Queue: Fakestructure, FakeSeperate
 		Prerequisites: anypower, ~structures.allies, ~allies.or.france, ~techlevel.low, ~!global-disablenavy
 		Description: Looks like a Naval Yard.
 		Icon: fake-icon
@@ -420,7 +420,7 @@ SPEF:
 		TargetTypes: Ground, Water, Structure
 	Buildable:
 		BuildPaletteOrder: 18
-		Queue: Fakestructure
+		Queue: Fakestructure, FakeSeperate
 		Prerequisites: ~disabled
 		Description: Looks like a Sub Pen.
 		Icon: fake-icon
@@ -467,7 +467,7 @@ AFLF:
 		GenericStancePrefix: False
 	Buildable:
 		BuildPaletteOrder: 7
-		Queue: Fakestructure
+		Queue: Fakestructure, FakeSeperate
 		Prerequisites: anypower, ~structures.allies, ~allies.or.france, ~techlevel.medium
 		Description: Looks like an Airfield.
 		Icon: fake-icon
@@ -507,7 +507,7 @@ HPAF:
 		GenericStancePrefix: False
 	Buildable:
 		BuildPaletteOrder: 10
-		Queue: Fakestructure
+		Queue: Fakestructure, FakeSeperate
 		Prerequisites: dome, ~structures.allies, ~allies.or.france, ~techlevel.medium
 		Description: Looks like an Helipad.
 		Icon: fake-icon
@@ -552,7 +552,7 @@ DOMF:
 		GenericStancePrefix: False
 	Buildable:
 		BuildPaletteOrder: 6
-		Queue: Fakestructure
+		Queue: Fakestructure, FakeSeperate
 		Prerequisites: proc, ~structures.allies, ~allies.or.france, ~techlevel.medium
 		Description: Looks like a Radar Dome.
 		Icon: fake-icon
@@ -592,7 +592,7 @@ SPRF:
 		GenericStancePrefix: False
 	Buildable:
 		BuildPaletteOrder: 9
-		Queue: Fakestructure
+		Queue: Fakestructure, FakeSeperate
 		Prerequisites: techcenter, ~structures.allies, ~allies.or.france, ~techlevel.high
 		BuildLimit: 1
 		Description: Looks like Space Program.\nMaximum 1 can be built.
@@ -638,7 +638,7 @@ ATEF:
 		GenericStancePrefix: False
 	Buildable:
 		BuildPaletteOrder: 12
-		Queue: Fakestructure
+		Queue: Fakestructure, FakeSeperate
 		Prerequisites: proc, afldorweap, ~structures.allies, ~allies.or.france, ~techlevel.unrestricted
 		BuildLimit: 1
 		Description: Looks like allies Tech Center.\nMaximum 1 can be built.
@@ -680,7 +680,7 @@ STEF:
 		GenericStancePrefix: False
 	Buildable:
 		BuildPaletteOrder: 11
-		Queue: Fakestructure
+		Queue: Fakestructure, FakeSeperate
 		BuildLimit: 1
 		Prerequisites: ~disabled
 		Description: Looks like soviet Tech Center.\nMaximum 1 can be built.
@@ -721,7 +721,7 @@ PDOF:
 		GenericStancePrefix: False
 	Buildable:
 		BuildPaletteOrder: 14
-		Queue: Fakestructure
+		Queue: Fakestructure, FakeSeperate
 		Prerequisites: atek, ~structures.allies, ~allies.or.france, ~techlevel.unrestricted
 		BuildLimit: 1
 		Description: Looks like a Chronosphere.\nMaximum one can be built.
@@ -756,7 +756,7 @@ IROF:
 		GenericStancePrefix: False
 	Buildable:
 		BuildPaletteOrder: 14
-		Queue: Fakestructure
+		Queue: Fakestructure, FakeSeperate
 		Prerequisites: ~disabled
 		BuildLimit: 1
 		Description: Looks like the Iron Curtain.\nMaximum one can be built.
@@ -790,7 +790,7 @@ MSLF:
 		GenericStancePrefix: False
 	Buildable:
 		BuildPaletteOrder: 15
-		Queue: Fakestructure
+		Queue: Fakestructure, FakeSeperate
 		Prerequisites: techcenter, ~structures.allies, ~allies.or.france, ~techlevel.unrestricted
 		BuildLimit: 1
 		Description: Looks like a Missile Silo.\nMaximum one can be built.\n  Special ability: Fake Nuke\nThis missile looks like an Atom Bomb,\nuntil it detonates non-violently.
@@ -850,7 +850,7 @@ FACF:
 		Bounds: 72,72
 	Buildable:
 		BuildPaletteOrder: 3
-		Queue: Fakestructure
+		Queue: Fakestructure, FakeSeperate
 		Prerequisites: ~disabled
 		Description: Looks like a Construction Yard
 		Icon: fake-icon
@@ -893,7 +893,7 @@ FGAP:
 	-ActorPreviewPlaceBuildingPreview:
 	Buildable:
 		BuildPaletteOrder: 11
-		Queue: Fakestructure
+		Queue: Fakestructure, FakeSeperate
 		Prerequisites: atek, ~structures.allies, ~allies.or.france, ~techlevel.high
 		Description: Looks like a Gap Generator
 		Icon: fake-icon
@@ -1027,7 +1027,7 @@ MCVF:
 	-SpawnActorOnDeath:
 	Buildable:
 		BuildPaletteOrder: 13
-		Prerequisites: fix, ~allies.or.france
+		Prerequisites: fix, ~player.france
 		Description: Looks like a Mobile Construction Vehicle.\nCan deploy into a fake Construction Yard.
 		Icon: fake-icon
 	Tooltip:
@@ -1063,7 +1063,7 @@ TRUF:
 	-SpawnActorOnDeath:
 	Buildable:
 		BuildPaletteOrder: 14
-		Prerequisites: proc, ~allies.or.france
+		Prerequisites: proc, ~player.france
 		Description: Looks like a Supply Truck.
 		Icon: fake-icon
 	Tooltip:
@@ -1097,7 +1097,7 @@ MGGF:
 	-WithDecoration@offline:
 	Buildable:
 		BuildPaletteOrder: 15
-		Prerequisites: techcenter, ~allies.or.france
+		Prerequisites: techcenter, ~player.france
 		Description: Looks like a Mobile Gap Generator.
 		Icon: fake-icon
 	Tooltip:

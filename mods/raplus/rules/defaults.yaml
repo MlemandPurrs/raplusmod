@@ -530,7 +530,7 @@
 	ChangesHealth@BARRACKSHEALING:
 		Step: 5
 		Delay: 100
-		StartIfBelow: 100
+		StartIfBelow: 101
 		DamageCooldown: 125
 		RequiresCondition: barracksheal
 	ChangesHealth@HOSPITAL:
@@ -716,6 +716,18 @@
 	Crushable:
 		CrushClasses: tank
 		WarnProbability: 0
+	DamageMultiplier@LaserDesignated:
+		Modifier: 120
+		RequiresCondition: laser-designated
+	ExternalCondition@LaserDesignated:
+		Condition: laser-designated
+		TotalCap: 1
+	Explodes@RadExplode:
+		Weapon: GeneratedRadExplode
+		EmptyWeapon: GeneratedRadExplode
+		RequiresCondition: irradiated
+	ExternalCondition@RadExplode:
+		Condition: irradiated
 
 ^TrackedVehicle:
 	Inherits: ^Vehicle
@@ -1069,7 +1081,7 @@
 		Payload: 0
 		Type: AircraftRefund
 	Aircraft:
-		IdleBehavior: ReturnToBase
+		#	IdleBehavior: ReturnToBase
 		TakeOffOnResupply: false
 		TakeOffOnCreation: false
 
@@ -1324,6 +1336,9 @@
 	-Explodes@RUMALUS:
 	-GrantConditionOnPrerequisite@RUMALUS:
 	-ProductionTimeMultiplier@Sweden:
+	-GrantConditionOnDamageState@LOWPOWERDMG:
+	-ChangesHealth@LOWPOWERDMG:
+	-GrantConditionOnPowerState@LOWPOWERDMG:
 	Health:
 		HP: 350
 	Armor:
@@ -2272,6 +2287,22 @@
 	SelectionDecorations:
 	RejectsOrders:
 
+^SummonBuilding:
+	Inherits@Inherent: ^SummonBase
+	-Mobile:
+	-Passenger:
+	-Parachutable:
+	-WithParachute:
+	-WithFacingSpriteBody:
+	WithSpriteBody:
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+		TerrainTypes: Clear,Road
+		RequiresBaseProvider: False
+		BuildSounds: placbldg.aud
+		UndeploySounds: 
+
 unit.summoner:
 	Inherits@SYSTEM: ^SummonerDummy
 	RenderSprites:
@@ -2597,19 +2628,19 @@ unit.summoner:
 
 ^DamagedByRadiation:
 	DamagedByTintedCells@RADSTRONG:
-		Damage: 19
+		Damage: 9
 		DamageInterval: 16
 		DamageTypes: RadiationDeath
 		LayerName: radioactivity.strong
 		RequiresCondition: !parachute	
 	DamagedByTintedCells@RADMED:
-		Damage: 7
+		Damage: 6
 		DamageInterval: 16
 		DamageTypes: RadiationDeath
 		LayerName: radioactivity.medium
 		RequiresCondition: !parachute
 	DamagedByTintedCells@RADWEAK:
-		Damage: 5
+		Damage: 3
 		DamageInterval: 16
 		DamageTypes: RadiationDeath
 		LayerName: radioactivity.weak
