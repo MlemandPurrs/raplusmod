@@ -131,7 +131,7 @@ BADR.buildable:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@AUTODAMAGE: ^KilledWithoutAirfield
 	Buildable:
-		Queue: Aircraft, MWFAir, AircraftSeperate
+		Queue: Aircraft, MWFAir
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 3
 		BuildLimit: 1
@@ -263,7 +263,7 @@ TRAN.Soviet:
 MI2:
 	Inherits: ^Helicopter
 	Buildable:
-		Queue: Aircraft, MWFHeli, AircraftSeperate
+		Queue: Aircraft, MWFHeli
 		BuildAtProductionType: Helicopter
 		BuildPaletteOrder: 7
 		Prerequisites: ~hpad, fix, ~aircraft.soviet, ~soviet.or.kazakh, ~techlevel.medium
@@ -344,7 +344,7 @@ HIND:
 		InitialStance: HoldFire
 		InitialStanceAI: HoldFire
 	Buildable:
-		Queue: Aircraft, MWFHeli, AircraftSeperate
+		Queue: Aircraft, MWFHeli
 		BuildAtProductionType: Helicopter
 		BuildPaletteOrder: 6
 		Prerequisites: ~hpad, stek, ~aircraft.soviet, ~!player.afghan, ~techlevel.high
@@ -518,7 +518,7 @@ YAK:
 		InitialStance: HoldFire
 		InitialStanceAI: HoldFire
 	Buildable:
-		Queue: Aircraft, MWFAir, AircraftSeperate
+		Queue: Aircraft, MWFAir
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 1
 		Prerequisites: ~afld, dome, ~aircraft.soviet, ~!aitoodumb, ~!player.belarus, ~techlevel.medium
@@ -668,7 +668,7 @@ MIG:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiTankandAir
 	Inherits@AUTODAMAGE: ^KilledWithoutAirfield
 	Buildable:
-		Queue: Aircraft, MWFAir, AircraftSeperate
+		Queue: Aircraft, MWFAir
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 2
 		Prerequisites: ~afld, stek, ~aircraft.soviet, ~!player.kazakh, ~techlevel.high
@@ -816,7 +816,7 @@ MIG:
 NEBR:
 	Inherits: ^Plane
 	Buildable:
-		Queue: Aircraft, AircraftSeperate
+		Queue: Aircraft
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 6
 		BuildLimit: 1
@@ -965,7 +965,7 @@ CMIG:
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@AUTODAMAGE: ^KilledWithoutAirfield
 	Buildable:
-		Queue: Aircraft, MWFAir, AircraftSeperate
+		Queue: Aircraft, MWFAir
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 7
 		Prerequisites: ~afld, stek, ~aircraft.soviet, ~player.china, ~techlevel.high

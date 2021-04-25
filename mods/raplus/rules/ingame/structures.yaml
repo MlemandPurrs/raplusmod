@@ -24,7 +24,7 @@ FACT:
 		Amount: 50
 		RequiresCondition: !build-incomplete
 	Buildable:
-		Queue: Building, BuildingSeperate
+		Queue: Building
 		BuildPaletteOrder: 1000
 		Prerequisites: ~disabled
 		Description: Produces structures.
@@ -119,11 +119,12 @@ FACT:
 		Prerequisite: mcv.ai
 		RequiresPrerequisites: aitoodumb
 	Production:
-		Produces: Building, BuildingSeperate, Defense, DefenseSeperate, Fakestructure, FakeSeperate
+		Produces: Building,Defense,Fakestructure
 		PauseOnCondition: disabled || build-incomplete || sabotaged
 	ProductionQueue@Building:
-		Type: BuildingSeperate
+		Type: Building
 		Group: Building
+		DisplayOrder: 0
 		ReadyAudio: ConstructionComplete
 		BlockedAudio: NoBuild
 		QueuedAudio: Building
@@ -131,10 +132,11 @@ FACT:
 		CancelledAudio: Cancelled
 		LowPowerModifier: 300
 	ProductionBar@Building:
-		ProductionType: BuildingSeperate
+		ProductionType: Building
 	ProductionQueue@Defense:
-		Type: DefenseSeperate
+		Type: Defense
 		Group: Defense
+		DisplayOrder: 1
 		ReadyAudio: ConstructionComplete
 		BlockedAudio: NoBuild
 		QueuedAudio: Building
@@ -145,8 +147,9 @@ FACT:
 		ProductionType: Defense
 		Color: 8A8A8A
 	ProductionQueue@FakeStructure:
-		Type: FakeSeperate
+		Type: Fakestructure
 		Group: Fakestructure
+		DisplayOrder: 6
 		ReadyAudio: ConstructionComplete
 		BlockedAudio: NoBuild
 		QueuedAudio: Building
@@ -232,7 +235,7 @@ POWR:
 		Dimensions: 2,2
 		LocalCenterOffset: 0,-512,0
 	Buildable:
-		Queue: Building, BuildingSeperate
+		Queue: Building
 		BuildPaletteOrder: 1
 		Prerequisites: ~!player.turkey, ~techlevel.infonly
 		Description: Provides Power for other structures.\nCan be Infiltrated by a Spy or Saboteur\nresulting in a temporary blackout.
@@ -300,7 +303,7 @@ APWR:
 		Dimensions: 3,2
 		LocalCenterOffset: 0,-512,0
 	Buildable:
-		Queue: Building, BuildingSeperate
+		Queue: Building
 		BuildPaletteOrder: 13
 		Prerequisites: dome, ~!player.turkey, ~techlevel.medium
 		Description: Provides double the Power of\na standard Power Plant.\nCan be Infiltrated by a Spy or Saboteur\nresulting in a temporary blackout.
@@ -366,12 +369,14 @@ TENT:
 		Dimensions: 2,3
 		LocalCenterOffset: 0,-512,0
 	Buildable:
-		Queue: Building, BuildingSeperate
+		Queue: Building
 		BuildPaletteOrder: 2
 		Prerequisites: ~structures.allies, ~techlevel.infonly
 		Description: Trains and Heals Infantry units.\nDecomissions Infantry for 1/4 of cost.\nCan be Infiltrated by an Spy resulting\nin Veterancy for enemy Infantry.\nCan be Infiltrated by an Saboteur\nresulting in getting Disabled temporarily.\n Special: Free Guards\nEach Barracks comes with two free Rifle Infantry.
 	Valued:
 		Cost: 500
+	CustomSellValue:
+		Value: 300
 	Tooltip:
 		Name: Allies Barracks
 	Health:
@@ -421,11 +426,12 @@ TENT:
 		ProductionTypes: Soldier, Infantry, Dog
 		Priority: 0
 	Production:
-		Produces: Infantry, InfantrySeperate, Soldier, Dog
+		Produces: Infantry, Soldier, Dog
 		PauseOnCondition: disabled || build-incomplete || sabotaged
 	ProductionQueue:
-		Type: InfantrySeperate
-		Group: Vehicle
+		Type: Infantry
+		Group: Infantry
+		DisplayOrder: 2
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
 		QueuedAudio: Training
@@ -433,7 +439,7 @@ TENT:
 		CancelledAudio: Cancelled
 		LowPowerModifier: 300
 	ProductionBar:
-		ProductionType: InfantrySeperate
+		ProductionType: Infantry
 	GrantExternalConditionToProduced:
 		Condition: produced
 	ProvidesPrerequisite@barracks:
@@ -561,12 +567,14 @@ BARR:
 		Dimensions: 2,3
 		LocalCenterOffset: 0,-512,0
 	Buildable:
-		Queue: Building, BuildingSeperate
+		Queue: Building
 		BuildPaletteOrder: 2
 		Prerequisites: ~structures.soviet, ~techlevel.infonly
 		Description: Trains and Heals Infantry units.\nDecomissions Infantry for 1/4 of cost.\nCan be Infiltrated by an Spy resulting\nin Veterancy for enemy Infantry.\nCan be Infiltrated by an Saboteur\nresulting in getting Disabled temporarily.\n Special: Free Guards\nEach Barracks comes with two free Rifle Infantry.
 	Valued:
 		Cost: 500
+	CustomSellValue:
+		Value: 300
 	Tooltip:
 		Name: Soviet Barracks
 	Pluggable:
@@ -631,11 +639,12 @@ BARR:
 		ProductionTypes: Soldier, Infantry, Dog
 		Priority: 0
 	Production:
-		Produces: Infantry, InfantrySeperate, Soldier, Dog
+		Produces: Infantry, Soldier, Dog
 		PauseOnCondition: disabled || build-incomplete || sabotaged
 	ProductionQueue:
-		Type: InfantrySeperate
-		Group: Vehicle
+		Type: Infantry
+		Group: Infantry
+		DisplayOrder: 2
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
 		QueuedAudio: Training
@@ -646,7 +655,7 @@ BARR:
 		Prerequisite: cloner.plug
 		RequiresCondition: clonerupgrade
 	ProductionBar:
-		ProductionType: InfantrySeperate
+		ProductionType: Infantry
 	GrantExternalConditionToProduced:
 		Condition: produced
 	ProvidesPrerequisite:
@@ -838,7 +847,7 @@ CLONER.Plug:
 	Buildable:
 		BuildPaletteOrder: 17
 		Prerequisites: stek, !cloner.plug, ~structures.soviet, ~soviet.or.china, ~!aitoodumb, ~techlevel.high
-		Queue: Building, BuildingSeperate
+		Queue: Building
 		BuildLimit: 1
 		Description: Clones produced Basic Infantry when the relevant\nSupport Power gets activated at the Tech Center.
 	Plug:
@@ -859,7 +868,7 @@ KENN:
 	Selectable:
 		Bounds: 24,24
 	Buildable:
-		Queue: Building, BuildingSeperate
+		Queue: Building
 		BuildPaletteOrder: 11
 		Prerequisites: ~disabled
 		Description: Trains Attack Dogs.
@@ -915,6 +924,16 @@ KENN:
 	Production:
 		Produces: Infantry, Dog
 		PauseOnCondition: disabled || build-incomplete
+	ProductionQueue:
+		Type: Infantry
+		Group: Infantry
+		DisplayOrder: 2
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
 	ProductionBar:
 		ProductionType: Infantry
 	Power:
@@ -959,7 +978,7 @@ PROC:
 			TopLeft: -1536, -1536
 			BottomRight: 1536, 1036
 	Buildable:
-		Queue: Building, BuildingSeperate
+		Queue: Building
 		BuildPaletteOrder: 4
 		Prerequisites: ~techlevel.infonly
 		Description: Refines Ore and Gems\ninto credits.\nCan be Infiltrated by Spy or Saboteur\nresulting in 50% loss of credits stored.\n Special: Free Harvester\nEach Refinery comes with one free Ore Truck.
@@ -1073,7 +1092,7 @@ SILO:
 	Selectable:
 		Bounds: 24,24
 	Buildable:
-		Queue: Defense, DefenseSeperate
+		Queue: Defense
 		BuildPaletteOrder: 3
 		Prerequisites: proc, ~techlevel.infonly
 		Description: Stores excess refined Ore and Gems.\nThe stored resources are secured against Theft.\nSpecial: Periodic Income\nPeriodically generates minor income\naslong not low on power.
@@ -1152,7 +1171,7 @@ OREP:
 	HitShape:
 		TargetableOffsets: 420,-768,0, 420,768,0, -770,-768,0, -770,768,0
 	Buildable:
-		Queue: Building, BuildingSeperate
+		Queue: Building
 		BuildPaletteOrder: 16
 		BuildLimit: 1
 		Prerequisites: atek, ~structures.allies, ~techlevel.high
@@ -1218,7 +1237,7 @@ INDP:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 640,-384,0, 640,512,0, -710,-512,0, -710,512,0
 	Buildable:
-		Queue: Building, BuildingSeperate
+		Queue: Building
 		BuildPaletteOrder: 16
 		BuildLimit: 1
 		Prerequisites: stek, ~structures.soviet, ~techlevel.high
@@ -1285,7 +1304,7 @@ WEAP:
 		Dimensions: 3,3
 		LocalCenterOffset: 0,-512,0
 	Buildable:
-		Queue: Building, BuildingSeperate
+		Queue: Building
 		BuildPaletteOrder: 5
 		Prerequisites: anypower, ~techlevel.low
 		Description: Produces Vehicle units.\nCan be Infiltrated by an Spy resulting\nin Veterancy for enemy Vehicles.\nCan be Infiltrated by an Saboteur\nresulting in getting Disabled temporarily.
@@ -1329,21 +1348,32 @@ WEAP:
 		SpawnOffset: 213,-128,0
 		ExitCell: 0,2
 	Production:
-		Produces: Vehicle, VehicleSeperate
-		PauseOnCondition: disabled || build-incomplete
+		Produces: Vehicle
+		PauseOnCondition: disabled || build-incomplete	
+	#	Production@1:
+	#	Produces: Vehicle
+	#	PauseOnCondition: pausethenative
+	#	Production@2:
+	#	Produces: VehicleSeperate
+	#	PauseOnCondition: disabled || build-incomplete	
 	ProductionQueue:
-		Type: VehicleSeperate
+		Type: Vehicle
 		Group: Vehicle
+		DisplayOrder: 3
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
 		LowPowerModifier: 300
+	#	well, works. but should be more elegant.
+	#	GrantConditionOnProduction:
+	#	Condition: pausethenative
+	#	Duration: -1
 	GrantExternalConditionToProduced:
 		Condition: produced
 	ProductionBar:
-		ProductionType: VehicleSeperate
+		ProductionType: Vehicle
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@allies:
 		Factions: allies, usa, england, france, holland, germany, sweden, spain, italy, greece, turkey
@@ -1523,7 +1553,7 @@ WEAP.MINI:
 	Valued:
 		Cost: 2500
 	Buildable:
-		Queue: Building, BuildingSeperate
+		Queue: Building
 		BuildPaletteOrder: 15
 		Prerequisites: ~disabled
 	Building:
@@ -1562,6 +1592,7 @@ WEAP.MINI:
 	ProductionQueue:
 		Type: MWFVehicle
 		Group: Vehicle
+		DisplayOrder: 3
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
 		QueuedAudio: Training
@@ -1611,7 +1642,7 @@ FIX:
 		Footprint: =+= +++ =+=
 		Dimensions: 3,3
 	Buildable:
-		Queue: Building, BuildingSeperate
+		Queue: Building
 		BuildPaletteOrder: 8
 		Prerequisites: weap, ~fact, ~!allies.or.france, ~!player.holland, ~!player.sweden, ~!player.turkey, ~!vanilla.soviet, ~!player.kazakh, ~!player.china, ~!player.moldova, ~techlevel.medium
 		Description: Repairs Vehicles for credits.\nVehicle and Aircraft can\nbe sold here for half value.\n (their value scaling with health)
@@ -1841,7 +1872,7 @@ DOME:
 		Dimensions: 2,2
 		LocalCenterOffset: 0,-512,0
 	Buildable:
-		Queue: Building, BuildingSeperate
+		Queue: Building
 		BuildPaletteOrder: 6
 		Prerequisites: ~disabled
 		Description: Provides an overview\nof the battlefield.\nCan detect cloaked units.\nCan be Infiltrated resulting in loss of map exploration.
@@ -2037,7 +2068,7 @@ ATEK:
 		Dimensions: 3,2
 		LocalCenterOffset: 0,-512,0
 	Buildable:
-		Queue: Building, BuildingSeperate
+		Queue: Building
 		BuildPaletteOrder: 12
 		BuildLimit: 1
 		Prerequisites: proc, afldorweap, ~structures.allies, ~!vanilla.allies, ~!player.usa, ~!player.england, !player.germany, ~techlevel.high
@@ -2204,7 +2235,7 @@ STEK:
 		Dimensions: 3,2
 		LocalCenterOffset: 0,-512,0
 	Buildable:
-		Queue: Building, BuildingSeperate
+		Queue: Building
 		BuildPaletteOrder: 12
 		BuildLimit: 1
 		Prerequisites: proc, afldorweap, ~structures.soviet, ~!vanilla.soviet, ~!player.russia, ~!player.ukraine, ~!player.karelia, ~!player.uzbek, ~techlevel.high
@@ -2402,7 +2433,7 @@ SPRO:
 	Selectable:
 		Bounds: 48,48
 	Buildable:
-		Queue: Building, BuildingSeperate
+		Queue: Building
 		BuildLimit: 1
 		Prerequisites: techcenter, dome, ~!player.kazakh, ~techlevel.unrestricted
 		Description: Provides GPS Sattelite uplink.\nMaximum one can be built.\nCan be Infiltrated by an Spy or Saboteur resulting\nin loss of map exploration.\n  Special Ability: GPS Satellite\nReveals map terrain and provides tactical information\n (Requires power and active radar to operate)
@@ -2472,7 +2503,7 @@ AFLD:
 		Footprint: xxx xx+
 		Dimensions: 3,2
 	Buildable:
-		Queue: Building, BuildingSeperate
+		Queue: Building
 		BuildPaletteOrder: 7
 		Prerequisites: anypower, ~!player.russia, ~!player.ukraine, ~!player.belarus, ~!player.turkmen, ~!player.usa, ~!player.england, ~!player.france, ~!player.germany, ~!player.italy, ~!player.greece, ~techlevel.medium
 		Description: Produces, repairs and reloads Airplanes.\nCan be Infiltrated by an Spy resulting\nin Veterancy for enemy Aircraft.\nCan be Infiltrated by an Saboteur\nresulting in getting Disabled temporarily.\n  Special Ability: Paratroopers\nA Plane drops a squad of\nVeteran infantry anywhere on the map.
@@ -2508,11 +2539,12 @@ AFLD:
 	RevealsShroud@GAPGEN:
 		Range: 4c0
 	Production:
-		Produces: Aircraft, AircraftSeperate, Plane
+		Produces: Aircraft, Plane
 		PauseOnCondition: disabled || build-incomplete || sabotaged
 	ProductionQueue:
-		Type: AircraftSeperate
+		Type: Aircraft
 		Group: Aircraft
+		DisplayOrder: 4
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
 		QueuedAudio: Building
@@ -2520,7 +2552,7 @@ AFLD:
 		CancelledAudio: Cancelled
 		LowPowerModifier: 300
 	ProductionBar:
-		ProductionType: AircraftSeperate
+		ProductionType: Aircraft
 	RallyPoint:
 	Exit@1:
 		RequiresCondition: !being-captured
@@ -3066,7 +3098,7 @@ HPAD:
 		Dimensions: 2,2
 		LocalCenterOffset: 0,-512,0
 	Buildable:
-		Queue: Building, BuildingSeperate
+		Queue: Building
 		BuildPaletteOrder: 10
 		Prerequisites: proc, ~techlevel.medium
 		Description: Produces and reloads Helicopters.\nCan be Infiltrated by an Spy resulting\nin Veterancy for enemy Aircraft.\nCan be Infiltrated by an Saboteur\nresulting in getting Disabled temporarily.
@@ -3099,10 +3131,10 @@ HPAD:
 	RevealsShroud@GAPGEN:
 		Range: 4c0
 	Production:
-		Produces: Aircraft, AircraftSeperate, Helicopter
+		Produces: Aircraft, Helicopter
 		PauseOnCondition: disabled || build-incomplete || sabotaged
 	ProductionQueue:
-		Type: AircraftSeperate
+		Type: Aircraft
 		Group: Aircraft
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
@@ -3111,7 +3143,7 @@ HPAD:
 		CancelledAudio: Cancelled
 		LowPowerModifier: 300
 	ProductionBar:
-		ProductionType: AircraftSeperate
+		ProductionType: Aircraft
 	RallyPoint:
 	RepairsUnits:
 		ValuePercentage: 0
@@ -3329,7 +3361,7 @@ SYRD:
 		Dimensions: 3,3
 		TerrainTypes: Water
 	Buildable:
-		Queue: Building, BuildingSeperate
+		Queue: Building
 		BuildPaletteOrder: 3
 		Prerequisites: anypower, ~structures.allies, ~techlevel.low, ~!global-disablenavy
 		Description: Produces and repairs\nShips and Transports.\nNearby Navy can be sold for half their value.\n (their value scaling with health)\n  Special Ability: Sonar Pulse\nReveals all submarines in target\narea for a short time.
@@ -3354,11 +3386,12 @@ SYRD:
 		Range: 7c512
 	RenderDetectionCircle:
 	Production:
-		Produces: Ship, ShipSeperate, Boat
+		Produces: Ship, Boat
 		PauseOnCondition: disabled || build-incomplete
 	ProductionQueue:
-		Type: ShipSeperate
+		Type: Ship
 		Group: Ship
+		DisplayOrder: 5
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
 		QueuedAudio: Building
@@ -3366,7 +3399,7 @@ SYRD:
 		CancelledAudio: Cancelled
 		LowPowerModifier: 300
 	ProductionBar:
-		ProductionType: ShipSeperate
+		ProductionType: Ship
 	RepairsUnits:
 		HpPerStep: 10
 		Interval: 14
@@ -3554,7 +3587,7 @@ SPEN:
 		Dimensions: 3,3
 		TerrainTypes: Water
 	Buildable:
-		Queue: Building, BuildingSeperate
+		Queue: Building
 		BuildPaletteOrder: 3
 		Prerequisites: anypower, ~structures.soviet, ~techlevel.low, ~!global-disablenavy
 		Description: Produces and repairs\nSubmarines and Transports.\nNearby Navy can be sold for half their value.\n (their value scaling with health)\n  Special Ability: Sonar Pulse\nReveals all submarines in target\narea for a short time.
@@ -3579,11 +3612,12 @@ SPEN:
 		Range:  7c512
 	RenderDetectionCircle:
 	Production:
-		Produces: Ship, ShipSeperate, Submarine
+		Produces: Ship, Submarine
 		PauseOnCondition: disabled || build-incomplete
 	ProductionQueue:
-		Type: ShipSeperate
+		Type: Ship
 		Group: Ship
+		DisplayOrder: 5
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
 		QueuedAudio: Building
@@ -3591,7 +3625,7 @@ SPEN:
 		CancelledAudio: Cancelled
 		LowPowerModifier: 300
 	ProductionBar:
-		ProductionType: ShipSeperate
+		ProductionType: Ship
 	RepairsUnits:
 		HpPerStep: 10
 		Interval: 14

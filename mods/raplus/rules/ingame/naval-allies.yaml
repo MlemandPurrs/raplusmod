@@ -2,7 +2,7 @@ PT:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetNavalAssaultMove
 	Buildable:
-		Queue: Ship, SeperateShip
+		Queue: Ship
 		BuildAtProductionType: Boat
 		BuildPaletteOrder: 2
 		Prerequisites: ~syrd, proc, ~ships.allies, ~!player.greece, ~techlevel.low
@@ -82,7 +82,7 @@ RSHP:
 	Inherits: ^Ship
 	Inherits@selection: ^SelectableSupportUnit
 	Buildable:
-		Queue: Ship, SeperateShip
+		Queue: Ship
 		BuildAtProductionType: Boat
 		BuildPaletteOrder: 5
 		Prerequisites: ~syrd, fix, ~ships.allies, ~allies.or.germany, ~techlevel.medium
@@ -169,7 +169,7 @@ DD:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetNavalAssaultMove
 	Buildable:
-		Queue: Ship, SeperateShip
+		Queue: Ship
 		BuildAtProductionType: Boat
 		BuildPaletteOrder: 3
 		Prerequisites: ~syrd, dome, ~ships.allies, ~!player.germany, ~techlevel.medium
@@ -251,7 +251,7 @@ BSHP:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetNavalAssaultMove
 	Buildable:
-		Queue: Ship, SeperateShip
+		Queue: Ship
 		BuildAtProductionType: Boat
 		BuildPaletteOrder: 6
 		Prerequisites: ~syrd, fix, dome, ~ships.allies, ~allies.or.spain, ~techlevel.medium
@@ -338,7 +338,7 @@ CA:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetNavalAssaultMove
 	Buildable:
-		Queue: Ship, SeperateShip
+		Queue: Ship
 		BuildAtProductionType: Boat
 		BuildPaletteOrder: 4
 		Prerequisites: ~syrd, atek, ~ships.allies, ~!player.italy, ~techlevel.high
@@ -413,7 +413,7 @@ DRED:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetNavalAssaultMove
 	Buildable:
-		Queue: Ship, SeperateShip
+		Queue: Ship
 		BuildAtProductionType: Boat
 		BuildPaletteOrder: 7
 		BuildLimit: 1
@@ -489,7 +489,7 @@ DRED:
 ACAR:
 	Inherits: ^Ship
 	Buildable:
-		Queue: Ship, SeperateShip
+		Queue: Ship
 		BuildAtProductionType: Boat
 		BuildPaletteOrder: 6
 		Prerequisites: ~syrd, dome, atek, ~ships.allies, ~allies.or.england, ~techlevel.high
@@ -636,7 +636,8 @@ ACAR.Deployed:
 		PauseOnCondition: disabled
 	ProductionQueue:
 		Type: MWFAir
-		Group: Plane
+		DisplayOrder: 4
+		Group: Aircraft
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
 		QueuedAudio: Training

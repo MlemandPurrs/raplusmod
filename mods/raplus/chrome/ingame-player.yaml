@@ -432,7 +432,7 @@ Container@PLAYER_WIDGETS:
 		Container@SIDEBAR_PRODUCTION:
 			Logic: ClassicProductionLogic
 			X: WINDOW_RIGHT - 250
-			Y: 300
+			Y: 322
 			Width: 238
 			Height: 250
 			Children:
@@ -675,3 +675,57 @@ Container@PLAYER_WIDGETS:
 							Y: 4
 							ImageCollection: power-icons
 							ImageName: power-normal
+		Container@PRODUCTION_BACKGROUND:
+			#	WINDOW_RIGHT - 5 - 18 - 194
+			#	5 is <-  -> offset from given edge
+			#	logically 18 should be the ^  v offset then
+			#	as for 194, it seems to be for moving the anchor 
+			#	corner of the box shape itself.
+			#	supposedly its the top left pixel.
+			#	X: WINDOW_RIGHT - 1 - 1 - 1
+			#	the Y here doesnt seem to have any effect
+			# just a 1 1 1 1 dummy to make tab switcher appear
+			#	X: WINDOW_RIGHT - 238 - 7 - 194
+			#	Y: 315
+			X: WINDOW_RIGHT - 1 - 1 - 1
+			Y: 1
+			Children:
+				#	background of the <- productionnumber -> switching tab
+				Background@ICON_TEMPLATE:
+					Logic: AddFactionSuffixLogic
+					Width: 194
+					Height: 20
+					#	Background: commandbar
+					Background: background-prodscroller
+					ClickThrough: true
+		Image@TOP_CAP:
+			Logic: AddFactionSuffixLogic
+			X: WINDOW_RIGHT - 250
+			Y: 299
+			Width: 238
+			Height: 7
+			ClickThrough: false
+			ImageCollection: sidebar
+			ImageName: background-prodscroller
+		#	Container@PRODUCTION_BACKGROUND:
+		#	X: WINDOW_RIGHT - 5 - 18 - 194
+		#	Y: 300
+		#	Children:
+		#		Background@ICON_TEMPLATE:
+		#			Logic: AddFactionSuffixLogic
+		#			Width: 190
+		#			Height: 47
+		#			Background: background-iconbg
+		ProductionTabs@PRODUCTION_TABS:
+			Logic: ProductionTabsLogic
+			PaletteWidget: PRODUCTION_PALETTE
+			TypesContainer: PRODUCTION_TYPES
+			BackgroundContainer: PRODUCTION_BACKGROUND
+			PreviousProductionTabKey: PreviousProductionTab
+			NextProductionTabKey: NextProductionTab
+			#	X: WINDOW_RIGHT - 5 - 18 - 189
+			X: WINDOW_RIGHT - 5 - 18 - 189
+			Y: 299
+			Width: 194
+			#	Width: 238
+			Height: 20

@@ -42,7 +42,7 @@ JEEP:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiInf
 	Buildable:
-		Queue: Vehicle, MWFVehicle, VehicleSeperate
+		Queue: Vehicle, MWFVehicle
 		BuildPaletteOrder: 2
 		Prerequisites: ~vehicles.allies, ~!player.england, ~techlevel.low
 		Description: Fast scout & anti-infantry vehicle.\nDetects cloaked units in close radius.\nCan carry one infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
@@ -126,7 +126,7 @@ APC:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiInf
 	-Tooltip:
 	Buildable:
-		Queue: Vehicle, MWFVehicle, VehicleSeperate
+		Queue: Vehicle, MWFVehicle
 		BuildPaletteOrder: 3
 		Prerequisites: tent, ~vehicles.allies, ~!player.germany, ~!player.italy, ~techlevel.low
 		Description: Tough infantry transport.\nCan transport up to 5 Infantry.\nCan be Airlifted when empty.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft
@@ -220,7 +220,7 @@ RAPC:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiTank
 	Buildable:
-		Queue: Vehicle, MWFVehicle, VehicleSeperate
+		Queue: Vehicle, MWFVehicle
 		BuildPaletteOrder: 4
 		Prerequisites: proc, ~vehicles.allies, ~!player.england, ~!player.france, ~!player.germany, ~!player.spain, ~!player.italy, ~!player.sweden, ~!player.holland, ~techlevel.low
 		Description: Fast tank, good for scouting.\n  Strong vs Light armor\n  Weak vs Infantry, Tanks, Aircraft
@@ -290,7 +290,7 @@ RAPC:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
-		Queue: Vehicle, MWFVehicle, VehicleSeperate
+		Queue: Vehicle, MWFVehicle
 		BuildPaletteOrder: 5
 		Prerequisites: fix, ~vehicles.allies, ~!player.england, ~!player.france, ~!player.germany, ~!player.spain, ~!player.holland, ~!player.sweden, ~techlevel.medium
 		Description: Allied Main Battle Tank.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
@@ -360,7 +360,7 @@ RAPC:
 	-Armament@SECONDARY:
 	-MustBeDestroyed:
 	Buildable:
-		Queue: Vehicle, VehicleSeperate
+		Queue: Vehicle
 		BuildPaletteOrder: 8
 		Prerequisites: atek, ~vehicles.allies, ~player.holland, ~techlevel.high
 		Description: Tank that is capable of cloaking even on the move.\n  Strong vs Light Vehicles, Basic Defenses\n  Weak vs massed Infantry, Tanks
@@ -410,7 +410,7 @@ ARTY:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiStructure
 	Buildable:
-		Queue: Vehicle, MWFVehicle, VehicleSeperate
+		Queue: Vehicle, MWFVehicle
 		BuildPaletteOrder: 6
 		Prerequisites: dome, ~vehicles.allies, ~!player.france, ~techlevel.medium
 		Description: Long-range artillery.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
@@ -459,7 +459,7 @@ MSAM:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAirAssaultMove
 	Buildable:
-		Queue: Vehicle, VehicleSeperate
+		Queue: Vehicle
 		BuildPaletteOrder: 9
 		Prerequisites: dome, ~vehicles.allies, ~!player.sweden, ~techlevel.medium
 		Description: Mobile truck with mounted sam site.\nCan attack Aircraft only.\n  Strong vs Aircraft\n  Weak vs everything else
@@ -473,7 +473,7 @@ MSAM:
 	Selectable:
 		DecorationBounds: 28,28
 	Health:
-		HP: 150
+		HP: 220
 	Armor:
 		Type: Light
 	Mobile:
@@ -516,7 +516,7 @@ ATNK:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Buildable:
-		Queue: Vehicle, VehicleSeperate
+		Queue: Vehicle
 		BuildPaletteOrder: 9
 		Prerequisites: dome, ~vehicles.allies, ~player.sweden, ~techlevel.medium
 		Description: Amphibian anti-air unit with Flak Cannons.\n  Strong vs Infantry, Aircraft\n  Weak vs Tanks
@@ -613,7 +613,7 @@ MRJ:
 	-Tooltip:
 	-GpsDot:
 	Buildable:
-		Queue: Vehicle, VehicleSeperate
+		Queue: Vehicle
 		BuildPaletteOrder: 17
 		Prerequisites: atek, ~vehicles.allies, ~allies.or.spain, ~techlevel.high
 		BuildDurationModifier: 60
@@ -671,7 +671,7 @@ CTNK:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiTank
 	Buildable:
-		Queue: Vehicle, VehicleSeperate
+		Queue: Vehicle
 		BuildPaletteOrder: 8
 		Prerequisites: atek, ~vehicles.allies, ~allies.or.germany, ~techlevel.high
 		Description: Experimental Tank armed with\nquad anti-ground missiles.\n  Special ability: Chrono Teleport\nCan instantly reallocate to areas within range.\n  Strong vs Vehicles, Buildings\n  Weak vs Infantry, Aircraft
@@ -746,7 +746,7 @@ STNK:
 	-MustBeDestroyed:
 	-Tooltip:
 	Buildable:
-		Queue: Vehicle, VehicleSeperate
+		Queue: Vehicle
 		BuildPaletteOrder: 16
 		Prerequisites: tent, atek, ~vehicles.allies, ~allies.or.france, ~techlevel.high
 		Description: Lightly armored infantry transport armed\nwith MG and anti-ground missiles.\nSpecial ability: Phase Cloaking\nInvisible when out of combat.\n  Strong vs Light armor\n  Weak vs Infantry, Tanks, Aircraft
@@ -825,7 +825,7 @@ TNKD:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiTank
 	Buildable:
-		Queue: Vehicle, VehicleSeperate
+		Queue: Vehicle
 		BuildPaletteOrder: 8
 		Prerequisites: atek, ~vehicles.allies, ~player.england, ~techlevel.high
 		Description: Self-propelled anti-tank Gun.\n  Strong vs Tanks, Structures\n  Weak vs Infantry, Aircraft
@@ -867,7 +867,7 @@ PRSM:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Buildable:
-		Queue: Vehicle, VehicleSeperate
+		Queue: Vehicle
 		BuildPaletteOrder: 8
 		Prerequisites: atek, ~vehicles.allies, ~player.usa, ~techlevel.high
 		Description: Experimental vehicle armed with an Laser.\n  Strong vs Vehicles, Buildings\n  Weak vs Infantry, Aircraft
@@ -911,7 +911,7 @@ GCAN:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
-		Queue: Vehicle, VehicleSeperate
+		Queue: Vehicle
 		BuildPaletteOrder: 8
 		Prerequisites: atek, dome, ~vehicles.allies, ~player.turkey, ~techlevel.high
 		Description: Heavy Artillery with extreme Range.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
@@ -958,7 +958,7 @@ BATF:
 	Inherits@CARGOPIPS: ^CargoPips
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
-		Queue: Vehicle, VehicleSeperate
+		Queue: Vehicle
 		BuildPaletteOrder: 18
 		Prerequisites: atek, ~vehicles.allies, ~player.allies, tech.stolen, ~techlevel.high
 		Description: Tough infantry transport\nwith weapon ports for infantry.\nCan carry up to 10 Infantry into battle.\nMaximum one can be built.\nCan crush concrete Walls and enemy Vehicles.\n  Strength and Weakness dependant on it's Passengers\n  Armed with Chaingun on its own

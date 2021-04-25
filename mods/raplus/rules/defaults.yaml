@@ -1708,7 +1708,7 @@
 		Sequence: 1
 		IsDecoration: true
 	ChangesHealth@Burns:
-		Step: -10
+		Step: -8
 		StartIfBelow: 101
 		Delay: 8
 	HitShape:

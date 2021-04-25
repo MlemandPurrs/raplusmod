@@ -56,8 +56,8 @@ Packages:
 
 MapFolders:
 	raplus|maps: System
-	~^SupportDir|maps/ra: User
-	~^SupportDir|maps/raplus: User
+	~^SupportDir|maps/ra/release-20210321: User
+	~^SupportDir|maps/raplus/v141newqueues: User
 
 Rules:
 	raplus|rules/misc.yaml
