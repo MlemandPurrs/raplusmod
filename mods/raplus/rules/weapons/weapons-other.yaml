@@ -798,6 +798,36 @@ DummyBomb:
 			Concrete: 0
 		DamageTypes: ExplosionDeath
 
+PointLaser:
+	#	ReloadDelay: 900
+	#	ReloadDelay: 300
+	#	all had the same result
+	ReloadDelay: 100
+	ValidTargets: AAMissile
+	#	InvalidTargets: Infantry, Vehicle, Structure, Wall
+	Range: 0c768
+	Report: vpalwe2d.aud
+	Projectile: LaserZap
+		Width: 30
+		Duration: 3
+		Color: 03f0fc
+		ZOffset: 2047
+		SecondaryBeam: true
+		SecondaryBeamWidth: 50
+		SecondaryBeamZOffset: 2047
+		SecondaryBeamColor: 03fcfc30
+		Blockable: false
+	Warhead@1Dam: SpreadDamage
+		Spread: 42
+		Damage: 1
+		DamageTypes: DefaultDeath
+		Versus:
+			None: 250
+			Light: 100
+			Wood: 60
+			Heavy: 100
+			Concrete: 90
+
 RadBeamWeapon:
 	ValidTargets: Ground, Water
 	InvalidTargets: Air
@@ -811,6 +841,23 @@ RadBeamWeapon:
 		QuantizationCount: 4
 		ZOffset: 2046
 		Color: 00C400
+	#	Projectile: Railgun
+	#	DamageActorsInLine: true
+	#	Inaccuracy: 0c256
+	#	InaccuracyType: PerCellIncrement
+	#	Duration: 10
+	#	Blockable: true
+	#	BeamColor: 00C400
+	#	BeamWidth: 40
+	#	HelixThickness: 16
+	#	HelixColor: 00FC00
+	#	HelixRadius: 10
+	#	ZOffset: 2046
+	#	QuantizationCount: 4
+	#	BeamAlphaDeltaPerTick: -16
+	#	HelixAlphaDeltaPerTick: -16
+	#	HelixRadiusDeltaPerTick: 16
+	#	HelixAngleDeltaPerTick: 16
 	Warhead@1Dam: SpreadDamage
 		Range: 0, 32
 		Falloff: 100, 100
@@ -837,7 +884,7 @@ RadBeamWeapon:
 		ValidTargets: Vehicle
 	Warhead@Fire: GrantExternalCondition
 		Range: 1c256
-		Duration: 64
+		Duration: 62
 		Condition: onfire
 		ValidTargets: Structure
 
@@ -893,12 +940,4 @@ SummonPBOX:
 	Warhead@spawn: SpawnBuilding
 		Range: 0
 		Buildings: pbox.summon
-		ValidTargets: Ground
-
-SummonKENN:
-	ReloadDelay: 1
-	Projectile: InstantExplode
-	Warhead@spawn: SpawnBuilding
-		Range: 0
-		Buildings: kenn.summon
 		ValidTargets: Ground

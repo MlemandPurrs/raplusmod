@@ -121,11 +121,41 @@ FACT:
 	Production:
 		Produces: Building,Defense,Fakestructure
 		PauseOnCondition: disabled || build-incomplete || sabotaged
+	ProductionQueue@Building:
+		Type: Building
+		Group: Building
+		DisplayOrder: 0
+		ReadyAudio: ConstructionComplete
+		BlockedAudio: NoBuild
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
 	ProductionBar@Building:
 		ProductionType: Building
+	ProductionQueue@Defense:
+		Type: Defense
+		Group: Defense
+		DisplayOrder: 1
+		ReadyAudio: ConstructionComplete
+		BlockedAudio: NoBuild
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
 	ProductionBar@Defense:
 		ProductionType: Defense
 		Color: 8A8A8A
+	ProductionQueue@FakeStructure:
+		Type: Fakestructure
+		Group: Fakestructure
+		DisplayOrder: 6
+		ReadyAudio: ConstructionComplete
+		BlockedAudio: NoBuild
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
 	Transforms:
 		RequiresCondition: factundeploy
 		PauseOnCondition: chrono-vortex || being-captured || being-demolished || build-incomplete
@@ -184,7 +214,6 @@ FACT:
 		RequiresCondition: !chrono-vortex && !notwhileproducing
 	GrantConditionOnProduction:
 		Condition: notwhileproducing
-		Actors:
 		ShowSelectionBar: false
 
 POWR:
@@ -399,6 +428,16 @@ TENT:
 	Production:
 		Produces: Infantry, Soldier, Dog
 		PauseOnCondition: disabled || build-incomplete || sabotaged
+	ProductionQueue:
+		Type: Infantry
+		Group: Infantry
+		DisplayOrder: 2
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
 	ProductionBar:
 		ProductionType: Infantry
 	GrantExternalConditionToProduced:
@@ -602,6 +641,16 @@ BARR:
 	Production:
 		Produces: Infantry, Soldier, Dog
 		PauseOnCondition: disabled || build-incomplete || sabotaged
+	ProductionQueue:
+		Type: Infantry
+		Group: Infantry
+		DisplayOrder: 2
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
 	ProvidesPrerequisite@LIMITING:
 		Prerequisite: cloner.plug
 		RequiresCondition: clonerupgrade
@@ -875,6 +924,16 @@ KENN:
 	Production:
 		Produces: Infantry, Dog
 		PauseOnCondition: disabled || build-incomplete
+	ProductionQueue:
+		Type: Infantry
+		Group: Infantry
+		DisplayOrder: 2
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
 	ProductionBar:
 		ProductionType: Infantry
 	Power:
@@ -890,15 +949,12 @@ KENN:
 		RequiresCondition: !build-incomplete && !being-demolished
 
 KENN.summon:
-	Inherits: ^SummonBuilding
-	GrantDelayedCondition:
-		Condition: detonatetospawn
-		Delay: 6
+	Inherits: ^SummonBase
 	SpawnActorOnDeath:
 		Actor: kenn
-		RequiresCondition: detonatetospawn
+		RequiresCondition: !parachute
 	KillsSelf:
-		RequiresCondition: detonatetospawn
+		RequiresCondition: !parachute
 	RenderSprites:
 		Image: dummy
 
@@ -1293,7 +1349,27 @@ WEAP:
 		ExitCell: 0,2
 	Production:
 		Produces: Vehicle
-		PauseOnCondition: disabled || build-incomplete
+		PauseOnCondition: disabled || build-incomplete	
+	#	Production@1:
+	#	Produces: Vehicle
+	#	PauseOnCondition: pausethenative
+	#	Production@2:
+	#	Produces: VehicleSeperate
+	#	PauseOnCondition: disabled || build-incomplete	
+	ProductionQueue:
+		Type: Vehicle
+		Group: Vehicle
+		DisplayOrder: 3
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
+	#	well, works. but should be more elegant.
+	#	GrantConditionOnProduction:
+	#	Condition: pausethenative
+	#	Duration: -1
 	GrantExternalConditionToProduced:
 		Condition: produced
 	ProductionBar:
@@ -1507,7 +1583,7 @@ WEAP.MINI:
 	GrantConditionOnInfiltration@Sabotage:
 		Types: ThiefInfiltrate
 		Condition: sabotaged
-		Duration: 750
+		Duration: 750	
 	TimedConditionBar@Sabotage:
 		Condition: sabotaged
 	Production:
@@ -1516,6 +1592,7 @@ WEAP.MINI:
 	ProductionQueue:
 		Type: MWFVehicle
 		Group: Vehicle
+		DisplayOrder: 3
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
 		QueuedAudio: Training
@@ -1714,6 +1791,8 @@ FIX.Soviet:
 		Footprint: xxx xxx xxx
 		Duration: 300
 		Description: Field Repairs
+		#	this would cause harvester harass immunity as unwanted effect.
+		#	LongDesc: Affected vehicles self-repair for 1% of their\nmaximum health per second for 12 second duration.\nAffected Vehicle husks will be restored\nto working condition with 25% health.
 		LongDesc: Affected vehicles self-repair for 1% of their\nmaximum health per second for 12 second duration.
 		SelectTargetSpeechNotification: SelectTarget
 		InsufficientPowerSpeechNotification: InsufficientPower
@@ -1748,30 +1827,25 @@ FIX.Soviet:
 		ReadyAudio: ReinforcementsArrived
 		BlockedAudio: NoBuild
 		SupportPowerPaletteOrder: 7
-	DetonateWeaponPower@RemoteKennel:
+	ParatroopersPower@RemoteKennel:
+		PauseOnCondition: disabled || lowpower
 		OrderName: RemoteKennel
-		PauseOnCondition: disabled
 		Prerequisites: ~structures.soviet, player.moldova, ~techlevel.unrestricted
 		Icon: kennicon
-		Cursor: ability
 		ChargeInterval: 7500
 		Description: Remote Kennel
 		LongDesc: A Kennel gets instantly constructed on the spot.\nThis Kennel can remotely train Attack Dogs.
-		Weapon: SummonKENN
-		ActivationDelay: 100
-		AirburstAltitude: 0c0
-		AllowMultiple: false
-		CameraActor: camera.minimum
-		CameraRemoveDelay: 150
+		DropItems: kenn.summon
+		ReinforcementsArrivedSpeechNotification: ReinforcementsArrived
 		SelectTargetSpeechNotification: SelectTarget
-		LaunchSpeechNotification: ReinforcementsArrived
-		DisplayRadarPing: True
-		Sequence: idle
-		LifeTime: 0
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.minimum
+		UnitType: unit.summoner
 		DisplayBeacon: true
 		BeaconPoster: kennbcon
 		ArrowSequence: arrow
-		ClockSequence: dummy
+		ClockSequence: clock
 		CircleSequence: circles
 		SupportPowerPaletteOrder: 7
 	GrantConditionOnPowerState@LOWPOWER:
@@ -1859,6 +1933,8 @@ DOME.Allies:
 		Image: dome
 	ProvidesPrerequisite@COPY:
 		Prerequisite: dome
+	#	converted to CA custom DetonateWeaponPower to fix those issues:
+	#	can be spawned on building bibs, into refinery bay, on service depot etc.
 	DetonateWeaponPower@ListeningPost:
 		OrderName: ListeningPost
 		PauseOnCondition: disabled
@@ -2465,6 +2541,16 @@ AFLD:
 	Production:
 		Produces: Aircraft, Plane
 		PauseOnCondition: disabled || build-incomplete || sabotaged
+	ProductionQueue:
+		Type: Aircraft
+		Group: Aircraft
+		DisplayOrder: 4
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
 	ProductionBar:
 		ProductionType: Aircraft
 	RallyPoint:
@@ -3047,6 +3133,15 @@ HPAD:
 	Production:
 		Produces: Aircraft, Helicopter
 		PauseOnCondition: disabled || build-incomplete || sabotaged
+	ProductionQueue:
+		Type: Aircraft
+		Group: Aircraft
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
 	ProductionBar:
 		ProductionType: Aircraft
 	RallyPoint:
@@ -3293,6 +3388,16 @@ SYRD:
 	Production:
 		Produces: Ship, Boat
 		PauseOnCondition: disabled || build-incomplete
+	ProductionQueue:
+		Type: Ship
+		Group: Ship
+		DisplayOrder: 5
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
 	ProductionBar:
 		ProductionType: Ship
 	RepairsUnits:
@@ -3449,7 +3554,7 @@ SYRD:
 		DeploySound: sonpulse.aud
 		EffectImage: moveflsh
 		EffectPalette: moveflash
-		SupportPowerPaletteOrder: 6		
+		SupportPowerPaletteOrder: 6
 		Cursor: sonar-target
 	SupportPowerChargeBar:
 	GpsDot:
@@ -3509,6 +3614,16 @@ SPEN:
 	Production:
 		Produces: Ship, Submarine
 		PauseOnCondition: disabled || build-incomplete
+	ProductionQueue:
+		Type: Ship
+		Group: Ship
+		DisplayOrder: 5
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
 	ProductionBar:
 		ProductionType: Ship
 	RepairsUnits:

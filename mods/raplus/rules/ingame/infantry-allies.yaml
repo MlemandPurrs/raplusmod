@@ -89,7 +89,7 @@ MEDI:
 	Inherits: ^Soldier
 	Inherits@ROT: ^RottingInfantry
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 9
 		Prerequisites: ~tent, dome, ~infantry.allies, ~allies.or.france, ~techlevel.medium
@@ -135,7 +135,7 @@ MECH:
 	Inherits: ^Soldier
 	Inherits@ROT: ^RottingInfantry
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 6
 		Prerequisites: ~tent, fix, ~infantry.allies, ~allies.or.germany, ~techlevel.medium
@@ -202,9 +202,10 @@ SPY:
 		InitialStanceAI: HoldFire
 		ScanRadius: 5
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 7
+		#	Prerequisites: ~tent, dome, ~infantry.allies, ~allies.or.england, ~techlevel.medium
 		Prerequisites: ~tent, dome, ~infantry.allies, ~techlevel.medium
 		Description: Agent of the Intelligence Service.\n  Special Abilities:\nCan Disguise as enemy Infantry. Loses disguise on Attacking.\nCan Steal enemy Vehicles, but only when not Disguised.\nCan Enter enemy Structures, performing different functions:\n  - Production: Rank bonus for newly produced units.\n  - Refineries: Steals 50% of stored Credits.\n  - Powerplants: Disables them causing Power outage.\n  - Radar Dome: Enemy mapview gets Shrouded.\n  - Tech Center: Unlocks Battle Fortress unit.\n  - Superweapons: Reset preperation timer of weapon.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Valued:
@@ -268,7 +269,7 @@ SPY.Classic:
 	-Guard:
 	-WithInfantryBody:
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 7
 		Prerequisites: ~disabled
@@ -298,6 +299,10 @@ SPY.Classic:
 		Margin: 0, 4
 		RequiresCondition: disguise
 	IgnoresDisguise:
+	#	Infiltrates:
+	#	Types: SpyInfiltrate
+	#	Notification: BuildingInfiltrated
+	#	PlayerExperience: 50
 	Voiced:
 		VoiceSet: SpyVoice
 	Passenger:
@@ -321,7 +326,7 @@ E7:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@ROT: ^RottingInfantry
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 8
 		BuildLimit: 1
@@ -409,7 +414,7 @@ RMBO:
 	Tooltip:
 		Name: Commando
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 8
 		BuildLimit: 1
@@ -512,7 +517,7 @@ SHOT:
 	Buildable:
 		BuildPaletteOrder: 10
 		Prerequisites: ~tent, fix, ~infantry.allies, ~allies.or.spain, ~techlevel.infonly
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		Description: Fast infantry armed with shotgun.\nSelf-heals while Out of Combat.\n  Strong vs Infantry\n  Weak vs anything Else
 	Mobile:
@@ -566,7 +571,7 @@ ATGM:
 	Buildable:
 		BuildPaletteOrder: 11
 		Prerequisites: ~tent, fix, ~infantry.allies, ~allies.or.greece, ~techlevel.medium
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		Description: Anti-armor rocket infantry, with Homing rockets.\nCannot attack Air units.\n  Special ability: Laser Lock\nDesignated Vehicle takes\n20% more damage from all Sources.\nRate of Fire of this unit against designated\nTarget accelerates by 10% every 4 shots,\nstacking up to 30% decrease in reload.\n Strong vs Tanks, Vehicles\n Weak vs everything Else
 	Health:
@@ -576,27 +581,13 @@ ATGM:
 	AutoTarget:
 		ScanRadius: 6
 	Armament@PRIMARY:
+		Name: primary
 		Weapon: Stinger.oneshot
 		LocalOffset: 226,43,245
 		FireDelay: 4
 	Armament@GARRISONED:
 		Name: garrisoned
 		Weapon: Stinger.continous
-	TakeCover:
-		ProneOffset: 180,0,-200
-	AttackFrontal:
-	WithInfantryBody:
-		DefaultAttackSequence: throw
-		AttackSequences:
-			primary: throw
-			secondary: none
-	ProducibleWithLevel:
-		Prerequisites: barracks.upgraded
-	Passenger:
-		CustomPipType: pip-yellow
-	DeliversCash:
-		Payload: 137
-		Type: InfantryRefund
 	GrantConditionOnAttackCA@weaponspeedup:
 		ArmamentNames: primary
 		Condition: laser-guided-speedup
@@ -616,6 +607,14 @@ ATGM:
 	ReloadDelayMultiplier@laser-targeting-3:
 		Modifier: 70
 		RequiresCondition: laser-guided-speedup == 3
+	#	+50% rate of fire too awesome
+	#	ReloadDelayMultiplier@laser-targeting-4:
+	#	Modifier: 60
+	#	RequiresCondition: laser-guided-speedup == 4
+	#	ReloadDelayMultiplier@laser-targeting-5:
+	#	Modifier: 50
+	#	RequiresCondition: laser-guided-speedup == 5
+	#	presence of Laser bugs attack sequence
 	Armament@TargetingLaser:
 		Name: secondary
 		Weapon: LockOnLaser
@@ -626,6 +625,60 @@ ATGM:
 		RevokeOnNewTarget: true
 		RevokeAll: true
 		RequiresActorTarget: true
+	WithDecoration@LASER1:
+		Image: pips
+		Sequence: one
+		Palette: effect
+		Position: Top
+		Margin: 2, 0
+		ValidRelationships: Ally, Enemy, Neutral
+		RequiresCondition: laser-guided-speedup == 1
+	WithDecoration@LASER2:
+		Image: pips
+		Sequence: two
+		Palette: effect
+		Position: Top
+		Margin: 2, 0
+		ValidRelationships: Ally, Enemy, Neutral
+		RequiresCondition: laser-guided-speedup == 2
+	WithDecoration@LASER3:
+		Image: pips
+		Sequence: three
+		Palette: effect
+		Position: Top
+		Margin: 2, 0
+		ValidRelationships: Ally, Enemy, Neutral
+		RequiresCondition: laser-guided-speedup == 3
+	#	WithDecoration@LASER4:
+	#	Image: pips
+	#	Sequence: four
+	#	Palette: effect
+	#	Position: Top
+	#	Margin: 2, 0
+	#	ValidRelationships: Ally, Enemy, Neutral
+	#	RequiresCondition: laser-guided-speedup == 4
+	#	WithDecoration@LASER5:
+	#	Image: pips
+	#	Sequence: five
+	#	Palette: effect
+	#	Position: Top
+	#	Margin: 2, 0
+	#	ValidRelationships: Ally, Enemy, Neutral
+	#	RequiresCondition: laser-guided-speedup == 5
+	TakeCover:
+		ProneOffset: 180,0,-200
+	WithInfantryBody:
+		DefaultAttackSequence: throw
+		AttackSequences:
+			primary: throw
+			secondary: none
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+	Passenger:
+		CustomPipType: pip-yellow
+	DeliversCash:
+		Payload: 137
+		Type: InfantryRefund
 	RenderRangeCircle:
 
 SNIP:
@@ -640,7 +693,7 @@ SNIP:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 12
 		Prerequisites: ~tent, dome, ~allies.or.turkey, ~techlevel.medium
@@ -713,7 +766,7 @@ MRTR:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@ROT: ^RottingInfantry
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildPaletteOrder: 13
 		BuildAtProductionType: Soldier
 		Prerequisites: ~tent, dome, ~infantry.allies, ~allies.or.sweden, ~techlevel.medium
@@ -758,7 +811,7 @@ CINF:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@ROT: ^RottingInfantry
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 15
 		Prerequisites: ~tent, atek, ~infantry.allies, ~allies.or.holland, ~techlevel.high
@@ -830,7 +883,7 @@ THF:
 	-AttackFrontal:
 	-TakeCover:
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 998
 		Prerequisites: ~disabled

@@ -1081,6 +1081,7 @@
 		Payload: 0
 		Type: AircraftRefund
 	Aircraft:
+		#	IdleBehavior: ReturnToBase
 		TakeOffOnResupply: false
 		TakeOffOnCreation: false
 
@@ -2302,6 +2303,11 @@
 		BuildSounds: placbldg.aud
 		UndeploySounds: 
 
+unit.summoner:
+	Inherits@SYSTEM: ^SummonerDummy
+	RenderSprites:
+		Image: dummy.visual
+
 ^AffectedByOvercharge:
 	PowerMultiplier@OVERCHARGE:
 		RequiresCondition: overcharged
@@ -2639,3 +2645,49 @@
 		DamageTypes: RadiationDeath
 		LayerName: radioactivity.weak
 		RequiresCondition: !parachute
+
+#	^InfantryDamagedByRadiation:
+#	DamagedByTintedCells@RADSTRONG:
+#		Damage: 38
+#		DamageInterval: 16
+#		DamageTypes: RadiationDeath
+#		LayerName: radioactivity.strong
+#		RequiresCondition: !(hazmatsuits || parachute)
+#	DamagedByTintedCells@RADSTRONGHAZMAT:
+#		Damage: 19
+#		DamageInterval: 16
+#		DamageTypes: RadiationDeath
+#		LayerName: radioactivity.strong
+#		RequiresCondition: hazmatsuits && !parachute
+#	DamagedByTintedCells@RADMED:
+#		Damage: 25
+#		DamageInterval: 16
+#		DamageTypes: RadiationDeath
+#		LayerName: radioactivity.medium
+#		RequiresCondition: !(hazmatsuits || parachute)
+#	DamagedByTintedCells@RADMEDHAZMAT:
+#		Damage: 7
+#		DamageInterval: 16
+#		DamageTypes: RadiationDeath
+#		LayerName: radioactivity.medium
+#		RequiresCondition: hazmatsuits && !parachute
+#	DamagedByTintedCells@RADWEAK:
+#		Damage: 10
+#		DamageInterval: 16
+#		DamageTypes: RadiationDeath
+#		LayerName: radioactivity.weak
+#		RequiresCondition: !(hazmatsuits || parachute)
+#	DamagedByTintedCells@RADWEAKHAZMAT:
+#		Damage: 5
+#		DamageInterval: 16
+#		DamageTypes: RadiationDeath
+#		LayerName: radioactivity.weak
+#		RequiresCondition: hazmatsuits && !parachute
+
+#	^InfantryRadiationImmune:
+#	-DamagedByTintedCells@RADSTRONG:
+#	-DamagedByTintedCells@RADSTRONGHAZMAT:
+#	-DamagedByTintedCells@RADMED:
+#	-DamagedByTintedCells@RADMEDHAZMAT:
+#	-DamagedByTintedCells@RADWEAK:
+#	-DamagedByTintedCells@RADWEAKHAZMAT:

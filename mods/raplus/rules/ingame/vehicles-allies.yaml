@@ -199,7 +199,6 @@ RAPC:
 	-ExternalCondition@PRODUCED:
 	-Armament:
 	Buildable:
-		Queue: Vehicle, MWFVehicle
 		BuildPaletteOrder: 3
 		Prerequisites: tent, ~vehicles.allies, ~player.italy, ~techlevel.low
 		Icon: rapcicon

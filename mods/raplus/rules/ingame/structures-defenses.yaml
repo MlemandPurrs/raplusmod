@@ -636,12 +636,14 @@ GUN:
 	Inherits: ^Defense
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiTankDefense
 	Inherits@RangeBonus: ^AffectedByGreece
+	#	-WithSpriteBody:
 	-SpawnActorsOnSell:
 	-ActorPreviewPlaceBuildingPreview:
 	-BodyOrientation:
 	SequencePlaceBuildingPreview:
 		Sequence: place
 		SequencePalette: placebuilding
+	#	WithEmbeddedTurretSpriteBody:
 	ClassicFacingBodyOrientation:
 	Building:
 	Buildable:
@@ -704,6 +706,7 @@ GTUR:
 	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
 	Inherits@shape: ^2x1Shape
 	Inherits@RangeBonus: ^AffectedByGreece
+	#	-WithSpriteBody:
 	-SpawnActorsOnSell:
 	-ActorPreviewPlaceBuildingPreview:
 	-BodyOrientation:
@@ -724,7 +727,7 @@ GTUR:
 		Prerequisites: atek, ~structures.allies, ~allies.or.greece, ~techlevel.high
 		Description: Triple-barreled Artillery base defense.\nHas double the durability of standard Defenses.\nCan detect cloaked units.\nMaximum one can be built.\n  Strong vs Infantry, Vehicles, Ships\n  Weak vs Aircraft
 	Valued:
-		Cost: 1400
+		Cost: 1600
 	Tooltip:
 		Name: Grand Turret
 	Health:
@@ -746,14 +749,16 @@ GTUR:
 		InitialFacing: 0
 		RealignDelay: -1
 		RequiresCondition: !build-incomplete
+	#	WithEmbeddedTurretSpriteBody:
+	#	PauseOnCondition: empdisable
+	WithSpriteTurret:
+		RequiresCondition: !build-incomplete
+		Recoils: false
 	WithBuildingBib:
 		HasMinibib: true
 	AttackTurreted:
 		PauseOnCondition: disabled
 		RequiresCondition: !build-incomplete
-	WithSpriteTurret:
-		RequiresCondition: !build-incomplete
-		Recoils: false
 	Armament:
 		Weapon: 203mm
 		MuzzleSequence: muzzle
@@ -856,6 +861,7 @@ GAP:
 		DeployedCondition: deployed
 		CooldownTicks: 1500
 		DeployedTicks: 750
+		#	DeploySound: appear1.aud
 		PauseOnCondition: build-incomplete || disabled
 	WithDecoration@Deployed:
 		RequiresSelection: true
@@ -1159,8 +1165,10 @@ AGUN:
 	Inherits@AUTOTARGET: ^AutoTargetAir
 	Inherits@RangeBonus: ^AffectedByGreece
 	-SpawnActorsOnSell:
+	#	-WithSpriteBody:
 	-ActorPreviewPlaceBuildingPreview:
 	-BodyOrientation:
+	#	WithEmbeddedTurretSpriteBody:
 	SequencePlaceBuildingPreview:
 		Sequence: place
 		SequencePalette: placebuilding
@@ -1528,7 +1536,7 @@ SPMST:
 		TargetTypes: Ground, Structure, TreeDisguise
 		RequiresCondition: !disguised
 	Targetable@disguised:
-		TargetTypes: Ground, Tree, TreeDisguise
+		TargetTypes: Ground, Trees, TreeDisguise, NoAutoTarget
 		RequiresForceFire: true
 		RequiresCondition: disguised
 	-WithSpriteBody:
@@ -1678,6 +1686,16 @@ SPMST:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
+
+#	SPMST.summon:
+#	Inherits: ^SummonBase
+#	SpawnActorOnDeath:
+#	Actor: spmst
+#	RequiresCondition: !parachute
+#	KillsSelf:
+#	RequiresCondition: !parachute
+#	RenderSprites:
+#	Image: dummy
 
 SPMST.summon:
 	Inherits: ^SummonBuilding

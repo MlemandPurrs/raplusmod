@@ -442,6 +442,7 @@ DRED:
 		Range: 5c0
 	Turreted@PRIMARY:
 		Turret: primary
+		#	Offset: -956,0,128
 		Offset: -1132,0,128
 		TurnSpeed: 12
 	Turreted@SECONDARY:
@@ -593,6 +594,7 @@ ACAR.Deployed:
 		Dimensions: 3,1
 		TerrainTypes: Water
 		RequiresBaseProvider: False
+		#	where the hell is this building sold sound coming from ?!?
 		UndeploySounds: 
 	Health:
 		HP: 650
@@ -634,6 +636,7 @@ ACAR.Deployed:
 		PauseOnCondition: disabled
 	ProductionQueue:
 		Type: MWFAir
+		DisplayOrder: 4
 		Group: Aircraft
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild

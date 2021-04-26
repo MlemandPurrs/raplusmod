@@ -29,6 +29,8 @@ sidebar-allies:
 		background-iconrow: 0, 116, 238, 47
 		background-bottom: 0, 166, 238, 8
 		background-supportoverlay: 12, 324, 64, 48
+		#	background-prodscroller: 0, 45, 238, 7
+		background-prodscroller: 273, 44, 238, 23
 
 sidebar-button-allies:
 	Inherits: ^Sidebar
@@ -87,6 +89,7 @@ sidebar-soviet:
 		background-iconrow: 0, 116, 238, 47
 		background-bottom: 0, 166, 238, 8
 		background-supportoverlay: 77, 324, 64, 48
+		background-prodscroller: 273, 44, 238, 23
 
 sidebar-button-soviet:
 	Inherits: ^Sidebar

@@ -2,7 +2,7 @@ E4:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 9
 		Prerequisites: ~barr, ftur, ~infantry.soviet, ~soviet.or.ukraine, ~techlevel.medium
@@ -63,7 +63,7 @@ E5:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@ROT: ^RottingInfantry
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 16
 		Prerequisites: stek, ~infantry.soviet, ~soviet.or.turkmen, ~techlevel.high
@@ -128,9 +128,10 @@ SAB:
 	-AttackFrontal:
 	-TakeCover:
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 6
+		#	Prerequisites: ~barr, dome, ~infantry.soviet, ~soviet.or.belarus, ~techlevel.medium
 		Prerequisites: ~barr, dome, ~infantry.soviet, ~techlevel.medium
 		Description: Field operative of the Union.\n  Special Abilities:\nCan be deployed to turn Invisible for a limited time.\nCan Steal enemy Vehicles, but not while Invisible.\nCan Enter enemy Structures, performing different functions:\n  - Production: Disables the structure for 30 seconds.\n  - Refineries: Steals 50% of stored Credits.\n  - Powerplants: Disables them causing Power outage.\n  - Radar Dome: Enemy mapview gets Shrouded.\n  - Tech Center: Unlocks Behemoth Tank unit.\n  - Superweapons: Reset preperation timer of weapon.\n  Unarmed
 	Tooltip:
@@ -189,7 +190,7 @@ VOLK:
 	Inherits@ROT: ^RottingInfantry
 	Inherits: GNRL
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		Prerequisites: ~barr, stek, ~infantry.soviet, ~!player.uzbek, ~techlevel.high
 		BuildPaletteOrder: 8
@@ -265,7 +266,7 @@ SHOK:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@ROT: ^RottingInfantry
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 7
 		Prerequisites: ~barr, tsla, ~infantry.soviet, ~soviet.or.russia, ~techlevel.high
@@ -343,7 +344,7 @@ RPG:
 	Buildable:
 		BuildPaletteOrder: 12
 		Prerequisites: ~barr, ftur, ~soviet.or.kazakh, ~techlevel.medium
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		Description: Soldier that shoots balls of Fire.\nCannot attack Air units.\n  Strong vs clustered Infantry, Structures\n  Weak vs Anti-Infantry measures
 	Selectable:
@@ -384,7 +385,7 @@ DESO:
 	-DamagedByTintedCells@RADMED:
 	-DamagedByTintedCells@RADWEAK:
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 14
 		Prerequisites: ~barr, stek, ~infantry.soviet, ~soviet.or.uzbek, ~techlevel.medium
@@ -470,6 +471,7 @@ DESO:
 	Passenger:
 		CustomPipType: pip-red
 
+#	the mission unit Saboteur had the base rigged for Detonation. 
 DEMO:
 	Inherits: ^Soldier
 	Inherits@ROT: ^RottingInfantry
@@ -478,7 +480,7 @@ DEMO:
 	-Guard:
 	-WithInfantryBody:
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 16
 		BuildLimit: 1
@@ -510,8 +512,6 @@ DEMO:
 		ProneOffset: 256,64,-331
 	AttackFrontal:
 		Voice: Attack
-	WithInfantryBody:
-		DefaultAttackSequence: throw
 	Explodes:
 		Weapon: ArtilleryExplode
 		EmptyWeapon: ArtilleryExplode
@@ -526,6 +526,9 @@ DEMO:
 		Type: InfantryRefund
 	GpsDot:
 		String: Commando
+	#	15 seconds to diffuse
+	#	uhh for diffuse need rework
+	#	using warhead of CA
 	Demolition:
 		DetonationDelay: 250
 		Flashes: 61

@@ -691,6 +691,69 @@ V2RL:
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
 
+ICBM:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAntiStructure
+	-Explodes:
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 9
+		BuildLimit: 1
+		Prerequisites: stek, ~vehicles.soviet, ~player.kazakh, ~techlevel.high
+		Description: Nuclear rocket artillery.\nMaximum 1 can be built.\nExplodes violently on death.\n  Strong vs Everything over distance\n  Weak vs attacks at close range\n  Requires an large minimum firing distance
+	Valued:
+		Cost: 2400
+	Tooltip:
+		Name: ICBM Launcher
+	Health:
+		HP: 200
+	Armor:
+		Type: Light
+	Mobile:
+		Speed: 52
+		TurnSpeed: 9
+	RevealsShroud:
+		MinRange: 4c0
+		Range: 5c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 4c0
+	Armament:
+		Name: primary
+		Weapon: ICBM
+		ReloadingCondition: reloading
+		PauseOnCondition: empdisable
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: HoldFire
+		ScanRadius: 15
+	AttackFrontal:
+		PauseOnCondition: empdisable
+	WithFacingSpriteBody:
+		RequiresCondition: !reloading
+		Name: loaded
+	WithFacingSpriteBody@EMPTY:
+		RequiresCondition: reloading
+		Sequence: empty-idle
+		Name: reloading
+	Explodes@UNITEXPLODES:
+		Weapon: MiniNuke
+		EmptyWeapon: UnitExplode
+	RenderRangeCircle:
+	RevealOnFire:
+		ArmamentNames: primary
+	ReloadArmamentsBar:
+		Color: FFFF00
+	AnnounceOnSeen:
+		Notification: AbombLaunchDetected
+		PingRadar: True
+	GpsDot:
+		String: Nuke
+	-Crushable:
+	RevealOnDeath:
+		Duration: 100
+		Radius: 2c512
+
 TTNK:
 	Inherits: ^TrackedVehicle
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
@@ -870,69 +933,6 @@ QTNK:
 	GpsDot:
 		String: Heavy
 
-ICBM:
-	Inherits: ^Vehicle
-	Inherits@AUTOTARGET: ^AutoTargetGroundAntiStructure
-	-Explodes:
-	Buildable:
-		Queue: Vehicle
-		BuildPaletteOrder: 9
-		BuildLimit: 1
-		Prerequisites: stek, ~vehicles.soviet, ~player.kazakh, ~techlevel.high
-		Description: Nuclear rocket artillery.\nMaximum 1 can be built.\nExplodes violently on death.\n  Strong vs Everything over distance\n  Weak vs attacks at close range\n  Requires an large minimum firing distance
-	Valued:
-		Cost: 2400
-	Tooltip:
-		Name: ICBM Launcher
-	Health:
-		HP: 200
-	Armor:
-		Type: Light
-	Mobile:
-		Speed: 52
-		TurnSpeed: 9
-	RevealsShroud:
-		MinRange: 4c0
-		Range: 5c0
-		RevealGeneratedShroud: False
-	RevealsShroud@GAPGEN:
-		Range: 4c0
-	Armament:
-		Name: primary
-		Weapon: ICBM
-		ReloadingCondition: reloading
-		PauseOnCondition: empdisable
-	AutoTarget:
-		InitialStance: HoldFire
-		InitialStanceAI: HoldFire
-		ScanRadius: 15
-	AttackFrontal:
-		PauseOnCondition: empdisable
-	WithFacingSpriteBody:
-		RequiresCondition: !reloading
-		Name: loaded
-	WithFacingSpriteBody@EMPTY:
-		RequiresCondition: reloading
-		Sequence: empty-idle
-		Name: reloading
-	Explodes@UNITEXPLODES:
-		Weapon: MiniNuke
-		EmptyWeapon: UnitExplode
-	RenderRangeCircle:
-	RevealOnFire:
-		ArmamentNames: primary
-	ReloadArmamentsBar:
-		Color: FFFF00
-	AnnounceOnSeen:
-		Notification: AbombLaunchDetected
-		PingRadar: True
-	GpsDot:
-		String: Nuke
-	-Crushable:
-	RevealOnDeath:
-		Duration: 100
-		Radius: 2c512
-
 MWF:
 	Inherits: ^Vehicle
 	Inherits@selection: ^SelectableSupportUnit
@@ -1027,6 +1027,75 @@ ISU:
 		Weapon: V2Explode
 	Passenger:
 		CustomPipType: pip-red
+
+#	disabled, idea evolved into chinese Gattling Tank
+ZSU:
+	Inherits: ^Vehicle
+	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetAir
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 9
+		Prerequisites: ~disabled
+		Description: Tank with Anti-Air battery mounted on it.\nCan attack Aircraft only.\n  Strong vs Aircraft\n  Weak vs anything Else
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Mobile AA
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 220
+	Armor:
+		Type: Light
+	Mobile:
+		Speed: 85
+	RevealsShroud:
+		MinRange: 4c0
+		Range: 6c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 4c0
+	Turreted:
+		TurnSpeed: 28
+		Offset: 25,0,100
+	Armament:
+		Weapon: ZSU-23
+		Recoil: 42
+		LocalOffset: 512,100,212, 512,-150,212
+		MuzzleSequence: muzzle
+		PauseOnCondition: !ammo
+	AmmoPool:
+		Armaments: primary
+		Ammo: 24
+		AmmoCondition: ammo
+		ReloadDelay: 6
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		PipCount: 6
+		RequiresSelection: true
+	ReloadAmmoPool:
+		Delay: 42
+		Count: 24
+		RequiresCondition: !ammo
+	WithDecoration@ammoreplenish:
+		RequiresSelection: false
+		Image: pips
+		Sequence: tag-reload-small
+		Position: Top
+		Margin: 0, -6
+		RequiresCondition: !ammo
+	AttackTurreted:
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+	SelectionDecorations:
+	ProducibleWithLevel:
+		Prerequisites: vehicles.upgraded
+	Selectable:
+		DecorationBounds: 28,28
+	Passenger:
+		CustomPipType: pip-yellow
 
 GTNK:
 	Inherits: ^TrackedVehicle

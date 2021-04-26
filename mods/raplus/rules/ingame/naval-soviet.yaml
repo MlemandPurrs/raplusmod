@@ -392,7 +392,7 @@ CARR.Deployed:
 	Building:
 		TerrainTypes: Water
 		RequiresBaseProvider: False
-		UndeploySounds: 
+		UndeploySounds:
 	Health:
 		HP: 325
 	Armor:
@@ -430,10 +430,15 @@ CARR.Deployed:
 	RenderSprites:
 		Scale: 1.2
 	Production:
-		Produces: MWFHeli
+		Produces: MWFHeli, CloneAir
 		PauseOnCondition: disabled
+	ClonesProducedUnits:
+		CloneableTypes: CloneAir
+		ProductionType: Air
+		RequiresCondition: !disabled
 	ProductionQueue:
 		Type: MWFHeli
+		DisplayOrder: 4
 		Group: Aircraft
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild

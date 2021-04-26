@@ -3,7 +3,7 @@ E1:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@ROT: ^RottingInfantry
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 1
 		Prerequisites: ~barracks, ~!player.england, ~techlevel.infonly
@@ -59,7 +59,7 @@ E2:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@ROT: ^RottingInfantry
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 3
 		Prerequisites: ~barracks, ~!player.turkey, ~techlevel.infonly
@@ -125,7 +125,7 @@ E3:
 	AutoTarget:
 		ScanRadius: -1
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 2
 		Prerequisites: ~barracks, ~!player.china, ~techlevel.infonly
@@ -194,7 +194,7 @@ DOG:
 	-TakeCover:
 	-AttackFrontal:
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Dog
 		BuildPaletteOrder: 4
 		Prerequisites: proc, ~!player.moldova, ~techlevel.infonly
@@ -298,7 +298,7 @@ E6:
 	Inherits@ROT: ^RottingInfantry
 	-AttackFrontal:
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 5
 		Prerequisites: ~barracks, proc, ~techlevel.infonly

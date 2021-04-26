@@ -18,6 +18,8 @@ MINN:
 		Weapon: MiniNuke
 	Tooltip:
 		Name: Nuclear Mine
+	#	ExternalCondition@PreventNewDetonate:
+	#	Condition: notthisone
 	GrantTimedCondition@PreventNewDetonate:
 		Condition: preventdetonate
 		Duration: 251
@@ -807,8 +809,3 @@ dummy.qtnk:
 	WithSpriteBody:
 	RenderSpritesEditorOnly:
 		Image: camera
-
-unit.summoner:
-	Inherits@SYSTEM: ^SummonerDummy
-	RenderSprites:
-		Image: dummy.visual
