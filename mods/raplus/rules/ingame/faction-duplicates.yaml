@@ -1093,6 +1093,7 @@ MIG.Kazakh:
 SPRO.Kazakh:
 	Inherits: SPRO
 	Buildable:
+		Queue: Building
 		BuildLimit: 1
 		Prerequisites: techcenter, dome, ~player.kazakh, ~techlevel.unrestricted
 		Description: Provides GPS Sattelite uplink.\nMaximum one can be built.\nCan be Infiltrated by an Spy or Saboteur resulting\nin loss of map exploration.\n  Special Ability: GPS Satellite\nReveals map terrain and provides tactical information\n (Requires power and active radar to operate)

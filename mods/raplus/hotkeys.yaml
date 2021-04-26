@@ -29,11 +29,3 @@ ProductionTypeFakestructure: O
 PowerDown: X
 	Description: Power-down mode
 	Types: OrderGenerator, Player
-
-NextProductionTab: PAGEDOWN
-	Description: Next tab
-	Types: Production, Player
-
-PreviousProductionTab: PAGEUP
-	Description: Previous tab
-	Types: Production, Player

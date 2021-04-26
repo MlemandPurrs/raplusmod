@@ -993,10 +993,6 @@ e7:
 				Offset: 0, -2
 		Length: 2
 		Facings: 8
-	#	shoot:
-	#	Start: 56
-	#	Length: 7
-	#	Facings: 8
 	idle1:
 		Start: 233
 		Length: 14

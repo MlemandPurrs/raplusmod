@@ -790,8 +790,6 @@ BMIN:
 		Name: Baloon Mine
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
-	Cloneable:
-		Types: CloneAir
 	Health:
 		HP: 50
 		NotifyAppliedDamage: false
