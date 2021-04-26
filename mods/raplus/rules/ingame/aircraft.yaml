@@ -2,7 +2,7 @@ TRAN:
 	Inherits: ^Helicopter
 	Inherits@CARGOPIPS: ^CargoPips
 	Buildable:
-		Queue: Aircraft, MWFAir, MWFHeli
+		Queue: Aircraft, MWFAir, MWFHeli, AircraftSeperate
 		BuildAtProductionType: Helicopter
 		BuildPaletteOrder: 1
 		Prerequisites: ~hpad, ~!aircraft.allies, ~!aircraft.soviet, ~techlevel.medium

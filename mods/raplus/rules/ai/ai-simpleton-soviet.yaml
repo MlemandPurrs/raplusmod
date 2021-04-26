@@ -300,8 +300,8 @@ Player:
 		PlaceDefenseTowardsEnemyChance: 75
 		MaximumDefenseRadius: 10
 		MaxBaseRadius: 26
-		BuildingQueues: Building
-		DefenseQueues: Defense
+		BuildingQueues: BuildingSeperate
+		DefenseQueues: DefenseSeperate
 		BuildingLimits:
 			proc: 4
 			barr: 3
@@ -362,7 +362,7 @@ Player:
 		RequiresCondition: enable-wimp-ai && player.soviet && tank-strat
 		IdleBaseUnitsMaximum: 6
 		MaxAircraft: 6
-		UnitQueues: Vehicle, Infantry, Ship, Aircraft
+		UnitQueues: VehicleSeperate, InfantrySeperate, ShipSeperate, AircraftSeperate
 		UnitsToBuild:
 			e6: 2
 			sab: 2
@@ -410,8 +410,8 @@ Player:
 		PlaceDefenseTowardsEnemyChance: 75
 		MaximumDefenseRadius: 10
 		MaxBaseRadius: 26
-		BuildingQueues: Building
-		DefenseQueues: Defense
+		BuildingQueues: BuildingSeperate
+		DefenseQueues: DefenseSeperate
 		BuildingLimits:
 			proc: 4
 			barr: 3
@@ -476,7 +476,7 @@ Player:
 		RequiresCondition: enable-wimp-ai && player.soviet && mamy-strat
 		IdleBaseUnitsMaximum: 6
 		MaxAircraft: 4
-		UnitQueues: Vehicle, Infantry, Ship, Aircraft
+		UnitQueues: VehicleSeperate, InfantrySeperate, ShipSeperate, AircraftSeperate
 		UnitsToBuild:
 			e6: 2
 			sab: 2
@@ -513,7 +513,7 @@ Player:
 		RequiresCondition: enable-wimp-ai && player.soviet && flak-strat
 		IdleBaseUnitsMaximum: 6
 		MaxAircraft: 6
-		UnitQueues: Vehicle, Infantry, Ship, Aircraft
+		UnitQueues: VehicleSeperate, InfantrySeperate, ShipSeperate, AircraftSeperate
 		UnitsToBuild:
 			e6: 2
 			sab: 2

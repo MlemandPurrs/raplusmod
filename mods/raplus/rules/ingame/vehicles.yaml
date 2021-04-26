@@ -4,7 +4,7 @@ HARV:
 	-Tooltip:
 	-GpsDot:
 	Buildable:
-		Queue: Vehicle, MWFVehicle
+		Queue: Vehicle, MWFVehicle, VehicleSeperate
 		BuildPaletteOrder: 1
 		Prerequisites: proc, ~vehicles.allies, ~techlevel.infonly
 		Description: Collects Ore and Gems for processing.\n  Unarmed
@@ -99,7 +99,7 @@ MCV:
 	Inherits@selection: ^SelectableSupportUnit
 	Inherits@CHEAPER: ^AffectedByUzbek
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, VehicleSeperate
 		BuildPaletteOrder: 10
 		Prerequisites: fix, ~!aitoodumb, ~techlevel.medium
 		BuildDurationModifier: 60
@@ -154,7 +154,7 @@ TRUK:
 	Inherits: ^Vehicle
 	Inherits@selection: ^SelectableSupportUnit
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, VehicleSeperate
 		BuildPaletteOrder: 11
 		Prerequisites: proc, ~techlevel.low
 		Description: Transports cash to other players.\nMay deliver only to Construction Yards.\n  Unarmed
@@ -198,7 +198,7 @@ DTRK:
 		Sequence: truk-body
 		RequiresCondition: truk
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, VehicleSeperate
 		BuildPaletteOrder: 14
 		Prerequisites: stek, ~vehicles.soviet, ~soviet.or.ukraine, ~techlevel.high
 		Description: Truck with actively armed nuclear\nexplosives. Has very weak armor.\n  Detonates when Iron Curtained or Chronoshifted.\n Can disguise as enemy Supply Truck.
@@ -271,7 +271,7 @@ MNLY:
 	Inherits: ^TrackedVehicle
 	Inherits@selection: ^SelectableSupportUnit
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, VehicleSeperate
 		BuildPaletteOrder: 7
 		Prerequisites: fix, ~!player.karelia, ~techlevel.medium
 		Description: Carries and lays up to 5 Land Mines\nto destroy unwary enemy units.\nCan detect mines.\n  Unarmed
@@ -322,7 +322,7 @@ MNLY:
 MNLY.Nuke:
 	Inherits: MNLY
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, VehicleSeperate
 		BuildPaletteOrder: 14
 		Prerequisites: ~disabled
 		Description: Carries and lays one Nuclear Mine.\nThere can be only one Nuclear Mine,\nthe Last one will Detonate in 10sec\nshould there be multiple.\nMaximum one can be built.\nCan detect mines.\n  Unarmed
@@ -353,7 +353,7 @@ MNLY.Nuke:
 MGG:
 	Inherits: ^Vehicle
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, VehicleSeperate
 		BuildPaletteOrder: 12
 		Prerequisites: techcenter, ~!player.spain, ~techlevel.high
 		Description: Regenerates the shroud nearby,\nobscuring the area.\n  Can be toggled on/off via deploy command.\n  Unarmed

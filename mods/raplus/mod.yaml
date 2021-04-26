@@ -56,8 +56,13 @@ Packages:
 
 MapFolders:
 	raplus|maps: System
+<<<<<<< HEAD
 	~^SupportDir|maps/raplus/v.1.4.1-classicqueue: User
 	~^SupportDir|maps/ra/release-20210321: User
+=======
+	~^SupportDir|maps/ra: User
+	~^SupportDir|maps/raplus: User
+>>>>>>> parent of 582e4a9 (more properly done seperate queues)
 
 Rules:
 	raplus|rules/misc.yaml

@@ -644,7 +644,7 @@ SNIP:
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 12
 		Prerequisites: ~tent, dome, ~allies.or.turkey, ~techlevel.medium
-		Description: Infantry armed with an Sniper rifle.\nNeeds to reload after every 5 shots.\nCloaked while standing still.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		Description: Infantry armed with an Sniper rifle.\nNeeds to reload after every 5 shots.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Health:
 		HP: 50
 	Armor:
@@ -692,20 +692,6 @@ SNIP:
 	DeliversCash:
 		Payload: 225
 		Type: InfantryRefund
-	Cloak:
-		InitialDelay: 120
-		CloakDelay: 120
-		UncloakOn: Attack, Unload, Demolish, Move
-		CloakTypes: Cloak
-		IsPlayerPalette: true
-		PauseOnCondition: cloak-force-disabled
-		RequiresCondition: !harambe
-	GrantConditionOnDamageState@UNCLOAK:
-		Condition: cloak-force-disabled
-		ValidDamageStates: Critical
-	GrantConditionOnMovement:
-		Condition: harambe
-		ValidMovementTypes: None
 
 MRTR:
 	Inherits: ^Soldier

@@ -299,8 +299,8 @@ Player:
 		PlaceDefenseTowardsEnemyChance: 75
 		MaximumDefenseRadius: 10
 		MaxBaseRadius: 26
-		BuildingQueues: Building
-		DefenseQueues: Defense
+		BuildingQueues: BuildingSeperate
+		DefenseQueues: DefenseSeperate
 		BuildingDelays:
 			syrd: 4500
 			agun: 6000
@@ -424,7 +424,7 @@ Player:
 		IgnoredEnemyTargetTypes: Submarine, IgnoreThis
 	UnitBuilderBotModule@allies.land:
 		RequiresCondition: enable-ai-player && player.allies
-		UnitQueues: Vehicle, Infantry
+		UnitQueues: VehicleSeperate, InfantrySeperate
 		UnitDelays:
 			mcv.ai: 13500
 		UnitsToBuild:
@@ -502,7 +502,7 @@ Player:
 	UnitBuilderBotModule@allies.sea:
 		RequiresCondition: enable-ai-player && player.allies && !global-disablenavy
 		IdleBaseUnitsMaximum: 6
-		UnitQueues: Ship
+		UnitQueues: Ship, ShipSeperate
 		UnitsToBuild:
 			pt: 50
 			pt.greece: 50
@@ -522,7 +522,7 @@ Player:
 	UnitBuilderBotModule@allies.air:
 		RequiresCondition: enable-ai-player && player.allies
 		IdleBaseUnitsMaximum: 0
-		UnitQueues: Aircraft
+		UnitQueues: Aircraft, AircraftSeperate
 		UnitDelays:
 			spit: 7500
 			spit.turkey: 7500

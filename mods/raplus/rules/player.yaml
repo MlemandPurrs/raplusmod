@@ -32,25 +32,40 @@ Player:
 		CancelledAudio: Cancelled
 		SpeedUp: True
 		BuildTimeSpeedReduction: 100, 90, 85, 70, 65, 50
+<<<<<<< HEAD
 	ClassicProductionQueue@Vehicle:
 		Type: Vehicle
+=======
+	ClassicProductionQueue@Infantry:
+		Type: Infantry
+>>>>>>> parent of 582e4a9 (more properly done seperate queues)
 		DisplayOrder: 2
 		LowPowerModifier: 300
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
 		LimitedAudio: BuildingInProgress
+<<<<<<< HEAD
 		QueuedAudio: Building
+=======
+		QueuedAudio: Training
+>>>>>>> parent of 582e4a9 (more properly done seperate queues)
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
 		SpeedUp: True
 		BuildTimeSpeedReduction: 100, 90, 85, 70, 65, 50
+<<<<<<< HEAD
 	ClassicParallelProductionQueue@Infantry:
 		Type: Infantry
+=======
+	ClassicProductionQueue@Vehicle:
+		Type: Vehicle
+>>>>>>> parent of 582e4a9 (more properly done seperate queues)
 		DisplayOrder: 3
 		LowPowerModifier: 300
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
 		LimitedAudio: BuildingInProgress
+<<<<<<< HEAD
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -58,6 +73,13 @@ Player:
 		Sticky: False
 		BuildingCountBuildTimeMultipliers: 100, 90, 85, 70, 65, 50, 45, 30, 25
 		ParallelPenaltyBuildTimeMultipliers: 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180, 185, 190, 195, 200
+=======
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		SpeedUp: True
+		BuildTimeSpeedReduction: 100, 90, 85, 70, 65, 50
+>>>>>>> parent of 582e4a9 (more properly done seperate queues)
 	ClassicProductionQueue@Ship:
 		Type: Ship
 		DisplayOrder: 4
