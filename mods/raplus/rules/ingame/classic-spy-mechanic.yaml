@@ -96,7 +96,7 @@
 		RequiresCondition: reveal_secrets && weap_ICO		
 	GrantConditionOnProduction@fix:
 		Condition: fix_ICO
-		Actors: fix, fix.allies, fix.soviet, fix.holland, fix.sweden, fix.turkey, fix.kazakh, fix.china, fix.moldova
+		Actors: fix, fix.allies, fix.soviet, fix.spain, fix.sweden, fix.turkey, fix.kazakh, fix.china, fix.moldova
 	WithDecoration@fix:
 		Position: Left
 		ValidRelationships: Enemy, Neutral
@@ -141,7 +141,7 @@
 		RequiresCondition: reveal_secrets && afld_ICO
 	GrantConditionOnProduction@dome:
 		Condition: dome_ICO
-		Actors: dome
+		Actors: dome, dome.allies, dome.soviet, dome.holland, dome.belarus, dome.karelia
 	WithDecoration@dome:
 		Position: Left
 		ValidRelationships: Enemy, Neutral

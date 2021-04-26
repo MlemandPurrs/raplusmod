@@ -152,7 +152,7 @@ SAB:
 		Voice: Attack
 		RequiresCondition: !cloakison
 	Infiltrates:
-		Types: ThiefInfiltrate
+		Types: SabInfiltrate
 		Notification: BuildingInfiltrated
 		PlayerExperience: 50
 		Voice: Action

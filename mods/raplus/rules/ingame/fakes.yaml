@@ -44,9 +44,9 @@ FPWR:
 		Sequence: place
 		SequencePalette: placebuilding
 	Targetable:
-		TargetTypes: Ground, Structure, C4, DetonateAttack, SpyInfiltrate, ThiefInfiltrate
+		TargetTypes: Ground, Structure, C4, DetonateAttack, SpyInfiltrate, SabInfiltrate
 	InfiltrateForDecoration:
-		Types: SpyInfiltrate, Thiefinfiltrate
+		Types: SpyInfiltrate, SabInfiltrate
 		RequiresSelection: true
 		Image: pips
 		Sequence: tag-fake
@@ -98,9 +98,9 @@ FAPW:
 		Sequence: place
 		SequencePalette: placebuilding
 	Targetable:
-		TargetTypes: Ground, Structure, C4, DetonateAttack, SpyInfiltrate, ThiefInfiltrate
+		TargetTypes: Ground, Structure, C4, DetonateAttack, SpyInfiltrate, SabInfiltrate
 	InfiltrateForDecoration:
-		Types: SpyInfiltrate, Thiefinfiltrate
+		Types: SpyInfiltrate, SabInfiltrate
 		RequiresSelection: true
 		Image: pips
 		Sequence: tag-fake
@@ -276,9 +276,9 @@ PROF:
 	Armor:
 		Type: Wood
 	Targetable:
-		TargetTypes: Ground, Structure, C4, DetonateAttack, ThiefInfiltrate, SpyInfiltrate
+		TargetTypes: Ground, Structure, C4, DetonateAttack, SabInfiltrate, SpyInfiltrate
 	InfiltrateForDecoration:
-		Types: ThiefInfiltrate, SpyInfiltrate
+		Types: SabInfiltrate, SpyInfiltrate
 		RequiresSelection: true
 		Image: pips
 		Sequence: tag-fake
@@ -570,9 +570,9 @@ DOMF:
 	Armor:
 		Type: Wood
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate, ThiefInfiltrate
+		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate, SabInfiltrate
 	InfiltrateForDecoration:
-		Types: SpyInfiltrate,ThiefInfiltrate
+		Types: SpyInfiltrate,SabInfiltrate
 		RequiresSelection: true
 		Image: pips
 		Sequence: tag-fake
@@ -611,9 +611,9 @@ SPRF:
 	Armor:
 		Type: Wood
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate, ThiefInfiltrate
+		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate, SabInfiltrate
 	InfiltrateForDecoration:
-		Types: SpyInfiltrate,ThiefInfiltrate
+		Types: SpyInfiltrate,SabInfiltrate
 		RequiresSelection: true
 		Image: pips
 		Sequence: tag-fake
@@ -657,9 +657,9 @@ ATEF:
 	Armor:
 		Type: Wood
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate, ThiefInfiltrate
+		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate, SabInfiltrate
 	InfiltrateForDecoration:
-		Types: SpyInfiltrate,ThiefInfiltrate
+		Types: SpyInfiltrate,SabInfiltrate
 		RequiresSelection: true
 		Image: pips
 		Sequence: tag-fake
@@ -699,9 +699,9 @@ STEF:
 	Armor:
 		Type: Wood
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate, ThiefInfiltrate
+		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate, SabInfiltrate
 	InfiltrateForDecoration:
-		Types: SpyInfiltrate,ThiefInfiltrate
+		Types: SpyInfiltrate,SabInfiltrate
 		RequiresSelection: true
 		Image: pips
 		Sequence: tag-fake

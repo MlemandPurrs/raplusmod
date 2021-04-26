@@ -305,7 +305,7 @@ MNLY:
 		Margin: 4, 3
 		RequiresSelection: true
 	Rearmable:
-		RearmActors: fix, fix.allies, fix.soviet, fix.holland, fix.sweden, fix.turkey, fix.kazakh, fix.china, fix.moldova
+		RearmActors: fix, fix.allies, fix.soviet, fix.spain, fix.sweden, fix.turkey, fix.kazakh, fix.china, fix.moldova
 	DetectCloaked:
 		Range: 5c0
 		CloakTypes: Mine

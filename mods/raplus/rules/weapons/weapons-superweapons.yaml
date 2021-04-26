@@ -563,7 +563,7 @@ EmpBomb:
 		Range: 4c512
 		Duration: 500
 		Condition: empdisable
-		ValidTargets: Vehicle, Ship, Submarine
+		ValidTargets: Air, Vehicle, Ship, Submarine
 		InvalidTargets: EMPInvalid, InvulNoEMP
 	Warhead@empbuilding: GrantExternalCondition
 		Range: 4c512

@@ -181,9 +181,15 @@ Cursors:
 		chrono-select:
 			Start: 97
 			Length: 8
+		chrono-select-minimap:
+			Start: 20
+			Length: 1
 		chrono-target:
 			Start: 105
 			Length: 8
+		chrono-target-minimap:
+			Start: 29
+			Length: 4
 		sell:
 			Start: 68
 			Length: 12
@@ -238,17 +244,17 @@ Cursors:
 	cursorparadrop.shp: cursor
 		airdrop:
 			Start: 0
-			Length: 5
+			Length: 8
 			Tick: 120
 		airdrop-minimap:
-			Start: 6
+			Start: 8
 			Length: 2
 	cursoremp.shp: cursor	
 		empstrike:
 			Start: 0
-			Length: 7
+			Length: 13
 		empstrike-minimap:
-			Start: 8
+			Start: 14
 			Length: 2
 	sonarbox.shp: cursor
 		sonar-target:
@@ -270,3 +276,7 @@ Cursors:
 		grid-target:
 			Start: 12
 			Length: 3
+	cursormininuke.shp: cursor
+		nuke-minimap:
+			Start: 0
+			Length: 1

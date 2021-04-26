@@ -206,7 +206,7 @@
 		Name: Netherl.
 		InternalName: holland
 		Side: Allies
-		Description: Netherlands\nFaction Variations:\n    - Tanks* move faster but have less Health.\n*Those Tanks being Light and Medium Tanks.\n    - Spy Masts also Jam radar aslong not Low on Power.\nVeterancy Bonus:\n    - None. All units earn Veterancy twice as fast instead.\nUnique Support Power:\n    - Chrono Harvester (Tech Center)\nDeploys a prototype Harvester that is capable of Teleporting.\nSpecial Units:\n    - Chrono Soldier (Infantry)\nInfantry with EMP gun that is capable of Teleporting.\n    - Phase Tank (Vehicle)\nMedium Tank variant that is cloaked while out of combat.\n    - Patriot Battery (Defense)\nAnti-air Battery with superior range and damage.
+		Description: Netherlands\nFaction Variations:\n    - Tanks* move faster but have less Health.\n*Those Tanks being Light and Medium Tanks.\n    - Spy Masts also Jam radar aslong not Low on Power.\nVeterancy Bonus:\n    - None. All units earn Veterancy twice as fast instead.\nUnique Support Power:\n    - Thief (Radar Dome)\nDelivers a Thief that Steals credits at your Barracks.\nSpecial Units:\n    - Chrono Soldier (Infantry)\nInfantry with EMP gun that is capable of Teleporting.\n    - Phase Tank (Vehicle)\nMedium Tank variant that is cloaked while out of combat.\n    - Patriot Battery (Defense)\nAnti-air Battery with superior range and damage.
 	Faction@4:
 		Name: France
 		InternalName: france
@@ -226,7 +226,7 @@
 		Name: Spain
 		InternalName: spain
 		Side: Allies
-		Description: Spain\nFaction Variations:\n    - Tanks* have +1 Range but less rate of fire.\n*Those Tanks being the Light and Medium Tanks.\nThis bonus does not affect secondary weaponry.\n    - GAP technology is available earlier and cheaper.\nVeterancy Bonus:\n    - None.\nUnique Support Powers:\n    - Thief (Radar Dome)\nDelivers a Thief that Steals credits at your Barracks.\nSpecial Units:\n    - Shotgunner (Infantry)\nFast recon that is lethal to most Infantry at close-range.\n    - Mobile Radar Jammer (Vehicle)\nVehicle that deflects Missiles and jams enemy Radar.\n    - Battleship (Naval)\nAn early design, single-barrel turreted cruiser.
+		Description: Spain\nFaction Variations:\n    - Tanks* have +1 Range but less rate of fire.\n*Those Tanks being the Light and Medium Tanks.\nThis bonus does not affect secondary weaponry.\n    - GAP technology is available earlier and cheaper.\nVeterancy Bonus:\n    - None.\nUnique Support Powers:\n    - Chrono Harvester (Tech Center)\nDeploys a prototype Harvester that is capable of Teleporting.\nSpecial Units:\n    - Shotgunner (Infantry)\nFast recon that is lethal to most Infantry at close-range.\n    - Mobile Radar Jammer (Vehicle)\nVehicle that deflects Missiles and jams enemy Radar.\n    - Battleship (Naval)\nAn early design, single-barrel turreted cruiser.
 	Faction@8:
 		Name: Greece
 		InternalName: greece
