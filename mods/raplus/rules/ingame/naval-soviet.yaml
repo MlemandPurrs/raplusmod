@@ -3,7 +3,7 @@ SS:
 	Inherits@AUTOTARGET: ^AutoTargetNavalAssaultMove
 	-Cloak:
 	Buildable:
-		Queue: Ship, SeperateShip
+		Queue: Ship
 		BuildAtProductionType: Submarine
 		BuildPaletteOrder: 2
 		Prerequisites: ~spen, proc, ~ships.soviet, ~!player.ukraine, ~techlevel.low
@@ -82,7 +82,7 @@ MSUB:
 	Inherits: ^Submarine
 	Inherits@AUTOTARGET: ^AutoTargetNavalAssaultMove
 	Buildable:
-		Queue: Ship, SeperateShip
+		Queue: Ship
 		BuildAtProductionType: Submarine
 		BuildPaletteOrder: 4
 		Prerequisites: ~spen, stek, ~ships.soviet, ~!player.karelia, ~techlevel.high
@@ -191,7 +191,7 @@ NSUB:
 	Inherits: ^Submarine
 	Inherits@AUTOTARGET: ^AutoTargetNavalAssaultMove
 	Buildable:
-		Queue: Ship, SeperateShip
+		Queue: Ship
 		BuildAtProductionType: Submarine
 		BuildPaletteOrder: 5
 		BuildLimit: 1
@@ -268,7 +268,7 @@ FSUB:
 	Inherits@AUTOTARGET: ^AutoTargetNavalAssaultMove
 	-Cloak:
 	Buildable:
-		Queue: Ship, SeperateShip
+		Queue: Ship
 		BuildAtProductionType: Submarine
 		BuildPaletteOrder: 6
 		Prerequisites: ~spen, ftur, ~ships.soviet, ~soviet.or.ukraine, ~techlevel.medium
@@ -328,7 +328,7 @@ FSUB:
 CARR:
 	Inherits: ^Ship
 	Buildable:
-		Queue: Ship, SeperateShip
+		Queue: Ship
 		BuildAtProductionType: Submarine
 		BuildPaletteOrder: 7
 		Prerequisites: ~spen, dome, stek, ~ships.soviet, ~soviet.or.china, ~techlevel.high
@@ -434,11 +434,7 @@ CARR.Deployed:
 		PauseOnCondition: disabled
 	ProductionQueue:
 		Type: MWFHeli
-<<<<<<< HEAD
 		Group: Aircraft
-=======
-		Group: Helicopter
->>>>>>> parent of 582e4a9 (more properly done seperate queues)
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
 		QueuedAudio: Training
@@ -493,7 +489,7 @@ MGNM:
 	-Cloak@STEALTHGEN:
 	-ExternalCondition@STEALTHGEN:
 	Buildable:
-		Queue: Ship, SeperateShip
+		Queue: Ship
 		BuildAtProductionType: Submarine
 		BuildPaletteOrder: 8
 		Prerequisites: ~spen, fix, ~ships.soviet, ~soviet.or.ukraine, ~techlevel.medium
@@ -570,7 +566,7 @@ SSML:
 	Inherits: ^Submarine
 	Inherits@AUTOTARGET: ^AutoTargetNavalAssaultMove	
 	Buildable:
-		Queue: Ship, SeperateShip
+		Queue: Ship
 		BuildAtProductionType: Submarine
 		BuildPaletteOrder: 9
 		BuildLimit: 1

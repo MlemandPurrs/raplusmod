@@ -329,8 +329,8 @@ Player:
 		PlaceDefenseTowardsEnemyChance: 75
 		MaximumDefenseRadius: 10
 		MaxBaseRadius: 26
-		BuildingQueues: BuildingSeperate
-		DefenseQueues: DefenseSeperate
+		BuildingQueues: Building
+		DefenseQueues: Defense
 		BuildingLimits:
 			proc: 4
 			tent: 3
@@ -390,7 +390,7 @@ Player:
 		RequiresCondition: enable-wimp-ai && player.allies && rush-strat
 		IdleBaseUnitsMaximum: 6
 		MaxAircraft: 6
-		UnitQueues: VehicleSeperate, InfantrySeperate, ShipSeperate, AircraftSeperate
+		UnitQueues: Vehicle, Infantry, Ship, Aircraft
 		UnitsToBuild:
 			harv: 15
 			e2: 15
@@ -440,8 +440,8 @@ Player:
 		PlaceDefenseTowardsEnemyChance: 75
 		MaximumDefenseRadius: 10
 		MaxBaseRadius: 26
-		BuildingQueues: BuildingSeperate
-		DefenseQueues: DefenseSeperate
+		BuildingQueues: Building
+		DefenseQueues: Defense
 		BuildingLimits:
 			proc: 4
 			tent: 3
@@ -501,7 +501,7 @@ Player:
 		RequiresCondition: enable-wimp-ai && player.allies && heli-strat
 		IdleBaseUnitsMaximum: 6
 		MaxAircraft: 8
-		UnitQueues: VehicleSeperate, InfantrySeperate, ShipSeperate, AircraftSeperate
+		UnitQueues: Vehicle, Infantry, Ship, Aircraft
 		UnitsToBuild:
 			harv: 15
 			e6: 2
@@ -554,8 +554,8 @@ Player:
 		PlaceDefenseTowardsEnemyChance: 75
 		MaximumDefenseRadius: 10
 		MaxBaseRadius: 26
-		BuildingQueues: BuildingSeperate
-		DefenseQueues: DefenseSeperate
+		BuildingQueues: Building
+		DefenseQueues: Defense
 		BuildingLimits:
 			proc: 4
 			tent: 3
@@ -613,7 +613,7 @@ Player:
 		RequiresCondition: enable-wimp-ai && player.allies && bomb-strat
 		IdleBaseUnitsMaximum: 6
 		MaxAircraft: 6
-		UnitQueues: VehicleSeperate, InfantrySeperate, ShipSeperate, AircraftSeperate
+		UnitQueues: Vehicle, Infantry, Ship, Aircraft
 		UnitsToBuild:
 			harv: 15
 			e6: 2
