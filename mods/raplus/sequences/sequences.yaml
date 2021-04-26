@@ -742,18 +742,6 @@ isu.destroyed:
 		UseClassicFacings: True
 		ZOffset: -512
 
-zsu:
-    Inherits: emp-overlay
-	idle: 1tnk
-		Facings: 32
-		UseClassicFacings: True
-	turret: zsutur
-		Facings: 32
-		UseClassicFacings: True
-	muzzle: gunfire2
-		Length: 2
-	icon: zsuicon
-
 gtnk:
     Inherits: emp-overlay
 	idle: gtnk

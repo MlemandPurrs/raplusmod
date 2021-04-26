@@ -349,10 +349,6 @@ MNLY.Nuke:
 		EmptyWeapon: MiniNuke
 		DamageSource: Killer
 		RequiresCondition: ammo
-	#	hmm, it simply works, dont ask...
-	#	ProximityExternalCondition:
-	#	Condition: notthisone
-	#	Range: 1c0
 
 MGG:
 	Inherits: ^Vehicle

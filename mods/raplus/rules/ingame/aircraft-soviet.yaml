@@ -714,7 +714,7 @@ MIG:
 		TakeoffSounds: migtoff1.aud
 	AttackAircraft:
 		FacingTolerance: 80
-		Armaments: primary, secondary, tertiary
+		Armaments: primary, secondary
 		PersistentTargeting: false
 		OpportunityFire: False
 	Armament@PRIMARY:
@@ -727,20 +727,6 @@ MIG:
 		LocalOffset: 0,-640,0, 0,640,0
 		Weapon: MaverickAA
 		PauseOnCondition: !switch-ammo || !ammo
-	#	causes to become practically Invincible vs. AA Rockets
-	#	Armament@TERTIARY:
-	#	Name: tertiary
-	#	Weapon: PointLaser
-	#	LocalOffset: -480,0,-90
-	#	PauseOnCondition: empdisable || !flareammo
-	#	ForceTargetRelationships: Enemy
-	#	weapon assigned to PointDefense seems to ignore Ammo mechanic,
-	#	or ReloadDelay on weapon for that matter.
-	#	PointDefense:
-	#	Armament: tertiary
-	#	PointDefenseTypes: AAMissile
-	#	RequiresCondition: airborne
-	#	ValidRelationships: Enemy
 	GrantConditionOnDeploy@PURPOSESWITCH:
 		DeployedCondition: switch-ammo
 		PauseOnCondition: !onground
@@ -765,17 +751,6 @@ MIG:
 		Ammo: 8
 		AmmoCondition: ammo
 		Armaments: primary, secondary
-	#	AmmoPool@2:
-	#	Name: flareammo
-	#	Ammo: 1
-	#	AmmoCondition: flareammo
-	#	Armaments: tertiary
-	#	ReloadAmmoPool@flare:
-	#	AmmoPool: flareammo
-	#	Delay: 300
-	#	Count: 1
-	#	Sound: minelay1.aud
-	#	RequiresCondition: !flareammo
 	WithAmmoPipsDecoration:
 		Position: BottomLeft
 		Margin: 4, 3

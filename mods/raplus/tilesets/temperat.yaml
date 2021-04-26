@@ -23,19 +23,19 @@ Terrain:
 		RestrictPlayerColor: true
 	TerrainType@Gems:
 		Type: Gems
-		TargetTypes: Ground, Terrain, Resource
+		TargetTypes: Ground, Resource
 		AcceptsSmudgeType: Crater, Scorch
 		Color: 8470FF
 		RestrictPlayerColor: true
 	TerrainType@Ore:
 		Type: Ore
-		TargetTypes: Ground, Terrain, Resource
+		TargetTypes: Ground, Resource
 		AcceptsSmudgeType: Crater, Scorch
 		Color: 948060
 		RestrictPlayerColor: true
 	TerrainType@Scraps:
 		Type: Scraps
-		TargetTypes: Ground, Terrain, Resource
+		TargetTypes: Ground, Resource
 		AcceptsSmudgeType: Crater, Scorch
 		Color: A7B6BE
 		RestrictPlayerColor: true
