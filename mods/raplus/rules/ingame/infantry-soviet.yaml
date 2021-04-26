@@ -2,7 +2,7 @@ E4:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 9
 		Prerequisites: ~barr, ftur, ~infantry.soviet, ~soviet.or.ukraine, ~techlevel.medium
@@ -63,7 +63,7 @@ E5:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@ROT: ^RottingInfantry
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 16
 		Prerequisites: stek, ~infantry.soviet, ~soviet.or.turkmen, ~techlevel.high
@@ -128,7 +128,7 @@ SAB:
 	-AttackFrontal:
 	-TakeCover:
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 6
 		Prerequisites: ~barr, dome, ~infantry.soviet, ~techlevel.medium
@@ -189,7 +189,7 @@ VOLK:
 	Inherits@ROT: ^RottingInfantry
 	Inherits: GNRL
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		Prerequisites: ~barr, stek, ~infantry.soviet, ~!player.uzbek, ~techlevel.high
 		BuildPaletteOrder: 8
@@ -265,7 +265,7 @@ SHOK:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@ROT: ^RottingInfantry
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 7
 		Prerequisites: ~barr, tsla, ~infantry.soviet, ~soviet.or.russia, ~techlevel.high
@@ -343,7 +343,7 @@ RPG:
 	Buildable:
 		BuildPaletteOrder: 12
 		Prerequisites: ~barr, ftur, ~soviet.or.kazakh, ~techlevel.medium
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		Description: Soldier that shoots balls of Fire.\nCannot attack Air units.\n  Strong vs clustered Infantry, Structures\n  Weak vs Anti-Infantry measures
 	Selectable:
@@ -384,7 +384,7 @@ DESO:
 	-DamagedByTintedCells@RADMED:
 	-DamagedByTintedCells@RADWEAK:
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 14
 		Prerequisites: ~barr, stek, ~infantry.soviet, ~soviet.or.uzbek, ~techlevel.medium
@@ -478,7 +478,7 @@ DEMO:
 	-Guard:
 	-WithInfantryBody:
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, InfantrySeperate
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 16
 		BuildLimit: 1
@@ -510,8 +510,6 @@ DEMO:
 		ProneOffset: 256,64,-331
 	AttackFrontal:
 		Voice: Attack
-	WithInfantryBody:
-		DefaultAttackSequence: throw
 	Explodes:
 		Weapon: ArtilleryExplode
 		EmptyWeapon: ArtilleryExplode

@@ -53,7 +53,7 @@ B52.buildable:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@AUTODAMAGE: ^KilledWithoutAirfield
 	Buildable:
-		Queue: Aircraft, MWFAir
+		Queue: Plane, MWFAir
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 6
 		BuildLimit: 1
@@ -243,7 +243,7 @@ IROQ:
 		InitialStance: HoldFire
 		InitialStanceAI: HoldFire
 	Buildable:
-		Queue: Aircraft, MWFAir, MWFHeli
+		Queue: Helicopter, MWFAir, MWFHeli
 		BuildAtProductionType: Helicopter
 		BuildPaletteOrder: 2
 		Prerequisites: ~hpad, dome, ~aircraft.allies, ~!aitoodumb, ~!player.greece, ~techlevel.medium
@@ -394,7 +394,7 @@ HELI:
 		InitialStance: HoldFire
 		InitialStanceAI: HoldFire
 	Buildable:
-		Queue: Aircraft, MWFAir, MWFHeli
+		Queue: Helicopter, MWFAir, MWFHeli
 		BuildAtProductionType: Helicopter
 		BuildPaletteOrder: 3
 		Prerequisites: ~hpad, atek, ~aircraft.allies, ~!player.usa, ~techlevel.high
@@ -519,7 +519,7 @@ SPIT:
 		InitialStance: HoldFire
 		InitialStanceAI: HoldFire
 	Buildable:
-		Queue: Aircraft, MWFAir
+		Queue: Plane, MWFAir
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 4
 		Prerequisites: ~afld, dome, ~aircraft.allies, ~!player.turkey,  ~techlevel.medium
@@ -616,7 +616,7 @@ TORN:
 		InitialStance: HoldFire
 		InitialStanceAI: HoldFire
 	Buildable:
-		Queue: Aircraft, MWFAir
+		Queue: Plane, MWFAir
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 5
 		Prerequisites: ~afld, atek, ~aircraft.allies, ~!player.sweden, ~techlevel.high
@@ -779,7 +779,7 @@ BMIN:
 	-Repairable:
 	-ActorLostNotification:
 	Buildable:
-		Queue: Aircraft, MWFAir, MWFHeli
+		Queue: Helicopter, MWFAir, MWFHeli
 		BuildAtProductionType: Helicopter
 		BuildPaletteOrder: 7
 		Prerequisites: ~hpad, fix, ~aircraft.allies, ~allies.or.italy, ~techlevel.medium
@@ -790,6 +790,8 @@ BMIN:
 		Name: Baloon Mine
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
+	Cloneable:
+		Types: CloneAir
 	Health:
 		HP: 50
 		NotifyAppliedDamage: false

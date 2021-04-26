@@ -1,7 +1,7 @@
 
 Metadata:
 	Title: Red Alert Plus
-	Version: v.1.4.1-classicqueue
+	Version: v.1.4.1-multiqueue
 	Website: https://www.moddb.com/mods/ra-plus-mod
 	WebIcon32: https://www.openra.net/images/icons/ra_32x32.png
 
@@ -56,7 +56,7 @@ Packages:
 
 MapFolders:
 	raplus|maps: System
-	~^SupportDir|maps/raplus/v.1.4.1-classicqueue: User
+	~^SupportDir|maps/raplus/v.1.4.1-multiqueue: User
 	~^SupportDir|maps/ra/release-20210321: User
 
 Rules:

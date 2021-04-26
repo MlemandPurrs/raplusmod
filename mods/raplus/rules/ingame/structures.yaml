@@ -121,11 +121,41 @@ FACT:
 	Production:
 		Produces: Building,Defense,Fakestructure
 		PauseOnCondition: disabled || build-incomplete || sabotaged
+	ProductionQueue@Building:
+		Type: Building
+		Group: Building
+		DisplayOrder: 0
+		ReadyAudio: ConstructionComplete
+		BlockedAudio: NoBuild
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
 	ProductionBar@Building:
 		ProductionType: Building
+	ProductionQueue@Defense:
+		Type: Defense
+		Group: Defense
+		DisplayOrder: 1
+		ReadyAudio: ConstructionComplete
+		BlockedAudio: NoBuild
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
 	ProductionBar@Defense:
 		ProductionType: Defense
 		Color: 8A8A8A
+	ProductionQueue@FakeStructure:
+		Type: Fakestructure
+		Group: Fakestructure
+		DisplayOrder: 6
+		ReadyAudio: ConstructionComplete
+		BlockedAudio: NoBuild
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
 	Transforms:
 		RequiresCondition: factundeploy
 		PauseOnCondition: chrono-vortex || being-captured || being-demolished || build-incomplete
@@ -184,7 +214,6 @@ FACT:
 		RequiresCondition: !chrono-vortex && !notwhileproducing
 	GrantConditionOnProduction:
 		Condition: notwhileproducing
-		Actors:
 		ShowSelectionBar: false
 
 POWR:
@@ -364,6 +393,9 @@ TENT:
 		RequiresCondition: !disabled
 	TimedConditionBar@Sabotage:
 		Condition: sabotaged
+	WithColoredOverlay@EMPDISABLE:
+		RequiresCondition: empdisable && sabotaged
+		Palette: disabled
 	Armor:
 		Type: Wood
 	RevealsShroud:
@@ -399,6 +431,16 @@ TENT:
 	Production:
 		Produces: Infantry, Soldier, Dog
 		PauseOnCondition: disabled || build-incomplete || sabotaged
+	ProductionQueue:
+		Type: Infantry
+		Group: Infantry
+		DisplayOrder: 2
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
 	ProductionBar:
 		ProductionType: Infantry
 	GrantExternalConditionToProduced:
@@ -567,6 +609,9 @@ BARR:
 		RequiresCondition: !disabled
 	TimedConditionBar@Sabotage:
 		Condition: sabotaged
+	WithColoredOverlay@EMPDISABLE:
+		RequiresCondition: empdisable && sabotaged
+		Palette: disabled
 	Armor:
 		Type: Wood
 	RevealsShroud:
@@ -602,6 +647,16 @@ BARR:
 	Production:
 		Produces: Infantry, Soldier, Dog
 		PauseOnCondition: disabled || build-incomplete || sabotaged
+	ProductionQueue:
+		Type: Infantry
+		Group: Infantry
+		DisplayOrder: 2
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
 	ProvidesPrerequisite@LIMITING:
 		Prerequisite: cloner.plug
 		RequiresCondition: clonerupgrade
@@ -873,10 +928,20 @@ KENN:
 		ExitCell: 1,1
 		ProductionTypes: Dog, Infantry
 	Production:
-		Produces: Infantry, Dog
+		Produces: Dog
 		PauseOnCondition: disabled || build-incomplete
+	ProductionQueue:
+		Type: Dog
+		Group: Infantry
+		DisplayOrder: 2
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
 	ProductionBar:
-		ProductionType: Infantry
+		ProductionType: Dog
 	Power:
 		Amount: -10
 		RequiresCondition: !build-incomplete
@@ -1294,6 +1359,16 @@ WEAP:
 	Production:
 		Produces: Vehicle
 		PauseOnCondition: disabled || build-incomplete
+	ProductionQueue:
+		Type: Vehicle
+		Group: Vehicle
+		DisplayOrder: 3
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
 	GrantExternalConditionToProduced:
 		Condition: produced
 	ProductionBar:
@@ -1507,7 +1582,7 @@ WEAP.MINI:
 	GrantConditionOnInfiltration@Sabotage:
 		Types: ThiefInfiltrate
 		Condition: sabotaged
-		Duration: 750
+		Duration: 750	
 	TimedConditionBar@Sabotage:
 		Condition: sabotaged
 	Production:
@@ -1516,6 +1591,7 @@ WEAP.MINI:
 	ProductionQueue:
 		Type: MWFVehicle
 		Group: Vehicle
+		DisplayOrder: 3
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
 		QueuedAudio: Training
@@ -1859,6 +1935,8 @@ DOME.Allies:
 		Image: dome
 	ProvidesPrerequisite@COPY:
 		Prerequisite: dome
+	#	converted to CA custom DetonateWeaponPower to fix those issues:
+	#	can be spawned on building bibs, into refinery bay, on service depot etc.
 	DetonateWeaponPower@ListeningPost:
 		OrderName: ListeningPost
 		PauseOnCondition: disabled
@@ -2451,6 +2529,9 @@ AFLD:
 		Duration: 750
 	TimedConditionBar@Sabotage:
 		Condition: sabotaged
+	WithColoredOverlay@EMPDISABLE:
+		RequiresCondition: empdisable && sabotaged
+		Palette: disabled
 	InfiltrateForSupportPower:
 		Proxy: aircraft.upgraded
 		Types: SpyInfiltrate
@@ -2463,10 +2544,20 @@ AFLD:
 	RevealsShroud@GAPGEN:
 		Range: 4c0
 	Production:
-		Produces: Aircraft, Plane
+		Produces: Plane
 		PauseOnCondition: disabled || build-incomplete || sabotaged
+	ProductionQueue:
+		Type: Plane
+		Group: Aircraft
+		DisplayOrder: 4
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
 	ProductionBar:
-		ProductionType: Aircraft
+		ProductionType: Plane
 	RallyPoint:
 	Exit@1:
 		RequiresCondition: !being-captured
@@ -3033,6 +3124,9 @@ HPAD:
 		Duration: 750
 	TimedConditionBar@Sabotage:
 		Condition: sabotaged
+	WithColoredOverlay@EMPDISABLE:
+		RequiresCondition: empdisable && sabotaged
+		Palette: disabled
 	InfiltrateForSupportPower:
 		Proxy: aircraft.upgraded
 		Types: SpyInfiltrate
@@ -3045,10 +3139,19 @@ HPAD:
 	RevealsShroud@GAPGEN:
 		Range: 4c0
 	Production:
-		Produces: Aircraft, Helicopter
+		Produces: Helicopter
 		PauseOnCondition: disabled || build-incomplete || sabotaged
+	ProductionQueue:
+		Type: Helicopter
+		Group: Aircraft
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
 	ProductionBar:
-		ProductionType: Aircraft
+		ProductionType: Helicopter
 	RallyPoint:
 	RepairsUnits:
 		ValuePercentage: 0
@@ -3293,6 +3396,16 @@ SYRD:
 	Production:
 		Produces: Ship, Boat
 		PauseOnCondition: disabled || build-incomplete
+	ProductionQueue:
+		Type: Ship
+		Group: Ship
+		DisplayOrder: 5
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
 	ProductionBar:
 		ProductionType: Ship
 	RepairsUnits:
@@ -3449,7 +3562,7 @@ SYRD:
 		DeploySound: sonpulse.aud
 		EffectImage: moveflsh
 		EffectPalette: moveflash
-		SupportPowerPaletteOrder: 6		
+		SupportPowerPaletteOrder: 6
 		Cursor: sonar-target
 	SupportPowerChargeBar:
 	GpsDot:
@@ -3507,10 +3620,20 @@ SPEN:
 		Range:  7c512
 	RenderDetectionCircle:
 	Production:
-		Produces: Ship, Submarine
+		Produces: Submarine
 		PauseOnCondition: disabled || build-incomplete
+	ProductionQueue:
+		Type: Submarine
+		Group: Ship
+		DisplayOrder: 5
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
 	ProductionBar:
-		ProductionType: Ship
+		ProductionType: Submarine
 	RepairsUnits:
 		HpPerStep: 10
 		Interval: 14

@@ -634,6 +634,7 @@ ACAR.Deployed:
 		PauseOnCondition: disabled
 	ProductionQueue:
 		Type: MWFAir
+		DisplayOrder: 4
 		Group: Aircraft
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild

@@ -3,7 +3,7 @@ LST:
 	Inherits@CARGOPIPS: ^CargoPips
 	-ChronoshiftableWithSpriteEffect:
 	Buildable:
-		Queue: Ship
+		Queue: Ship, Submarine
 		BuildPaletteOrder: 1
 		Prerequisites: ~techlevel.low
 		Description: General-purpose naval transport.\nCan carry up to 16 Infantry and Vehicles.\n  Unarmed

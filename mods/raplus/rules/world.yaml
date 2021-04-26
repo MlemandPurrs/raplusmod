@@ -345,7 +345,7 @@ World:
 	ScreenShaker:
 	BuildingInfluence:
 	ProductionQueueFromSelection:
-		ProductionPaletteWidget: PRODUCTION_PALETTE
+		ProductionTabsWidget: PRODUCTION_TABS
 	LegacyBridgeLayer:
 		Bridges: bridge1, bridge2, br1, br2, br3, sbridge1, sbridge2, sbridge3, sbridge4, sbridge5, brg1, brg2, brg3, brv1, brv2, brv3, brh1, brh2, brh3
 	CustomTerrainDebugOverlay:

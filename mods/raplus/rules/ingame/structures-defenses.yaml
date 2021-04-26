@@ -724,7 +724,7 @@ GTUR:
 		Prerequisites: atek, ~structures.allies, ~allies.or.greece, ~techlevel.high
 		Description: Triple-barreled Artillery base defense.\nHas double the durability of standard Defenses.\nCan detect cloaked units.\nMaximum one can be built.\n  Strong vs Infantry, Vehicles, Ships\n  Weak vs Aircraft
 	Valued:
-		Cost: 1400
+		Cost: 1600
 	Tooltip:
 		Name: Grand Turret
 	Health:
@@ -746,14 +746,14 @@ GTUR:
 		InitialFacing: 0
 		RealignDelay: -1
 		RequiresCondition: !build-incomplete
+	WithSpriteTurret:
+		RequiresCondition: !build-incomplete
+		Recoils: false
 	WithBuildingBib:
 		HasMinibib: true
 	AttackTurreted:
 		PauseOnCondition: disabled
 		RequiresCondition: !build-incomplete
-	WithSpriteTurret:
-		RequiresCondition: !build-incomplete
-		Recoils: false
 	Armament:
 		Weapon: 203mm
 		MuzzleSequence: muzzle
@@ -1528,7 +1528,7 @@ SPMST:
 		TargetTypes: Ground, Structure, TreeDisguise
 		RequiresCondition: !disguised
 	Targetable@disguised:
-		TargetTypes: Ground, Tree, TreeDisguise
+		TargetTypes: Ground, Trees, TreeDisguise, NoAutoTarget
 		RequiresForceFire: true
 		RequiresCondition: disguised
 	-WithSpriteBody:

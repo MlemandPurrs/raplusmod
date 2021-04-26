@@ -194,7 +194,7 @@ DOG:
 	-TakeCover:
 	-AttackFrontal:
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Dog
 		BuildAtProductionType: Dog
 		BuildPaletteOrder: 4
 		Prerequisites: proc, ~!player.moldova, ~techlevel.infonly

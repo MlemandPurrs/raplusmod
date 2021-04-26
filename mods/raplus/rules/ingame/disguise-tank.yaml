@@ -7,7 +7,7 @@ DTNK:
 	-WithFacingSpriteBody:
 	-Tooltip:
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, VehicleSeperate
 		BuildPaletteOrder: 8
 		Prerequisites: atek, ~vehicles.allies, ~player.italy, ~techlevel.high
 		Description: Experimental vehicle with hi-tech projectors.\n  Special ability: Vehicle Disguise\nCan change apperance to any Vehicle to fool the opponent.\nLoses disguise when attacking.\n  Strong vs Vehicles\n  Weak vs Aircraft
