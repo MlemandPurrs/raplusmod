@@ -1,4 +1,4 @@
-This repository contains the Full version of RA Plus mod, which is a sub-mod that depends on the Red Alert mod of the [OpenRA](https://github.com/OpenRA/OpenRA) engine.
+This repository contains the RA Plus mod, which is a sub-mod that technically depends on the Red Alert mod of the [OpenRA](https://github.com/OpenRA/OpenRA) engine, yet is offered as a standalone.
 
 The mod is being developed here with infrequent updates.
 
