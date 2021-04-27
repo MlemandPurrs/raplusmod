@@ -121,11 +121,41 @@ FACT:
 	Production:
 		Produces: Building,Defense,Fakestructure
 		PauseOnCondition: disabled || build-incomplete || sabotaged
+	ProductionQueue@Building:
+		Type: Building
+		Group: Building
+		DisplayOrder: 0
+		ReadyAudio: ConstructionComplete
+		BlockedAudio: NoBuild
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
 	ProductionBar@Building:
 		ProductionType: Building
+	ProductionQueue@Defense:
+		Type: Defense
+		Group: Defense
+		DisplayOrder: 1
+		ReadyAudio: ConstructionComplete
+		BlockedAudio: NoBuild
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
 	ProductionBar@Defense:
 		ProductionType: Defense
 		Color: 8A8A8A
+	ProductionQueue@FakeStructure:
+		Type: Fakestructure
+		Group: Fakestructure
+		DisplayOrder: 6
+		ReadyAudio: ConstructionComplete
+		BlockedAudio: NoBuild
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
 	Transforms:
 		RequiresCondition: factundeploy
 		PauseOnCondition: chrono-vortex || being-captured || being-demolished || build-incomplete
@@ -142,7 +172,7 @@ FACT:
 		RequiresForceMove: true
 	TransformsIntoRepairable:
 		RequiresCondition: factundeploy
-		RepairActors: fix, fix.allies, fix.soviet, fix.holland, fix.sweden, fix.turkey, fix.kazakh, fix.china, fix.moldova
+		RepairActors: fix, fix.allies, fix.soviet, fix.spain, fix.sweden, fix.turkey, fix.kazakh, fix.china, fix.moldova
 		RequiresForceMove: true
 	TransformsIntoTransforms:
 		RequiresCondition: factundeploy && build-incomplete
@@ -151,7 +181,7 @@ FACT:
 	ConyardChronoReturn:
 		ReturnOriginalActorOnCondition: build-incomplete
 		Condition: chrono-vortex
-		Damage: 950
+		Damage: 425
 	Sellable:
 		RequiresCondition: !build-incomplete && !chrono-vortex && !being-captured && !being-demolished
 	SpawnActorsOnSell:
@@ -168,10 +198,10 @@ FACT:
 	GpsDot:
 		String: ConYard
 	Targetable@Sabotage:	
-		TargetTypes: ThiefInfiltrate
+		TargetTypes: SabInfiltrate
 		RequiresCondition: !sabotaged && !chrono-vortex
 	GrantConditionOnInfiltration@Sabotage:
-		Types: ThiefInfiltrate
+		Types: SabInfiltrate
 		Condition: sabotaged
 		Duration: 750
 		RequiresCondition: !chrono-vortex
@@ -184,7 +214,6 @@ FACT:
 		RequiresCondition: !chrono-vortex && !notwhileproducing
 	GrantConditionOnProduction:
 		Condition: notwhileproducing
-		Actors:
 		ShowSelectionBar: false
 
 POWR:
@@ -219,7 +248,7 @@ POWR:
 	Health:
 		HP: 400
 	Targetable:
-		TargetTypes: Ground, Structure, C4, DetonateAttack, SpyInfiltrate, ThiefInfiltrate
+		TargetTypes: Ground, Structure, C4, DetonateAttack, SpyInfiltrate, SabInfiltrate
 	Armor:
 		Type: Wood
 	RevealsShroud:
@@ -355,15 +384,18 @@ TENT:
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 	Targetable@Sabotage:	
-		TargetTypes: ThiefInfiltrate
+		TargetTypes: SabInfiltrate
 		RequiresCondition: !sabotaged
 	GrantConditionOnInfiltration@Sabotage:
-		Types: ThiefInfiltrate
+		Types: SabInfiltrate
 		Condition: sabotaged
 		Duration: 750
 		RequiresCondition: !disabled
 	TimedConditionBar@Sabotage:
 		Condition: sabotaged
+	WithColoredOverlay@EMPDISABLE:
+		RequiresCondition: empdisable && sabotaged
+		Palette: disabled
 	Armor:
 		Type: Wood
 	RevealsShroud:
@@ -399,6 +431,16 @@ TENT:
 	Production:
 		Produces: Infantry, Soldier, Dog
 		PauseOnCondition: disabled || build-incomplete || sabotaged
+	ProductionQueue:
+		Type: Infantry
+		Group: Infantry
+		DisplayOrder: 2
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
 	ProductionBar:
 		ProductionType: Infantry
 	GrantExternalConditionToProduced:
@@ -485,7 +527,7 @@ TENT:
 		Proxy: barracks.upgraded
 		Types: SpyInfiltrate
 	AcceptsDeliveredCash:
-		ValidTypes: InfantryRefund, MoneyTransfer
+		ValidTypes: InfantryRefund
 	WithDeathAnimation:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
@@ -556,17 +598,20 @@ BARR:
 	Health:
 		HP: 600
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate, ThiefInfiltrate
+		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate, SabInfiltrate
 	Targetable@Sabotage:	
-		TargetTypes: ThiefInfiltrate
+		TargetTypes: SabInfiltrate
 		RequiresCondition: !sabotaged
 	GrantConditionOnInfiltration@Sabotage:
-		Types: ThiefInfiltrate
+		Types: SabInfiltrate
 		Condition: sabotaged
 		Duration: 750
 		RequiresCondition: !disabled
 	TimedConditionBar@Sabotage:
 		Condition: sabotaged
+	WithColoredOverlay@EMPDISABLE:
+		RequiresCondition: empdisable && sabotaged
+		Palette: disabled
 	Armor:
 		Type: Wood
 	RevealsShroud:
@@ -602,6 +647,16 @@ BARR:
 	Production:
 		Produces: Infantry, Soldier, Dog
 		PauseOnCondition: disabled || build-incomplete || sabotaged
+	ProductionQueue:
+		Type: Infantry
+		Group: Infantry
+		DisplayOrder: 2
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
 	ProvidesPrerequisite@LIMITING:
 		Prerequisite: cloner.plug
 		RequiresCondition: clonerupgrade
@@ -688,7 +743,7 @@ BARR:
 		Proxy: barracks.upgraded
 		Types: SpyInfiltrate
 	AcceptsDeliveredCash:
-		ValidTypes: InfantryRefund, MoneyTransfer
+		ValidTypes: InfantryRefund
 	WithDeathAnimation:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
@@ -873,10 +928,20 @@ KENN:
 		ExitCell: 1,1
 		ProductionTypes: Dog, Infantry
 	Production:
-		Produces: Infantry, Dog
+		Produces: Dog
 		PauseOnCondition: disabled || build-incomplete
+	ProductionQueue:
+		Type: Dog
+		Group: Infantry
+		DisplayOrder: 2
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
 	ProductionBar:
-		ProductionType: Infantry
+		ProductionType: Dog
 	Power:
 		Amount: -10
 		RequiresCondition: !build-incomplete
@@ -933,10 +998,14 @@ PROC:
 	Health:
 		HP: 1000
 	Targetable:
-		TargetTypes: Ground, Structure, C4, DetonateAttack, ThiefInfiltrate, SpyInfiltrate
-	InfiltrateForCash:
+		TargetTypes: Ground, Structure, C4, DetonateAttack, SabInfiltrate, SpyInfiltrate, ThfInfiltrate
+	InfiltrateForCash@1:
 		Percentage: 50
-		Types: ThiefInfiltrate, SpyInfiltrate
+		Types: SabInfiltrate, SpyInfiltrate
+		InfiltratedNotification: CreditsStolen
+	InfiltrateForCash@2:
+		Percentage: 70
+		Types: ThfInfiltrate
 		InfiltratedNotification: CreditsStolen
 	Armor:
 		Type: Wood
@@ -1047,7 +1116,7 @@ SILO:
 	Health:
 		HP: 300
 	Targetable:
-		TargetTypes: Ground, Structure, C4, DetonateAttack, ThiefInfiltrate
+		TargetTypes: Ground, Structure, C4, DetonateAttack, SabInfiltrate
 	Armor:
 		Type: Wood
 	RevealsShroud:
@@ -1070,14 +1139,12 @@ SILO:
 		Interval: 600
 		InitialDelay: 600
 		Amount: 30
-		PauseOnCondition: lowpower || disabled
-		RequiresCondition: !orecasting-on
+		PauseOnCondition: lowpower || disabled || orecasting-on
 	CashTrickler@Faster:
-		Interval: 200
-		InitialDelay: 200
+		Interval: 250
+		InitialDelay: 250
 		Amount: 50
-		PauseOnCondition: lowpower || disabled
-		RequiresCondition: orecasting-on
+		PauseOnCondition: lowpower || disabled || !orecasting-on
 	GrantConditionOnPrerequisite@incomeplayerboost2:
 		Condition: orecasting-on
 		Prerequisites: orecasting
@@ -1259,12 +1326,12 @@ WEAP:
 	Health:
 		HP: 1200
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate, ThiefInfiltrate
+		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate, SabInfiltrate
 	Targetable@Sabotage:	
-		TargetTypes: ThiefInfiltrate
+		TargetTypes: SabInfiltrate
 		RequiresCondition: !sabotaged
 	GrantConditionOnInfiltration@Sabotage:
-		Types: ThiefInfiltrate
+		Types: SabInfiltrate
 		Condition: sabotaged
 		Duration: 750
 		RequiresCondition: !maintenance && !powerdown
@@ -1294,6 +1361,16 @@ WEAP:
 	Production:
 		Produces: Vehicle
 		PauseOnCondition: disabled || build-incomplete
+	ProductionQueue:
+		Type: Vehicle
+		Group: Vehicle
+		DisplayOrder: 3
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
 	GrantExternalConditionToProduced:
 		Condition: produced
 	ProductionBar:
@@ -1502,12 +1579,12 @@ WEAP.MINI:
 		ExitCell: 1,2
 		ExitDelay: 3
 	Targetable@Sabotage:	
-		TargetTypes: ThiefInfiltrate
+		TargetTypes: SabInfiltrate
 		RequiresCondition: !sabotaged
 	GrantConditionOnInfiltration@Sabotage:
-		Types: ThiefInfiltrate
+		Types: SabInfiltrate
 		Condition: sabotaged
-		Duration: 750
+		Duration: 750	
 	TimedConditionBar@Sabotage:
 		Condition: sabotaged
 	Production:
@@ -1516,6 +1593,7 @@ WEAP.MINI:
 	ProductionQueue:
 		Type: MWFVehicle
 		Group: Vehicle
+		DisplayOrder: 3
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
 		QueuedAudio: Training
@@ -1567,7 +1645,7 @@ FIX:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 8
-		Prerequisites: weap, ~fact, ~!allies.or.france, ~!player.holland, ~!player.sweden, ~!player.turkey, ~!vanilla.soviet, ~!player.kazakh, ~!player.china, ~!player.moldova, ~techlevel.medium
+		Prerequisites: weap, ~fact, ~!allies.or.france, ~!player.spain, ~!player.sweden, ~!player.turkey, ~!vanilla.soviet, ~!player.kazakh, ~!player.china, ~!player.moldova, ~techlevel.medium
 		Description: Repairs Vehicles for credits.\nVehicle and Aircraft can\nbe sold here for half value.\n (their value scaling with health)
 	Valued:
 		Cost: 800
@@ -1639,7 +1717,7 @@ FIX.Allies:
 	ProduceActorPower@ChronoHarvester:
 		PauseOnCondition: disabled || lowpower
 		OrderName: ChronoHarvester
-		Prerequisites: ~weap, ~atek, player.holland, !has.charv, ~techlevel.unrestricted
+		Prerequisites: ~weap, ~atek, player.spain, !has.charv, ~techlevel.unrestricted
 		Actors: harv.chrono
 		ChargeInterval: 6000
 		Icon: charvicon
@@ -1809,9 +1887,9 @@ DOME:
 	Health:
 		HP: 800
 	Targetable:
-		TargetTypes: Ground, Structure, C4, DetonateAttack, SpyInfiltrate, ThiefInfiltrate, Radar
+		TargetTypes: Ground, Structure, C4, DetonateAttack, SpyInfiltrate, SabInfiltrate, Radar
 	InfiltrateForExploration:
-		Types: SpyInfiltrate, ThiefInfiltrate
+		Types: SpyInfiltrate, SabInfiltrate
 	Armor:
 		Type: Wood
 	ProvidesPrerequisite@buildingname:
@@ -1853,12 +1931,14 @@ DOME.Allies:
 	Inherits: DOME
 	Inherits@ENBonus: ^AffectedByBritain
 	Buildable:
-		Prerequisites: proc, ~structures.allies, ~!player.spain, ~techlevel.medium
+		Prerequisites: proc, ~structures.allies, ~!player.holland, ~techlevel.medium
 		Description: Provides an overview\nof the battlefield.\nCan detect cloaked units.\nCan be Infiltrated by an Spy or Saboteur\nresulting in loss of map exploration.\nCan detect cloaked units.\n  Special Ability: Spy Mast\nDeploys a Spy Mast anywhere on the map\nthat provides vision and detects nearby cloaked.\nThe Spy Mast can disguise to appear as an Tree to the enemy.\n (requires Service Depot)
 	RenderSprites:
 		Image: dome
 	ProvidesPrerequisite@COPY:
 		Prerequisite: dome
+	#	converted to CA custom DetonateWeaponPower to fix those issues:
+	#	can be spawned on building bibs, into refinery bay, on service depot etc.
 	DetonateWeaponPower@ListeningPost:
 		OrderName: ListeningPost
 		PauseOnCondition: disabled
@@ -1888,12 +1968,12 @@ DOME.Allies:
 	ProduceActorPower@ThiefSummon:
 		PauseOnCondition: disabled
 		OrderName: ThiefSummon
-		Prerequisites: ~tent, player.spain, ~techlevel.unrestricted
+		Prerequisites: ~tent, player.holland, ~techlevel.unrestricted
 		Actors: thf
 		ChargeInterval: 4500
 		Icon: thficon
 		Description: Thief
-		LongDesc: Can steal Credits out of Refineries.\n  Unarmed
+		LongDesc: Can steal 70% of Credits out of Refineries.\nRemains Cloaked when standing still.\n  Unarmed
 		Type: Infantry
 		ReadyAudio: ReinforcementsArrived
 		BlockedAudio: NoBuild
@@ -2004,10 +2084,10 @@ ATEK:
 	Health:
 		HP: 800
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate, ThiefInfiltrate
+		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate, SabInfiltrate
 	InfiltrateForSupportPower:
 		Proxy: tech.stolen
-		Types: SpyInfiltrate, ThiefInfiltrate
+		Types: SpyInfiltrate, SabInfiltrate
 	Armor:
 		Type: Wood
 	ProvidesPrerequisite@buildingname:
@@ -2086,7 +2166,7 @@ ATEK:
 		Description: Intelligence Scan
 		LongDesc: Reveals all Base Buildings and Superweapons,\nbut not Defenses or Tech Buildings on the map.\nLasts for 2.5 minute. Does not reveal new Structures.
 		CameraActor: camera.intelscan
-		TargetActors: fact, powr, powr.turkey, apwr, apwr.turkey, tent, barr, barr.cloner, proc, orep, indp, weap, weap.mini, fix, fix.allies, fix.soviet, fix.holland, fix.sweden, fix.turkey, fix.kazakh, fix.china, fix.moldova, dome, dome.allies, dome.soviet, dome.spain, dome.belarus, dome.karelia, atek, stek, atek.usa, atek.england, atek.germany, stek.russia, stek.ukraine, stek.karelia, stek.uzbek, spro, spro.kazakh, afld, afld.russia, afld.ukraine, afld.belarus, afld.turkmen, afld.usa, afld.england, afld.france, afld.germany, afld.italy, afld.greece, hpad, syrd, spen, pdox, iron, fpwr, fapw, tenf, barf, prof, weaf, fixf, syrf, spef, aflf, hpaf, domf, sprf, atef, stef, pdof, irof, facf
+		TargetActors: fact, powr, powr.turkey, apwr, apwr.turkey, tent, barr, barr.cloner, proc, orep, indp, weap, weap.mini, fix, fix.allies, fix.soviet, fix.spain, fix.sweden, fix.turkey, fix.kazakh, fix.china, fix.moldova, dome, dome.allies, dome.soviet, dome.holland, dome.belarus, dome.karelia, atek, stek, atek.usa, atek.england, atek.germany, stek.russia, stek.ukraine, stek.karelia, stek.uzbek, spro, spro.kazakh, afld, afld.russia, afld.ukraine, afld.belarus, afld.turkmen, afld.usa, afld.england, afld.france, afld.germany, afld.italy, afld.greece, hpad, syrd, spen, pdox, iron, fpwr, fapw, tenf, barf, prof, weaf, fixf, syrf, spef, aflf, hpaf, domf, sprf, atef, stef, pdof, irof, facf
 		LifeTime: 3750
 		LaunchSound: bcmasela.aud
 		EffectImage: dummy
@@ -2146,6 +2226,12 @@ ATEK:
 		Image: ateknew
 	GpsDot:
 		String: Tech
+	GrantCondition@TECHDISABLE:
+		RequiresCondition: empdisable
+		Condition: techdisable
+	GrantCondition@EMPDISABLE:
+		RequiresCondition: empdisable && techdisable
+		Condition: disabled
 
 STEK:
 	Inherits: ^ScienceBuilding
@@ -2184,7 +2270,7 @@ STEK:
 	Power:
 		Amount: -100
 		RequiresCondition: !build-incomplete
-	ProvidesPrerequisite@buildingname:		
+	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: techcenter
 	WithDeathAnimation:
@@ -2197,7 +2283,7 @@ STEK:
 		RequiresCondition: !build-incomplete && !being-captured && !being-demolished && !disabled
 	InfiltrateForSupportPower:
 		Proxy: tech.stolen
-		Types: SpyInfiltrate, ThiefInfiltrate
+		Types: SpyInfiltrate, SabInfiltrate
 	AirstrikePower@Parabombs:
 		PauseOnCondition: disabled || lowpower
 		OrderName: SovietParabombs
@@ -2231,7 +2317,7 @@ STEK:
 		SquadSize: 1
 		QuantizedFacings: 8
 		Description: EMP Bomb
-		LongDesc: A fast plane drops an EMP Bomb on your target,\nthat disables Vehicles, Buildings and Ships.\nDisabled units cannot move or shoot for a while.\nUncloaks hidden units, Submarines will resurface.
+		LongDesc: A fast plane drops an EMP Bomb on your target,\nthat disables Vehicles, Buildings and Ships.\nDisabled units cannot move or shoot for a while.\nUncloaks hidden units, Submarines will resurface.\nLethal towards Aircraft, causing instant-death.
 		SelectTargetSpeechNotification: SelectTarget
 		UnitType: smig
 		CameraActor: camera.paradrop
@@ -2349,6 +2435,12 @@ STEK:
 	GrantConditionOnPrerequisite@CLONING:
 		Prerequisites: cloning.active
 		Condition: cloning.on
+	GrantCondition@TECHDISABLE:
+		RequiresCondition: empdisable
+		Condition: techdisable
+	GrantCondition@EMPDISABLE:
+		RequiresCondition: empdisable && techdisable
+		Condition: disabled
 
 SPRO:
 	Inherits: ^ScienceBuilding
@@ -2401,12 +2493,12 @@ SPRO:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate, ThiefInfiltrate
+		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate, SabInfiltrate
 	SpawnActorOnDeath:
 		Actor: atek.husk
 		OwnerType: InternalName
 	InfiltrateForSupportPowerReset:
-		Types: SpyInfiltrate, ThiefInfiltrate
+		Types: SpyInfiltrate, SabInfiltrate
 	RenderSprites:
 		Image: atek
 
@@ -2441,16 +2533,19 @@ AFLD:
 	Health:
 		HP: 1000
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate, ThiefInfiltrate
+		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate, SabInfiltrate
 	Targetable@Sabotage:	
-		TargetTypes: ThiefInfiltrate
+		TargetTypes: SabInfiltrate
 		RequiresCondition: !sabotaged
 	GrantConditionOnInfiltration@Sabotage:
-		Types: ThiefInfiltrate
+		Types: SabInfiltrate
 		Condition: sabotaged
 		Duration: 750
 	TimedConditionBar@Sabotage:
 		Condition: sabotaged
+	WithColoredOverlay@EMPDISABLE:
+		RequiresCondition: empdisable && sabotaged
+		Palette: disabled
 	InfiltrateForSupportPower:
 		Proxy: aircraft.upgraded
 		Types: SpyInfiltrate
@@ -2463,10 +2558,20 @@ AFLD:
 	RevealsShroud@GAPGEN:
 		Range: 4c0
 	Production:
-		Produces: Aircraft, Plane
+		Produces: Plane
 		PauseOnCondition: disabled || build-incomplete || sabotaged
+	ProductionQueue:
+		Type: Plane
+		Group: Aircraft
+		DisplayOrder: 4
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
 	ProductionBar:
-		ProductionType: Aircraft
+		ProductionType: Plane
 	RallyPoint:
 	Exit@1:
 		RequiresCondition: !being-captured
@@ -3023,16 +3128,19 @@ HPAD:
 	Health:
 		HP: 800
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate, ThiefInfiltrate
+		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate, SabInfiltrate
 	Targetable@Sabotage:	
-		TargetTypes: ThiefInfiltrate
+		TargetTypes: SabInfiltrate
 		RequiresCondition: !sabotaged
 	GrantConditionOnInfiltration@Sabotage:
-		Types: ThiefInfiltrate
+		Types: SabInfiltrate
 		Condition: sabotaged
 		Duration: 750
 	TimedConditionBar@Sabotage:
 		Condition: sabotaged
+	WithColoredOverlay@EMPDISABLE:
+		RequiresCondition: empdisable && sabotaged
+		Palette: disabled
 	InfiltrateForSupportPower:
 		Proxy: aircraft.upgraded
 		Types: SpyInfiltrate
@@ -3045,10 +3153,19 @@ HPAD:
 	RevealsShroud@GAPGEN:
 		Range: 4c0
 	Production:
-		Produces: Aircraft, Helicopter
+		Produces: Helicopter
 		PauseOnCondition: disabled || build-incomplete || sabotaged
+	ProductionQueue:
+		Type: Helicopter
+		Group: Aircraft
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
 	ProductionBar:
-		ProductionType: Aircraft
+		ProductionType: Helicopter
 	RallyPoint:
 	RepairsUnits:
 		ValuePercentage: 0
@@ -3293,6 +3410,16 @@ SYRD:
 	Production:
 		Produces: Ship, Boat
 		PauseOnCondition: disabled || build-incomplete
+	ProductionQueue:
+		Type: Ship
+		Group: Ship
+		DisplayOrder: 5
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
 	ProductionBar:
 		ProductionType: Ship
 	RepairsUnits:
@@ -3449,7 +3576,7 @@ SYRD:
 		DeploySound: sonpulse.aud
 		EffectImage: moveflsh
 		EffectPalette: moveflash
-		SupportPowerPaletteOrder: 6		
+		SupportPowerPaletteOrder: 6
 		Cursor: sonar-target
 	SupportPowerChargeBar:
 	GpsDot:
@@ -3507,10 +3634,20 @@ SPEN:
 		Range:  7c512
 	RenderDetectionCircle:
 	Production:
-		Produces: Ship, Submarine
+		Produces: Submarine
 		PauseOnCondition: disabled || build-incomplete
+	ProductionQueue:
+		Type: Submarine
+		Group: Ship
+		DisplayOrder: 5
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		LowPowerModifier: 300
 	ProductionBar:
-		ProductionType: Ship
+		ProductionType: Submarine
 	RepairsUnits:
 		HpPerStep: 10
 		Interval: 14

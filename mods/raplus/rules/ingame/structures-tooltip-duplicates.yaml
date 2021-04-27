@@ -129,10 +129,10 @@ AFLD.Greece:
 		OverrideActor: afld
 	-MapEditorData:
 
-FIX.Holland:
+FIX.Spain:
 	Inherits: FIX.Allies
 	Buildable:
-		Prerequisites: weap, ~structures.holland, ~techlevel.medium
+		Prerequisites: weap, ~structures.spain, ~techlevel.medium
 		Description: Repairs Vehicles for credits.\nVehicle and Aircraft can\nbe sold here for half value.\n (their value scaling with health)\n  Special Ability: Chrono Harvester\nDelivers a experimental Harvester equipped with Chrono tech\nthat can Teleport back to Refinery.\n (requires Tech Center)
 	RenderSprites:
 		Image: fix
@@ -201,10 +201,10 @@ FIX.Moldova:
 	UpdatesPlayerStatistics:
 		OverrideActor: fix.soviet
 
-DOME.Spain:
+DOME.Holland:
 	Inherits: DOME.Allies
 	Buildable:
-		Prerequisites: proc, ~structures.spain, ~techlevel.medium
+		Prerequisites: proc, ~structures.holland, ~techlevel.medium
 		Description: Provides an overview\nof the battlefield.\nCan detect cloaked units.\nCan be Infiltrated by an Spy or Saboteur\nresulting in loss of map exploration.\nCan detect cloaked units.\n  Special Ability: Spy Mast\nDeploys a Spy Mast anywhere on the map\nthat provides vision and detects nearby cloaked.\nThe Spy Mast can disguise to appear as an Tree to the enemy.\n (requires Service Depot)\n  Special Ability: Thief\nDelivers a Thief that can\nsteal Credits out of Refineries at your Primary barracks.\n (requires Barracks and Tech Center)
 	RenderSprites:
 		Image: dome

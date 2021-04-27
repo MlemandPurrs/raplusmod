@@ -660,7 +660,7 @@
 		Condition: damaged
 		ValidDamageStates: Light, Medium, Heavy, Critical
 	Repairable:
-		RepairActors: fix, fix.allies, fix.soviet, fix.holland, fix.sweden, fix.turkey, fix.kazakh, fix.china, fix.moldova
+		RepairActors: fix, fix.allies, fix.soviet, fix.spain, fix.sweden, fix.turkey, fix.kazakh, fix.china, fix.moldova
 	ChronoshiftableWithSpriteEffect:
 		Image: chronoteleport
 		WarpInSequence: appear
@@ -1431,7 +1431,7 @@
 
 ^InfiltratableFake:
 	Targetable:
-		TargetTypes: Ground, Structure, C4, DetonateAttack, SpyInfiltrate, ThiefInfiltrate
+		TargetTypes: Ground, Structure, C4, DetonateAttack, SpyInfiltrate, SabInfiltrate
 	InfiltrateForDecoration:
 		Types: SpyInfiltrate
 		RequiresSelection: true
@@ -2012,7 +2012,7 @@
 	AffectedByPowerOutage:
 		Condition: power-outage
 	InfiltrateForPowerOutage:
-		Types: SpyInfiltrate, ThiefInfiltrate
+		Types: SpyInfiltrate, SabInfiltrate
 	Power:
 		RequiresCondition: !disabled
 

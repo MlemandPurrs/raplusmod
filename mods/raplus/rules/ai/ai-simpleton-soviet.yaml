@@ -476,7 +476,7 @@ Player:
 		RequiresCondition: enable-wimp-ai && player.soviet && mamy-strat
 		IdleBaseUnitsMaximum: 6
 		MaxAircraft: 4
-		UnitQueues: Vehicle, Infantry, Ship, Aircraft
+		UnitQueues: Vehicle, Infantry, Ship, Submarine, Aircraft, Plane, Helicopter
 		UnitsToBuild:
 			e6: 2
 			sab: 2
@@ -513,7 +513,7 @@ Player:
 		RequiresCondition: enable-wimp-ai && player.soviet && flak-strat
 		IdleBaseUnitsMaximum: 6
 		MaxAircraft: 6
-		UnitQueues: Vehicle, Infantry, Ship, Aircraft
+		UnitQueues: Vehicle, Infantry, Ship, Submarine, Aircraft, Plane, Helicopter
 		UnitsToBuild:
 			e6: 2
 			sab: 2

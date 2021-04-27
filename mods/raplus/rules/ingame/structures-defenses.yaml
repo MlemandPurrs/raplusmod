@@ -746,14 +746,14 @@ GTUR:
 		InitialFacing: 0
 		RealignDelay: -1
 		RequiresCondition: !build-incomplete
+	WithSpriteTurret:
+		RequiresCondition: !build-incomplete
+		Recoils: false
 	WithBuildingBib:
 		HasMinibib: true
 	AttackTurreted:
 		PauseOnCondition: disabled
 		RequiresCondition: !build-incomplete
-	WithSpriteTurret:
-		RequiresCondition: !build-incomplete
-		Recoils: false
 	Armament:
 		Weapon: 203mm
 		MuzzleSequence: muzzle
@@ -958,7 +958,7 @@ PDOX:
 	GpsDot:
 		String: Super
 	InfiltrateForSupportPowerReset:
-		Types: SpyInfiltrate, ThiefInfiltrate
+		Types: SpyInfiltrate, SabInfiltrate
 
 IRON:
 	Inherits: ^ScienceBuilding
@@ -1031,7 +1031,7 @@ IRON:
 	GpsDot:
 		String: Super
 	InfiltrateForSupportPowerReset:
-		Types: SpyInfiltrate, ThiefInfiltrate
+		Types: SpyInfiltrate, SabInfiltrate
 
 MSLO:
 	Inherits: ^ScienceBuilding
@@ -1151,7 +1151,7 @@ MSLO:
 	GpsDot:
 		String: Nuke
 	InfiltrateForSupportPowerReset:
-		Types: SpyInfiltrate, ThiefInfiltrate
+		Types: SpyInfiltrate, SabInfiltrate
 
 AGUN:
 	Inherits: ^Defense
@@ -1528,7 +1528,7 @@ SPMST:
 		TargetTypes: Ground, Structure, TreeDisguise
 		RequiresCondition: !disguised
 	Targetable@disguised:
-		TargetTypes: Ground, Tree, TreeDisguise
+		TargetTypes: Ground, Trees, TreeDisguise, NoAutoTarget
 		RequiresForceFire: true
 		RequiresCondition: disguised
 	-WithSpriteBody:

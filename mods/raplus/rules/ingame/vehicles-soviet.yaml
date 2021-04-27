@@ -970,6 +970,8 @@ MWF:
 	Passenger:
 		Weight: 4
 		CustomPipType: pip-blue
+	TransferTimedExternalConditionOnTransform:
+		Condition: invulnerability
 
 ISU:
 	Inherits: ^TrackedVehicle

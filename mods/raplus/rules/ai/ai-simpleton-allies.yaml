@@ -336,12 +336,12 @@ Player:
 			tent: 3
 			dome: 1
 			dome.allies: 1
-			dome.spain: 1
+			dome.holland: 1
 			weap: 6
 			syrd: 2
 			fix: 1
 			fix.allies: 1
-			fix.holland: 1
+			fix.spain: 1
 			fix.sweden: 1
 			fix.turkey: 1
 			hpad: 6
@@ -368,13 +368,13 @@ Player:
 			hpad: 4
 			fix: 1
 			fix.allies: 1
-			fix.holland: 1
+			fix.spain: 1
 			fix.sweden: 1
 			fix.turkey: 1
 			syrd: 1
 			dome: 1
 			dome.allies: 1
-			dome.spain: 1
+			dome.holland: 1
 			afld: 1
 			afld.usa: 1
 			afld.england: 1
@@ -390,7 +390,7 @@ Player:
 		RequiresCondition: enable-wimp-ai && player.allies && rush-strat
 		IdleBaseUnitsMaximum: 6
 		MaxAircraft: 6
-		UnitQueues: Vehicle, Infantry, Ship, Aircraft
+		UnitQueues: Vehicle, Infantry, Ship, Submarine, Aircraft, Plane, Helicopter
 		UnitsToBuild:
 			harv: 15
 			e2: 15
@@ -448,12 +448,12 @@ Player:
 			hpad: 6
 			dome: 1
 			dome.allies: 1
-			dome.spain: 1
+			dome.holland: 1
 			weap: 6
 			syrd: 2
 			fix: 1
 			fix.allies: 1
-			fix.holland: 1
+			fix.spain: 1
 			fix.sweden: 1
 			fix.turkey: 1
 			atek: 1
@@ -479,13 +479,13 @@ Player:
 			hpad: 6
 			fix: 1
 			fix.allies: 1
-			fix.holland: 1
+			fix.spain: 1
 			fix.sweden: 1
 			fix.turkey: 1
 			syrd: 1
 			dome: 1
 			dome.allies: 1
-			dome.spain: 1
+			dome.holland: 1
 			afld: 1
 			afld.usa: 1
 			afld.england: 1
@@ -501,7 +501,7 @@ Player:
 		RequiresCondition: enable-wimp-ai && player.allies && heli-strat
 		IdleBaseUnitsMaximum: 6
 		MaxAircraft: 8
-		UnitQueues: Vehicle, Infantry, Ship, Aircraft
+		UnitQueues: Vehicle, Infantry, Ship, Submarine, Aircraft, Plane, Helicopter
 		UnitsToBuild:
 			harv: 15
 			e6: 2
@@ -561,12 +561,12 @@ Player:
 			tent: 3
 			dome: 1
 			dome.allies: 1
-			dome.spain: 1
+			dome.holland: 1
 			weap: 6
 			syrd: 2
 			fix: 1
 			fix.allies: 1
-			fix.holland: 1
+			fix.spain: 1
 			fix.sweden: 1
 			fix.turkey: 1
 			atek: 1
@@ -591,13 +591,13 @@ Player:
 			weap: 6
 			fix: 1
 			fix.allies: 1
-			fix.holland: 1
+			fix.spain: 1
 			fix.sweden: 1
 			fix.turkey: 1
 			syrd: 1
 			dome: 1
 			dome.allies: 1
-			dome.spain: 1
+			dome.holland: 1
 			afld: 4
 			afld.usa: 4
 			afld.england: 4
@@ -613,7 +613,7 @@ Player:
 		RequiresCondition: enable-wimp-ai && player.allies && bomb-strat
 		IdleBaseUnitsMaximum: 6
 		MaxAircraft: 6
-		UnitQueues: Vehicle, Infantry, Ship, Aircraft
+		UnitQueues: Vehicle, Infantry, Ship, Submarine, Aircraft, Plane, Helicopter
 		UnitsToBuild:
 			harv: 15
 			e6: 2
