@@ -89,7 +89,7 @@ MEDI:
 	Inherits: ^Soldier
 	Inherits@ROT: ^RottingInfantry
 	Buildable:
-		Queue: Infantry, InfantrySeperate
+		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 9
 		Prerequisites: ~tent, dome, ~infantry.allies, ~allies.or.france, ~techlevel.medium
@@ -135,7 +135,7 @@ MECH:
 	Inherits: ^Soldier
 	Inherits@ROT: ^RottingInfantry
 	Buildable:
-		Queue: Infantry, InfantrySeperate
+		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 6
 		Prerequisites: ~tent, fix, ~infantry.allies, ~allies.or.germany, ~techlevel.medium
@@ -202,7 +202,7 @@ SPY:
 		InitialStanceAI: HoldFire
 		ScanRadius: 5
 	Buildable:
-		Queue: Infantry, InfantrySeperate
+		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 7
 		Prerequisites: ~tent, dome, ~infantry.allies, ~techlevel.medium
@@ -268,7 +268,7 @@ SPY.Classic:
 	-Guard:
 	-WithInfantryBody:
 	Buildable:
-		Queue: Infantry, InfantrySeperate
+		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 7
 		Prerequisites: ~disabled
@@ -321,7 +321,7 @@ E7:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@ROT: ^RottingInfantry
 	Buildable:
-		Queue: Infantry, InfantrySeperate
+		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 8
 		BuildLimit: 1
@@ -409,7 +409,7 @@ RMBO:
 	Tooltip:
 		Name: Commando
 	Buildable:
-		Queue: Infantry, InfantrySeperate
+		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 8
 		BuildLimit: 1
@@ -512,7 +512,7 @@ SHOT:
 	Buildable:
 		BuildPaletteOrder: 10
 		Prerequisites: ~tent, fix, ~infantry.allies, ~allies.or.spain, ~techlevel.infonly
-		Queue: Infantry, InfantrySeperate
+		Queue: Infantry
 		BuildAtProductionType: Soldier
 		Description: Fast infantry armed with shotgun.\nSelf-heals while Out of Combat.\n  Strong vs Infantry\n  Weak vs anything Else
 	Mobile:
@@ -566,7 +566,7 @@ ATGM:
 	Buildable:
 		BuildPaletteOrder: 11
 		Prerequisites: ~tent, fix, ~infantry.allies, ~allies.or.greece, ~techlevel.medium
-		Queue: Infantry, InfantrySeperate
+		Queue: Infantry
 		BuildAtProductionType: Soldier
 		Description: Anti-armor rocket infantry, with Homing rockets.\nCannot attack Air units.\n  Special ability: Laser Lock\nDesignated Vehicle takes\n20% more damage from all Sources.\nRate of Fire of this unit against designated\nTarget accelerates by 10% every 4 shots,\nstacking up to 30% decrease in reload.\n Strong vs Tanks, Vehicles\n Weak vs everything Else
 	Health:
@@ -640,7 +640,7 @@ SNIP:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-		Queue: Infantry, InfantrySeperate
+		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 12
 		Prerequisites: ~tent, dome, ~allies.or.turkey, ~techlevel.medium
@@ -713,7 +713,7 @@ MRTR:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@ROT: ^RottingInfantry
 	Buildable:
-		Queue: Infantry, InfantrySeperate
+		Queue: Infantry
 		BuildPaletteOrder: 13
 		BuildAtProductionType: Soldier
 		Prerequisites: ~tent, dome, ~infantry.allies, ~allies.or.sweden, ~techlevel.medium
@@ -758,7 +758,7 @@ CINF:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@ROT: ^RottingInfantry
 	Buildable:
-		Queue: Infantry, InfantrySeperate
+		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 15
 		Prerequisites: ~tent, atek, ~infantry.allies, ~allies.or.holland, ~techlevel.high
@@ -830,7 +830,7 @@ THF:
 	-AttackFrontal:
 	-TakeCover:
 	Buildable:
-		Queue: Infantry, InfantrySeperate
+		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 998
 		Prerequisites: ~disabled
