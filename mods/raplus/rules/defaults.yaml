@@ -2401,7 +2401,7 @@
 	ChangesHealth@LOWPOWERDMG:
 		Step: 0
 		PercentageStep: -1
-		Delay: 33
+		Delay: 49
 		StartIfBelow: 101
 		DamageCooldown: 0
 		RequiresCondition: atlowpower && !stopatmedium
