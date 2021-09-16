@@ -254,9 +254,6 @@ POWR:
 			turkey: powrgrey
 	GpsDot:
 		String: Power
-	ProductionCostMultiplier@TRJuiceBonus:
-		Modifier: 117
-		Prerequisites: player.turkey
 
 APWR:
 	Inherits: ^Building

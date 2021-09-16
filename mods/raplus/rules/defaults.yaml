@@ -2459,7 +2459,7 @@
 		Modifier: 125
 		RequiresCondition: turkey.power
 	ProductionCostMultiplier@TRJuiceBonus:
-		Modifier: 117
+		Multiplier: 117
 		Prerequisites: player.turkey
 	GrantConditionOnFaction@TRJuiceBonus:
 		Condition: turkey.power
