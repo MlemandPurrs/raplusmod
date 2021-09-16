@@ -319,10 +319,10 @@ Player:
 		ConstructionYardTypes: fact
 		RefineryTypes: proc
 		PowerTypes: powr,powr.turkey,apwr,apwr.turkey
-		BarracksTypes: tent
-		VehiclesFactoryTypes: weap
-		ProductionTypes: tent,weap,hpad
-		NavalProductionTypes: syrd
+		BarracksTypes: tent,tent.usa
+		VehiclesFactoryTypes: weap,weap.usa
+		ProductionTypes: tent,tent.usa,weap,weap.usa,hpad,hpad.usa
+		NavalProductionTypes: syrd,syrd.usa
 		NewProductionCashThreshold: 4000
 		SiloTypes: e3
 		AntiAirTypes: agun
@@ -334,17 +334,21 @@ Player:
 		BuildingLimits:
 			proc: 4
 			tent: 3
+			tent.usa: 3
 			dome: 1
 			dome.allies: 1
 			dome.holland: 1
 			weap: 6
+			weap.usa: 6
 			syrd: 2
+			syrd.usa: 6
 			fix: 1
 			fix.allies: 1
 			fix.spain: 1
 			fix.sweden: 1
 			fix.turkey: 1
 			hpad: 6
+			hpad.usa: 6
 			atek: 1
 			atek.allies: 1
 			atek.usa: 1
@@ -364,14 +368,18 @@ Player:
 		BuildingFractions:
 			proc: 15
 			tent: 3
+			tent.usa: 3
 			weap: 6
+			weap.usa: 6
 			hpad: 4
+			hpad.usa: 4
 			fix: 1
 			fix.allies: 1
 			fix.spain: 1
 			fix.sweden: 1
 			fix.turkey: 1
 			syrd: 1
+			syrd.usa: 1
 			dome: 1
 			dome.allies: 1
 			dome.holland: 1
@@ -430,10 +438,10 @@ Player:
 		ConstructionYardTypes: fact
 		RefineryTypes: proc
 		PowerTypes: powr,powr.turkey,apwr,apwr.turkey
-		BarracksTypes: tent
-		VehiclesFactoryTypes: weap
-		ProductionTypes: tent,weap,hpad
-		NavalProductionTypes: syrd
+		BarracksTypes: tent,tent.usa
+		VehiclesFactoryTypes: weap,weap.usa
+		ProductionTypes: tent,tent.usa,weap,weap.usa,hpad,hpad.usa
+		NavalProductionTypes: syrd,syrd.usa
 		NewProductionCashThreshold: 4000
 		SiloTypes: e3
 		AntiAirTypes: agun
@@ -445,12 +453,16 @@ Player:
 		BuildingLimits:
 			proc: 4
 			tent: 3
+			tent.usa: 3
 			hpad: 6
+			hpad.usa: 6
 			dome: 1
 			dome.allies: 1
 			dome.holland: 1
 			weap: 6
+			weap.usa: 6
 			syrd: 2
+			syrd.usa: 2
 			fix: 1
 			fix.allies: 1
 			fix.spain: 1
@@ -475,14 +487,18 @@ Player:
 		BuildingFractions:
 			proc: 15
 			tent: 3
+			tent.usa: 3
 			weap: 6
+			weap.usa: 6
 			hpad: 6
+			hpad.usa: 6
 			fix: 1
 			fix.allies: 1
 			fix.spain: 1
 			fix.sweden: 1
 			fix.turkey: 1
 			syrd: 1
+			syrd.usa: 1
 			dome: 1
 			dome.allies: 1
 			dome.holland: 1
@@ -544,10 +560,10 @@ Player:
 		ConstructionYardTypes: fact
 		RefineryTypes: proc
 		PowerTypes: powr,powr.turkey,apwr,apwr.turkey
-		BarracksTypes: tent
-		VehiclesFactoryTypes: weap
-		ProductionTypes: tent,weap,hpad
-		NavalProductionTypes: syrd
+		BarracksTypes: tent,tent.usa
+		VehiclesFactoryTypes: weap,weap.usa
+		ProductionTypes: tent,tent.usa,weap,weap.usa,afld,afld.usa,afld.england,afld.france,afld.germany,afld.italy,afld.greece
+		NavalProductionTypes: syrd,syrd.usa
 		NewProductionCashThreshold: 4000
 		SiloTypes: e3
 		AntiAirTypes: agun
@@ -559,11 +575,14 @@ Player:
 		BuildingLimits:
 			proc: 4
 			tent: 3
+			tent.usa: 3
 			dome: 1
 			dome.allies: 1
 			dome.holland: 1
 			weap: 6
+			weap.usa: 6
 			syrd: 2
+			syrd.usa: 2
 			fix: 1
 			fix.allies: 1
 			fix.spain: 1

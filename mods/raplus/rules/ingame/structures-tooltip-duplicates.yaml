@@ -51,19 +51,6 @@ AFLD.Turkmen:
 		OverrideActor: afld
 	-MapEditorData:
 
-AFLD.Usa:
-	Inherits: AFLD
-	Buildable:
-		Prerequisites: anypower, ~structures.usa, ~techlevel.medium
-		Description: Produces, repairs and reloads Airplanes.\nCan be Infiltrated by an Spy resulting\nin Veterancy for enemy Aircraft.\nCan be Infiltrated by an Saboteur\nresulting in getting Disabled temporarily.\n  Special Ability: Paratroopers\nTwo B-52 drops a squad of Veteran infantry\nanywhere on the map.
-	RenderSprites:
-		Image: afld
-	ProvidesPrerequisite@COPY:
-		Prerequisite: afld
-	UpdatesPlayerStatistics:
-		OverrideActor: afld
-	-MapEditorData:
-
 AFLD.England:
 	Inherits: AFLD
 	Buildable:

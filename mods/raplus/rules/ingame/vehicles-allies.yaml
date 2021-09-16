@@ -341,7 +341,7 @@ RAPC:
 		Actor: 2TNK.Husk
 		OwnerType: InternalName
 	Passenger:
-		CustomPipType: Yellow
+		CustomPipType: pip-yellow
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
 
@@ -451,7 +451,7 @@ ARTY:
 		EmptyWeapon: UnitExplodeSmall
 		LoadedChance: 75
 	Passenger:
-		CustomPipType: Yellow
+		CustomPipType: pip-yellow
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
 

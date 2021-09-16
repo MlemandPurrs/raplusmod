@@ -190,6 +190,7 @@ POWR:
 	Inherits: ^Building
 	Inherits@POWER_OUTAGE: ^DisabledByPowerOutage
 	Inherits@POWER_BOOST: ^AffectedByOvercharge
+	Inherits@TRBonus: ^AffectedByTurkeyPower
 	Inherits@shape: ^2x2Shape
 	-ActorPreviewPlaceBuildingPreview:
 	SequencePlaceBuildingPreview:
@@ -253,11 +254,15 @@ POWR:
 			turkey: powrgrey
 	GpsDot:
 		String: Power
+	ProductionCostMultiplier@TRJuiceBonus:
+		Modifier: 117
+		Prerequisites: player.turkey
 
 APWR:
 	Inherits: ^Building
 	Inherits@POWER_OUTAGE: ^DisabledByPowerOutage
 	Inherits@POWER_BOOST: ^AffectedByOvercharge2
+	Inherits@TRBonus: ^AffectedByTurkeyPower
 	Inherits@shape: ^3x2Shape
 	-ActorPreviewPlaceBuildingPreview:
 	SequencePlaceBuildingPreview:
@@ -341,7 +346,7 @@ TENT:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 2
-		Prerequisites: ~structures.allies, ~techlevel.infonly
+		Prerequisites: ~structures.allies, ~!player.usa, ~techlevel.infonly
 		Description: Trains and Heals Infantry units.\nDecomissions Infantry for 1/4 of cost.\nCan be Infiltrated by an Spy resulting\nin Veterancy for enemy Infantry.\nCan be Infiltrated by an Saboteur\nresulting in getting Disabled temporarily.\n Special: Free Guards\nEach Barracks comes with two free Rifle Infantry.
 	Valued:
 		Cost: 500
@@ -1257,7 +1262,7 @@ WEAP:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 5
-		Prerequisites: anypower, ~techlevel.low
+		Prerequisites: anypower, ~!player.usa, ~techlevel.low
 		Description: Produces Vehicle units.\nCan be Infiltrated by an Spy resulting\nin Veterancy for enemy Vehicles.\nCan be Infiltrated by an Saboteur\nresulting in getting Disabled temporarily.
 	Valued:
 		Cost: 2000
@@ -3039,7 +3044,7 @@ HPAD:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 10
-		Prerequisites: proc, ~techlevel.medium
+		Prerequisites: proc, ~!structures.usa, ~techlevel.medium
 		Description: Produces and reloads Helicopters.\nCan be Infiltrated by an Spy resulting\nin Veterancy for enemy Aircraft.\nCan be Infiltrated by an Saboteur\nresulting in getting Disabled temporarily.
 	Valued:
 		Cost: 500
@@ -3296,7 +3301,7 @@ SYRD:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 3
-		Prerequisites: anypower, ~structures.allies, ~techlevel.low, ~!global-disablenavy
+		Prerequisites: anypower, ~structures.allies, ~!player.usa, ~techlevel.low, ~!global-disablenavy
 		Description: Produces and repairs\nShips and Transports.\nNearby Navy can be sold for half their value.\n (their value scaling with health)\n  Special Ability: Sonar Pulse\nReveals all submarines in target\narea for a short time.
 	Valued:
 		Cost: 750

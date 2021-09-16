@@ -306,7 +306,7 @@ MI2:
 		Speed: 176
 		LandableTerrainTypes: Clear,Rough,Road,Ore,Beach,Gems
 	Rearmable:
-		RearmActors: hpad, carr.deployed
+		RearmActors: hpad, hpad.usa, carr.deployed
 	SpawnActorOnDeath:
 		Actor: MI2.Husk
 		RequiresCondition: airborne && !empdisable
@@ -446,7 +446,7 @@ HIND:
 		RequiresSelection: true
 		AmmoPools: ammorock
 	Rearmable:
-		RearmActors: hpad, carr.deployed
+		RearmActors: hpad, hpad.usa, carr.deployed
 		AmmoPools: ammogun, ammorock
 	WithIdleOverlay@ROTORAIR:
 		Sequence: rotor

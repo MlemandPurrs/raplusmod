@@ -846,7 +846,7 @@ THF:
 	RevealsShroud:
 		Range: 5c0
 	Passenger:
-		CustomPipType: blue
+		CustomPipType: pip-blue
 	Infiltrates:
 		Types: ThfInfiltrate
 		Notification: BuildingInfiltrated

@@ -289,9 +289,9 @@ Player:
 		RefineryTypes: proc
 		MaxRefineries: 6
 		PowerTypes: powr,apwr.powr.turkey,apwr.turkey
-		BarracksTypes: tent
-		VehiclesFactoryTypes: weap
-		ProductionTypes: tent,weap,hpad,afld,afld.usa,afld.england,afld.france,afld.germany,afld.italy,afld.greece
+		BarracksTypes: tent,tent.usa
+		VehiclesFactoryTypes: weap,weap.usa
+		ProductionTypes: tent,tent.usa,weap,weap.usa,hpad,hpad.usa,afld,afld.usa,afld.england,afld.france,afld.germany,afld.italy,afld.greece
 		NavalProductionTypes: syrd
 		NewProductionCashThreshold: 4000
 		SiloTypes: silo
@@ -312,11 +312,15 @@ Player:
 		BuildingLimits:
 			proc: 4
 			tent: 2
+			tent.usa: 2
 			dome.allies: 1
 			dome.holland: 1
 			weap: 3
+			weap.usa: 3
 			syrd: 1
+			syrd.usa: 1
 			hpad: 4
+			hpad.usa: 4
 			atek: 1
 			atek.allies: 1
 			atek.usa: 1
@@ -350,11 +354,15 @@ Player:
 		BuildingFractions:
 			proc: 15
 			tent: 2
+			tent.usa: 2
 			dome.allies: 1
 			dome.holland: 1
 			weap: 6
+			weap.usa: 6
 			hpad: 4
+			hpad.usa: 4
 			syrd: 1
+			syrd.usa: 1
 			pbox: 7
 			hbox: 3
 			gun: 5

@@ -1,4 +1,86 @@
 
+TENT.Usa:
+	Inherits: TENT
+	Buildable:
+		Prerequisites: ~structures.allies, ~player.usa, ~techlevel.infonly
+	RenderSprites:
+		Image: tent
+	ProvidesPrerequisite@COPY:
+		Prerequisite: tent
+	UpdatesPlayerStatistics:
+		OverrideActor: tent
+	Power:
+		Amount: -30
+	-PowerMultiplier@USABonus:
+	-GrantConditionOnFaction@USABonus:
+	-MapEditorData:
+
+WEAP.Usa:
+	Inherits: WEAP
+	Buildable:
+		Prerequisites: anypower, ~player.usa, ~techlevel.low
+	RenderSprites:
+		Image: weap
+	ProvidesPrerequisite@COPY:
+		Prerequisite: weap
+	UpdatesPlayerStatistics:
+		OverrideActor: weap
+	Power:
+		Amount: -45
+	-PowerMultiplier@USABonus:
+	-GrantConditionOnFaction@USABonus:
+	-MapEditorData:
+
+SYRD.Usa:
+	Inherits: SYRD
+	Buildable:
+		Prerequisites: anypower, ~structures.allies, ~player.usa, ~techlevel.low, ~!global-disablenavy
+	RenderSprites:
+		Image: syrd
+	ProvidesPrerequisite@COPY:
+		Prerequisite: syrd
+	UpdatesPlayerStatistics:
+		OverrideActor: syrd
+	Power:
+		Amount: -45
+	-PowerMultiplier@USABonus:
+	-GrantConditionOnFaction@USABonus:
+	-MapEditorData:
+
+AFLD.Usa:
+	Inherits: AFLD
+	Buildable:
+		Prerequisites: anypower, ~structures.usa, ~techlevel.medium
+		Description: Produces, repairs and reloads Airplanes.\nCan be Infiltrated by an Spy resulting\nin Veterancy for enemy Aircraft.\nCan be Infiltrated by an Saboteur\nresulting in getting Disabled temporarily.\n  Special Ability: Paratroopers\nTwo B-52 drops a squad of Veteran infantry\nanywhere on the map.
+	RenderSprites:
+		Image: afld
+	ProvidesPrerequisite@COPY:
+		Prerequisite: afld
+	UpdatesPlayerStatistics:
+		OverrideActor: afld
+	Power:
+		Amount: -30
+	-PowerMultiplier@USABonus:
+	-GrantConditionOnFaction@USABonus:
+	-MapEditorData:
+
+HPAD.Usa:
+	Inherits: HPAD
+	Buildable:
+		Prerequisites: proc, ~structures.usa, ~techlevel.medium
+		Description: Produces and reloads Helicopters.\nCan be Infiltrated by an Spy resulting\nin Veterancy for enemy Aircraft.\nCan be Infiltrated by an Saboteur\nresulting in getting Disabled temporarily.
+	RenderSprites:
+		Image: hpad
+	ProvidesPrerequisite@COPY:
+		Prerequisite: hpad
+	UpdatesPlayerStatistics:
+		OverrideActor: hpad
+	Power:
+		Amount: -15
+	-PowerMultiplier@USABonus:
+	-GrantConditionOnFaction@USABonus:
+	-MapEditorData:
+
 E7.Usa:
 	Inherits: E7
 	Buildable:
@@ -635,6 +717,9 @@ POWR.Turkey:
 		Image: powr
 	ProvidesPrerequisite@COPY:
 		Prerequisite: powr
+	-PowerMultiplier@TRJuiceBonus:
+	-GrantConditionOnFaction@TRJuiceBonus:
+	-ProductionCostMultiplier@TRJuiceBonus:
 	-MapEditorData:
 
 APWR.Turkey:
@@ -650,6 +735,9 @@ APWR.Turkey:
 		Image: apwr
 	ProvidesPrerequisite@COPY:
 		Prerequisite: apwr
+	-PowerMultiplier@TRJuiceBonus:
+	-GrantConditionOnFaction@TRJuiceBonus:
+	-ProductionCostMultiplier@TRJuiceBonus:
 	-MapEditorData:
 
 3TNK.1B.Russia:

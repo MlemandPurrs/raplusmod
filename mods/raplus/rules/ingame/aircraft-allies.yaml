@@ -346,7 +346,7 @@ IROQ:
 		RequiresSelection: true
 		AmmoPools: ammodc
 	Rearmable:
-		RearmActors: hpad, carr.deployed
+		RearmActors: hpad, hpad.usa, carr.deployed
 		AmmoPools: ammogun, ammodc
 	SpawnActorOnDeath:
 		Actor: IROQ.Husk
@@ -492,7 +492,7 @@ HELI:
 		RequiresSelection: true
 		AmmoPools: ammogun
 	Rearmable:
-		RearmActors: hpad, carr.deployed
+		RearmActors: hpad, hpad.usa, carr.deployed
 		AmmoPools: ammorock, ammogun
 	SpawnActorOnDeath:
 		Actor: HELI.Husk

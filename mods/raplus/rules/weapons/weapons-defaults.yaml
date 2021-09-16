@@ -212,7 +212,7 @@
 		PointDefenseType: AAMissile
 	Warhead@1Dam: SpreadDamage
 		Spread: 128
-		Damage: 50
+		Damage: 45
 		ValidTargets: Ground, Water, Air
 		Versus:
 			None: 10

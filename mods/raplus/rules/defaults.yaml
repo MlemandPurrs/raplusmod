@@ -864,7 +864,7 @@
 		WarpOutSequence: disappear
 		Palette: effect
 	RepairableNear:
-		RepairActors: spen, syrd
+		RepairActors: spen, syrd, syrd.usa
 	GpsDot:
 		String: Ship
 	WithDamageOverlay:
@@ -1107,7 +1107,7 @@
 		RequiresCondition: cruising
 	ClassicFacingBodyOrientation:
 	Repairable:
-		RepairActors: hpad, carr.deployed
+		RepairActors: hpad, hpad.usa, carr.deployed
 	Targetable@ISHELICOPTER:
 		TargetTypes: Helicopter
 	-SpeedMultiplier@UkraineBonus:
@@ -2453,6 +2453,18 @@
 	GrantConditionOnPrerequisite@TRBONUS:
 		Condition: turkey.player
 		Prerequisites: player.turkey	
+
+^AffectedByTurkeyPower:
+	PowerMultiplier@TRJuiceBonus:
+		Modifier: 125
+		RequiresCondition: turkey.power
+	ProductionCostMultiplier@TRJuiceBonus:
+		Modifier: 117
+		Prerequisites: player.turkey
+	GrantConditionOnFaction@TRJuiceBonus:
+		Condition: turkey.power
+		Factions: turkey
+		ResetOnOwnerChange: True
 
 ^AffectedByRussia:
 	ProductionCostMultiplier@Russia:

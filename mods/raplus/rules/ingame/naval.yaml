@@ -39,7 +39,7 @@ LST:
 		LoadedCondition: loaded	
 		LoadingCondition: notmobile
 	RepairableNear:
-		RepairActors: syrd, spen
+		RepairActors: syrd, syrd.usa, spen
 	Sellable:
 		RequiresCondition: ship.sellable && !loaded
 

@@ -1027,8 +1027,6 @@ ISU:
 	RenderRangeCircle:
 	Explodes:
 		Weapon: V2Explode
-	Passenger:
-		CustomPipType: pip-red
 
 GTNK:
 	Inherits: ^TrackedVehicle
