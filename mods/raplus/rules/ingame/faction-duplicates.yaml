@@ -228,7 +228,7 @@ JEEP.England:
 	TransformOnCapture:
 		IntoActor: 1tnk.Holland
 	InfiltrateForTransform:
-		IntoActor: 2tnk.Holland
+		IntoActor: 1tnk.Holland
 	RenderSprites:
 		Image: 1tnk.destroyed
 	-MapEditorData:
