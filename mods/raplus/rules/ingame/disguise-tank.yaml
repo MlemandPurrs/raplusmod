@@ -118,6 +118,7 @@ DTNK:
 			1tnk.germany: tnk1
 			1tnk.spain: tnk1
 			1tnk.italy: tnk1
+			1tnk.italy.norank: tnk1
 			1tnk.greece: tnk1
 			atnk: atnk
 			2tnk: tnk2
@@ -126,6 +127,7 @@ DTNK:
 			2tnk.england: tnk2
 			2tnk.france: tnk2
 			2tnk.germany: tnk2
+			2tnk.sweden: tnk2
 			2tnk.spain: tnk2
 			2tnk.italy: tnk2
 			2tnk.stealth: tnk2s

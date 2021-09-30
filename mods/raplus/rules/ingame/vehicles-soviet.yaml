@@ -272,6 +272,9 @@ FTRK.Hunter:
 	-WithCargoPipsDecoration:
 	-AttackTurreted:
 	-Buildable:
+	-Capturable:
+	Mobile:
+		PauseOnCondition: !(!empdisable && !being-captured)
 	Capturable:
 		Types: vehicle
 		CancelActivity: True

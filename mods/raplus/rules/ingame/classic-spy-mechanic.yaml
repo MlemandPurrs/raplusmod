@@ -691,7 +691,7 @@
 		RequiresCondition: reveal_secrets && rapc_ICO
 	GrantConditionOnProduction@1tnk:
 		Condition: tnk1_ICO
-		Actors: 1tnk, 1tnk.england, 1tnk.france, 1tnk.germany, 1tnk.spain, 1tnk.italy, 1tnk.sweden, 1tnk.holland
+		Actors: 1tnk, 1tnk.england, 1tnk.france, 1tnk.germany, 1tnk.spain, 1tnk.italy, 1tnk.greece
 	WithDecoration@1tnk:
 		Position: Center
 		ValidRelationships: Enemy, Neutral
@@ -709,7 +709,7 @@
 		RequiresCondition: reveal_secrets && atnk_ICO
 	GrantConditionOnProduction@2tnk:
 		Condition: tnk2_ICO
-		Actors: 2tnk, 2tnk.england, 2tnk.france, 2tnk.germany, 2tnk.spain, 2tnk.sweden, 2tnk.holland
+		Actors: 2tnk, 2tnk.england, 2tnk.france, 2tnk.germany, 2tnk.spain, 2tnk.italy, 2tnk.sweden
 	WithDecoration@2tnk:
 		Position: Center
 		ValidRelationships: Enemy, Neutral
@@ -727,7 +727,7 @@
 		RequiresCondition: reveal_secrets && tnk2s_ICO
 	GrantConditionOnProduction@3tnk:
 		Condition: tnk3_ICO
-		Actors: 3tnk, 3tnk.russia, 3tnk.ukraine, 3tnk.belarus, 3tnk.kazakh, 3tnk.turkmen, 3tnk.afghan
+		Actors: 3tnk, 3tnk.russia, 3tnk.ukraine, 3tnk.china, 3tnk.kazakh, 3tnk.turkmen, 3tnk.afghan
 	WithDecoration@3tnk:
 		Position: Center
 		ValidRelationships: Enemy, Neutral
@@ -736,7 +736,7 @@
 		RequiresCondition: reveal_secrets && tnk3_ICO
 	GrantConditionOnProduction@3tnk1b:
 		Condition: tnk31b_ICO
-		Actors: 3tnk.1b, 3tnk.1b.russia, 3tnk.1b.ukraine, 3tnk.1b.belarus, 3tnk.1b.kazakh, 3tnk.1b.turkmen, 3tnk.1b.afghan
+		Actors: 3tnk.1b, 3tnk.1b.russia, 3tnk.1b.ukraine, 3tnk.1b.china, 3tnk.1b.kazakh, 3tnk.1b.turkmen, 3tnk.1b.afghan
 	WithDecoration@3tnk1b:
 		Position: Center
 		ValidRelationships: Enemy, Neutral
@@ -1122,7 +1122,7 @@
 		RequiresCondition: reveal_secrets && bshp_ICO
 	GrantConditionOnProduction@ca:
 		Condition: ca_ICO
-		Actors: ca, ca.italy
+		Actors: ca, ca.spain
 	WithDecoration@ca:
 		Position: Center
 		ValidRelationships: Enemy, Neutral

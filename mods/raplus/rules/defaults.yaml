@@ -919,7 +919,7 @@
 		RequiresCondition: (botowner && under-bridge)
 	DamageMultiplier@CountryBonus:
 		Modifier: 90
-		RequiresCondition: spain
+		RequiresCondition: spain.player
 	GrantConditionOnFaction@CountryBonus:
 		Condition: spain.player
 		Factions: spain

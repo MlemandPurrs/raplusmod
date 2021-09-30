@@ -644,7 +644,7 @@ GUN:
 	Inherits@RangeBonus: ^AffectedByGreece
 	ReloadDelayMultiplier@RoFBonus:
 		Modifier: 70
-		RequiresCondition: player.italy
+		RequiresCondition: italy.player
 	GrantConditionOnFaction@RoFBonus:
 		Condition: italy.player
 		Factions: italy

@@ -368,8 +368,8 @@ MNLY.Support:
 		Weapon: Repair
 		Cursor: repair
 		OutsideRangeCursor: repair
-		TargetStances: Ally
-		ForceTargetStances: None
+		TargetRelationships: Ally
+		ForceTargetRelationships: None
 		PauseOnCondition: empdisable
 	AttackTurreted:
 		PauseOnCondition: empdisable
