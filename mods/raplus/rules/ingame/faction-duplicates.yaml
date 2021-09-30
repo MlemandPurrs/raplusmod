@@ -203,64 +203,6 @@ JEEP.England:
 		Image: 2tnk.destroyed
 	-MapEditorData:
 
-1TNK.Holland:
-	Inherits: 1TNK
-	Buildable:
-		Prerequisites: proc, ~vehicles.allies, ~player.holland, ~techlevel.low
-	Mobile:
-		Speed: 129
-	Health:
-		HP: 200
-	SpawnActorOnDeath:
-		Actor: 1TNK.Holland.Husk
-	UpdatesPlayerStatistics:
-		OverrideActor: 1tnk
-	RenderSprites:
-		Image: 1tnk
-	-MapEditorData:
-
-1TNK.Holland.Husk:
-	Inherits: ^Husk
-	Tooltip:
-		Name: Husk (Medium Tank)
-	ThrowsParticle@turret:
-		Anim: turret
-	TransformOnCapture:
-		IntoActor: 1tnk.Holland
-	InfiltrateForTransform:
-		IntoActor: 1tnk.Holland
-	RenderSprites:
-		Image: 1tnk.destroyed
-	-MapEditorData:
-
-2TNK.Holland:
-	Inherits: 2TNK
-	Buildable:
-		Prerequisites: fix, ~vehicles.allies, ~player.holland, ~techlevel.medium
-	Mobile:
-		Speed: 93
-	Health:
-		HP: 400
-	SpawnActorOnDeath:
-		Actor: 2TNK.Holland.Husk
-	RenderSprites:
-		Image: 2tnk
-	-MapEditorData:
-
-2TNK.Holland.Husk:
-	Inherits: ^Husk
-	Tooltip:
-		Name: Husk (Medium Tank)
-	ThrowsParticle@turret:
-		Anim: turret
-	TransformOnCapture:
-		IntoActor: 2tnk.Holland
-	InfiltrateForTransform:
-		IntoActor: 2tnk.Holland
-	RenderSprites:
-		Image: 2tnk.destroyed
-	-MapEditorData:
-
 1TNK.France:
 	Inherits: 1TNK
 	Buildable:
@@ -432,61 +374,13 @@ DD.Germany:
 PDOX.Germany:
 	Inherits: PDOX
 	Buildable:
-		Prerequisites: atek, ~structures.allies, ~player.germany, ~techlevel.unrestricted	
+		Prerequisites: atek, ~structures.allies, ~player.germany, ~techlevel.unrestricted
+	Valued:
+		Cost: 1000
 	Power:
 		Amount: -100
-	Health:
-		HP: 1500
 	RenderSprites:
 		Image: pdox
-	-MapEditorData:
-
-1TNK.Sweden:
-	Inherits: 1TNK
-	Buildable:
-		Prerequisites: proc, ~vehicles.allies, ~player.sweden, ~techlevel.low
-		Description: Fast tank, good for scouting.\n  Special ability: Amphibian\nCan swim through sea and river.\nTakes 20% more damage from all sources\nwhile in open water but not rivers.\n  Strong vs Light armor\n  Weak vs Infantry, Tanks, Aircraft
-	Mobile:
-		Locomotor: tracked-amphibious
-	GrantConditionOnTerrain@SEA:
-		TerrainTypes: Water, River
-		Condition: floating
-	GrantConditionOnTerrain@SEAMALUS:
-		TerrainTypes: Water
-		Condition: atsea
-	Targetable:
-		RequiresCondition: !floating
-	Targetable@SEA:
-		TargetTypes: Ground, Water, Ship, C4, Tank
-		RequiresCondition: floating
-	WithFacingSpriteBody:
-		RequiresCondition: !floating
-	WithFacingSpriteBody@SEA:
-		Name: floating
-		Sequence: idle-float
-		RequiresCondition: floating
-	DamageMultiplier:
-		Modifier: 120
-		RequiresCondition: atsea
-	SpawnActorOnDeath:
-		Actor: 1TNK.Sweden.Husk
-		RequiresCondition: !floating
-	RenderSprites:
-		Image: 1tnk
-	-MapEditorData:
-
-1TNK.Sweden.Husk:
-	Inherits: ^Husk
-	Tooltip:
-		Name: Husk (Light Tank)
-	ThrowsParticle@turret:
-		Anim: turret
-	TransformOnCapture:
-		IntoActor: 1tnk.Sweden
-	InfiltrateForTransform:
-		IntoActor: 1tnk.Sweden
-	RenderSprites:
-		Image: 1tnk.destroyed
 	-MapEditorData:
 
 2TNK.Sweden:
@@ -513,6 +407,28 @@ TORN.Sweden:
 		Image: ally-mig
 	UpdatesPlayerStatistics:
 		OverrideActor: torn
+	-MapEditorData:
+
+GAP.Sweden:
+	Inherits: GAP
+	Buildable:
+		Prerequisites: dome, ~fact, ~player.sweden, ~techlevel.medium
+	Valued:
+		Cost: 800
+	RenderSprites:
+		Image: gap
+	ProvidesPrerequisite@COPY:
+		Prerequisite: gap
+	-MapEditorData:
+
+MGG.Sweden:
+	Inherits: MGG
+	Buildable:
+		Prerequisites: dome, ~weap, ~player.sweden, ~techlevel.medium
+	Valued:
+		Cost: 600
+	RenderSprites:
+		Image: mgg
 	-MapEditorData:
 
 1TNK.Spain:
@@ -583,26 +499,37 @@ TORN.Sweden:
 		Image: 2tnk.destroyed
 	-MapEditorData:
 
-GAP.Spain:
-	Inherits: GAP
+CA.Spain:
+	Inherits: CA
 	Buildable:
-		Prerequisites: dome, ~fact, ~player.spain, ~techlevel.medium
-	Valued:
-		Cost: 800
+		Prerequisites: ~syrd, atek, ~ships.allies, ~player.spain, ~techlevel.high
+	UpdatesPlayerStatistics:
+		OverrideActor: ca
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
 	RenderSprites:
-		Image: gap
-	ProvidesPrerequisite@COPY:
-		Prerequisite: gap
+		Image: ca
 	-MapEditorData:
 
-MGG.Spain:
-	Inherits: MGG
+SPIT.Spain:
+	Inherits: SPIT
+	-AmmoPool@1:
+	AmmoPool
 	Buildable:
-		Prerequisites: dome, ~weap, ~player.spain, ~techlevel.medium
-	Valued:
-		Cost: 600
+		Prerequisites: ~afld, dome, ~aircraft.allies, ~player.spain,  ~techlevel.medium	
+	AmmoPool@1:
+		Ammo: 12
+		ReloadDelay: 11
+		AmmoCondition: ammo
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		PipCount: 4
+		FullSequence: pip-yellow
+		RequiresSelection: true
 	RenderSprites:
-		Image: mgg
+		Image: ally-yak
 	-MapEditorData:
 
 E4.Italy:
@@ -623,21 +550,109 @@ E4.Italy:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	Mobile:
+		Speed: 129
+	Health:
+		HP: 200
+	SpawnActorOnDeath:
+		Actor: 1TNK.Italy.Husk
 	RenderSprites:
 		Image: 1tnk
 	-MapEditorData:
 
-CA.Italy:
-	Inherits: CA
-	Buildable:
-		Prerequisites: ~syrd, atek, ~ships.allies, ~player.italy, ~techlevel.high
-	UpdatesPlayerStatistics:
-		OverrideActor: ca
-	ProducibleWithLevel:
-		Prerequisites: techlevel.infonly
-		InitialLevels: 1
+1TNK.Italy.Norank:
+	Inherits: 1TNK.Italy
+	-Buildable:
+	-ProducibleWithLevel:
+
+1TNK.Italy.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Light Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 1tnk.Italy.Norank
+	InfiltrateForTransform:
+		IntoActor: 1tnk.Italy.Norank
 	RenderSprites:
-		Image: ca
+		Image: 1tnk.destroyed
+	-MapEditorData:
+
+2TNK.Italy:
+	Inherits: 2TNK
+	Buildable:
+		Prerequisites: fix, ~vehicles.allies, ~player.italy, ~techlevel.medium
+	Mobile:
+		Speed: 93
+	Health:
+		HP: 400
+	SpawnActorOnDeath:
+		Actor: 2TNK.Italy.Husk
+	RenderSprites:
+		Image: 2tnk
+	-MapEditorData:
+
+2TNK.Italy.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Medium Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 2tnk.Italy
+	InfiltrateForTransform:
+		IntoActor: 2tnk.Italy
+	RenderSprites:
+		Image: 2tnk.destroyed
+	-MapEditorData:
+
+1TNK.Greece:
+	Inherits: 1TNK
+	Buildable:
+		Prerequisites: proc, ~vehicles.allies, ~player.greece, ~techlevel.low
+		Description: Fast tank, good for scouting.\n  Special ability: Amphibian\nCan swim through sea and river.\nTakes 20% more damage from all sources\nwhile in open water but not rivers.\n  Strong vs Light armor\n  Weak vs Infantry, Tanks, Aircraft
+	Mobile:
+		Locomotor: tracked-amphibious
+	GrantConditionOnTerrain@SEA:
+		TerrainTypes: Water, River
+		Condition: floating
+	GrantConditionOnTerrain@SEAMALUS:
+		TerrainTypes: Water
+		Condition: atsea
+	Targetable:
+		RequiresCondition: !floating
+	Targetable@SEA:
+		TargetTypes: Ground, Water, Ship, C4, Tank
+		RequiresCondition: floating
+	WithFacingSpriteBody:
+		RequiresCondition: !floating
+	WithFacingSpriteBody@SEA:
+		Name: floating
+		Sequence: idle-float
+		RequiresCondition: floating
+	DamageMultiplier:
+		Modifier: 120
+		RequiresCondition: atsea
+	SpawnActorOnDeath:
+		Actor: 1TNK.Greece.Husk
+		RequiresCondition: !floating
+	RenderSprites:
+		Image: 1tnk
+	-MapEditorData:
+
+1TNK.Greece.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Light Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 1tnk.Greece
+	InfiltrateForTransform:
+		IntoActor: 1tnk.Greece
+	RenderSprites:
+		Image: 1tnk.destroyed
 	-MapEditorData:
 
 IROQ.Greece:
@@ -848,74 +863,6 @@ SS.Ukraine:
 		InitialLevels: 1
 	UpdatesPlayerStatistics:
 		OverrideActor: ss
-	-MapEditorData:
-
-3TNK.Belarus:
-	Inherits: 3TNK
-	Buildable:
-		Prerequisites: fix, ~vehicles.soviet, ~player.belarus, ~techlevel.medium
-	Health:
-		HP: 540
-	ProductionCostMultiplier@NationBonus:
-		Multiplier: 90
-		Prerequisites: !indp
-	ProductionCostMultiplier@NationBonusExtra:
-		Multiplier: 90
-		Prerequisites: indp, indplowpower
-	SpawnActorOnDeath:
-		Actor: 3TNK.Belarus.Husk
-	UpdatesPlayerStatistics:
-		OverrideActor: 3tnk
-	RenderSprites:
-		Image: 3tnk
-	-MapEditorData:
-
-3TNK.Belarus.Husk:
-	Inherits: ^Husk
-	Tooltip:
-		Name: Husk (Heavy Tank)
-	ThrowsParticle@turret:
-		Anim: turret
-	TransformOnCapture:
-		IntoActor: 3tnk.belarus
-	InfiltrateForTransform:
-		IntoActor: 3tnk.belarus
-	RenderSprites:
-		Image: 3tnk.destroyed
-	-MapEditorData:
-
-3TNK.1B.Belarus:
-	Inherits: 3TNK.1B
-	Buildable:
-		Prerequisites: proc, ~vehicles.soviet, ~player.belarus, ~techlevel.low
-	Health:
-		HP: 405
-	ProductionCostMultiplier@NationBonus:
-		Multiplier: 90
-		Prerequisites: !indp
-	ProductionCostMultiplier@NationBonusExtra:
-		Multiplier: 90
-		Prerequisites: indp, indplowpower
-	SpawnActorOnDeath:
-		Actor: 3TNK.1B.Belarus.Husk
-	UpdatesPlayerStatistics:
-		OverrideActor: 3tnk.1b
-	RenderSprites:
-		Image: 3tnk.1b
-	-MapEditorData:
-
-3TNK.1B.Belarus.Husk:
-	Inherits: ^Husk
-	Tooltip:
-		Name: Husk (Heavy Tank 1-B)
-	ThrowsParticle@turret:
-		Anim: turret
-	TransformOnCapture:
-		IntoActor: 3tnk.1B.Belarus
-	InfiltrateForTransform:
-		IntoActor: 3tnk.1B.Belarus
-	RenderSprites:
-		Image: 3tnk.1b.destroyed
 	-MapEditorData:
 
 FTRK.Belarus:
@@ -1192,6 +1139,18 @@ SPRO.Kazakh:
 		Image: atek
 	-MapEditorData:
 
+IRON.Uzbek:
+	Inherits: IRON
+	Buildable:
+		Prerequisites: stek, ~structures.soviet, ~player.uzbek, ~techlevel.unrestricted
+	Power:
+		Amount: -100
+	Health:
+		HP: 1500
+	RenderSprites:
+		Image: pdox
+	-MapEditorData:
+
 VOLK.Uzbek:
 	Inherits: VOLK
 	Buildable:
@@ -1375,3 +1334,101 @@ E3.China:
 	UpdatesPlayerStatistics:
 		OverrideActor: e3
 	-MapEditorData:
+
+3TNK.China:
+	Inherits: 3TNK
+	Buildable:
+		Prerequisites: fix, ~vehicles.soviet, ~player.china, ~techlevel.medium
+	Health:
+		HP: 540
+	ProductionCostMultiplier@NationBonus:
+		Multiplier: 90
+		Prerequisites: !indp
+	ProductionCostMultiplier@NationBonusExtra:
+		Multiplier: 90
+		Prerequisites: indp, indplowpower
+	SpawnActorOnDeath:
+		Actor: 3TNK.China.Husk
+	UpdatesPlayerStatistics:
+		OverrideActor: 3tnk
+	RenderSprites:
+		Image: 3tnk
+	-MapEditorData:
+
+3TNK.China.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Heavy Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 3tnk.china
+	InfiltrateForTransform:
+		IntoActor: 3tnk.china
+	RenderSprites:
+		Image: 3tnk.destroyed
+	-MapEditorData:
+
+3TNK.1B.China:
+	Inherits: 3TNK.1B
+	Buildable:
+		Prerequisites: proc, ~vehicles.soviet, ~player.china, ~techlevel.low
+	Health:
+		HP: 405
+	ProductionCostMultiplier@NationBonus:
+		Multiplier: 90
+		Prerequisites: !indp
+	ProductionCostMultiplier@NationBonusExtra:
+		Multiplier: 90
+		Prerequisites: indp, indplowpower
+	SpawnActorOnDeath:
+		Actor: 3TNK.1B.China.Husk
+	UpdatesPlayerStatistics:
+		OverrideActor: 3tnk.1b
+	RenderSprites:
+		Image: 3tnk.1b
+	-MapEditorData:
+
+3TNK.1B.China.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Heavy Tank 1-B)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 3tnk.1B.China
+	InfiltrateForTransform:
+		IntoActor: 3tnk.1B.China
+	RenderSprites:
+		Image: 3tnk.1b.destroyed
+	-MapEditorData:
+
+BRIK.China:
+	Inherits: BRIK
+	Buildable:
+		Prerequisites: weap, ~player.china, ~techlevel.medium
+	Health:
+		HP: 600
+	RenderSprites:
+		Image: brik
+	-MapEditorData:	
+
+HGATE.China:
+	Inherits: HGATE
+	Buildable:
+		Prerequisites: weap, ~player.china, ~techlevel.medium
+	Health:
+		HP: 525
+	RenderSprites:
+		Image: hgate-soviet
+	-MapEditorData:	
+
+VGATE.China:
+	Inherits: VGATE
+	Buildable:
+		Prerequisites: weap, ~player.china, ~techlevel.medium
+	Health:
+		HP: 525
+	RenderSprites:
+		Image: vgate
+	-MapEditorData:	

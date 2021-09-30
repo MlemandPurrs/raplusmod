@@ -52,6 +52,7 @@ B52.buildable:
 	Inherits: ^Plane
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@AUTODAMAGE: ^KilledWithoutAirfield
+	Inherits@FASTERRELOAD: ^AircraftFastReload
 	Buildable:
 		Queue: Aircraft, MWFAir
 		BuildAtProductionType: Plane
@@ -239,6 +240,7 @@ TRAN.Allies:
 IROQ:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiInf
+	Inherits@FASTERRELOAD: ^AircraftFastReload
 	AutoTarget:
 		InitialStance: HoldFire
 		InitialStanceAI: HoldFire
@@ -278,7 +280,7 @@ IROQ:
 		Range: 4c0
 		Type: GroundPosition
 		RequiresCondition: !airborne
-	Aircraft
+	Aircraft:
 		WaitDistanceFromResupplyBase: 4c0
 		TakeOffOnResupply: true
 		InitialFacing: 224
@@ -390,6 +392,7 @@ IROQ.AI:
 HELI:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiTankandAir
+	Inherits@FASTERRELOAD: ^AircraftFastReload
 	AutoTarget:
 		InitialStance: HoldFire
 		InitialStanceAI: HoldFire
@@ -515,6 +518,7 @@ SPIT:
 	Inherits: ^Plane
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiStructure
 	Inherits@AUTODAMAGE: ^KilledWithoutAirfield
+	Inherits@FASTERRELOAD: ^AircraftFastReload
 	AutoTarget:
 		InitialStance: HoldFire
 		InitialStanceAI: HoldFire
@@ -522,7 +526,7 @@ SPIT:
 		Queue: Aircraft, MWFAir
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 4
-		Prerequisites: ~afld, dome, ~aircraft.allies, ~!player.turkey,  ~techlevel.medium
+		Prerequisites: ~afld, dome, ~aircraft.allies, ~!player.turkey, ~!player.spain,  ~techlevel.medium
 		Description: Ground attack bomber.\nCannot attack Air units.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft
 	Valued:
 		Cost: 900
@@ -612,6 +616,7 @@ TORN:
 	Inherits: ^Plane
 	Inherits@AUTOTARGET: ^AutoTargetAirAssaultMove
 	Inherits@AUTODAMAGE: ^KilledWithoutAirfield
+	Inherits@FASTERRELOAD: ^AircraftFastReload
 	AutoTarget:
 		InitialStance: HoldFire
 		InitialStanceAI: HoldFire
@@ -909,7 +914,6 @@ HARR:
 		Interval: 2
 	Contrail@1:
 		Offset: -432,0,0
-		Color: cc550080
 		TrailLength: 8
 		UsePlayerColor: false
 	RenderSprites:

@@ -175,6 +175,10 @@ ftrk:
 	turret-flamer: flame-tur
 		Facings: 32
 		UseClassicFacings: True
+	turret-gun: 1tnk
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True	
 	muzzle: gunfire2
 		Length: 2
 	muzzle-mg: minigun
@@ -498,10 +502,13 @@ mnly:
 	turret: apc-tur3
 		Facings: 32
 		UseClassicFacings: True
+	rep-tur: repair-tur
+		Facings: 32
 	muzzle: minigun
 		Length: 6
 		Facings: 8
 	icon: mnlyicon
+	sprticon: gdimnlyicon
 
 mnlynuke:
     Inherits: emp-overlay

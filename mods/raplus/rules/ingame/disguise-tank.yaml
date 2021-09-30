@@ -100,6 +100,7 @@ DTNK:
 			ftrk.scout: ftrkgun
 			ftrk.repair: ftrkrep
 			ftrk.flamer: ftrkflam
+			ftrk.hunter: ftrkhunt
 			apc: apc
 			apc.crate: apc
 			apc.germany: apc
@@ -117,31 +118,29 @@ DTNK:
 			1tnk.germany: tnk1
 			1tnk.spain: tnk1
 			1tnk.italy: tnk1
-			1tnk.holland: tnk1
-			1tnk.sweden: tnk1
+			1tnk.greece: tnk1
 			atnk: atnk
 			2tnk: tnk2
 			2tnf: tnk2
 			2tnk.r1: tnk2
 			2tnk.england: tnk2
-			2tnk.holland: tnk2
 			2tnk.france: tnk2
 			2tnk.germany: tnk2
 			2tnk.spain: tnk2
-			2tnk.sweden: tnk2
+			2tnk.italy: tnk2
 			2tnk.stealth: tnk2s
 			3tnk: tnk3
 			3tnk.r1: tnk3
 			3tnk.russia: tnk3
 			3tnk.ukraine: tnk3
-			3tnk.belarus: tnk3
+			3tnk.china: tnk3
 			3tnk.kazakh: tnk3
 			3tnk.turkmen: tnk3
 			3tnk.afghan: tnk3
 			3tnk.1b: tnk31b
 			3tnk.1b.russia: tnk31b
 			3tnk.1b.ukraine: tnk31b
-			3tnk.1b.belarus: tnk31b
+			3tnk.1b.china: tnk31b
 			3tnk.1b.kazakh: tnk31b
 			3tnk.1b.turkmen: tnk31b
 			3tnk.1b.afghan: tnk31b
@@ -178,7 +177,7 @@ DTNK:
 	DisguiseTooltip@default:
 		Name: Mirage Tank
 		GenericName: Tank
-		RequiresCondition: !mcv && !harv && !harvsvyt && !harvchrn && !truk && !dtrk && !mwf && !jeep && !ftrk && !ftrkgun && !ftrkrep && !ftrkflam && !apc && !rapc && !batf && !apcsvyt && !tnk1 && !atnk && !tnk2 && !tnk2s && !tnk3 && !tnk31b && !tnk4 && !tnk4flam && !nrty && !tnk5 && !prsm && !arty && !gcan && !v2rl && !icbm && !mnly && !mnlynuke && !mgg && !msam && !mrj && !mhqciv && !tnkd && !ctnk && !stnk && !ttnk && !qtnk && !saml && !isu && !gtnk
+		RequiresCondition: !mcv && !harv && !harvsvyt && !harvchrn && !truk && !dtrk && !mwf && !jeep && !ftrk && !ftrkgun && !ftrkrep && !ftrkflam && !ftrkhunt && !apc && !rapc && !batf && !apcsvyt && !tnk1 && !atnk && !tnk2 && !tnk2s && !tnk3 && !tnk31b && !tnk4 && !tnk4flam && !nrty && !tnk5 && !prsm && !arty && !gcan && !v2rl && !icbm && !mnly && !mnlynuke && !mgg && !msam && !mrj && !mhqciv && !tnkd && !ctnk && !stnk && !ttnk && !qtnk && !saml && !isu && !gtnk
 	DisguiseTooltip@mcv:
 		Name: Mobile Construction Vehicle
 		GenericName: Mobile Construction Vehicle
@@ -227,6 +226,10 @@ DTNK:
 		Name: Mobile Repair Truck
 		GenericName: Mobile Repair Truck
 		RequiresCondition: ftrkrep
+	DisguiseTooltip@ftrkhunt:
+		Name: Tank Hunter
+		GenericName: Tank Hunter
+		RequiresCondition: ftrkhunt
 	DisguiseTooltip@apc:
 		Name: APC
 		GenericName: APC
@@ -362,8 +365,8 @@ DTNK:
 
 	#	the Chassis graphics
 	WithFacingSpriteBody@Default:
-		PauseOnCondition: mcv && harv && harvsvyt && harvchrn && truk && dtrk && mwf && jeep && ftrk && ftrkgun && ftrkrep && ftrkflam && apc && rapc && apcsvyt && batf && tnk1 && atnk && tnk2 && tnk2s && tnk3 && tnk31b && tnk4 && tnk4flam && nrty && tnk5 && prsm && arty && gcan && v2rl && icbm && mnlynuke && mgg && msam && mrj && mhqciv && tnkd && ctnk && stnk && ttnk && qtnk && saml && isu && gtnk
-		RequiresCondition: !mcv && !harv && !harvsvyt && !harvchrn && !truk && !dtrk && !mwf && !jeep && !ftrk && !ftrkgun && !ftrkrep && !ftrkflam && !apc && !rapc && !apcsvyt && !batf && !tnk1 && !atnk && !tnk2 && !tnk2s && !tnk3 && !tnk31b && !tnk4 && !tnk4flam && !nrty && !tnk5 && !prsm && !arty && !gcan && !v2rl && !icbm && !mnly && !mnlynuke && !mgg && !msam && !mrj && !mhqciv && !tnkd && !ctnk && !stnk && !ttnk && !qtnk && !saml && !isu && !gtnk
+		PauseOnCondition: mcv && harv && harvsvyt && harvchrn && truk && dtrk && mwf && jeep && ftrk && ftrkgun && ftrkrep && ftrkflam && ftrkhunt && apc && rapc && apcsvyt && batf && tnk1 && atnk && tnk2 && tnk2s && tnk3 && tnk31b && tnk4 && tnk4flam && nrty && tnk5 && prsm && arty && gcan && v2rl && icbm && mnlynuke && mgg && msam && mrj && mhqciv && tnkd && ctnk && stnk && ttnk && qtnk && saml && isu && gtnk
+		RequiresCondition: !mcv && !harv && !harvsvyt && !harvchrn && !truk && !dtrk && !mwf && !jeep && !ftrk && !ftrkgun && !ftrkrep && !ftrkflam && !ftrkhunt && !apc && !rapc && !apcsvyt && !batf && !tnk1 && !atnk && !tnk2 && !tnk2s && !tnk3 && !tnk31b && !tnk4 && !tnk4flam && !nrty && !tnk5 && !prsm && !arty && !gcan && !v2rl && !icbm && !mnly && !mnlynuke && !mgg && !msam && !mrj && !mhqciv && !tnkd && !ctnk && !stnk && !ttnk && !qtnk && !saml && !isu && !gtnk
 	WithFacingSpriteBody@mcv:
 		Name: mcv
 		Sequence: mcv-body
@@ -395,7 +398,7 @@ DTNK:
 	WithFacingSpriteBody@ftrk:
 		Name: ftrk
 		Sequence: ftrk-body
-		RequiresCondition: ftrk || ftrkgun || ftrkrep || ftrkflam
+		RequiresCondition: ftrk || ftrkgun || ftrkrep || ftrkflam || ftrkhunt
 	WithFacingSpriteBody@apc:
 		Name: apc
 		Sequence: apc-body
@@ -512,7 +515,7 @@ DTNK:
 	WithSpriteTurret@Default:
 		Sequence: turret-default
 		Turret: default-turret
-		RequiresCondition: !mcv && !harv && !harvsvyt && !harvchrn && !truk && !dtrk && !mwf && !jeep && !ftrk && !ftrkgun && !ftrkrep && !ftrkflam && !apc && !rapc && !apcsvyt && !batf && !tnk1 && !atnk && !tnk2 && !tnk2s && !tnk3 && !tnk31b && !tnk4 && !tnk4flam && !nrty && !tnk5 && !prsm && !arty && !gcan && !v2rl && !icbm && !mnly && !mnlynuke && !mgg && !msam && !mrj && !mhqciv && !tnkd && !ctnk && !stnk && !ttnk && !qtnk && !saml && !isu && !gtnk
+		RequiresCondition: !mcv && !harv && !harvsvyt && !harvchrn && !truk && !dtrk && !mwf && !jeep && !ftrk && !ftrkgun && !ftrkrep && !ftrkflam && !ftrkhunt && !apc && !rapc && !apcsvyt && !batf && !tnk1 && !atnk && !tnk2 && !tnk2s && !tnk3 && !tnk31b && !tnk4 && !tnk4flam && !nrty && !tnk5 && !prsm && !arty && !gcan && !v2rl && !icbm && !mnly && !mnlynuke && !mgg && !msam && !mrj && !mhqciv && !tnkd && !ctnk && !stnk && !ttnk && !qtnk && !saml && !isu && !gtnk
 	WithSpriteTurret@harvsvyt:
 		Sequence: turret-hmmv
 		Turret: harvsvyt-turret
@@ -537,6 +540,10 @@ DTNK:
 		Sequence: turret-flam
 		Turret: ftrkflam-turret
 		RequiresCondition: ftrkflam
+	WithSpriteTurret@ftrkhunt:
+		Sequence: turret-1tnk-classic
+		Turret: ftrkhunt-turret
+		RequiresCondition: ftrkhunt
 	WithSpriteTurret@apcsvyt:
 		Sequence: turret-apc
 		Turret: apc-turret
@@ -642,6 +649,10 @@ DTNK:
 		Turret: ftrkflam-turret
 		TurnSpeed: 28
 		Offset: -178,0,38
+	Turreted@ftrkhunt:
+		Turret: ftrkhunt-turret
+		TurnSpeed: 12
+		Offset: -178,0,178
 	Turreted@apcsvyt:
 		Turret: apc-turret
 		TurnSpeed: 28
@@ -706,9 +717,9 @@ DTNK:
 	#	it must keep an dummy weaponry on
 	#	to prevent getting stuck in disguise
 	AttackTurreted:
-		Armaments: defaultarm, harvsvyt-arm, jeep-arm, ftrk-arm, ftrkgun-arm, ftrkrep-arm, ftrkflam-arm, apcsvyt-arm, rapc-arm, 1tnk-arm, atnk-arm, 2tnk-arm, 2tnks-arm, 3tnk-arm, 3tnk1b-arm, 4tnk-arm, 4tnkflam-arm, nrty-arm, 5tnk-arm, prsm-arm, mrj-arm, msam-arm, saml-arm, gtnk-arm, invis-arm
+		Armaments: defaultarm, harvsvyt-arm, jeep-arm, ftrk-arm, ftrkgun-arm, ftrkrep-arm, ftrkflam-arm, ftrkhunt-arm, apcsvyt-arm, rapc-arm, 1tnk-arm, atnk-arm, 2tnk-arm, 2tnks-arm, 3tnk-arm, 3tnk1b-arm, 4tnk-arm, 4tnkflam-arm, nrty-arm, 5tnk-arm, prsm-arm, mrj-arm, msam-arm, saml-arm, gtnk-arm, invis-arm
 		# the turrets from above
-		Turrets: default-turret, harvsvyt-turret, jeep-turret, ftrk-turret, ftrkgun-turret, ftrkrep-turret, ftrkflam-turret, apc-turret, rapc-turret, 1tnk-turret, gapc-turret, 2tnk-turret, 2tnks-turret, 3tnk-turret, 3tnk1b-turret, 4tnk-turret, 4tnkflam-turret, nrty-turret, 5tnk-turret, prsm-turret, msam-turret, mrj-turret, saml-turret, gtnk-turret, invis-turret
+		Turrets: default-turret, harvsvyt-turret, jeep-turret, ftrk-turret, ftrkgun-turret, ftrkrep-turret, ftrkflam-turret, ftrkhunt-turret, apc-turret, rapc-turret, 1tnk-turret, gapc-turret, 2tnk-turret, 2tnks-turret, 3tnk-turret, 3tnk1b-turret, 4tnk-turret, 4tnkflam-turret, nrty-turret, 5tnk-turret, prsm-turret, msam-turret, mrj-turret, saml-turret, gtnk-turret, invis-turret
 		PauseOnCondition: empdisable
 	Armament@default:
 		Name: defaultarm
@@ -772,6 +783,14 @@ DTNK:
 		LocalOffset: 768,0,90
 		PauseOnCondition: empdisable
 		RequiresCondition: ftrkflam
+	Armament@disguised6new:
+		Name: ftrkhunt-arm
+		Weapon: 90mm.decoy.zero
+		Recoil: 0
+		Turret: ftrkhunt-turret
+		LocalOffset: 768,0,90
+		PauseOnCondition: empdisable
+		RequiresCondition: ftrkhunt
 	Armament@disguised6:
 		Name: apcsvyt-arm
 		Weapon: 90mm.decoy.zero

@@ -835,6 +835,7 @@ THF:
 		BuildPaletteOrder: 998
 		Prerequisites: ~disabled
 		Description: Steals enemy credits.\n  Cloaks when standing Still.\n  Unarmed
+		Icon: thficon
 	Tooltip:
 		Name: Thief
 	Valued:

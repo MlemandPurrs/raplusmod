@@ -373,7 +373,7 @@ Player:
 			3tnk: 50
 			3tnk.russia: 45
 			3tnk.ukraine: 45
-			3tnk.belarus: 45
+			3tnk.china: 45
 			3tnk.kazakh: 45
 			3tnk.turkmen: 45
 			3tnk.afghan: 45
@@ -490,7 +490,7 @@ Player:
 			3tnk.1b: 30
 			3tnk.1b.russia: 30
 			3tnk.1b.ukraine: 30
-			3tnk.1b.belarus: 30
+			3tnk.1b.china: 30
 			3tnk.1b.kazakh: 30
 			3tnk.1b.turkmen: 30
 			3tnk.1b.afghan: 30
@@ -527,7 +527,7 @@ Player:
 			3tnk.1b: 30
 			3tnk.1b.russia: 30
 			3tnk.1b.ukraine: 30
-			3tnk.1b.belarus: 30
+			3tnk.1b.china: 30
 			3tnk.1b.kazakh: 30
 			3tnk.1b.turkmen: 30
 			3tnk.1b.afghan: 30

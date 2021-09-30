@@ -104,7 +104,7 @@ BRIK:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 14
-		Prerequisites: weap, ~techlevel.medium
+		Prerequisites: weap, ~!player.china, ~techlevel.medium
 		Description: Stop units and blocks enemy fire.\nCan be crushed by Mammoth Tanks.
 	Valued:
 		Cost: 200
@@ -142,7 +142,7 @@ HGATE:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 15
-		Prerequisites: weap, ~techlevel.medium
+		Prerequisites: weap, ~!player.china, ~techlevel.medium
 		Description: Places an horizontal gate.\nThe gate automatically opens for friendly units.\nBlocks enemy access into your base.
 	Valued:
 		Cost: 250
@@ -199,7 +199,7 @@ VGATE:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 16
-		Prerequisites: weap, ~techlevel.medium
+		Prerequisites: weap, ~!player.china, ~techlevel.medium
 		Description: Places an vertical gate.\nThe gate automatically opens for friendly units.\nBlocks enemy access into your base.
 	Valued:
 		Cost: 250
@@ -500,6 +500,12 @@ TSLA:
 	Armament:
 		Weapon: TeslaZap
 		LocalOffset: 0,0,896
+	RangeMultiplier@RangeBonus:
+		Modifier: 113
+		RequiresCondition: russia.player
+	GrantConditionOnFaction@RangeBonus:
+		Condition: russia.player
+		Factions: russia		
 	AttackTesla:
 		RequiresCondition: !build-incomplete
 		PauseOnCondition: disabled
@@ -636,6 +642,13 @@ GUN:
 	Inherits: ^Defense
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiTankDefense
 	Inherits@RangeBonus: ^AffectedByGreece
+	ReloadDelayMultiplier@RoFBonus:
+		Modifier: 70
+		RequiresCondition: player.italy
+	GrantConditionOnFaction@RoFBonus:
+		Condition: italy.player
+		Factions: italy
+		ResetOnOwnerChange: True
 	-SpawnActorsOnSell:
 	-ActorPreviewPlaceBuildingPreview:
 	-BodyOrientation:
@@ -703,7 +716,18 @@ GTUR:
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
 	Inherits@shape: ^2x1Shape
-	Inherits@RangeBonus: ^AffectedByGreece
+	RangeMultiplier@GRBONUS:
+		Modifier: 120
+		RequiresCondition: greece.player
+	PowerMultiplier@GRMALUS:
+		Modifier: 110
+		RequiresCondition: greece.player
+	GrantConditionOnPrerequisite@GRBONUS:
+		Condition: greece.player
+		Prerequisites: player.greece
+	ProductionCostMultiplier@FRBONUS:
+		Multiplier: 67
+		Prerequisites: player.france
 	-SpawnActorsOnSell:
 	-ActorPreviewPlaceBuildingPreview:
 	-BodyOrientation:
@@ -721,7 +745,7 @@ GTUR:
 		Queue: Defense
 		BuildPaletteOrder: 7
 		BuildLimit: 1
-		Prerequisites: atek, ~structures.allies, ~allies.or.greece, ~techlevel.high
+		Prerequisites: atek, ~structures.allies, ~!player.usa, ~techlevel.high
 		Description: Triple-barreled Artillery base defense.\nHas double the durability of standard Defenses.\nCan detect cloaked units.\nMaximum one can be built.\n  Strong vs Infantry, Vehicles, Ships\n  Weak vs Aircraft
 	Valued:
 		Cost: 1400
@@ -782,6 +806,13 @@ GAP:
 	-CapturableProgressBlink:
 	-ActorPreviewPlaceBuildingPreview:
 	-ProductionTimeMultiplier@Sweden:
+	#	CreatesShroudMultiplier@RangeBonus:
+	#	Modifier: 120
+	#	RequiresCondition: belarus.player
+	#	GrantConditionOnFaction@RangeBonus:
+	#	Condition: belarus.player
+	#	Factions: belarus
+	#	ResetOnOwnerChange: True
 	SequencePlaceBuildingPreview:
 		Sequence: place
 		SequencePalette: placebuilding
@@ -797,7 +828,7 @@ GAP:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 11
-		Prerequisites: techcenter, ~fact, ~!player.spain, ~techlevel.high
+		Prerequisites: techcenter, ~fact, ~!player.sweden, ~techlevel.high
 		Description: Obscures the enemy's view with shroud.\nRequires power to operate.\n  Special ability: Shroud Overcharge\nCan be Deployed when Charged\nto obscure an even greater area\nat cost of increased Power usage.
 	Tooltip:
 		Name: Gap Generator
@@ -857,6 +888,8 @@ GAP:
 		CooldownTicks: 1500
 		DeployedTicks: 750
 		PauseOnCondition: build-incomplete || disabled
+		ChargingColor: 808080
+		DischargingColor: A9A9A9
 	WithDecoration@Deployed:
 		RequiresSelection: true
 		Image: pips
@@ -976,7 +1009,7 @@ IRON:
 		Queue: Defense
 		BuildPaletteOrder: 11
 		BuildLimit: 1
-		Prerequisites: stek, ~structures.soviet, ~techlevel.unrestricted
+		Prerequisites: stek, ~structures.soviet, ~!player.uzbek, ~techlevel.unrestricted
 		Description: Stores and recharges the Invulnerability power.\nMaximum one can be built.\n  Requires power to operate.\n  Special Ability: Invulnerability\nMakes a group of units Invulnerable\nand Immune to EMP for a short time.\nCan be Infiltrated by a Spy or Saboteur\nresulting in Timer reset.
 	Valued:
 		Cost: 1500
@@ -1158,6 +1191,13 @@ AGUN:
 	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
 	Inherits@AUTOTARGET: ^AutoTargetAir
 	Inherits@RangeBonus: ^AffectedByGreece
+	InaccuracyMultiplier@AccuracyBonus:
+		Modifier: 83
+		RequiresCondition: sweden.player
+	GrantConditionOnFaction@AccuracyBonus:
+		Condition: sweden.player
+		Factions: sweden
+		ResetOnOwnerChange: True
 	-SpawnActorsOnSell:
 	-ActorPreviewPlaceBuildingPreview:
 	-BodyOrientation:
@@ -1205,16 +1245,30 @@ AGUN:
 		LocalOffset: 520,100,450, 520,-150,450
 		MuzzleSequence: muzzle
 		PauseOnCondition: !ammo
-	AmmoPool:
+	AmmoPool@Default:
+		Name: primary
 		Armaments: primary
 		Ammo: 24
 		AmmoCondition: ammo
 		ReloadDelay: 6
-	WithAmmoPipsDecoration:
+	#	AmmoPool@Extra:
+	#	Name: primary-upg
+	#	Armaments: primary
+	#	Ammo: 32
+	#	AmmoCondition: ammo
+	#	ReloadDelay: 6	
+	WithAmmoPipsDecoration@Normal:
+		AmmoPools: primary
 		Position: BottomLeft
 		Margin: 4, 3
 		PipCount: 6
 		RequiresSelection: true
+	#	WithAmmoPipsDecoration@Extra:
+	#	AmmoPools: primary-upg
+	#	Position: BottomLeft
+	#	Margin: 4, 3
+	#	PipCount: 8
+	#	RequiresSelection: true	
 	ReloadAmmoPool:
 		Delay: 42
 		Count: 24
@@ -1250,7 +1304,8 @@ PBAT:
 		Queue: Defense
 		BuildPaletteOrder: 9
 		BuildLimit: 1
-		Prerequisites: atek, ~structures.allies, ~allies.or.holland, ~techlevel.high
+		#	Prerequisites: atek, ~structures.allies, ~allies.or.holland, ~techlevel.high
+		Prerequisites: ~disabled
 		Description: Superior anti-air Defense.\nMaximum one can be built.\n  Can attack Aircraft only.
 	Valued:
 		Cost: 1200

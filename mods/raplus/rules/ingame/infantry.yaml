@@ -293,9 +293,14 @@ DOG:
 
 E6:
 	Inherits: ^Soldier
-	Inherits@CHEAPER: ^AffectedByUzbek
 	Inherits@selection: ^SelectableSupportUnit
 	Inherits@ROT: ^RottingInfantry
+	ProductionCostMultiplier@NLBONUS:
+		Multiplier: 75
+		Prerequisites: player.holland
+	ProductionTimeMultiplier@NLBONUS:
+		Multiplier: 125
+		Prerequisites: player.holland
 	-AttackFrontal:
 	Buildable:
 		Queue: Infantry

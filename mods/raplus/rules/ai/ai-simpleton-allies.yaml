@@ -281,7 +281,7 @@ Player:
 	CaptureManagerBotModuleCA@wimp-mech:
 		RequiresCondition: enable-wimp-ai && player.allies
 		CapturingActorTypes: mech
-		CapturableActorTypes: 2tnk.husk,2tnk.england.husk,2tnk.france.husk,2tnk.germany.husk,2tnk.spain.husk,2tnk.holland.husk,3tnk.husk,3tnk.ukraine.husk,3tnk.belarus.husk,3tnk.kazakh.husk,3tnk.turkmen.husk,3tnk.afghan.husk,4tnk.husk,4tnk.flame.husk,harv.fullhusk,harv.emptyhusk,harv.soviet.fullhusk,harv.soviet.emptyhusk
+		CapturableActorTypes: 2tnk.husk,2tnk.england.husk,2tnk.france.husk,2tnk.germany.husk,2tnk.spain.husk,2tnk.italy.husk,3tnk.husk,3tnk.ukraine.husk,3tnk.china.husk,3tnk.kazakh.husk,3tnk.turkmen.husk,3tnk.afghan.husk,4tnk.husk,4tnk.flame.husk,harv.fullhusk,harv.emptyhusk,harv.soviet.fullhusk,harv.soviet.emptyhusk
 		CheckCaptureTargetsForVisibility: true
 		MaximumCaptureTargetOptions: 15
 		EnemyAvoidanceRadius: 3
@@ -409,8 +409,7 @@ Player:
 			1tnk.england: 40
 			1tnk.france: 40
 			1tnk.germany: 40
-			1tnk.holland: 40
-			1tnk.sweden: 40
+			1tnk.greece: 40
 			1tnk.spain: 40
 			1tnk.italy: 40
 			arty: 15
@@ -530,7 +529,7 @@ Player:
 			2tnk.france: 50
 			2tnk.germany: 50
 			2tnk.spain: 50
-			2tnk.holland: 50
+			2tnk.italy: 50
 			2tnk.stealth: 15
 			2tnk.sweden: 50
 			arty: 15
@@ -645,16 +644,15 @@ Player:
 			1tnk.england: 20
 			1tnk.france: 20
 			1tnk.germany: 20
-			1tnk.holland: 20
-			1tnk.sweden: 20
 			1tnk.spain: 20
 			1tnk.italy: 20
+			1tnk.greece: 20
 			2tnk: 25
 			2tnk.england: 25
 			2tnk.france: 25
 			2tnk.germany: 25
 			2tnk.spain: 25
-			2tnk.holland: 25
+			2tnk.italy: 25
 			2tnk.sweden: 25
 			arty: 15
 			arty.france: 15

@@ -1,7 +1,12 @@
 FACT:
 	Inherits: ^Building
-	Inherits@CHEAPER: ^AffectedByUzbek
 	Inherits@ESPIONAGE: ^RevealStructureandDefenseProduction
+	ProductionCostMultiplier@NLBONUS:
+		Multiplier: 75
+		Prerequisites: player.holland
+	ProductionTimeMultiplier@NLBONUS:
+		Multiplier: 125
+		Prerequisites: player.holland
 	GrantConditionOnPrerequisite@GLOBALFACTUNDEPLOY:
 		Condition: factundeploy
 		Prerequisites: global-factundeploy
@@ -17,9 +22,17 @@ FACT:
 		Dimensions: 3,3
 		LocalCenterOffset: 0,-512,0
 	BaseBuilding:
-	BaseProvider:
+	BaseProvider@Normal:
 		PauseOnCondition: being-captured
 		Range: 16c0
+		RequiresCondition: !uzbek.player
+	BaseProvider@Extended:
+		PauseOnCondition: being-captured
+		Range: 18c0
+		RequiresCondition: uzbek.player
+	GrantConditionOnFaction@V2ReloadBonus:
+		Condition: uzbek.player
+		Factions: uzbek	
 	Power:
 		Amount: 50
 		RequiresCondition: !build-incomplete
@@ -1091,6 +1104,7 @@ SILO:
 		Condition: orecasting-on
 		Prerequisites: orecasting
 	CashTricklerBar:
+		Color: FFFF9E
 	Power:
 		Amount: -10
 		RequiresCondition: !build-incomplete
@@ -1477,6 +1491,14 @@ WEAP:
 		InitialDelay: 0
 		Amount: 30
 		RequiresCondition: maintenance
+	FreeActor@CountryBonus:
+		Actor: FTRK
+		SpawnOffset: 1,2
+		Facing: 64
+		RequiresCondition: !build-incomplete && kazakh.player
+	GrantConditionOnFaction@CountryBonus:
+		Condition: kazakh.player
+		Factions: kazakh
 
 WEAP.MINI:
 	Inherits: ^Building
@@ -1736,11 +1758,11 @@ FIX.Soviet:
 		PauseOnCondition: disabled || lowpower
 		OrderName: TankHunters
 		Prerequisites: ~weap, player.kazakh, ~techlevel.unrestricted
-		Actors: apc.soviet.loaded
+		Actors: ftrk.hunter, ftrk.hunter, ftrk.hunter
 		ChargeInterval: 6000
 		Icon: tankhunt
 		Description: Tank Hunters
-		LongDesc: Delivers an Heavy APC loaded with Rocket Soldiers\nat your primary War Factory, all ranked Veteran.
+		LongDesc: Delivers a trio of Tank Hunters at your\nprimary War Factory. Those are fast units\narmed with anti-tank guns.
 		Type: Vehicle
 		ReadyAudio: ReinforcementsArrived
 		BlockedAudio: NoBuild
@@ -2108,7 +2130,7 @@ ATEK:
 	ParatroopersPower@ChronoBomb:
 		PauseOnCondition: disabled || lowpower
 		OrderName: ChronoBomb
-		Prerequisites: ~fix, player.germany, ~techlevel.unrestricted
+		Prerequisites: ~fix, player.italy, ~techlevel.unrestricted
 		Icon: mincicon
 		ChargeInterval: 4500
 		Description: Chrono Bomb
@@ -3275,6 +3297,9 @@ SYRD:
 	Inherits@PRIMARY: ^PrimaryBuilding
 	Inherits@USAMalus: ^AffectedByUSAMalus
 	Inherits@ESPIONAGE: ^RevealNavalProduction
+	ProductionCostMultiplier@GBFREEBIE:
+		Multiplier: 0
+		Prerequisites: player.england, !syrd
 	-SpawnActorsOnSell:
 	-GivesBuildableArea:
 	RequiresBuildableArea:
@@ -3491,6 +3516,27 @@ SPEN:
 	Inherits: ^Building
 	Inherits@PRIMARY: ^PrimaryBuilding
 	Inherits@ESPIONAGE: ^RevealNavalProduction
+	Cloak@FactionalCloak:
+		CloakTypes: Underwater
+		InitialDelay: 150
+		CloakDelay: 75
+		Palette: submerged
+		IsPlayerPalette: false
+		UncloakOn: Unload, Infiltrate, Demolish, Dock
+		PauseOnCondition: cloak-force-disabled || build-incomplete || lowpower || disabled || cloak-force-disabled2
+		RequiresCondition: belongs.karelia
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+	GrantConditionOnFaction@FactionalCloak:
+		Condition: belongs.karelia
+		Factions: karelia
+		ResetOnOwnerChange: True
+	GrantConditionOnProduction@FactionalCloak:
+		Condition: cloak-force-disabled2
+		Actors: 
+		Duration: 75
+		ShowSelectionBar: False
 	-SpawnActorsOnSell:
 	-GivesBuildableArea:
 	RequiresBuildableArea:

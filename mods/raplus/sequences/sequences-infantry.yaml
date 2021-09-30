@@ -883,6 +883,7 @@ thf:
 		Facings: 8
 		Tick: 80
 	icon: thficon
+	thficon: thficon
 
 sab:
 	Inherits@PostDeath: ^Rot

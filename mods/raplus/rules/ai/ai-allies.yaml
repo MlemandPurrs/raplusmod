@@ -396,7 +396,7 @@ Player:
 	CaptureManagerBotModuleCA@mech:
 		RequiresCondition: enable-ai-player && player.allies
 		CapturingActorTypes: mech
-		CapturableActorTypes: 2tnk.husk,2tnk.england.husk,2tnk.france.husk,2tnk.germany.husk,2tnk.spain.husk,2tnk.holland.husk,3tnk.husk,3tnk.ukraine.husk,3tnk.belarus.husk,3tnk.kazakh.husk,3tnk.turkmen.husk,3tnk.afghan.husk,4tnk.husk,4tnk.flame.husk,harv.fullhusk,harv.emptyhusk,harv.soviet.fullhusk,harv.soviet.emptyhusk
+		CapturableActorTypes: 2tnk.husk,2tnk.england.husk,2tnk.france.husk,2tnk.germany.husk,2tnk.spain.husk,2tnk.italy.husk,3tnk.husk,3tnk.ukraine.husk,3tnk.china.husk,3tnk.kazakh.husk,3tnk.turkmen.husk,3tnk.afghan.husk,4tnk.husk,4tnk.flame.husk,harv.fullhusk,harv.emptyhusk,harv.soviet.fullhusk,harv.soviet.emptyhusk
 		CheckCaptureTargetsForVisibility: true
 		MaximumCaptureTargetOptions: 15
 		EnemyAvoidanceRadius: 3
@@ -406,7 +406,7 @@ Player:
 		SquadSizeRandomBonus: 6
 		RushInterval: 400
 		AttackScanRadius: 16
-		ExcludeFromSquadsTypes: e6, mech, dog, jeep.scout, harv, harv.crate, harv.chrono, mcv, mcv.ai, pt, pt.greece, dd, dd.germany, ca, ca.italy, bshp, iroq.ai, iroq.ai.greece, heli, heli.usa, spit, spit.turkey, thf
+		ExcludeFromSquadsTypes: e6, mech, dog, jeep.scout, harv, harv.crate, harv.chrono, mcv, mcv.ai, pt, pt.greece, dd, dd.germany, ca, ca.spain, bshp, iroq.ai, iroq.ai.greece, heli, heli.usa, spit, spit.turkey, thf
 		ConstructionYardTypes: fact
 		DangerScanRadius: 1
 		IgnoredEnemyTargetTypes: IgnoreThis
@@ -416,8 +416,8 @@ Player:
 		SquadSizeRandomBonus: 4
 		RushInterval: 400
 		AttackScanRadius: 24
-		ExcludeFromSquadsTypes: harv, harv.crate, harv.chrono, mcv, mcv.ai, dog, e1, e1.england, e2, e2.turkey, e3, e4.italy, e6, e7, e7.usa, medi, mech, shot, atgm, snip, mrtr, cinf, jeep, jeep.england, jeep.scout, apc, apc.germany, rapc, 1tnk, 1tnk.england, 1tnk.france, 1tnk.holland, 1tnk.germany, 1tnk.italy, 1tnk.spain, 1tnk.sweden, atnk, 2tnk, 2tnk.england, 2tnk.france, 2tnk.germany, 2tnk.spain, 2tnk.sweden, 2tnk.holland, 2tnk.stealth, arty, arty.france, gcan, msam, mrj, stnk, ctnk, tnkd, batf, heli, heli.usa, iroq.ai, iroq.greece.ai, spit, spit.turkey, 1tnf, 2tnf, artf, thf, prsm
-		NavalUnitsTypes: pt,pt.greece,dd,dd.germany,ca,ca.italy,bshp
+		ExcludeFromSquadsTypes: harv, harv.crate, harv.chrono, mcv, mcv.ai, dog, e1, e1.england, e2, e2.turkey, e3, e4.italy, e6, e7, e7.usa, medi, mech, shot, atgm, snip, mrtr, cinf, jeep, jeep.england, jeep.scout, apc, apc.germany, rapc, 1tnk, 1tnk.england, 1tnk.france, 1tnk.germany, 1tnk.italy, 1tnk.spain, 1tnk.greece, atnk, 2tnk, 2tnk.england, 2tnk.france, 2tnk.germany, 2tnk.spain, 2tnk.sweden, 2tnk.italy, 2tnk.stealth, arty, arty.france, gcan, msam, mrj, stnk, ctnk, tnkd, batf, heli, heli.usa, iroq.ai, iroq.greece.ai, spit, spit.turkey, 1tnf, 2tnf, artf, thf, prsm
+		NavalUnitsTypes: pt,pt.greece,dd,dd.germany,ca,ca.spain,bshp
 		ConstructionYardTypes: fact
 		NavalProductionTypes: syrd
 		IgnoredEnemyTargetTypes: IgnoreThis
@@ -427,7 +427,7 @@ Player:
 		SquadSizeRandomBonus: 2
 		RushInterval: 400
 		AttackScanRadius: 48
-		ExcludeFromSquadsTypes: harv, harv.crate, harv.chrono, mcv, mcv.ai, dog, e1, e1.england, e2, e2.turkey, e3, e4.italy, e6, e7, e7.usa, medi, mech, shot, atgm, snip, mrtr, cinf, jeep, jeep.england, jeep.scout, apc, apc.germany, rapc, 1tnk, 1tnk.england, 1tnk.france, 1tnk.holland, 1tnk.germany, 1tnk.italy, 1tnk.spain, 1tnk.sweden, atnk, 2tnk, 2tnk.england, 2tnk.france, 2tnk.germany, 2tnk.spain, 2tnk.sweden, 2tnk.holland, 2tnk.stealth, arty, arty.france, gcan, msam, mrj, stnk, ctnk, tnkd, batf, pt, pt.greece, dd, dd.germany, ca, ca.italy, bshp, 1tnf, 2tnf, artf, thf, prsm
+		ExcludeFromSquadsTypes: harv, harv.crate, harv.chrono, mcv, mcv.ai, dog, e1, e1.england, e2, e2.turkey, e3, e4.italy, e6, e7, e7.usa, medi, mech, shot, atgm, snip, mrtr, cinf, jeep, jeep.england, jeep.scout, apc, apc.germany, rapc, 1tnk, 1tnk.england, 1tnk.france, 1tnk.germany, 1tnk.italy, 1tnk.spain, 1tnk.greece, atnk, 2tnk, 2tnk.england, 2tnk.france, 2tnk.germany, 2tnk.spain, 2tnk.sweden, 2tnk.italy, 2tnk.stealth, arty, arty.france, gcan, msam, mrj, stnk, ctnk, tnkd, batf, pt, pt.greece, dd, dd.germany, ca, ca.italy, bshp, 1tnf, 2tnf, artf, thf, prsm
 		ConstructionYardTypes: fact
 		IgnoredEnemyTargetTypes: Submarine, IgnoreThis
 	UnitBuilderBotModule@allies.land:
@@ -464,7 +464,6 @@ Player:
 			1tnk.england: 40
 			1tnk.france: 40
 			1tnk.germany: 40
-			1tnk.holland: 40
 			1tnk.sweden: 40
 			1tnk.spain: 40
 			1tnk.italy: 40
@@ -473,7 +472,7 @@ Player:
 			2tnk.france: 50
 			2tnk.germany: 50
 			2tnk.spain: 50
-			2tnk.holland: 50
+			2tnk.italy: 50
 			2tnk.stealth: 15
 			2tnk.sweden: 50
 			arty: 15
@@ -517,7 +516,7 @@ Player:
 			dd: 30
 			dd.germany: 30
 			ca: 20
-			ca.italy: 20
+			ca.spain: 20
 			bshp: 15
 		UnitLimits:
 			pt: 8
@@ -525,7 +524,7 @@ Player:
 			dd: 6
 			dd.germany: 6
 			ca: 4
-			ca.italy: 4
+			ca.spain: 4
 			bshp: 3
 	UnitBuilderBotModule@allies.air:
 		RequiresCondition: enable-ai-player && player.allies

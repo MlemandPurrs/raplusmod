@@ -223,7 +223,7 @@ RAPC:
 	Buildable:
 		Queue: Vehicle, MWFVehicle
 		BuildPaletteOrder: 4
-		Prerequisites: proc, ~vehicles.allies, ~!player.england, ~!player.france, ~!player.germany, ~!player.spain, ~!player.italy, ~!player.sweden, ~!player.holland, ~techlevel.low
+		Prerequisites: proc, ~vehicles.allies, ~!player.england, ~!player.france, ~!player.germany, ~!player.spain, ~!player.italy, ~!player.greece, ~techlevel.low
 		Description: Fast tank, good for scouting.\n  Strong vs Light armor\n  Weak vs Infantry, Tanks, Aircraft
 	Valued:
 		Cost: 600
@@ -293,7 +293,7 @@ RAPC:
 	Buildable:
 		Queue: Vehicle, MWFVehicle
 		BuildPaletteOrder: 5
-		Prerequisites: fix, ~vehicles.allies, ~!player.england, ~!player.france, ~!player.germany, ~!player.spain, ~!player.holland, ~!player.sweden, ~techlevel.medium
+		Prerequisites: fix, ~vehicles.allies, ~!player.england, ~!player.france, ~!player.germany, ~!player.spain, ~!player.italy, ~!player.sweden, ~techlevel.medium
 		Description: Allied Main Battle Tank.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
 	Valued:
 		Cost: 700
@@ -410,6 +410,13 @@ ARTY:
 	Inherits: ^TrackedVehicle
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiStructure
+	RangeMultiplier@RangeBonus:
+		Modifier: 110
+		RequiresCondition: turkey.player
+	GrantConditionOnFaction@RangeBonus:
+		Condition: turkey.player
+		Factions: turkey
+		ResetOnOwnerChange: True
 	Buildable:
 		Queue: Vehicle, MWFVehicle
 		BuildPaletteOrder: 6

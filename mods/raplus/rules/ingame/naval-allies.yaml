@@ -341,7 +341,7 @@ CA:
 		Queue: Ship
 		BuildAtProductionType: Boat
 		BuildPaletteOrder: 4
-		Prerequisites: ~syrd, atek, ~ships.allies, ~!player.italy, ~techlevel.high
+		Prerequisites: ~syrd, atek, ~ships.allies, ~!player.spain, ~techlevel.high
 		Description: Very slow long-range ship.\n  Strong vs Buildings, Ground units\n  Weak vs Naval units, Aircraft
 	Valued:
 		Cost: 1800

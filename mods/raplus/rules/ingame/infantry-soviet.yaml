@@ -166,6 +166,8 @@ SAB:
 		CooldownTicks: 1250
 		DeployedTicks: 375
 		DeploySound: appear1.aud
+		ChargingColor: 8B008B
+		DischargingColor: FF00FF
 	Cloak:
 		InitialDelay: 0
 		CloakDelay: 65
@@ -342,7 +344,7 @@ RPG:
 		Name: RPO Trooper
 	Buildable:
 		BuildPaletteOrder: 12
-		Prerequisites: ~barr, ftur, ~soviet.or.kazakh, ~techlevel.medium
+		Prerequisites: ~barr, ftur, ~soviet.or.karelia, ~techlevel.medium
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		Description: Soldier that shoots balls of Fire.\nCannot attack Air units.\n  Strong vs clustered Infantry, Structures\n  Weak vs Anti-Infantry measures

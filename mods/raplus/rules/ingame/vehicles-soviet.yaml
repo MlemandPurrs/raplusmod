@@ -264,6 +264,37 @@ FTRK.Flamer:
 		ValidTargets: Infantry, Vehicle, Structure, Defense, Mine
 		InvalidTargets: NoAutoTarget
 
+FTRK.Hunter:
+	Inherits: FTRK
+	-Armament@AA:
+	-Armament@AG:
+	-Cargo:
+	-WithCargoPipsDecoration:
+	-AttackTurreted:
+	-Buildable:
+	Capturable:
+		Types: vehicle
+		CancelActivity: True
+	Tooltip:
+		Name: Tank Hunter
+	Valued:
+		Cost: 850
+	Armament:
+		Weapon: 70mm
+		Recoil: 42
+		RecoilRecovery: 17
+		MuzzleSequence: muzzle
+		LocalOffset: 768,0,90
+	Turreted:
+		TurnSpeed: 28
+		Offset: -178,0,178
+	AttackFrontal:
+		Armaments: primary
+	WithSpriteTurret:
+		Sequence: turret-gun
+	RenderSprites:
+		Image: ftrk
+
 APC.Soviet:
 	Inherits: ^TrackedVehicle
 	Inherits@CARGOPIPS: ^CargoPips
@@ -326,7 +357,7 @@ APC.Soviet:
 	-Armament:
 	Buildable:
 		BuildPaletteOrder: 4
-		Prerequisites: proc, ~vehicles.soviet, ~!player.russia, ~!player.ukraine, ~!player.belarus, ~!player.kazakh, ~!player.turkmen, ~!player.afghan, ~techlevel.low
+		Prerequisites: proc, ~vehicles.soviet, ~!player.russia, ~!player.ukraine, ~!player.china, ~!player.kazakh, ~!player.turkmen, ~!player.afghan, ~techlevel.low
 		Description: Soviet Main Battle Tank.\nEarly pattern that is weaker yet cheaper.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
 	Tooltip:
 		Name: Heavy Tank 1-B
@@ -356,7 +387,7 @@ APC.Soviet:
 	Buildable:
 		Queue: Vehicle, MWFVehicle
 		BuildPaletteOrder: 5
-		Prerequisites: fix, ~vehicles.soviet, ~!player.russia, ~!player.ukraine, ~!player.belarus, ~!player.kazakh, ~!player.turkmen, ~!player.afghan, ~techlevel.medium
+		Prerequisites: fix, ~vehicles.soviet, ~!player.russia, ~!player.ukraine, ~!player.china, ~!player.kazakh, ~!player.turkmen, ~!player.afghan, ~techlevel.medium
 		Description: Soviet Main Battle Tank, with dual cannons.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
 	Valued:
 		Cost: 1150
@@ -556,7 +587,7 @@ NRTY:
 		BuildPaletteOrder: 15
 		BuildLimit: 1
 		Prerequisites: stek, ~vehicles.soviet, ~player.soviet, tech.stolen, ~techlevel.high
-		Description: Tank of majestic proportions.\nMaximum one can be built.\nCan crush concrete Walls and enemy Vehicles.\nSelf-repairs when below 50% of maximum Health.\nDetects cloaked units in close radius.\nNuclear powered, detonates violently on death!\n  Strong vs everything on Ground\n  Weak vs Aircraft, fast Units
+		Description: Tank of majestic proportions.\nMaximum one can be built.\nCan crush concrete Walls and enemy Vehicles.\nSelf-repairs when below 50% of maximum Health.\nDetects cloaked units in close radius.\nHas built-in Iron Curtain device toggleable.\nNuclear powered, detonates violently on death!\n  Strong vs everything on Ground\n  Weak vs Aircraft, fast Units
 	Valued:
 		Cost: 3200
 	Tooltip:
@@ -636,11 +667,23 @@ NRTY:
 	RevealOnDeath:
 		Duration: 100
 		Radius: 2c512
+	GrantTimedConditionOnDeploy:
+		DeployedCondition: invulnerability
+		CooldownTicks: 4500
+		DeployedTicks: 500
+		DeploySound: ironcur9.aud
+		DischargingColor: FF0000
 
 V2RL:
 	Inherits: ^Vehicle
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiStructure
+	ReloadDelayMultiplier@V2ReloadBonus:
+		Modifier: 90
+		RequiresCondition: uzbek.player
+	GrantConditionOnFaction@V2ReloadBonus:
+		Condition: uzbek.player
+		Factions: uzbek		
 	WithFacingSpriteBody:
 		RequiresCondition: !reloading
 		Name: loaded
@@ -819,7 +862,7 @@ QTNK:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 13
-		Prerequisites: stek, ~vehicles.soviet, ~soviet.or.belarus, ~techlevel.high
+		Prerequisites: stek, ~vehicles.soviet, ~soviet.or.uzbek, ~techlevel.high
 		Description: Mutually assured Destruction vehicle that quakes the ground.\nIts delicate components require the effects of Iron Curtain be repelled in order to function.\nDeals disruptive seismic damage to nearby Structures and Infantry during buildup,\nand significant damage on moment of detonation to Structures,\nwhile its dealing negligible damage to Vehicles but slowing them down.\n  Strong vs Buildings\n  Weak vs Infantry, Aircraft, Vehicles
 	Valued:
 		Cost: 2000
@@ -939,7 +982,7 @@ MWF:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 13
-		Prerequisites: fix, stek, ~vehicles.soviet, !weap.mini, ~player.uzbek, ~techlevel.high
+		Prerequisites: fix, stek, ~vehicles.soviet, !weap.mini, ~player.belarus, ~techlevel.high
 		BuildLimit: 1
 		Description: Deploys into a War Factory\nwith local seperate queue.\nThis factory can only produce basic units.\n  Unarmed
 	Valued:

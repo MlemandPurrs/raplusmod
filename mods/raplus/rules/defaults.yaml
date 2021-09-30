@@ -917,6 +917,12 @@
 	Wanders@NOIDLENAVY:
 		WanderMoveRadius: 3
 		RequiresCondition: (botowner && under-bridge)
+	DamageMultiplier@CountryBonus:
+		Modifier: 90
+		RequiresCondition: spain
+	GrantConditionOnFaction@CountryBonus:
+		Condition: spain.player
+		Factions: spain
 
 ^Submarine:
 	Inherits: ^Ship
@@ -986,10 +992,16 @@
 	SpeedMultiplier@ONSURFACE:
 		Modifier: 120
 		RequiresCondition: deployed && !heavily-damaged
+	SpeedMultiplier@CountrySpeedBonus:
+		Modifier: 110
+		RequiresCondition: underwater && ukraine.player
+	GrantConditionOnFaction@CountrySpeedBonus:
+		Condition: ukraine.player
+		Factions: ukraine
 	GpsDot:
 		String: Submarine
 	Wanders@NOIDLENAVY:
-		RequiresCondition: (botowner && crossing-ford) ||  (botowner && under-bridge)
+		RequiresCondition: (botowner && crossing-ford) || (botowner && under-bridge)
 	Targetable@sonarhelper:
 		TargetTypes: SonarTarget
 		RequiresCondition: !underwater
@@ -1662,6 +1674,9 @@
 		CanSlide: True
 	FallsToEarth:
 		Explosion: UnitExplodeHeli
+		MaximumSpinSpeed: 51
+		Moves: true
+		Velocity: 64
 	ClassicFacingBodyOrientation:
 	-MapEditorData:
 	RevealOnDeath:
@@ -2487,14 +2502,6 @@
 		Factions: ukraine
 		ResetOnOwnerChange: True
 
-^AffectedByUzbek:
-	ProductionCostMultiplier@UZBEKBONUS:
-		Multiplier: 75
-		Prerequisites: player.uzbek
-	ProductionTimeMultiplier@UZBEKBONUS:
-		Multiplier: 125
-		Prerequisites: player.uzbek
-
 ^AffectedByChemicals:
 	ChangesHealth@CHEMWEAPON:
 		Delay: 16
@@ -2651,3 +2658,12 @@
 		DamageTypes: RadiationDeath
 		LayerName: radioactivity.weak
 		RequiresCondition: !parachute
+
+^AircraftFastReload:
+	ReloadAmmoDelayMultiplier@FastReloadBonus:
+		Modifier: 80
+		RequiresCondition: germany.player
+	GrantConditionOnFaction@FastReloadBonus:
+		Condition: germany.player
+		Factions: germany
+		ResetOnOwnerChange: True

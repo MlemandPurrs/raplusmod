@@ -38,7 +38,11 @@ dtnk:
 	turret-1tnk: 1tnk-tur
 		Start: 0
 		Facings: 32
-		UseClassicFacings: True		
+		UseClassicFacings: True
+	turret-1tnk-classic: 1tnk
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
 	turret-2tnk: 2tnk
         Start: 32
 		Facings: 32

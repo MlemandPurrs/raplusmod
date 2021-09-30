@@ -97,7 +97,12 @@ HARV.Crate:
 MCV:
 	Inherits: ^Vehicle
 	Inherits@selection: ^SelectableSupportUnit
-	Inherits@CHEAPER: ^AffectedByUzbek
+	ProductionCostMultiplier@NLBONUS:
+		Multiplier: 75
+		Prerequisites: player.holland
+	ProductionTimeMultiplier@NLBONUS:
+		Multiplier: 125
+		Prerequisites: player.holland
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 10
@@ -273,7 +278,7 @@ MNLY:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 7
-		Prerequisites: fix, ~!player.karelia, ~techlevel.medium
+		Prerequisites: fix, ~!player.karelia, ~!player.holland, ~techlevel.medium
 		Description: Carries and lays up to 5 Land Mines\nto destroy unwary enemy units.\nCan detect mines.\n  Unarmed
 	Valued:
 		Cost: 700
@@ -350,12 +355,49 @@ MNLY.Nuke:
 		DamageSource: Killer
 		RequiresCondition: ammo
 
+MNLY.Support:
+	Inherits: MNLY
+	Buildable:
+		BuildPaletteOrder: 7
+		Prerequisites: fix, ~player.holland, ~techlevel.medium
+		Description: Repairs nearby friendly Vehicles.\nCarries and lays up to 5 Land Mines\nto destroy unwary enemy units.\nCan detect mines.\n  Unarmed
+		Icon: sprticon
+	Tooltip:
+		Name: Support Minelayer
+	Armament:
+		Weapon: Repair
+		Cursor: repair
+		OutsideRangeCursor: repair
+		TargetStances: Ally
+		ForceTargetStances: None
+		PauseOnCondition: empdisable
+	AttackTurreted:
+		PauseOnCondition: empdisable
+	WithSpriteTurret:
+		Sequence: rep-tur
+	Turreted:
+		TurnSpeed: 5
+	AmmoPool:
+		Armaments: 
+	AutoTarget:
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: Vehicle, Ship
+	RenderSprites:
+		Image: mnly
+
 MGG:
 	Inherits: ^Vehicle
+	#	CreatesShroudMultiplier@RangeBonus:
+	#	Modifier: 120
+	#	RequiresCondition: belarus.player
+	#	GrantConditionOnFaction@RangeBonus:
+	#	Condition: belarus.player
+	#	Factions: belarus
+	#	ResetOnOwnerChange: True
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 12
-		Prerequisites: techcenter, ~!player.spain, ~techlevel.high
+		Prerequisites: techcenter, ~!player.sweden, ~techlevel.high
 		Description: Regenerates the shroud nearby,\nobscuring the area.\n  Can be toggled on/off via deploy command.\n  Unarmed
 	Valued:
 		Cost: 800

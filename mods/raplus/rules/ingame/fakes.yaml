@@ -1095,6 +1095,8 @@ MGGF:
 	-SpawnActorOnDeath:
 	-WithIdleOverlay@SPINNER:
 	-WithDecoration@offline:
+	#	-CreatesShroudMultiplier@RangeBonus:
+	#	-GrantConditionOnFaction@RangeBonus:
 	Buildable:
 		BuildPaletteOrder: 15
 		Prerequisites: techcenter, ~player.france

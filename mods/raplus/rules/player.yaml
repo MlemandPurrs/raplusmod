@@ -385,6 +385,11 @@ Player:
 	ProvidesPrerequisite@LIMITINGNUKEMINE:
 		Prerequisite: enoughnukemine
 		RequiresCondition: hasnukemine > 1
+	#	ExternalCondition@LIMITINGFREEBIESYRD:
+	#	Condition: hasshipyard
+	#	ProvidesPrerequisite@LIMITINGFREEBIESYRD:
+	#	Prerequisite: enoughsyrd
+	#	RequiresCondition: hasshipyard > 0
 	LobbyPrerequisiteCheckbox@GLOBALSCRAPS:
 		ID: scraps
 		Label: Scrap Metal
