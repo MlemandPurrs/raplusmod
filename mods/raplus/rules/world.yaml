@@ -530,6 +530,7 @@ World:
 		Owner: Creeps
 		Types: mine,gmine
 	LuaScript:
+		Scripts: ecosetting.lua
 	TimeLimitManager:
 		TimeLimitWarnings:
 			40: FourtyMinutesRemaining
@@ -541,6 +542,17 @@ World:
 			3: WarningThreeMinutesRemaining
 			2: WarningTwoMinutesRemaining
 			1: WarningOneMinuteRemaining
+	#	todo: find relevant .lua on how pass value into prerequisite or condition
+	ScriptLobbyDropdown@EcoSpeed:
+		ID: growthrate
+		Label: Ore Growth
+		Values:
+			sloweco: Slow
+			normaleco: Normal
+			fasteco: Fast
+		Default: fasteco
+		Description: The speed with which Resources grow
+		DisplayOrder: 5
 
 EditorWorld:
 	Inherits: ^BaseWorld

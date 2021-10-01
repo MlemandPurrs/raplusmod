@@ -538,8 +538,21 @@ MINE:
 		Terrain: Ore
 	AppearsOnMapPreview:
 		Terrain: Ore
-	SeedsResource:
+	SeedsResource@Slow:
+		Interval: 87
+		RequiresCondition: growthslow
+	ExternalCondition@Slow:
+		Condition: growthslow
+	SeedsResource@Normal:
+		Interval: 75
+		RequiresCondition: growthnormal
+	ExternalCondition@Normal:
+		Condition: growthnormal
+	SeedsResource@Fast:
 		Interval: 63
+		RequiresCondition: growthfast
+	ExternalCondition@Fast:
+		Condition: growthfast
 	MapEditorData:
 		Categories: Resource spawn
 	RequiresSpecificOwners:
@@ -563,9 +576,24 @@ GMINE:
 		Terrain: Gems
 	AppearsOnMapPreview:
 		Terrain: Gems
-	SeedsResource:
+	SeedsResource@Slow:
+		Interval: 87
 		ResourceType: Gems
+		RequiresCondition: growthslow
+	ExternalCondition@Slow:
+		Condition: growthslow
+	SeedsResource@Normal:
+		Interval: 75
+		ResourceType: Gems
+		RequiresCondition: growthnormal
+	ExternalCondition@Normal:
+		Condition: growthnormal
+	SeedsResource@Fast:
 		Interval: 63
+		ResourceType: Gems
+		RequiresCondition: growthfast
+	ExternalCondition@Fast:
+		Condition: growthfast
 	MapEditorData:
 		Categories: Resource spawn
 	RequiresSpecificOwners:
