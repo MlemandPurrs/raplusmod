@@ -115,7 +115,7 @@ FTRK:
 	Selectable:
 		DecorationBounds: 28,28
 	Cargo:
-		Types: Infantry
+		Types: Infantry, Engineer
 		MaxWeight: 1
 		LoadingCondition: notmobile
 		LoadedCondition: loaded
@@ -340,7 +340,7 @@ APC.Soviet:
 	WithSpriteTurret:
 	WithMuzzleOverlay:
 	Cargo:
-		Types: Infantry
+		Types: Infantry, Engineer
 		MaxWeight: 5
 		LoadedCondition: loaded
 		LoadingCondition: notmobile
@@ -451,7 +451,7 @@ APC.Soviet:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 8
-		Prerequisites: fix, stek, ~vehicles.soviet, ~!player.ukraine, ~!player.afghan, ~techlevel.high
+		Prerequisites: fix, stek, ~vehicles.soviet, ~!player.ukraine, ~!player.belarus, ~techlevel.high
 		Description: Big and slow tank, with anti-air capability.\nCan crush concrete walls.\nSelf-repairs when below 50% of maximum Health.\n  Strong vs Vehicles, Infantry, Buildings\n  Weak vs Artillery
 	Valued:
 		Cost: 2000
@@ -519,7 +519,7 @@ APC.Soviet:
 	-Armament@PRIMARY:
 	Buildable:
 		BuildPaletteOrder: 8
-		Prerequisites: fix, stek, ~vehicles.soviet, ~player.afghan, ~techlevel.high
+		Prerequisites: fix, stek, ~vehicles.soviet, ~player.belarus, ~techlevel.high
 	Tooltip:
 		Name: Flame Mammoth
 	Armament@PRIMARY:

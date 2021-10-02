@@ -77,6 +77,8 @@ PT:
 			Radius: 288
 			PointA: 0, -341
 			PointB: 0, 341
+	ProducibleWithLevel:
+		Prerequisites: navy.upgraded
 
 RSHP:
 	Inherits: ^Ship
@@ -246,6 +248,8 @@ DD:
 			Radius: 320
 			PointA: 0, -448
 			PointB: 0, 448
+	ProducibleWithLevel:
+		Prerequisites: navy.upgraded
 
 BSHP:
 	Inherits: ^Ship
@@ -333,6 +337,8 @@ BSHP:
 		Color: FFFF00
 	RenderRangeCircle:
 		FallbackRange: 20c0
+	ProducibleWithLevel:
+		Prerequisites: navy.upgraded
 
 CA:
 	Inherits: ^Ship
@@ -408,6 +414,8 @@ CA:
 			Radius: 341
 			PointA: 0, -576
 			PointB: 0, 576
+	ProducibleWithLevel:
+		Prerequisites: navy.upgraded
 
 DRED:
 	Inherits: ^Ship
@@ -484,6 +492,8 @@ DRED:
 			Radius: 341
 			PointA: 0, -576
 			PointB: 0, 576
+	ProducibleWithLevel:
+		Prerequisites: navy.upgraded
 
 ACAR:
 	Inherits: ^Ship

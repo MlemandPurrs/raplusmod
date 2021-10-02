@@ -44,6 +44,13 @@ OILB:
 		Factions: turkmen
 		ResetOnOwnerChange: True
 
+OILP:
+	Inherits: OILB
+	Tooltip:
+		Name: Oil Platform
+	SpawnActorOnDeath:
+		Actor: OILP.Husk
+
 MISS:
 	Inherits: ^TechBuilding
 	Inherits@shape: ^3x2Shape
@@ -179,6 +186,10 @@ BIO:
 		Footprint: xx xx
 		Dimensions: 2,2
 	RevealsShroud:
+		MinRange: 4c0
+		Range: 5c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
 		Range: 4c0
 	Power:
 		Amount: 300
@@ -270,3 +281,369 @@ FCOM:
 		OwnerType: InternalName
 	RenderSprites:
 		Image: acom
+
+ACAD:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^3x2Shape
+	AppearsOnMapPreview:
+	Selectable:
+		Bounds: 72,72
+	OwnerLostAction:
+		Action: ChangeOwner
+	Building:
+		Footprint: xxx xxx ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 600
+	Armor:
+		Type: Wood
+	Tooltip:
+		Name: Veteran Academy
+	TooltipDescription@ally:
+		Description: Provides Veterancy training for all of your units.
+		ValidRelationships: Ally
+	TooltipDescription@other:
+		Description: Capture to enable Veterancy for all unit types.
+		ValidRelationships: Neutral, Enemy
+	RevealsShroud:
+		MinRange: 4c0
+		Range: 5c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 4c0
+	WithBuildingBib:
+	ProvidesPrerequisite@1:
+		Prerequisite: barracks.upgraded
+		ResetOnOwnerChange: True
+	ProvidesPrerequisite@2:
+		Prerequisite: vehicles.upgraded
+		ResetOnOwnerChange: True
+	ProvidesPrerequisite@3:
+		Prerequisite: aircraft.upgraded
+		ResetOnOwnerChange: True
+	ProvidesPrerequisite@4:
+		Prerequisite: navy.upgraded
+		ResetOnOwnerChange: True
+	RenderSprites:
+		Image: acad
+	SpawnActorOnDeath:
+		Actor: ACAD.Husk
+		OwnerType: InternalName
+
+#	todo: make this finite income, drawn from pool in the bank
+BANK:
+	Inherits: ^TechBuilding
+	Inherits@CARGOPIPS: ^CargoPips
+	Inherits@shape: ^2x2Shape
+	#	to ensure Engineers can enter
+	-EngineerRepairable:
+	AppearsOnMapPreview:
+	Selectable:
+		Bounds: 48,48
+	OwnerLostAction:
+		Action: ChangeOwner
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 800
+	Armor:
+		Type: Wood
+	Tooltip:
+		Name: Bank
+	TooltipDescription@ally:
+		Description: Garrisoned Engineers provide slow and steady income.
+		ValidRelationships: Ally
+	TooltipDescription@other:
+		Description: Capture and garrison with Engineers for income.
+		ValidRelationships: Neutral, Enemy
+	RevealsShroud:
+		MinRange: 4c0
+		Range: 5c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 4c0
+	WithBuildingBib:
+	Cargo:
+		Types: Engineer
+		MaxWeight: 5
+		LoadedCondition: loaded
+	ChangesHealth@RepairCompensation:
+		Step: 15
+		Delay: 24
+		StartIfBelow: 101
+		DamageCooldown: 150
+		RequiresCondition: loaded
+	RenderSprites:
+		Image: v92
+	SpawnActorOnDeath:
+		Actor: BANK.Husk
+		OwnerType: InternalName
+
+CPWR:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^2x2Shape
+	AppearsOnMapPreview:
+	Selectable:
+		Bounds: 48,48	
+	OwnerLostAction:
+		Action: ChangeOwner
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 400
+	Armor:
+		Type: Wood
+	Tooltip:
+		Name: Civ. Power Plant
+	TooltipDescription@ally:
+		Description: Provides +100 Power.
+		ValidRelationships: Ally
+	TooltipDescription@other:
+		Description: Capture to gain +100 Power.
+		ValidRelationships: Neutral, Enemy
+	RevealsShroud:
+		MinRange: 4c0
+		Range: 5c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 4c0
+	Power:
+		Amount: 100
+	ProvidesPrerequisite@buildingname:
+	RenderSprites:
+		Image: civpowr
+	SpawnActorOnDeath:
+		Actor: CPWR.Husk
+		OwnerType: InternalName
+
+CFLD:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^3x2Shape
+	AppearsOnMapPreview:
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 420,0,0, 420,-1024,0, 420,1024,0, -777,0,0, -777,-1024,0, -777,1024,0
+	Building:
+		Footprint: xxx xx+
+		Dimensions: 3,2	
+	Tooltip:
+		Name: Civ. Airfield
+	TooltipDescription@ally:
+		Description: Provides basic Paratroopers and resupplies Planes.
+		ValidRelationships: Ally
+	TooltipDescription@other:
+		Description: Capture to gain basic Paratroopers.
+		ValidRelationships: Neutral, Enemy
+	Selectable:
+		Class: afld
+		Bounds: 72,48
+	Health:
+		HP: 1000		
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		MinRange: 4c0
+		Range: 5c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 4c0
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
+	RepairsUnits:
+		ValuePercentage: 0
+		HpPerStep: 5
+		Interval: 7
+		StartRepairingNotification: Repairing
+		FinishRepairingNotification: UnitRepaired
+		PlayerExperience: 15
+		RequiresCondition: !lowpower
+	Reservable:
+	ParatroopersPower@SovietParatroopers:
+		OrderName: SovietParatroopers
+		Prerequisites: aircraft.soviet, ~techlevel.unrestricted
+		RequiresCondition: soviet.player
+		Icon: paratroopers
+		ChargeInterval: 7500
+		Description: Paratroopers
+		LongDesc: A Badger drops a squad of Veteran infantry\nanywhere on the map.
+		DropItems: E1R1,E3R1,E1R1,E3R1,E1R1
+		ReinforcementsArrivedSpeechNotification: ReinforcementsArrived
+		SelectTargetSpeechNotification: SelectTarget
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.paradrop
+		UnitType: badr
+		DisplayBeacon: true
+		BeaconPoster: pinficon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		PauseOnCondition: lowpower
+		Cursor: airdrop
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+		SupportPowerPaletteOrder: 4
+	ParatroopersPower@AlliedParatroopers:
+		OrderName: AlliedParatroopers
+		Prerequisites: aircraft.allies, ~techlevel.unrestricted
+		RequiresCondition: allied.player
+		Icon: paratroopers
+		ChargeInterval: 7500
+		Description: Paratroopers
+		LongDesc: A B-52 drops a squad of Veteran infantry\nanywhere on the map.
+		DropItems: E1R1,E3R1,E1R1,E3R1,E1R1
+		ReinforcementsArrivedSpeechNotification: ReinforcementsArrived
+		SelectTargetSpeechNotification: SelectTarget
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.paradrop
+		UnitType: b52
+		DisplayBeacon: true
+		BeaconPoster: pinficon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		PauseOnCondition: lowpower
+		Cursor: airdrop
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+		SupportPowerPaletteOrder: 4
+	ParatroopersPower@AmericanParatroopers:
+		OrderName: AmericanParatroopers
+		Prerequisites: aircraft.allies, ~techlevel.unrestricted
+		RequiresCondition: usa.player
+		Icon: paratroopers
+		ChargeInterval: 7500
+		Description: Paratroopers
+		LongDesc: Two B-52 drops a squad of Veteran infantry\nanywhere on the map.
+		DropItems: E1R1,E3R1,E1R1,E3R1,E1R1, E1R1,E3R1,E1R1,E3R1,E1R1
+		ReinforcementsArrivedSpeechNotification: ReinforcementsArrived
+		SelectTargetSpeechNotification: SelectTarget
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.paradrop
+		UnitType: b52
+		SquadSize: 2
+		DisplayBeacon: true
+		BeaconPoster: pinficon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		PauseOnCondition: lowpower
+		Cursor: airdrop
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+		SupportPowerPaletteOrder: 4
+	ParatroopersPower@FastParatroopers:
+		OrderName: FastParatroopers
+		Prerequisites: aircraft.soviet, ~techlevel.unrestricted
+		RequiresCondition: belarus.player
+		Icon: paratroopers
+		ChargeInterval: 3750
+		Description: Paratroopers
+		LongDesc: A Badger drops a squad of Veteran infantry\nanywhere on the map.
+		DropItems: E1R1,E3R1,E1R1,E3R1,E1R1
+		ReinforcementsArrivedSpeechNotification: ReinforcementsArrived
+		SelectTargetSpeechNotification: SelectTarget
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.paradrop
+		DisplayBeacon: true
+		BeaconPoster: pinficon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		PauseOnCondition: lowpower
+		Cursor: airdrop
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+		SupportPowerPaletteOrder: 4
+	SupportPowerChargeBar:
+	ProvidesPrerequisite@allies:
+		Factions: allies, usa, england, holland, france, germany, sweden, spain, italy, greece, turkey
+		Prerequisite: aircraft.allies
+	ProvidesPrerequisite@soviet:
+		Factions: soviet, russia, ukraine, belarus, karelia, moldova, kazakh, uzbek, china, turkmen, afghan
+		Prerequisite: aircraft.soviet
+	GrantConditionOnFaction@soviet:
+		Condition: soviet.player
+		Factions: soviet, russia, ukraine, karelia, moldova, kazakh, uzbek, china, turkmen, afghan
+		ResetOnOwnerChange: True
+	GrantConditionOnFaction@faster:
+		Condition: belarus.player
+		Factions: belarus
+		ResetOnOwnerChange: True
+	GrantConditionOnFaction@allies:
+		Condition: allied.player
+		Factions: allies, england, holland, france, germany, sweden, spain, italy, greece, turkey
+		ResetOnOwnerChange: True
+	GrantConditionOnFaction@double:
+		Condition: usa.player
+		Factions: usa
+		ResetOnOwnerChange: True
+	ProximityExternalCondition:
+		Condition: onground
+		Range: 1c0
+	SpawnActorOnDeath:
+		Actor: CFLD.Husk
+		OwnerType: InternalName
+	RenderSprites:
+		Image: civafld
+
+MSHP:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^2x2Shape
+	Inherits@POWER_OUTAGE: ^DisabledByPowerOutage
+	Selectable:
+		Bounds: 48,48
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	RevealsShroud:
+		MinRange: 4c0
+		Range: 5c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 4c0
+	Tooltip:
+		Name: Machine Shop
+	TooltipDescription@ally:
+		Description: Provides the 'Field Repairs' support power.
+		ValidRelationships: Ally
+	TooltipDescription@other:
+		Description: Capture to gain 'Field Repairs' support Power.
+		ValidRelationships: Neutral, Enemy
+	ProvidesPrerequisite@buildingname:
+	AppearsOnMapPreview:
+	GpsDot:
+		String: Repair
+	SpawnActorOnDeath:
+		Actor: MSHP.Husk
+		OwnerType: InternalName
+	GrantExternalConditionPower@FieldRepairs:
+		PauseOnCondition: disabled || lowpower
+		OrderName: FieldRepairPower
+		Prerequisites: ~weap, ~techlevel.unrestricted
+		Icon: fieldrepair
+		ChargeInterval: 6000
+		Dimensions: 3, 3
+		Footprint: xxx xxx xxx
+		Duration: 300
+		Description: Field Repairs
+		LongDesc: Affected vehicles self-repair for 1% of their\nmaximum health per second for 12 second duration.
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		Condition: fieldrepair
+		Cursor: goldwrench
+		Sequence: none
+		SupportPowerPaletteOrder: 7
+		OnFireSound: fixit1.aud
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
+	SupportPowerChargeBar:

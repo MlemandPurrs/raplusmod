@@ -2,6 +2,56 @@ Ant:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	-Crushable:
+	#	no medals for Ants
+	-GainsExperience:
+	-GivesExperienceMultiplier@RANK-1:
+	-GivesExperienceMultiplier@RANK-2:
+	-GivesExperienceMultiplier@RANK-3:
+	-GivesExperienceMultiplier@RANK-ELITE:
+	-GrantCondition@RANK-ELITE:
+	-DamageMultiplier@RANK-1:
+	-DamageMultiplier@RANK-2:
+	-DamageMultiplier@RANK-3:
+	-DamageMultiplier@RANK-ELITE:
+	-FirepowerMultiplier@RANK-1:
+	-FirepowerMultiplier@RANK-2:
+	-FirepowerMultiplier@RANK-3:
+	-FirepowerMultiplier@RANK-ELITE:
+	-SpeedMultiplier@RANK-1:
+	-SpeedMultiplier@RANK-2:
+	-SpeedMultiplier@RANK-3:
+	-SpeedMultiplier@RANK-ELITE:
+	-ReloadDelayMultiplier@RANK-1:
+	-ReloadDelayMultiplier@RANK-2:
+	-ReloadDelayMultiplier@RANK-3:
+	-ReloadDelayMultiplier@RANK-ELITE:
+	-ChangesHealth@ELITE:
+	-WithDecoration@RANK-1:
+	-WithDecoration@RANK-2:
+	-WithDecoration@RANK-3:
+	-WithDecoration@RANK-ELITE:
+	-GainsExperienceMultiplier@HollandBonus:
+	-GrantConditionOnFaction@HollandBonus:
+	#	no healing at Barracks for them
+	-ExternalCondition@barracks:
+	-GrantCondition@BARRACKSHEALING:
+	-ChangesHealth@BARRACKSHEALING:
+	-ChangesHealth@HOSPITAL:
+	-GrantConditionOnPrerequisite@HOSPITAL:
+	-GrantConditionOnDamageState@HOSPITAL:
+	-GrantCondition@HOSPITAL:
+	-WithDecoration@REDCROSS:
+	#	does not need those as not producible normally
+	-Cloneable:
+	-ProductionTimeMultiplier@productionboost:
+	-ProductionCostMultiplier@productionboost:
+	#	should not be healed by Medic
+	-Targetable@HEAL:
+	#	does not embark into Infantry transports
+	-Passenger:
+	-GainsExperienceMultiplier:
+	#	dont get slowed down on damage
+	-GrantConditionOnDamageState@DAMAGED:
 	Valued:
 		Cost: 300
 	Tooltip:
@@ -43,12 +93,18 @@ Ant:
 	AttackWander:
 		WanderMoveRadius: 30
 	RenderSprites:
-		PlayerPalette: scoutant
+		Image: ant1
 	GpsDot:
 		String: Ant
+	Passenger:
+		Weight: 1
+		CargoType: Vehicle
+		CustomPipType: pip-gray
 
 FireAnt:
 	Inherits: Ant
+	Valued:
+		Cost: 750
 	Tooltip:
 		Name: Fire Ant
 		GenericVisibility: none
@@ -62,6 +118,51 @@ FireAnt:
 		Type: Heavy
 	Buildable:
 		Prerequisites: ~disabled
+	RenderSprites:
+		Image: fireant
+
+TeslaAnt:
+	Inherits: Ant
+	Valued:
+		Cost: 750
+	Tooltip:
+		Name: Tesla Ant
+		GenericVisibility: none
+	Mobile:
+		Speed: 68
+	Armament:
+		Weapon: PortaTesla
+	Health:
+		HP: 75
+	Armor:
+		Type: Heavy
+	Buildable:
+		Prerequisites: ~disabled
+	RenderSprites:
+		Image: zapant
+
+ChemAnt:
+	Inherits: Ant
+	Tooltip:
+		Name: Chemical Ant
+		GenericVisibility: none
+	Valued:
+		Cost: 750
+	Mobile:
+		Speed: 68
+	Armament:
+		Weapon: Chemspray
+		MuzzleSequence: muzzle-chem
+		MuzzlePalette: desert
+	WithMuzzleOverlay:
+	Health:
+		HP: 75
+	Armor:
+		Type: Heavy
+	Buildable:
+		Prerequisites: ~disabled
+	RenderSprites:
+		Image: chemant
 
 ScoutAnt:
 	Inherits: Ant
@@ -76,9 +177,42 @@ ScoutAnt:
 		ScanRadius: 7
 	Buildable:
 		Prerequisites: ~disabled
+	RenderSprites:
+		Image: scoutant
+
+ShadowAnt:
+	Inherits: Ant	
+	Valued:
+		Cost: 450
+	Tooltip:
+		Name: Shadow Ant
+		GenericVisibility: none
+	Health:
+		HP: 85
+	Armor:
+		Type: Light
+	AutoTarget:
+		ScanRadius: 7
+	Buildable:
+		Prerequisites: ~disabled
+	Cloak:
+		InitialDelay: 150
+		CloakDelay: 150
+		CloakSound: appear1.aud
+		UncloakSound: appear1.aud
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Dock, Damage, Heal
+		PauseOnCondition: cloak-force-disabled
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+	RenderSprites:
+		Image: shadowant
 
 WarriorAnt:
 	Inherits: Ant
+	Valued:
+		Cost: 600
 	Tooltip:
 		Name: Warrior Ant
 		GenericVisibility: none
@@ -93,4 +227,45 @@ WarriorAnt:
 	Buildable:
 		Prerequisites: ~disabled
 	RenderSprites:
-		Image: Ant
+		Image: warriorant
+
+HealerAnt:
+	Inherits: Ant
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Healer Ant
+		GenericVisibility: none
+	Mobile:
+		Speed: 56
+	Health:
+		HP: 125
+	Armor:
+		Type: Heavy
+	Armament:
+		Weapon: AntHeal
+		Cursor: heal
+		OutsideRangeCursor: heal
+		TargetRelationships: Ally
+		ForceTargetRelationships: None
+	Buildable:
+		Prerequisites: ~disabled
+	RenderSprites:
+		Image: healerant
+
+#	QueenAnt:
+#	Inherits: Ant
+#	Tooltip:
+#		Name: Queen Ant
+#		GenericVisibility: none
+#	Health:
+#		HP: 120
+#	Armor:
+#		Type: Heavy
+#	AutoTarget:
+#		ScanRadius: 7
+#	Buildable:
+#		Prerequisites: ~disabled
+#	RenderSprites:
+#		Image: Ant
+#		PlayerPalette: queenant

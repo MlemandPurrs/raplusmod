@@ -82,7 +82,7 @@ JEEP:
 		Range: 2c512
 	RenderDetectionCircle:
 	Cargo:
-		Types: Infantry
+		Types: Infantry, Engineer
 		MaxWeight: 1
 		LoadingCondition: notmobile
 		LoadedCondition: loaded
@@ -164,7 +164,7 @@ APC:
 		PauseOnCondition: empdisable
 	WithMuzzleOverlay:
 	Cargo:
-		Types: Infantry
+		Types: Infantry, Engineer
 		MaxWeight: 5
 		LoadedCondition: loaded
 		LoadingCondition: notmobile
@@ -811,7 +811,7 @@ STNK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
 	Cargo:
-		Types: Infantry
+		Types: Infantry, Engineer
 		MaxWeight: 3
 		LoadedCondition: loaded
 		LoadingCondition: notmobile
@@ -1009,7 +1009,7 @@ BATF:
 		RequiresCondition: loaded
 	WithMuzzleOverlay:
 	Cargo:
-		Types: Infantry
+		Types: Infantry, Engineer
 		MaxWeight: 10
 		LoadingCondition: notmobile
 		LoadedCondition: loaded

@@ -270,6 +270,12 @@ Heal:
 		ValidTargets: Heal
 		DebugOverlayColor: 00FF00
 
+AntHeal:
+	Inherits: Heal
+	ValidTargets: Ant
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Ant
+
 Repair:
 	Inherits: Heal
 	Report: fixit1.aud

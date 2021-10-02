@@ -129,3 +129,139 @@ oilb.husk:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
+
+oilp:
+	Defaults:
+		Offset: 0,-6
+	idle:
+	damaged-idle:
+		Start: 0
+		Length: *
+	make:
+
+oilp.husk:
+	Defaults:
+		Offset: 0,-6
+	idle: oilp
+		Start: 0
+		Length: *
+
+acad:
+	idle: wwi-aus-hq
+		Start: 7
+		Length: 1
+		Offset: -2, 10
+	damaged-idle: wwi-aus-hq
+		Start: 7
+		Length: 1
+		Offset: -2, 10
+	make: wwi-aus-hq
+		Start: 0
+		Length: *
+		Offset: -2, 10
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+
+acad.husk:
+	idle: wwi-aus-hq
+		Start: 1
+		Length: 1
+		Offset: -2, 10
+
+v92:
+	idle: wwi-tax
+		Start: 9
+		Length: 1
+	damaged-idle: wwi-tax
+		Start: 9
+		Length: 1
+	make: wwi-tax
+		Start: 0
+		Length: *
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+
+v92.husk:
+	idle: wwi-tax
+		Start: 2
+		Length: 1
+
+civpowr:
+	idle:
+	damaged-idle:
+		Start: 1
+	place: civpowrmake
+		Start: 19
+	make: civpowrmake
+		Length: *
+		Tick: 80
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	icon: civpowricon
+
+civpowr.husk:
+	idle: civpowr
+		Start: 2
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+
+civafld:
+	idle:
+		Length: 8
+		Tick: 160
+		ZOffset: -1023
+		Offset: 0,-4
+	damaged-idle:
+		Start: 8
+		Length: 1
+		Tick: 160
+		ZOffset: -1023
+		Offset: 0,-4
+	active:
+		Length: 8
+		Tick: 160
+		ZOffset: -1023
+		Offset: 0,-4
+	damaged-active:
+		Start: 8
+		Length: 1
+		Tick: 160
+		ZOffset: -1023
+		Offset: 0,-4
+
+civafld.husk:
+	idle: civafld
+		Start: 8
+		Length: 1
+		ZOffset: -1023
+		Offset: 0,-4
+
+mshp:
+    Inherits: emp-overlay
+    idle:
+		Start: 0
+		Length: 1
+        Tick: 100
+    damaged-idle:
+		Start: 1
+		Length: 1
+        Tick: 100
+	none: blank32
+		Length: 1
+
+mshp.husk:
+	idle: mshp
+		Start: 1
+		Length: 1

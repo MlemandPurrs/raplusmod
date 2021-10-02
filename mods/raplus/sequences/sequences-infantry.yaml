@@ -2070,22 +2070,22 @@ chan:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
 
-ant:
-	stand: ant1
+ant1:
+	stand:
 		Facings: 8
-	run: ant1
+	run:
 		Start: 8
 		Length: 8
 		Facings: 8
-	bite: ant1
+	bite:
 		Start: 72
 		Length: 4
 		Facings: 8
-	die: ant1
+	die:
 		Start: 104
 		Length: 8
 		Tick: 300
-	die-crushed: ant1
+	die-crushed:
 		Start: 104
 		Length: 8
 		Tick: 400
@@ -2093,44 +2093,84 @@ ant:
 	icon: anticon
 
 fireant:
-	stand: ant2
-		Facings: 8
-	run: ant2
-		Start: 8
-		Length: 8
-		Facings: 8
-	bite: ant2
-		Start: 72
-		Length: 4
-		Facings: 8
-	die: ant2
-		Start: 104
-		Length: 8
-		Tick: 300
-	die-crushed: ant2
-		Start: 104
-		Length: 8
-		Tick: 400
-		ZOffset: -511
+	Inherits: ant1
+	Defaults: fireant
 	icon: anticon
 
 scoutant:
-	stand: ant3
+	Inherits: ant1
+	Defaults: scoutant
+	icon: anticon
+
+warriorant:
+	Inherits: ant1
+	Defaults: warriorant
+	icon: anticon
+
+chemant:
+	Inherits: ant1
+	Defaults: chemant
+	muzzle-chem:
+		Combine:
+			chem-n:
+				Length: *
+				Offset: 1,2
+			chem-nw:
+				Length: *
+				Offset: 8,2
+			chem-w:
+				Length: *
+				Offset: 8,-3
+			chem-sw:
+				Length: *
+				Offset: 7,-6
+			chem-s:
+				Length: *
+				Offset: 1,-6
+			chem-se:
+				Length: *
+				Offset: -5,-6
+			chem-e:
+				Length: *
+				Offset: -7,-3
+			chem-ne:
+				Length: *
+				Offset: -3,2
 		Facings: 8
-	run: ant3
+		Length: 13
+	icon: anticon
+
+shadowant:
+	Inherits: ant1
+	Defaults: shadowant
+	icon: anticon
+
+zapant:
+	Inherits: ant1
+	Defaults: zapant
+	icon: anticon
+
+healerant:
+	Inherits: ant1
+	Defaults: healerant
+	icon: anticon
+
+qant:
+	stand: qant
+		Facings: 8
+	stand2: qant
+		Start: 8
+		Length: 8
+	run: qant
 		Start: 8
 		Length: 8
 		Facings: 8
-	bite: ant3
+	die: ant1
 		Start: 72
-		Length: 4
-		Facings: 8
-	die: ant3
-		Start: 104
 		Length: 8
 		Tick: 300
-	die-crushed: ant3
-		Start: 104
+	die-crushed: ant1
+		Start: 72
 		Length: 8
 		Tick: 400
 		ZOffset: -511

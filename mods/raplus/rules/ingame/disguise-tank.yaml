@@ -107,7 +107,6 @@ DTNK:
 			rapc: rapc
 			batf: batf
 			apc.soviet: apcsvyt
-			apc.soviet.loaded: apcsvyt
 			apc.karelia: apcsvyt
 			apc.moldova: apcsvyt
 			1tnk: tnk1
@@ -161,6 +160,7 @@ DTNK:
 			icbm: icbm
 			mnly: mnly
 			mnly.nuke: mnlynuke
+			mnly.support: mnlysprt
 			mgg: mgg
 			mggf: mgg
 			msam: msam
@@ -179,7 +179,7 @@ DTNK:
 	DisguiseTooltip@default:
 		Name: Mirage Tank
 		GenericName: Tank
-		RequiresCondition: !mcv && !harv && !harvsvyt && !harvchrn && !truk && !dtrk && !mwf && !jeep && !ftrk && !ftrkgun && !ftrkrep && !ftrkflam && !ftrkhunt && !apc && !rapc && !batf && !apcsvyt && !tnk1 && !atnk && !tnk2 && !tnk2s && !tnk3 && !tnk31b && !tnk4 && !tnk4flam && !nrty && !tnk5 && !prsm && !arty && !gcan && !v2rl && !icbm && !mnly && !mnlynuke && !mgg && !msam && !mrj && !mhqciv && !tnkd && !ctnk && !stnk && !ttnk && !qtnk && !saml && !isu && !gtnk
+		RequiresCondition: !mcv && !harv && !harvsvyt && !harvchrn && !truk && !dtrk && !mwf && !jeep && !ftrk && !ftrkgun && !ftrkrep && !ftrkflam && !ftrkhunt && !apc && !rapc && !batf && !apcsvyt && !tnk1 && !atnk && !tnk2 && !tnk2s && !tnk3 && !tnk31b && !tnk4 && !tnk4flam && !nrty && !tnk5 && !prsm && !arty && !gcan && !v2rl && !icbm && !mnly && !mnlynuke && !mnlysprt && !mgg && !msam && !mrj && !mhqciv && !tnkd && !ctnk && !stnk && !ttnk && !qtnk && !saml && !isu && !gtnk
 	DisguiseTooltip@mcv:
 		Name: Mobile Construction Vehicle
 		GenericName: Mobile Construction Vehicle
@@ -316,6 +316,10 @@ DTNK:
 		Name: Nuclear Minelayer
 		GenericName: Nuclear Minelayer
 		RequiresCondition: mnlynuke
+	DisguiseTooltip@mnlysprt:
+		Name: Support Minelayer
+		GenericName: Support Minelayer
+		RequiresCondition: mnlysprt
 	DisguiseTooltip@mgg:
 		Name: Mobile Gap Generator
 		GenericName: Mobile Gap Generator
@@ -460,7 +464,7 @@ DTNK:
 	WithFacingSpriteBody@mnly:
 		Name: mnly
 		Sequence: mnly-body
-		RequiresCondition: mnly
+		RequiresCondition: mnly || mnlysprt
 	WithFacingSpriteBody@mnly-nuke:
 		Name: mnlynuke
 		Sequence: mnly-nuke-body
@@ -517,7 +521,7 @@ DTNK:
 	WithSpriteTurret@Default:
 		Sequence: turret-default
 		Turret: default-turret
-		RequiresCondition: !mcv && !harv && !harvsvyt && !harvchrn && !truk && !dtrk && !mwf && !jeep && !ftrk && !ftrkgun && !ftrkrep && !ftrkflam && !ftrkhunt && !apc && !rapc && !apcsvyt && !batf && !tnk1 && !atnk && !tnk2 && !tnk2s && !tnk3 && !tnk31b && !tnk4 && !tnk4flam && !nrty && !tnk5 && !prsm && !arty && !gcan && !v2rl && !icbm && !mnly && !mnlynuke && !mgg && !msam && !mrj && !mhqciv && !tnkd && !ctnk && !stnk && !ttnk && !qtnk && !saml && !isu && !gtnk
+		RequiresCondition: !mcv && !harv && !harvsvyt && !harvchrn && !truk && !dtrk && !mwf && !jeep && !ftrk && !ftrkgun && !ftrkrep && !ftrkflam && !ftrkhunt && !apc && !rapc && !apcsvyt && !batf && !tnk1 && !atnk && !tnk2 && !tnk2s && !tnk3 && !tnk31b && !tnk4 && !tnk4flam && !nrty && !tnk5 && !prsm && !arty && !gcan && !v2rl && !icbm && !mnly && !mnlynuke && !mnlysprt && !mgg && !msam && !mrj && !mhqciv && !tnkd && !ctnk && !stnk && !ttnk && !qtnk && !saml && !isu && !gtnk
 	WithSpriteTurret@harvsvyt:
 		Sequence: turret-hmmv
 		Turret: harvsvyt-turret
@@ -614,6 +618,10 @@ DTNK:
 		Sequence: turret-gtnk
 		Turret: gtnk-turret
 		RequiresCondition: gtnk
+	WithSpriteTurret@mnlysprt:
+		Sequence: turret-rep
+		Turret: mnlysprt-turret
+		RequiresCondition: mnlysprt
 	#	this is to prevent crashing when
 	#	disguised as an turretless or 
 	#	AttacksFrontal or utility Vehicle
@@ -712,16 +720,23 @@ DTNK:
 	Turreted@gtnk:
 		Turret: gtnk-turret
 		TurnSpeed: 28
+	Turreted@mnlysprt:
+		Turret: mnlysprt-turret
+		TurnSpeed: 16
 	Turreted@other:
 		Turret: invis-turret
 		TurnSpeed: 20
+	Turreted@BugfixSelf:
+		Turret: default-turret-clone
+		TurnSpeed: 20
+		Offset: 0,0,128
 	#	The weaponry itself, while disguised
 	#	it must keep an dummy weaponry on
 	#	to prevent getting stuck in disguise
 	AttackTurreted:
-		Armaments: defaultarm, harvsvyt-arm, jeep-arm, ftrk-arm, ftrkgun-arm, ftrkrep-arm, ftrkflam-arm, ftrkhunt-arm, apcsvyt-arm, rapc-arm, 1tnk-arm, atnk-arm, 2tnk-arm, 2tnks-arm, 3tnk-arm, 3tnk1b-arm, 4tnk-arm, 4tnkflam-arm, nrty-arm, 5tnk-arm, prsm-arm, mrj-arm, msam-arm, saml-arm, gtnk-arm, invis-arm
+		Armaments: defaultarm, harvsvyt-arm, jeep-arm, ftrk-arm, ftrkgun-arm, ftrkrep-arm, ftrkflam-arm, ftrkhunt-arm, apcsvyt-arm, rapc-arm, 1tnk-arm, atnk-arm, 2tnk-arm, 2tnks-arm, 3tnk-arm, 3tnk1b-arm, 4tnk-arm, 4tnkflam-arm, nrty-arm, 5tnk-arm, prsm-arm, mrj-arm, msam-arm, saml-arm, gtnk-arm, invis-arm, mnlysprt-arm, bugfix-arm
 		# the turrets from above
-		Turrets: default-turret, harvsvyt-turret, jeep-turret, ftrk-turret, ftrkgun-turret, ftrkrep-turret, ftrkflam-turret, ftrkhunt-turret, apc-turret, rapc-turret, 1tnk-turret, gapc-turret, 2tnk-turret, 2tnks-turret, 3tnk-turret, 3tnk1b-turret, 4tnk-turret, 4tnkflam-turret, nrty-turret, 5tnk-turret, prsm-turret, msam-turret, mrj-turret, saml-turret, gtnk-turret, invis-turret
+		Turrets: default-turret, harvsvyt-turret, jeep-turret, ftrk-turret, ftrkgun-turret, ftrkrep-turret, ftrkflam-turret, ftrkhunt-turret, apc-turret, rapc-turret, 1tnk-turret, gapc-turret, 2tnk-turret, 2tnks-turret, 3tnk-turret, 3tnk1b-turret, 4tnk-turret, 4tnkflam-turret, nrty-turret, 5tnk-turret, prsm-turret, msam-turret, mrj-turret, saml-turret, gtnk-turret, invis-turret, mnlysprt-turret, default-turret-clone
 		PauseOnCondition: empdisable
 	Armament@default:
 		Name: defaultarm
@@ -937,6 +952,14 @@ DTNK:
 		LocalOffset: 768,0,90
 		PauseOnCondition: empdisable
 		RequiresCondition: mcv || harv || harvchrn || truk || dtrk || mwf || apc || batf || arty || gcan || v2rl || icbm || mnly || mnlynuke || mgg || mhqciv || tnkd || ctnk || stnk || ttnk || qtnk || isu
+	Armament@disguised24:
+		Name: mnlysprt-arm
+		Weapon: 90mm.decoy.zero
+		Recoil: 0
+		Turret: mnlysprt-turret
+		LocalOffset: 768,0,90
+		PauseOnCondition: empdisable
+		RequiresCondition: mnlysprt
 	Targetable@AIFixer:
 		TargetTypes: IgnoreThis
 		RequiresCondition: disguise

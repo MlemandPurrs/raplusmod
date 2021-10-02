@@ -1735,25 +1735,7 @@ FIX.Soviet:
 	Inherits: FIX
 	Buildable:
 		Prerequisites: weap, ~structures.soviet, ~vanilla.soviet, ~techlevel.medium
-		Description: Repairs Vehicles for credits.\nVehicle and Aircraft can\nbe sold here for half value.\n (their value scaling with health)\n  Special ability: Field Repairs\nAffected vehicles self-repair for 1% of their\nmaximum health per second for 15 second duration.
-	GrantExternalConditionPower@FieldRepairs:
-		PauseOnCondition: disabled || lowpower
-		OrderName: FieldRepairPower
-		Prerequisites: ~weap, vanilla.soviet, ~techlevel.unrestricted
-		Icon: fieldrepair
-		ChargeInterval: 6000
-		Dimensions: 3, 3
-		Footprint: xxx xxx xxx
-		Duration: 300
-		Description: Field Repairs
-		LongDesc: Affected vehicles self-repair for 1% of their\nmaximum health per second for 12 second duration.
-		SelectTargetSpeechNotification: SelectTarget
-		InsufficientPowerSpeechNotification: InsufficientPower
-		Condition: fieldrepair
-		Cursor: goldwrench
-		Sequence: none
-		SupportPowerPaletteOrder: 7
-		OnFireSound: fixit1.aud
+		Description: Repairs Vehicles for credits.\nVehicle and Aircraft can\nbe sold here for half value.\n (their value scaling with health)
 	ProduceActorPower@TankHunters:
 		PauseOnCondition: disabled || lowpower
 		OrderName: TankHunters

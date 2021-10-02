@@ -12,6 +12,20 @@ OILB.Husk:
 		IntoActor: oilb
 		ForceHealthPercentage: 25
 
+OILP.Husk:
+	Inherits: ^TechBuildingHusk
+	Inherits@shape: ^2x2Shape
+	Interactable:
+		Bounds: 24,24
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: Oil Platform (Destroyed)
+	InfiltrateForTransform:
+		IntoActor: oilp
+		ForceHealthPercentage: 25
+
 MISS.Husk:
 	Inherits: ^TechBuildingHusk
 	Interactable:
@@ -64,3 +78,75 @@ FCOM.Husk:
 		Image: acom.husk
 	InfiltrateForTransform:
 		IntoActor: fcom
+
+ACAD.Husk:
+	Inherits: ^TechBuildingHusk
+	Inherits@shape: ^3x2Shape
+	Interactable:
+		Bounds: 72,72
+	Building:
+		Footprint: xxx xxx ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Veteran Academy (Destroyed)
+	RenderSprites:
+		Image: acad.husk
+	InfiltrateForTransform:
+		IntoActor: acad
+
+BANK.Husk:
+	Inherits: ^TechBuildingHusk
+	Inherits@shape: ^2x2Shape
+	Interactable:
+		Bounds: 48,48
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Bank (Destroyed)
+	InfiltrateForTransform:
+		IntoActor: bank
+	RenderSprites:
+		Image: v92.husk
+
+CPWR.Husk:
+	Inherits: ^TechBuildingHusk
+	Interactable:
+		Bounds: 48,48
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: Civ. Power Plant (Destroyed)
+	InfiltrateForTransform:
+		IntoActor: cpwr
+	RenderSprites:
+		Image: civpowr.husk
+
+CFLD.Husk:
+	Inherits: ^TechBuildingHusk
+	Interactable:
+		Bounds: 72,48
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Tooltip:
+		Name: Civ. Airfield (Destroyed)
+	InfiltrateForTransform:
+		IntoActor: cfld
+	RenderSprites:
+		Image: civafld.husk
+
+MSHP.Husk:
+	Inherits: ^TechBuildingHusk
+	Interactable:
+		Bounds: 48,48
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: Machine Shop (Destroyed)
+	InfiltrateForTransform:
+		IntoActor: mshp

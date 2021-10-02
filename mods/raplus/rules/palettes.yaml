@@ -132,13 +132,6 @@
 		BaseName: placebuilding
 		BasePalette: player
 		Alpha: 0.65
-	IndexedPlayerPalette@scoutant:
-		BaseName: scoutant
-		BasePalette: player
-		RemapIndex: 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95
-		PlayerIndex:
-			Creeps: 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 123, 123, 123, 123
-		AllowModifiers: True
 	PaletteFromRGBA@armor:
 		Name: armor
 		R: 68

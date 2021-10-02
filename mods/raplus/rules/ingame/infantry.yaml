@@ -348,7 +348,14 @@ E6:
 	Voiced:
 		VoiceSet: EngineerVoice
 	Passenger:
+		CargoType: Engineer
 		CustomPipType: pip-blue
+		CargoConditions:
+			bank: in_finance_center
+	CashTrickler@BANKROBBERY:
+		Interval: 45
+		Amount: 5
+		RequiresCondition: in_finance_center
 	Cloneable:
 		Types: CloneSoldier
 

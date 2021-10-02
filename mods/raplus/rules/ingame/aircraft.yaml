@@ -58,7 +58,7 @@ TRAN:
 		Sequence: slow-rotor2
 		RequiresCondition: !airborne
 	Cargo:
-		Types: Infantry
+		Types: Infantry, Engineer
 		MaxWeight: 8
 		AfterUnloadDelay: 40
 		LoadedCondition: loaded

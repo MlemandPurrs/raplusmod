@@ -261,7 +261,7 @@
 		Name: Belarus
 		InternalName: belarus
 		Side: Soviet
-		Description: Belarus\nFaction Variations:\n    - Paratroopers available twice as frequent.\nVeterancy Bonus:\n    - Yak Plane and Flak Truck gets built as Veteran.\nUnique Support Powers:\n    - Paramines (Airfield)\nA Badger paradrops one Minelayer anywhere on the map.\n    - Extra Spyplane (Tech Center)\nOne more Spy Plane becomes available with a Tech Center.\nBelarus retains the usage of 'Parabombs' support power.\nSpecial Units:\n    - Mobile War Factory (Vehicle)\nDeploys into a War Factory with seperate queue.\n    - Nuclear Bomber (Aircraft)\nUnits capable of delivering tactical Nuclear warheads.
+		Description: Belarus\nFaction Variations:\n    - Can build Flame Mammoth instead of regular Mammoth.\n    - Paratroopers available twice as frequent.\nVeterancy Bonus:\n    - Yak Plane and Flak Truck gets built as Veteran.\nUnique Support Powers:\n    - Paramines (Airfield)\nA Badger paradrops one Minelayer anywhere on the map.\n    - Extra Spyplane (Tech Center)\nOne more Spy Plane becomes available with a Tech Center.\nBelarus retains the usage of 'Parabombs' support power.\nSpecial Units:\n    - Mobile War Factory (Vehicle)\nDeploys into a War Factory with seperate queue.\n    - Nuclear Bomber (Aircraft)\nUnits capable of delivering tactical Nuclear warheads.
 	Faction@15:
 		Name: Karelia
 		InternalName: karelia
@@ -291,7 +291,7 @@
 		Name: Afghanst.
 		InternalName: afghan
 		Side: Soviet
-		Description: Afghanistan\nFaction Variations:\n    - Tanks* have 10% more Health and move slower.\n*Those Tanks being both types of Heavy Tanks.\n    - Can build Flame Mammoth instead of regular Mammoth.\nVeterancy Bonus:\n    - Hind gets built as Veteran.\nSpecial Units:\n    - Siege Tank (Vehicle)\nShort-range artillery that applies Concussion to Ground units.
+		Description: Afghanistan\nFaction Variations:\n    - Tanks* have 10% more Health and move slower.\n*Those Tanks being both types of Heavy Tanks.\nVeterancy Bonus:\n    - Hind gets built as Veteran.\nSpecial Units:\n    - Siege Tank (Vehicle)\nShort-range artillery that applies Concussion to Ground units.
 	Faction@21:
 		Name: China
 		InternalName: china
@@ -522,13 +522,30 @@ World:
 		CheckboxDescription: Periodically will Giant Ants emerge from Mineshafts, that are hostile to all
 		CheckboxEnabled: False
 		CheckboxDisplayOrder: 11
-	ActorSpawnManager:
+	ActorSpawnManager@1:
 		Minimum: 0
 		Maximum: 16
-		SpawnInterval: 5000
-		Actors: Ant
+		SpawnInterval: 3750
+		Actors: ScoutAnt
 		Owner: Creeps
-		Types: mine,gmine
+		Types: mine,gmine	
+		RequiresCondition: !conditionforants
+	ActorSpawnManager@2:
+		Minimum: 0
+		Maximum: 8
+		SpawnInterval: 3750
+		Actors: WarriorAnt,FireAnt
+		Owner: Creeps
+		Types: mine,gmine	
+		RequiresCondition: !conditionforantsII
+	GrantTimedCondition@initialantprevention:
+		Condition: conditionforants
+		# not before 3 minutes
+		Duration: 4500
+	GrantTimedCondition@commonanttiming:
+		Condition: conditionforantsII
+		#	warrior/fire starts arriving at 5 minutes
+		Duration: 7500
 	LuaScript:
 		Scripts: ecosetting.lua
 	TimeLimitManager:

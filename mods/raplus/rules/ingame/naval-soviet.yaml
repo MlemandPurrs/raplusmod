@@ -77,6 +77,8 @@ SS:
 	WithSpriteTurret:
 		Turret: secondary
 		RequiresCondition: !underwater
+	ProducibleWithLevel:
+		Prerequisites: navy.upgraded
 
 MSUB:
 	Inherits: ^Submarine
@@ -142,6 +144,8 @@ MSUB:
 			Radius: 341
 			PointA: 0, -576
 			PointB: 0, 576
+	ProducibleWithLevel:
+		Prerequisites: navy.upgraded
 
 SSAM:
 	Inherits: MSUB
@@ -186,6 +190,8 @@ SSAM:
 			Radius: 256
 			PointA: 0, -448
 			PointB: 0, 448
+	ProducibleWithLevel:
+		Prerequisites: navy.upgraded
 
 NSUB:
 	Inherits: ^Submarine
@@ -262,6 +268,8 @@ NSUB:
 		Range: 5c0
 	GpsDot:
 		String: Nuke
+	ProducibleWithLevel:
+		Prerequisites: navy.upgraded
 
 FSUB:
 	Inherits: ^Submarine
@@ -324,6 +332,8 @@ FSUB:
 			Radius: 320
 			PointA: 0, -448
 			PointB: 0, 448
+	ProducibleWithLevel:
+		Prerequisites: navy.upgraded
 
 CARR:
 	Inherits: ^Ship
@@ -618,3 +628,5 @@ SSML:
 			PointB: 0, 876
 	Selectable:
 		DecorationBounds: 38,38
+	ProducibleWithLevel:
+		Prerequisites: navy.upgraded

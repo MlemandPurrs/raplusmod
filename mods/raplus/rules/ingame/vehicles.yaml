@@ -376,7 +376,7 @@ MNLY.Support:
 	WithSpriteTurret:
 		Sequence: rep-tur
 	Turreted:
-		TurnSpeed: 5
+		TurnSpeed: 16
 	AmmoPool:
 		Armaments: 
 	AutoTarget:
@@ -384,6 +384,8 @@ MNLY.Support:
 		ValidTargets: Vehicle, Ship
 	RenderSprites:
 		Image: mnly
+	GpsDot:
+		String: Repair
 
 MGG:
 	Inherits: ^Vehicle

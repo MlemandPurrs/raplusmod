@@ -15,6 +15,7 @@ BADR:
 		Repulsable: False
 		MaximumPitch: 56
 	Cargo:
+		Types: Infantry, Engineer, Vehicle
 		MaxWeight: 16
 	Tooltip:
 		Name: Badger
@@ -209,7 +210,7 @@ BADR.buildable:
 		RequiresSelection: true
 		FullSequence: pip-yellow
 	Rearmable:
-		RearmActors: afld, acar.deployed, afld.russia, afld.ukraine, afld.belarus, afld.turkmen, afld.usa, afld.england, afld.france, afld.germany, afld.italy, afld.greece
+		RearmActors: afld, acar.deployed, afld.russia, afld.ukraine, afld.belarus, afld.turkmen, afld.usa, afld.england, afld.france, afld.germany, afld.italy, afld.greece, cfld
 	Contrail@1:
 		TrailLength: 8
 		TrailWidth: 48
@@ -323,8 +324,6 @@ MI2:
 		RequiresCondition: !airborne
 	SmokeTrailWhenDamaged:
 		Offset: -427,0,0
-	ProducibleWithLevel:
-		Prerequisites: aircraft.upgraded
 	ProximityExternalCondition@barracksheal:
 		Condition: barracks
 		ValidRelationships: Ally
@@ -622,7 +621,7 @@ YAK:
 		FullSequence: pip-blue
 		AmmoPools: ammodc
 	Rearmable:
-		RearmActors: afld, acar.deployed, afld.russia, afld.ukraine, afld.belarus, afld.turkmen, afld.usa, afld.england, afld.france, afld.germany, afld.italy, afld.greece
+		RearmActors: afld, acar.deployed, afld.russia, afld.ukraine, afld.belarus, afld.turkmen, afld.usa, afld.england, afld.france, afld.germany, afld.italy, afld.greece, cfld
 		AmmoPools: ammogun, ammodc
 	Contrail:
 		Offset: -853,0,0
@@ -759,7 +758,7 @@ MIG:
 		AmmoPools: migammo
 	Rearmable:
 		AmmoPools: migammo
-		RearmActors: afld, acar.deployed, afld.russia, afld.ukraine, afld.belarus, afld.turkmen, afld.usa, afld.england, afld.france, afld.germany, afld.italy, afld.greece
+		RearmActors: afld, acar.deployed, afld.russia, afld.ukraine, afld.belarus, afld.turkmen, afld.usa, afld.england, afld.france, afld.germany, afld.italy, afld.greece, cfld
 	Contrail@1:
 		Offset: -598,-683,0
 		TrailLength: 6
@@ -857,7 +856,7 @@ NEBR:
 		FullSequence: pip-red
 		AmmoPools: nuke
 	Rearmable:
-		RearmActors: afld, acar.deployed, afld.russia, afld.ukraine, afld.belarus, afld.turkmen, afld.usa, afld.england, afld.france, afld.germany, afld.italy, afld.greece
+		RearmActors: afld, acar.deployed, afld.russia, afld.ukraine, afld.belarus, afld.turkmen, afld.usa, afld.england, afld.france, afld.germany, afld.italy, afld.greece, cfld
 		AmmoPools: nuke
 	Contrail@1:
 		TrailLength: 6
@@ -1004,7 +1003,7 @@ CMIG:
 		FullSequence: pip-yellow
 		RequiresSelection: true
 	Rearmable:
-		RearmActors: afld, acar.deployed, afld.russia, afld.ukraine, afld.belarus, afld.turkmen, afld.usa, afld.england, afld.france, afld.germany, afld.italy, afld.greece
+		RearmActors: afld, acar.deployed, afld.russia, afld.ukraine, afld.belarus, afld.turkmen, afld.usa, afld.england, afld.france, afld.germany, afld.italy, afld.greece, cfld
 	Contrail@1:
 		Offset: -598,-683,0
 		TrailLength: 6

@@ -1088,7 +1088,7 @@
 	Inherits@USABonus: ^AffectedByUSA
 	-EjectOnDeath:
 	Repairable:
-		RepairActors: afld, acar.deployed, afld.russia, afld.ukraine, afld.belarus, afld.turkmen, afld.usa, afld.england, afld.france, afld.germany, afld.italy, afld.greece
+		RepairActors: afld, acar.deployed, afld.russia, afld.ukraine, afld.belarus, afld.turkmen, afld.usa, afld.england, afld.france, afld.germany, afld.italy, afld.greece, cfld
 	DeliversCash:
 		Payload: 0
 		Type: AircraftRefund
