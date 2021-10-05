@@ -77,19 +77,6 @@ AFLD.France:
 		OverrideActor: afld
 	-MapEditorData:
 
-AFLD.Germany:
-	Inherits: AFLD
-	Buildable:
-		Prerequisites: anypower, ~structures.germany, ~techlevel.medium
-		Description: Produces, repairs and reloads Airplanes.\nCan be Infiltrated by an Spy resulting\nin Veterancy for enemy Aircraft.\nCan be Infiltrated by an Saboteur\nresulting in getting Disabled temporarily.\n  Special Ability: Paratroopers\nA Plane drops a squad of\nVeteran infantry anywhere on the map.\n  Special Ability: Parascouts\nA B-52 drops two Light and a Medium Tank anywhere on the map.\n (requires Service Depot)
-	RenderSprites:
-		Image: afld
-	ProvidesPrerequisite@COPY:
-		Prerequisite: afld
-	UpdatesPlayerStatistics:
-		OverrideActor: afld
-	-MapEditorData:
-
 AFLD.Italy:
 	Inherits: AFLD
 	Buildable:
@@ -125,6 +112,7 @@ FIX.Spain:
 		Image: fix
 	ProvidesPrerequisite@COPY:
 		Prerequisite: fix
+		RequiresCondition: !disabled
 	UpdatesPlayerStatistics:
 		OverrideActor: fix.allies
 
@@ -137,6 +125,7 @@ FIX.Sweden:
 		Image: fix
 	ProvidesPrerequisite@COPY:
 		Prerequisite: fix
+		RequiresCondition: !disabled
 	UpdatesPlayerStatistics:
 		OverrideActor: fix.allies
 
@@ -149,6 +138,7 @@ FIX.Turkey:
 		Image: fix
 	ProvidesPrerequisite@COPY:
 		Prerequisite: fix
+		RequiresCondition: !disabled
 	UpdatesPlayerStatistics:
 		OverrideActor: fix.allies
 
@@ -161,6 +151,7 @@ FIX.Kazakh:
 		Image: fix
 	ProvidesPrerequisite@COPY:
 		Prerequisite: fix
+		RequiresCondition: !disabled
 	UpdatesPlayerStatistics:
 		OverrideActor: fix.soviet
 
@@ -173,6 +164,7 @@ FIX.China:
 		Image: fix
 	ProvidesPrerequisite@COPY:
 		Prerequisite: fix
+		RequiresCondition: !disabled
 	UpdatesPlayerStatistics:
 		OverrideActor: fix.soviet
 
@@ -185,6 +177,7 @@ FIX.Moldova:
 		Image: fix
 	ProvidesPrerequisite@COPY:
 		Prerequisite: fix
+		RequiresCondition: !disabled
 	UpdatesPlayerStatistics:
 		OverrideActor: fix.soviet
 
@@ -197,6 +190,7 @@ DOME.Holland:
 		Image: dome
 	ProvidesPrerequisite@COPY:
 		Prerequisite: dome
+		RequiresCondition: !empdisable
 	UpdatesPlayerStatistics:
 		OverrideActor: dome.allies
 
@@ -204,11 +198,12 @@ DOME.Belarus:
 	Inherits: DOME.Soviet
 	Buildable:
 		Prerequisites: proc, ~structures.belarus, ~techlevel.medium
-		Description: Provides an overview\nof the battlefield.\nCan detect cloaked units.\nCan be Infiltrated by an Spy or Saboteur\nresulting in loss of map exploration.\nCan detect cloaked units.\n  Special Ability: Spy Plane\nReveals an area of the map\nand cloaked enemy units there.\n (requires Airfield)\n  A second Spy Plane gets available with a Tech Center.
+		Description: Provides an overview\nof the battlefield.\nCan detect cloaked units.\nCan be Infiltrated by an Spy or Saboteur\nresulting in loss of map exploration.\nCan detect cloaked units.\n  Special Ability: Spy Plane\nReveals an area of the map\nand cloaked enemy units there.\n (requires Airfield)\n  Special Ability: Jammer Plane\nAn plane travels along a line Jamming enemy radar within radius.\n (requires Service Depot and Airfield)
 	RenderSprites:
 		Image: dome
 	ProvidesPrerequisite@COPY:
 		Prerequisite: dome
+		RequiresCondition: !empdisable
 	UpdatesPlayerStatistics:
 		OverrideActor: dome.soviet
 
@@ -216,11 +211,12 @@ DOME.Karelia:
 	Inherits: DOME.Soviet
 	Buildable:
 		Prerequisites: proc, ~structures.karelia, ~techlevel.medium
-		Description: Provides an overview\nof the battlefield.\nCan detect cloaked units.\nCan be Infiltrated by an Spy or Saboteur\nresulting in loss of map exploration.\nCan detect cloaked units.\n  Special Ability: Spy Plane\nReveals an area of the map\nand cloaked enemy units there.\n (requires Airfield)\n  Special Ability: Jammer Plane\nAn plane travels along a line Jamming enemy radar within radius.\n (requires Service Depot and Airfield)
+		Description: Provides an overview\nof the battlefield.\nCan detect cloaked units.\nCan be Infiltrated by an Spy or Saboteur\nresulting in loss of map exploration.\nCan detect cloaked units.\n  Special Ability: Spy Plane\nReveals an area of the map\nand cloaked enemy units there.\n (requires Airfield)\n  A second Spy Plane gets available with a Tech Center.
 	RenderSprites:
 		Image: dome
 	ProvidesPrerequisite@COPY:
 		Prerequisite: dome
+		RequiresCondition: !empdisable
 	UpdatesPlayerStatistics:
 		OverrideActor: dome.soviet
 
@@ -235,6 +231,7 @@ ATEK.Allies:
 		OverrideActor: atek
 	ProvidesPrerequisite@COPY:
 		Prerequisite: atek
+		RequiresCondition: !disabled
 	-MapEditorData:
 
 ATEK.Usa:
@@ -248,12 +245,27 @@ ATEK.Usa:
 		OverrideActor: atek
 	ProvidesPrerequisite@COPY:
 		Prerequisite: atek
+		RequiresCondition: !disabled
 	-MapEditorData:
 
 ATEK.England:
 	Inherits: ATEK
 	Buildable:
 		Prerequisites: proc, afldorweap, ~structures.england, ~techlevel.high
+		Description: Provides Allied advanced technologies.\nMaximum one can be built.\nCan be Infiltrated for unlocking Tech unit production.\n  Special Ability: Intelligence Scan\nReveals all Base Buildings and Superweapons,\nbut not Defenses or Tech Buildings on the map.\n (requires Radar Dome and Space Program)
+	RenderSprites:
+		Image: ateknew
+	UpdatesPlayerStatistics:
+		OverrideActor: atek
+	ProvidesPrerequisite@COPY:
+		Prerequisite: atek
+		RequiresCondition: !disabled
+	-MapEditorData:
+
+ATEK.Holland:
+	Inherits: ATEK
+	Buildable:
+		Prerequisites: proc, afldorweap, ~structures.holland, ~techlevel.high
 		Description: Provides Allied advanced technologies.\nMaximum one can be built.\nCan be Infiltrated for unlocking Tech unit production.\n  Special Ability: Precision Strike\nA Precision Bomber delivers an Rocket Barrage on target.\n (requires Airfield)\n  Special Ability: Intelligence Scan\nReveals all Base Buildings and Superweapons,\nbut not Defenses or Tech Buildings on the map.\n (requires Radar Dome and Space Program)
 	RenderSprites:
 		Image: ateknew
@@ -261,12 +273,41 @@ ATEK.England:
 		OverrideActor: atek
 	ProvidesPrerequisite@COPY:
 		Prerequisite: atek
+		RequiresCondition: !disabled
+	-MapEditorData:
+
+ATEK.Sweden:
+	Inherits: ATEK
+	Buildable:
+		Prerequisites: proc, afldorweap, ~structures.sweden, ~techlevel.high
+		Description: Provides Allied advanced technologies.\nMaximum one can be built.\nCan be Infiltrated for unlocking Tech unit production.\n  Special Ability: Artillery Strike\nA creeping artillery barrage hits your target.\n (requires Radar Dome)
+	RenderSprites:
+		Image: ateknew
+	UpdatesPlayerStatistics:
+		OverrideActor: atek
+	ProvidesPrerequisite@COPY:
+		Prerequisite: atek
+		RequiresCondition: !disabled
 	-MapEditorData:
 
 ATEK.Germany:
 	Inherits: ATEK
 	Buildable:
 		Prerequisites: proc, afldorweap, ~structures.germany, ~techlevel.high
+		Description: Provides Allied advanced technologies.\nMaximum one can be built.\nCan be Infiltrated for unlocking Tech unit production.\n  Special Ability: Tech Inhibitor\nTarget your enemy's Tech Center to shut it down for 3 minutes duration.\nThe opponent will not able to create most advanced arsenal while it lasts.
+	RenderSprites:
+		Image: ateknew
+	UpdatesPlayerStatistics:
+		OverrideActor: atek
+	ProvidesPrerequisite@COPY:
+		Prerequisite: atek
+		RequiresCondition: !disabled
+	-MapEditorData:
+
+ATEK.Italy:
+	Inherits: ATEK
+	Buildable:
+		Prerequisites: proc, afldorweap, ~structures.italy, ~techlevel.high
 		Description: Provides Allied advanced technologies.\nMaximum one can be built.\nCan be Infiltrated for unlocking Tech unit production.\n  Special Ability: Chrono Bomb\nChronoshifts a Bomb Crate to desired position,\ndetonates after 30 seconds or when picked up.\n (requires Service Depot)
 	RenderSprites:
 		Image: ateknew
@@ -274,6 +315,7 @@ ATEK.Germany:
 		OverrideActor: atek
 	ProvidesPrerequisite@COPY:
 		Prerequisite: atek
+		RequiresCondition: !disabled
 	-MapEditorData:
 
 STEK.Soviet:
@@ -287,6 +329,7 @@ STEK.Soviet:
 		OverrideActor: stek
 	ProvidesPrerequisite@COPY:
 		Prerequisite: stek
+		RequiresCondition: !disabled
 	-MapEditorData:
 
 STEK.Russia:
@@ -300,19 +343,7 @@ STEK.Russia:
 		OverrideActor: stek
 	ProvidesPrerequisite@COPY:
 		Prerequisite: stek
-	-MapEditorData:
-
-STEK.Ukraine:
-	Inherits: STEK
-	Buildable:
-		Prerequisites: proc, afldorweap, ~structures.ukraine, ~techlevel.high
-		Description: Provides Soviet advanced technologies.\nMaximum one can be built.\nCan be Infiltrated for unlocking Tech unit production.\n  Special Ability: V2 Missile Strike\nA Badger fires two V2 rockets on your target.\n (requires Airfield)
-	RenderSprites:
-		Image: stek
-	UpdatesPlayerStatistics:
-		OverrideActor: stek
-	ProvidesPrerequisite@COPY:
-		Prerequisite: stek
+		RequiresCondition: !disabled
 	-MapEditorData:
 
 STEK.Karelia:
@@ -326,17 +357,33 @@ STEK.Karelia:
 		OverrideActor: stek
 	ProvidesPrerequisite@COPY:
 		Prerequisite: stek
+		RequiresCondition: !disabled
 	-MapEditorData:
 
 STEK.Uzbek:
 	Inherits: STEK
 	Buildable:
 		Prerequisites: proc, afldorweap, ~structures.uzbek, ~techlevel.high
-		Description: Provides Soviet advanced technologies.\nMaximum one can be built.\nCan be Infiltrated for unlocking Tech unit production.\n  Special Ability: Lone Tower\nA Flame Turret gets instantly constructed on the spot.\n (requires Airfield)
+		Description: Provides Soviet advanced technologies.\nMaximum one can be built.\nCan be Infiltrated for unlocking Tech unit production.\n  Special Ability: Lone Tower\nA Flame Turret gets instantly constructed on the spot.\n (requires Service Depot)
 	RenderSprites:
 		Image: stek
 	UpdatesPlayerStatistics:
 		OverrideActor: stek
 	ProvidesPrerequisite@COPY:
 		Prerequisite: stek
+		RequiresCondition: !disabled
+	-MapEditorData:
+
+STEK.Afghan:
+	Inherits: STEK
+	Buildable:
+		Prerequisites: proc, afldorweap, ~structures.afghan, ~techlevel.high
+		Description: Provides Soviet advanced technologies.\nMaximum one can be built.\nCan be Infiltrated for unlocking Tech unit production.\n  Special Ability: Paranuke\nA Badger drops an Parachuted nuke on your target.\n (requires Airfield)
+	RenderSprites:
+		Image: stek
+	UpdatesPlayerStatistics:
+		OverrideActor: stek
+	ProvidesPrerequisite@COPY:
+		Prerequisite: stek
+		RequiresCondition: !disabled
 	-MapEditorData:

@@ -367,48 +367,10 @@ WINDMILL:
 		Dimensions: 1,1
 
 BARL:
-	Inherits: ^TechBuilding
-	-Selectable:
-	-ShakeOnDeath:
-	-SoundOnDamageTransition:
-	-Demolishable:
-	Health:
-		HP: 10
-	Explodes:
-		Weapon: BarrelExplode
-	Tooltip:
-		Name: Explosive Barrel
-		ShowOwnerRow: False
-	Armor:
-		Type: None
-	Targetable:
-		TargetTypes: Ground, DemoTruck, Barrel, NoAutoTarget
-	MapEditorData:
-		Categories: Decoration
-	Interactable:
-		Bounds: 24,24
+	Inherits: ^ExplosiveBarrel
 
 BRL3:
-	Inherits: ^TechBuilding
-	-Selectable:
-	-ShakeOnDeath:
-	-SoundOnDamageTransition:
-	-Demolishable:
-	Health:
-		HP: 10
-	Explodes:
-		Weapon: BarrelExplode
-	Tooltip:
-		Name: Explosive Barrel
-		ShowOwnerRow: False
-	Armor:
-		Type: None
-	Targetable:
-		TargetTypes: Ground, DemoTruck, Barrel, NoAutoTarget
-	MapEditorData:
-		Categories: Decoration
-	Interactable:
-		Bounds: 24,24
+	Inherits: ^ExplosiveBarrel
 
 AMMOBOX1:
 	Inherits: ^AmmoBox

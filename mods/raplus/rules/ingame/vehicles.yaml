@@ -399,7 +399,7 @@ MGG:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 12
-		Prerequisites: techcenter, ~!player.sweden, ~techlevel.high
+		Prerequisites: techcenter, ~!player.greece, ~techlevel.high
 		Description: Regenerates the shroud nearby,\nobscuring the area.\n  Can be toggled on/off via deploy command.\n  Unarmed
 	Valued:
 		Cost: 800
@@ -468,6 +468,7 @@ MHQ.Start:
 		Offset: -128,0,256
 		PauseOnCondition: empdisable
 	Passenger:
+		Weight: 4
 		CustomPipType: pip-red
 	Explodes@UNITEXPLODES:
 		Weapon: BarrelExplode
@@ -475,3 +476,4 @@ MHQ.Start:
 		Image: mrj
 	MustBeDestroyed:
 		RequiredForShortGame: true
+	-Crushable:

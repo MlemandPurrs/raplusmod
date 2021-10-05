@@ -462,6 +462,7 @@
 	Inherits@ConcussionMechanic: ^Concussion
 	Inherits@handicaps: ^PlayerHandicaps
 	Inherits@Radiation: ^DamagedByRadiation
+	Inherits@Leadership: ^AffectedByLeadership
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -634,6 +635,7 @@
 	Inherits@ConcussionMechanic: ^Concussion
 	Inherits@handicaps: ^PlayerHandicaps
 	Inherits@Radiation: ^DamagedByRadiation
+	Inherits@Leadership: ^AffectedByLeadership
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -1398,6 +1400,30 @@
 	MapEditorData:
 		Categories: Tech building
 
+^ExplosiveBarrel:
+	Inherits: ^BasicBuilding
+	-Selectable:
+	-ShakeOnDeath:
+	-SoundOnDamageTransition:
+	-Demolishable:
+	FrozenUnderFog:
+	Huntable:
+	Health:
+		HP: 10
+	Armor:
+		Type: None
+	Explodes:
+		Weapon: BarrelExplode
+	Tooltip:
+		Name: Explosive Barrel
+		ShowOwnerRow: False
+	Targetable:
+		TargetTypes: Ground, DemoTruck, Barrel, NoAutoTarget
+	Interactable:
+		Bounds: 24,24
+	MapEditorData:
+		Categories: Decoration
+
 ^FakeBuilding:
 	Inherits: ^Building
 	-SpawnActorsOnSell:
@@ -1754,10 +1780,24 @@
 	Tooltip:
 		GenericName: Tech Building (Destroyed)
 	Targetable:
-		TargetTypes: Ground, TechHusk, NoAutoTarget
-	InfiltrateForTransform:
-		Types: TechHusk
-		ForceHealthPercentage: 25
+		TargetTypes: Ground, NoAutoTarget
+	CaptureManager:
+	#	BeingCapturedCondition: being-captured
+	Capturable:
+		Types: techbuilding-husk
+		RequiresCondition: !awaitcooldown
+	CapturableProgressBar:
+	CapturableProgressBlink:
+	#	prevent instant restore
+	GrantTimedCondition@Cooldown:
+		Condition: awaitcooldown
+		# 3 minute should suffice
+		Duration: 4500
+	#	this is not appearing
+	TimedConditionBar@Cooldown:
+		Condition: awaitcooldown
+		Color: ffffff
+	SelectionDecorations:
 
 ^Bridge:
 	Inherits@shape: ^1x1Shape
@@ -2095,22 +2135,22 @@
 		Image: pips
 		Sequence: tag-primary
 
-^IncomeAIBoost:
-	ResourcePurifier@incomeaiboost:
-		Modifier: 20
-		RequiresCondition: owned-by-ai
-		ShowTicks: False
-	GrantConditionOnBotOwner@incomeaiboost:
-		Condition: owned-by-ai
-		Bots: normal
+#	^IncomeAIBoost:
+#	ResourcePurifier@incomeaiboost:
+#		Modifier: 20
+#		RequiresCondition: owned-by-ai
+#		ShowTicks: False
+#	GrantConditionOnBotOwner@incomeaiboost:
+#		Condition: owned-by-ai
+#		Bots: normal
 
 ^ProductionAIBoost:
 	ProductionTimeMultiplier@productionboost:
-		Multiplier: 120
-		Prerequisites: aitoodumb
+		Multiplier: 110
+		Prerequisites: aitoodumb && aiboosteron
 	ProductionCostMultiplier@productionboost:
 		Multiplier: 80
-		Prerequisites: aitoodumb
+		Prerequisites: aitoodumb && aiboosteron
 
 ^ProductionPlayerBoost:
 	ProductionCostMultiplier@IndustrialPlant:
@@ -2667,3 +2707,28 @@
 		Condition: germany.player
 		Factions: germany
 		ResetOnOwnerChange: True
+
+^AffectedByLeadership:
+	FirepowerMultiplier@LEADERSHIP:
+		RequiresCondition: leader_boost
+		Modifier: 110
+	ReloadDelayMultiplier@LEADERSHIP:
+		RequiresCondition: leader_boost
+		Modifier: 90
+	ChangesHealth@LEADERSHIP:
+		Step: 0
+		PercentageStep: 1
+		Delay: 75
+		StartIfBelow: 101
+		DamageCooldown: 150
+		RequiresCondition: leader_boost
+	ExternalCondition@LEADERSHIP:
+		Condition: leader_boost
+	WithDecoration@LEADERSHIP:
+		Image: rank-red-star
+		Sequence: ditto
+		Palette: effect
+		Position: Top
+		Margin: 5, 6
+		RequiresCondition: leader_boost
+		ValidRelationships: Ally, Enemy, Neutral

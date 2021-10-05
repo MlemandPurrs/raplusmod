@@ -131,7 +131,7 @@ SAB:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 6
-		Prerequisites: ~barr, dome, ~infantry.soviet, ~techlevel.medium
+		Prerequisites: ~barr, dome, ~infantry.soviet, ~!player.moldova, ~techlevel.medium
 		Description: Field operative of the Union.\n  Special Abilities:\nCan be deployed to turn Invisible for a limited time.\nCan Steal enemy Vehicles, but not while Invisible.\nCan Enter enemy Structures, performing different functions:\n  - Production: Disables the structure for 30 seconds.\n  - Refineries: Steals 50% of stored Credits.\n  - Powerplants: Disables them causing Power outage.\n  - Radar Dome: Enemy mapview gets Shrouded.\n  - Tech Center: Unlocks Behemoth Tank unit.\n  - Superweapons: Reset preperation timer of weapon.\n  Unarmed
 	Tooltip:
 		Name: Saboteur
@@ -193,7 +193,7 @@ VOLK:
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
-		Prerequisites: ~barr, stek, ~infantry.soviet, ~!player.uzbek, ~techlevel.high
+		Prerequisites: ~barr, stek, ~infantry.soviet, ~!player.uzbek, ~!player.moldova, ~techlevel.high
 		BuildPaletteOrder: 8
 		BuildLimit: 1
 		Description: Elite commando infantry armed with anti-tank gun and C4.\nMaximum 1 can be trained\n  Special ability: Durability\nCannot be crushed unless its Mammoth Tank\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
@@ -559,3 +559,49 @@ DEMO:
 		InitialStance: HoldFire
 		InitialStanceAI: HoldFire
 		ScanRadius: 5
+
+GREN:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@ROT: ^RottingInfantry
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 9
+		Prerequisites: ~barr, dome, ~infantry.soviet, ~soviet.or.belarus, ~techlevel.high
+		Description: Infantry armed with long range grenade launcher.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
+	Tooltip:
+		Name: Grenade Launcher
+	Valued:
+		Cost: 400
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 45
+	Armor:
+		Type: Flak
+	RevealsShroud:
+		Range: 5c0
+	Armament@PRIMARY:
+		Weapon: GrenadeLauncher
+		#	LocalOffset: 427,0,341
+		LocalOffset: 700,0,500
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: GrenadeLauncher
+	TakeCover:
+		ProneOffset: 160,0,-288
+	Passenger:
+		CustomPipType: pip-yellow
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		RequiresCondition: !parachute
+	WithInfantryBody@PARACHUTE:
+		StandSequences: parachute
+		RequiresCondition: parachute
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+	DeliversCash:
+		Payload: 100
+		Type: InfantryRefund
+	RenderRangeCircle:

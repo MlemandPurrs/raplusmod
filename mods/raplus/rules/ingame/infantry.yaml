@@ -337,11 +337,11 @@ E6:
 		PlayerExperience: 0
 		CaptureDelay: 100
 		ConsumedByCapture: false
-	Infiltrates@RESTORENEUTRAL:
-		Types: TechHusk
-		ValidRelationships: Neutral
-		EnterCursor: goldwrench
+	Captures@RESTORENEUTRAL:
+		CaptureTypes: techbuilding-husk
 		PlayerExperience: 0
+		CaptureDelay: 100
+		EnterCursor: goldwrench
 	GrantConditionOnPrerequisite@MULTIENGINEER:
 		Condition: multiengineer
 		Prerequisites: global-multiengineer

@@ -439,5 +439,12 @@ Player:
 		Enabled: False
 		DisplayOrder: 16
 		Prerequisites: global-minimap
+	LobbyPrerequisiteCheckbox@AIBOOSTER:
+		ID: aibooster
+		Label: AI Booster
+		Description: AI gets 20% price discount and +10% build speed. 
+		Enabled: False
+		DisplayOrder: 17
+		Prerequisites: aiboosteron
 	GameSaveViewportManager:
 	PlayerRadarTerrain:

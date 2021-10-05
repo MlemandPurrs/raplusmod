@@ -681,7 +681,7 @@ ICBM:
 
 ArtyNuke:
 	Inherits: ^Artillery
-	ReloadDelay: 2250
+	ReloadDelay: 450
 	Range: 18c0
 	MinRange: 9c0
 	Report: tank5.aud

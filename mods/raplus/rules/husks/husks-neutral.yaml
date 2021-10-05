@@ -8,7 +8,8 @@ OILB.Husk:
 		Dimensions: 2,2
 	Tooltip:
 		Name: Oil Derrick (Destroyed)
-	InfiltrateForTransform:
+	#	ForceHealthPercentage is not working
+	TransformOnCapture:
 		IntoActor: oilb
 		ForceHealthPercentage: 25
 
@@ -22,9 +23,7 @@ OILP.Husk:
 		Dimensions: 2,2
 	Tooltip:
 		Name: Oil Platform (Destroyed)
-	InfiltrateForTransform:
-		IntoActor: oilp
-		ForceHealthPercentage: 25
+	#	high out on sea, how to capture ?
 
 MISS.Husk:
 	Inherits: ^TechBuildingHusk
@@ -36,8 +35,9 @@ MISS.Husk:
 		LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Communications Center (Destroyed)
-	InfiltrateForTransform:
+	TransformOnCapture:
 		IntoActor: miss
+		ForceHealthPercentage: 25
 
 HOSP.Husk:
 	Inherits: ^TechBuildingHusk
@@ -48,8 +48,9 @@ HOSP.Husk:
 		Dimensions: 2,2
 	Tooltip:
 		Name: Hospital (Destroyed)
-	InfiltrateForTransform:
+	TransformOnCapture:
 		IntoActor: hosp
+		ForceHealthPercentage: 25
 
 BIO.Husk:
 	Inherits: ^TechBuildingHusk
@@ -60,8 +61,9 @@ BIO.Husk:
 		Dimensions: 2,2
 	Tooltip:
 		Name: Nuclear Reactor (Destroyed)
-	InfiltrateForTransform:
+	TransformOnCapture:
 		IntoActor: bio
+		ForceHealthPercentage: 25
 
 FCOM.Husk:
 	Inherits: ^TechBuildingHusk
@@ -76,8 +78,9 @@ FCOM.Husk:
 		Name: Expansion Post (Destroyed)
 	RenderSprites:
 		Image: acom.husk
-	InfiltrateForTransform:
+	TransformOnCapture:
 		IntoActor: fcom
+		ForceHealthPercentage: 25
 
 ACAD.Husk:
 	Inherits: ^TechBuildingHusk
@@ -92,8 +95,9 @@ ACAD.Husk:
 		Name: Veteran Academy (Destroyed)
 	RenderSprites:
 		Image: acad.husk
-	InfiltrateForTransform:
+	TransformOnCapture:
 		IntoActor: acad
+		ForceHealthPercentage: 25
 
 BANK.Husk:
 	Inherits: ^TechBuildingHusk
@@ -106,8 +110,9 @@ BANK.Husk:
 		LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Bank (Destroyed)
-	InfiltrateForTransform:
+	TransformOnCapture:
 		IntoActor: bank
+		ForceHealthPercentage: 25
 	RenderSprites:
 		Image: v92.husk
 
@@ -120,8 +125,9 @@ CPWR.Husk:
 		Dimensions: 2,2
 	Tooltip:
 		Name: Civ. Power Plant (Destroyed)
-	InfiltrateForTransform:
+	TransformOnCapture:
 		IntoActor: cpwr
+		ForceHealthPercentage: 25
 	RenderSprites:
 		Image: civpowr.husk
 
@@ -134,8 +140,9 @@ CFLD.Husk:
 		Dimensions: 3,2
 	Tooltip:
 		Name: Civ. Airfield (Destroyed)
-	InfiltrateForTransform:
+	TransformOnCapture:
 		IntoActor: cfld
+		ForceHealthPercentage: 25
 	RenderSprites:
 		Image: civafld.husk
 
@@ -148,5 +155,6 @@ MSHP.Husk:
 		Dimensions: 2,2
 	Tooltip:
 		Name: Machine Shop (Destroyed)
-	InfiltrateForTransform:
+	TransformOnCapture:
 		IntoActor: mshp
+		ForceHealthPercentage: 25

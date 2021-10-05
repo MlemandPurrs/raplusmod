@@ -223,7 +223,7 @@ RAPC:
 	Buildable:
 		Queue: Vehicle, MWFVehicle
 		BuildPaletteOrder: 4
-		Prerequisites: proc, ~vehicles.allies, ~!player.england, ~!player.france, ~!player.germany, ~!player.spain, ~!player.italy, ~!player.greece, ~techlevel.low
+		Prerequisites: proc, ~vehicles.allies, ~!player.england, ~!player.france, ~!player.germany, ~!player.spain, ~!player.italy, ~!player.sweden, ~techlevel.low
 		Description: Fast tank, good for scouting.\n  Strong vs Light armor\n  Weak vs Infantry, Tanks, Aircraft
 	Valued:
 		Cost: 600

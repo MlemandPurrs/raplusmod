@@ -132,7 +132,7 @@ FACT:
 		Prerequisite: mcv.ai
 		RequiresPrerequisites: aitoodumb
 	Production:
-		Produces: Building,Defense,Fakestructure
+		Produces: Building,Defense,Fakestructure,Dummy
 		PauseOnCondition: disabled || build-incomplete || sabotaged
 	ProductionBar@Building:
 		ProductionType: Building
@@ -198,6 +198,23 @@ FACT:
 	GrantConditionOnProduction:
 		Condition: notwhileproducing
 		ShowSelectionBar: false
+	ProduceActorPowerCA@ReserveMoney:
+		OrderName: ReserveMoneyAutoProduction
+		PauseOnCondition: disabled || oreplowpower || sabotaged
+		Prerequisites: ~orep, player.usa
+		Description: Cash Reserves
+		LongDesc: Periodically obtain 2500$ resources.\nActivated automatically when ready.\nRequires functional Ore Purifier.
+		Icon: cashicon
+		Actors: dummy.moneyprinter
+		Type: Dummy
+		ChargeInterval: 7500
+		AutoFire: True
+		DisplayTimerRelationships: None
+	GrantConditionOnPrerequisite@ReserveMoneyPauser:
+		Condition: oreplowpower
+		Prerequisites: oreplowpower
+	Exit@1:
+	ExitsDebugOverlay:
 
 POWR:
 	Inherits: ^Building
@@ -515,12 +532,12 @@ TENT:
 	FreeActor@1:
 		Actor: E1
 		SpawnOffset: 0,2
-		Facing: 64
+		Facing: 512
 		RequiresCondition: !build-incomplete
 	FreeActor@2:
 		Actor: E1
 		SpawnOffset: 1,2
-		Facing: 64
+		Facing: 512
 		RequiresCondition: !build-incomplete
 	ProximityExternalCondition@barracksheal:
 		Condition: barracks
@@ -718,12 +735,12 @@ BARR:
 	FreeActor@1:
 		Actor: E1
 		SpawnOffset: 0,2
-		Facing: 64
+		Facing: 512
 		RequiresCondition: !build-incomplete
 	FreeActor@2:
 		Actor: E1
 		SpawnOffset: 1,2
-		Facing: 64
+		Facing: 512
 		RequiresCondition: !build-incomplete
 	SequencePlaceBuildingPreview:
 		Sequence: place
@@ -924,7 +941,7 @@ KENN.summon:
 
 PROC:
 	Inherits: ^Building
-	Inherits@AI: ^IncomeAIBoost
+	#	Inherits@AI: ^IncomeAIBoost
 	-ActorPreviewPlaceBuildingPreview:
 	SequencePlaceBuildingPreview:
 		Sequence: idle
@@ -1141,14 +1158,15 @@ OREP:
 		Queue: Building
 		BuildPaletteOrder: 16
 		BuildLimit: 1
-		Prerequisites: atek, ~structures.allies, ~techlevel.high
+		Prerequisites: atek, ~structures.allies, ~!player.usa, ~techlevel.high
 		Description: Refines Ore, Scrap and Gems\nincreasing your income by 20%\nMaximum 1 can be built.\nRequires Power to operate.\n  Special Ability: Advanced Processing\nActivate to divert the boost into your Passive income,\nat the cost of +50% Power consumption.\nAll Silos generate +20$ more Income at 2.0x Faster rate.\nLasts for up to 1 minute.
 	Valued:
 		Cost: 2500
 	Tooltip:
 		Name: Ore Purifier
-	ProvidesPrerequisite@OREPURIFIER:
-		Prerequisite: oprf
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@disabled:
+		Prerequisite: oreplowpower
 		RequiresCondition: disabled || empdisable
 	Building:
 		Footprint: XxX XxX
@@ -1491,14 +1509,35 @@ WEAP:
 		InitialDelay: 0
 		Amount: 30
 		RequiresCondition: maintenance
+	Sellable:
+		RequiresCondition: !build-incomplete && !being-captured && !being-demolished && !maintenance
+		SellSounds: cashturn.aud
+	ToggleConditionOnOrder:
+		PauseOnCondition: maintenance
 	FreeActor@CountryBonus:
 		Actor: FTRK
 		SpawnOffset: 1,2
-		Facing: 64
+		Facing: 512
 		RequiresCondition: !build-incomplete && kazakh.player
 	GrantConditionOnFaction@CountryBonus:
 		Condition: kazakh.player
 		Factions: kazakh
+	ProduceActorPowerCA@ReserveTanks:
+		OrderName: ReserveTanksAutoProduction
+		PauseOnCondition: disabled || indplowpower
+		RequiresCondition: primary
+		Prerequisites: ~indp, ~fix, player.belarus
+		Description: Tank Reserves
+		LongDesc: Periodically obtain a free Heavy Tank.\nActivated automatically when ready.\nRequires functional Industrial Plant.
+		Icon: 3tnkicon
+		Actors: 3tnk
+		Type: Vehicle
+		ChargeInterval: 2300
+		AutoFire: True
+		DisplayTimerRelationships: None
+	GrantConditionOnPrerequisite@ReserveTanksPauser:
+		Condition: indplowpower
+		Prerequisites: indplowpower
 
 WEAP.MINI:
 	Inherits: ^Building
@@ -1616,6 +1655,7 @@ FIX:
 	RevealsShroud@GAPGEN:
 		Range: 4c0
 	ProvidesPrerequisite@buildingname:
+		RequiresCondition: !disabled
 	RepairsUnits:
 		HpPerStep: 10
 		Interval: 7
@@ -1729,6 +1769,7 @@ FIX.Allies:
 		Image: fix
 	ProvidesPrerequisite@COPY:
 		Prerequisite: fix
+		RequiresCondition: !disabled
 	-MapEditorData:
 
 FIX.Soviet:
@@ -1796,6 +1837,7 @@ FIX.Soviet:
 		Image: fix
 	ProvidesPrerequisite@COPY:
 		Prerequisite: fix
+		RequiresCondition: !disabled
 	-MapEditorData:
 
 DOME:
@@ -1829,12 +1871,13 @@ DOME:
 	Armor:
 		Type: Wood
 	ProvidesPrerequisite@buildingname:
+		RequiresCondition: !empdisable
 	ProvidesPrerequisite@LOCALRADAR:
 		Prerequisite: activedome
 		RequiresCondition: !jammed && !disabled && !build-incomplete
 	ProvidesPrerequisite@GLOBALJAM:
 		Prerequisite: isbeingjammed
-		RequiresCondition:	jammed
+		RequiresCondition: jammed
 	RevealsShroud:
 		MinRange: 6c0
 		Range: 10c0
@@ -1873,6 +1916,7 @@ DOME.Allies:
 		Image: dome
 	ProvidesPrerequisite@COPY:
 		Prerequisite: dome
+		RequiresCondition: !empdisable
 	#	converted to CA custom DetonateWeaponPower to fix those issues:
 	#	can be spawned on building bibs, into refinery bay, on service depot etc.
 	DetonateWeaponPower@ListeningPost:
@@ -1926,6 +1970,7 @@ DOME.Soviet:
 		Image: dome
 	ProvidesPrerequisite@COPY:
 		Prerequisite: dome
+		RequiresCondition: !empdisable
 	AirstrikePower@Spyplane:
 		PauseOnCondition: lowpower
 		OrderName: SovietSpyPlane
@@ -1950,7 +1995,7 @@ DOME.Soviet:
 	AirstrikePower@SpyplaneExtra:
 		PauseOnCondition: lowpower
 		OrderName: SovietSpyPlaneExtra
-		Prerequisites: afld, ~stek, player.belarus, ~techlevel.unrestricted
+		Prerequisites: afld, ~stek, player.karelia, ~techlevel.unrestricted
 		Icon: spyplane
 		ChargeInterval: 3750
 		Description: Spy Plane (x2)
@@ -1972,7 +2017,7 @@ DOME.Soviet:
 	AirstrikePower@JammerPlane:
 		PauseOnCondition: disabled || lowpower
 		OrderName: JammerPlane
-		Prerequisites: afld, ~fix, player.karelia, ~techlevel.unrestricted
+		Prerequisites: afld, ~fix, player.belarus, ~techlevel.unrestricted
 		Icon: u2jammer
 		ChargeInterval: 7500
 		Description: Jammer Plane
@@ -2011,7 +2056,7 @@ ATEK:
 		Queue: Building
 		BuildPaletteOrder: 12
 		BuildLimit: 1
-		Prerequisites: proc, afldorweap, ~structures.allies, ~!vanilla.allies, ~!player.usa, ~!player.england, !player.germany, ~techlevel.high
+		Prerequisites: proc, afldorweap, ~structures.allies, ~!vanilla.allies, ~!player.usa, ~!player.england, ~!player.holland, ~!player.germany, ~!player.sweden, ~!player.italy, ~techlevel.high
 		Description: Provides Allied advanced technologies.\nMaximum one can be built.\nCan be Infiltrated for unlocking Tech unit production.
 	Valued:
 		Cost: 2000
@@ -2027,8 +2072,10 @@ ATEK:
 	Armor:
 		Type: Wood
 	ProvidesPrerequisite@buildingname:
+		RequiresCondition: !disabled
 	ProvidesPrerequisite:
 		Prerequisite: techcenter
+		RequiresCondition: !disabled
 	RevealsShroud:
 		MinRange: 4c0
 		Range: 5c0
@@ -2074,7 +2121,7 @@ ATEK:
 	AirstrikePower@PrecisionStrike:
 		PauseOnCondition: disabled || lowpower
 		OrderName: PrecisionStrike
-		Prerequisites: ~afld, allies.or.england, ~techlevel.unrestricted
+		Prerequisites: ~afld, allies.or.holland, ~techlevel.unrestricted
 		Icon: precicon
 		ChargeInterval: 4500
 		SquadSize: 1
@@ -2102,13 +2149,31 @@ ATEK:
 		Description: Intelligence Scan
 		LongDesc: Reveals all Base Buildings and Superweapons,\nbut not Defenses or Tech Buildings on the map.\nLasts for 2.5 minute. Does not reveal new Structures.
 		CameraActor: camera.intelscan
-		TargetActors: fact, powr, powr.turkey, apwr, apwr.turkey, tent, barr, barr.cloner, proc, orep, indp, weap, weap.mini, fix, fix.allies, fix.soviet, fix.spain, fix.sweden, fix.turkey, fix.kazakh, fix.china, fix.moldova, dome, dome.allies, dome.soviet, dome.holland, dome.belarus, dome.karelia, atek, stek, atek.usa, atek.england, atek.germany, stek.russia, stek.ukraine, stek.karelia, stek.uzbek, spro, spro.kazakh, afld, afld.russia, afld.ukraine, afld.belarus, afld.turkmen, afld.usa, afld.england, afld.france, afld.germany, afld.italy, afld.greece, hpad, syrd, spen, pdox, iron, fpwr, fapw, tenf, barf, prof, weaf, fixf, syrf, spef, aflf, hpaf, domf, sprf, atef, stef, pdof, irof, facf
+		TargetActors: fact, powr, powr.turkey, apwr, apwr.turkey, tent, tent.usa, barr, barr.cloner, proc, orep, orep.usa, indp, weap, weap.usa, weap.mini, fix, fix.allies, fix.soviet, fix.spain, fix.sweden, fix.turkey, fix.kazakh, fix.china, fix.moldova, dome, dome.allies, dome.soviet, dome.holland, dome.belarus, dome.karelia, atek, stek, atek.usa, atek.england, atek.germany, atek.holland, atek.sweden, atek.italy, stek.russia, stek.karelia, stek.uzbek, stek.afghan, spro, spro.kazakh, afld, afld.russia, afld.ukraine, afld.belarus, afld.turkmen, afld.usa, afld.england, afld.france, afld.germany, afld.italy, afld.greece, hpad, hpad.usa, syrd, syrd.usa, spen, pdox, pdox.germany, iron, iron.uzbek, fpwr, fapw, tenf, barf, prof, weaf, fixf, syrf, spef, aflf, hpaf, domf, sprf, atef, stef, pdof, irof, facf
 		LifeTime: 3750
 		LaunchSound: bcmasela.aud
 		EffectImage: dummy
 		EffectSequence: idle
 		EffectPalette: effect
 		SupportPowerPaletteOrder: 9
+	GrantExternalConditionPower@TechInhibitor:
+		PauseOnCondition: disabled || lowpower
+		OrderName: TechInhibitor
+		Prerequisites: player.germany
+		Icon: delphi
+		ChargeInterval: 12000
+		Dimensions: 1,1
+		Footprint: x
+		Duration: 7500
+		Description: Tech Inhibitor
+		LongDesc: Target your enemy's Tech Center to shut it down for 3 minutes duration.\nThe opponent will not able to create most advanced arsenal while it lasts.
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		Condition: techdisable
+		Cursor: gps-target
+		Sequence: none
+		SupportPowerPaletteOrder: 9
+		ValidRelationships: Enemy
 	ParatroopersPower@ChronoBomb:
 		PauseOnCondition: disabled || lowpower
 		OrderName: ChronoBomb
@@ -2154,6 +2219,30 @@ ATEK:
 		UseDirectionalTarget: True
 		DirectionArrowAnimation: paradirection
 		SupportPowerPaletteOrder: 3
+	AirstrikePower@ArtilleryStrike:
+		PauseOnCondition: disabled || lowpower
+		OrderName: ArtilleryStrike
+		Prerequisites: ~dome, player.sweden, ~techlevel.unrestricted
+		Icon: artyicon
+		ChargeInterval: 7500
+		Description: Artillery Strike
+		LongDesc: A creeping artillery barrage hits your target.
+		SelectTargetSpeechNotification: SelectTarget
+		CameraActor: camera.paradrop
+		CameraRemoveDelay: 150
+		UnitType: artillery.hack
+		QuantizedFacings: 8
+		SquadSize: 2
+		SquadOffset: 1792, -1256, -43
+		DisplayBeacon: true
+		BeaconPoster: artybcon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		Cursor: airstrike
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+		SupportPowerPaletteOrder: 3		
 	SupportPowerChargeBar:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
@@ -2162,12 +2251,20 @@ ATEK:
 		Image: ateknew
 	GpsDot:
 		String: Tech
-	GrantCondition@TECHDISABLE:
-		RequiresCondition: empdisable
+	WithColoredOverlay@EMPDISABLE:
+		RequiresCondition: empdisable || techdisable
+		Palette: disabled
+	TimedConditionBar@TECHDISABLE:
+		Condition: techdisable
+		Color: 708090
+	ExternalCondition@TECHDISABLE:
 		Condition: techdisable
 	GrantCondition@EMPDISABLE:
-		RequiresCondition: empdisable && techdisable
+		RequiresCondition: empdisable || techdisable
 		Condition: disabled
+	Sellable:
+		RequiresCondition: !build-incomplete && !being-captured && !being-demolished && !techdisable
+		SellSounds: cashturn.aud
 
 STEK:
 	Inherits: ^ScienceBuilding
@@ -2184,7 +2281,7 @@ STEK:
 		Queue: Building
 		BuildPaletteOrder: 12
 		BuildLimit: 1
-		Prerequisites: proc, afldorweap, ~structures.soviet, ~!vanilla.soviet, ~!player.russia, ~!player.ukraine, ~!player.karelia, ~!player.uzbek, ~techlevel.high
+		Prerequisites: proc, afldorweap, ~structures.soviet, ~!vanilla.soviet, ~!player.russia, ~!player.karelia, ~!player.uzbek, ~!player.afghan, ~techlevel.high
 		Description: Provides Soviet advanced technologies.\nMaximum one can be built.\nCan be Infiltrated for unlocking Tech unit production.
 	Valued:
 		Cost: 2000
@@ -2207,8 +2304,10 @@ STEK:
 		Amount: -100
 		RequiresCondition: !build-incomplete
 	ProvidesPrerequisite@buildingname:
+		RequiresCondition: !disabled
 	ProvidesPrerequisite:
 		Prerequisite: techcenter
+		RequiresCondition: !disabled
 	WithDeathAnimation:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
@@ -2223,7 +2322,7 @@ STEK:
 	AirstrikePower@Parabombs:
 		PauseOnCondition: disabled || lowpower
 		OrderName: SovietParabombs
-		Prerequisites: ~afld, soviet.or.belarus, ~techlevel.unrestricted
+		Prerequisites: ~afld, soviet.or.ukraine, ~techlevel.unrestricted
 		Icon: parabombs
 		ChargeInterval: 7500
 		Description: Parabombs
@@ -2269,7 +2368,8 @@ STEK:
 	AirstrikePower@V2Strike:
 		PauseOnCondition: disabled || lowpower
 		OrderName: V2Strike
-		Prerequisites: ~afld, player.ukraine, ~techlevel.unrestricted
+		#	Prerequisites: ~afld, player.uzbek, ~techlevel.unrestricted
+		Prerequisites: ~disabled
 		Icon: v2bdgricon
 		ChargeInterval: 7500
 		Description: V2 Missile Strike
@@ -2288,10 +2388,32 @@ STEK:
 		UseDirectionalTarget: True
 		DirectionArrowAnimation: paradirection
 		SupportPowerPaletteOrder: 3
+	AirstrikePower@V3Strike:
+		PauseOnCondition: disabled || lowpower
+		OrderName: V3Strike
+		Prerequisites: ~dome, player.uzbek, ~techlevel.unrestricted
+		Icon: v3sticon
+		ChargeInterval: 7500
+		Description: V3 Missile Strike
+		LongDesc: Three V3 rockets will strike your target.\nThe missiles can be shot down by AA.
+		SquadSize: 3
+		QuantizedFacings: 8
+		SelectTargetSpeechNotification: SelectTarget
+		UnitType: v3
+		CameraActor: camera.paradrop
+		DisplayBeacon: True
+		BeaconPoster: v2bdgrbcon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		Cursor: airstrike
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+		SupportPowerPaletteOrder: 3
 	AirstrikePower@SovietParanuke:
 		PauseOnCondition: disabled || lowpower
 		OrderName: SovietParanuke
-		Prerequisites: ~afld, player.karelia, ~techlevel.unrestricted
+		Prerequisites: ~afld, player.afghan, ~techlevel.unrestricted
 		Icon: paranuke
 		ChargeInterval: 7500
 		SquadSize: 1
@@ -2370,13 +2492,21 @@ STEK:
 		RequiresCondition: cloning.on
 	GrantConditionOnPrerequisite@CLONING:
 		Prerequisites: cloning.active
-		Condition: cloning.on
-	GrantCondition@TECHDISABLE:
-		RequiresCondition: empdisable
+		Condition: cloning.on 
+	WithColoredOverlay@EMPDISABLE:
+		RequiresCondition: empdisable || techdisable
+		Palette: disabled
+	TimedConditionBar@TECHDISABLE:
+		Condition: techdisable
+		Color: 708090
+	ExternalCondition@TECHDISABLE:
 		Condition: techdisable
 	GrantCondition@EMPDISABLE:
-		RequiresCondition: empdisable && techdisable
+		RequiresCondition: empdisable || techdisable
 		Condition: disabled
+	Sellable:
+		RequiresCondition: !build-incomplete && !being-captured && !being-demolished && !techdisable
+		SellSounds: cashturn.aud
 
 SPRO:
 	Inherits: ^ScienceBuilding
@@ -2802,12 +2932,12 @@ AFLD:
 	ParatroopersPower@ParaMines:
 		PauseOnCondition: disabled || lowpower
 		OrderName: SovietParaMines
-		Prerequisites: aircraft.soviet, fix, player.belarus, ~!aitoodumb, ~techlevel.unrestricted
+		Prerequisites: aircraft.soviet, fix, player.karelia, ~!aitoodumb, ~techlevel.unrestricted
 		Icon: paramines
 		ChargeInterval: 7500
 		Description: Paramines
 		LongDesc: A Badger drops one Minelayer anywhere on the map.
-		DropItems: MNLY
+		DropItems: MNLY.Karelia
 		ReinforcementsArrivedSpeechNotification: ReinforcementsArrived
 		SelectTargetSpeechNotification: SelectTarget
 		AllowImpassableCells: false
@@ -3754,6 +3884,56 @@ SPEN:
 		String: Naval
 	Targetable@sonarhelper:
 		TargetTypes: WaterProduction
+
+FCOM.Soviet:
+	Inherits: ^Building
+	Inherits@shape: ^2x2Shape
+	Selectable:
+		Bounds: 48,48
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 640,-384,0, 640,512,0, -710,-512,0, -710,512,0
+	Building:
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Command Post
+	ProvidesPrerequisite@buildingname:
+	Health:
+		HP: 400
+	Targetable:
+		TargetTypes: Ground, Structure, C4, DetonateAttack, SpyInfiltrate, SabInfiltrate
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 5c0
+	WithBuildingBib:
+	Power:
+		Amount: 30
+		RequiresCondition: !build-incomplete
+	SpawnActorOnDeath:
+		Actor: fcom.soviet.husk
+		OwnerType: InternalName
+	RenderSprites:
+		Image: fcom
+	GpsDot:
+		String: Forward
+	GivesBuildableArea:
+		AreaTypes: building
+	BaseProvider:
+		PauseOnCondition: being-captured
+		Range: 8c0
+	ProvidesPrerequisite@LIMITING:
+		Prerequisite: mhq.soviet
+	Transforms:
+		IntoActor: mhq.soviet
+		Offset: 1,1
+		Facing: 384
+		RequiresCondition: !build-incomplete
+		PauseOnCondition: being-captured || being-demolished || disabled
 
 ANYPOWER:
 	AlwaysVisible:

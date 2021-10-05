@@ -153,8 +153,10 @@ TurretGun.tnkd:
 
 155mm.barrage:
 	Inherits: 155mm
-	Burst: 4
-	BurstDelays: 28
+	Report: turret1.aud
+	ReloadDelay: 300
+	Burst: 6
+	BurstDelays: 8
 	FirstBurstTargetOffset: -2984,0,0
 	FollowingBurstTargetOffset: 746,0,0
 	TargetActorCenter: false

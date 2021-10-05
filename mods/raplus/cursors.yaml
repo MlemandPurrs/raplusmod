@@ -280,3 +280,7 @@ Cursors:
 		nuke-minimap:
 			Start: 0
 			Length: 1
+	gpstargetcurs.shp: cursor
+		gps-target:
+			Start: 0
+			Length: 8

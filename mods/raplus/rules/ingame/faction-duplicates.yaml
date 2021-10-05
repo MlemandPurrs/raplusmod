@@ -81,6 +81,18 @@ HPAD.Usa:
 	-GrantConditionOnFaction@USABonus:
 	-MapEditorData:
 
+OREP.Usa:
+	Inherits: OREP
+	Buildable:
+		Prerequisites: proc, ~structures.allies, ~player.usa, ~techlevel.high
+	ProvidesPrerequisite@COPY:
+		Prerequisite: orep
+	UpdatesPlayerStatistics:
+		OverrideActor: orep
+	RenderSprites:
+		Image: orep
+	-MapEditorData:
+
 E7.Usa:
 	Inherits: E7
 	Buildable:
@@ -371,6 +383,21 @@ DD.Germany:
 		OverrideActor: dd
 	-MapEditorData:
 
+AFLD.Germany:
+	Inherits: AFLD
+	Buildable:
+		Prerequisites: anypower, ~structures.germany, ~techlevel.medium
+		Description: Produces, repairs and reloads Airplanes.\nCan be Infiltrated by an Spy resulting\nin Veterancy for enemy Aircraft.\nCan be Infiltrated by an Saboteur\nresulting in getting Disabled temporarily.\n  Special Ability: Paratroopers\nA Plane drops a squad of\nVeteran infantry anywhere on the map.\n  Special Ability: Paratanks\nA B-52 drops two Light and a Medium Tank anywhere on the map.\n (requires Service Depot)
+	RenderSprites:
+		Image: afld
+	ProvidesPrerequisite@COPY:
+		Prerequisite: afld
+	UpdatesPlayerStatistics:
+		OverrideActor: afld
+	Power:
+		Amount: -40
+	-MapEditorData:
+
 PDOX.Germany:
 	Inherits: PDOX
 	Buildable:
@@ -381,6 +408,54 @@ PDOX.Germany:
 		Amount: -100
 	RenderSprites:
 		Image: pdox
+	-MapEditorData:
+
+1TNK.Sweden:
+	Inherits: 1TNK
+	Buildable:
+		Prerequisites: proc, ~vehicles.allies, ~player.sweden, ~techlevel.low
+		Description: Fast tank, good for scouting.\n  Special ability: Amphibian\nCan swim through sea and river.\nTakes 20% more damage from all sources\nwhile in open water but not rivers.\n  Strong vs Light armor\n  Weak vs Infantry, Tanks, Aircraft
+	Mobile:
+		Locomotor: tracked-amphibious
+	GrantConditionOnTerrain@SEA:
+		TerrainTypes: Water, River
+		Condition: floating
+	GrantConditionOnTerrain@SEAMALUS:
+		TerrainTypes: Water
+		Condition: atsea
+	Targetable:
+		RequiresCondition: !floating
+	Targetable@SEA:
+		TargetTypes: Ground, Water, Ship, C4, Tank
+		RequiresCondition: floating
+	WithFacingSpriteBody:
+		RequiresCondition: !floating
+	WithFacingSpriteBody@SEA:
+		Name: floating
+		Sequence: idle-float
+		RequiresCondition: floating
+	DamageMultiplier:
+		Modifier: 120
+		RequiresCondition: atsea
+	SpawnActorOnDeath:
+		Actor: 1TNK.Sweden.Husk
+		RequiresCondition: !floating
+	RenderSprites:
+		Image: 1tnk
+	-MapEditorData:
+
+1TNK.Sweden.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Light Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: 1tnk.Sweden
+	InfiltrateForTransform:
+		IntoActor: 1tnk.Sweden
+	RenderSprites:
+		Image: 1tnk.destroyed
 	-MapEditorData:
 
 2TNK.Sweden:
@@ -407,28 +482,6 @@ TORN.Sweden:
 		Image: ally-mig
 	UpdatesPlayerStatistics:
 		OverrideActor: torn
-	-MapEditorData:
-
-GAP.Sweden:
-	Inherits: GAP
-	Buildable:
-		Prerequisites: dome, ~fact, ~player.sweden, ~techlevel.medium
-	Valued:
-		Cost: 800
-	RenderSprites:
-		Image: gap
-	ProvidesPrerequisite@COPY:
-		Prerequisite: gap
-	-MapEditorData:
-
-MGG.Sweden:
-	Inherits: MGG
-	Buildable:
-		Prerequisites: dome, ~weap, ~player.sweden, ~techlevel.medium
-	Valued:
-		Cost: 600
-	RenderSprites:
-		Image: mgg
 	-MapEditorData:
 
 1TNK.Spain:
@@ -499,10 +552,10 @@ MGG.Sweden:
 		Image: 2tnk.destroyed
 	-MapEditorData:
 
-CA.Spain:
+CA.Italy:
 	Inherits: CA
 	Buildable:
-		Prerequisites: ~syrd, atek, ~ships.allies, ~player.spain, ~techlevel.high
+		Prerequisites: ~syrd, atek, ~ships.allies, ~player.italy, ~techlevel.high
 	UpdatesPlayerStatistics:
 		OverrideActor: ca
 	ProducibleWithLevel:
@@ -607,54 +660,6 @@ E4.Italy:
 		Image: 2tnk.destroyed
 	-MapEditorData:
 
-1TNK.Greece:
-	Inherits: 1TNK
-	Buildable:
-		Prerequisites: proc, ~vehicles.allies, ~player.greece, ~techlevel.low
-		Description: Fast tank, good for scouting.\n  Special ability: Amphibian\nCan swim through sea and river.\nTakes 20% more damage from all sources\nwhile in open water but not rivers.\n  Strong vs Light armor\n  Weak vs Infantry, Tanks, Aircraft
-	Mobile:
-		Locomotor: tracked-amphibious
-	GrantConditionOnTerrain@SEA:
-		TerrainTypes: Water, River
-		Condition: floating
-	GrantConditionOnTerrain@SEAMALUS:
-		TerrainTypes: Water
-		Condition: atsea
-	Targetable:
-		RequiresCondition: !floating
-	Targetable@SEA:
-		TargetTypes: Ground, Water, Ship, C4, Tank
-		RequiresCondition: floating
-	WithFacingSpriteBody:
-		RequiresCondition: !floating
-	WithFacingSpriteBody@SEA:
-		Name: floating
-		Sequence: idle-float
-		RequiresCondition: floating
-	DamageMultiplier:
-		Modifier: 120
-		RequiresCondition: atsea
-	SpawnActorOnDeath:
-		Actor: 1TNK.Greece.Husk
-		RequiresCondition: !floating
-	RenderSprites:
-		Image: 1tnk
-	-MapEditorData:
-
-1TNK.Greece.Husk:
-	Inherits: ^Husk
-	Tooltip:
-		Name: Husk (Light Tank)
-	ThrowsParticle@turret:
-		Anim: turret
-	TransformOnCapture:
-		IntoActor: 1tnk.Greece
-	InfiltrateForTransform:
-		IntoActor: 1tnk.Greece
-	RenderSprites:
-		Image: 1tnk.destroyed
-	-MapEditorData:
-
 IROQ.Greece:
 	Inherits: IROQ
 	Buildable:
@@ -691,6 +696,28 @@ PT.Greece:
 		OverrideActor: pt
 	RenderSprites:
 		Image: pt
+	-MapEditorData:
+
+GAP.Greece:
+	Inherits: GAP
+	Buildable:
+		Prerequisites: dome, ~fact, ~player.greece, ~techlevel.medium
+	Valued:
+		Cost: 800
+	RenderSprites:
+		Image: gap
+	ProvidesPrerequisite@COPY:
+		Prerequisite: gap
+	-MapEditorData:
+
+MGG.Greece:
+	Inherits: MGG
+	Buildable:
+		Prerequisites: dome, ~weap, ~player.greece, ~techlevel.medium
+	Valued:
+		Cost: 600
+	RenderSprites:
+		Image: mgg
 	-MapEditorData:
 
 E2.Turkey:
@@ -1000,6 +1027,21 @@ HSAM.Karelia:
 		Amount: -35
 	RenderSprites:
 		Image: hsam
+	-MapEditorData:
+
+SAB.Moldova:
+	Inherits: SAB
+	Buildable:
+		Prerequisites: ~barr, dome, ~infantry.soviet, ~player.moldova, ~techlevel.medium	
+	Health:
+		HP: 65
+	RenderSprites:
+		Image: sab
+	UpdatesPlayerStatistics:
+		OverrideActor: sab
+	SpeedMultiplier@CountryBonus:
+		Modifier: 110
+		RequiresCondition: !cloakison
 	-MapEditorData:
 
 DOG.Moldova:

@@ -551,7 +551,7 @@ NRTY:
 		Weapon: ArtyNuke
 		LocalOffset: 1248,0,416
 		MuzzleSequence: muzzle
-		PauseOnCondition: empdisable
+		PauseOnCondition: empdisable || !ammo
 	AutoTarget:
 		InitialStance: HoldFire
 		InitialStanceAI: HoldFire
@@ -580,6 +580,18 @@ NRTY:
 		Radius: 2c512
 	ProvidesPrerequisite@LIMITING:
 		Prerequisite: has.nrty
+	AmmoPool:
+		Ammo: 3
+		RearmSound: place2.aud
+		ReloadDelay: 450
+		AmmoCondition: ammo
+	Rearmable:
+		RearmActors: fix, fix.allies, fix.soviet, fix.spain, fix.sweden, fix.turkey, fix.kazakh, fix.china, fix.moldova
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		RequiresSelection: true
+		FullSequence: pip-red
 
 5TNK:
 	Inherits: ^TrackedVehicle
@@ -672,8 +684,8 @@ NRTY:
 		Radius: 2c512
 	GrantTimedConditionOnDeploy:
 		DeployedCondition: invulnerability
-		CooldownTicks: 4500
-		DeployedTicks: 500
+		CooldownTicks: 2250
+		DeployedTicks: 250
 		DeploySound: ironcur9.aud
 		DischargingColor: FF0000
 
@@ -1025,8 +1037,8 @@ ISU:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 9
-		Prerequisites: dome, ~vehicles.soviet, ~player.afghan, ~techlevel.medium
+		BuildPaletteOrder: 13
+		Prerequisites: dome, ~vehicles.soviet, ~player.moldova, ~techlevel.medium
 		Description: Powerful medium-range artillery.\n  Strong vs Defenses, Buildings, Infantry\n  Weak vs Aircraft\n  Special Ability: Concussion Shells
 	Valued:
 		Cost: 1350
@@ -1148,3 +1160,47 @@ GTNK:
 	SpawnActorOnDeath:
 		Actor: GTNK.Husk
 		OwnerType: InternalName
+
+MHQ.Soviet:
+	Inherits: MHQ.Start
+	Buildable:
+		Queue: Vehicle
+		BuildLimit: 1
+		BuildPaletteOrder: 13
+		Prerequisites: stek, ~vehicles.soviet, ~player.afghan, ~techlevel.high
+		Description: Mobile base of operations, can deploy into a Command Post.\nIncreases damage and rate of fire on nearby\nground units and allows them to self-heal.\n  Unarmed unit
+		Icon: mhqicon
+	-Tooltip:
+	Tooltip@sidebar:
+		Name: Mobile Headquarters
+		RequiresCondition: !produced
+	Tooltip@ingame:
+		Name: Mobile HQ
+		RequiresCondition: produced
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	Health:
+		HP: 400
+	RevealsShroud:
+		MinRange: 4c0
+		Range: 6c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 4c0
+	ProximityExternalCondition@LEADERSHIPBOOST:
+		Condition: leader_boost
+		Range: 4c0
+		RequiresCondition: !empdisable
+	WithRangeCircle@LEADERSHIPBOOST:
+		#	Type: propagandabuffed
+        Range: 4c0
+		Color: D92121
+	Transforms:
+		IntoActor: fcom.soviet
+		Offset: -1,-1
+		Facing: 384
+		TransformSounds: placbldg.aud, build5.aud
+		NoTransformNotification: BuildingCannotPlaceAudio
+		PauseOnCondition: empdisable
+	TransferTimedExternalConditionOnTransform:
+		Condition: invulnerability

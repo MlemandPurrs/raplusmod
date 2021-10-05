@@ -619,3 +619,28 @@ CMIG.Husk.EMP.Empty:
 	Inherits: ^EmpVisualEffect
 	FallsToEarth:
 		Explosion: UnitExplodePlaneEmpty
+
+V3.Husk:
+	Inherits: ^PlaneHusk
+	Tooltip:
+		Name: V3 Rocket
+	Aircraft:
+		TurnSpeed: 5
+		Speed: 149
+	RevealsShroud:
+		MinRange: 9c0
+		Range: 11c0
+		Type: GroundPosition
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 9c0
+		Type: GroundPosition
+	FallsToEarth:
+		Explosion: V2Explode
+	RenderSprites:
+		Image: V3
+	Contrail:
+		Offset: -260,0,0
+		TrailLength: 10
+		TrailWidth: 48
+		UsePlayerColor: false

@@ -391,6 +391,78 @@ FBOX:
 		Actor: fbox.husk
 		OwnerType: InternalName
 
+PROP:
+	Inherits: ^Building
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
+	-WithColoredOverlay@EMPDISABLE:
+	-TimedConditionBar@EMPDISABLE:
+	-WithIdleOverlay@EMPDISABLE:
+	-ExternalCondition@EMPDISABLE:
+	-PowerMultiplier@EMPDISABLE:
+	-GrantCondition@EMPDISABLE:
+	-SpawnActorsOnSell:
+	-GivesBuildableArea:
+	-ProductionCostMultiplier@Russia:
+	-Explodes@RUMALUS:
+	-GrantConditionOnPrerequisite@RUMALUS:
+	Selectable:
+		Bounds: 24,24
+	Building:
+		TerrainTypes: Clear,Road,Beach
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, Defense
+	MustBeDestroyed:
+		RequiredForShortGame: false
+	Explodes:
+		Weapon: SmallBuildingExplode
+		EmptyWeapon: SmallBuildingExplode
+	MapEditorData:
+		Categories: Defense
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 16
+		Prerequisites: fcom.soviet, ~structures.soviet, ~player.afghan, ~techlevel.high
+		Description: Increases damage and rate of fire on nearby\nground units and allows them to self-heal.\nCan detect cloaked units.\n  Unarmed
+	Tooltip:
+		Name: Propaganda Station
+	Valued:
+		Cost: 750
+	Health:
+		HP: 450
+	Targetable@DontEMP:
+		TargetTypes: EMPInvalid
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		MinRange: 5c0
+		Range: 6c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 5c0
+	DetectCloaked:
+		Range: 3c768
+		RequiresCondition: !build-incomplete
+	RenderDetectionCircle:
+	WithBuildingBib:
+		HasMinibib: true
+	Power:
+		Amount: -20
+		RequiresCondition: !build-incomplete
+	ProximityExternalCondition@LEADERSHIPBOOST:
+		Condition: leader_boost
+		Range: 4c0
+		#	RequiresCondition: !empdisable
+	WithRangeCircle@LEADERSHIPBOOST:
+        Range: 4c0
+		Color: D92121
+	#	SpawnActorOnDeath:
+	#	Actor: prop.husk
+	#	OwnerType: InternalName
+	WithIdleOverlay@SPINNER:
+		Sequence: spinner
+		Offset: 250,50,250
+		RequiresCondition: !build-incomplete
+
 FTUR:
 	Inherits: ^Defense
 	Inherits@AUTOTARGET: ^AutoTargetGround
@@ -643,7 +715,7 @@ GUN:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiTankDefense
 	Inherits@RangeBonus: ^AffectedByGreece
 	ReloadDelayMultiplier@RoFBonus:
-		Modifier: 70
+		Modifier: 85
 		RequiresCondition: italy.player
 	GrantConditionOnFaction@RoFBonus:
 		Condition: italy.player
@@ -828,7 +900,7 @@ GAP:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 11
-		Prerequisites: techcenter, ~fact, ~!player.sweden, ~techlevel.high
+		Prerequisites: techcenter, ~fact, ~!player.greece, ~techlevel.high
 		Description: Obscures the enemy's view with shroud.\nRequires power to operate.\n  Special ability: Shroud Overcharge\nCan be Deployed when Charged\nto obscure an even greater area\nat cost of increased Power usage.
 	Tooltip:
 		Name: Gap Generator

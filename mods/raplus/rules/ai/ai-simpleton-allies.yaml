@@ -409,7 +409,7 @@ Player:
 			1tnk.england: 40
 			1tnk.france: 40
 			1tnk.germany: 40
-			1tnk.greece: 40
+			1tnk.sweden: 40
 			1tnk.spain: 40
 			1tnk.italy: 40
 			arty: 15
@@ -646,7 +646,7 @@ Player:
 			1tnk.germany: 20
 			1tnk.spain: 20
 			1tnk.italy: 20
-			1tnk.greece: 20
+			1tnk.sweden: 20
 			2tnk: 25
 			2tnk.england: 25
 			2tnk.france: 25

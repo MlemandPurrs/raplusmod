@@ -735,6 +735,8 @@ ateknew:
 	dead: atek2
 		Start: 1
 		Tick: 800
+	none: blank32
+		Length: 1
 	icon: ateknewicon
 	fake-icon: ateknewfakeicon
 
@@ -757,6 +759,8 @@ stek:
 			INTERIOR: TEMPERAT
 	dead: stek-dead
 		Tick: 800
+	none: blank32
+		Length: 1
 	icon: stekicon
     fake-icon: steficon
 	none: blank32

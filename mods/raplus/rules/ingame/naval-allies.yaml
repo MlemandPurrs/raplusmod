@@ -258,7 +258,7 @@ BSHP:
 		Queue: Ship
 		BuildAtProductionType: Boat
 		BuildPaletteOrder: 6
-		Prerequisites: ~syrd, fix, dome, ~ships.allies, ~allies.or.spain, ~techlevel.medium
+		Prerequisites: ~syrd, fix, dome, ~ships.allies, ~allies.or.greece, ~techlevel.medium
 		Description: Artillery ship, with extra Depthcharges.\nCan detect submarines.\n  Strong vs Buildings, Ships\n  Weak vs Aircraft, Infantry
 	Valued:
 		Cost: 1150
@@ -347,7 +347,7 @@ CA:
 		Queue: Ship
 		BuildAtProductionType: Boat
 		BuildPaletteOrder: 4
-		Prerequisites: ~syrd, atek, ~ships.allies, ~!player.spain, ~techlevel.high
+		Prerequisites: ~syrd, atek, ~ships.allies, ~!player.italy, ~techlevel.high
 		Description: Very slow long-range ship.\n  Strong vs Buildings, Ground units\n  Weak vs Naval units, Aircraft
 	Valued:
 		Cost: 1800

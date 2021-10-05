@@ -212,3 +212,17 @@ MINIWEAP.Husk:
 		Name: Mobile War Factory (Destroyed)
 	RenderSprites:
 		Image: miniweap.husk
+
+FCOM.Soviet.Husk:
+	Inherits: ^BuildingHusk
+	Inherits@shape: ^2x2Shape
+	Interactable:
+		Bounds: 48,48
+	Building:
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Command Post (Destroyed)
+	RenderSprites:
+		Image: fcom.husk

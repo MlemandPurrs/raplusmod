@@ -840,3 +840,73 @@ unit.summoner:
 	Inherits@SYSTEM: ^SummonerDummy
 	RenderSprites:
 		Image: dummy.visual
+
+Artillery.Hack:
+	Inherits: ^NeutralPlane
+	-Selectable:
+	-Voiced:
+	-EjectOnDeath:
+	-Tooltip:
+	-UpdatesPlayerStatistics:
+	-Targetable@GROUND:
+	-Targetable@AIRBORNE:
+	-Targetable@REPAIR:
+	-GrantConditionOnDamageState@DAMAGED:
+	-ActorLostNotification:
+	-GpsDot:
+	-WithShadow:
+	-MustBeDestroyed:
+	-MapEditorData:
+	-SpawnActorOnDeath:
+	-WithColoredOverlay@EMPDISABLE:
+	-TimedConditionBar@EMPDISABLE:
+	-WithIdleOverlay@EMPDISABLE:
+	-ExternalCondition@EMPDISABLE:
+	-Explodes:
+	-KillsSelf@EMPONAIR:
+	-Aircraft:
+	Armament@1:
+		Name: primary
+		Weapon: 155mm.barrage
+		#	LocalOffset: 0,-1256,-43, 0,1256,-43
+		PauseOnCondition: !ammo
+	Health:
+		HP: 1
+	Aircraft:
+		CruiseAltitude: 2560
+		TurnSpeed: 255
+		Speed: 180
+		Repulsable: False
+		MaximumPitch: 56
+	AttackBomber:
+	AmmoPool:
+		Ammo: 8
+		AmmoCondition: ammo
+	RejectsOrders:
+	RenderSprites:
+		Image: dummy.visual
+	Interactable:
+		Bounds: 1,1
+		DecorationBounds: 1,1
+
+dummy.moneyprinter:
+	Inherits: CAMERA
+	-RevealsShroud:
+	#	-RenderSpritesEditorOnly:
+	#	-Interactable:
+	Buildable:
+		Queue: Fakestructure
+	Tooltip:
+		GenericName: You shouldnt be seeing this...
+	EditorOnlyTooltip:
+		Name: (Cashreserve sp proxy)
+	KillsSelf@moneyprinter:
+		Delay: 2
+		RemoveInstead: true
+	CashTrickler@moneyprinter:
+		Amount: 2500
+		InitialDelay: 0
+		Interval: 3
+	#	RenderSprites:
+	#	Image: dummy.visual
+	-MapEditorData:

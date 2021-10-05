@@ -159,7 +159,7 @@
 		RequiresCondition: reveal_secrets && atek_ICO
 	GrantConditionOnProduction@stek:
 		Condition: stek_ICO
-		Actors: stek, stek.soviet, stek.russia, stek.ukraine, stek.karelia, stek.uzbek
+		Actors: stek, stek.soviet, stek.russia, stek.karelia, stek.uzbek
 	WithDecoration@stek:
 		Position: Left
 		ValidRelationships: Enemy, Neutral
@@ -691,7 +691,7 @@
 		RequiresCondition: reveal_secrets && rapc_ICO
 	GrantConditionOnProduction@1tnk:
 		Condition: tnk1_ICO
-		Actors: 1tnk, 1tnk.england, 1tnk.france, 1tnk.germany, 1tnk.spain, 1tnk.italy, 1tnk.greece
+		Actors: 1tnk, 1tnk.england, 1tnk.france, 1tnk.germany, 1tnk.spain, 1tnk.italy, 1tnk.sweden
 	WithDecoration@1tnk:
 		Position: Center
 		ValidRelationships: Enemy, Neutral
@@ -1122,7 +1122,7 @@
 		RequiresCondition: reveal_secrets && bshp_ICO
 	GrantConditionOnProduction@ca:
 		Condition: ca_ICO
-		Actors: ca, ca.spain
+		Actors: ca, ca.italy
 	WithDecoration@ca:
 		Position: Center
 		ValidRelationships: Enemy, Neutral

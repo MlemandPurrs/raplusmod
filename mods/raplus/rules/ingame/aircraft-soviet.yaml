@@ -1033,3 +1033,53 @@ CMIG:
 		RequiresCondition: airborne && !ammo && empdisable
 	RenderSprites:
 		Image: smig
+
+V3:
+	Inherits: ^NeutralPlane
+	-ActorLostNotification:
+	-Selectable:
+	-Voiced:
+	-EjectOnDeath:
+	GivesExperience:
+		Experience: 900
+	Tooltip:
+		Name: V3 Rocket
+		GenericName: Missile
+	Health:
+		HP: 80
+	Armament@PRIMARY:
+		Weapon: DummyBomb
+	Aircraft:
+		CruiseAltitude: 2560
+		InitialFacing: 192
+		TurnSpeed: 16
+		Speed: 178
+		RepulsionSpeed: 40
+		MaximumPitch: 56
+	AttackAircraft:
+		Armaments: primary
+		FacingTolerance: 80
+		PersistentTargeting: false
+		OpportunityFire: False
+	AttackBomber:
+	Contrail:
+		Offset: -260,0,0
+		TrailLength: 10
+		TrailWidth: 48
+		UsePlayerColor: false
+	#	LeavesTrails:
+	#	Image: smokey
+	#	Palette: effect
+	#	MovingInterval: 3
+	#	Type: CenterPosition
+	#	Offsets: -200, 0, 0
+	GrantConditionOnAttack:
+		Condition: triggered
+	KillsSelf:
+		RequiresCondition: triggered
+	SpawnActorOnDeath:
+		Actor: V3.Husk
+	RejectsOrders:
+	Interactable:
+	RenderSprites:
+		Image: V3

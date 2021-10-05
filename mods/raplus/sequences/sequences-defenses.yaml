@@ -89,6 +89,22 @@ fbox.husk:
 		UseClassicFacings: True
 		ZOffset: -512
 
+prop:
+    Inherits: emp-overlay
+	idle:
+	damaged-idle:
+	make: pboxmake
+		Length: *
+		Tick: 80
+	spinner: mrj
+		Start: 32
+		Length: 32
+	bib: mbPBOX
+		Length: *
+		Offset: 0,-2
+		UseTilesetExtension: true
+	icon: propicon
+
 ftur:
     Inherits: emp-overlay
 	idle:
