@@ -62,6 +62,10 @@ icon:
 	artyicon: artystrikicon
 	delphi: delphiicon
 	cashicon: cashicon
+	risitas: risitasicon
+	defector: dfkticon
+	cjamicon: cjamicon
+	spysat: spysaticon
 
 clock:
 	idle:
@@ -385,7 +389,7 @@ poweroff:
 radarcratetd: 
 	idle:
 		Length: *
-		Tick: 80
+		Tick: 100
 
 moveflsh:
 	idle:
@@ -625,3 +629,8 @@ v3:
 	Inherits: emp-overlay
 	idle:
 		Facings: 32
+
+skull-red: 
+	derp: rapid
+		Start: 4
+		Length: 16

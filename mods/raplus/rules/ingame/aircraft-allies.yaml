@@ -240,7 +240,6 @@ TRAN.Allies:
 IROQ:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiInf
-	Inherits@FASTERRELOAD: ^AircraftFastReload
 	AutoTarget:
 		InitialStance: HoldFire
 		InitialStanceAI: HoldFire
@@ -392,7 +391,6 @@ IROQ.AI:
 HELI:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiTankandAir
-	Inherits@FASTERRELOAD: ^AircraftFastReload
 	AutoTarget:
 		InitialStance: HoldFire
 		InitialStanceAI: HoldFire

@@ -186,6 +186,8 @@ SAB:
 	DeliversCash:
 		Payload: 125
 		Type: InfantryRefund
+	Targetable@DefectorPrevention:
+		TargetTypes: MCImmune
 
 VOLK:
 	Inherits@ROT: ^RottingInfantry
@@ -261,6 +263,8 @@ VOLK:
 		Type: InfantryRefund
 	GpsDot:
 		String: Commando
+	Targetable@DefectorPrevention:
+		TargetTypes: MCImmune
 
 SHOK:
 	Inherits: ^Soldier
@@ -559,6 +563,8 @@ DEMO:
 		InitialStance: HoldFire
 		InitialStanceAI: HoldFire
 		ScanRadius: 5
+	Targetable@DefectorPrevention:
+		TargetTypes: MCImmune
 
 GREN:
 	Inherits: ^Soldier
@@ -605,3 +611,64 @@ GREN:
 		Payload: 100
 		Type: InfantryRefund
 	RenderRangeCircle:
+
+MARK:
+	Inherits: ^Soldier
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Marksman
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 9
+		Prerequisites: ~barr, dome, ~soviet.or.afghan, ~techlevel.medium
+		Description: Infantry armed with an Sniper rifle.\nNeeds to reload after every 5 shots.\nShoots Poison-coated rounds.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		Icon: marksmanicon
+	Health:
+		HP: 50
+	Armor:
+		Type: Kevlar
+	Passenger:
+		CustomPipType: pip-yellow
+	RevealsShroud:
+		Range: 6c0
+	AutoTarget:
+		InitialStance: Defend
+		InitialStanceAI: ReturnFire
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: Infantry
+	Armament@PRIMARY:
+		Weapon: Sniper.chem
+		PauseOnCondition: !ammo
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: Sniper.chem
+		MuzzleSequence: garrison-muzzle
+	AmmoPool:
+		Armaments: primary
+		Ammo: 5
+		AmmoCondition: ammo
+	ReloadAmmoPool:
+		Delay: 125
+		Count: 5
+		RequiresCondition: !ammo
+	WithDecoration@ammoreplenish:
+		RequiresSelection: false
+		Image: pips
+		Sequence: tag-reload
+		Position: Top
+		RequiresCondition: !ammo
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+	RenderSprites:
+		Image: snip
+	RenderRangeCircle:
+	DeliversCash:
+		Payload: 175
+		Type: InfantryRefund

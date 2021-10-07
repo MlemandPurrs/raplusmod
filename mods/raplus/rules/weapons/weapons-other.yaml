@@ -908,3 +908,26 @@ SummonKENN:
 		Range: 0
 		Buildings: kenn.summon
 		ValidTargets: Ground
+
+SubliminalMessaging:
+	ReloadDelay: 1
+	Range: 1c849
+	Projectile: InstantHit
+	ValidTargets: MCEligible
+	InvalidTargets: MCAttached, MCImmune
+	Warhead@AttachDelayedWeapon: AttachDelayedWeapon
+		Weapon: SubliminalMessage
+		Type: mcremote
+		TriggerTime: 1125
+		DeathTypes: DefaultDeath
+		Range: 1
+		InvalidTargets: MCImmune
+	Warhead@TargetValidator: SpreadDamage
+
+SubliminalMessage:
+	Projectile: InstantHit
+	Warhead@1OwnerChange: ChangeOwner
+		Range: 512
+		Duration: 0
+		ValidTargets: MCEligible, MCAttached
+		InvalidTargets: MCImmune

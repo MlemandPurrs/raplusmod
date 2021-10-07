@@ -930,10 +930,10 @@ YAK.Belarus.AI:
 	AttackAircraft:
 		Armaments: primary, secondary
 
-APC.Karelia:
+APC.Turkmen:
 	Inherits: APC.Soviet
 	Buildable:
-		Prerequisites: barr, ~vehicles.soviet, ~player.karelia, ~techlevel.low
+		Prerequisites: barr, ~vehicles.soviet, ~player.turkmen, ~techlevel.low
 		Description: Tough and slow Infantry transport.\nCan transport up to 8 Infantry.\n  Strong vs Infantry, Buildings\n  Weak vs Tanks, Defenses
 	Cargo:
 		MaxWeight: 8
@@ -941,10 +941,10 @@ APC.Karelia:
 		Image: apc
 	-MapEditorData:
 
-MNLY.Karelia:
+MNLY.Turkmen:
 	Inherits: MNLY
 	Buildable:
-		Prerequisites: fix, ~player.karelia, ~techlevel.medium
+		Prerequisites: fix, ~player.turkmen, ~techlevel.medium
 		Description: Carries and lays up to 8 Land Mines\nto destroy unwary enemy units.\nCan detect mines.\n  Unarmed
 	AmmoPool:
 		Ammo: 8
@@ -1175,6 +1175,8 @@ SPRO.Kazakh:
 		Prerequisites: techcenter, dome, ~player.kazakh, ~techlevel.unrestricted
 		Description: Provides GPS Sattelite uplink.\nMaximum one can be built.\nCan be Infiltrated by an Spy or Saboteur resulting\nin loss of map exploration.\n  Special Ability: GPS Satellite\nReveals map terrain and provides tactical information\n (Requires power and active radar to operate)
 		BuildPaletteOrder: 9
+	ProvidesPrerequisite@COPY:
+		Prerequisite: spro
 	GpsPower:
 		ChargeInterval: 9000
 	RenderSprites:
@@ -1189,6 +1191,8 @@ IRON.Uzbek:
 		Amount: -100
 	Health:
 		HP: 1500
+	ProvidesPrerequisite@COPY:
+		Prerequisite: iron
 	RenderSprites:
 		Image: pdox
 	-MapEditorData:

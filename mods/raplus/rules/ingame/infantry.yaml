@@ -290,6 +290,8 @@ DOG:
 	Targetable@SEA:
 		TargetTypes: Ground, Water, Infantry
 		RequiresCondition: !parachute && swimming
+	Targetable@DefectorPrevention:
+		TargetTypes: MCImmune
 
 E6:
 	Inherits: ^Soldier

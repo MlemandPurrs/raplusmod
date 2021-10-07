@@ -123,6 +123,9 @@ FTRK:
 		CustomPipType: pip-green
 	Capturable:
 		RequiresCondition: !loaded
+	Targetable@DefectorPrevention:
+		TargetTypes: MCImmune
+		RequiresCondition: loaded
 
 FTRK.Scout:
 	Inherits: FTRK
@@ -134,6 +137,7 @@ FTRK.Scout:
 	-Cargo:
 	-WithCargoPipsDecoration:
 	-Capturable:
+	-Targetable@DefectorPrevention:
 	Capturable:
 		Types: vehicle
 		CancelActivity: True
@@ -273,6 +277,7 @@ FTRK.Hunter:
 	-AttackTurreted:
 	-Buildable:
 	-Capturable:
+	-Targetable@DefectorPrevention:
 	Mobile:
 		PauseOnCondition: !(!empdisable && !being-captured)
 	Capturable:
@@ -306,7 +311,7 @@ APC.Soviet:
 	Buildable:
 		Queue: Vehicle, MWFVehicle
 		BuildPaletteOrder: 3
-		Prerequisites: barr, ~vehicles.soviet, ~!player.karelia, ~!player.moldova, ~techlevel.low
+		Prerequisites: barr, ~vehicles.soviet, ~!player.turkmen, ~!player.moldova, ~techlevel.low
 		Description: Tough and slow Infantry transport.\nCan transport up to 5 Infantry.\n  Strong vs Infantry, Buildings\n  Weak vs Tanks, Defenses
 		Icon: hapcicon
 	Valued:
@@ -354,6 +359,9 @@ APC.Soviet:
 		RequiresCondition: unit.sellable && !loaded
 	Capturable:
 		RequiresCondition: !loaded
+	Targetable@DefectorPrevention:
+		TargetTypes: MCImmune
+		RequiresCondition: loaded
 
 3TNK.1B:
 	Inherits: 3TNK
@@ -597,6 +605,8 @@ NRTY:
 	Inherits: ^TrackedVehicle
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Targetable@DefectorPrevention:
+		TargetTypes: MCImmune
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 15

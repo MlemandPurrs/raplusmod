@@ -786,6 +786,12 @@ MIG:
 	SpawnActorOnDeath@EMPEmpty:
 		Actor: MIG.Husk.EMP.Empty
 		RequiresCondition: airborne && !ammo && empdisable
+	RangeMultiplier@FactionBonus:
+		Modifier: 120
+		RequiresCondition: karelia.player
+	GrantConditionOnFaction@CountryBonus:
+		Condition: karelia.player
+		Factions: karelia
 
 NEBR:
 	Inherits: ^Plane

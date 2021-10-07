@@ -303,3 +303,16 @@ FLAK-23-AA-Dual:
 FLAK-23-AG-Dual:
 	Inherits: FLAK-23-AG
 	Burst: 2
+
+Sniper.chem:
+	Inherits: Sniper
+	Warhead@1Dam: SpreadDamage
+		Damage: 35
+	Warhead@4Dam: SpreadDamage
+		Damage: 25
+	Warhead@5: GrantExternalCondition
+		Range: 0c128
+		Duration: 125
+		Condition: hitbychem
+		ValidTargets: Infantry
+		InvalidTargets: Cyborg, Chem, HasPoison

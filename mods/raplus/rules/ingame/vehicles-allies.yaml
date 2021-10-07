@@ -94,6 +94,9 @@ JEEP:
 		LocalOffset: 0,0,100
 	Capturable:
 		RequiresCondition: !loaded
+	Targetable@DefectorPrevention:
+		TargetTypes: MCImmune
+		RequiresCondition: loaded
 
 JEEP.Scout:
 	Inherits: JEEP
@@ -102,6 +105,7 @@ JEEP.Scout:
 	-Cargo:
 	-WithCargoPipsDecoration:
 	-Capturable:
+	-Targetable@DefectorPrevention:
 	Capturable:
 		Types: vehicle
 		CancelActivity: True
@@ -179,6 +183,9 @@ APC:
 		RequiresCondition: unit.sellable && !loaded
 	Capturable:
 		RequiresCondition: !loaded
+	Targetable@DefectorPrevention:
+		TargetTypes: MCImmune
+		RequiresCondition: loaded
 
 APC.crate:
 	Inherits: APC
@@ -827,6 +834,9 @@ STNK:
 		Prerequisites: vehicles.upgraded
 	Capturable:
 		RequiresCondition: !loaded
+	Targetable@DefectorPrevention:
+		TargetTypes: MCImmune
+		RequiresCondition: loaded
 
 TNKD:
 	Inherits: ^TrackedVehicle
@@ -965,6 +975,9 @@ BATF:
 	Inherits: ^Vehicle
 	Inherits@CARGOPIPS: ^CargoPips
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Targetable@DefectorPrevention:
+		TargetTypes: MCImmune
+		RequiresCondition: loaded
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 18

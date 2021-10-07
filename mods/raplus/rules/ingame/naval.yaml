@@ -42,6 +42,9 @@ LST:
 		RepairActors: syrd, syrd.usa, spen
 	Sellable:
 		RequiresCondition: ship.sellable && !loaded
+	Targetable@DefectorPrevention:
+		TargetTypes: MCImmune
+		RequiresCondition: loaded
 
 MINS:
 	Inherits: ^Mine

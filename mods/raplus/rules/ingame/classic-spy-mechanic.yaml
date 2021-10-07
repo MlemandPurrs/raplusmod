@@ -619,7 +619,7 @@
 		RequiresCondition: reveal_secrets && truk_ICO
 	GrantConditionOnProduction@mnly:
 		Condition: mnly_ICO
-		Actors: mnly, mnly.karelia
+		Actors: mnly, mnly.turkmen
 	WithDecoration@mnly:
 		Position: Center
 		ValidRelationships: Enemy, Neutral
@@ -673,7 +673,7 @@
 		RequiresCondition: reveal_secrets && apc_ICO
 	GrantConditionOnProduction@apcsvyt:
 		Condition: apcsvyt_ICO
-		Actors: apc.soviet, apc.karelia, apc.moldova
+		Actors: apc.soviet, apc.turkmen, apc.moldova
 	WithDecoration@apcsvyt:
 		Position: Center
 		ValidRelationships: Enemy, Neutral

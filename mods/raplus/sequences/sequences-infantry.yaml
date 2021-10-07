@@ -2535,6 +2535,7 @@ snip:
 		Length: 6
 		Facings: 8
 	icon: snipericon
+	marksmanicon: markicon
 
 rpg:
 	Inherits@PostDeath: ^Rot

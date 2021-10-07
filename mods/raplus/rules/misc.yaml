@@ -910,3 +910,65 @@ dummy.moneyprinter:
 	#	RenderSprites:
 	#	Image: dummy.visual
 	-MapEditorData:
+
+dummy.commsjam:
+	Inherits: CAMERA
+	EditorOnlyTooltip:
+		Name: (Communications Jam sp proxy)
+	-RevealsShroud:
+	CreatesShroud:
+		ValidRelationships: Enemy, Neutral
+		Range: 12c0
+		MinRange: 12c0
+		Type: CenterPosition
+	RenderShroudCircle:
+	ProximityExternalCondition@JAMMER:
+		Range: 16c0
+		ValidRelationships: Enemy, Neutral
+		Condition: jammed
+	WithRangeCircle@JAMMER:
+		Type: jammer
+		Range: 16c0
+		Color: 0000FF80
+	KillsSelf@HasTimedlife:
+		Delay: 3000
+		RemoveInstead: true
+
+#	this makes no sense
+#	gps.satellite:
+#	AlwaysVisible:
+#	ProvidesPrerequisite:
+
+camera.satscan:
+	Inherits: CAMERA
+	-RevealsShroud:
+	Buildable:
+		Queue: SpySatellite
+	Tooltip:
+		Name: Satellite Scan
+	RevealsMapCA:
+		RevealGeneratedShroud: false
+		RequiresCondition: uplinkavailable
+		ValidRelationships: Ally
+	KillsSelf:
+		RemoveInstead: true
+		Delay: 375
+		GrantsCondition: killsself
+	GrantConditionOnPrerequisite@UPLINK:
+		Condition: uplinkavailable
+		Prerequisites: spro
+	VoiceAnnouncement:
+		Voice: Build
+	VoiceAnnouncement@Die:
+		Voice: Die
+		RequiresCondition: killsself
+	Voiced:
+		VoiceSet: SatelliteScanVoice
+
+camera.satscan.oneshot:
+	Inherits: camera.satscan
+	-VoiceAnnouncement@Die:
+	-KillsSelf:
+	#	KillsSelf:
+	#	RemoveInstead: true
+	#	Delay: 375

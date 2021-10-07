@@ -1,6 +1,8 @@
 HARV:
 	Inherits: ^Vehicle
 	Inherits@selection: ^SelectableEconomicUnit
+	Targetable@DefectorPrevention:
+		TargetTypes: MCImmune
 	-Tooltip:
 	-GpsDot:
 	Buildable:
@@ -97,6 +99,8 @@ HARV.Crate:
 MCV:
 	Inherits: ^Vehicle
 	Inherits@selection: ^SelectableSupportUnit
+	Targetable@DefectorPrevention:
+		TargetTypes: MCImmune
 	ProductionCostMultiplier@NLBONUS:
 		Multiplier: 75
 		Prerequisites: player.holland
@@ -278,7 +282,7 @@ MNLY:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 7
-		Prerequisites: fix, ~!player.karelia, ~!player.holland, ~techlevel.medium
+		Prerequisites: fix, ~!player.turkmen, ~!player.holland, ~techlevel.medium
 		Description: Carries and lays up to 5 Land Mines\nto destroy unwary enemy units.\nCan detect mines.\n  Unarmed
 	Valued:
 		Cost: 700

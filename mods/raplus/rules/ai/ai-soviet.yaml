@@ -399,7 +399,7 @@ Player:
 		SquadSizeRandomBonus: 4
 		RushInterval: 400
 		AttackScanRadius: 24
-		ExcludeFromSquadsTypes: harv.soviet, harv.soviet.crate, mcv, mcv.ai, dog, dog.moldova, e1, e2, e3, e3.china, e4, e5, e6, sab, volk, volk.uzbek, rpg, deso, shok, ftrk, ftrk.belarus, ftrk.scout, ftrk.flame, ftrk.hunter, apc.soviet, apc.karelia, apc.moldova, 3tnk.1b, 3tnk.1b.russia, 3tnk.1b.ukraine, 3tnk.1b.china, 3tnk.1b.kazakh, 3tnk.1b.turkmen, 3tnk.1b.afghan, 3tnk, 3tnk.russia, 3tnk.ukraine, 3tnk.china, 3tnk.kazakh, 3tnk.turkmen, 3tnk.afghan, 4tnk, 4tnk.ukraine, 4tnk.flame, 5tnk, icbm, v2rl, v2rl.turkmen, ttnk, yak.ai, yak.belarus.ai, mig, mig.kazakh, hind, hind.afghan, cmig
+		ExcludeFromSquadsTypes: harv.soviet, harv.soviet.crate, mcv, mcv.ai, dog, dog.moldova, e1, e2, e3, e3.china, e4, e5, e6, sab, volk, volk.uzbek, rpg, deso, shok, ftrk, ftrk.belarus, ftrk.scout, ftrk.flame, ftrk.hunter, apc.soviet, apc.turkmen, apc.moldova, 3tnk.1b, 3tnk.1b.russia, 3tnk.1b.ukraine, 3tnk.1b.china, 3tnk.1b.kazakh, 3tnk.1b.turkmen, 3tnk.1b.afghan, 3tnk, 3tnk.russia, 3tnk.ukraine, 3tnk.china, 3tnk.kazakh, 3tnk.turkmen, 3tnk.afghan, 4tnk, 4tnk.ukraine, 4tnk.flame, 5tnk, icbm, v2rl, v2rl.turkmen, ttnk, yak.ai, yak.belarus.ai, mig, mig.kazakh, hind, hind.afghan, cmig
 		NavalUnitsTypes: ss,ss.ukraine,msub,msub.karelia,ssam,fsub,nsub,ssml
 		ConstructionYardTypes: fact
 		NavalProductionTypes: spen
@@ -410,7 +410,7 @@ Player:
 		SquadSizeRandomBonus: 2
 		RushInterval: 400
 		AttackScanRadius: 48
-		ExcludeFromSquadsTypes: harv.soviet, harv.soviet.crate, mcv, mcv.ai, dog, dog.moldova, e1, e2, e3, e3.china, e4, e5, e6, sab, volk, volk.uzbek, rpg, deso, shok, ftrk, ftrk.belarus, ftrk.scout, ftrk.flame, ftrk.hunter, apc.soviet, apc.karelia, apc.moldova, 3tnk.1b, 3tnk.1b.russia, 3tnk.1b.ukraine, 3tnk.1b.china, 3tnk.1b.kazakh, 3tnk.1b.turkmen, 3tnk.1b.afghan, 3tnk, 3tnk.russia, 3tnk.ukraine, 3tnk.china, 3tnk.kazakh, 3tnk.turkmen, 3tnk.afghan, 4tnk, 4tnk.ukraine, 4tnk.flame, 5tnk, icbm, v2rl, v2rl.turkmen, ttnk, ss, ss.ukraine, msub, msub.karelia, ssam, fsub, nsub, ssml
+		ExcludeFromSquadsTypes: harv.soviet, harv.soviet.crate, mcv, mcv.ai, dog, dog.moldova, e1, e2, e3, e3.china, e4, e5, e6, sab, volk, volk.uzbek, rpg, deso, shok, ftrk, ftrk.belarus, ftrk.scout, ftrk.flame, ftrk.hunter, apc.soviet, apc.turkmen, apc.moldova, 3tnk.1b, 3tnk.1b.russia, 3tnk.1b.ukraine, 3tnk.1b.china, 3tnk.1b.kazakh, 3tnk.1b.turkmen, 3tnk.1b.afghan, 3tnk, 3tnk.russia, 3tnk.ukraine, 3tnk.china, 3tnk.kazakh, 3tnk.turkmen, 3tnk.afghan, 4tnk, 4tnk.ukraine, 4tnk.flame, 5tnk, icbm, v2rl, v2rl.turkmen, ttnk, ss, ss.ukraine, msub, msub.karelia, ssam, fsub, nsub, ssml
 		ConstructionYardTypes: fact
 		IgnoredEnemyTargetTypes: Submarine, IgnoreThis
 	UnitBuilderBotModule@soviet:
@@ -436,7 +436,7 @@ Player:
 			ftrk.repair: 10
 			ftrk.flame: 15
 			apc.soviet: 15
-			apc.karelia: 15
+			apc.turkmen: 15
 			apc.moldova: 15
 			3tnk.1b: 30
 			3tnk.1b.russia: 30

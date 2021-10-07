@@ -107,7 +107,7 @@ DTNK:
 			rapc: rapc
 			batf: batf
 			apc.soviet: apcsvyt
-			apc.karelia: apcsvyt
+			apc.turkmen: apcsvyt
 			apc.moldova: apcsvyt
 			1tnk: tnk1
 			1tnk.r1: tnk1
@@ -159,6 +159,7 @@ DTNK:
 			v2rl.turkmen: v2rl
 			icbm: icbm
 			mnly: mnly
+			mnly.turkmen: mnly
 			mnly.nuke: mnlynuke
 			mnly.support: mnlysprt
 			mgg: mgg

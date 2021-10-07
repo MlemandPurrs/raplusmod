@@ -232,3 +232,8 @@ CommandoVoice:
 		Poisoned: ramyell1
 		Build: rrokroll1
 		Kill: rkeepem1,rlaugh1,rlefty1,rtuffguy1
+
+SatelliteScanVoice:
+	Voices:
+		Build: bspyon
+		Die: bspyof

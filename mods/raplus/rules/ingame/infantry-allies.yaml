@@ -93,7 +93,7 @@ MEDI:
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 9
 		Prerequisites: ~tent, dome, ~infantry.allies, ~allies.or.france, ~techlevel.medium
-		Description: Heals nearby infantry.\n  Unarmed
+		Description: Heals nearby infantry.\nSelf-heals out of combat.\n  Unarmed
 	Tooltip:
 		Name: Medic
 	Valued:
@@ -130,6 +130,11 @@ MEDI:
 		Type: InfantryRefund
 	GpsDot:
 		String: Healer
+	ChangesHealth@SelfHealing:
+		Step: 1
+		Delay: 7
+		StartIfBelow: 101
+		DamageCooldown: 150
 
 MECH:
 	Inherits: ^Soldier
@@ -260,6 +265,8 @@ SPY:
 	Targetable@AIFixer:
 		TargetTypes: IgnoreThis
 		RequiresCondition: disguise
+	Targetable@DefectorPrevention:
+		TargetTypes: MCImmune
 
 SPY.Classic:
 	Inherits: ^Soldier
@@ -399,6 +406,8 @@ E7:
 		Type: InfantryRefund
 	GpsDot:
 		String: Commando
+	Targetable@DefectorPrevention:
+		TargetTypes: MCImmune
 
 RMBO:
 	Inherits: ^Soldier
@@ -500,6 +509,8 @@ RMBO:
 		Type: InfantryRefund
 	GpsDot:
 		String: Commando
+	Targetable@DefectorPrevention:
+		TargetTypes: MCImmune
 
 SHOT:
 	Inherits: ^Soldier
@@ -633,6 +644,7 @@ SNIP:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@ROT: ^RottingInfantry
+	-MustBeDestroyed:
 	Valued:
 		Cost: 900
 	Tooltip:
@@ -683,7 +695,6 @@ SNIP:
 	AttackFrontal:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-	-MustBeDestroyed:
 	ProducibleWithLevel:
 		Prerequisites: barracks.upgraded
 	RenderSprites:
@@ -876,3 +887,5 @@ THF:
 	GrantConditionOnMovement:
 		Condition: harambe
 		ValidMovementTypes: None
+	Targetable@DefectorPrevention:
+		TargetTypes: MCImmune

@@ -220,6 +220,32 @@ DOME.Karelia:
 	UpdatesPlayerStatistics:
 		OverrideActor: dome.soviet
 
+DOME.Kazakh:
+	Inherits: DOME.Soviet
+	Buildable:
+		Prerequisites: proc, ~structures.kazakh, ~techlevel.medium
+		Description: Provides an overview\nof the battlefield.\nCan detect cloaked units.\nCan be Infiltrated by an Spy or Saboteur\nresulting in loss of map exploration.\nCan detect cloaked units.\n  Special Ability: Spy Plane\nReveals an area of the map\nand cloaked enemy units there.\n (requires Airfield)\n  Special Ability: Communications Jam\nObscures an area on the map with shroud for 2 minutes\nand jams enemy Radar within a 16 tile radius.\n (requires Space Program)
+	RenderSprites:
+		Image: dome
+	ProvidesPrerequisite@COPY:
+		Prerequisite: dome
+		RequiresCondition: !empdisable
+	UpdatesPlayerStatistics:
+		OverrideActor: dome.soviet
+
+DOME.Afghan:
+	Inherits: DOME.Soviet
+	Buildable:
+		Prerequisites: proc, ~structures.afghan, ~techlevel.medium
+		Description: Provides an overview\nof the battlefield.\nCan detect cloaked units.\nCan be Infiltrated by an Spy or Saboteur\nresulting in loss of map exploration.\nCan detect cloaked units.\n  Special Ability: Spy Plane\nReveals an area of the map\nand cloaked enemy units there.\n (requires Airfield)\n  Special Ability: Defector\nTargeted enemy Infantry, Vehicle or Ship\nchanges side to your faction permanently\nafter a short duration of consideration.\n (requires Tech Center)
+	RenderSprites:
+		Image: dome
+	ProvidesPrerequisite@COPY:
+		Prerequisite: dome
+		RequiresCondition: !empdisable
+	UpdatesPlayerStatistics:
+		OverrideActor: dome.soviet
+
 ATEK.Allies:
 	Inherits: ATEK
 	Buildable:
@@ -386,4 +412,20 @@ STEK.Afghan:
 	ProvidesPrerequisite@COPY:
 		Prerequisite: stek
 		RequiresCondition: !disabled
+	-MapEditorData:
+
+SPRO.Usa:
+	Inherits: SPRO
+	Buildable:
+		Queue: Building
+		BuildLimit: 1
+		Prerequisites: techcenter, dome, ~player.usa, ~techlevel.unrestricted
+		Description: Provides GPS Sattelite uplink.\nMaximum one can be built.\nCan be Infiltrated by an Spy or Saboteur resulting\nin loss of map exploration.\n  Special Ability: GPS Satellite\nReveals map terrain and provides tactical information.\n (Requires power and active radar to operate)\n  Special Ability: Spy Satellite\nPermanently reveals the entire map, aslong remains functional.\n (Requires GPS sattelite launched and active radar to operate)
+		BuildPaletteOrder: 9
+	ProvidesPrerequisite@COPY:
+		Prerequisite: spro
+	Power:
+		Amount: -200
+	RenderSprites:
+		Image: atek
 	-MapEditorData:

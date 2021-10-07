@@ -5,6 +5,7 @@
 		PlayerExperienceModifier: 1
 	ScriptTriggers:
 	RenderDebugState:
+	TemporaryOwnerManager:
 
 ^SpriteActor:
 	BodyOrientation:
@@ -463,6 +464,7 @@
 	Inherits@handicaps: ^PlayerHandicaps
 	Inherits@Radiation: ^DamagedByRadiation
 	Inherits@Leadership: ^AffectedByLeadership
+	Inherits@Defector: ^DefectorMechanic
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -636,6 +638,7 @@
 	Inherits@handicaps: ^PlayerHandicaps
 	Inherits@Radiation: ^DamagedByRadiation
 	Inherits@Leadership: ^AffectedByLeadership
+	Inherits@Defector: ^DefectorMechanic
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -712,7 +715,6 @@
 		RequiresCondition: parachute
 	HitShape:
 	EdibleByLeap:
-	TemporaryOwnerManager:
 	MapEditorData:
 		Categories: Vehicle
 	Crushable:
@@ -831,6 +833,8 @@
 	Inherits@InstantRepair: ^AffectedByHealupCrate
 	Inherits@USABonus: ^AffectedByUSA
 	Inherits@handicaps: ^PlayerHandicaps
+	Inherits@Defector: ^DefectorMechanicShip
+	TemporaryOwnerManager:
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -928,6 +932,7 @@
 
 ^Submarine:
 	Inherits: ^Ship
+	Inherits@Defector: ^DefectorMechanicSea
 	-MustBeDestroyed:
 	-Cloak@STEALTHGEN:
 	-ExternalCondition@STEALTHGEN:
@@ -1358,6 +1363,8 @@
 		Type: Heavy
 	LineBuildNode:
 		Types: concrete, gate
+	LineBuild:
+		NodeTypes: concrete, gate
 	WithGateSpriteBody:
 		PauseOnCondition: disabled
 	Tooltip:
@@ -2732,3 +2739,27 @@
 		Margin: 5, 6
 		RequiresCondition: leader_boost
 		ValidRelationships: Ally, Enemy, Neutral
+
+^DefectorMechanic:
+	Targetable@Defector:
+		TargetTypes: MCEligible
+		RequiresCondition: !parachute
+	DelayedWeaponAttachable@Defector:
+		Type: mcremote
+		Condition: defecting
+		ProgressBarColor: ffa500
+	Targetable@DefectorStackPrevention:
+		TargetTypes: MCAttached
+		RequiresCondition: defecting
+
+^DefectorMechanicShip:
+	Inherits: ^DefectorMechanic
+	-Targetable@Defector:
+	Targetable@Defector:
+		TargetTypes: MCEligible
+
+^DefectorMechanicSea:
+	Inherits: ^DefectorMechanic
+	Targetable@Defector:
+		TargetTypes: MCEligible
+		RequiresCondition: !underwater

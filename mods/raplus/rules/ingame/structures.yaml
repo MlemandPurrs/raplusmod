@@ -201,7 +201,7 @@ FACT:
 	ProduceActorPowerCA@ReserveMoney:
 		OrderName: ReserveMoneyAutoProduction
 		PauseOnCondition: disabled || oreplowpower || sabotaged
-		Prerequisites: ~orep, player.usa
+		Prerequisites: ~orep, ~atek, player.usa
 		Description: Cash Reserves
 		LongDesc: Periodically obtain 2500$ resources.\nActivated automatically when ready.\nRequires functional Ore Purifier.
 		Icon: cashicon
@@ -1514,6 +1514,9 @@ WEAP:
 		SellSounds: cashturn.aud
 	ToggleConditionOnOrder:
 		PauseOnCondition: maintenance
+	ProvidesPrerequisite@maintenance:
+		Prerequisite: weap.at.maintenance
+		RequiresCondition: maintenance
 	FreeActor@CountryBonus:
 		Actor: FTRK
 		SpawnOffset: 1,2
@@ -1778,7 +1781,7 @@ FIX.Soviet:
 		Prerequisites: weap, ~structures.soviet, ~vanilla.soviet, ~techlevel.medium
 		Description: Repairs Vehicles for credits.\nVehicle and Aircraft can\nbe sold here for half value.\n (their value scaling with health)
 	ProduceActorPower@TankHunters:
-		PauseOnCondition: disabled || lowpower
+		PauseOnCondition: disabled || lowpower || weap.in.maintenance
 		OrderName: TankHunters
 		Prerequisites: ~weap, player.kazakh, ~techlevel.unrestricted
 		Actors: ftrk.hunter, ftrk.hunter, ftrk.hunter
@@ -1791,7 +1794,7 @@ FIX.Soviet:
 		BlockedAudio: NoBuild
 		SupportPowerPaletteOrder: 7
 	ProduceActorPower@NukeArtillery:
-		PauseOnCondition: disabled || lowpower
+		PauseOnCondition: disabled || lowpower || weap.in.maintenance
 		OrderName: NukeArtillery
 		Prerequisites: ~weap, ~stek, player.china, !has.nrty, ~!aitoodumb, ~techlevel.unrestricted 
 		Actors: nrty
@@ -1805,7 +1808,7 @@ FIX.Soviet:
 		SupportPowerPaletteOrder: 7
 	DetonateWeaponPower@RemoteKennel:
 		OrderName: RemoteKennel
-		PauseOnCondition: disabled
+		PauseOnCondition: disabled || lowpower
 		Prerequisites: ~structures.soviet, player.moldova, ~techlevel.unrestricted
 		Icon: kennicon
 		Cursor: ability
@@ -1832,6 +1835,9 @@ FIX.Soviet:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
+	GrantConditionOnPrerequisite@CheckforMaintenance:
+		Condition: weap.in.maintenance
+		Prerequisites: weap.at.maintenance
 	SupportPowerChargeBar:
 	RenderSprites:
 		Image: fix
@@ -1964,7 +1970,7 @@ DOME.Allies:
 DOME.Soviet:
 	Inherits: DOME
 	Buildable:
-		Prerequisites: proc, ~structures.soviet, ~!player.belarus, ~!player.karelia, ~techlevel.medium
+		Prerequisites: proc, ~structures.soviet, ~!player.belarus, ~!player.karelia, ~!player.kazakh, ~!player.afghan, ~techlevel.medium
 		Description: Provides an overview\nof the battlefield.\nCan detect cloaked units.\nCan be Infiltrated by an Spy or Saboteur\nresulting in loss of map exploration.\nCan detect cloaked units.\n  Special Ability: Spy Plane\nReveals an area of the map\nand cloaked enemy units there.\n (requires Airfield)
 	RenderSprites:
 		Image: dome
@@ -2034,6 +2040,40 @@ DOME.Soviet:
 		Cursor: grid-target
 		DirectionArrowAnimation: paradirection
 		SupportPowerPaletteOrder: 5
+	SpawnActorPower@CommsJam:
+		PauseOnCondition: disabled || lowpower
+		OrderName: CommsJam
+		Prerequisites: spro, player.kazakh, ~techlevel.unrestricted
+		Description: Communications Jam
+		LongDesc: Obscures an area on the map with shroud for 2 minutes\nand jams enemy Radar within a 16 tile radius.
+		Icon: cjamicon
+		Actor: dummy.commsjam
+		LifeTime: 3000
+		ChargeInterval: 7500
+		SupportPowerPaletteOrder: 5
+		DeploySound: sspysate.aud
+		Cursor: chrono-target
+		EffectImage: radarcratetd
+		EffectSequence: idle
+		EffectPalette: effect
+	IonCannonPower@Defector:
+		PauseOnCondition: disabled || lowpower
+		OrderName: Defector
+		Prerequisites: ~stek, player.afghan, ~techlevel.unrestricted
+		Icon: defector
+		ChargeInterval: 7500
+		Description: Defector
+		LongDesc: Targeted enemy Infantry, Vehicle or Ship\nchanges side to your faction permanently\nafter a short duration of consideration.\nCertain types like MCV, Harvesters, Dogs,\nSpies, Superunits, Commandos are Immune.
+		CameraActor: dummy.qtnk
+		OnFireSound: smout1.aud
+		Cursor: airstrike
+		DisplayRadarPing: True
+		SupportPowerPaletteOrder: 9
+		Effect: skull-red
+		EffectSequence: derp
+		EffectPalette: effect
+		Weapon: SubliminalMessaging
+		WeaponDelay: 0
 	SupportPowerChargeBar:
 	-MapEditorData:
 
@@ -2517,8 +2557,8 @@ SPRO:
 	Buildable:
 		Queue: Building
 		BuildLimit: 1
-		Prerequisites: techcenter, dome, ~!player.kazakh, ~techlevel.unrestricted
-		Description: Provides GPS Sattelite uplink.\nMaximum one can be built.\nCan be Infiltrated by an Spy or Saboteur resulting\nin loss of map exploration.\n  Special Ability: GPS Satellite\nReveals map terrain and provides tactical information\n (Requires power and active radar to operate)
+		Prerequisites: techcenter, dome, ~!player.kazakh, ~!player.usa, ~techlevel.unrestricted
+		Description: Provides GPS Sattelite uplink.\nMaximum one can be built.\nCan be Infiltrated by an Spy or Saboteur resulting\nin loss of map exploration.\n  Special Ability: GPS Satellite\nReveals map terrain and provides tactical information.\n (Requires power and active radar to operate)\n  Special Ability: Spy Satellite\nPeriodically reveals entire map for short duration.\n (Requires GPS sattelite launched and active radar to operate)
 		BuildPaletteOrder: 9
 	Valued:
 		Cost: 1500
@@ -2550,6 +2590,65 @@ SPRO:
 		LaunchSpeechNotification: SatelliteLaunched
 		DisplayTimerRelationships: Ally, Neutral, Enemy
 		SupportPowerPaletteOrder: 9
+	#	DummyGpsPower:
+	#	PauseOnCondition: disabled || lowpower
+	#	Icon: gps
+	#	OneShot: true
+	#	ChargeInterval: 12000
+	#	Description: GPS Satellite
+	#	LongDesc: Reveals map terrain and provides tactical\ninformation. Requires power and active radar.
+	#	RevealDelay: 375
+	#	LaunchSpeechNotification: SatelliteLaunched
+	#	DisplayTimerRelationships: Ally, Neutral, Enemy
+	#	SupportPowerPaletteOrder: 9
+	#	Condition: sat-launch
+	#	could work like this for not losing actual GPS
+	#	this doesnt speed up for debug purposes tho
+	#	as in when using instant charge at debug
+	GrantDelayedCondition@DUMMY:
+		Condition: sat-launch
+		Delay: 12000
+		PauseOnCondition: disabled || lowpower
+	#	ExternalCondition@DUMMY:
+	#	Condition: sat-launch
+	ProvidesPrerequisite@DUMMY:
+		Prerequisite: gps.satellite
+		RequiresCondition: sat-launch
+	#	you not need to produce actor for this, see above
+	#	ProduceActorPowerCA@SatelliteLaunched:
+	#	Actors: gps.satellite
+	#	Type: SpySatellite
+	#	ChargeInterval: 0
+	#	OneShot: true
+	#	OrderName: ProduceActorSat
+	#	AutoFire: True
+	#	RequiresCondition: sat-launch
+	ProduceActorPowerCA@SatelliteScan:
+		PauseOnCondition: disabled || lowpower
+		OrderName: SatelliteScanPower
+		#	Prerequisites: dome, ~gps.satellite, !player.usa
+		Prerequisites: dome, ~gps.satellite
+		Description: Spy Satellite
+		LongDesc: Periodically reveals the entire map for a short time.\nActivated automatically.
+		Icon: spysat
+		Actors: camera.satscan
+		Type: SpySatellite
+		ChargeInterval: 5250
+		AutoFire: True
+		DisplayTimerRelationships: Ally, Neutral, Enemy
+	#	ProduceActorPowerCA@SatelliteScanUSA:
+	#	PauseOnCondition: disabled || lowpower
+	#	OrderName: SatelliteScanUSAPower
+	#	Prerequisites: dome, ~gps.satellite, player.usa
+	#	Description: Spy Satellite
+	#	LongDesc: Permanently reveals the entire map.\nActivated automatically.
+	#	Icon: spysat
+	#	Actors: camera.satscan.oneshot
+	#	Type: SpySatellite
+	#	ChargeInterval: 7500
+	#	OneShot: True
+	#	AutoFire: True
+	#	DisplayTimerRelationships: Ally, Neutral, Enemy
 	SupportPowerChargeBar:
 	Power:
 		Amount: -150
@@ -2567,6 +2666,9 @@ SPRO:
 		Types: SpyInfiltrate, SabInfiltrate
 	RenderSprites:
 		Image: atek
+	Production:
+		Produces: SpySatellite
+	Exit:
 
 AFLD:
 	Inherits: ^Building
@@ -2937,7 +3039,7 @@ AFLD:
 		ChargeInterval: 7500
 		Description: Paramines
 		LongDesc: A Badger drops one Minelayer anywhere on the map.
-		DropItems: MNLY.Karelia
+		DropItems: MNLY
 		ReinforcementsArrivedSpeechNotification: ReinforcementsArrived
 		SelectTargetSpeechNotification: SelectTarget
 		AllowImpassableCells: false
