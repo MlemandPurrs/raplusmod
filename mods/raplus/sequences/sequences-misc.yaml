@@ -634,3 +634,12 @@ skull-red:
 	derp: rapid
 		Start: 4
 		Length: 16
+
+tbomb:
+	open: tbomb
+		Length: 8
+		ZOffset: 1023
+	idle: tbomb
+		Start: 8
+		Length: 5
+		ZOffset: 1023

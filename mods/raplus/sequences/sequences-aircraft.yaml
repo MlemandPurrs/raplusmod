@@ -175,3 +175,10 @@ harr:
 		Facings: 32
 		UseClassicFacings: True
 	icon: harricon
+
+blmp:
+	Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	icon: blmpicon

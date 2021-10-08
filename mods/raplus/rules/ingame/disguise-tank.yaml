@@ -176,8 +176,6 @@ DTNK:
 			saml: saml
 			isu: isu
 			gtnk: gtnk
-			#	cannot be fixed why
-			dtnk: dtnk
 
 	# the Nameplates
 	DisguiseTooltip@default:
@@ -730,17 +728,13 @@ DTNK:
 	Turreted@other:
 		Turret: invis-turret
 		TurnSpeed: 20
-	Turreted@BugfixSelf:
-		Turret: default-turret-clone
-		TurnSpeed: 20
-		Offset: 0,0,128
 	#	The weaponry itself, while disguised
 	#	it must keep an dummy weaponry on
 	#	to prevent getting stuck in disguise
 	AttackTurreted:
-		Armaments: defaultarm, harvsvyt-arm, jeep-arm, ftrk-arm, ftrkgun-arm, ftrkrep-arm, ftrkflam-arm, ftrkhunt-arm, apcsvyt-arm, rapc-arm, 1tnk-arm, atnk-arm, 2tnk-arm, 2tnks-arm, 3tnk-arm, 3tnk1b-arm, 4tnk-arm, 4tnkflam-arm, nrty-arm, 5tnk-arm, prsm-arm, mrj-arm, msam-arm, saml-arm, gtnk-arm, invis-arm, mnlysprt-arm, bugfix-arm
+		Armaments: defaultarm, harvsvyt-arm, jeep-arm, ftrk-arm, ftrkgun-arm, ftrkrep-arm, ftrkflam-arm, ftrkhunt-arm, apcsvyt-arm, rapc-arm, 1tnk-arm, atnk-arm, 2tnk-arm, 2tnks-arm, 3tnk-arm, 3tnk1b-arm, 4tnk-arm, 4tnkflam-arm, nrty-arm, 5tnk-arm, prsm-arm, mrj-arm, msam-arm, saml-arm, gtnk-arm, invis-arm, mnlysprt-arm
 		# the turrets from above
-		Turrets: default-turret, harvsvyt-turret, jeep-turret, ftrk-turret, ftrkgun-turret, ftrkrep-turret, ftrkflam-turret, ftrkhunt-turret, apc-turret, rapc-turret, 1tnk-turret, gapc-turret, 2tnk-turret, 2tnks-turret, 3tnk-turret, 3tnk1b-turret, 4tnk-turret, 4tnkflam-turret, nrty-turret, 5tnk-turret, prsm-turret, msam-turret, mrj-turret, saml-turret, gtnk-turret, invis-turret, mnlysprt-turret, default-turret-clone
+		Turrets: default-turret, harvsvyt-turret, jeep-turret, ftrk-turret, ftrkgun-turret, ftrkrep-turret, ftrkflam-turret, ftrkhunt-turret, apc-turret, rapc-turret, 1tnk-turret, gapc-turret, 2tnk-turret, 2tnks-turret, 3tnk-turret, 3tnk1b-turret, 4tnk-turret, 4tnkflam-turret, nrty-turret, 5tnk-turret, prsm-turret, msam-turret, mrj-turret, saml-turret, gtnk-turret, invis-turret, mnlysprt-turret
 		PauseOnCondition: empdisable
 	Armament@default:
 		Name: defaultarm
@@ -955,7 +949,7 @@ DTNK:
 		Turret: invis-turret
 		LocalOffset: 768,0,90
 		PauseOnCondition: empdisable
-		RequiresCondition: mcv || harv || harvchrn || truk || dtrk || mwf || apc || batf || arty || gcan || v2rl || icbm || mnly || mnlynuke || mgg || mhqciv || tnkd || ctnk || stnk || ttnk || qtnk || isu || dtnk
+		RequiresCondition: mcv || harv || harvchrn || truk || dtrk || mwf || apc || batf || arty || gcan || v2rl || icbm || mnly || mnlynuke || mgg || mhqciv || tnkd || ctnk || stnk || ttnk || qtnk || isu
 	Armament@disguised24:
 		Name: mnlysprt-arm
 		Weapon: 90mm.decoy.zero
@@ -964,15 +958,6 @@ DTNK:
 		LocalOffset: 768,0,90
 		PauseOnCondition: empdisable
 		RequiresCondition: mnlysprt
-	Armament@disguisedself:
-		Name: bugfix-arm
-		Weapon: 90mm.decoy.zero
-		Recoil: 0
-		Turret: default-turret-clone
-		LocalOffset: 768,0,90
-		MuzzleSequence: muzzle
-		PauseOnCondition: empdisable
-		RequiresCondition: dtnk
 	Targetable@AIFixer:
 		TargetTypes: IgnoreThis
 		RequiresCondition: disguise

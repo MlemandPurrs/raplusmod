@@ -931,3 +931,43 @@ SubliminalMessage:
 		Duration: 0
 		ValidTargets: MCEligible, MCAttached
 		InvalidTargets: MCImmune
+
+BlimpBomb:
+	ReloadDelay: 35
+	ValidTargets: Ground, Water
+	InvalidTargets: Air
+	Report: bwhis.aud
+	Range: 1c0
+	TargetActorCenter: true
+	Projectile: GravityBomb
+		Image: TBOMB
+		OpenSequence: open
+		Velocity: 5, 0, -66
+		Acceleration: 0, 0, 0
+		Shadow: True
+	Warhead@1Dam: SpreadDamage
+		Spread: 1c512
+		Falloff: 100, 40, 20, 5
+		Damage: 75
+		InvalidTargets: Air
+		Versus:
+			None: 40
+			Kevlar: 50
+			Flak: 40
+			Wood: 100
+			Light: 85
+			Heavy: 75
+			Concrete: 50
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees
+	Warhead@3Eff: CreateEffect
+		Explosions: artillery_explosion
+		ImpactSounds: kaboom15.aud
+		ValidTargets: Ground, Ship, Trees
+	Warhead@4EffWater: CreateEffect
+		Explosions: large_splash
+		ImpactSounds: splashl1.aud, splashl2.aud
+		ValidTargets: Water, Underwater
+		InvalidTargets: Ship, Structure, Bridge

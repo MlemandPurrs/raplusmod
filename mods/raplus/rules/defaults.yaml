@@ -1212,6 +1212,7 @@
 	Inherits@RUMOD: ^AffectedByRussia
 	Inherits@BuildTimeMod: ^AffectedBySweden
 	Inherits@LowPowerDamage: ^DamagedOnLowPower
+	Inherits@StructureAutoRepairs: ^BuildingAutoRepair
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -1224,6 +1225,7 @@
 		RepairStep: 15
 		PlayerExperience: 25
 		RepairingNotification: Repairing
+		RepairCondition: being-repaired
 	EngineerRepairable:
 	WithMakeAnimation:
 		Condition: build-incomplete
@@ -2763,3 +2765,32 @@
 	Targetable@Defector:
 		TargetTypes: MCEligible
 		RequiresCondition: !underwater
+
+^HarvesterBalancer:
+	GrantConditionOnPrerequisite@HARVBALANCE:
+		Condition: global-balancedharvesting
+		Prerequisites: global-balancedharvesting
+	SpeedMultiplier@HARVBALANCE:
+		RequiresCondition: harv-balance
+		Modifier: 138
+	HarvesterBalancer:
+		Condition: harv-balance
+		RequiresCondition: global-balancedharvesting
+
+^BuildingAutoRepair:
+	ChangesHealth@ConyardRepairs:
+		Step: 3
+		#	PercentageStep: 1
+		Delay: 24
+		StartIfBelow: 101
+		DamageCooldown: 150
+		RequiresCondition: global-autorepair && within-conyard-radius && !being-repaired
+	#	this didnt change anything
+	#	GrantCondition@ConyardRepairsStopper:
+	#	Condition: stop-building-regen
+	#	RequiresCondition: being-repaired
+	GrantConditionOnPrerequisite@ConyardRepairs:
+		Condition: global-autorepair
+		Prerequisites: global-autorepair
+	ExternalCondition@ConyardRepairs:
+		Condition: within-conyard-radius

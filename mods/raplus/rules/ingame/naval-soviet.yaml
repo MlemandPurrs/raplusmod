@@ -388,6 +388,9 @@ CARR.Deployed:
 	-Explodes:
 	-RequiresBuildableArea:
 	-ShakeOnDeath:
+	-ChangesHealth@ConyardRepairs:
+	-GrantConditionOnPrerequisite@ConyardRepairs:
+	-ExternalCondition@ConyardRepairs:
 	GpsDot:
 		String: Ship
 	Explodes:

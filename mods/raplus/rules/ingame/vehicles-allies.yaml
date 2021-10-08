@@ -964,7 +964,6 @@ GCAN:
 		Weapon: ArtilleryExplode
 		EmptyWeapon: UnitExplodeSmall
 		LoadedChance: 75
-	SelectionDecorations:
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
 	Selectable:

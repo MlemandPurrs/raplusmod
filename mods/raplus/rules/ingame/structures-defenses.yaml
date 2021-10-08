@@ -1591,6 +1591,9 @@ SPMST:
 	-SoundOnDamageTransition:
 	-Sellable:
 	-GivesBuildableArea:
+	-ChangesHealth@ConyardRepairs:
+	-GrantConditionOnPrerequisite@ConyardRepairs:
+	-ExternalCondition@ConyardRepairs:
 	Explodes:
 		Weapon: SmallBuildingExplode
 		EmptyWeapon: SmallBuildingExplode

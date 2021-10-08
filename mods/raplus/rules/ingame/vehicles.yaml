@@ -1,6 +1,7 @@
 HARV:
 	Inherits: ^Vehicle
 	Inherits@selection: ^SelectableEconomicUnit
+	Inherits@HARVBALANCE: ^HarvesterBalancer
 	Targetable@DefectorPrevention:
 		TargetTypes: MCImmune
 	-Tooltip:

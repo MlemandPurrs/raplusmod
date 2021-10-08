@@ -644,3 +644,60 @@ V3.Husk:
 		TrailLength: 10
 		TrailWidth: 48
 		UsePlayerColor: false
+
+BLMP.Husk:
+	Inherits: ^HelicopterHusk
+	FallsToEarth:
+		Moves: false
+	Tooltip:
+		Name: Chrono Blimp
+	Aircraft:
+		TurnSpeed: 6
+		Speed: 64
+	Contrail@1:
+		TrailLength: 8
+		TrailWidth: 96
+		Offset: -356,610,0
+		UsePlayerColor: false
+	Contrail@2:
+		TrailLength: 8
+		TrailWidth: 96
+		Offset: -356,-610,0
+		UsePlayerColor: false
+	Contrail@3:
+		TrailLength: 8
+		TrailWidth: 96
+		Offset: -356,0,578
+		UsePlayerColor: false
+	Contrail@4:
+		TrailLength: 8
+		TrailWidth: 96
+		Offset: -1620,0,0
+		UsePlayerColor: false
+	SmokeTrailWhenDamaged:
+		Offset: -427,0,-45
+		MinDamage: Undamaged
+	RevealsShroud:
+		Range: 10c0
+		Type: GroundPosition
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 8c0
+		Type: GroundPosition
+	RenderSprites:
+		Image: blmp
+
+BLMP.Husk.Empty:
+	Inherits: BLMP.Husk
+	FallsToEarth:
+		Explosion: UnitExplodeHeliEmpty
+
+BLMP.Husk.EMP:
+	Inherits: BLMP.Husk
+	Inherits: ^EmpVisualEffect
+
+BLMP.Husk.EMP.Empty:
+	Inherits: BLMP.Husk
+	Inherits: ^EmpVisualEffect
+	FallsToEarth:
+		Explosion: UnitExplodeHeliEmpty

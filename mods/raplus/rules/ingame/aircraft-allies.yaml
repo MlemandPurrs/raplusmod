@@ -27,8 +27,10 @@ B52.Bomber:
 		Image: ally-bdgr
 	SpawnActorOnDeath:
 		Actor: B52.Husk
+		RequiresCondition: airborne && !empdisable
 	SpawnActorOnDeath@EMP:
 		Actor: B52.Husk.EMP
+		RequiresCondition: airborne && empdisable
 
 B52.Nuke:
 	Inherits: B52.Bomber
@@ -916,3 +918,133 @@ HARR:
 		UsePlayerColor: false
 	RenderSprites:
 		Image: harr
+
+BLMP:
+	Inherits: ^Helicopter
+	Inherits@AUTOTARGET: ^AutoTargetGroundAntiInf
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: HoldFire
+	Buildable:
+		Queue: Aircraft, MWFAir, MWFHeli
+		BuildAtProductionType: Helicopter
+		BuildPaletteOrder: 15
+		BuildLimit: 1
+		Prerequisites: ~hpad, atek, ~aircraft.allies, ~allies.or.england, ~!aitoodumb, ~techlevel.high
+		Description: Heavily armored airship equipped with bombs.\nMaximum 1 can be built.\n  Special ability: Chrono Teleport\nCan instantly reallocate to areas within range.\n  Can attack only Ground targets.\n  Strong vs Buildings, Infantry\n  Weak vs Anti-Air measures
+	Tooltip:
+		Name: Chrono Blimp
+	Valued:
+		Cost: 2200
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Selectable:
+		Bounds: 48,40,0,0
+		DecorationBounds: 38,32,0,0
+	Health:
+		HP: 220
+	Armor:
+		Type: Heavy
+	RevealsShroud@Air:
+		MinRange: 8c0
+		Range: 10c0
+		Type: GroundPosition
+		RevealGeneratedShroud: False
+		RequiresCondition: airborne
+	RevealsShroud@AirGAP:
+		Range: 8c0
+		Type: GroundPosition
+		RequiresCondition: airborne
+	RevealsShroud@Ground:
+		MinRange: 4c0
+		Range: 5c0
+		Type: GroundPosition
+		RevealGeneratedShroud: False
+		RequiresCondition: !airborne
+	RevealsShroud@GroundGAP:
+		Range: 4c0
+		Type: GroundPosition
+		RequiresCondition: !airborne
+	Aircraft:
+		CruiseAltitude: 2560
+		WaitDistanceFromResupplyBase: 4c0
+		TakeOffOnResupply: true
+		InitialFacing: 224
+		TurnSpeed: 12
+		Speed: 64
+		AltitudeVelocity: 0c50
+		LandableTerrainTypes: Clear,Rough,Road,Ore,Beach,Gems
+		CanForceLand: False
+	AttackAircraft:
+		FacingTolerance: 512
+		PersistentTargeting: false
+		AttackType: Hover
+		OpportunityFire: False
+	Armament:
+		Weapon: BlimpBomb
+		LocalOffset: -20,0,0
+		PauseOnCondition: !ammo
+	AmmoPool:
+		Name: primary
+		Ammo: 8
+		AmmoCondition: ammo
+		ReloadDelay: 9
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		PipCount: 4
+		FullSequence: pip-yellow
+		RequiresSelection: true
+	ReloadAmmoPool:
+		Delay: 300
+		Count: 8
+		RequiresCondition: !ammo
+		#	DelayOnFire: 120
+		#	DelayAfterReset: 50
+		#	ShowSelectionBar: true
+		#	SelectionBarColor: ff00ff
+	WithDecoration@ammoreplenish:
+		RequiresSelection: false
+		Image: pips
+		Sequence: tag-reload
+		Position: Top
+		Margin: 0, 4
+		RequiresCondition: !ammo
+	SpawnActorOnDeath:
+		Actor: BLMP.Husk
+		RequiresCondition: airborne && ammo && !empdisable
+	SpawnActorOnDeath@Empty:
+		Actor: BLMP.Husk.Empty
+		RequiresCondition: airborne && !ammo && !empdisable
+	SpawnActorOnDeath@EMP:
+		Actor: BLMP.Husk.EMP
+		RequiresCondition: airborne && ammo && empdisable
+	SpawnActorOnDeath@EMPEmpty:
+		Actor: BLMP.Husk.EMP.Empty
+		RequiresCondition: airborne && !ammo && empdisable
+	Contrail@1:
+		TrailLength: 16
+		TrailWidth: 96
+		Offset: -356,610,0
+		UsePlayerColor: false
+	Contrail@2:
+		TrailLength: 16
+		TrailWidth: 96
+		Offset: -356,-610,0
+		UsePlayerColor: false
+	Contrail@3:
+		TrailLength: 16
+		TrailWidth: 96
+		Offset: -356,0,578
+		UsePlayerColor: false
+	Contrail@4:
+		TrailLength: 16
+		TrailWidth: 96
+		Offset: -1620,0,0
+		UsePlayerColor: false
+	SmokeTrailWhenDamaged:
+		Interval: 7
+		Offset: -427,0,-45
+	PortableChrono:
+		MaxDistance: 18
+		ChargeDelay: 500

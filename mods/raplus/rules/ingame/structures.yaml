@@ -30,9 +30,19 @@ FACT:
 		PauseOnCondition: being-captured
 		Range: 18c0
 		RequiresCondition: uzbek.player
-	GrantConditionOnFaction@V2ReloadBonus:
+	GrantConditionOnFaction@ConyardRangeBonus:
 		Condition: uzbek.player
-		Factions: uzbek	
+		Factions: uzbek
+	ProximityExternalCondition@BuildingRepairs:
+		Range: 16c0
+		ValidRelationships: Ally
+		Condition: within-conyard-radius
+		RequiresCondition: global-autorepair && !uzbek.player
+	ProximityExternalCondition@BuildingRepairsExtended:
+		Range: 18c0
+		ValidRelationships: Ally
+		Condition: within-conyard-radius
+		RequiresCondition: global-autorepair && uzbek.player
 	Power:
 		Amount: 50
 		RequiresCondition: !build-incomplete

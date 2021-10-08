@@ -442,9 +442,23 @@ Player:
 	LobbyPrerequisiteCheckbox@AIBOOSTER:
 		ID: aibooster
 		Label: AI Booster
-		Description: AI gets 20% price discount and +10% build speed. 
+		Description: AI gets 20% price discount and +10% build speed
 		Enabled: False
 		DisplayOrder: 17
 		Prerequisites: aiboosteron
+	LobbyPrerequisiteCheckbox@BALANCEDHARVESTING:
+		ID: balancedharvesting
+		Label: Balanced Harvesting
+		Description: Enables dynamic harvester speed to account for the direction of resources relative to refineries
+		Enabled: False
+		DisplayOrder: 18
+		Prerequisites: global-balancedharvesting
+	LobbyPrerequisiteCheckbox@BASEAUTOREPAIRS:
+		ID: autorepair
+		Label: Conyard Repairs
+		Description: Construction Yard slowly repairs structures within build radius free of charge
+		Enabled: False
+		DisplayOrder: 19
+		Prerequisites: global-autorepair
 	GameSaveViewportManager:
 	PlayerRadarTerrain:

@@ -267,9 +267,17 @@ FCOM:
 	WithBuildingBib:
 	GivesBuildableArea:
 		AreaTypes: building
-	BaseProvider:
+	BaseProvider@Normal:
 		PauseOnCondition: being-captured
 		Range: 8c0
+		RequiresCondition: !uzbek.player
+	BaseProvider@Extended:
+		PauseOnCondition: being-captured
+		Range: 10c0
+		RequiresCondition: uzbek.player
+	GrantConditionOnFaction@ConyardRangeBonus:
+		Condition: uzbek.player
+		Factions: uzbek
 	Power:
 		Amount: 30
 	ProvidesPrerequisite@buildingname:

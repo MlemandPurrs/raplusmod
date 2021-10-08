@@ -589,6 +589,9 @@ ACAR.Deployed:
 	-RequiresBuildableArea:
 	-ShakeOnDeath:
 	-GpsDot:
+	-ChangesHealth@ConyardRepairs:
+	-GrantConditionOnPrerequisite@ConyardRepairs:
+	-ExternalCondition@ConyardRepairs:
 	GpsDot:
 		String: Ship
 	Explodes:
