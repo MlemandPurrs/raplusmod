@@ -7,6 +7,7 @@ MapSize: 124,124
 Bounds: 1,1,122,122
 Visibility: Lobby
 Categories: Conquest
+
 Players:
 	PlayerReference@Neutral:
 		Name: Neutral
@@ -38,6 +39,7 @@ Players:
 		Playable: True
 		Faction: Random
 		Enemies: Creeps
+
 Actors:
 	Actor0: hosp
 		Owner: Neutral

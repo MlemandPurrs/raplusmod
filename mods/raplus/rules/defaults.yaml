@@ -1225,7 +1225,7 @@
 		RepairStep: 15
 		PlayerExperience: 25
 		RepairingNotification: Repairing
-		RepairCondition: being-repaired
+		RepairCondition: repairing
 	EngineerRepairable:
 	WithMakeAnimation:
 		Condition: build-incomplete
@@ -2784,11 +2784,7 @@
 		Delay: 24
 		StartIfBelow: 101
 		DamageCooldown: 150
-		RequiresCondition: global-autorepair && within-conyard-radius && !being-repaired
-	#	this didnt change anything
-	#	GrantCondition@ConyardRepairsStopper:
-	#	Condition: stop-building-regen
-	#	RequiresCondition: being-repaired
+		RequiresCondition: global-autorepair && within-conyard-radius && !repairing
 	GrantConditionOnPrerequisite@ConyardRepairs:
 		Condition: global-autorepair
 		Prerequisites: global-autorepair

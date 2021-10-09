@@ -1,19 +1,11 @@
 MapFormat: 11
-
 RequiresMod: ra
-
 Title: Aqueducts
-
 Author: Blackened
-
 Tileset: DESERT
-
 MapSize: 99,99
-
 Bounds: 1,1,97,97
-
 Visibility: Lobby
-
 Categories: Conquest
 
 Players:

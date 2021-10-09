@@ -1,19 +1,11 @@
 MapFormat: 11
-
 RequiresMod: ra
-
 Title: A Nuclear Winter
-
 Author: Lucian
-
 Tileset: SNOW
-
 MapSize: 102,72
-
 Bounds: 1,1,100,70
-
 Visibility: Lobby
-
 Categories: Conquest
 
 Players:
