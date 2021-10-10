@@ -399,11 +399,16 @@ Player:
 	ProvidesPrerequisite@LIMITINGNUKEMINE:
 		Prerequisite: enoughnukemine
 		RequiresCondition: hasnukemine > 1
-	#	ExternalCondition@LIMITINGFREEBIESYRD:
-	#	Condition: hasshipyard
-	#	ProvidesPrerequisite@LIMITINGFREEBIESYRD:
-	#	Prerequisite: enoughsyrd
-	#	RequiresCondition: hasshipyard > 0
+	GrantConditionOnPrerequisite@LIMITINGFREEBIESYRD:
+		Condition: has-shipyard-built
+		Prerequisites: syrd
+	GrantCondition@LIMITINGFREEBIESYRD:
+		Condition: no-more-free-syrd
+		GrantPermanently: true
+		RequiresCondition: has-shipyard-built
+	ProvidesPrerequisite@LIMITINGFREEBIESYRD:
+		Prerequisite: enoughsyrd
+		RequiresCondition: no-more-free-syrd
 	LobbyPrerequisiteCheckbox@GLOBALSCRAPS:
 		ID: scraps
 		Label: Scrap Metal

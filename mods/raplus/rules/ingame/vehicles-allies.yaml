@@ -417,13 +417,12 @@ ARTY:
 	Inherits: ^TrackedVehicle
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiStructure
-	RangeMultiplier@RangeBonus:
-		Modifier: 110
+	ReloadDelayMultiplier@ReloadBonus:
+		Modifier: 90
 		RequiresCondition: turkey.player
-	GrantConditionOnFaction@RangeBonus:
+	GrantConditionOnFaction@ReloadBonus:
 		Condition: turkey.player
 		Factions: turkey
-		ResetOnOwnerChange: True
 	Buildable:
 		Queue: Vehicle, MWFVehicle
 		BuildPaletteOrder: 6

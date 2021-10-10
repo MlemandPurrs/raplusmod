@@ -208,6 +208,11 @@ Dragon.Ltnk:
 	Range: 4c768
 	ReloadDelay: 300
 
+Dragon.dual:
+	Inherits: Dragon
+	Burst: 2
+	BurstDelays: 7
+
 HellfireAA.rapid:
 	Inherits: HellfireAA
 	Burst: 2

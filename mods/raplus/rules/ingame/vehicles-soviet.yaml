@@ -179,7 +179,7 @@ FTRK.Repair:
 		Queue: Vehicle
 		BuildPaletteOrder: 9
 		Prerequisites: fix, ~vehicles.soviet, ~player.moldova, ~techlevel.high
-		Description: Mechanized Engineers.\nRepairs friendly vehicles.\nCan externally capture structures.\n  Unarmed
+		Description: Mechanized Engineers.\nRepairs friendly vehicles.\nRestores Vehicle husks.\nCan externally capture structures.\n  Unarmed
 		Icon: repicon
 	Valued:
 		Cost: 700
@@ -214,13 +214,19 @@ FTRK.Repair:
 	Captures@EnemyBuilding:
 		CaptureDelay: 375
 		CaptureTypes: building
-		PlayerExperience: 50
+		PlayerExperience: 0
 		ConsumedByCapture: False
 	Captures@NeutralBuilding:
 		CaptureDelay: 375
 		CaptureTypes: building-external
-		PlayerExperience: 50
+		PlayerExperience: 0
 		ConsumedByCapture: False
+	Captures@VehicleHusks:
+		CaptureDelay: 375
+		CaptureTypes: husk
+		PlayerExperience: 0
+		ConsumedByCapture: False
+		EnterCursor: gold-wrench
 	AutoTarget:
 	AutoTargetPriority@DEFAULT:
 		ValidTargets: Vehicle, Ship
@@ -703,12 +709,13 @@ V2RL:
 	Inherits: ^Vehicle
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiStructure
-	ReloadDelayMultiplier@V2ReloadBonus:
-		Modifier: 90
+	RangeMultiplier@RangeBonus:
+		Modifier: 110
 		RequiresCondition: uzbek.player
-	GrantConditionOnFaction@V2ReloadBonus:
+	GrantConditionOnFaction@RangeBonus:
 		Condition: uzbek.player
-		Factions: uzbek		
+		Factions: uzbek
+		ResetOnOwnerChange: True
 	WithFacingSpriteBody:
 		RequiresCondition: !reloading
 		Name: loaded

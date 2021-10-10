@@ -1,5 +1,9 @@
 FACT:
 	Inherits: ^Building
+	-ProductionCostMultiplier@Russia:
+	-Explodes@RUMALUS:
+	-GrantConditionOnPrerequisite@RUMALUS:
+	-ProductionTimeMultiplier@Sweden:
 	Inherits@ESPIONAGE: ^RevealStructureandDefenseProduction
 	ProductionCostMultiplier@NLBONUS:
 		Multiplier: 75
@@ -844,7 +848,7 @@ CLONER.Plug:
 		Name: Cloning Facility
 	Buildable:
 		BuildPaletteOrder: 17
-		Prerequisites: stek, !cloner.plug, ~structures.soviet, ~soviet.or.china, ~!aitoodumb, ~techlevel.high
+		Prerequisites: barracks, stek, !cloner.plug, ~structures.soviet, ~soviet.or.china, ~!aitoodumb, ~techlevel.high
 		Queue: Building
 		BuildLimit: 1
 		Description: Clones produced Basic Infantry when the relevant\nSupport Power gets activated at the Tech Center.
@@ -3523,7 +3527,7 @@ SYRD:
 	Inherits@ESPIONAGE: ^RevealNavalProduction
 	ProductionCostMultiplier@GBFREEBIE:
 		Multiplier: 0
-		Prerequisites: player.england, !syrd
+		Prerequisites: player.england, !syrd, !enoughsyrd
 	-SpawnActorsOnSell:
 	-GivesBuildableArea:
 	RequiresBuildableArea:
@@ -3569,6 +3573,12 @@ SYRD:
 		CloakTypes: Underwater
 		Range: 7c512
 	RenderDetectionCircle:
+	DetectCloakedMultiplier@GRBonus:
+		Modifier: 150
+		RequiresCondition: greece.player
+	GrantConditionOnFaction@GRBonus:
+		Condition: greece.player
+		Factions: greece
 	Production:
 		Produces: Ship, Boat
 		PauseOnCondition: disabled || build-incomplete

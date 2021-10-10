@@ -182,3 +182,15 @@ blmp:
 		Facings: 32
 		UseClassicFacings: True
 	icon: blmpicon
+
+minihind:
+	Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	rotor: lbrotor2blademini
+		Length: 4
+	slow-rotor: lbrotor2blademini
+		Start: 4
+		Length: 8
+	icon: hindicon

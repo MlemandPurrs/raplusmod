@@ -1658,6 +1658,7 @@
 	Capturable:
 		Types: husk
 		ValidRelationships: Enemy, Neutral
+	CapturableProgressBar:
 	TransformOnCapture:
 		ForceHealthPercentage: 25
 	InfiltrateForTransform:

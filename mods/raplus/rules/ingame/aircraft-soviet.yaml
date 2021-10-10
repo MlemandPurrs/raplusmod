@@ -1089,3 +1089,60 @@ V3:
 	Interactable:
 	RenderSprites:
 		Image: V3
+
+HIND.Mini:
+	Inherits@CarrierBound: ^CarrierCraft
+	-Aircraft:
+	Aircraft:
+		CruiseAltitude: 1c513
+		InitialFacing: 192
+		TurnSpeed: 32
+		Speed: 195
+		MaximumPitch: 56
+		CanHover: True
+		CanSlide: True
+		RepulsionSpeed: 40
+		Repulsable: False
+		IdealSeparation: 0c256
+		VTOL: true
+		TakeOffOnResupply: false
+		TakeOffOnCreation: false
+		AirborneCondition: airborne
+		Crushes: airmine
+	Valued:
+		Cost: 50
+	Tooltip:
+		Name: Mini Hind
+	Health:
+		HP: 70
+	Armament:
+		Weapon: Dragon.dual
+		LocalOffset: 35,-86,-35, 35,86,-35
+		PauseOnCondition: !ammo
+	AttackAircraft:
+		FacingTolerance: 80
+		PersistentTargeting: false
+		OpportunityFire: false
+		PauseOnCondition: empdisable
+	Rearmable:
+		RearmActors: carr
+	AmmoPool:
+		Ammo: 6
+		AmmoCondition: ammo
+	SpawnActorOnDeath@NORMAL:
+		Actor: HIND.Mini.Husk
+		RequiresCondition: !empdisable
+	SpawnActorOnDeath@EMP:
+		Actor: HIND.Mini.Husk.EMP
+		RequiresCondition: empdisable
+	WithIdleOverlay@ROTORAIR:
+		Sequence: rotor
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTORGROUND:
+		Sequence: slow-rotor
+		RequiresCondition: !airborne
+	SmokeTrailWhenDamaged:
+		Offset: -171,0,0
+		Interval: 2
+	RenderSprites:
+		Image: minihind

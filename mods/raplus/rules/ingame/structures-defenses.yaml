@@ -1530,6 +1530,7 @@ HSAM:
 	-WithSpriteBody:
 	-WithSpriteTurret:
 	WithEmbeddedTurretSpriteBody:
+		QuantizedFacings: 32	
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 13
@@ -1540,6 +1541,7 @@ HSAM:
 	Valued:
 		Cost: 850
 	Turreted:
+		InitialFacing: 0
 		RealignDelay: -1
 	AttackPopupTurreted:
 		RequiresCondition: !build-incomplete

@@ -227,12 +227,12 @@
 		Name: Spain
 		InternalName: spain
 		Side: Allies
-		Description: Spain\nFaction Variations:\n    - Tanks* have +1 Range but less rate of fire.\n*Those Tanks being the Light and Medium Tanks.\nThis bonus does not affect secondary weaponry.\n    - Spitfire Bombers carry twice the ammo.\n    - All ships are stronger, taking 10% less damage.\nVeterancy Bonus:\n    - None.\nUnique Support Powers:\n    - Chrono Harvester (Tech Center)\nDeploys a prototype Harvester that is capable of Teleporting.\nSpecial Units:\n    - Shotgunner (Infantry)\nFast recon that is lethal to most Infantry at close-range.\n    - Mobile Radar Jammer (Vehicle)\nVehicle that deflects Missiles and jams enemy Radar.
+		Description: Spain\nFaction Variations:\n    - Tanks* have +1 Range but less rate of fire.\n*Those Tanks being the Light and Medium Tanks.\nThis bonus does not affect secondary weaponry.\n    - Spitfire Bombers carry twice the ammo.\n    - All ships are stronger, taking 10% less damage.\nVeterancy Bonus:\n    - None.\nUnique Support Powers:\n    - Chrono Harvester (Tech Center)\nDeploys a prototype Harvester that is capable of Teleporting.\nSpecial Units:\n    - Shotgunner (Infantry)\nFast recon that is lethal to most Infantry at close-range.\n    - Mobile Radar Jammer (Vehicle)\nVehicle that deflects Missiles and jams enemy Radar.\n    - Dreadnought (Naval)\nA super-cruiser naval super unit.
 	Faction@8:
 		Name: Greece
 		InternalName: greece
 		Side: Allies
-		Description: Greece\nSpecialization: Fortifications\nThe forces of Greece are unyielding defenders.\nFaction Variations:\n    - Defenses have 20% increased Range and use 10% more Power.\nAffected are Gun Turret, Grand Turret, AA Gun.\n    - GAP technology is available earlier and cheaper.\n    - Improved Sonar Pulse lasts longer.\nVeterancy Bonus:\n    - Iroqouis and Gunboat gets built as Veteran.\nUnique Support Powers:\n    - Interceptors (Tech Center)\nA squadron of Interceptors provides air cover over target area.\nSpecial Units:\n    - ATGM Soldier (Infantry)\nInfantry armed with anti-tank rockets.\n    - Battleship (Naval)\nAn early design, single-barrel turreted cruiser.
+		Description: Greece\nSpecialization: Fortifications\nThe forces of Greece are unyielding defenders.\nFaction Variations:\n    - Defenses have 20% increased Range and use 10% more Power.\nAffected are Gun Turret, Grand Turret, AA Gun.\n    - GAP technology is available earlier and cheaper.\n    - Submarine detection +50% radius and better Sonar Pulse.\nVeterancy Bonus:\n    - Iroqouis and Gunboat gets built as Veteran.\nUnique Support Powers:\n    - Interceptors (Tech Center)\nA squadron of Interceptors provides air cover over target area.\nSpecial Units:\n    - ATGM Soldier (Infantry)\nInfantry armed with anti-tank rockets.\n    - Battleship (Naval)\nAn early design, single-barrel turreted cruiser.
 	Faction@9:
 		Name: Italy
 		InternalName: italy
@@ -242,7 +242,7 @@
 		Name: Turkey
 		InternalName: turkey
 		Side: Allies
-		Description: Turkey\nFaction Variations:\n    - Infantry is well-trained, considerably performing better.\nAll combat infantry take 10% less damage, deal out 10% more and move 10% faster.\n    - Power Plants generate more Power at increased cost.\nPower Plant generates +25, Advanced Power Plant +50 Power.\n    - Artillery has +1 Range.\nFaction restrictions:\n    - This country cannot train Tanya.\nVeterancy Bonus:\n    - Grenadier and Spitfire Bomber as Veteran.\nUnique Support Powers:\n    - Nuclear Minelayer (Service Depot with Tech Center)\nDelivers a Nuclear Minelayer at your primary War Factory.\nSpecial Units:\n    - Sniper (Infantry)\nMarksman with Sniper rifle.\n    - Grand Cannon (Vehicle)\nHeavy artillery with extreme range.
+		Description: Turkey\nFaction Variations:\n    - Infantry is well-trained, considerably performing better.\nAll combat infantry take 10% less damage, deal out 10% more and move 10% faster.\n    - Power Plants generate more Power at increased cost.\nPower Plant generates +25, Advanced Power Plant +50 Power.\n    - Artillery reloads 10% faster.\nFaction restrictions:\n    - This country cannot train Tanya.\nVeterancy Bonus:\n    - Grenadier and Spitfire Bomber as Veteran.\nUnique Support Powers:\n    - Nuclear Minelayer (Service Depot with Tech Center)\nDelivers a Nuclear Minelayer at your primary War Factory.\nSpecial Units:\n    - Sniper (Infantry)\nMarksman with Sniper rifle.\n    - Grand Cannon (Vehicle)\nHeavy artillery with extreme range.
 	Faction@11:
 		Name: Soviet
 		InternalName: soviet
@@ -272,7 +272,7 @@
 		Name: Transnist.
 		InternalName: moldova
 		Side: Soviet
-		Description: Transnistria\nSpecialization: Demolitions\nThe forces of Transnistria specialize in blowing their opponents to smithereens.\nFaction Variations:\n    - Saboteurs have improved characteristics.\nSaboteurs have +20 hitpoints and move 10% faster out of Cloak.\n    - Attack Dogs are amphibian and explode on Death.\nFaction restrictions:\n    - This country cannot train Volkov.\nVeterancy Bonus:\n    - Heavy APC gets built as Veteran.\nUnique Support Power:\n  Special Ability: Remote Kennel (Service Depot)\nDeploys a Kennel with seperate queue anywhere on the map.\nSpecial Units:\n    - Demolitionist (Infantry)\nExplosives expert capable of blowing up and booby-trapping Structures.\n    - Mobile Repair Truck (Vehicle)\nMechanized Engineers capable of Capturing and Repairs.\n    - Siege Tank (Vehicle)\nShort-range artillery that applies Concussion to Ground units.
+		Description: Transnistria\nSpecialization: Demolitions\nThe forces of Transnistria specialize in blowing their opponents to smithereens.\nFaction Variations:\n    - Saboteurs have improved characteristics.\nSaboteurs have +20 hitpoints and move 10% faster out of Cloak.\n    - Attack Dogs are amphibian and explode on Death.\nFaction restrictions:\n    - This country cannot train Volkov.\nVeterancy Bonus:\n    - Heavy APC gets built as Veteran.\nUnique Support Power:\n    - Remote Kennel (Service Depot)\nDeploys a Kennel with seperate queue anywhere on the map.\nSpecial Units:\n    - Demolitionist (Infantry)\nExplosives expert capable of blowing up and booby-trapping Structures.\n    - Mobile Repair Truck (Vehicle)\nMechanized Engineers capable of Capturing, Recovering and Repairs.\n    - Siege Tank (Vehicle)\nShort-range artillery that applies Concussion to Ground units.
 	Faction@17:
 		Name: Kazakhst.
 		InternalName: kazakh
@@ -282,7 +282,7 @@
 		Name: Uzbekist.
 		InternalName: uzbek
 		Side: Soviet
-		Description: Uzbekistan\nSpecialization: Engineering.\nFaction Variations:\n    - Construction Yards provide +2 increased build radius.\nThis bonus also applies for Expansion Posts.\n    - Iron Curtain uses 100 less Power and is more durable.\n    - V2 Launcher reloads 10% faster.\nVeterancy Bonus:\n    - Volkov gets built as Veteran.\nUnique Support Powers:\n    - Lone Tower (Tech Center)\nA Flame Turret gets instantly built, checking Terrain of build spot.\n    - V3 Missile Strike (Tech Center with Radar Dome)\nThree V3 rockets will strike your target.\nSpecial Units:\n    - Gamma Trooper (Infantry)\nInfantry armed with radiation beam weaponry.\n    - MAD Tank (Vehicle)\nDevice capable of emitting seismic waves when deployed that damage structures.
+		Description: Uzbekistan\nSpecialization: Engineering.\nFaction Variations:\n    - Construction Yards provide +2 increased build radius.\nThis bonus also applies for Expansion Posts.\n    - Iron Curtain uses 100 less Power and is more durable.\n    - V2 Launcher has +1 Range.\nVeterancy Bonus:\n    - Volkov gets built as Veteran.\nUnique Support Powers:\n    - Lone Tower (Tech Center)\nA Flame Turret gets instantly built, checking Terrain of build spot.\n    - V3 Missile Strike (Tech Center with Radar Dome)\nThree V3 rockets will strike your target.\nSpecial Units:\n    - Gamma Trooper (Infantry)\nInfantry armed with radiation beam weaponry.\n    - MAD Tank (Vehicle)\nDevice capable of emitting seismic waves when deployed that damage structures.
 	Faction@19:
 		Name: Turkmen.
 		InternalName: turkmen

@@ -32,6 +32,12 @@ PT:
 		CloakTypes: Underwater
 		Range: 4c0
 	RenderDetectionCircle:
+	DetectCloakedMultiplier@GRBonus:
+		Modifier: 150
+		RequiresCondition: greece.player
+	GrantConditionOnFaction@GRBonus:
+		Condition: greece.player
+		Factions: greece
 	Turreted@PRIMARY:
 		Turret: primary
 		TurnSpeed: 28
@@ -114,6 +120,12 @@ RSHP:
 		CloakTypes: Underwater
 		Range: 4c0
 	RenderDetectionCircle:
+	DetectCloakedMultiplier@GRBonus:
+		Modifier: 150
+		RequiresCondition: greece.player
+	GrantConditionOnFaction@GRBonus:
+		Condition: greece.player
+		Factions: greece
 	Turreted:
 		TurnSpeed: 16
 		Offset: -468,0,-180
@@ -201,6 +213,12 @@ DD:
 		CloakTypes: Underwater
 		Range: 4c0
 	RenderDetectionCircle:
+	DetectCloakedMultiplier@GRBonus:
+		Modifier: 150
+		RequiresCondition: greece.player
+	GrantConditionOnFaction@GRBonus:
+		Condition: greece.player
+		Factions: greece
 	Turreted@PRIMARY:
 		Turret: primary
 		TurnSpeed: 28
@@ -324,6 +342,12 @@ BSHP:
 		CloakTypes: Underwater
 		Range: 4c0
 	RenderDetectionCircle:
+	DetectCloakedMultiplier@GRBonus:
+		Modifier: 150
+		RequiresCondition: greece.player
+	GrantConditionOnFaction@GRBonus:
+		Condition: greece.player
+		Factions: greece
 	Selectable:
 		DecorationBounds: 38,38
 	HitShape:
@@ -425,7 +449,7 @@ DRED:
 		BuildAtProductionType: Boat
 		BuildPaletteOrder: 7
 		BuildLimit: 1
-		Prerequisites: ~syrd, atek, ~ships.allies, ~techlevel.high
+		Prerequisites: ~syrd, atek, ~ships.allies, ~allies.or.spain, ~techlevel.high
 		Description: Capital ship, sporting two triple-barreled 203mm batteries.\nMaximum 1 can be built.\n  Strong vs anything on Ground\n  Weak vs Submarines, Aircraft
 	Valued:
 		Cost: 3000
@@ -673,6 +697,12 @@ ACAR.Deployed:
 		CloakTypes: Underwater
 		Range: 7c512
 	RenderDetectionCircle:
+	DetectCloakedMultiplier@GRBonus:
+		Modifier: 150
+		RequiresCondition: greece.player
+	GrantConditionOnFaction@GRBonus:
+		Condition: greece.player
+		Factions: greece
 	HitShape:
 		UseTargetableCellsOffsets: true
 		Type: Rectangle

@@ -365,10 +365,17 @@ MNLY.Support:
 	Buildable:
 		BuildPaletteOrder: 7
 		Prerequisites: fix, ~player.holland, ~techlevel.medium
-		Description: Repairs nearby friendly Vehicles.\nCarries and lays up to 5 Land Mines\nto destroy unwary enemy units.\nCan detect mines.\n  Unarmed
+		Description: Repairs nearby friendly Vehicles.\nRestores Vehicle husks to working condition.\nCarries and lays up to 5 Land Mines\nto destroy unwary enemy units.\nCan detect mines.\n  Unarmed
 		Icon: sprticon
 	Tooltip:
 		Name: Support Minelayer
+	CaptureManager:
+	Captures@VehicleHusks:
+		CaptureDelay: 375
+		CaptureTypes: husk
+		PlayerExperience: 0
+		ConsumedByCapture: False
+		EnterCursor: gold-wrench
 	Armament:
 		Weapon: Repair
 		Cursor: repair

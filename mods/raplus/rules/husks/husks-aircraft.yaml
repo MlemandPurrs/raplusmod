@@ -374,6 +374,7 @@ TRAN.Husk:
 TRAN.Husk1:
 	Inherits: ^Husk
 	-Capturable:
+	-CapturableProgressBar:
 	-TransformOnCapture:
 	-InfiltrateForTransform:
 	Tooltip:
@@ -384,6 +385,7 @@ TRAN.Husk1:
 TRAN.Husk2:
 	Inherits: ^Husk
 	-Capturable:
+	-CapturableProgressBar:
 	-TransformOnCapture:
 	-InfiltrateForTransform:
 	Tooltip:
@@ -538,7 +540,7 @@ SMIG.Husk:
 		Name: Husk (Special MiG)
 	Aircraft:
 		TurnSpeed: 7
-		Speed: 373
+		Speed: 223
 	Contrail@1:
 		Offset: -725,683,0
 	Contrail@2:
@@ -701,3 +703,30 @@ BLMP.Husk.EMP.Empty:
 	Inherits: ^EmpVisualEffect
 	FallsToEarth:
 		Explosion: UnitExplodeHeliEmpty
+
+HIND.Mini.Husk:
+	Inherits: ^PlaneHusk
+	Tooltip:
+		Name: Subhunter
+	Aircraft:
+		TurnSpeed: 4
+		Speed: 149
+	SmokeTrailWhenDamaged:
+		Offset: -171,0,0
+		MinDamage: Undamaged
+	RevealsShroud:
+		Range: 2c0
+		MinRange: 1c0
+		Type: GroundPosition
+		RevealGeneratedShroud: false
+	RevealsShroud@GAPGEN:
+		Range: 1c0
+		Type: GroundPosition
+	RenderSprites:
+		Image: minihind
+	FallsToEarth:
+		Explosion: UnitExplodeSmall
+
+HIND.Mini.Husk.EMP:
+	Inherits: HIND.Mini.Husk
+	Inherits: ^EmpVisualEffect

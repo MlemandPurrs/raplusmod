@@ -288,7 +288,7 @@ Player:
 		ConstructionYardTypes: fact
 		RefineryTypes: proc
 		MaxRefineries: 6
-		PowerTypes: powr,apwr.powr.turkey,apwr.turkey
+		PowerTypes: powr,powr.turkey,apwr,apwr.turkey
 		BarracksTypes: tent,tent.usa
 		VehiclesFactoryTypes: weap,weap.usa
 		ProductionTypes: tent,tent.usa,weap,weap.usa,hpad,hpad.usa,afld,afld.usa,afld.england,afld.france,afld.germany,afld.italy,afld.greece
