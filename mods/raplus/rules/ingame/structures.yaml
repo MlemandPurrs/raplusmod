@@ -1680,6 +1680,7 @@ FIX:
 		FinishRepairingNotification: UnitRepaired
 		PlayerExperience: 15
 		PauseOnCondition: disabled || build-incomplete
+		RepairDamageTypes: Repair
 	Reservable:
 	RallyPoint:
 	AcceptsDeliveredCash:
@@ -2758,6 +2759,7 @@ AFLD:
 		PlayerExperience: 15
 		PauseOnCondition: disabled || build-incomplete || sabotaged
 		RequiresCondition: !disabled && !sabotaged && !invulnerability
+		RepairDamageTypes: Repair
 	Reservable:
 	WithResupplyAnimation:
 		RequiresCondition: !build-incomplete
@@ -3339,6 +3341,7 @@ HPAD:
 		PlayerExperience: 15
 		PauseOnCondition: disabled || build-incomplete || sabotaged
 		RequiresCondition: !disabled && !sabotaged && !invulnerability
+		RepairDamageTypes: Repair
 	Reservable:
 	WithResupplyAnimation:
 		RequiresCondition: !build-incomplete
@@ -3590,6 +3593,7 @@ SYRD:
 		StartRepairingNotification: Repairing
 		FinishRepairingNotification: UnitRepaired
 		PlayerExperience: 15
+		RepairDamageTypes: Repair
 	RallyPoint:
 	Exit@1:
 		RequiresCondition: !being-captured
@@ -3827,6 +3831,7 @@ SPEN:
 		StartRepairingNotification: Repairing
 		FinishRepairingNotification: UnitRepaired
 		PlayerExperience: 15
+		RepairDamageTypes: Repair
 	RallyPoint:
 	Exit@1:
 		RequiresCondition: !being-captured
