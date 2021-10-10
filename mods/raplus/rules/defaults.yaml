@@ -732,6 +732,13 @@
 		RequiresCondition: irradiated
 	ExternalCondition@RadExplode:
 		Condition: irradiated
+	GrantConditionOnDamage@repairflash:
+		Types: Repair
+		Condition: repairflash
+		Duration: 3
+	WithColoredOverlay@repairflash:
+		RequiresCondition: repairflash
+		Palette: highlight
 
 ^TrackedVehicle:
 	Inherits: ^Vehicle
@@ -929,6 +936,13 @@
 	GrantConditionOnFaction@CountryBonus:
 		Condition: spain.player
 		Factions: spain
+	GrantConditionOnDamage@repairflash:
+		Types: Repair
+		Condition: repairflash
+		Duration: 3
+	WithColoredOverlay@repairflash:
+		RequiresCondition: repairflash
+		Palette: highlight
 
 ^Submarine:
 	Inherits: ^Ship
@@ -1084,6 +1098,13 @@
 	Explodes:
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
+	GrantConditionOnDamage@repairflash:
+		Types: Repair
+		Condition: repairflash
+		Duration: 3
+	WithColoredOverlay@repairflash:
+		RequiresCondition: repairflash
+		Palette: highlight
 
 ^Plane:
 	Inherits: ^NeutralPlane
