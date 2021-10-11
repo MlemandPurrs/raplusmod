@@ -6,7 +6,7 @@ LST:
 		Queue: Ship
 		BuildPaletteOrder: 1
 		Prerequisites: ~techlevel.low
-		Description: General-purpose naval transport.\nCan carry up to 16 Infantry and Vehicles.\n  Unarmed
+		Description: General-purpose naval transport.\nCan carry up to 16 Infantry and Vehicles.\nSlows down by 40% when over half-capacity.\n  Unarmed
 	Valued:
 		Cost: 800
 	Tooltip:
@@ -38,6 +38,195 @@ LST:
 		PassengerFacing: 0
 		LoadedCondition: loaded	
 		LoadingCondition: notmobile
+		#	so i have to manually enter all of this
+		PassengerConditions:
+			e1: weight-1
+			e1r1: weight-1
+			e1.england: weight-1
+			e2: weight-1
+			e2r1: weight-1
+			e2.turkey:
+			e3: weight-1
+			e3r1: weight-1
+			e3.china: weight-1
+			e4: weight-1
+			e4.italy: weight-1
+			e5: weight-1
+			e6: weight-1
+			e7: weight-1
+			e7.usa: weight-1
+			volk: weight-1
+			volk.uzbek: weight-1
+			rmbo: weight-1
+			gnrl: weight-1
+			tecn: weight-1
+			spy: weight-1
+			sab: weight-1
+			sab.moldova: weight-1
+			thf: weight-1
+			dog: weight-1
+			dog.moldova: weight-1
+			medi: weight-1
+			mech: weight-1
+			mgi: weight-1
+			shot: weight-1
+			atgm: weight-1
+			snip: weight-1
+			mrtr: weight-1
+			cinf: weight-1
+			shok: weight-1
+			shokr1: weight-1
+			rpg: weight-1
+			deso: weight-1
+			demo: weight-1
+			gren: weight-1
+			mark: weight-1
+			jeep: weight-2
+			jeep.scout: weight-2
+			jeep.england: weight-2
+			ftrk: weight-2
+			ftrk.scout: weight-2
+			ftrk.repair: weight-2
+			ftrk.flamer: weight-2
+			ftrk.hunter: weight-2
+			ftrk.belarus: weight-2
+			apc: weight-2
+			apc.crate: weight-2
+			apc.germany: weight-2
+			rapc: weight-2
+			apc.soviet: weight-2
+			apc.turkmen: weight-2
+			apc.moldova: weight-2
+			1tnk: weight-2
+			1tnk.r1: weight-2
+			1tnk.england: weight-2
+			1tnk.france: weight-2
+			1tnk.germany: weight-2
+			1tnk.sweden: weight-2
+			1tnk.spain: weight-2
+			1tnk.italy: weight-2
+			1tnk.italy.norank: weight-2
+			2tnk: weight-2
+			2tnk.r1: weight-2
+			2tnk.england: weight-2
+			2tnk.france: weight-2
+			2tnk.germany: weight-2
+			2tnk.sweden: weight-2
+			2tnk.spain: weight-2
+			2tnk.italy: weight-2
+			2tnk.stealth: weight-2
+			3tnk: weight-2
+			3tnk.russia: weight-2
+			3tnk.ukraine: weight-2
+			3tnk.kazakh: weight-2
+			3tnk.turkmen: weight-2
+			3tnk.afghan: weight-2
+			3tnk.china: weight-2
+			3tnk.r1: weight-2
+			3tnk.1b: weight-2
+			3tnk.1b.russia: weight-2
+			3tnk.1b.ukraine: weight-2
+			3tnk.1b.kazakh: weight-2
+			3tnk.1b.turkmen: weight-2
+			3tnk.1b.afghan: weight-2
+			3tnk.1b.china: weight-2
+			arty: weight-2
+			arty.france: weight-2
+			v2rl: weight-2
+			v2rl.turkmen: weight-2
+			ttnk: weight-2
+			saml: weight-2
+			msam: weight-2
+			atnk: weight-2
+			gtnk: weight-2
+			mrj: weight-2
+			ctnk: weight-2
+			ctnk.chrono: weight-2
+			stnk: weight-2
+			tnkd: weight-2
+			isu: weight-2
+			prsm: weight-2
+			gcan: weight-2
+			dtnk: weight-2
+			batf: weight-4
+			truk: weight-2
+			truf: weight-2
+			dtrk: weight-2
+			mnly: weight-2
+			mnly.turkmen: weight-2
+			mnly.nuke: weight-2
+			mnly.support: weight-2
+			mgg: weight-2
+			mgg.greece: weight-2
+			mggf: weight-2
+			mhq.start: weight-2
+			mhq.soviet: weight-2
+			harv: weight-4
+			harv.crate: weight-4
+			harv.chrono: weight-4
+			harv.soviet: weight-4
+			harv.soviet.crate: weight-4
+			mcv: weight-4
+			mcv.ai: weight-4
+			mcvf: weight-4
+			4tnk: weight-4
+			4tnk.flame: weight-4
+			4tnk.ukraine: weight-4
+			nrty: weight-4
+			5tnk: weight-8
+			qtnk: weight-4
+			icbm: weight-4
+			mwf: weight-4
+	#	and then i have to make manual combinations of every possibility too,
+	#	then tell it all on one RequiresCondition MANUALLY LIKE A CAVEMAN ITS 2021 FFS
+	# 8 infantry
+	GrantCondition@WEIGHT8x1:
+		Condition: weightcondI
+		RequiresCondition: weight-1 >= 8 
+	# 1 mammoth 2 vehicle
+	GrantCondition@WEIGHT4x1+2x2:
+		Condition: weightcondII
+		RequiresCondition: (weight-1 >= 4) && (weight-2 >= 2) 
+	# 2 infantry 1 mammoth 1 vehicle 
+	GrantCondition@WEIGHT1x2+4x1+1x2:
+		Condition: weightcondIII
+		RequiresCondition: (weight-1 >= 2) && weight-4 && weight-2
+	# 4 vehicle
+	GrantCondition@WEIGHT4x2:
+		Condition: weightcondIV
+		RequiresCondition: (weight-2 >= 4)
+	# 1 vehicle 6 infantry
+	GrantCondition@WEIGHT1x2+1x6:
+		Condition: weightcondV
+		RequiresCondition: weight-2 && (weight-1 >= 6) 
+	# 3 vehicle 2 infantry
+	GrantCondition@WEIGHT3x2+2x1:
+		Condition: weightcondVI
+		RequiresCondition: (weight-2 >= 3) && (weight-1 >= 2)
+	# 2 vehicle 1 mammoth
+	GrantCondition@WEIGHT2x2+1x4:
+		Condition: weightcondVII
+		RequiresCondition: (weight-2 >= 2) && weight-4
+	# 2 vehicle 4 infantry
+	GrantCondition@WEIGHT2x2+4x1:
+		Condition: weightcondVIII
+		RequiresCondition: (weight-2 >= 2) && (weight-1 >= 4) 
+	#	2 mammoth
+	GrantCondition@WEIGHT2x4:
+		Condition: weightcondIX
+		RequiresCondition: (weight-4 >= 2)
+	# 1 mammoth 4 infantry
+	GrantCondition@WEIGHT1x4+4x1:
+		Condition: weightcondX
+		RequiresCondition: weight-4 && (weight-1 >= 4) 
+	# 1 behemoth
+	GrantCondition@WEIGHT1x8:
+		Condition: weightcondXI
+		RequiresCondition: weight-8
+	#	REALLY !?!!??
+	SpeedMultiplier@HALFCAPACITY:
+		RequiresCondition: weightcondI || weightcondII || weightcondIII || weightcondIV || weightcondV || weightcondVI || weightcondVII || weightcondVIII || weightcondIX || weightcondX || weightcondXI
+		Modifier: 60
 	RepairableNear:
 		RepairActors: syrd, syrd.usa, spen
 	Sellable:

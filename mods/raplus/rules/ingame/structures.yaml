@@ -530,7 +530,7 @@ TENT:
 		Amount: -20
 		RequiresCondition: !build-incomplete
 	InfiltrateForSupportPower:
-		Proxy: barracks.upgraded
+		Proxy: infantry.upgraded.timed
 		Types: SpyInfiltrate
 	AcceptsDeliveredCash:
 		ValidTypes: InfantryRefund
@@ -736,7 +736,7 @@ BARR:
 		Amount: -20
 		RequiresCondition:  !build-incomplete
 	InfiltrateForSupportPower:
-		Proxy: barracks.upgraded
+		Proxy: infantry.upgraded.timed
 		Types: SpyInfiltrate
 	AcceptsDeliveredCash:
 		ValidTypes: InfantryRefund
@@ -1504,7 +1504,7 @@ WEAP:
 		Amount: -30
 		RequiresCondition: !build-incomplete
 	InfiltrateForSupportPower:
-		Proxy: vehicles.upgraded
+		Proxy: vehicles.upgraded.timed
 		Types: SpyInfiltrate
 	WithDeathAnimation:
 		DeathSequence: dead
@@ -2012,6 +2012,7 @@ DOME.Soviet:
 		ClockSequence: clock
 		CircleSequence: circles
 		Cursor: chrono-select
+		LaunchSound: spyplane.aud
 		SupportPowerPaletteOrder: 5
 	AirstrikePower@SpyplaneExtra:
 		PauseOnCondition: lowpower
@@ -2034,6 +2035,7 @@ DOME.Soviet:
 		CircleSequence: circles
 		Cursor: chrono-select
 		SupportPowerPaletteOrder: 5
+		LaunchSound: spyplane.aud
 		StartFullyCharged: true
 	AirstrikePower@JammerPlane:
 		PauseOnCondition: disabled || lowpower
@@ -2730,7 +2732,7 @@ AFLD:
 		RequiresCondition: empdisable && sabotaged
 		Palette: disabled
 	InfiltrateForSupportPower:
-		Proxy: aircraft.upgraded
+		Proxy: aircraft.upgraded.timed
 		Types: SpyInfiltrate
 	Armor:
 		Type: Wood
@@ -3316,7 +3318,7 @@ HPAD:
 		RequiresCondition: empdisable && sabotaged
 		Palette: disabled
 	InfiltrateForSupportPower:
-		Proxy: aircraft.upgraded
+		Proxy: aircraft.upgraded.timed
 		Types: SpyInfiltrate
 	Armor:
 		Type: Wood

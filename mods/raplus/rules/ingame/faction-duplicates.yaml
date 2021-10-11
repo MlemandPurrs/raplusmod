@@ -1,4 +1,23 @@
 
+#	to able to get rid of those duplicates, or atleast reduce to a minimum think i will need:
+#	1.
+#	fix the OpenRA tooltips to show modified amount of power on tooltip, instead of base amount
+#	^reason of existence for .Usa structure duplicates below oh and also the turkey powerplants
+#	2.
+#	ProduciblewithaLevel should able to @Multiple per unit, that will eliminate every rank duplicate.
+#	maybe it could accept something similar like done in CA's ValidFaction: trait.
+#	3.
+#	To eliminate every Tooltip duplicate perhaps a variant of this trait could be re-made that 
+#	has the Description field back from Buildable.
+#	4.
+#	Ideally Multipliers should be reworked into Modifier traits, which can accept either a fixed value
+#	or percentage, as set by the user.
+#	5.
+#	A new HealthMultiplier trait will be needed for some, DamageMultiplier IS NOT the same thing 
+#	as simply giving more Health value to something.
+#	6.
+#	Partially conditionable Valued trait, maybe also using the ValidFaction: approach.
+
 TENT.Usa:
 	Inherits: TENT
 	Buildable:
@@ -552,25 +571,12 @@ TORN.Sweden:
 		Image: 2tnk.destroyed
 	-MapEditorData:
 
-CA.Italy:
-	Inherits: CA
-	Buildable:
-		Prerequisites: ~syrd, atek, ~ships.allies, ~player.italy, ~techlevel.high
-	UpdatesPlayerStatistics:
-		OverrideActor: ca
-	ProducibleWithLevel:
-		Prerequisites: techlevel.infonly
-		InitialLevels: 1
-	RenderSprites:
-		Image: ca
-	-MapEditorData:
-
 SPIT.Spain:
 	Inherits: SPIT
 	-AmmoPool@1:
 	AmmoPool
 	Buildable:
-		Prerequisites: ~afld, dome, ~aircraft.allies, ~player.spain,  ~techlevel.medium	
+		Prerequisites: ~afld, dome, ~aircraft.allies, ~player.spain, ~techlevel.medium	
 	AmmoPool@1:
 		Ammo: 12
 		ReloadDelay: 11
@@ -658,6 +664,19 @@ E4.Italy:
 		IntoActor: 2tnk.Italy
 	RenderSprites:
 		Image: 2tnk.destroyed
+	-MapEditorData:
+
+CA.Italy:
+	Inherits: CA
+	Buildable:
+		Prerequisites: ~syrd, atek, ~ships.allies, ~player.italy, ~techlevel.high
+	UpdatesPlayerStatistics:
+		OverrideActor: ca
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	RenderSprites:
+		Image: ca
 	-MapEditorData:
 
 IROQ.Greece:
@@ -916,6 +935,7 @@ YAK.Belarus:
 		Image: yak
 	-MapEditorData:
 
+#	hmm, i should able to condition this already, except AmmoPool has been recently made no longer conditional
 YAK.Belarus.AI:
 	Inherits: YAK.Belarus
 	Buildable:
@@ -929,28 +949,6 @@ YAK.Belarus.AI:
 		Image: yak
 	AttackAircraft:
 		Armaments: primary, secondary
-
-APC.Turkmen:
-	Inherits: APC.Soviet
-	Buildable:
-		Prerequisites: barr, ~vehicles.soviet, ~player.turkmen, ~techlevel.low
-		Description: Tough and slow Infantry transport.\nCan transport up to 8 Infantry.\n  Strong vs Infantry, Buildings\n  Weak vs Tanks, Defenses
-	Cargo:
-		MaxWeight: 8
-	RenderSprites:
-		Image: apc
-	-MapEditorData:
-
-MNLY.Turkmen:
-	Inherits: MNLY
-	Buildable:
-		Prerequisites: fix, ~player.turkmen, ~techlevel.medium
-		Description: Carries and lays up to 8 Land Mines\nto destroy unwary enemy units.\nCan detect mines.\n  Unarmed
-	AmmoPool:
-		Ammo: 8
-	RenderSprites:
-		Image: mnly
-	-MapEditorData:
 
 MSUB.Karelia:
 	Inherits: MSUB
@@ -1293,6 +1291,28 @@ V2RL.Turkmen:
 		OverrideActor: v2rl
 	RenderSprites:
 		Image: v2rl
+	-MapEditorData:
+
+APC.Turkmen:
+	Inherits: APC.Soviet
+	Buildable:
+		Prerequisites: barr, ~vehicles.soviet, ~player.turkmen, ~techlevel.low
+		Description: Tough and slow Infantry transport.\nCan transport up to 8 Infantry.\n  Strong vs Infantry, Buildings\n  Weak vs Tanks, Defenses
+	Cargo:
+		MaxWeight: 8
+	RenderSprites:
+		Image: apc
+	-MapEditorData:
+
+MNLY.Turkmen:
+	Inherits: MNLY
+	Buildable:
+		Prerequisites: fix, ~player.turkmen, ~techlevel.medium
+		Description: Carries and lays up to 8 Land Mines\nto destroy unwary enemy units.\nCan detect mines.\n  Unarmed
+	AmmoPool:
+		Ammo: 8
+	RenderSprites:
+		Image: mnly
 	-MapEditorData:
 
 3TNK.1B.Afghan:

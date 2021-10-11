@@ -488,6 +488,8 @@ U2:
 		Repulsable: False
 		MaximumPitch: 56
 	AttackBomber:
+	Armament:
+		Weapon: U2Camera
 	Contrail@1:
 		Offset: -725,683,0
 		TrailLength: 6

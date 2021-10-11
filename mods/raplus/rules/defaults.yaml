@@ -841,7 +841,6 @@
 	Inherits@USABonus: ^AffectedByUSA
 	Inherits@handicaps: ^PlayerHandicaps
 	Inherits@Defector: ^DefectorMechanicShip
-	TemporaryOwnerManager:
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -1386,8 +1385,8 @@
 		Type: Heavy
 	LineBuildNode:
 		Types: concrete, gate
-	LineBuild:
-		NodeTypes: concrete, gate
+	#	LineBuild:
+	#	NodeTypes: concrete, gate
 	WithGateSpriteBody:
 		PauseOnCondition: disabled
 	Tooltip:

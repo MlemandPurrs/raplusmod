@@ -734,17 +734,41 @@ powerproxy.paratroopers:
 		ClockSequence: clock
 		CircleSequence: circles
 
-barracks.upgraded:
+infantry.upgraded.timed:
 	AlwaysVisible:
 	ProvidesPrerequisite:
+		Prerequisite: infantry.upgraded
+		RequiresCondition: timed-life
+	GrantTimedCondition@TimedLife:
+		Condition: timed-life
+		Duration: 4500
 
-vehicles.upgraded:
+vehicles.upgraded.timed:
 	AlwaysVisible:
 	ProvidesPrerequisite:
+		Prerequisite: vehicles.upgraded
+		RequiresCondition: timed-life
+	GrantTimedCondition@TimedLife:
+		Condition: timed-life
+		Duration: 4500
 
-aircraft.upgraded:
+aircraft.upgraded.timed:
 	AlwaysVisible:
 	ProvidesPrerequisite:
+		Prerequisite: aircraft.upgraded
+		RequiresCondition: timed-life
+	GrantTimedCondition@TimedLife:
+		Condition: timed-life
+		Duration: 4500
+
+navy.upgraded.timed:
+	AlwaysVisible:
+	ProvidesPrerequisite:
+		Prerequisite: navy.upgraded
+		RequiresCondition: timed-life
+	GrantTimedCondition@TimedLife:
+		Condition: timed-life
+		Duration: 4500
 
 tech.stolen:
 	AlwaysVisible:
@@ -933,11 +957,6 @@ dummy.commsjam:
 	KillsSelf@HasTimedlife:
 		Delay: 3000
 		RemoveInstead: true
-
-#	this makes no sense
-#	gps.satellite:
-#	AlwaysVisible:
-#	ProvidesPrerequisite:
 
 camera.satscan:
 	Inherits: CAMERA

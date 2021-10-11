@@ -92,7 +92,9 @@ Ant:
 			Radius: 469
 	AttackWander:
 		WanderMoveRadius: 30
+	#	no extra shading needed for Ants
 	RenderSprites:
+		PlayerPalette: player
 		Image: ant1
 	GpsDot:
 		String: Ant

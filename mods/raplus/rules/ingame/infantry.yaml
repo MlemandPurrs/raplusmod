@@ -33,7 +33,7 @@ E1:
 		StandSequences: parachute
 		RequiresCondition: parachute
 	ProducibleWithLevel:
-		Prerequisites: barracks.upgraded
+		Prerequisites: infantry.upgraded
 	Passenger:
 		CustomPipType: pip-green
 	Cloneable:
@@ -97,7 +97,7 @@ E2:
 		EmptyWeapon: UnitExplodeSmall
 		DamageSource: Killer
 	ProducibleWithLevel:
-		Prerequisites: barracks.upgraded
+		Prerequisites: infantry.upgraded
 	Passenger:
 		CustomPipType: pip-green
 	Cloneable:
@@ -168,7 +168,7 @@ E3:
 		StandSequences: parachute
 		RequiresCondition: parachute
 	ProducibleWithLevel:
-		Prerequisites: barracks.upgraded
+		Prerequisites: infantry.upgraded
 	Passenger:
 		CustomPipType: pip-green
 	Cloneable:

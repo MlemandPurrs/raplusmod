@@ -382,7 +382,7 @@ E7:
 	Voiced:
 		VoiceSet: TanyaVoice
 	ProducibleWithLevel:
-		Prerequisites: barracks.upgraded
+		Prerequisites: infantry.upgraded
 	GrantConditionOnTerrain:
 		TerrainTypes: Water, River
 		Condition: swimming
@@ -461,7 +461,7 @@ RMBO:
 	Voiced:
 		VoiceSet: CommandoVoice
 	ProducibleWithLevel:
-		Prerequisites: barracks.upgraded
+		Prerequisites: infantry.upgraded
 	DetectCloaked:
 		CloakTypes: Cloak, Hijacker
 		Range: 3c0
@@ -545,7 +545,7 @@ SHOT:
 		IdleSequences: idle1,idle2
 		DefaultAttackSequence: shoot
 	ProducibleWithLevel:
-		Prerequisites: barracks.upgraded
+		Prerequisites: infantry.upgraded
 	DeliversCash:
 		Payload: 56
 		Type: InfantryRefund
@@ -631,7 +631,7 @@ ATGM:
 			primary: throw
 			secondary: none
 	ProducibleWithLevel:
-		Prerequisites: barracks.upgraded
+		Prerequisites: infantry.upgraded
 	Passenger:
 		CustomPipType: pip-yellow
 	DeliversCash:
@@ -696,7 +696,7 @@ SNIP:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	ProducibleWithLevel:
-		Prerequisites: barracks.upgraded
+		Prerequisites: infantry.upgraded
 	RenderSprites:
 		Image: snip
 	RenderRangeCircle:
@@ -752,7 +752,7 @@ MRTR:
 	Passenger:
 		CustomPipType: pip-yellow
 	ProducibleWithLevel:
-		Prerequisites: barracks.upgraded
+		Prerequisites: infantry.upgraded
 	RenderRangeCircle:
 	DeliversCash:
 		Payload: 150
@@ -766,7 +766,6 @@ MRTR:
 CINF:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@ROT: ^RottingInfantry
 	Buildable:
 		Queue: Infantry
@@ -815,8 +814,6 @@ CINF:
 		Weapon: UnitExplodeSmall
 		EmptyWeapon: UnitExplodeSmall
 		DamageSource: Killer
-	ProducibleWithLevel:
-		Prerequisites: barracks.upgraded
 	RenderSprites:
 		Image: cinf
 	DeliversCash:

@@ -226,7 +226,7 @@ FTRK.Repair:
 		CaptureTypes: husk
 		PlayerExperience: 0
 		ConsumedByCapture: False
-		EnterCursor: gold-wrench
+		EnterCursor: goldwrench
 	AutoTarget:
 	AutoTargetPriority@DEFAULT:
 		ValidTargets: Vehicle, Ship

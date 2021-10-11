@@ -981,3 +981,11 @@ HindLauncher:
 	Projectile: InstantHit
 	Warhead@1Dam: TargetDamage
 		ValidTargets: Ground, Water
+
+U2Camera:
+	ValidTargets: Ground, Water, Trees
+	ReloadDelay: 65
+	Range: 2c0
+	Report: cspydram.aud
+	TargetActorCenter: true
+	Projectile: InstantHit

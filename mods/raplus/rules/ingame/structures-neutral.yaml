@@ -321,8 +321,9 @@ ACAD:
 	RevealsShroud@GAPGEN:
 		Range: 4c0
 	WithBuildingBib:
+	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@1:
-		Prerequisite: barracks.upgraded
+		Prerequisite: infantry.upgraded
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@2:
 		Prerequisite: vehicles.upgraded

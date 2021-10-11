@@ -50,7 +50,7 @@ E4:
 		StandSequences: parachute
 		RequiresCondition: parachute
 	ProducibleWithLevel:
-		Prerequisites: barracks.upgraded
+		Prerequisites: infantry.upgraded
 	Passenger:
 		CustomPipType: pip-yellow
 	DeliversCash:
@@ -65,7 +65,7 @@ E5:
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
-		BuildPaletteOrder: 16
+		BuildPaletteOrder: 11
 		Prerequisites: stek, ~infantry.soviet, ~soviet.or.turkmen, ~techlevel.high
 		Description: Close range, anti-everything Infantry.\nWeapon poisons Infantry for 10 seconds.\n  Strong vs all Ground units and Structures.\n  Weak vs Anti-Infantry Defenses, Aircraft.
 	Valued:
@@ -111,7 +111,7 @@ E5:
 		EmptyWeapon: UnitExplodeChemSmall
 		Chance: 30
 	ProducibleWithLevel:
-		Prerequisites: barracks.upgraded
+		Prerequisites: infantry.upgraded
 	RenderSprites:
 		Image: e5
 	DeliversCash:
@@ -242,7 +242,7 @@ VOLK:
 		ReturnToOrigin: False
 		TimeBarColor: ABB7E4
 	ProducibleWithLevel:
-		Prerequisites: barracks.upgraded
+		Prerequisites: infantry.upgraded
 	RenderSprites:
 		Image: VOLK
 	ExternalCondition@PRODUCED:
@@ -320,7 +320,7 @@ SHOK:
 	Voiced:
 		VoiceSet: ShokVoice
 	ProducibleWithLevel:
-		Prerequisites: barracks.upgraded
+		Prerequisites: infantry.upgraded
 	DeliversCash:
 		Payload: 118
 		Type: InfantryRefund
@@ -371,7 +371,7 @@ RPG:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	ProducibleWithLevel:
-		Prerequisites: barracks.upgraded
+		Prerequisites: infantry.upgraded
 	Passenger:
 		CustomPipType: pip-red
 	Explodes:
@@ -392,7 +392,7 @@ DESO:
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
-		BuildPaletteOrder: 14
+		BuildPaletteOrder: 10
 		Prerequisites: ~barr, stek, ~infantry.soviet, ~soviet.or.uzbek, ~techlevel.medium
 		Description: Anti-infantry unit, with Radiation Beam weaponry.\nWeapon irradiates ground, Vehicles explode Radiation on kill.\n  Strong vs Infantry, Light Armor\n  Weak vs Tanks, Aircraft\n  Special Ability: Desolate Ground\nCan be deployed to irradiate ground around itself.
 	Valued:
@@ -431,7 +431,7 @@ DESO:
 	Voiced:
 		VoiceSet: DesolatorVoice
 	ProducibleWithLevel:
-		Prerequisites: barracks.upgraded
+		Prerequisites: infantry.upgraded
 	-Crushable:
 	PeriodicExplosion:
 		Weapon: RadEruptionWeapon
@@ -522,7 +522,7 @@ DEMO:
 		Chance: 100
 		DamageSource: Killer
 	ProducibleWithLevel:
-		Prerequisites: barracks.upgraded
+		Prerequisites: infantry.upgraded
 	Voiced:
 		VoiceSet: CommandoVoice
 	DeliversCash:
@@ -573,7 +573,7 @@ GREN:
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
-		BuildPaletteOrder: 9
+		BuildPaletteOrder: 13
 		Prerequisites: ~barr, dome, ~infantry.soviet, ~soviet.or.belarus, ~techlevel.high
 		Description: Infantry armed with long range grenade launcher.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
 	Tooltip:
@@ -606,7 +606,7 @@ GREN:
 		StandSequences: parachute
 		RequiresCondition: parachute
 	ProducibleWithLevel:
-		Prerequisites: barracks.upgraded
+		Prerequisites: infantry.upgraded
 	DeliversCash:
 		Payload: 100
 		Type: InfantryRefund
@@ -623,7 +623,7 @@ MARK:
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
-		BuildPaletteOrder: 9
+		BuildPaletteOrder: 14
 		Prerequisites: ~barr, dome, ~soviet.or.afghan, ~techlevel.medium
 		Description: Infantry armed with an Sniper rifle.\nNeeds to reload after every 5 shots.\nShoots Poison-coated rounds.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 		Icon: marksmanicon
@@ -665,7 +665,7 @@ MARK:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	ProducibleWithLevel:
-		Prerequisites: barracks.upgraded
+		Prerequisites: infantry.upgraded
 	RenderSprites:
 		Image: snip
 	RenderRangeCircle:
