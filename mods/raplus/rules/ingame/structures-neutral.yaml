@@ -345,7 +345,6 @@ BANK:
 	Inherits: ^TechBuilding
 	Inherits@CARGOPIPS: ^CargoPips
 	Inherits@shape: ^2x2Shape
-	#	to ensure Engineers can enter
 	-EngineerRepairable:
 	AppearsOnMapPreview:
 	Selectable:

@@ -1208,7 +1208,6 @@ MHQ.Soviet:
 		Range: 4c0
 		RequiresCondition: !empdisable
 	WithRangeCircle@LEADERSHIPBOOST:
-		#	Type: propagandabuffed
         Range: 4c0
 		Color: D92121
 	Transforms:

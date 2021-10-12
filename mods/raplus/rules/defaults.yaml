@@ -1385,8 +1385,6 @@
 		Type: Heavy
 	LineBuildNode:
 		Types: concrete, gate
-	#	LineBuild:
-	#	NodeTypes: concrete, gate
 	WithGateSpriteBody:
 		PauseOnCondition: disabled
 	Tooltip:
@@ -1812,7 +1810,6 @@
 	Targetable:
 		TargetTypes: Ground, NoAutoTarget
 	CaptureManager:
-	#	BeingCapturedCondition: being-captured
 	Capturable:
 		Types: techbuilding-husk
 		RequiresCondition: !awaitcooldown
@@ -2801,7 +2798,6 @@
 ^BuildingAutoRepair:
 	ChangesHealth@ConyardRepairs:
 		Step: 3
-		#	PercentageStep: 1
 		Delay: 24
 		StartIfBelow: 101
 		DamageCooldown: 150

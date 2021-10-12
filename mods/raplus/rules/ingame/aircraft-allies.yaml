@@ -382,7 +382,7 @@ IROQ.AI:
 	-AmmoPool@2:
 	-WithAmmoPipsDecoration@2:
 	Buildable:
-		Prerequisites: ~hpad, ~aircraft.allies, ~aitoodumb, ~!player.greece, ~techlevel.medium
+		Prerequisites: ~hpad, dome, ~aircraft.allies, ~aitoodumb, ~!player.greece, ~techlevel.medium
 		Description: Light helicopter armed with dual chainguns.\n  Strong vs Infantry, Light vehicles\n  Weak vs Tanks, Aircraft
 	AttackAircraft:
 		Armaments: primary, secondary
@@ -999,10 +999,6 @@ BLMP:
 		Delay: 300
 		Count: 8
 		RequiresCondition: !ammo
-		#	DelayOnFire: 120
-		#	DelayAfterReset: 50
-		#	ShowSelectionBar: true
-		#	SelectionBarColor: ff00ff
 	WithDecoration@ammoreplenish:
 		RequiresSelection: false
 		Image: pips

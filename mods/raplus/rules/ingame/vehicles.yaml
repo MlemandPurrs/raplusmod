@@ -401,13 +401,6 @@ MNLY.Support:
 
 MGG:
 	Inherits: ^Vehicle
-	#	CreatesShroudMultiplier@RangeBonus:
-	#	Modifier: 120
-	#	RequiresCondition: belarus.player
-	#	GrantConditionOnFaction@RangeBonus:
-	#	Condition: belarus.player
-	#	Factions: belarus
-	#	ResetOnOwnerChange: True
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 12

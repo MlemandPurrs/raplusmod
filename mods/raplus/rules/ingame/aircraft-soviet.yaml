@@ -1075,12 +1075,6 @@ V3:
 		TrailLength: 10
 		TrailWidth: 48
 		UsePlayerColor: false
-	#	LeavesTrails:
-	#	Image: smokey
-	#	Palette: effect
-	#	MovingInterval: 3
-	#	Type: CenterPosition
-	#	Offsets: -200, 0, 0
 	GrantConditionOnAttack:
 		Condition: triggered
 	KillsSelf:

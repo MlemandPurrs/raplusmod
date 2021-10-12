@@ -348,7 +348,7 @@ RPG:
 		Name: RPO Trooper
 	Buildable:
 		BuildPaletteOrder: 12
-		Prerequisites: ~barr, ftur, ~soviet.or.karelia, ~techlevel.medium
+		Prerequisites: ~barr, ftur, ~infantry.soviet, ~soviet.or.karelia, ~techlevel.medium
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		Description: Soldier that shoots balls of Fire.\nCannot attack Air units.\n  Strong vs clustered Infantry, Structures\n  Weak vs Anti-Infantry measures
@@ -590,7 +590,6 @@ GREN:
 		Range: 5c0
 	Armament@PRIMARY:
 		Weapon: GrenadeLauncher
-		#	LocalOffset: 427,0,341
 		LocalOffset: 700,0,500
 	Armament@GARRISONED:
 		Name: garrisoned
@@ -624,7 +623,7 @@ MARK:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 14
-		Prerequisites: ~barr, dome, ~soviet.or.afghan, ~techlevel.medium
+		Prerequisites: ~barr, dome, ~infantry.soviet, ~soviet.or.afghan, ~techlevel.medium
 		Description: Infantry armed with an Sniper rifle.\nNeeds to reload after every 5 shots.\nShoots Poison-coated rounds.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 		Icon: marksmanicon
 	Health:

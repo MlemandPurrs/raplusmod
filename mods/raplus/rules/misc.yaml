@@ -892,7 +892,6 @@ Artillery.Hack:
 	Armament@1:
 		Name: primary
 		Weapon: 155mm.barrage
-		#	LocalOffset: 0,-1256,-43, 0,1256,-43
 		PauseOnCondition: !ammo
 	Health:
 		HP: 1
@@ -916,8 +915,6 @@ Artillery.Hack:
 dummy.moneyprinter:
 	Inherits: CAMERA
 	-RevealsShroud:
-	#	-RenderSpritesEditorOnly:
-	#	-Interactable:
 	Buildable:
 		Queue: Fakestructure
 	Tooltip:
@@ -931,8 +928,6 @@ dummy.moneyprinter:
 		Amount: 2500
 		InitialDelay: 0
 		Interval: 3
-	#	RenderSprites:
-	#	Image: dummy.visual
 	-MapEditorData:
 
 dummy.commsjam:
@@ -988,6 +983,3 @@ camera.satscan.oneshot:
 	Inherits: camera.satscan
 	-VoiceAnnouncement@Die:
 	-KillsSelf:
-	#	KillsSelf:
-	#	RemoveInstead: true
-	#	Delay: 375

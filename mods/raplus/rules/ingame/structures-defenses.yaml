@@ -3,7 +3,7 @@ SBAG:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 1
-		Prerequisites: fact, ~!structures.soviet, ~techlevel.low
+		Prerequisites: fact, ~structures.allies, ~techlevel.low
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.\nBuilds further than Concrete walls.
 	Valued:
 		Cost: 50
@@ -451,13 +451,9 @@ PROP:
 	ProximityExternalCondition@LEADERSHIPBOOST:
 		Condition: leader_boost
 		Range: 4c0
-		#	RequiresCondition: !empdisable
 	WithRangeCircle@LEADERSHIPBOOST:
         Range: 4c0
 		Color: D92121
-	#	SpawnActorOnDeath:
-	#	Actor: prop.husk
-	#	OwnerType: InternalName
 	WithIdleOverlay@SPINNER:
 		Sequence: spinner
 		Offset: 250,50,250
@@ -878,13 +874,6 @@ GAP:
 	-CapturableProgressBlink:
 	-ActorPreviewPlaceBuildingPreview:
 	-ProductionTimeMultiplier@Sweden:
-	#	CreatesShroudMultiplier@RangeBonus:
-	#	Modifier: 120
-	#	RequiresCondition: belarus.player
-	#	GrantConditionOnFaction@RangeBonus:
-	#	Condition: belarus.player
-	#	Factions: belarus
-	#	ResetOnOwnerChange: True
 	SequencePlaceBuildingPreview:
 		Sequence: place
 		SequencePalette: placebuilding
@@ -1323,24 +1312,12 @@ AGUN:
 		Ammo: 24
 		AmmoCondition: ammo
 		ReloadDelay: 6
-	#	AmmoPool@Extra:
-	#	Name: primary-upg
-	#	Armaments: primary
-	#	Ammo: 32
-	#	AmmoCondition: ammo
-	#	ReloadDelay: 6	
 	WithAmmoPipsDecoration@Normal:
 		AmmoPools: primary
 		Position: BottomLeft
 		Margin: 4, 3
 		PipCount: 6
 		RequiresSelection: true
-	#	WithAmmoPipsDecoration@Extra:
-	#	AmmoPools: primary-upg
-	#	Position: BottomLeft
-	#	Margin: 4, 3
-	#	PipCount: 8
-	#	RequiresSelection: true	
 	ReloadAmmoPool:
 		Delay: 42
 		Count: 24
@@ -1376,7 +1353,6 @@ PBAT:
 		Queue: Defense
 		BuildPaletteOrder: 9
 		BuildLimit: 1
-		#	Prerequisites: atek, ~structures.allies, ~allies.or.holland, ~techlevel.high
 		Prerequisites: ~disabled
 		Description: Superior anti-air Defense.\nMaximum one can be built.\n  Can attack Aircraft only.
 	Valued:

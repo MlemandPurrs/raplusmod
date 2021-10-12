@@ -272,7 +272,7 @@
 		Name: Transnist.
 		InternalName: moldova
 		Side: Soviet
-		Description: Transnistria\nSpecialization: Demolitions\nThe forces of Transnistria specialize in blowing their opponents to smithereens.\nFaction Variations:\n    - Saboteurs have improved characteristics.\nSaboteurs have +20 hitpoints and move 10% faster out of Cloak.\n    - Attack Dogs are amphibian and explode on Death.\nFaction restrictions:\n    - This country cannot train Volkov.\nVeterancy Bonus:\n    - Heavy APC gets built as Veteran.\nUnique Support Power:\n    - Remote Kennel (Service Depot)\nDeploys a Kennel with seperate queue anywhere on the map.\nSpecial Units:\n    - Demolitionist (Infantry)\nExplosives expert capable of blowing up and booby-trapping Structures.\n    - Mobile Repair Truck (Vehicle)\nMechanized Engineers capable of Capturing, Recovering and Repairs.\n    - Siege Tank (Vehicle)\nShort-range artillery that applies Concussion to Ground units.
+		Description: Transnistria\nThe forces of Transnistria specialize in blowing their opponents to smithereens.\nFaction Variations:\n    - Saboteurs have improved characteristics.\nSaboteurs have +20 hitpoints and move 10% faster out of Cloak.\n    - Attack Dogs are amphibian and explode on Death.\nFaction restrictions:\n    - This country cannot train Volkov.\nVeterancy Bonus:\n    - Heavy APC gets built as Veteran.\nUnique Support Power:\n    - Remote Kennel (Service Depot)\nDeploys a Kennel with seperate queue anywhere on the map.\nSpecial Units:\n    - Demolitionist (Infantry)\nExplosives expert capable of blowing up and booby-trapping Structures.\n    - Mobile Repair Truck (Vehicle)\nMechanized Engineers capable of Capturing, Recovering and Repairs.\n    - Siege Tank (Vehicle)\nShort-range artillery that applies Concussion to Ground units.
 	Faction@17:
 		Name: Kazakhst.
 		InternalName: kazakh
@@ -297,7 +297,7 @@
 		Name: China
 		InternalName: china
 		Side: Soviet
-		Description: People's Republic of China\nSpecialization: being Chinese\nFaction Variations:\n    - Tanks* are cheaper to build but have less health.\n*Those Tanks being both types of Heavy Tanks.\n10% cheaper to build at the cost of having 10% less Hitpoints.\n    - Can build Flamer Truck instead Flak Truck, requires Flame Turret.\n    - Walls and Gates have +50% Hitpoints.\nUnique Support Powers:\n    - Cloning Facility (Tech Center)\nActivate to produce all basic Infantry in pairs until duration end.\n    - Nuclear Artillery (Service Depot with Tech Center)\nDelivers a Mammoth Artillery at your primary War Factory.\nVeterancy Bonus:\n    - Rocket Soldier gets trained as Veteran.\nSpecial Units:\n    - Gattling Tank (Vehicle)\nLethal Anti-Air Measure that is equally effective against Infantry.\n    - MiG Bomber (Aircraft)\nAircraft equipped with Napalm bombs.\n    - Helicarrier (Naval)\nCan be deployed to Produce, Repair and re-arm Helicopters.
+		Description: People's Republic of China\nFaction Variations:\n    - Tanks* are cheaper to build but have less health.\n*Those Tanks being both types of Heavy Tanks.\n10% cheaper to build at the cost of having 10% less Hitpoints.\n    - Can build Flamer Truck instead Flak Truck, requires Flame Turret.\n    - Walls and Gates have +50% Hitpoints.\nUnique Support Powers:\n    - Cloning Facility (Tech Center)\nActivate to produce all basic Infantry in pairs until duration end.\n    - Nuclear Artillery (Service Depot with Tech Center)\nDelivers a Mammoth Artillery at your primary War Factory.\nVeterancy Bonus:\n    - Rifle Infantry gets trained as Veteran.\nSpecial Units:\n    - Gattling Tank (Vehicle)\nLethal Anti-Air Measure that is equally effective against Infantry.\n    - MiG Bomber (Aircraft)\nAircraft equipped with Napalm bombs.\n    - Helicarrier (Naval)\nCan be deployed to Produce, Repair and re-arm Helicopters.
 	ResourceType@ore:
 		Type: Ore
 		Name: Valuable Minerals
@@ -560,7 +560,6 @@ World:
 			3: WarningThreeMinutesRemaining
 			2: WarningTwoMinutesRemaining
 			1: WarningOneMinuteRemaining
-	#	todo: find relevant .lua on how pass value into prerequisite or condition
 	ScriptLobbyDropdown@EcoSpeed:
 		ID: growthrate
 		Label: Ore Growth

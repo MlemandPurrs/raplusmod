@@ -485,7 +485,7 @@ CARR.Deployed:
 		CancelledAudio: Cancelled
 		LowPowerModifier: 300
 	ProvidesPrerequisite@allies:
-		Factions: allies, england, holland, france, germany, sweden, spain, italy, greece, turkey
+		Factions: allies, usa, england, holland, france, germany, sweden, spain, italy, greece, turkey
 		Prerequisite: aircraft.allies
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@soviet:

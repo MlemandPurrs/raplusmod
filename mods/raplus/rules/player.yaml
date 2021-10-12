@@ -72,7 +72,6 @@ Player:
 		BuildTimeSpeedReduction: 100, 90, 85, 70, 65, 50
 	ClassicProductionQueue@Aircraft:
 		Type: Aircraft
-		#	Group: AircraftAll
 		DisplayOrder: 5
 		LowPowerModifier: 300
 		ReadyAudio: UnitReady
@@ -83,19 +82,6 @@ Player:
 		CancelledAudio: Cancelled
 		SpeedUp: True
 		BuildTimeSpeedReduction: 100, 90, 85, 70, 65, 50
-	#	ClassicProductionQueue@AircraftHeli:
-	#	Type: AircraftHeli
-	#	Group: AircraftAll
-	#	DisplayOrder: 5
-	#	LowPowerModifier: 300
-	#	ReadyAudio: UnitReady
-	#	BlockedAudio: NoBuild
-	#	LimitedAudio: BuildingInProgress
-	#	QueuedAudio: Building
-	#	OnHoldAudio: OnHold
-	#	CancelledAudio: Cancelled
-	#	SpeedUp: True
-	#	BuildTimeSpeedReduction: 100, 90, 85, 70, 65, 50
 	ClassicProductionQueue@Fakestructure:
 		Type: Fakestructure
 		Factions: allies, france

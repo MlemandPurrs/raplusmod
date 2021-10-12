@@ -73,75 +73,9 @@ FACT:
 	ProvidesPrerequisite@allies:
 		Factions: allies, usa, england, holland, france, germany, sweden, spain, italy, greece, turkey
 		Prerequisite: structures.allies
-	ProvidesPrerequisite@alliesvanilla:
-		Factions: allies
-		Prerequisite: structures.alliesvanilla
-	ProvidesPrerequisite@usa:
-		Factions: usa
-		Prerequisite: structures.usa
-	ProvidesPrerequisite@england:
-		Factions: england
-		Prerequisite: structures.england
-	ProvidesPrerequisite@netherlands:
-		Factions: holland
-		Prerequisite: structures.holland
-	ProvidesPrerequisite@france:
-		Factions: france
-		Prerequisite: structures.france
-	ProvidesPrerequisite@germany:
-		Factions: germany
-		Prerequisite: structures.germany
-	ProvidesPrerequisite@sweden:
-		Factions: sweden
-		Prerequisite: structures.sweden
-	ProvidesPrerequisite@spain:
-		Factions: spain
-		Prerequisite: structures.spain
-	ProvidesPrerequisite@italy:
-		Factions: italy
-		Prerequisite: structures.italy
-	ProvidesPrerequisite@greece:
-		Factions: greece
-		Prerequisite: structures.greece
-	ProvidesPrerequisite@turkey:
-		Factions: turkey
-		Prerequisite: structures.turkey
 	ProvidesPrerequisite@soviet:
 		Factions: soviet, russia, ukraine, belarus, karelia, moldova, kazakh, uzbek, china, turkmen, afghan
 		Prerequisite: structures.soviet
-	ProvidesPrerequisite@sovietvanilla:
-		Factions: soviet
-		Prerequisite: structures.sovietvanilla
-	ProvidesPrerequisite@russia:
-		Factions: russia
-		Prerequisite: structures.russia
-	ProvidesPrerequisite@ukraine:
-		Factions: ukraine
-		Prerequisite: structures.ukraine
-	ProvidesPrerequisite@belarus:
-		Factions: belarus
-		Prerequisite: structures.belarus
-	ProvidesPrerequisite@karelia:
-		Factions: karelia
-		Prerequisite: structures.karelia
-	ProvidesPrerequisite@moldova:
-		Factions: moldova
-		Prerequisite: structures.moldova
-	ProvidesPrerequisite@kazakhstan:
-		Factions: kazakh
-		Prerequisite: structures.kazakh
-	ProvidesPrerequisite@uzbekistan:
-		Factions: uzbek
-		Prerequisite: structures.uzbek
-	ProvidesPrerequisite@china:
-		Factions: china
-		Prerequisite: structures.china
-	ProvidesPrerequisite@turkmenistan:
-		Factions: turkmen
-		Prerequisite: structures.turkmen
-	ProvidesPrerequisite@afghanistan:
-		Factions: afghan
-		Prerequisite: structures.afghan
 	ProvidesPrerequisite@MCVLIMITER:
 		Prerequisite: mcv.ai
 		RequiresPrerequisites: aitoodumb
@@ -457,75 +391,9 @@ TENT:
 	ProvidesPrerequisite@allies:
 		Factions: allies, usa, england, france, holland, germany, sweden, spain, italy, greece, turkey
 		Prerequisite: infantry.allies
-	ProvidesPrerequisite@alliesvanilla:
-		Factions: allies
-		Prerequisite: infantry.alliesvanilla
-	ProvidesPrerequisite@usa:
-		Factions: usa
-		Prerequisite: infantry.usa
-	ProvidesPrerequisite@england:
-		Factions: england
-		Prerequisite: infantry.england
-	ProvidesPrerequisite@netherlands:
-		Factions: holland
-		Prerequisite: infantry.holland
-	ProvidesPrerequisite@france:
-		Factions: france
-		Prerequisite: infantry.france
-	ProvidesPrerequisite@germany:
-		Factions: germany
-		Prerequisite: infantry.germany
-	ProvidesPrerequisite@sweden:
-		Factions: sweden
-		Prerequisite: infantry.sweden
-	ProvidesPrerequisite@spain:
-		Factions: spain
-		Prerequisite: infantry.spain
-	ProvidesPrerequisite@italy:
-		Factions: italy
-		Prerequisite: infantry.italy
-	ProvidesPrerequisite@greece:
-		Factions: greece
-		Prerequisite: infantry.greece
-	ProvidesPrerequisite@turkey:
-		Factions: turkey
-		Prerequisite: infantry.turkey
-	ProvidesPrerequisite@alliedstructure:
-		RequiresPrerequisites: structures.allies
-		Prerequisite: infantry.allies
-	ProvidesPrerequisite@alliedvanillastructure:
-		RequiresPrerequisites: structures.alliesvanilla
-		Prerequisite: infantry.alliesvanilla
-	ProvidesPrerequisite@americanstructure:
-		RequiresPrerequisites: structures.usa
-		Prerequisite: infantry.usa
-	ProvidesPrerequisite@englishstructure:
-		RequiresPrerequisites: structures.england
-		Prerequisite: infantry.england
-	ProvidesPrerequisite@flemishstructure:
-		RequiresPrerequisites: structures.holland
-		Prerequisite: infantry.holland
-	ProvidesPrerequisite@frenchstructure:
-		RequiresPrerequisites: structures.france
-		Prerequisite: infantry.france
-	ProvidesPrerequisite@germanstructure:
-		RequiresPrerequisites: structures.germany
-		Prerequisite: infantry.germany
-	ProvidesPrerequisite@swedishstructure:
-		RequiresPrerequisites: structures.sweden
-		Prerequisite: infantry.sweden
-	ProvidesPrerequisite@spanishstructure:
-		RequiresPrerequisites: structures.spain
-		Prerequisite: infantry.spain
-	ProvidesPrerequisite@italianstructure:
-		RequiresPrerequisites: structures.italy
-		Prerequisite: infantry.italy
-	ProvidesPrerequisite@grekishstructure:
-		RequiresPrerequisites: structures.greece
-		Prerequisite: infantry.greece
-	ProvidesPrerequisite@turkishstructure:
-		RequiresPrerequisites: structures.turkey
-		Prerequisite: infantry.turkey
+	ProvidesPrerequisite@soviet:
+		Factions: soviet, russia, ukraine, belarus, karelia, moldova, kazakh, uzbek, turkmen, afghan, china
+		Prerequisite: infantry.soviet
 	Power:
 		Amount: -20
 		RequiresCondition: !build-incomplete
@@ -598,8 +466,6 @@ BARR:
 	#	as its producing, making use of this custom CA trait
 	TransformOnCondition:
 		IntoActor: BARR.Cloner
-		#	fail. triggers sell anim of barr first
-		#	SkipMakeAnims: false
 		RequiresCondition: clonerupgrade
 	Health:
 		HP: 600
@@ -663,75 +529,12 @@ BARR:
 	ProvidesPrerequisite:
 		Prerequisite: barracks
 	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@allies:
+		Factions: allies, usa, england, france, holland, germany, sweden, spain, italy, greece, turkey
+		Prerequisite: infantry.allies
 	ProvidesPrerequisite@soviet:
-		Factions: soviet, russia, ukraine, belarus, karelia, moldova, kazakh, uzbek, china, turkmen, afghan
+		Factions: soviet, russia, ukraine, belarus, karelia, moldova, kazakh, uzbek, turkmen, afghan, china
 		Prerequisite: infantry.soviet
-	ProvidesPrerequisite@sovietvanilla:
-		Factions: soviet
-		Prerequisite: infantry.sovietvanilla
-	ProvidesPrerequisite@russia:
-		Factions: russia
-		Prerequisite: infantry.russia
-	ProvidesPrerequisite@ukraine:
-		Factions: ukraine
-		Prerequisite: infantry.ukraine
-	ProvidesPrerequisite@belarus:
-		Factions: belarus
-		Prerequisite: infantry.belarus
-	ProvidesPrerequisite@karelia:
-		Factions: karelia
-		Prerequisite: infantry.karelia
-	ProvidesPrerequisite@kazakhstan:
-		Factions: kazakh
-		Prerequisite: infantry.kazakh
-	ProvidesPrerequisite@uzbekistan:
-		Factions: uzbek
-		Prerequisite: infantry.uzbek
-	ProvidesPrerequisite@china:
-		Factions: china
-		Prerequisite: infantry.china
-	ProvidesPrerequisite@turkmenistan:
-		Factions: turkmen
-		Prerequisite: infantry.turkmen
-	ProvidesPrerequisite@afghanistan:
-		Factions: afghan
-		Prerequisite: infantry.afghan
-	ProvidesPrerequisite@sovietstructure:
-		RequiresPrerequisites: structures.soviet
-		Prerequisite: infantry.soviet
-	ProvidesPrerequisite@sovietvanillastructure:
-		RequiresPrerequisites: structures.sovietvanilla
-		Prerequisite: infantry.sovietvanilla
-	ProvidesPrerequisite@russianstructure:
-		RequiresPrerequisites: structures.russia
-		Prerequisite: infantry.russia
-	ProvidesPrerequisite@ukrainianstructure:
-		RequiresPrerequisites: structures.ukraine
-		Prerequisite: infantry.ukraine
-	ProvidesPrerequisite@belarussianstructure:
-		RequiresPrerequisites: structures.belarus
-		Prerequisite: infantry.belarus
-	ProvidesPrerequisite@karelianstructure:
-		RequiresPrerequisites: structures.karelia
-		Prerequisite: infantry.karelia
-	ProvidesPrerequisite@moldovanstructure:
-		RequiresPrerequisites: structures.moldova
-		Prerequisite: infantry.moldova
-	ProvidesPrerequisite@kazakhstructure:
-		RequiresPrerequisites: structures.kazakh
-		Prerequisite: infantry.kazakh
-	ProvidesPrerequisite@uzbekstructure:
-		RequiresPrerequisites: structures.uzbek
-		Prerequisite: infantry.uzbek
-	ProvidesPrerequisite@chinesestructures:
-		RequiresPrerequisites: structures.china
-		Prerequisite: infantry.china
-	ProvidesPrerequisite@turkmenstructure:
-		RequiresPrerequisites: structures.turkmen
-		Prerequisite: infantry.turkmen
-	ProvidesPrerequisite@afghanstructure:
-		RequiresPrerequisites: structures.afghan
-		Prerequisite: infantry.afghan
 	Power:
 		Amount: -20
 		RequiresCondition:  !build-incomplete
@@ -848,7 +651,7 @@ CLONER.Plug:
 		Name: Cloning Facility
 	Buildable:
 		BuildPaletteOrder: 17
-		Prerequisites: barracks, stek, !cloner.plug, ~structures.soviet, ~soviet.or.china, ~!aitoodumb, ~techlevel.high
+		Prerequisites: barracks, stek, !cloner.plug, ~structures.soviet, ~player.china, ~!aitoodumb, ~techlevel.high
 		Queue: Building
 		BuildLimit: 1
 		Description: Clones produced Basic Infantry when the relevant\nSupport Power gets activated at the Tech Center.
@@ -955,7 +758,6 @@ KENN.summon:
 
 PROC:
 	Inherits: ^Building
-	#	Inherits@AI: ^IncomeAIBoost
 	-ActorPreviewPlaceBuildingPreview:
 	SequencePlaceBuildingPreview:
 		Sequence: idle
@@ -1357,147 +1159,9 @@ WEAP:
 	ProvidesPrerequisite@allies:
 		Factions: allies, usa, england, france, holland, germany, sweden, spain, italy, greece, turkey
 		Prerequisite: vehicles.allies
-	ProvidesPrerequisite@alliesvanilla:
-		Factions: allies
-		Prerequisite: vehicles.alliesvanilla
-	ProvidesPrerequisite@usa:
-		Factions: usa
-		Prerequisite: vehicles.usa
-	ProvidesPrerequisite@england:
-		Factions: england
-		Prerequisite: vehicles.england
-	ProvidesPrerequisite@holland:
-		Factions: holland
-		Prerequisite: vehicles.holland
-	ProvidesPrerequisite@france:
-		Factions: france
-		Prerequisite: vehicles.france
-	ProvidesPrerequisite@germany:
-		Factions: germany
-		Prerequisite: vehicles.germany
-	ProvidesPrerequisite@sweden:
-		Factions: sweden
-		Prerequisite: vehicles.sweden
-	ProvidesPrerequisite@spain:
-		Factions: spain
-		Prerequisite: vehicles.spain
-	ProvidesPrerequisite@italy:
-		Factions: italy
-		Prerequisite: vehicles.italy
-	ProvidesPrerequisite@greece:
-		Factions: greece
-		Prerequisite: vehicles.greece
-	ProvidesPrerequisite@turkey:
-		Factions: turkey
-		Prerequisite: vehicles.turkey
 	ProvidesPrerequisite@soviet:
-		Factions: soviet, russia, ukraine, belarus, karelia, moldova, kazakh, uzbek, china, turkmen, afghan
+		Factions: soviet, russia, ukraine, belarus, karelia, moldova, kazakh, uzbek, turkmen, afghan, china
 		Prerequisite: vehicles.soviet
-	ProvidesPrerequisite@sovietvanilla:
-		Factions: soviet
-		Prerequisite: vehicles.sovietvanilla
-	ProvidesPrerequisite@russia:
-		Factions: russia
-		Prerequisite: vehicles.russia
-	ProvidesPrerequisite@ukraine:
-		Factions: ukraine
-		Prerequisite: vehicles.ukraine
-	ProvidesPrerequisite@belarus:
-		Factions: belarus
-		Prerequisite: vehicles.belarus
-	ProvidesPrerequisite@karelia:
-		Factions: karelia
-		Prerequisite: vehicles.karelia
-	ProvidesPrerequisite@moldova:
-		Factions: moldova
-		Prerequisite: vehicles.moldova
-	ProvidesPrerequisite@kazakh:
-		Factions: kazakh
-		Prerequisite: vehicles.kazakh
-	ProvidesPrerequisite@uzbek:
-		Factions: uzbek
-		Prerequisite: vehicles.uzbek
-	ProvidesPrerequisite@china:
-		Factions: china
-		Prerequisite: vehicles.china
-	ProvidesPrerequisite@turkmen:
-		Factions: turkmen
-		Prerequisite: vehicles.turkmen
-	ProvidesPrerequisite@afghan:
-		Factions: afghan
-		Prerequisite: vehicles.afghan
-	ProvidesPrerequisite@alliedstructure:
-		RequiresPrerequisites: structures.allies
-		Prerequisite: vehicles.allies
-	ProvidesPrerequisite@alliedvanillastructure:
-		RequiresPrerequisites: structures.alliesvanilla
-		Prerequisite: vehicles.alliesvanilla
-	ProvidesPrerequisite@americanstructure:
-		RequiresPrerequisites: structures.usa
-		Prerequisite: vehicles.usa
-	ProvidesPrerequisite@englishstructure:
-		RequiresPrerequisites: structures.england
-		Prerequisite: vehicles.england
-	ProvidesPrerequisite@flemishstructure:
-		RequiresPrerequisites: structures.holland
-		Prerequisite: vehicles.holland
-	ProvidesPrerequisite@frenchstructure:
-		RequiresPrerequisites: structures.france
-		Prerequisite: vehicles.france
-	ProvidesPrerequisite@germanstructure:
-		RequiresPrerequisites: structures.germany
-		Prerequisite: vehicles.germany
-	ProvidesPrerequisite@swedishstructure:
-		RequiresPrerequisites: structures.sweden
-		Prerequisite: vehicles.sweden
-	ProvidesPrerequisite@spanishstructure:
-		RequiresPrerequisites: structures.spain
-		Prerequisite: vehicles.spain
-	ProvidesPrerequisite@italianstructure:
-		RequiresPrerequisites: structures.italian
-		Prerequisite: vehicles.italian
-	ProvidesPrerequisite@grekishstructure:
-		RequiresPrerequisites: structures.greece
-		Prerequisite: vehicles.greece
-	ProvidesPrerequisite@turkishstructure:
-		RequiresPrerequisites: structures.turkey
-		Prerequisite: vehicles.turkey
-	ProvidesPrerequisite@sovietstructure:
-		RequiresPrerequisites: structures.soviet
-		Prerequisite: vehicles.soviet
-	ProvidesPrerequisite@sovietvanillastructure:
-		RequiresPrerequisites: structures.sovietvanilla
-		Prerequisite: vehicles.sovietvanilla
-	ProvidesPrerequisite@russianstructure:
-		RequiresPrerequisites: structures.russia
-		Prerequisite: vehicles.russia
-	ProvidesPrerequisite@ukrainianstructure:
-		RequiresPrerequisites: structures.ukraine
-		Prerequisite: vehicles.ukraine
-	ProvidesPrerequisite@belarussianstructure:
-		RequiresPrerequisites: structures.belarus
-		Prerequisite: vehicles.belarus
-	ProvidesPrerequisite@karelianstructure:
-		RequiresPrerequisites: structures.karelia
-		Prerequisite: vehicles.karelia
-	ProvidesPrerequisite@moldovanstructure:
-		RequiresPrerequisites: structures.moldova
-		Prerequisite: vehicles.moldova
-	ProvidesPrerequisite@kazakhstructure:
-		RequiresPrerequisites: structures.kazakh
-		Prerequisite: vehicles.kazakh
-	ProvidesPrerequisite@uzbekstructure:
-		RequiresPrerequisites: structures.uzbek
-		Prerequisite: vehicles.uzbek
-	ProvidesPrerequisite@chinesestructures:
-		RequiresPrerequisites: structures.china
-		Prerequisite: vehicles.china
-	ProvidesPrerequisite@turkmenstructure:
-		RequiresPrerequisites: structures.turkmen
-		Prerequisite: vehicles.turkmen
-	ProvidesPrerequisite@afghanstructure:
-		RequiresPrerequisites: structures.afghan
-		Prerequisite: vehicles.afghan
 	ProvidesPrerequisite@TECHPREQ:
 		Prerequisite: afldorweap
 	Power:
@@ -1615,7 +1279,7 @@ WEAP.MINI:
 		Prerequisite: vehicles.allies
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@soviet:
-		Factions: soviet, russia, ukraine, moldova, belarus, karelia, kazakh, china, uzbek, turkmen, afghan
+		Factions: soviet, russia, ukraine, moldova, belarus, karelia, kazakh, uzbek, turkmen, afghan, china
 		Prerequisite: vehicles.soviet
 		ResetOnOwnerChange: True
 	ProductionBar:
@@ -2425,7 +2089,6 @@ STEK:
 	AirstrikePower@V2Strike:
 		PauseOnCondition: disabled || lowpower
 		OrderName: V2Strike
-		#	Prerequisites: ~afld, player.uzbek, ~techlevel.unrestricted
 		Prerequisites: ~disabled
 		Icon: v2bdgricon
 		ChargeInterval: 7500
@@ -2574,7 +2237,7 @@ SPRO:
 	Buildable:
 		Queue: Building
 		BuildLimit: 1
-		Prerequisites: techcenter, dome, ~!player.kazakh, ~!player.usa, ~techlevel.unrestricted
+		Prerequisites: techcenter, dome, ~!player.kazakh, ~techlevel.unrestricted
 		Description: Provides GPS Sattelite uplink.\nMaximum one can be built.\nCan be Infiltrated by an Spy or Saboteur resulting\nin loss of map exploration.\n  Special Ability: GPS Satellite\nReveals map terrain and provides tactical information.\n (Requires power and active radar to operate)\n  Special Ability: Spy Satellite\nPeriodically reveals entire map for short duration.\n (Requires GPS sattelite launched and active radar to operate)
 		BuildPaletteOrder: 9
 	Valued:
@@ -2769,138 +2432,9 @@ AFLD:
 	ProvidesPrerequisite@allies:
 		Factions: allies, usa, england, holland, france, germany, sweden, spain, italy, greece, turkey
 		Prerequisite: aircraft.allies
-	ProvidesPrerequisite@usa:
-		Factions: usa
-		Prerequisite: aircraft.usa
-	ProvidesPrerequisite@england:
-		Factions: england
-		Prerequisite: aircraft.england
-	ProvidesPrerequisite@holland:
-		Factions: holland
-		Prerequisite: aircraft.holland
-	ProvidesPrerequisite@france:
-		Factions: france
-		Prerequisite: aircraft.france
-	ProvidesPrerequisite@germany:
-		Factions: germany
-		Prerequisite: aircraft.germany
-	ProvidesPrerequisite@sweden:
-		Factions: sweden
-		Prerequisite: aircraft.sweden
-	ProvidesPrerequisite@spain:
-		Factions: spain
-		Prerequisite: aircraft.spain
-	ProvidesPrerequisite@italy:
-		Factions: italy
-		Prerequisite: aircraft.italy
-	ProvidesPrerequisite@greece:
-		Factions: greece
-		Prerequisite: aircraft.greece
-	ProvidesPrerequisite@turkey:
-		Factions: turkey
-		Prerequisite: aircraft.turkey
-	ProvidesPrerequisite@americanstructure:
-		RequiresPrerequisites: structures.usa
-		Prerequisite: aircraft.usa
-	ProvidesPrerequisite@englishstructure:
-		RequiresPrerequisites: structures.england
-		Prerequisite: aircraft.england
-	ProvidesPrerequisite@flemishstructure:
-		RequiresPrerequisites: structures.holland
-		Prerequisite: aircraft.holland
-	ProvidesPrerequisite@frenchstructure:
-		RequiresPrerequisites: structures.france
-		Prerequisite: aircraft.france
-	ProvidesPrerequisite@germanstructure:
-		RequiresPrerequisites: structures.german
-		Prerequisite: aircraft.german
-	ProvidesPrerequisite@swedishstructure:
-		RequiresPrerequisites: structures.sweden
-		Prerequisite: aircraft.sweden
-	ProvidesPrerequisite@spanishstructure:
-		RequiresPrerequisites: structures.spain
-		Prerequisite: aircraft.spain
-	ProvidesPrerequisite@italianstructure:
-		RequiresPrerequisites: structures.italy
-		Prerequisite: aircraft.italy
-	ProvidesPrerequisite@grekishstructure:
-		RequiresPrerequisites: structures.greece
-		Prerequisite: aircraft.greece
-	ProvidesPrerequisite@turkishstructure:
-		RequiresPrerequisites: structures.turkey
-		Prerequisite: aircraft.turkey
 	ProvidesPrerequisite@soviet:
-		Factions: soviet, russia, ukraine, belarus, karelia, moldova, kazakh, uzbek, china, turkmen, afghan
+		Factions: soviet, russia, ukraine, belarus, karelia, moldova, kazakh, uzbek, turkmen, afghan, china
 		Prerequisite: aircraft.soviet
-	ProvidesPrerequisite@sovietvanilla:
-		Factions: soviet
-		Prerequisite: aircraft.sovietvanilla
-	ProvidesPrerequisite@russia:
-		Factions: russia
-		Prerequisite: aircraft.russia
-	ProvidesPrerequisite@ukraine:
-		Factions: ukraine
-		Prerequisite: aircraft.ukraine
-	ProvidesPrerequisite@belarus:
-		Factions: belarus
-		Prerequisite: aircraft.belarus
-	ProvidesPrerequisite@karelia:
-		Factions: karelia
-		Prerequisite: aircraft.karelia
-	ProvidesPrerequisite@moldova:
-		Factions: moldova
-		Prerequisite: aircraft.moldova
-	ProvidesPrerequisite@kazakhstan:
-		Factions: kazakh
-		Prerequisite: aircraft.kazakh
-	ProvidesPrerequisite@uzbekistan:
-		Factions: uzbek
-		Prerequisite: aircraft.uzbek
-	ProvidesPrerequisite@china:
-		Factions: china
-		Prerequisite: aircraft.china
-	ProvidesPrerequisite@turkmenistan:
-		Factions: turkmen
-		Prerequisite: aircraft.turkmen
-	ProvidesPrerequisite@afghan:
-		Factions: afghan
-		Prerequisite: aircraft.afghan
-	ProvidesPrerequisite@sovietstructure:
-		RequiresPrerequisites: structures.soviet
-		Prerequisite: aircraft.soviet
-	ProvidesPrerequisite@sovietvanillastructure:
-		RequiresPrerequisites: structures.sovietvanilla
-		Prerequisite: aircraft.sovietvanilla
-	ProvidesPrerequisite@russianstructure:
-		RequiresPrerequisites: structures.russia
-		Prerequisite: aircraft.russia
-	ProvidesPrerequisite@ukrainianstructure:
-		RequiresPrerequisites: structures.ukraine
-		Prerequisite: aircraft.ukraine
-	ProvidesPrerequisite@belarussianstructure:
-		RequiresPrerequisites: structures.belarus
-		Prerequisite: aircraft.belarus
-	ProvidesPrerequisite@karelianstructure:
-		RequiresPrerequisites: structures.karelia
-		Prerequisite: aircraft.karelia
-	ProvidesPrerequisite@moldovanstructure:
-		RequiresPrerequisites: structures.moldova
-		Prerequisite: aircraft.moldova
-	ProvidesPrerequisite@kazakhstructure:
-		RequiresPrerequisites: structures.kazakh
-		Prerequisite: aircraft.kazakh
-	ProvidesPrerequisite@uzbekstructure:
-		RequiresPrerequisites: structures.uzbek
-		Prerequisite: aircraft.uzbek
-	ProvidesPrerequisite@chinesestructures:
-		RequiresPrerequisites: structures.china
-		Prerequisite: aircraft.china
-	ProvidesPrerequisite@turkmenstructure:
-		RequiresPrerequisites: structures.turkmen
-		Prerequisite: aircraft.turkmen
-	ProvidesPrerequisite@afghanstructure:
-		RequiresPrerequisites: structures.afghan
-		Prerequisite: aircraft.afghan
 	ProvidesPrerequisite@TECHPREQ:
 		Prerequisite: afldorweap
 	ParatroopersPower@SovietParatroopers:
@@ -3295,7 +2829,7 @@ HPAD:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 10
-		Prerequisites: proc, ~!structures.usa, ~techlevel.medium
+		Prerequisites: proc, ~!player.usa, ~techlevel.medium
 		Description: Produces and reloads Helicopters.\nCan be Infiltrated by an Spy resulting\nin Veterancy for enemy Aircraft.\nCan be Infiltrated by an Saboteur\nresulting in getting Disabled temporarily.
 	Valued:
 		Cost: 500
@@ -3359,138 +2893,9 @@ HPAD:
 	ProvidesPrerequisite@allies:
 		Factions: allies, usa, england, holland, france, germany, sweden, spain, italy, greece, turkey
 		Prerequisite: aircraft.allies
-	ProvidesPrerequisite@usa:
-		Factions: usa
-		Prerequisite: aircraft.usa
-	ProvidesPrerequisite@england:
-		Factions: england
-		Prerequisite: aircraft.england
-	ProvidesPrerequisite@holland:
-		Factions: holland
-		Prerequisite: aircraft.holland
-	ProvidesPrerequisite@france:
-		Factions: france
-		Prerequisite: aircraft.france
-	ProvidesPrerequisite@germany:
-		Factions: germany
-		Prerequisite: aircraft.germany
-	ProvidesPrerequisite@sweden:
-		Factions: sweden
-		Prerequisite: aircraft.sweden
-	ProvidesPrerequisite@spain:
-		Factions: spain
-		Prerequisite: aircraft.spain
-	ProvidesPrerequisite@italy:
-		Factions: italy
-		Prerequisite: aircraft.italy
-	ProvidesPrerequisite@greece:
-		Factions: greece
-		Prerequisite: aircraft.greece
-	ProvidesPrerequisite@turkey:
-		Factions: turkey
-		Prerequisite: aircraft.turkey
-	ProvidesPrerequisite@americanstructure:
-		RequiresPrerequisites: structures.usa
-		Prerequisite: aircraft.usa
-	ProvidesPrerequisite@englishstructure:
-		RequiresPrerequisites: structures.england
-		Prerequisite: aircraft.england
-	ProvidesPrerequisite@flemishstructure:
-		RequiresPrerequisites: structures.holland
-		Prerequisite: aircraft.holland
-	ProvidesPrerequisite@frenchstructure:
-		RequiresPrerequisites: structures.france
-		Prerequisite: aircraft.france
-	ProvidesPrerequisite@germanstructure:
-		RequiresPrerequisites: structures.german
-		Prerequisite: aircraft.german
-	ProvidesPrerequisite@swedishstructure:
-		RequiresPrerequisites: structures.sweden
-		Prerequisite: aircraft.sweden
-	ProvidesPrerequisite@spanishstructure:
-		RequiresPrerequisites: structures.spain
-		Prerequisite: aircraft.spain
-	ProvidesPrerequisite@italianstructure:
-		RequiresPrerequisites: structures.italy
-		Prerequisite: aircraft.italy
-	ProvidesPrerequisite@grekishstructure:
-		RequiresPrerequisites: structures.greece
-		Prerequisite: aircraft.greece
-	ProvidesPrerequisite@turkishstructure:
-		RequiresPrerequisites: structures.turkey
-		Prerequisite: aircraft.turkey
 	ProvidesPrerequisite@soviet:
-		Factions: soviet, russia, ukraine, belarus, karelia, moldova, kazakh, uzbek, china, turkmen, afghan
+		Factions: soviet, russia, ukraine, belarus, karelia, moldova, kazakh, uzbek, turkmen, afghan, china
 		Prerequisite: aircraft.soviet
-	ProvidesPrerequisite@sovietvanilla:
-		Factions: soviet
-		Prerequisite: aircraft.sovietvanilla
-	ProvidesPrerequisite@russia:
-		Factions: russia
-		Prerequisite: aircraft.russia
-	ProvidesPrerequisite@ukraine:
-		Factions: ukraine
-		Prerequisite: aircraft.ukraine
-	ProvidesPrerequisite@belarus:
-		Factions: belarus
-		Prerequisite: aircraft.belarus
-	ProvidesPrerequisite@karelia:
-		Factions: karelia
-		Prerequisite: aircraft.karelia
-	ProvidesPrerequisite@moldova:
-		Factions: moldova
-		Prerequisite: aircraft.moldova
-	ProvidesPrerequisite@kazakhstan:
-		Factions: kazakh
-		Prerequisite: aircraft.kazakh
-	ProvidesPrerequisite@uzbekistan:
-		Factions: uzbek
-		Prerequisite: aircraft.uzbek
-	ProvidesPrerequisite@china:
-		Factions: china
-		Prerequisite: aircraft.china
-	ProvidesPrerequisite@turkmenistan:
-		Factions: turkmen
-		Prerequisite: aircraft.turkmen
-	ProvidesPrerequisite@afghan:
-		Factions: afghan
-		Prerequisite: aircraft.afghan
-	ProvidesPrerequisite@sovietstructure:
-		RequiresPrerequisites: structures.soviet
-		Prerequisite: aircraft.soviet
-	ProvidesPrerequisite@sovietvanillastructure:
-		RequiresPrerequisites: structures.sovietvanilla
-		Prerequisite: aircraft.sovietvanilla
-	ProvidesPrerequisite@russianstructure:
-		RequiresPrerequisites: structures.russia
-		Prerequisite: aircraft.russia
-	ProvidesPrerequisite@ukrainianstructure:
-		RequiresPrerequisites: structures.ukraine
-		Prerequisite: aircraft.ukraine
-	ProvidesPrerequisite@belarussianstructure:
-		RequiresPrerequisites: structures.belarus
-		Prerequisite: aircraft.belarus
-	ProvidesPrerequisite@karelianstructure:
-		RequiresPrerequisites: structures.karelia
-		Prerequisite: aircraft.karelia
-	ProvidesPrerequisite@moldovanstructure:
-		RequiresPrerequisites: structures.moldova
-		Prerequisite: aircraft.moldova
-	ProvidesPrerequisite@kazakhstructure:
-		RequiresPrerequisites: structures.kazakh
-		Prerequisite: aircraft.kazakh
-	ProvidesPrerequisite@uzbekstructure:
-		RequiresPrerequisites: structures.uzbek
-		Prerequisite: aircraft.uzbek
-	ProvidesPrerequisite@chinesestructures:
-		RequiresPrerequisites: structures.china
-		Prerequisite: aircraft.china
-	ProvidesPrerequisite@turkmenstructure:
-		RequiresPrerequisites: structures.turkmen
-		Prerequisite: aircraft.turkmen
-	ProvidesPrerequisite@afghanstructure:
-		RequiresPrerequisites: structures.afghan
-		Prerequisite: aircraft.afghan
 	WithDeathAnimation:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
@@ -3509,7 +2914,7 @@ HPAD:
 		RequiresCondition: !build-incomplete && soviet.player && gratisair
 	GrantConditionOnFaction@Soviet:
 		Condition: soviet.player
-		Factions: soviet,russia,ukraine,belarus,moldova,karelia,kazakh,uzbek,china,turkmen,afghan
+		Factions: soviet,russia,ukraine,belarus,moldova,karelia,kazakh,uzbek,turkmen,afghan,china
 		ResetOnOwnerChange: True
 	GrantConditionOnFaction@Allies:
 		Condition: allied.player
@@ -3631,75 +3036,9 @@ SYRD:
 	ProvidesPrerequisite@allies:
 		Factions: allies, usa, england, holland, france, germany, sweden, spain, italy, greece, turkey
 		Prerequisite: ships.allies
-	ProvidesPrerequisite@alliesvanilla:
-		Factions: allies
-		Prerequisite: ships.alliesvanilla
-	ProvidesPrerequisite@usa:
-		Factions: usa
-		Prerequisite: ships.usa
-	ProvidesPrerequisite@england:
-		Factions: england
-		Prerequisite: ships.england
-	ProvidesPrerequisite@holland:
-		Factions: holland
-		Prerequisite: ships.holland
-	ProvidesPrerequisite@france:
-		Factions: france
-		Prerequisite: ships.france
-	ProvidesPrerequisite@germany:
-		Factions: germany
-		Prerequisite: ships.germany
-	ProvidesPrerequisite@sweden:
-		Factions: sweden
-		Prerequisite: ships.sweden
-	ProvidesPrerequisite@spain:
-		Factions: spain
-		Prerequisite: ships.spain
-	ProvidesPrerequisite@italy:
-		Factions: italy
-		Prerequisite: ships.italy
-	ProvidesPrerequisite@greece:
-		Factions: greece
-		Prerequisite: ships.greece
-	ProvidesPrerequisite@turkey:
-		Factions: turkey
-		Prerequisite: ships.turkey
-	ProvidesPrerequisite@alliedstructure:
-		RequiresPrerequisites: structures.allies
-		Prerequisite: ships.allies
-	ProvidesPrerequisite@alliedvanillastructure:
-		RequiresPrerequisites: structures.alliesvanilla
-		Prerequisite: ships.alliesvanilla
-	ProvidesPrerequisite@americanstructure:
-		RequiresPrerequisites: structures.usa
-		Prerequisite: ships.usa
-	ProvidesPrerequisite@englishstructure:
-		RequiresPrerequisites: structures.england
-		Prerequisite: ships.england
-	ProvidesPrerequisite@flemishstructure:
-		RequiresPrerequisites: structures.holland
-		Prerequisite: ships.holland
-	ProvidesPrerequisite@frenchstructure:
-		RequiresPrerequisites: structures.france
-		Prerequisite: ships.france
-	ProvidesPrerequisite@germanstructure:
-		RequiresPrerequisites: structures.germany
-		Prerequisite: ships.germany
-	ProvidesPrerequisite@swedishstructure:
-		RequiresPrerequisites: structures.sweden
-		Prerequisite: ships.sweden
-	ProvidesPrerequisite@spanishstructure:
-		RequiresPrerequisites: structures.spain
-		Prerequisite: ships.spain
-	ProvidesPrerequisite@italianstructure:
-		RequiresPrerequisites: structures.italian
-		Prerequisite: ships.italian
-	ProvidesPrerequisite@grekishstructure:
-		RequiresPrerequisites: structures.greece
-		Prerequisite: ships.greece
-	ProvidesPrerequisite@turkishstructure:
-		RequiresPrerequisites: structures.turkey
-		Prerequisite: ships.turkey
+	ProvidesPrerequisite@soviet:
+		Factions: soviet, russia, ukraine, belarus, karelia, moldova, kazakh, uzbek, turkmen, afghan, china
+		Prerequisite: ships.soviet
 	ProximityExternalCondition@MINEREPLENISH:
 		Condition: replenishsmine
 		Range: 5c0
@@ -3890,78 +3229,12 @@ SPEN:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
 	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@allies:
+		Factions: allies, usa, england, holland, france, germany, sweden, spain, italy, greece, turkey
+		Prerequisite: ships.allies
 	ProvidesPrerequisite@soviet:
-		Factions: soviet, russia, ukraine, belarus, karelia, moldova, kazakh, uzbek, china, turkmen, afghan
+		Factions: soviet, russia, ukraine, belarus, karelia, moldova, kazakh, uzbek, turkmen, afghan, china
 		Prerequisite: ships.soviet
-	ProvidesPrerequisite@sovietvanilla:
-		Factions: soviet
-		Prerequisite: ships.sovietvanilla
-	ProvidesPrerequisite@russia:
-		Factions: russia
-		Prerequisite: ships.russia
-	ProvidesPrerequisite@ukraine:
-		Factions: ukraine
-		Prerequisite: ships.ukraine
-	ProvidesPrerequisite@belarus:
-		Factions: belarus
-		Prerequisite: ships.belarus
-	ProvidesPrerequisite@karelia:
-		Factions: karelia
-		Prerequisite: ships.karelia
-	ProvidesPrerequisite@moldova:
-		Factions: moldova
-		Prerequisite: ships.moldova
-	ProvidesPrerequisite@kazakhstan:
-		Factions: kazakh
-		Prerequisite: ships.kazakh
-	ProvidesPrerequisite@uzbekistan:
-		Factions: uzbek
-		Prerequisite: ships.uzbek
-	ProvidesPrerequisite@china:
-		Factions: china
-		Prerequisite: ships.china
-	ProvidesPrerequisite@turkmenistan:
-		Factions: turkmen
-		Prerequisite: ships.turkmen
-	ProvidesPrerequisite@afghanistan:
-		Factions: afghan
-		Prerequisite: ships.afghan
-	ProvidesPrerequisite@sovietstructure:
-		RequiresPrerequisites: structures.soviet
-		Prerequisite: ships.soviet
-	ProvidesPrerequisite@sovietvanillastructure:
-		RequiresPrerequisites: structures.sovietvanilla
-		Prerequisite: ships.sovietvanilla
-	ProvidesPrerequisite@russianstructure:
-		RequiresPrerequisites: structures.russia
-		Prerequisite: ships.russia
-	ProvidesPrerequisite@ukrainianstructure:
-		RequiresPrerequisites: structures.ukraine
-		Prerequisite: ships.ukraine
-	ProvidesPrerequisite@belarussianstructure:
-		RequiresPrerequisites: structures.belarus
-		Prerequisite: ships.belarus
-	ProvidesPrerequisite@karelianstructure:
-		RequiresPrerequisites: structures.karelia
-		Prerequisite: ships.karelia
-	ProvidesPrerequisite@moldovanstructure:
-		RequiresPrerequisites: structures.moldova
-		Prerequisite: ships.moldova
-	ProvidesPrerequisite@kazakhstructure:
-		RequiresPrerequisites: structures.kazakh
-		Prerequisite: ships.kazakh
-	ProvidesPrerequisite@uzbekstructure:
-		RequiresPrerequisites: structures.uzbek
-		Prerequisite: ships.uzbek
-	ProvidesPrerequisite@chinesestructures:
-		RequiresPrerequisites: structures.china
-		Prerequisite: ships.china
-	ProvidesPrerequisite@turkmenstructure:
-		RequiresPrerequisites: structures.turkmen
-		Prerequisite: ships.turkmen
-	ProvidesPrerequisite@afghanstructure:
-		RequiresPrerequisites: structures.afghan
-		Prerequisite: ships.afghan
 	ProximityExternalCondition@MINEREPLENISH:
 		Condition: replenishsmine
 		Range: 5c0

@@ -69,7 +69,7 @@ SYRD.Usa:
 AFLD.Usa:
 	Inherits: AFLD
 	Buildable:
-		Prerequisites: anypower, ~structures.usa, ~techlevel.medium
+		Prerequisites: anypower, ~player.usa, ~techlevel.medium
 		Description: Produces, repairs and reloads Airplanes.\nCan be Infiltrated by an Spy resulting\nin Veterancy for enemy Aircraft.\nCan be Infiltrated by an Saboteur\nresulting in getting Disabled temporarily.\n  Special Ability: Paratroopers\nTwo B-52 drops a squad of Veteran infantry\nanywhere on the map.
 	RenderSprites:
 		Image: afld
@@ -86,7 +86,7 @@ AFLD.Usa:
 HPAD.Usa:
 	Inherits: HPAD
 	Buildable:
-		Prerequisites: proc, ~structures.usa, ~techlevel.medium
+		Prerequisites: proc, ~player.usa, ~techlevel.medium
 		Description: Produces and reloads Helicopters.\nCan be Infiltrated by an Spy resulting\nin Veterancy for enemy Aircraft.\nCan be Infiltrated by an Saboteur\nresulting in getting Disabled temporarily.
 	RenderSprites:
 		Image: hpad
@@ -405,7 +405,7 @@ DD.Germany:
 AFLD.Germany:
 	Inherits: AFLD
 	Buildable:
-		Prerequisites: anypower, ~structures.germany, ~techlevel.medium
+		Prerequisites: anypower, ~player.germany, ~techlevel.medium
 		Description: Produces, repairs and reloads Airplanes.\nCan be Infiltrated by an Spy resulting\nin Veterancy for enemy Aircraft.\nCan be Infiltrated by an Saboteur\nresulting in getting Disabled temporarily.\n  Special Ability: Paratroopers\nA Plane drops a squad of\nVeteran infantry anywhere on the map.\n  Special Ability: Paratanks\nA B-52 drops two Light and a Medium Tank anywhere on the map.\n (requires Service Depot)
 	RenderSprites:
 		Image: afld
@@ -682,7 +682,7 @@ CA.Italy:
 IROQ.Greece:
 	Inherits: IROQ
 	Buildable:
-		Prerequisites: ~hpad, ~aircraft.allies, ~!aitoodumb, ~player.greece, ~techlevel.medium
+		Prerequisites: ~hpad, dome, ~aircraft.allies, ~!aitoodumb, ~player.greece, ~techlevel.medium
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
@@ -695,7 +695,7 @@ IROQ.Greece:
 IROQ.AI.Greece:
 	Inherits: IROQ.AI
 	Buildable:
-		Prerequisites: ~hpad, ~aircraft.allies, ~aitoodumb, ~player.greece, ~techlevel.medium
+		Prerequisites: ~hpad, dome, ~aircraft.allies, ~aitoodumb, ~player.greece, ~techlevel.medium
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
@@ -1388,10 +1388,23 @@ HIND.Afghan:
 		Image: hind
 	-MapEditorData:
 
+E1.China:
+	Inherits: E1
+	Buildable:
+		Prerequisites: ~barracks, ~infantry.soviet, ~player.china, ~techlevel.infonly
+	ProducibleWithLevel:
+		Prerequisites: techlevel.infonly
+		InitialLevels: 1
+	RenderSprites:
+		Image: e1
+	UpdatesPlayerStatistics:
+		OverrideActor: e1
+	-MapEditorData:
+
 E3.China:
 	Inherits: E3
 	Buildable:
-		Prerequisites: ~barracks, ~infantry.soviet, ~player.china, ~techlevel.infonly
+		Prerequisites: ~disabled
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
