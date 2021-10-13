@@ -168,14 +168,14 @@ Player:
 		AdviceInterval: 750
 	PlayerExperience:
 	ProvidesPrerequisite@Allies:
-		Factions: allies, usa, england, holland, france, germany, sweden, spain, italy, greece, turkey
+		Factions: allies, usa, england, holland, france, germany, sweden, swiss, spain, italy, greece, turkey
 		Prerequisite: player.allies
-	GrantConditionOnPrerequisite@Allies:
-		Condition: player.allies
-		Prerequisites: player.allies
 	ProvidesPrerequisite@VanillaAllies:
 		Factions: allies
 		Prerequisite: vanilla.allies
+	GrantConditionOnPrerequisite@Allies:
+		Condition: player.allies
+		Prerequisites: player.allies
 	ProvidesPrerequisite@USA:
 		Factions: usa
 		Prerequisite: player.usa
@@ -212,6 +212,12 @@ Player:
 	GrantConditionOnPrerequisite@Sweden:
 		Condition: player.allies
 		Prerequisites: player.sweden
+	ProvidesPrerequisite@Swiss:
+		Factions: swiss
+		Prerequisite: player.swiss
+	GrantConditionOnPrerequisite@Swiss:
+		Condition: player.allies
+		Prerequisites: player.swiss
 	ProvidesPrerequisite@Spain:
 		Factions: spain
 		Prerequisite: player.spain
@@ -237,14 +243,14 @@ Player:
 		Condition: player.allies
 		Prerequisites: player.turkey
 	ProvidesPrerequisite@Soviet:
-		Factions: soviet, russia, ukraine, belarus, karelia, moldova, kazakh, uzbek, china, turkmen, afghan
+		Factions: soviet, russia, ukraine, belarus, karelia, moldova, caucasia, kazakh, uzbek, china, turkmen, afghan
 		Prerequisite: player.soviet
-	GrantConditionOnPrerequisite@Soviet:
-		Condition: player.soviet
-		Prerequisites: player.soviet
 	ProvidesPrerequisite@VanillaSoviet:
 		Factions: soviet
 		Prerequisite: vanilla.soviet
+	GrantConditionOnPrerequisite@Soviet:
+		Condition: player.soviet
+		Prerequisites: player.soviet
 	ProvidesPrerequisite@Russia:
 		Factions: russia
 		Prerequisite: player.russia
@@ -275,6 +281,12 @@ Player:
 	GrantConditionOnPrerequisite@Moldova:
 		Condition: player.soviet
 		Prerequisites: player.moldova
+	ProvidesPrerequisite@Caucasia:
+		Factions: caucasia
+		Prerequisite: player.caucasia
+	GrantConditionOnPrerequisite@Caucasia:
+		Condition: player.soviet
+		Prerequisites: player.caucasia
 	ProvidesPrerequisite@Kazakh:
 		Factions: kazakh
 		Prerequisite: player.kazakh
@@ -323,6 +335,9 @@ Player:
 	ProvidesPrerequisite@alliesorsweden:
 		Factions: allies, sweden
 		Prerequisite: allies.or.sweden
+	ProvidesPrerequisite@alliesorswiss:
+		Factions: allies, swiss
+		Prerequisite: allies.or.swiss
 	ProvidesPrerequisite@alliesorspain:
 		Factions: allies, spain
 		Prerequisite: allies.or.spain
@@ -350,6 +365,9 @@ Player:
 	ProvidesPrerequisite@sovietormoldova:
 		Factions: soviet, moldova
 		Prerequisite: soviet.or.moldova
+	ProvidesPrerequisite@sovietorcaucasia:
+		Factions: soviet, caucasia
+		Prerequisite: soviet.or.caucasia
 	ProvidesPrerequisite@sovietorkazakh:
 		Factions: soviet, kazakh
 		Prerequisite: soviet.or.kazakh

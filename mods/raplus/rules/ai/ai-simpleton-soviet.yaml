@@ -307,8 +307,10 @@ Player:
 			barr: 3
 			dome: 1
 			dome.soviet: 1
-			dome.belarus: 1
 			dome.karelia: 1
+			dome.moldova: 1
+			dome.kazakh: 1
+			dome.afghan: 1
 			weap: 6
 			spen: 2
 			afld: 6

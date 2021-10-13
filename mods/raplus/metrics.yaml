@@ -7,6 +7,7 @@ Metrics:
 	FactionSuffix-holland: allies
 	FactionSuffix-france: allies
 	FactionSuffix-germany: allies
+	FactionSuffix-swiss: allies
 	FactionSuffix-sweden: allies
 	FactionSuffix-spain: allies
 	FactionSuffix-italy: allies
@@ -18,6 +19,7 @@ Metrics:
     FactionSuffix-belarus: soviet
     FactionSuffix-karelia: soviet
 	FactionSuffix-moldova: soviet
+    FactionSuffix-caucasia: soviet
     FactionSuffix-kazakh: soviet
     FactionSuffix-uzbek: soviet
 	FactionSuffix-turkmen: soviet

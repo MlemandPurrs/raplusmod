@@ -420,10 +420,10 @@ RMBO:
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
-		BuildPaletteOrder: 8
+		BuildPaletteOrder: 9
 		BuildLimit: 1
-		Prerequisites: ~disabled
-		Description: Elite commando infantry.\nArmed with assault rifle and C4.\n  Special Ability: Camouflage\nCloaks when standing still. Can be ordered to crawl around unseen.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
+		Prerequisites: atek, ~infantry.allies, ~player.swiss, ~techlevel.high
+		Description: Elite commando infantry.\nArmed with assault rifle and C4.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
 	Mobile:
 		Speed: 68
 		Voice: Move
@@ -431,6 +431,8 @@ RMBO:
 		Voice: Move
 	Health:
 		HP: 100
+	Armor:
+		Type: Kevlar
 	Passenger:
 		CustomPipType: pip-red
 		Voice: Move
@@ -460,32 +462,9 @@ RMBO:
 	AnnounceOnKill:
 	Voiced:
 		VoiceSet: CommandoVoice
-	ProducibleWithLevel:
-		Prerequisites: infantry.upgraded
 	DetectCloaked:
-		CloakTypes: Cloak, Hijacker
+		CloakTypes: Cloak
 		Range: 3c0
-	Cloak@NORMAL:
-		InitialDelay: 250
-		CloakDelay: 120
-		CloakSound:
-		UncloakSound: appear1.aud
-		IsPlayerPalette: true
-		UncloakOn: Attack, Unload, Heal, Dock, SelfHeal, Demolish, Move
-		PauseOnCondition: cloak-force-disabled
-		RequiresCondition: !iscrawling
-	Cloak@CRAWLING:
-		InitialDelay: 250
-		CloakDelay: 120
-		CloakSound:
-		UncloakSound: appear1.aud
-		IsPlayerPalette: true
-		UncloakOn: Attack, Unload, Heal, Dock, SelfHeal, Demolish
-		PauseOnCondition: cloak-force-disabled
-		RequiresCondition: iscrawling
-	GrantConditionOnDamageState@UNCLOAK:
-		Condition: cloak-force-disabled
-		ValidDamageStates: Critical
 	TakeCover:
 		RequiresCondition: !iscrawling
 	GrantConditionOnDeploy:

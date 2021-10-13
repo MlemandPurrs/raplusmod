@@ -43,9 +43,10 @@ LST:
 			e1: weight-1
 			e1r1: weight-1
 			e1.england: weight-1
+			e1.china: weight-1
 			e2: weight-1
 			e2r1: weight-1
-			e2.turkey:
+			e2.turkey: weight-1
 			e3: weight-1
 			e3r1: weight-1
 			e3.china: weight-1

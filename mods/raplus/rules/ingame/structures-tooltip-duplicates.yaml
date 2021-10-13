@@ -194,11 +194,11 @@ DOME.Holland:
 	UpdatesPlayerStatistics:
 		OverrideActor: dome.allies
 
-DOME.Belarus:
+DOME.Karelia:
 	Inherits: DOME.Soviet
 	Buildable:
-		Prerequisites: proc, ~structures.soviet, ~player.belarus, ~techlevel.medium
-		Description: Provides an overview\nof the battlefield.\nCan detect cloaked units.\nCan be Infiltrated by an Spy or Saboteur\nresulting in loss of map exploration.\nCan detect cloaked units.\n  Special Ability: Spy Plane\nReveals an area of the map\nand cloaked enemy units there.\n (requires Airfield)\n  Special Ability: Jammer Plane\nAn plane travels along a line Jamming enemy radar within radius.\n (requires Service Depot and Airfield)
+		Prerequisites: proc, ~structures.soviet, ~player.karelia, ~techlevel.medium
+		Description: Provides an overview\nof the battlefield.\nCan detect cloaked units.\nCan be Infiltrated by an Spy or Saboteur\nresulting in loss of map exploration.\nCan detect cloaked units.\n  Special Ability: Spy Plane\nReveals an area of the map\nand cloaked enemy units there.\n (requires Airfield)\n  A second Spy Plane gets available with a Tech Center.
 	RenderSprites:
 		Image: dome
 	ProvidesPrerequisite@COPY:
@@ -207,11 +207,11 @@ DOME.Belarus:
 	UpdatesPlayerStatistics:
 		OverrideActor: dome.soviet
 
-DOME.Karelia:
+DOME.Moldova:
 	Inherits: DOME.Soviet
 	Buildable:
-		Prerequisites: proc, ~structures.soviet, ~player.karelia, ~techlevel.medium
-		Description: Provides an overview\nof the battlefield.\nCan detect cloaked units.\nCan be Infiltrated by an Spy or Saboteur\nresulting in loss of map exploration.\nCan detect cloaked units.\n  Special Ability: Spy Plane\nReveals an area of the map\nand cloaked enemy units there.\n (requires Airfield)\n  A second Spy Plane gets available with a Tech Center.
+		Prerequisites: proc, ~structures.soviet, ~player.moldova, ~techlevel.medium
+		Description: Provides an overview\nof the battlefield.\nCan detect cloaked units.\nCan be Infiltrated by an Spy or Saboteur\nresulting in loss of map exploration.\nCan detect cloaked units.\n  Special Ability: Spy Plane\nReveals an area of the map\nand cloaked enemy units there.\n (requires Airfield)\n  Special Ability: Jammer Plane\nAn plane travels along a line Jamming enemy radar within radius.\n (requires Service Depot and Airfield)
 	RenderSprites:
 		Image: dome
 	ProvidesPrerequisite@COPY:

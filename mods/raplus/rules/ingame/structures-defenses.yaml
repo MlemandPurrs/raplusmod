@@ -235,7 +235,7 @@ PBOX:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 2
-		Prerequisites: tent, ~structures.allies, ~techlevel.low
+		Prerequisites: tent, ~structures.allies, ~!player.swiss, ~techlevel.low
 		Description: Static defense with\nMG emplacement.\nCan detect cloaked units.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft
 	Tooltip:
 		Name: Pillbox
@@ -296,7 +296,7 @@ HBOX:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 5
-		Prerequisites: tent, dome, ~structures.allies, ~techlevel.medium
+		Prerequisites: tent, dome, ~structures.allies, ~!player.swiss, ~techlevel.medium
 		Description: Camouflaged static defense\nwith a Sniper inside.\nCan detect cloaked units.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft
 	Tooltip:
 		Name: Camo Pillbox
@@ -1881,7 +1881,7 @@ PBOX.empty:
 	WithBuildingBib:
 		HasMinibib: true
 	Turreted:
-		TurnSpeed: 256
+		TurnSpeed: 255
 	BodyOrientation:
 		QuantizedFacings: 8
 	EngineerRepairable:

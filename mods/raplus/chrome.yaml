@@ -376,35 +376,37 @@ strategic:
 flags:
 	Inherits: ^Flags
 	Regions:
-		Random: 30, 180, 30, 15
-		RandomAllies: 0, 165, 30, 15
-		RandomSoviet: 30, 165, 30, 15
-		RandomSide: 0, 180, 30, 15
-		spectator: 0, 195, 30, 15
+		Random: 30, 195, 30, 15
+		RandomAllies: 0, 180, 30, 15
+		RandomSoviet: 30, 180, 30, 15
+		RandomSide: 0, 195, 30, 15
+		spectator: 0, 210, 30, 15
 
-		allies: 0, 150, 30, 15
+		allies: 0, 165, 30, 15
 		usa: 0, 0, 30, 15
 		england: 0, 15, 30, 15
 		holland: 0, 30, 30, 15
 		france: 0, 45, 30, 15
-		germany: 0, 75, 30, 15
+		germany: 0, 90, 30, 15
 		sweden: 0, 60, 30, 15
-		spain: 0, 90, 30, 15
-		italy: 0, 105, 30, 15
-		greece: 0, 120, 30, 15
-		turkey: 0, 135, 30, 15
+		swiss: 0, 75, 30, 15
+		spain: 0, 105, 30, 15
+		italy: 0, 120, 30, 15
+		greece: 0, 135, 30, 15
+		turkey: 0, 150, 30, 15
 
-		soviet: 30, 150, 30, 15
+		soviet: 30, 165, 30, 15
 		russia: 30, 0, 30, 15
 		ukraine: 30, 15, 30, 15
 		belarus: 30, 45, 30, 15
 		karelia: 30, 60, 30, 15
 		moldova: 30, 30, 30, 15
-		kazakh: 30, 75, 30, 15
-		uzbek: 30, 105, 30, 15
-		china: 30, 90, 30, 15
-		turkmen: 30, 120, 30, 15
-		afghan: 30, 135, 30, 15
+		caucasia: 30, 75, 30, 15
+		kazakh: 30, 90, 30, 15
+		uzbek: 30, 120, 30, 15
+		china: 30, 105, 30, 15
+		turkmen: 30, 135, 30, 15
+		afghan: 30, 150, 30, 15
 
 music:
 	Inherits: ^Glyphs

@@ -777,7 +777,7 @@ ChronoAI:
 		ValidTargets: Ground, Air, Water
 		ImpactSounds: chrono2.aud
 	Warhead@teleport: SpawnActor
-		Actors: ctnk.chrono, ctnk.chrono, ctnk.chrono, ctnk.chrono, ctnk.chrono
+		Actors: ctnk.chrono, ctnk.chrono, ctnk.chrono
 		Range: 5
 		Image: chronoappear
 		Sequence: idle

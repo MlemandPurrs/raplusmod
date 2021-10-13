@@ -71,10 +71,10 @@ FACT:
 		Range: 4c0
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@allies:
-		Factions: allies, usa, england, holland, france, germany, sweden, spain, italy, greece, turkey
+		Factions: allies, usa, england, holland, france, germany, sweden, swiss, spain, italy, greece, turkey
 		Prerequisite: structures.allies
 	ProvidesPrerequisite@soviet:
-		Factions: soviet, russia, ukraine, belarus, karelia, moldova, kazakh, uzbek, china, turkmen, afghan
+		Factions: soviet, russia, ukraine, belarus, karelia, moldova, caucasia, kazakh, uzbek, turkmen, afghan, china
 		Prerequisite: structures.soviet
 	ProvidesPrerequisite@MCVLIMITER:
 		Prerequisite: mcv.ai
@@ -226,6 +226,7 @@ POWR:
 			france: powrgrey
 			germany: powrgrey
 			sweden: powrgrey
+			swiss: powrgrey
 			spain: powrgrey
 			italy: powrgrey
 			greece: powrgrey
@@ -295,6 +296,7 @@ APWR:
 			france: apwrgrey
 			germany: apwrgrey
 			sweden: apwrgrey
+			swiss: apwrgrey
 			spain: apwrgrey
 			italy: apwrgrey
 			greece: apwrgrey
@@ -389,10 +391,10 @@ TENT:
 		Prerequisite: barracks
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@allies:
-		Factions: allies, usa, england, france, holland, germany, sweden, spain, italy, greece, turkey
+		Factions: allies, usa, england, france, holland, germany, sweden, swiss, spain, italy, greece, turkey
 		Prerequisite: infantry.allies
 	ProvidesPrerequisite@soviet:
-		Factions: soviet, russia, ukraine, belarus, karelia, moldova, kazakh, uzbek, turkmen, afghan, china
+		Factions: soviet, russia, ukraine, belarus, karelia, moldova, caucasia, kazakh, uzbek, turkmen, afghan, china
 		Prerequisite: infantry.soviet
 	Power:
 		Amount: -20
@@ -530,10 +532,10 @@ BARR:
 		Prerequisite: barracks
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@allies:
-		Factions: allies, usa, england, france, holland, germany, sweden, spain, italy, greece, turkey
+		Factions: allies, usa, england, france, holland, germany, sweden, swiss, spain, italy, greece, turkey
 		Prerequisite: infantry.allies
 	ProvidesPrerequisite@soviet:
-		Factions: soviet, russia, ukraine, belarus, karelia, moldova, kazakh, uzbek, turkmen, afghan, china
+		Factions: soviet, russia, ukraine, belarus, karelia, moldova, caucasia, kazakh, uzbek, turkmen, afghan, china
 		Prerequisite: infantry.soviet
 	Power:
 		Amount: -20
@@ -1157,10 +1159,10 @@ WEAP:
 		ProductionType: Vehicle
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@allies:
-		Factions: allies, usa, england, france, holland, germany, sweden, spain, italy, greece, turkey
+		Factions: allies, usa, england, france, holland, germany, sweden, spain, swiss, italy, greece, turkey
 		Prerequisite: vehicles.allies
 	ProvidesPrerequisite@soviet:
-		Factions: soviet, russia, ukraine, belarus, karelia, moldova, kazakh, uzbek, turkmen, afghan, china
+		Factions: soviet, russia, ukraine, belarus, karelia, moldova, caucasia, kazakh, uzbek, turkmen, afghan, china
 		Prerequisite: vehicles.soviet
 	ProvidesPrerequisite@TECHPREQ:
 		Prerequisite: afldorweap
@@ -1275,11 +1277,11 @@ WEAP.MINI:
 		CancelledAudio: Cancelled
 		LowPowerModifier: 300
 	ProvidesPrerequisite@allies:
-		Factions: allies, usa, england, holland, france, sweden, germany, italy, spain, greece, turkey
+		Factions: allies, usa, england, holland, france, germany, sweden, swiss, spain, italy, greece, turkey
 		Prerequisite: vehicles.allies
 		ResetOnOwnerChange: True
 	ProvidesPrerequisite@soviet:
-		Factions: soviet, russia, ukraine, moldova, belarus, karelia, kazakh, uzbek, turkmen, afghan, china
+		Factions: soviet, russia, ukraine, belarus, karelia, moldova, caucasia, kazakh, uzbek, turkmen, afghan, china
 		Prerequisite: vehicles.soviet
 		ResetOnOwnerChange: True
 	ProductionBar:
@@ -1649,7 +1651,7 @@ DOME.Allies:
 DOME.Soviet:
 	Inherits: DOME
 	Buildable:
-		Prerequisites: proc, ~structures.soviet, ~!player.belarus, ~!player.karelia, ~!player.kazakh, ~!player.afghan, ~techlevel.medium
+		Prerequisites: proc, ~structures.soviet, ~!player.karelia, ~!player.moldova, ~!player.kazakh, ~!player.afghan, ~techlevel.medium
 		Description: Provides an overview\nof the battlefield.\nCan detect cloaked units.\nCan be Infiltrated by an Spy or Saboteur\nresulting in loss of map exploration.\nCan detect cloaked units.\n  Special Ability: Spy Plane\nReveals an area of the map\nand cloaked enemy units there.\n (requires Airfield)
 	RenderSprites:
 		Image: dome
@@ -1704,7 +1706,7 @@ DOME.Soviet:
 	AirstrikePower@JammerPlane:
 		PauseOnCondition: disabled || lowpower
 		OrderName: JammerPlane
-		Prerequisites: afld, ~fix, player.belarus, ~techlevel.unrestricted
+		Prerequisites: afld, ~fix, player.moldova, ~techlevel.unrestricted
 		Icon: u2jammer
 		ChargeInterval: 7500
 		Description: Jammer Plane
@@ -1870,7 +1872,7 @@ ATEK:
 		Description: Intelligence Scan
 		LongDesc: Reveals all Base Buildings and Superweapons,\nbut not Defenses or Tech Buildings on the map.\nLasts for 2.5 minute. Does not reveal new Structures.
 		CameraActor: camera.intelscan
-		TargetActors: fact, powr, powr.turkey, apwr, apwr.turkey, tent, tent.usa, barr, barr.cloner, proc, orep, orep.usa, indp, weap, weap.usa, weap.mini, fix, fix.allies, fix.soviet, fix.spain, fix.sweden, fix.turkey, fix.kazakh, fix.china, fix.moldova, dome, dome.allies, dome.soviet, dome.holland, dome.belarus, dome.karelia, atek, stek, atek.usa, atek.england, atek.germany, atek.holland, atek.sweden, atek.italy, stek.russia, stek.karelia, stek.uzbek, stek.afghan, spro, spro.kazakh, afld, afld.russia, afld.ukraine, afld.belarus, afld.turkmen, afld.usa, afld.england, afld.france, afld.germany, afld.italy, afld.greece, hpad, hpad.usa, syrd, syrd.usa, spen, pdox, pdox.germany, iron, iron.uzbek, fpwr, fapw, tenf, barf, prof, weaf, fixf, syrf, spef, aflf, hpaf, domf, sprf, atef, stef, pdof, irof, facf
+		TargetActors: fact, powr, powr.turkey, apwr, apwr.turkey, tent, tent.usa, barr, barr.cloner, proc, orep, orep.usa, indp, weap, weap.usa, weap.mini, fix, fix.allies, fix.soviet, fix.spain, fix.sweden, fix.turkey, fix.kazakh, fix.china, fix.moldova, dome, dome.allies, dome.soviet, dome.holland, dome.karelia, dome.moldova, dome.kazakh, dome.afghan, atek, stek, atek.usa, atek.england, atek.germany, atek.holland, atek.sweden, atek.italy, stek.russia, stek.karelia, stek.uzbek, stek.afghan, spro, spro.kazakh, afld, afld.russia, afld.ukraine, afld.belarus, afld.turkmen, afld.usa, afld.england, afld.france, afld.germany, afld.italy, afld.greece, hpad, hpad.usa, syrd, syrd.usa, spen, pdox, pdox.germany, iron, iron.uzbek, fpwr, fapw, tenf, barf, prof, weaf, fixf, syrf, spef, aflf, hpaf, domf, sprf, atef, stef, pdof, irof, facf
 		LifeTime: 3750
 		LaunchSound: bcmasela.aud
 		EffectImage: dummy
@@ -2179,6 +2181,33 @@ STEK:
 		ClockSequence: dummy
 		CircleSequence: circles
 		SupportPowerPaletteOrder: 3
+	#	DetonateWeaponPower@SarinGas:
+	#	OrderName: SarinGas
+	#	PauseOnCondition: disabled || lowpower
+	#	Prerequisites: ~dome, player.belarus, ~techlevel.unrestricted
+	#	Icon: gasicon
+	#	Cursor: ability
+	#	ChargeInterval: 7500
+	#	Description: Sarin Gas
+	#	supress of siege tank + poison of chem warrior, probably best as invis paradrop, canister to last in spot until expire.
+	#	LongDesc: Fires a gas canister shell to targeted position.\nCauses Infantry in radius to be supressed and take damage.\nAlso reduces vision of Infantry and Vehicles in radius.
+	#	Weapon: MustardGas
+	#	ActivationDelay: 100
+	#	AirburstAltitude: 0c0
+	#	AllowMultiple: false
+	#	CameraActor: camera.minimum
+	#	CameraRemoveDelay: 150
+	#	SelectTargetSpeechNotification: SelectTarget
+	#	LaunchSpeechNotification: ReinforcementsArrived
+	#	DisplayRadarPing: True
+	#	Sequence: idle
+	#	LifeTime: 0
+	#	DisplayBeacon: true
+	#	BeaconPoster: gasbcon
+	#	ArrowSequence: arrow
+	#	ClockSequence: dummy
+	#	CircleSequence: circles
+	#	SupportPowerPaletteOrder: 3
 	SupportPowerChargeBar:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
@@ -2430,10 +2459,10 @@ AFLD:
 		RequiresCondition: !build-incomplete
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@allies:
-		Factions: allies, usa, england, holland, france, germany, sweden, spain, italy, greece, turkey
+		Factions: allies, usa, england, holland, france, germany, sweden, swiss, spain, italy, greece, turkey
 		Prerequisite: aircraft.allies
 	ProvidesPrerequisite@soviet:
-		Factions: soviet, russia, ukraine, belarus, karelia, moldova, kazakh, uzbek, turkmen, afghan, china
+		Factions: soviet, russia, ukraine, belarus, karelia, moldova, caucasia, kazakh, uzbek, turkmen, afghan, china
 		Prerequisite: aircraft.soviet
 	ProvidesPrerequisite@TECHPREQ:
 		Prerequisite: afldorweap
@@ -2586,7 +2615,7 @@ AFLD:
 	ParatroopersPower@ParaMines:
 		PauseOnCondition: disabled || lowpower
 		OrderName: SovietParaMines
-		Prerequisites: aircraft.soviet, fix, player.karelia, ~!aitoodumb, ~techlevel.unrestricted
+		Prerequisites: aircraft.soviet, fix, player.belarus, ~!aitoodumb, ~techlevel.unrestricted
 		Icon: paramines
 		ChargeInterval: 7500
 		Description: Paramines
@@ -2752,7 +2781,7 @@ AFLD:
 	SupportPowerChargeBar:
 	GrantConditionOnFaction@soviet:
 		Condition: soviet.player
-		Factions: soviet, russia, ukraine, karelia, moldova, kazakh, uzbek, china, turkmen, afghan
+		Factions: soviet, russia, ukraine, karelia, moldova, caucasia, kazakh, uzbek, turkmen, afghan, china
 		ResetOnOwnerChange: True
 	GrantConditionOnFaction@faster:
 		Condition: belarus.player
@@ -2760,7 +2789,7 @@ AFLD:
 		ResetOnOwnerChange: True
 	GrantConditionOnFaction@allies:
 		Condition: allied.player
-		Factions: allies, england, holland, france, germany, sweden, spain, italy, greece, turkey
+		Factions: allies, england, holland, france, germany, sweden, swiss, spain, italy, greece, turkey
 		ResetOnOwnerChange: True
 	GrantConditionOnFaction@double:
 		Condition: usa.player
@@ -2891,10 +2920,10 @@ HPAD:
 		RequiresCondition: !build-incomplete
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@allies:
-		Factions: allies, usa, england, holland, france, germany, sweden, spain, italy, greece, turkey
+		Factions: allies, usa, england, holland, france, germany, sweden, swiss, spain, italy, greece, turkey
 		Prerequisite: aircraft.allies
 	ProvidesPrerequisite@soviet:
-		Factions: soviet, russia, ukraine, belarus, karelia, moldova, kazakh, uzbek, turkmen, afghan, china
+		Factions: soviet, russia, ukraine, belarus, karelia, moldova, caucasia, kazakh, uzbek, turkmen, afghan, china
 		Prerequisite: aircraft.soviet
 	WithDeathAnimation:
 		DeathSequence: dead
@@ -2914,11 +2943,11 @@ HPAD:
 		RequiresCondition: !build-incomplete && soviet.player && gratisair
 	GrantConditionOnFaction@Soviet:
 		Condition: soviet.player
-		Factions: soviet,russia,ukraine,belarus,moldova,karelia,kazakh,uzbek,turkmen,afghan,china
+		Factions: soviet,russia,ukraine,belarus,karelia,moldova,caucasia,kazakh,uzbek,turkmen,afghan,china
 		ResetOnOwnerChange: True
 	GrantConditionOnFaction@Allies:
 		Condition: allied.player
-		Factions: allies,usa,england,holland,france,germany,sweden,spain,italy,greece,turkey
+		Factions: allies,usa,england,holland,france,germany,sweden,swiss,spain,italy,greece,turkey
 		ResetOnOwnerChange: True
 	GrantConditionOnPrerequisite@FREEAIRCRAFT:
 		Prerequisites: global-freeaircraft
@@ -3034,10 +3063,10 @@ SYRD:
 		ValidPowerStates: Low, Critical
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@allies:
-		Factions: allies, usa, england, holland, france, germany, sweden, spain, italy, greece, turkey
+		Factions: allies, usa, england, holland, france, germany, sweden, swiss, spain, italy, greece, turkey
 		Prerequisite: ships.allies
 	ProvidesPrerequisite@soviet:
-		Factions: soviet, russia, ukraine, belarus, karelia, moldova, kazakh, uzbek, turkmen, afghan, china
+		Factions: soviet, russia, ukraine, belarus, karelia, moldova, caucasia, kazakh, uzbek, turkmen, afghan, china
 		Prerequisite: ships.soviet
 	ProximityExternalCondition@MINEREPLENISH:
 		Condition: replenishsmine
@@ -3230,10 +3259,10 @@ SPEN:
 		ValidPowerStates: Low, Critical
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@allies:
-		Factions: allies, usa, england, holland, france, germany, sweden, spain, italy, greece, turkey
+		Factions: allies, usa, england, holland, france, germany, sweden, swiss, spain, italy, greece, turkey
 		Prerequisite: ships.allies
 	ProvidesPrerequisite@soviet:
-		Factions: soviet, russia, ukraine, belarus, karelia, moldova, kazakh, uzbek, turkmen, afghan, china
+		Factions: soviet, russia, ukraine, belarus, karelia, moldova, caucasia, kazakh, uzbek, turkmen, afghan, china
 		Prerequisite: ships.soviet
 	ProximityExternalCondition@MINEREPLENISH:
 		Condition: replenishsmine

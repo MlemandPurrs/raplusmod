@@ -141,7 +141,7 @@
 		RequiresCondition: reveal_secrets && afld_ICO
 	GrantConditionOnProduction@dome:
 		Condition: dome_ICO
-		Actors: dome, dome.allies, dome.soviet, dome.holland, dome.belarus, dome.karelia
+		Actors: dome, dome.allies, dome.soviet
 	WithDecoration@dome:
 		Position: Left
 		ValidRelationships: Enemy, Neutral

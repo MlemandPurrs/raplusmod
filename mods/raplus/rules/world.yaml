@@ -202,12 +202,12 @@
 		Name: Britain
 		InternalName: england
 		Side: Allies
-		Description: Britain\nSpecialization: Intelligence\nThe forces of Britain uphold their long tradition in Espionage.\nFaction Variations:\n    - Tanks* deal more damage but are costlier to build.\n*Those Tanks being the Light and Medium Tanks.\n+10% damage dealt at the cost of being +50$ more expensive.\nThis bonus does not affect secondary weaponry.\n    - Sight and Detection +50% bonus for Radar Domes, at increased cost.\n    - First Shipyard is free of cost and instant to build.\nVeterancy Bonus:\n    - Rifle Infantry and Jeep as Veteran.\nUnique Support Power:\n    - Parascouts (Airfield)\nA B-52 drops 2 veteran Jeeps anywhere on the map.\n    - Intelligence Scan (Tech Center)\nReveals all Base Buildings and Superweapons on the map for 2.5 minute.\nBritain retains the usage of 'Precision Strike' support power.\nSpecial Units:\n    - Tank Destroyer (Vehicle)\nSelf-propelled anti-tank Gun platform.\n    - Aircraft Carrier (Naval)\nCapable of deploying into Airfield at sea,\nProducing, Repairing and Resupplying Aircrafts.\n    - Chrono Blimp (Aircraft)\nSlow moving airship with chrono relocation device and bombs.
+		Description: Britain\nSpecialization: Intelligence\nThe forces of Britain uphold their long tradition in Espionage.\nFaction Variations:\n    - Tanks* deal more damage but are costlier to build.\n*Those Tanks being the Light and Medium Tanks.\n+10% damage dealt at the cost of being +50$ more expensive.\nThis bonus does not affect secondary weaponry.\n    - Sight and Detection +50% bonus for Radar Domes, at increased cost.\n    - First Shipyard is free of cost and instant to build.\nVeterancy Bonus:\n    - Rifle Infantry and Jeep as Veteran.\nUnique Support Powers:\n    - Parascouts (Airfield)\nA B-52 drops 2 veteran Jeeps anywhere on the map.\n    - Intelligence Scan (Tech Center)\nReveals all Base Buildings and Superweapons on the map for 2.5 minute.\nSpecial Units:\n    - Tank Destroyer (Vehicle)\nSelf-propelled anti-tank Gun platform.\n    - Aircraft Carrier (Naval)\nCapable of deploying into Airfield at sea,\nProducing, Repairing and Resupplying Aircrafts.\n    - Chrono Blimp (Aircraft)\nSlow moving airship with chrono relocation device and bombs.
 	Faction@3:
 		Name: Netherl.
 		InternalName: holland
 		Side: Allies
-		Description: Netherlands\nSpecialization: Expansionism\nFaction Variations:\n    - Engineer and MCV are 25% cheaper, but dont build any faster.\n    - Spy Masts also Jam radar aslong not Low on Power.\nVeterancy Bonus:\n    - None. All units earn Veterancy twice as fast instead.\nUnique Support Power:\n    - Precision Strike (Airfield with Tech Center)\nA fast plane delivers an rocket barrage on target.\n    - Thief (Radar Dome)\nDelivers a Thief that Steals credits at your Barracks.\nSpecial Units:\n    - Chrono Soldier (Infantry)\nInfantry with EMP gun that is capable of Teleporting.\n    - Phase Tank (Vehicle)\nMedium Tank variant that is cloaked while out of combat.\n    - Support Minelayer (Vehicle)\nMinelayer that doubles as Mobile repairer.
+		Description: Netherlands\nSpecialization: Expansionism\nFaction Variations:\n    - Engineer and MCV are 25% cheaper, but dont build any faster.\n    - Spy Masts also Jam radar aslong not Low on Power.\nVeterancy Bonus:\n    - None. All units earn Veterancy twice as fast instead.\nUnique Support Powers:\n    - Precision Strike (Airfield with Tech Center)\nA fast plane delivers an rocket barrage on target.\n    - Thief (Radar Dome)\nDelivers a Thief that Steals credits at your Barracks.\nSpecial Units:\n    - Chrono Soldier (Infantry)\nInfantry with EMP gun that is capable of Teleporting.\n    - Phase Tank (Vehicle)\nMedium Tank variant that is cloaked while out of combat.\n    - Support Minelayer (Vehicle)\nMinelayer that doubles as Mobile repairer.
 	Faction@4:
 		Name: France
 		InternalName: france
@@ -222,78 +222,90 @@
 		Name: Sweden
 		InternalName: sweden
 		Side: Allies
-		Description: Sweden\nFaction Variations:\n    - All Buildings are built 10% faster, but not cheaper.\nThis includes Defenses but not Superweapons.\n    - Tanks* are amphibian, capable of crossing open Sea and Rivers.\n*Those Tanks being the Light and Flak Tanks.\n    - Anti-Air Gun is 17% more accurate.\nFaction restrictions:\n    - This country cannot build Mobile SAM.\nVeterancy Bonus:\n    - Medium Tank and Interceptor gets built as Veteran.\nUnique Support Power:\n    - Instant Bunker (Service Depot with Construction Yard)\nAn unmanned Pillbox gets instantly built on the spot.\n    - Artillery Strike (Tech Center with Radar Dome)\nA creeping artillery barrage hits your target.\nSpecial Units:\n    - Mortar Soldier (Infantry)\nInfantry armed with an Mortar, functioning as micro artillery.\n    - Flak Tank (Vehicle)\nReplaces Mobile SAM. Amphibian Light tank with dual Flak cannons.
+		Description: Sweden\nFaction Variations:\n    - All Buildings are built 10% faster, but not cheaper.\nThis includes Defenses but not Superweapons.\n    - Tanks* are amphibian, capable of crossing open Sea and Rivers.\n*Those Tanks being the Light and Flak Tanks.\n    - Anti-Air Gun is 17% more accurate.\nFaction restrictions:\n    - This country cannot build Mobile SAM.\nVeterancy Bonus:\n    - Medium Tank and Interceptor gets built as Veteran.\nUnique Support Powers:\n    - Instant Bunker (Service Depot with Construction Yard)\nAn unmanned Pillbox gets instantly built on the spot.\n    - Artillery Strike (Tech Center with Radar Dome)\nA creeping artillery barrage hits your target.\nSpecial Units:\n    - Mortar Soldier (Infantry)\nInfantry armed with an Mortar, functioning as micro artillery.\n    - Flak Tank (Vehicle)\nReplaces Mobile SAM. Amphibian Light tank with dual Flak cannons.
 	Faction@7:
+		Name: Switzerland
+		InternalName: swiss
+		Side: Allies
+		Description: Switzerland\nFaction Variations:\n    - TODO.\n    - TODO.\n    - Pillboxes can be garrisoned by Infantry to obtain different purposes.\nVeterancy Bonus:\n    - None.\nUnique Support Power:\n    - TODO.\n    - TODO.\nSpecial Units:\n    - Commando (Infantry)\nElite infantry that can climb cliffs and uses C4 against buildings.\n    - Infantry Fighting Vehicle (Vehicle)\nModular vehicle that gains a different armament per passenger inside.\n    - Sniper Tower (Defense)\nLong ranged defense with Sniper weaponry.
+		Selectable: false
+	Faction@8:
 		Name: Spain
 		InternalName: spain
 		Side: Allies
 		Description: Spain\nFaction Variations:\n    - Tanks* have +1 Range but less rate of fire.\n*Those Tanks being the Light and Medium Tanks.\nThis bonus does not affect secondary weaponry.\n    - Spitfire Bombers carry twice the ammo.\n    - All ships are stronger, taking 10% less damage.\nVeterancy Bonus:\n    - None.\nUnique Support Powers:\n    - Chrono Harvester (Tech Center)\nDeploys a prototype Harvester that is capable of Teleporting.\nSpecial Units:\n    - Shotgunner (Infantry)\nFast recon that is lethal to most Infantry at close-range.\n    - Mobile Radar Jammer (Vehicle)\nVehicle that deflects Missiles and jams enemy Radar.\n    - Dreadnought (Naval)\nA super-cruiser naval super unit.
-	Faction@8:
+	Faction@9:
 		Name: Greece
 		InternalName: greece
 		Side: Allies
 		Description: Greece\nSpecialization: Fortifications\nThe forces of Greece are unyielding defenders.\nFaction Variations:\n    - Defenses have 20% increased Range and use 10% more Power.\nAffected are Gun Turret, Grand Turret, AA Gun.\n    - GAP technology is available earlier and cheaper.\n    - Submarine detection +50% radius and better Sonar Pulse.\nVeterancy Bonus:\n    - Iroqouis and Gunboat gets built as Veteran.\nUnique Support Powers:\n    - Interceptors (Tech Center)\nA squadron of Interceptors provides air cover over target area.\nSpecial Units:\n    - ATGM Soldier (Infantry)\nInfantry armed with anti-tank rockets.\n    - Battleship (Naval)\nAn early design, single-barrel turreted cruiser.
-	Faction@9:
+	Faction@10:
 		Name: Italy
 		InternalName: italy
 		Side: Allies
-		Description: Italy\nFaction Variations:\n    - Tanks* move faster but have less Health.\n*Those Tanks being Light and Medium Tanks.\n    - Can build Rocket APC instead of regular APC.\n    - Gun Turrets have 15% increased Rate of Fire.\nVeterancy Bonus:\n    - Light Tank and Cruiser gets built as Veteran.\nUnique Support Power:\n    - Baloon Mines (Service Depot)\nA B-52 delivers 5 Baloon Mines anywhere on the map.\n    - Chrono Bomb (Tech Center)\nChronoshifts a Bomb Crate to desired position.\nThe bomb detonates after 30 seconds or when picked up.\nSpecial Units:\n    - Flamethrower (Infantry)\nCan build Flamethrowers despite being Allied country.\n    - Mirage Tank (Vehicle)\nTank that is capable of Diguising as most Vehicles.\n    - Baloon Mine (Aircraft)\nAn remote controlled, dirigible, parachuted mine in the sky.
-	Faction@10:
+		Description: Italy\nFaction Variations:\n    - Tanks* move faster but have less Health.\n*Those Tanks being Light and Medium Tanks.\n    - Can build Rocket APC instead of regular APC.\n    - Gun Turrets have 15% increased Rate of Fire.\nVeterancy Bonus:\n    - Light Tank and Cruiser gets built as Veteran.\nUnique Support Powers:\n    - Baloon Mines (Service Depot)\nA B-52 delivers 5 Baloon Mines anywhere on the map.\n    - Chrono Bomb (Tech Center)\nChronoshifts a Bomb Crate to desired position.\nThe bomb detonates after 30 seconds or when picked up.\nSpecial Units:\n    - Flamethrower (Infantry)\nCan build Flamethrowers despite being Allied country.\n    - Mirage Tank (Vehicle)\nTank that is capable of Diguising as most Vehicles.\n    - Baloon Mine (Aircraft)\nAn remote controlled, dirigible, parachuted mine in the sky.
+	Faction@11:
 		Name: Turkey
 		InternalName: turkey
 		Side: Allies
 		Description: Turkey\nFaction Variations:\n    - Infantry is well-trained, considerably performing better.\nAll combat infantry take 10% less damage, deal out 10% more and move 10% faster.\n    - Power Plants generate more Power at increased cost.\nPower Plant generates +25, Advanced Power Plant +50 Power.\n    - Artillery reloads 10% faster.\nFaction restrictions:\n    - This country cannot train Tanya.\nVeterancy Bonus:\n    - Grenadier and Spitfire Bomber as Veteran.\nUnique Support Powers:\n    - Nuclear Minelayer (Service Depot with Tech Center)\nDelivers a Nuclear Minelayer at your primary War Factory.\nSpecial Units:\n    - Sniper (Infantry)\nMarksman with Sniper rifle.\n    - Grand Cannon (Vehicle)\nHeavy artillery with extreme range.
-	Faction@11:
+	Faction@12:
 		Name: Soviet
 		InternalName: soviet
 		Side: Soviet
 		Description: Soviet\nThe Soviet empire consist of the combined forces of the USSR. Under the leadership of Stalin they march forth to conquer Europe,\ntheir intention: to realize the comrade premier's dream of uniting the continent under communist Socialism at any cost.\nThey use strong armoured divisions, napalm weaponry, tesla technology and strength in numbers to overwhelm opposition.
-	Faction@12:
+	Faction@13:
 		Name: Russia
 		InternalName: russia
 		Side: Soviet
 		Description: Russia\nSpecialization: Tesla Weaponry\nThe forces of Russia utilize the power of Tesla technology.\nFaction Variations:\n    - Buildings* are cheaper to build but explode sooner.\n*Defenses are not included.\n10% cheaper to build at the expanse of collapsing sooner\nat threshold of 10% Hitpoints remaining.\n    - A-Bomb gets prepared faster.\nNuke recharges in 7:30 instead 9:00.\nThe timers given are for 'Normal' speed.\n    - Tesla Coil has +1 Range.\nVeterancy Bonus:\n    - Both variants of Heavy Tank gets built as Veteran.\nUnique Support Powers:\n    - Storm Troopers (Airfield with Tesla Coil)\nA Badger paradrops three Veteran Shock Troopers anywhere on the map.\n    - EMP Bomb (Tech Center)\nA plane drops an EMP Bomb on your target,\nthat disables Vehicle, Ship and Submarines.\nSpecial Units:\n    - Shock Trooper & Tesla Tank (Infantry & Vehicle)\nUnits armed with fearsome portable tesla weaponry.\n    - Nuclear Submarine (Naval)\nAn submarine capable of launching nuclear warheads.\n    - Badger Bomber (Aircraft)\nBadger variant modified to carry triple amount of Parabombs.
-	Faction@13:
+	Faction@14:
 		Name: Ukraine
 		InternalName: ukraine
 		Side: Soviet
 		Description: Ukraine\nSpecialization: Mobilization\nFaction Variations:\n    - Tanks* move faster but are built slower.\n*Those Tanks being both types of Heavy Tanks.\nBuildDurationModifier is 70, speed marginally faster.\n    - All Airplanes move faster, Airfields cost more.\nMovespeed increased by 10%, Airfields cost 550.\nThe bonus affects Badger Planes too.\n    - Submarines move 10% faster while Underwater.\nVeterancy Bonus:\n    - Mammoth Tank and Submarine gets built as Veteran.\nUnique Support Powers:\n    - Paragrenadiers (Airfield)\nA Badger paradrops four Veteran Grenadiers anywhere on the map.\n    - Parabombs (Airfield with Tech Center)\nA squad of Badgers drop parachuted bombs on your target.\nSpecial Units:\n    - Flamethrower & Flame Sub (Infantry & Naval)\nThose units are capable of using Flame weaponry.\n    - Demolition Truck (Vehicle)\nAn truck with a desperate driver, loaded with Nuclear explosives.\n    - Magnetic Mine (Naval)\nDirigible Sea Mine that 'leaps' to enemy ships.
-	Faction@14:
+	Faction@15:
 		Name: Belarus
 		InternalName: belarus
 		Side: Soviet
-		Description: Belarus\nSpecialization: Secret Weapons\nThe forces of Belarus have wondrous inventions at their disposal.\nFaction Variations:\n    - Can build Flame Mammoth instead of regular Mammoth.\n    - Paratroopers available twice as frequent.\nVeterancy Bonus:\n    - Yak Plane and Flak Truck gets built as Veteran.\nUnique Support Powers:\n    - Jammer Plane (Radar Dome with Service Depot)\nAn plane traveling in a line across the map, jams enemy radar within radius.\n    - Reserves (War Factory with Industrial Plant)\nPeriodically obtains a free Heavy Tank at primary War Factory.\nSpecial Units:\n    - Grenade Launcher (Infantry)\nSoldier armed with long ranged grenade thrower.\n    - Mobile War Factory (Vehicle)\nDeploys into a War Factory with seperate queue.\n    - Nuclear Bomber (Aircraft)\nUnits capable of delivering tactical Nuclear warheads.
-	Faction@15:
+		Description: Belarus\nSpecialization: Secret Weapons\nFaction Variations:\n    - Can build Flame Mammoth instead of regular Mammoth.\n    - Paratroopers available twice as frequent.\nVeterancy Bonus:\n    - Yak Plane and Flak Truck gets built as Veteran.\nUnique Support Powers:\n    - Paramines (Airfield)\nA Badger paradrops one Minelayer anywhere on the map.\n    - Reserves (War Factory with Industrial Plant)\nPeriodically obtains a free Heavy Tank at primary War Factory.\nSpecial Units:\n    - Grenade Launcher (Infantry)\nSoldier armed with long ranged grenade thrower.\n    - Mobile War Factory (Vehicle)\nDeploys into a War Factory with seperate queue.\n    - Nuclear Bomber (Aircraft)\nUnits capable of delivering tactical Nuclear warheads.
+	Faction@16:
 		Name: Karelia
 		InternalName: karelia
 		Side: Soviet
-		Description: Karelia\nFaction Variations:\n    - Defenses* use 10% less Power but have 100 less Hitpoints.\n*Superweapons are not included.\n    - MiG Attack Plane rockets have +2 range.\n    - Sub Pens are cloaked aslong not on low power.\nThe Sub Pen reveals itself briefly on completion of unit production also.\nVeterancy Bonus:\n    - Missile Submarine gets built as Veteran.\nUnique Support Powers:\n    - Paramines (Airfield)\nA Badger paradrops one Minelayer anywhere on the map.\n    - Extra Spyplane (Tech Center)\nOne more Spy Plane becomes available with a Tech Center.\nSpecial Units:\n    - RPO Trooper (Infantry)\nInfantry firing Thermobaric rocket that explodes like Flame Tower's projectile.\n    - SAM Launcher (Vehicle)\nHalf-track with pair of AA missiles.\n    - Ballistic Submarine (Naval)\nSubmarine with a rocket battery
-	Faction@16:
+		Description: Karelia\nFaction Variations:\n    - Defenses* use 10% less Power but have 100 less Hitpoints.\n*Superweapons are not included.\n    - MiG Attack Plane rockets have +2 range.\n    - Sub Pens are cloaked aslong not on low power.\nThe Sub Pen reveals itself briefly on completion of unit production also.\nVeterancy Bonus:\n    - Missile Submarine gets built as Veteran.\nUnique Support Powers:\n    - Extra Spyplane (Tech Center)\nOne more Spy Plane becomes available with a Tech Center.\nSpecial Units:\n    - RPO Trooper (Infantry)\nInfantry firing Thermobaric rocket that explodes like Flame Tower's projectile.\n    - SAM Launcher (Vehicle)\nHalf-track with pair of AA missiles.\n    - Ballistic Submarine (Naval)\nSubmarine with a rocket battery
+	Faction@17:
 		Name: Transnist.
 		InternalName: moldova
 		Side: Soviet
-		Description: Transnistria\nThe forces of Transnistria specialize in blowing their opponents to smithereens.\nFaction Variations:\n    - Saboteurs have improved characteristics.\nSaboteurs have +20 hitpoints and move 10% faster out of Cloak.\n    - Attack Dogs are amphibian and explode on Death.\nFaction restrictions:\n    - This country cannot train Volkov.\nVeterancy Bonus:\n    - Heavy APC gets built as Veteran.\nUnique Support Power:\n    - Remote Kennel (Service Depot)\nDeploys a Kennel with seperate queue anywhere on the map.\nSpecial Units:\n    - Demolitionist (Infantry)\nExplosives expert capable of blowing up and booby-trapping Structures.\n    - Mobile Repair Truck (Vehicle)\nMechanized Engineers capable of Capturing, Recovering and Repairs.\n    - Siege Tank (Vehicle)\nShort-range artillery that applies Concussion to Ground units.
-	Faction@17:
+		Description: Transnistria\nFaction Variations:\n    - Saboteurs have improved characteristics.\nSaboteurs have +20 hitpoints and move 10% faster out of Cloak.\n    - Attack Dogs are amphibian and explode on Death.\nFaction restrictions:\n    - This country cannot train Volkov.\nVeterancy Bonus:\n    - Heavy APC gets built as Veteran.\nUnique Support Powers:\n    - Remote Kennel (Service Depot)\nDeploys a Kennel with seperate queue anywhere on the map.\n    - Jammer Plane (Radar Dome with Service Depot)\nAn plane traveling in a line across the map, jams enemy radar within radius.\nSpecial Units:\n    - Demolitionist (Infantry)\nExplosives expert capable of blowing up and booby-trapping Structures.\n    - Mobile Repair Truck (Vehicle)\nMechanized Engineers capable of Capturing, Recovering and Repairs.\n    - Siege Tank (Vehicle)\nShort-range artillery that applies Concussion to Ground units.
+	Faction@18:
+		Name: Transcauc.
+		InternalName: caucasia
+		Side: Soviet
+		Description: Transcaucasia\nFaction Variations:\n    - TODO.\n    - TODO.\n    - TODO.\nVeterancy Bonus:\n    - None.\nUnique Support Powers:\n    - TODO.\n    - TODO.\nSpecial Units:\n    - Fanatic (Infantry)\nLiving bomb suicide Infantry.\n    - Assault Blimp (Aircraft)\nTODO DESCR.\n    - Carrier Blimp (Aircraft)\nTODO DESCR.
+		Selectable: false
+	Faction@19:
 		Name: Kazakhst.
 		InternalName: kazakh
 		Side: Soviet
 		Description: Kazakhstan\nFaction Variations:\n    - Tanks have +1 Range and take 10% longer to reload.\nAffected are both types of Heavy Tank and Mammoth Tanks.\n    - GPS Sattelite is prepared faster.\nGPS becomes available in 9:00 instead 12:00.\nThe timers given are for 'Normal' speed.\n    - Get one free Flak Truck with each War Factory built.\nVeterancy Bonus:\n    - MiG gets built as Veteran.\nUnique Support Powers:\n    - Tank Hunters (Service Depot)\nDelivers a trio of fast Tank Hunters at your primary War Factory.\n    - Communications Jam (Radar Dome with Space Program)\nObscures an area on the map with shroud and jams enemy Radar.\nSpecial Units:\n    - MI-2 Scout (Aircraft)\nFast Helicopter that can Heal infantry when landed.\n    - ICBM Launcher (Vehicle)\nNuclear rocket artillery with extreme range.
-	Faction@18:
+	Faction@20:
 		Name: Uzbekist.
 		InternalName: uzbek
 		Side: Soviet
 		Description: Uzbekistan\nSpecialization: Engineering.\nFaction Variations:\n    - Construction Yards provide +2 increased build radius.\nThis bonus also applies for Expansion Posts.\n    - Iron Curtain uses 100 less Power and is more durable.\n    - V2 Launcher has +1 Range.\nVeterancy Bonus:\n    - Volkov gets built as Veteran.\nUnique Support Powers:\n    - Lone Tower (Tech Center)\nA Flame Turret gets instantly built, checking Terrain of build spot.\n    - V3 Missile Strike (Tech Center with Radar Dome)\nThree V3 rockets will strike your target.\nSpecial Units:\n    - Gamma Trooper (Infantry)\nInfantry armed with radiation beam weaponry.\n    - MAD Tank (Vehicle)\nDevice capable of emitting seismic waves when deployed that damage structures.
-	Faction@19:
+	Faction@21:
 		Name: Turkmen.
 		InternalName: turkmen
 		Side: Soviet
 		Description: Turkmenistan\nFaction Variations:\n    - Tanks* fire 10% faster but are more expensive.\n*Those Tanks being both types of Heavy Tanks.\n    - Obtains 20% more income from all Sources.\nAffects Harvesters, Ore Silos and Oil Derricks alike.\n    - Minelayer and Heavy APC carry +3 more Mines/Passengers.\nVeterancy Bonus:\n    - V2 Launcher gets built as Veteran.\nUnique Support Powers:\n    - Paradogs (Airfield)\nA Badger drops three Dogs anywhere on the map.\nSpecial Units:\n    - Chemical Trooper (Infantry)\nClose-range anti-everything Soldier that poisons Infantry.
-	Faction@20:
+	Faction@22:
 		Name: Afghanst.
 		InternalName: afghan
 		Side: Soviet
 		Description: Afghanistan\nSpecialization: Propaganda Corps\nFaction Variations:\n    - Tanks* have 10% more Health and move slower.\n*Those Tanks being both types of Heavy Tanks.\nVeterancy Bonus:\n    - Hind gets built as Veteran.\nUnique Support Powers:\n    - Paranuke (Tech Center)\nA Badger drops an parachuted nuclear bomb on your target.\nThe bomb is more effective against units rather than structures.\n    - Defector (Radar Dome with Tech Center)\nTargeted enemy Infantry, Vehicle or Ship changes side to yours.\nSpecial Units:\n    - Marksman (Infantry)\nSniper infantry that utilizes poison coated rounds.\n    - Mobile HQ (Vehicle)\nMobile base of operations that can deploy into a Command Post.\n    - Propaganda Station (Defense)\nBoosts surrounding ground units with Propaganda. 
-	Faction@21:
+	Faction@23:
 		Name: China
 		InternalName: china
 		Side: Soviet
@@ -410,23 +422,23 @@ World:
 	MPStartUnits@cratehunters:
 		Class: mhq
 		ClassName: Crate Hunters
-		Factions: allies, usa, england, france, holland, germany, sweden, spain, italy, greece, turkey, soviet, russia, ukraine, belarus, karelia, moldova, kazakh, uzbek, china, turkmen, afghan
+		Factions: allies, usa, england, france, holland, germany, sweden, swiss, spain, italy, greece, turkey, soviet, russia, ukraine, belarus, karelia, moldova, caucasia, kazakh, uzbek, turkmen, afghan, china
 		BaseActor: MHQ.Start
 	MPStartUnits@mcvonly:
 		Class: mcv
 		ClassName: MCV Only
-		Factions: allies, usa, england, france, holland, germany, sweden, spain, italy, greece, turkey, soviet, russia, ukraine, belarus, karelia, moldova, kazakh, uzbek, china, turkmen, afghan
+		Factions: allies, usa, england, france, holland, germany, sweden, swiss, spain, italy, greece, turkey, soviet, russia, ukraine, belarus, karelia, moldova, caucasia, kazakh, uzbek, turkmen, afghan, china
 		BaseActor: mcv
 	MPStartUnits@doublemcv:
 		Class: doublemcv
 		ClassName: Double MCV
-		Factions: allies, usa, england, france, holland, germany, sweden, spain, italy, greece, turkey, soviet, russia, ukraine, belarus, karelia, moldova, kazakh, uzbek, china, turkmen, afghan
+		Factions: allies, usa, england, france, holland, germany, sweden, swiss, spain, italy, greece, turkey, soviet, russia, ukraine, belarus, karelia, moldova, caucasia, kazakh, uzbek, turkmen, afghan, china
 		BaseActor: mcv
 		SupportActors: mcv
 	MPStartUnits@lightalliesa:
 		Class: light
 		ClassName: Light Support
-		Factions: allies, usa, england, france, holland, germany, sweden, spain, italy, greece, turkey
+		Factions: allies, usa, england, france, holland, germany, sweden, swiss, spain, italy, greece, turkey
 		BaseActor: mcv
 		SupportActors: e1,e1,e1,e3,e3,jeep,1tnk
 		InnerSupportRadius: 3
@@ -434,7 +446,7 @@ World:
 	MPStartUnits@lightalliesb:
 		Class: light
 		ClassName: Light Support
-		Factions: allies, usa, england, france, holland, germany, sweden, spain, italy, greece, turkey
+		Factions: allies, usa, england, france, holland, germany, sweden, swiss, spain, italy, greece, turkey
 		BaseActor: mcv
 		SupportActors: e1,e1,e1,e3,e3,apc,jeep
 		InnerSupportRadius: 3
@@ -442,7 +454,7 @@ World:
 	MPStartUnits@lightsovieta:
 		Class: light
 		ClassName: Light Support
-		Factions: soviet, russia, ukraine, belarus, karelia, moldova, kazakh, uzbek, china, turkmen, afghan
+		Factions: soviet, russia, ukraine, belarus, karelia, moldova, caucasia, kazakh, uzbek, turkmen, afghan, china
 		BaseActor: mcv
 		SupportActors: e1,e1,e1,e3,e3,apc.soviet,ftrk
 		InnerSupportRadius: 3
@@ -450,7 +462,7 @@ World:
 	MPStartUnits@lightsovietb:
 		Class: light
 		ClassName: Light Support
-		Factions: soviet, russia, ukraine, belarus, karelia, moldova, kazakh, uzbek, china, turkmen, afghan
+		Factions: soviet, russia, ukraine, belarus, karelia, moldova, caucasia, kazakh, uzbek, turkmen, afghan, china
 		BaseActor: mcv
 		SupportActors: e1,e1,e1,e3,e3,ftrk,3tnk.1b
 		InnerSupportRadius: 3
@@ -458,7 +470,7 @@ World:
 	MPStartUnits@heavyalliesa:
 		Class: heavy
 		ClassName: Heavy Support
-		Factions: allies, usa, england, france, holland, germany, sweden, spain, italy, greece, turkey
+		Factions: allies, usa, england, france, holland, germany, sweden, swiss, spain, italy, greece, turkey
 		BaseActor: mcv
 		SupportActors: e1,e1,e1,e3,e3,jeep,1tnk,2tnk,1tnk,2tnk
 		InnerSupportRadius: 3
@@ -466,7 +478,7 @@ World:
 	MPStartUnits@heavyalliesb:
 		Class: heavy
 		ClassName: Heavy Support
-		Factions: allies, usa, england, france, holland, germany, sweden, spain, italy, greece, turkey
+		Factions: allies, usa, england, france, holland, germany, sweden, swiss, spain, italy, greece, turkey
 		BaseActor: mcv
 		SupportActors: e1,e1,e1,e3,e3,apc,jeep,2tnk,2tnk,1tnk
 		InnerSupportRadius: 3
@@ -474,7 +486,7 @@ World:
 	MPStartUnits@heavysovieta:
 		Class: heavy
 		ClassName: Heavy Support
-		Factions: soviet, russia, ukraine, belarus, karelia, moldova, kazakh, uzbek, china, turkmen, afghan
+		Factions: soviet, russia, ukraine, belarus, karelia, moldova, caucasia, kazakh, uzbek, turkmen, afghan, china
 		BaseActor: mcv
 		SupportActors: e1,e1,e1,e3,e3,ftrk,ftrk,3tnk.1b,3tnk.1b
 		InnerSupportRadius: 3
@@ -482,7 +494,7 @@ World:
 	MPStartUnits@heavysovietb:
 		Class: heavy
 		ClassName: Heavy Support
-		Factions: soviet, russia, ukraine, belarus, karelia, moldova, kazakh, uzbek, china, turkmen, afghan
+		Factions: soviet, russia, ukraine, belarus, karelia, moldova, caucasia, kazakh, uzbek, turkmen, afghan, china
 		BaseActor: mcv
 		SupportActors: e1,e1,e1,e3,e3,apc.soviet,ftrk,3tnk,ftrk
 		InnerSupportRadius: 3
@@ -490,7 +502,7 @@ World:
 	MPStartUnits@deployedallies:
 		Class: none
 		ClassName: Conyard + Scout
-		Factions: allies, usa, england, france, holland, germany, sweden, spain, italy, greece, turkey
+		Factions: allies, usa, england, france, holland, germany, sweden, swiss, spain, italy, greece, turkey
 		BaseActor: fact
 		SupportActors: jeep.scout
 		InnerSupportRadius: 3
@@ -498,7 +510,7 @@ World:
 	MPStartUnits@deployedsoviet:
 		Class: none
 		ClassName: Conyard + Scout
-		Factions: soviet, russia, ukraine, belarus, karelia, moldova, kazakh, uzbek, china, turkmen, afghan
+		Factions: soviet, russia, ukraine, belarus, karelia, moldova, caucasia, kazakh, uzbek, turkmen, afghan, china
 		BaseActor: fact
 		SupportActors: ftrk.scout
 		InnerSupportRadius: 3

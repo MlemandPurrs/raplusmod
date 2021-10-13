@@ -33,6 +33,7 @@ HARV.Chrono:
 		WarpOutSound: chrono2.aud
 	SpawnActorOnDeath:
 		Actor: HARV.Chrono.EmptyHusk
+		OwnerType: InternalName
 	ProvidesPrerequisite@LIMITING:
 		Prerequisite: has.charv
 
@@ -405,6 +406,7 @@ RAPC:
 		CustomPipType: pip-red
 	SpawnActorOnDeath:
 		Actor: 2TNK.Stealth.Husk
+		OwnerType: InternalName
 	RenderSprites:
 		Image: 2tnks
 	#	some bogus condition to debug the cloak, 
@@ -617,6 +619,7 @@ ATNK:
 		RequiresCondition: atsea
 	SpawnActorOnDeath:
 		Actor: ATNK.Husk
+		OwnerType: InternalName
 		RequiresCondition: !floating
 	RenderSprites:
 		Image: 1tnk
