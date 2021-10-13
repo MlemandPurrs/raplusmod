@@ -1,0 +1,15 @@
+anomaly:
+	idle: litning
+		Length: 4
+		ZOffset: 1023
+
+anomalytrail:
+	idle: litning
+		Length: 8
+		ZOffset: 1023
+
+rock3:
+	idle: rock3.des
+		AddExtension: false
+	active: rock3.des
+		AddExtension: false

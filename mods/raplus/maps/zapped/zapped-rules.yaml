@@ -1,0 +1,8 @@
+TSLA.Creeps:
+	Inherits: TSLA
+	Power:
+		Amount: 0	
+	-Buildable:
+	RenderSprites:
+		Image: tsla
+	-MapEditorData:

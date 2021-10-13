@@ -1,0 +1,59 @@
+AnomalyA:
+	ValidTargets: Ground, Water, Air
+	ReloadDelay: 1155
+	Range: 14c0
+	Projectile: Bullet
+		Speed: 48
+		Blockable: false
+		Inaccuracy: 8c0
+		Image: anomaly
+		TrailImage: anomalytrail
+		TrailDelay: 1
+	Warhead@1Dam: SpreadDamage
+		Spread: 512
+		Damage: 36
+		DamageTypes: TriggerProne, ElectricityDeath
+	Warhead@1Dam: SpreadDamage
+		Spread: 1c256
+		Damage: 18
+		DamageTypes: TriggerProne, FireDeath, Incendiary
+	Warhead@3Sound: CreateEffect
+		ImpactSounds: h2obomb2.aud
+	Warhead@4Smudger: LeaveSmudge
+		SmudgeType: Scorch
+
+AnomalyB:
+	Inherits: AnomalyA
+	ReloadDelay: 770
+	Range: 11c0
+	Projectile: Bullet
+		Speed: 72
+		Blockable: false
+		Inaccuracy: 6c0
+		Image: anomaly
+		TrailImage: anomalytrail
+		TrailDelay: 1
+
+AnomalyC:
+	Inherits: AnomalyA
+	ReloadDelay: 462
+	Range: 8c0
+	Projectile: Bullet
+		Speed: 96
+		Blockable: false
+		Inaccuracy: 4c0
+		Image: anomaly
+		TrailImage: anomalytrail
+		TrailDelay: 1
+
+AnomalyD:
+	Inherits: AnomalyA
+	ReloadDelay: 330
+	Range: 5c0
+	Projectile: Bullet
+		Speed: 120
+		Blockable: false
+		Inaccuracy: 2c0
+		Image: anomaly
+		TrailImage: anomalytrail
+		TrailDelay: 1

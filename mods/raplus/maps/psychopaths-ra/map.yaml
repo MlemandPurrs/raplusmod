@@ -1,0 +1,154 @@
+MapFormat: 11
+
+RequiresMod: ra
+
+Title: Psychopaths - RA
+
+Author: mlemandpurrs
+
+Tileset: DESERT
+
+MapSize: 66,98
+
+Bounds: 1,1,64,96
+
+Visibility: Lobby
+
+Categories: Conquest
+
+Players:
+	PlayerReference@Neutral:
+		Name: Neutral
+		OwnsWorld: True
+		NonCombatant: True
+		Faction: england
+	PlayerReference@Creeps:
+		Name: Creeps
+		NonCombatant: True
+		Faction: england
+		Enemies: Multi0, Multi1
+	PlayerReference@Multi0:
+		Name: Multi0
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi1:
+		Name: Multi1
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+
+Actors:
+	Actor0: oilb
+		Owner: Neutral
+		Location: 4,92
+		Health: 47
+	Actor1: rock7
+		Owner: Neutral
+		Location: 35,52
+	Actor2: rock1
+		Owner: Neutral
+		Location: 41,53
+	Actor3: rock6
+		Owner: Neutral
+		Location: 22,45
+	Actor5: mine
+		Owner: Neutral
+		Location: 53,46
+	Actor6: mine
+		Owner: Neutral
+		Location: 43,73
+	Actor7: mine
+		Owner: Neutral
+		Location: 49,10
+	Actor8: mine
+		Owner: Neutral
+		Location: 22,24
+	Actor9: rock4
+		Owner: Neutral
+		Location: 23,42
+	Actor10: mine
+		Owner: Neutral
+		Location: 11,51
+	Actor14: mpspawn
+		Owner: Neutral
+		Location: 34,17
+	Actor15: mpspawn
+		Owner: Neutral
+		Location: 31,80
+	Actor16: oilb
+		Owner: Neutral
+		Location: 55,87
+	Actor17: oilb
+		Owner: Neutral
+		Location: 9,9
+	Actor18: oilb
+		Owner: Neutral
+		Location: 60,4
+		Health: 48
+	Actor19: mine
+		Owner: Neutral
+		Location: 16,87
+	Actor20: mine
+		Owner: Neutral
+		Location: 21,67
+	Actor21: mine
+		Owner: Neutral
+		Location: 43,30
+	Actor22: mine
+		Owner: Neutral
+		Location: 17,88
+	Actor25: mine
+		Owner: Neutral
+		Location: 48,9
+	Actor23: tc01
+		Owner: Neutral
+		Location: 30,63
+	Actor24: tc01
+		Owner: Neutral
+		Location: 31,33
+	Actor26: t08
+		Owner: Neutral
+		Location: 55,60
+	Actor27: t08
+		Owner: Neutral
+		Location: 8,37
+	Actor28: t08
+		Owner: Neutral
+		Location: 9,73
+	Actor29: tc01
+		Owner: Neutral
+		Location: 3,80
+	Actor30: t08
+		Owner: Neutral
+		Location: 55,24
+	Actor31: tc01
+		Owner: Neutral
+		Location: 59,15
+	Actor32: t08
+		Owner: Neutral
+		Location: 45,34
+	Actor33: t08
+		Owner: Neutral
+		Location: 19,63
+	Actor34: tc01.husk
+		Owner: Neutral
+		Location: 43,66
+	Actor37: tc01.husk
+		Owner: Neutral
+		Location: 20,29
+	Actor35: rock1
+		Owner: Neutral
+		Location: 4,29
+	Actor36: rock1
+		Owner: Neutral
+		Location: 58,65
+	Actor38: rock4
+		Owner: Neutral
+		Location: 49,87
+	Actor39: rock4
+		Owner: Neutral
+		Location: 15,11
+	Actor40: rock5
+		Owner: Neutral
+		Location: 28,45

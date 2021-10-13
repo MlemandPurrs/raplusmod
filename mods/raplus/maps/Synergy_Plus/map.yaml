@@ -1,0 +1,199 @@
+MapFormat: 11
+
+RequiresMod: ra
+
+Title: Synergy Plus
+
+Author: F16
+
+Tileset: TEMPERAT
+
+MapSize: 162,102
+
+Bounds: 1,1,160,100
+
+Visibility: Lobby
+
+Categories: Conquest
+
+Players:
+	PlayerReference@Neutral:
+		Name: Neutral
+		OwnsWorld: True
+		NonCombatant: True
+		Faction: england
+	PlayerReference@Creeps:
+		Name: Creeps
+		NonCombatant: True
+		Faction: england
+		Enemies: Multi0, Multi1, Multi2, Multi3, Multi4, Multi5
+	PlayerReference@Multi0:
+		Name: Multi0
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi1:
+		Name: Multi1
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi2:
+		Name: Multi2
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi3:
+		Name: Multi3
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi4:
+		Name: Multi4
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi5:
+		Name: Multi5
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+
+Actors:
+	Actor20: oilb
+		Owner: Neutral
+		Location: 37,82
+	Actor28: mpspawn
+		Owner: Neutral
+		Location: 29,50
+	Actor29: mpspawn
+		Owner: Neutral
+		Location: 52,37
+	Actor30: mpspawn
+		Owner: Neutral
+		Location: 52,64
+	Actor31: mpspawn
+		Owner: Neutral
+		Location: 132,50
+	Actor33: mpspawn
+		Owner: Neutral
+		Location: 109,65
+	Actor32: mpspawn
+		Owner: Neutral
+		Location: 109,37
+	Actor43: mine
+		Owner: Neutral
+		Location: 154,98
+	Actor35: mine
+		Owner: Neutral
+		Location: 71,66
+	Actor47: mine
+		Owner: Neutral
+		Location: 139,45
+	Actor48: mine
+		Owner: Neutral
+		Location: 139,54
+	Actor51: mine
+		Owner: Neutral
+		Location: 22,46
+	Actor52: mine
+		Owner: Neutral
+		Location: 22,55
+	Actor54: tc04
+		Owner: Neutral
+		Location: 81,29
+	Actor55: t16
+		Owner: Neutral
+		Location: 80,29
+	Actor56: tc01
+		Owner: Neutral
+		Location: 80,65
+	Actor57: tc05
+		Owner: Neutral
+		Location: 79,71
+	Actor58: tc02
+		Owner: Neutral
+		Location: 39,60
+	Actor59: oilb
+		Owner: Neutral
+		Location: 38,43
+	Actor60: oilb
+		Owner: Neutral
+		Location: 122,55
+	Actor61: tc05
+		Owner: Neutral
+		Location: 14,38
+	Actor62: tc03
+		Owner: Neutral
+		Location: 16,60
+	Actor63: tc03
+		Owner: Neutral
+		Location: 15,46
+	Actor64: boxes01
+		Owner: Neutral
+		Location: 16,53
+	Actor65: tc02
+		Owner: Neutral
+		Location: 121,38
+	Actor66: oilb
+		Owner: Neutral
+		Location: 36,18
+	Actor67: oilb
+		Owner: Neutral
+		Location: 124,17
+	Actor68: oilb
+		Owner: Neutral
+		Location: 124,83
+	Actor69: mine
+		Owner: Neutral
+		Location: 90,66
+	Actor70: mine
+		Owner: Neutral
+		Location: 71,35
+	Actor71: mine
+		Owner: Neutral
+		Location: 90,35
+	Actor53: mine
+		Owner: Neutral
+		Location: 48,69
+	Actor50: mine
+		Owner: Neutral
+		Location: 115,68
+	Actor49: mine
+		Owner: Neutral
+		Location: 46,33
+	Actor72: mine
+		Owner: Neutral
+		Location: 113,32
+	Actor44: mine
+		Owner: Neutral
+		Location: 158,95
+	Actor45: mine
+		Owner: Neutral
+		Location: 154,3
+	Actor46: mine
+		Owner: Neutral
+		Location: 158,6
+	Actor73: mine
+		Owner: Neutral
+		Location: 3,7
+	Actor74: mine
+		Owner: Neutral
+		Location: 6,3
+	Actor41: mine
+		Owner: Neutral
+		Location: 3,94
+	Actor42: mine
+		Owner: Neutral
+		Location: 6,98
+	Actor75: tc04
+		Owner: Neutral
+		Location: 57,25
+	Actor76: tc05
+		Owner: Neutral
+		Location: 101,24
+	Actor77: tc03
+		Owner: Neutral
+		Location: 107,81
+	Actor78: tc03
+		Owner: Neutral
+		Location: 55,82

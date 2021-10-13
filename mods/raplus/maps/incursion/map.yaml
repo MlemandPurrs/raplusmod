@@ -1,0 +1,308 @@
+MapFormat: 11
+
+RequiresMod: ra
+
+Title: Incursion
+
+Author: saint
+
+Tileset: TEMPERAT
+
+MapSize: 130,130
+
+Bounds: 1,1,128,128
+
+Visibility: Lobby
+
+Categories: Conquest
+
+Players:
+	PlayerReference@Neutral:
+		Name: Neutral
+		OwnsWorld: True
+		NonCombatant: True
+		Faction: england
+	PlayerReference@Creeps:
+		Name: Creeps
+		NonCombatant: True
+		Faction: england
+		Enemies: Multi0, Multi1, Multi2, Multi3, Multi4, Multi5, Multi6, Multi7
+	PlayerReference@Multi0:
+		Name: Multi0
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi1:
+		Name: Multi1
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi2:
+		Name: Multi2
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi3:
+		Name: Multi3
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi4:
+		Name: Multi4
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi5:
+		Name: Multi5
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi6:
+		Name: Multi6
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi7:
+		Name: Multi7
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+
+Actors:
+	Actor0: gmine
+		Owner: Neutral
+		Location: 64,82
+	Actor1: gmine
+		Owner: Neutral
+		Location: 67,82
+	Actor2: gmine
+		Owner: Neutral
+		Location: 48,66
+	Actor3: gmine
+		Owner: Neutral
+		Location: 48,63
+	Actor4: gmine
+		Owner: Neutral
+		Location: 82,66
+	Actor5: gmine
+		Owner: Neutral
+		Location: 82,63
+	Actor6: gmine
+		Owner: Neutral
+		Location: 65,47
+	Actor7: gmine
+		Owner: Neutral
+		Location: 68,47
+	Actor8: mine
+		Owner: Neutral
+		Location: 67,111
+	Actor9: mine
+		Owner: Neutral
+		Location: 65,111
+	Actor10: mine
+		Owner: Neutral
+		Location: 2,124
+	Actor11: mine
+		Owner: Neutral
+		Location: 5,127
+	Actor12: mine
+		Owner: Neutral
+		Location: 18,64
+	Actor13: mine
+		Owner: Neutral
+		Location: 18,62
+	Actor14: mine
+		Owner: Neutral
+		Location: 111,65
+	Actor15: mine
+		Owner: Neutral
+		Location: 111,63
+	Actor16: mine
+		Owner: Neutral
+		Location: 67,19
+	Actor17: mine
+		Owner: Neutral
+		Location: 65,19
+	Actor21: mine
+		Owner: Neutral
+		Location: 124,127
+	Actor22: mine
+		Owner: Neutral
+		Location: 127,124
+	Actor20: mine
+		Owner: Neutral
+		Location: 124,2
+	Actor23: mine
+		Owner: Neutral
+		Location: 127,5
+	Actor24: mine
+		Owner: Neutral
+		Location: 5,2
+	Actor25: mine
+		Owner: Neutral
+		Location: 2,5
+	Actor51: mpspawn
+		Owner: Neutral
+		Location: 10,119
+	Actor52: mpspawn
+		Owner: Neutral
+		Location: 119,119
+	Actor53: mpspawn
+		Owner: Neutral
+		Location: 119,10
+	Actor54: mpspawn
+		Owner: Neutral
+		Location: 10,10
+	Actor55: mpspawn
+		Owner: Neutral
+		Location: 10,63
+	Actor56: mpspawn
+		Owner: Neutral
+		Location: 119,64
+	Actor57: mpspawn
+		Owner: Neutral
+		Location: 66,119
+	Actor58: mpspawn
+		Owner: Neutral
+		Location: 66,11
+	Actor59: gmine
+		Owner: Neutral
+		Location: 54,63
+	Actor60: gmine
+		Owner: Neutral
+		Location: 54,66
+	Actor61: gmine
+		Owner: Neutral
+		Location: 65,53
+	Actor62: gmine
+		Owner: Neutral
+		Location: 68,53
+	Actor63: gmine
+		Owner: Neutral
+		Location: 76,63
+	Actor64: gmine
+		Owner: Neutral
+		Location: 76,66
+	Actor65: gmine
+		Owner: Neutral
+		Location: 67,77
+	Actor66: gmine
+		Owner: Neutral
+		Location: 64,77
+	Actor67: gmine
+		Owner: Neutral
+		Location: 103,57
+	Actor68: gmine
+		Owner: Neutral
+		Location: 102,72
+	Actor69: gmine
+		Owner: Neutral
+		Location: 26,72
+	Actor70: gmine
+		Owner: Neutral
+		Location: 26,56
+	Actor71: gmine
+		Owner: Neutral
+		Location: 57,103
+	Actor72: gmine
+		Owner: Neutral
+		Location: 73,103
+	Actor46: gmine
+		Owner: Neutral
+		Location: 22,127
+	Actor47: gmine
+		Owner: Neutral
+		Location: 24,124
+	Actor48: gmine
+		Owner: Neutral
+		Location: 3,106
+	Actor50: gmine
+		Owner: Neutral
+		Location: 6,104
+	Actor73: gmine
+		Owner: Neutral
+		Location: 108,127
+	Actor74: gmine
+		Owner: Neutral
+		Location: 106,124
+	Actor75: gmine
+		Owner: Neutral
+		Location: 127,106
+	Actor76: gmine
+		Owner: Neutral
+		Location: 124,104
+	Actor77: gmine
+		Owner: Neutral
+		Location: 127,23
+	Actor78: gmine
+		Owner: Neutral
+		Location: 124,25
+	Actor79: gmine
+		Owner: Neutral
+		Location: 107,2
+	Actor80: gmine
+		Owner: Neutral
+		Location: 105,5
+	Actor83: gmine
+		Owner: Neutral
+		Location: 24,2
+	Actor84: gmine
+		Owner: Neutral
+		Location: 26,5
+	Actor81: gmine
+		Owner: Neutral
+		Location: 2,22
+	Actor82: gmine
+		Owner: Neutral
+		Location: 5,24
+	Actor85: gmine
+		Owner: Neutral
+		Location: 41,126
+	Actor86: gmine
+		Owner: Neutral
+		Location: 38,126
+	Actor87: gmine
+		Owner: Neutral
+		Location: 38,126
+	Actor88: gmine
+		Owner: Neutral
+		Location: 88,126
+	Actor89: gmine
+		Owner: Neutral
+		Location: 91,126
+	Actor90: gmine
+		Owner: Neutral
+		Location: 126,86
+	Actor91: gmine
+		Owner: Neutral
+		Location: 126,89
+	Actor92: gmine
+		Owner: Neutral
+		Location: 126,42
+	Actor93: gmine
+		Owner: Neutral
+		Location: 126,39
+	Actor94: gmine
+		Owner: Neutral
+		Location: 87,3
+	Actor95: gmine
+		Owner: Neutral
+		Location: 90,3
+	Actor96: gmine
+		Owner: Neutral
+		Location: 45,3
+	Actor97: gmine
+		Owner: Neutral
+		Location: 42,3
+	Actor98: gmine
+		Owner: Neutral
+		Location: 3,42
+	Actor99: gmine
+		Owner: Neutral
+		Location: 3,39
+	Actor100: gmine
+		Owner: Neutral
+		Location: 3,86
+	Actor101: gmine
+		Owner: Neutral
+		Location: 3,89

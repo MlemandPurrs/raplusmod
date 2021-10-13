@@ -1,0 +1,47 @@
+ifv:
+	Inherits: emp-overlay
+	idle: 0tnk
+		Facings: 32
+		UseClassicFacings: True
+	turret-default: ifv-tur
+		Facings: 32
+		UseClassicFacings: True
+	turret-mg: apc-tur3
+		Facings: 32
+		UseClassicFacings: True
+	turret-gren: 1tnk
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+	turret-flamer: flame-tur
+		Facings: 32
+		UseClassicFacings: True
+	turret-chem: chem-tur
+		Facings: 32
+		UseClassicFacings: True	
+	turret-repair: repair-tur
+		Facings: 32
+		UseClassicFacings: True
+	turret-sniper: 0tnk
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+	turret-autocannon: gapc-tur
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+	turret-mortar: gapc-tur
+		Facings: 32
+		UseClassicFacings: True
+	icon: ifvicon
+
+dtnk.destroyed:
+	idle: mnly
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+	turret: 2tnk
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512

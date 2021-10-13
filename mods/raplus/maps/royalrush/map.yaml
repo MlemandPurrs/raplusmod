@@ -1,0 +1,323 @@
+MapFormat: 11
+
+RequiresMod: ra
+
+Title: Royal Rush
+
+Author: Psybin
+
+Tileset: TEMPERAT
+
+MapSize: 130,130
+
+Bounds: 1,1,128,128
+
+Visibility: Lobby
+
+Categories: Conquest
+
+Players:
+	PlayerReference@Neutral:
+		Name: Neutral
+		OwnsWorld: True
+		NonCombatant: True
+		Faction: england
+	PlayerReference@Creeps:
+		Name: Creeps
+		NonCombatant: True
+		Faction: england
+		Enemies: Multi0, Multi1, Multi2, Multi3, Multi4, Multi5, Multi6, Multi7
+	PlayerReference@Multi0:
+		Name: Multi0
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi1:
+		Name: Multi1
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi2:
+		Name: Multi2
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi3:
+		Name: Multi3
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi4:
+		Name: Multi4
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi5:
+		Name: Multi5
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi6:
+		Name: Multi6
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi7:
+		Name: Multi7
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+
+Actors:
+	Actor0: tc05
+		Location: 69,72
+		Owner: Neutral
+	Actor1: tc04
+		Location: 72,72
+		Owner: Neutral
+	Actor2: tc03
+		Location: 74,71
+		Owner: Neutral
+	Actor3: tc02
+		Location: 70,70
+		Owner: Neutral
+	Actor4: tc01
+		Location: 69,71
+		Owner: Neutral
+	Actor5: t17
+		Location: 69,73
+		Owner: Neutral
+	Actor6: t16
+		Location: 72,71
+		Owner: Neutral
+	Actor7: t07
+		Location: 72,70
+		Owner: Neutral
+	Actor8: t06
+		Location: 72,69
+		Owner: Neutral
+	Actor9: t10
+		Location: 73,69
+		Owner: Neutral
+	Actor10: t11
+		Location: 72,68
+		Owner: Neutral
+	Actor11: t12
+		Location: 73,70
+		Owner: Neutral
+	Actor12: t06
+		Location: 73,71
+		Owner: Neutral
+	Actor13: t17
+		Location: 52,57
+		Owner: Neutral
+	Actor14: tc05
+		Location: 52,56
+		Owner: Neutral
+	Actor15: tc01
+		Location: 52,55
+		Owner: Neutral
+	Actor16: tc02
+		Location: 53,54
+		Owner: Neutral
+	Actor17: tc04
+		Location: 55,56
+		Owner: Neutral
+	Actor18: t16
+		Location: 55,55
+		Owner: Neutral
+	Actor19: t07
+		Location: 55,54
+		Owner: Neutral
+	Actor20: t11
+		Location: 55,52
+		Owner: Neutral
+	Actor21: t06
+		Location: 55,53
+		Owner: Neutral
+	Actor22: t10
+		Location: 56,53
+		Owner: Neutral
+	Actor23: t12
+		Location: 56,54
+		Owner: Neutral
+	Actor24: t06
+		Location: 56,55
+		Owner: Neutral
+	Actor25: tc03
+		Location: 57,55
+		Owner: Neutral
+	Actor26: t10
+		Location: 20,64
+		Owner: Neutral
+	Actor27: t10
+		Location: 106,60
+		Owner: Neutral
+	Actor28: t11
+		Location: 106,64
+		Owner: Neutral
+	Actor29: t11
+		Location: 20,60
+		Owner: Neutral
+	Actor30: t11
+		Location: 64,111
+		Owner: Neutral
+	Actor31: tc01
+		Location: 62,14
+		Owner: Neutral
+	Actor32: mine
+		Location: 45,82
+		Owner: Neutral
+	Actor33: mine
+		Location: 82,45
+		Owner: Neutral
+	Actor34: mine
+		Location: 89,45
+		Owner: Neutral
+	Actor35: mine
+		Location: 38,82
+		Owner: Neutral
+	Actor36: mine
+		Location: 46,90
+		Owner: Neutral
+	Actor37: mine
+		Location: 81,37
+		Owner: Neutral
+	Actor38: mine
+		Location: 92,83
+		Owner: Neutral
+	Actor39: mine
+		Location: 35,43
+		Owner: Neutral
+	Actor41: mine
+		Location: 48,28
+		Owner: Neutral
+	Actor42: mine
+		Location: 43,35
+		Owner: Neutral
+	Actor43: mine
+		Location: 84,91
+		Owner: Neutral
+	Actor44: mine
+		Location: 56,66
+		Owner: Neutral
+	Actor45: mine
+		Location: 60,70
+		Owner: Neutral
+	Actor46: mine
+		Location: 71,61
+		Owner: Neutral
+	Actor47: mine
+		Location: 67,57
+		Owner: Neutral
+	Actor50: tc02
+		Location: 26,72
+		Owner: Neutral
+	Actor51: tc01
+		Location: 23,53
+		Owner: Neutral
+	Actor52: tc01
+		Location: 103,72
+		Owner: Neutral
+	Actor53: tc02
+		Location: 99,54
+		Owner: Neutral
+	Actor54: tc04
+		Location: 78,78
+		Owner: Neutral
+	Actor55: tc04
+		Location: 46,48
+		Owner: Neutral
+	Actor56: t11
+		Location: 47,49
+		Owner: Neutral
+	Actor57: t11
+		Location: 79,79
+		Owner: Neutral
+	Actor74: mpspawn
+		Owner: Neutral
+		Location: 23,29
+	Actor75: mpspawn
+		Owner: Neutral
+		Location: 33,22
+	Actor76: mpspawn
+		Owner: Neutral
+		Location: 94,22
+	Actor77: mpspawn
+		Owner: Neutral
+		Location: 104,29
+	Actor78: mpspawn
+		Owner: Neutral
+		Location: 104,96
+	Actor79: mpspawn
+		Owner: Neutral
+		Location: 94,104
+	Actor80: mpspawn
+		Owner: Neutral
+		Location: 33,104
+	Actor81: mpspawn
+		Owner: Neutral
+		Location: 23,96
+	Actor65: gmine
+		Owner: Neutral
+		Location: 57,69
+	Actor66: gmine
+		Owner: Neutral
+		Location: 70,58
+	Actor67: gmine
+		Owner: Neutral
+		Location: 109,109
+	Actor68: gmine
+		Owner: Neutral
+		Location: 109,18
+	Actor69: gmine
+		Owner: Neutral
+		Location: 18,18
+	Actor70: gmine
+		Owner: Neutral
+		Location: 18,109
+	Actor71: mine
+		Owner: Neutral
+		Location: 110,68
+	Actor72: mine
+		Owner: Neutral
+		Location: 110,59
+	Actor73: mine
+		Owner: Neutral
+		Location: 17,59
+	Actor82: mine
+		Owner: Neutral
+		Location: 17,68
+	Actor83: mine
+		Owner: Neutral
+		Location: 62,105
+	Actor84: mine
+		Owner: Neutral
+		Location: 65,22
+	Actor40: mine
+		Location: 79,98
+		Owner: Neutral
+	Actor85: mine
+		Owner: Neutral
+		Location: 91,86
+	Actor86: mine
+		Owner: Neutral
+		Location: 80,95
+	Actor87: mine
+		Owner: Neutral
+		Location: 86,44
+	Actor88: mine
+		Owner: Neutral
+		Location: 82,40
+	Actor89: mine
+		Owner: Neutral
+		Location: 47,31
+	Actor90: mine
+		Owner: Neutral
+		Location: 36,40
+	Actor91: mine
+		Owner: Neutral
+		Location: 41,83
+	Actor92: mine
+		Owner: Neutral
+		Location: 45,87

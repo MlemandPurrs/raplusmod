@@ -1,0 +1,15 @@
+GAP.Super:
+	Inherits: GAP
+	Tooltip:
+		Name: Super Gap Generator
+	CreatesShroud@Normal:
+		Range: 36
+	Power:
+		Amount: 0	
+	-Buildable:
+	-Selectable:
+	-Targetable:
+	Interactable:
+	RenderSprites:
+		Image: gap
+	-MapEditorData:

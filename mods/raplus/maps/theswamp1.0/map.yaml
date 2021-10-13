@@ -1,0 +1,181 @@
+MapFormat: 11
+
+RequiresMod: ra
+
+Title: The Swamp
+
+Author: kazu.
+
+Tileset: TEMPERAT
+
+MapSize: 94,94
+
+Bounds: 1,1,92,92
+
+Visibility: Lobby
+
+Categories: Conquest
+
+Players:
+	PlayerReference@Neutral:
+		Name: Neutral
+		OwnsWorld: True
+		NonCombatant: True
+		Faction: england
+	PlayerReference@Creeps:
+		Name: Creeps
+		NonCombatant: True
+		Faction: england
+		Enemies: Multi0, Multi1
+	PlayerReference@Multi0:
+		Name: Multi0
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi1:
+		Name: Multi1
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+
+Actors:
+	Actor19: mine
+		Owner: Neutral
+		Location: 33,78
+	Actor14: mine
+		Owner: Neutral
+		Location: 58,14
+	Actor15: tc04
+		Owner: Neutral
+		Location: 79,8
+		Health: 18
+	Actor21: tc01
+		Owner: Neutral
+		Location: 77,5
+	Actor22: t16
+		Owner: Neutral
+		Location: 83,5
+	Actor23: mine
+		Owner: Neutral
+		Location: 89,7
+	Actor24: t07
+		Owner: Neutral
+		Location: 77,12
+	Actor25: t11
+		Owner: Neutral
+		Location: 74,10
+	Actor28: t01
+		Owner: Neutral
+		Location: 11,76
+	Actor29: t02
+		Owner: Neutral
+		Location: 12,79
+	Actor32: tc02
+		Owner: Neutral
+		Location: 82,14
+	Actor33: tc01
+		Owner: Neutral
+		Location: 14,81
+	Actor35: tc02
+		Owner: Neutral
+		Location: 13,83
+	Actor36: t13
+		Owner: Neutral
+		Location: 11,86
+	Actor30: mine
+		Owner: Neutral
+		Location: 4,86
+	Actor47: oilb
+		Owner: Neutral
+		Location: 45,45
+	Actor48: oilb
+		Owner: Neutral
+		Location: 29,64
+	Actor49: t03
+		Owner: Neutral
+		Location: 76,21
+	Actor50: oilb
+		Owner: Neutral
+		Health: 100
+		Location: 63,29
+	Actor43: mine
+		Owner: Neutral
+		Location: 76,43
+	Actor45: tc02
+		Owner: Neutral
+		Location: 72,47
+	Actor51: mine
+		Owner: Neutral
+		Location: 82,47
+	Actor53: tc02
+		Owner: Neutral
+		Location: 79,51
+	Actor46: t12
+		Owner: Neutral
+		Location: 69,47
+	Actor39: tc02
+		Owner: Neutral
+		Location: 12,38
+	Actor40: tc02
+		Owner: Neutral
+		Location: 21,43
+	Actor41: mine
+		Owner: Neutral
+		Location: 11,44
+	Actor42: t15
+		Owner: Neutral
+		Location: 18,43
+	Actor44: mine
+		Owner: Neutral
+		Location: 17,48
+	Actor54: mine
+		Owner: Neutral
+		Location: 43,33
+	Actor52: mine
+		Owner: Neutral
+		Location: 48,58
+	Actor55: tc04
+		Owner: Neutral
+		Location: 43,46
+	Actor56: tc01
+		Owner: Neutral
+		Location: 39,49
+	Actor58: t01
+		Owner: Neutral
+		Location: 35,53
+	Actor59: t12
+		Owner: Neutral
+		Location: 40,44
+	Actor60: t05
+		Owner: Neutral
+		Location: 51,44
+	Actor61: tc01
+		Owner: Neutral
+		Location: 46,43
+	Actor57: t10
+		Owner: Neutral
+		Location: 51,40
+	Actor62: mine
+		Owner: Neutral
+		Location: 84,71
+	Actor63: mine
+		Owner: Neutral
+		Location: 64,80
+	Actor64: mpspawn
+		Owner: Neutral
+		Location: 75,80
+	Actor65: mine
+		Owner: Neutral
+		Location: 64,85
+	Actor66: mpspawn
+		Owner: Neutral
+		Location: 18,13
+	Actor67: mine
+		Owner: Neutral
+		Location: 30,13
+	Actor68: mine
+		Owner: Neutral
+		Location: 30,18
+	Actor69: mine
+		Owner: Neutral
+		Location: 8,23

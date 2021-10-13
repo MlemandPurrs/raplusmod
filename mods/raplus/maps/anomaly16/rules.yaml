@@ -1,0 +1,44 @@
+World:
+	GlobalLightingPaletteEffect:
+		Red: 0.94
+		Green: 0.94
+		Blue: 1.15
+		Ambient: 0.88
+	FlashPaletteEffect@LIGHTNINGSTRIKE:
+		Type: LightningStrike
+	LuaScript:
+		Scripts: thunder.lua
+
+ROCK3:
+	Tooltip:
+		Name: Anomaly
+	JamsMissiles:
+		Range: 11c0
+		DeflectionRelationships: Enemy
+	CreatesShroud:
+		Range: 16c0
+	DetectCloaked:
+		Range: 11c0
+	RevealsShroud:
+		Range: 11c0
+	Armament@PRIMARY:
+		Weapon: AnomalyD
+		LocalOffset: -250,0,512
+	Armament@SECONDARY:
+		Weapon: AnomalyC
+		LocalOffset: -250,0,512
+	Armament@TERTIARY:
+		Weapon: AnomalyB
+		LocalOffset: -250,0,512
+	Armament@QUATERNARY:
+		Weapon: AnomalyA
+		LocalOffset: -250,0,512
+	WithChargeOverlay:
+	AttackCharges:
+		ChargeLevel: 24
+		ChargeRate: 12
+	AutoTarget:
+		InitialStance: AttackAnything
+		InitialStanceAI: AttackAnything
+	
+	
