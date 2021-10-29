@@ -3204,3 +3204,65 @@ gren:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
 	icon: grenicon
+
+terr:
+	Inherits@PostDeath: ^Rot
+	stand:
+		Facings: 8
+	walk:
+		Start: 56
+		Length: 6
+		Facings: 8
+		Tick: 80
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+	shoot:
+		Start: 205
+		Length: 4
+		Facings: 8
+	cheer:
+		Start: 200
+		Length: 3
+		Facings: 8
+		Tick: 120
+	die1:
+		Start: 329
+		Length: 8
+		Tick: 80
+	die2:
+		Start: 337
+		Length: 8
+		Tick: 80
+	die3:
+		Start: 337
+		Length: 8
+		Tick: 80
+	die4:
+		Start: 345
+		Length: 12
+		Tick: 80
+	die5:
+		Start: 357
+		Length: 18
+		Tick: 80
+	die6: electro
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	die7: poisondeath
+		Length: *
+	die-crushed: corpse1
+		Length: *
+		Tick: 1600
+		ZOffset: -511
+		UseTilesetExtension: true
+        TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	parachute:
+		Start: 0
+	icon: terricon

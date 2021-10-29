@@ -4,6 +4,7 @@ DTNK:
 	Inherits: ^TrackedVehicle
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@SLOWCRUSH: ^SlowedByCrushing
 	-WithFacingSpriteBody:
 	-Tooltip:
 	Buildable:
@@ -722,6 +723,7 @@ DTNK:
 	Turreted@gtnk:
 		Turret: gtnk-turret
 		TurnSpeed: 28
+		Offset: 0,0,200
 	Turreted@mnlysprt:
 		Turret: mnlysprt-turret
 		TurnSpeed: 16

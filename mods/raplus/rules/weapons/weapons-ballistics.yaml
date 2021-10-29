@@ -189,6 +189,9 @@ Grenade:
 		Speed: 136
 		Inaccuracy: 554
 		Image: BOMB
+		BounceCount: 2
+		BounceRangeModifier: 40
+		ValidBounceBlockerRelationships: Ally, Neutral, Enemy
 	Warhead@1Dam: SpreadDamage
 		Spread: 256
 		Damage: 60

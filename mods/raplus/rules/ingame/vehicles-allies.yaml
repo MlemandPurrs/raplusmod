@@ -129,6 +129,7 @@ APC:
 	Inherits@CARGOPIPS: ^CargoPips
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiInf
+	Inherits@SLOWCRUSH: ^SlowedByCrushing
 	-Tooltip:
 	Buildable:
 		Queue: Vehicle, MWFVehicle
@@ -228,6 +229,7 @@ RAPC:
 	Inherits: ^TrackedVehicle
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiTank
+	Inherits@SLOWCRUSH: ^SlowedByCrushing
 	Buildable:
 		Queue: Vehicle, MWFVehicle
 		BuildPaletteOrder: 4
@@ -298,6 +300,7 @@ RAPC:
 	Inherits: ^TrackedVehicle
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@SLOWCRUSH: ^SlowedByCrushing
 	Buildable:
 		Queue: Vehicle, MWFVehicle
 		BuildPaletteOrder: 5
@@ -419,6 +422,7 @@ ARTY:
 	Inherits: ^TrackedVehicle
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiStructure
+	Inherits@SLOWCRUSH: ^SlowedByCrushing
 	ReloadDelayMultiplier@ReloadBonus:
 		Modifier: 90
 		RequiresCondition: turkey.player
@@ -531,6 +535,7 @@ ATNK:
 	Inherits: ^TrackedVehicle
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@SLOWCRUSH: ^SlowedByCrushing
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 9
@@ -627,6 +632,7 @@ ATNK:
 MRJ:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiInf
+	Inherits@SLOWCRUSH: ^SlowedByCrushing
 	-Tooltip:
 	-GpsDot:
 	Buildable:
@@ -687,6 +693,7 @@ CTNK:
 	Inherits: ^Vehicle
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiTank
+	Inherits@SLOWCRUSH: ^SlowedByCrushing
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 8
@@ -760,6 +767,7 @@ STNK:
 	Inherits@CARGOPIPS: ^CargoPips
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiTank
+	Inherits@SLOWCRUSH: ^SlowedByCrushing
 	-MustBeDestroyed:
 	-Tooltip:
 	Buildable:
@@ -844,6 +852,7 @@ TNKD:
 	Inherits: ^TrackedVehicle
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiTank
+	Inherits@SLOWCRUSH: ^SlowedByCrushing
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 8
@@ -886,6 +895,7 @@ PRSM:
 	Inherits: ^TrackedVehicle
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@SLOWCRUSH: ^SlowedByCrushing
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 8
@@ -930,6 +940,7 @@ GCAN:
 	Inherits: ^TrackedVehicle
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@SLOWCRUSH: ^SlowedByCrushing
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 8
@@ -956,7 +967,7 @@ GCAN:
 		Range: 4c0
 	Armament:
 		Weapon: 8Inch.gcan
-		LocalOffset: 720,0,80
+		LocalOffset: 826,0,356
 		MuzzleSequence: muzzle
 	AttackFrontal:
 		TargetFrozenActors: True
@@ -976,6 +987,7 @@ BATF:
 	Inherits: ^Vehicle
 	Inherits@CARGOPIPS: ^CargoPips
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@SLOWCRUSH: ^SlowedByCrushing
 	Targetable@DefectorPrevention:
 		TargetTypes: MCImmune
 		RequiresCondition: loaded
@@ -1001,7 +1013,7 @@ BATF:
 		FacingTolerance: 24
 		PauseOnCondition: empdisable
 	Armament:
-		Weapon: ChainGun.Ground
+		Weapon: ChainGun.AG
 		MuzzleSequence: muzzle
 		LocalOffset: 746,0,196
 		RequiresCondition: !loaded
@@ -1028,6 +1040,7 @@ BATF:
 		LoadingCondition: notmobile
 		LoadedCondition: loaded
 	Passenger:
+		CargoType: HeavyVehicle
 		Weight: 4
 		CustomPipType: pip-red
 	Selectable:

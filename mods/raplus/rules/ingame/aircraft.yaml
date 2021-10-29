@@ -2,7 +2,7 @@ TRAN:
 	Inherits: ^Helicopter
 	Inherits@CARGOPIPS: ^CargoPips
 	Buildable:
-		Queue: Aircraft, MWFAir, MWFHeli
+		Queue: Aircraft, MWFHeli
 		BuildAtProductionType: Helicopter
 		BuildPaletteOrder: 1
 		Prerequisites: ~hpad, ~!aircraft.allies, ~!aircraft.soviet, ~techlevel.medium
@@ -38,7 +38,7 @@ TRAN:
 		Type: GroundPosition
 		RequiresCondition: !airborne
 	Aircraft:
-		TurnSpeed: 20
+		TurnSpeed: 16
 		Speed: 128
 		AltitudeVelocity: 0c58
 	WithIdleOverlay@ROTOR1AIR:

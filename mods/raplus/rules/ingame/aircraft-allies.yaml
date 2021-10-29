@@ -921,7 +921,7 @@ HARR:
 
 BLMP:
 	Inherits: ^Helicopter
-	Inherits@AUTOTARGET: ^AutoTargetGroundAntiInf
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	AutoTarget:
 		InitialStance: HoldFire
 		InitialStanceAI: HoldFire

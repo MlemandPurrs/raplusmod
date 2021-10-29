@@ -541,6 +541,8 @@ DEMO:
 		Notification:
 		EnterBehaviour: Exit
 		PlayerExperience: 0
+		EnterCursor: c4
+		Voice: Demolish
 	DisguiseTooltip:
 		Name: Demolitionist
 		GenericName: Soldier
@@ -671,3 +673,70 @@ MARK:
 	DeliversCash:
 		Payload: 175
 		Type: InfantryRefund
+
+TERR:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	-TakeCover:
+	-ActorLostNotification:
+	Voiced:
+		VoiceSet: FanaticVoice
+	Tooltip:
+		Name: Fanatic
+	Valued:
+		Cost: 275
+	Health:
+		HP: 60
+	Mobile:
+		Speed: 71
+		Voice: Move
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 21
+		Prerequisites: ~barr, dome, ~infantry.soviet, ~player.caucasia, ~techlevel.infonly
+		Description: Suicide bomber Infantry.\nAlways explodes on Death.\n  Strong versus Light Vehicles, Infantry\n  Weak vs everything else
+	Armament:
+		Weapon: KamikazeTargeting
+	AttackLeap:
+		Speed: 142
+		Voice: Attack
+		PauseOnCondition: attacking 		
+	Explodes:
+		Weapon: UnitExplodeSmall.suicide
+		EmptyWeapon: UnitExplodeSmall.suicide
+		DamageSource: Killer
+		Chance: 100
+	WithInfantryBody:
+		IdleSequences: stand
+		MoveSequence: walk
+		StandSequences: stand
+		DefaultAttackSequence: shoot
+		RequiresCondition: !run
+	WithInfantryBody@RUN:
+		MoveSequence: run
+		RequiresCondition: run
+	WithInfantryBody@PARACHUTE:
+		StandSequences: parachute
+		RequiresCondition: parachute
+	RenderSprites:
+		Image: terr
+	GrantConditionWhileAiming:
+		Condition: run
+	SpeedMultiplier:
+		Modifier: 125
+		RequiresCondition: run
+	GrantConditionOnAttack:
+		Condition: triggered
+	GrantConditionOnDeploy:
+		DeployedCondition: triggered
+		Voice: Action
+	KillsSelf:
+		RequiresCondition: triggered
+	DeliversCash:
+		Payload: 68
+		Type: InfantryRefund
+	Passenger:
+		Voice: Action
+	AttackMove:
+		Voice: Action

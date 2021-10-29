@@ -241,3 +241,25 @@ SatelliteScanVoice:
 	Voices:
 		Build: bspyon
 		Die: bspyof
+
+FanaticVoice:
+	DefaultVariant: .aud
+	Voices:
+		Select: itersea, iterseb, itersec, itersee, itersef, itersed
+		Move: itermoa, itermob, itermoc, itermoe, itermof, itermog, itermod
+		Action: iterata, iteratb, iteratc, iteratd, iterate
+		Attack: iterata, iteratb, iteratc, iteratd, iterate
+		Die: iterdia, iterdib, iterdic, iterdid, iterdie
+		Burned: iterdia, iterdib, iterdic, iterdid, iterdie
+		Zapped: iterdia, iterdib, iterdic, iterdid, iterdie
+
+KirovVoice:
+	Voices:
+		Select: kirsea,kirseb,kirsec,kirsed
+		Move: kirmoa,kirmob,kirmoc
+		Attack: kirata,kiratb,kiratc,kiratd
+		Action: kirmoa,kirmob,kirmoc
+		Die: kirdia,kirdib,kirdic,kirdid
+		Burned: kirdia,kirdib,kirdic,kirdid
+		Zapped: kirdia,kirdib,kirdic,kirdid
+		Build: kirsea

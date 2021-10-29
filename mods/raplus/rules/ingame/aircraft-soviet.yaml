@@ -261,16 +261,258 @@ TRAN.Soviet:
 		RequiresCondition: airborne && empdisable
 	-MapEditorData:
 
+HALO:
+	Inherits: ^Helicopter
+	Inherits@CARGOPIPS: ^CargoPips
+	-WithFacingSpriteBody:
+	Buildable:
+		Queue: Aircraft, MWFHeli
+		BuildAtProductionType: Helicopter
+		BuildPaletteOrder: 7
+		BuildLimit: 1
+		Prerequisites:~hpad, stek, ~techlevel.high, ~aircraft.soviet, ~player.kazakh
+		Description: General-purpose aerial mass transport.\nMaximum 1 can be built.\nCan carry up to 12 Infantry and Vehicles.\nCannot carry Heavy and Superheavies.\nSlows down by 20% when over half-capacity.\n  Unarmed
+	Valued:
+		Cost: 1800
+	Tooltip:
+		Name: Super Transport
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 280
+	RevealsShroud@Air:
+		MinRange: 8c0
+		Range: 10c0
+		Type: GroundPosition
+		RevealGeneratedShroud: False
+		RequiresCondition: airborne
+	RevealsShroud@AirGAP:
+		Range: 8c0
+		Type: GroundPosition
+		RequiresCondition: airborne
+	RevealsShroud@Ground:
+		MinRange: 4c0
+		Range: 5c0
+		Type: GroundPosition
+		RevealGeneratedShroud: False
+		RequiresCondition: !airborne
+	RevealsShroud@GroundGAP:
+		Range: 4c0
+		Type: GroundPosition
+		RequiresCondition: !airborne
+	Aircraft:
+		TurnSpeed: 12
+		Speed: 128
+		AltitudeVelocity: 0c58
+		LandableTerrainTypes: Clear,Rough,Road,Ore,Beach,Gems
+	WithShadow:
+		RequiresCondition: airborne
+	WithFacingSpriteBody@INTHEAIR:
+		Sequence: idle
+		Name: airmi26
+		RequiresCondition: airborne
+	WithFacingSpriteBody@INTHEGROUND:
+		Sequence: idle-grounded
+		Name: groundmi26
+		RequiresCondition: !airborne
+	WithIdleOverlay@ROTOR1AIR:
+		Offset: 0,0,430
+		Sequence: rotor
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTOR1GROUND:
+		Offset: 0,0,430
+		Sequence: slow-rotor
+		RequiresCondition: !airborne
+	WithIdleOverlay@ROTOR1GROUNDSHADOW:
+		Offset: 0,0,-100
+		Sequence: slow-rotor-shadow
+		RequiresCondition: !airborne
+	SpawnActorOnDeath:
+		Actor: HALO.Husk
+		RequiresCondition: airborne && !empdisable
+	SpawnActorOnDeath@EMP:
+		Actor: HALO.Husk.EMP
+		RequiresCondition: airborne && empdisable
+	Selectable:
+		DecorationBounds: 40,36
+	Cargo:
+		Types: Infantry, Engineer, Vehicle
+		MaxWeight: 12
+		PassengerFacing: 0
+		LoadedCondition: loaded
+		AfterUnloadDelay: 40
+		#	so i have to manually enter all of this
+		PassengerConditions:
+			e1: weight-1
+			e1r1: weight-1
+			e1.england: weight-1
+			e1.china: weight-1
+			e2: weight-1
+			e2r1: weight-1
+			e2.turkey: weight-1
+			e3: weight-1
+			e3r1: weight-1
+			e3.china: weight-1
+			e4: weight-1
+			e4.italy: weight-1
+			e5: weight-1
+			e6: weight-1
+			e7: weight-1
+			e7.usa: weight-1
+			volk: weight-1
+			volk.uzbek: weight-1
+			rmbo: weight-1
+			gnrl: weight-1
+			tecn: weight-1
+			spy: weight-1
+			sab: weight-1
+			sab.moldova: weight-1
+			thf: weight-1
+			dog: weight-1
+			dog.moldova: weight-1
+			medi: weight-1
+			mech: weight-1
+			mgi: weight-1
+			shot: weight-1
+			atgm: weight-1
+			snip: weight-1
+			mrtr: weight-1
+			cinf: weight-1
+			shok: weight-1
+			shokr1: weight-1
+			rpg: weight-1
+			deso: weight-1
+			demo: weight-1
+			gren: weight-1
+			mark: weight-1
+			c1: weight-1
+			c2: weight-1
+			c3: weight-1
+			c4: weight-1
+			c5: weight-1
+			c6: weight-1
+			c7: weight-1
+			c8: weight-1
+			c9: weight-1
+			c10: weight-1
+			einstein: weight-1
+			delphi: weight-1
+			chan: weight-1
+			jeep: weight-2
+			jeep.scout: weight-2
+			jeep.england: weight-2
+			ftrk: weight-2
+			ftrk.scout: weight-2
+			ftrk.repair: weight-2
+			ftrk.flamer: weight-2
+			ftrk.hunter: weight-2
+			ftrk.belarus: weight-2
+			apc: weight-2
+			apc.crate: weight-2
+			apc.germany: weight-2
+			rapc: weight-2
+			apc.soviet: weight-2
+			apc.turkmen: weight-2
+			apc.moldova: weight-2
+			1tnk: weight-2
+			1tnk.r1: weight-2
+			1tnk.england: weight-2
+			1tnk.france: weight-2
+			1tnk.germany: weight-2
+			1tnk.sweden: weight-2
+			1tnk.spain: weight-2
+			1tnk.italy: weight-2
+			1tnk.italy.norank: weight-2
+			2tnk: weight-2
+			2tnk.r1: weight-2
+			2tnk.england: weight-2
+			2tnk.france: weight-2
+			2tnk.germany: weight-2
+			2tnk.sweden: weight-2
+			2tnk.spain: weight-2
+			2tnk.italy: weight-2
+			2tnk.stealth: weight-2
+			3tnk: weight-2
+			3tnk.russia: weight-2
+			3tnk.ukraine: weight-2
+			3tnk.kazakh: weight-2
+			3tnk.turkmen: weight-2
+			3tnk.afghan: weight-2
+			3tnk.china: weight-2
+			3tnk.r1: weight-2
+			3tnk.1b: weight-2
+			3tnk.1b.russia: weight-2
+			3tnk.1b.ukraine: weight-2
+			3tnk.1b.kazakh: weight-2
+			3tnk.1b.turkmen: weight-2
+			3tnk.1b.afghan: weight-2
+			3tnk.1b.china: weight-2
+			arty: weight-2
+			arty.france: weight-2
+			v2rl: weight-2
+			v2rl.turkmen: weight-2
+			ttnk: weight-2
+			saml: weight-2
+			msam: weight-2
+			atnk: weight-2
+			gtnk: weight-2
+			mrj: weight-2
+			ctnk: weight-2
+			ctnk.chrono: weight-2
+			stnk: weight-2
+			tnkd: weight-2
+			isu: weight-2
+			prsm: weight-2
+			gcan: weight-2
+			dtnk: weight-2
+			truk: weight-2
+			truf: weight-2
+			dtrk: weight-2
+			mnly: weight-2
+			mnly.turkmen: weight-2
+			mnly.nuke: weight-2
+			mnly.support: weight-2
+			mgg: weight-2
+			mgg.greece: weight-2
+			mggf: weight-2
+			mhq.start: weight-2
+			mhq.soviet: weight-2
+	#	and then i have to make manual combinations of every possibility too,
+	#	then tell it all on one RequiresCondition MANUALLY LIKE A CAVEMAN ITS 2021 FFS
+	# 6 infantry
+	GrantCondition@WEIGHT6x1:
+		Condition: weightcondI
+		RequiresCondition: weight-1 >= 6 
+	# 3 vehicle
+	GrantCondition@WEIGHT3x2:
+		Condition: weightcondII
+		RequiresCondition: (weight-2 >= 3)
+	# 1 vehicle 4 infantry
+	GrantCondition@WEIGHT1x2+4x1:
+		Condition: weightcondIII
+		RequiresCondition: weight-2 && (weight-1 >= 4) 
+	# 2 vehicle 2 infantry
+	GrantCondition@WEIGHT2x2+2x1:
+		Condition: weightcondIV
+		RequiresCondition: (weight-2 >= 2) && (weight-1 >= 2)
+
+	SpeedMultiplier@HALFCAPACITY:
+		RequiresCondition: weightcondI || weightcondII || weightcondIII || weightcondIV
+		Modifier: 80
+	Targetable@DefectorPrevention:
+		TargetTypes: MCImmune
+		RequiresCondition: loaded
+
 MI2:
 	Inherits: ^Helicopter
 	Buildable:
 		Queue: Aircraft, MWFHeli
 		BuildAtProductionType: Helicopter
-		BuildPaletteOrder: 7
-		Prerequisites: ~hpad, fix, ~aircraft.soviet, ~soviet.or.kazakh, ~techlevel.medium
+		BuildPaletteOrder: 5
+		Prerequisites: ~hpad, dome, ~aircraft.soviet, ~techlevel.medium
 		Description: Fast Helicopter with good sight-radius.\nDetects cloaked units in close radius.\nHeals nearby Infantry when Landed.\n  Unarmed
 	Valued:
-		Cost: 825
+		Cost: 725
 	Tooltip:
 		Name: MI-2 Scout
 	UpdatesPlayerStatistics:
@@ -345,7 +587,7 @@ HIND:
 	Buildable:
 		Queue: Aircraft, MWFHeli
 		BuildAtProductionType: Helicopter
-		BuildPaletteOrder: 6
+		BuildPaletteOrder: 8
 		Prerequisites: ~hpad, stek, ~aircraft.soviet, ~!player.afghan, ~techlevel.high
 		Description: Slow helicopter gunship armed with dual chainguns\nand anti-ground rockets.\nCan attack enemy Helicopters.\n  Strong vs Infantry, Tanks\n  Weak vs fast Units, Aircraft
 	Tooltip:
@@ -949,7 +1191,7 @@ CMIG:
 	Buildable:
 		Queue: Aircraft, MWFAir
 		BuildAtProductionType: Plane
-		BuildPaletteOrder: 7
+		BuildPaletteOrder: 3
 		Prerequisites: ~afld, stek, ~aircraft.soviet, ~player.china, ~techlevel.high
 		Description: Fast bomber plane that drops napalm bombs.\n  Strong vs Buildings, Infantry\n  Weak vs Vehicles, Aircraft.
 	Tooltip:
@@ -1142,3 +1384,314 @@ HIND.Mini:
 		Interval: 2
 	RenderSprites:
 		Image: minihind
+
+KROV:
+	Inherits: ^Helicopter
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: HoldFire
+	Buildable:
+		Queue: Aircraft, MWFHeli
+		BuildAtProductionType: Helicopter
+		BuildPaletteOrder: 10
+		Prerequisites: ~hpad, stek, ~aircraft.soviet, ~player.caucasia, ~techlevel.high
+		Description: Heavily armored Airship\nequipped with Tesla Bombs.\nSelf-repairs when under 50% Health.\n  Strong vs Structures\n  Weak vs Anti-Air
+	Tooltip:
+		Name: Assault Airship
+	Valued:
+		Cost: 2200
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Selectable:
+		Bounds: 36,28,0,2
+		DecorationBounds: 40,29,0,1
+	Health:
+		HP: 600
+	Armor:
+		Type: Heavy
+	RevealsShroud@Air:
+		MinRange: 8c0
+		Range: 10c0
+		Type: GroundPosition
+		RevealGeneratedShroud: False
+		RequiresCondition: airborne
+	RevealsShroud@AirGAP:
+		Range: 8c0
+		Type: GroundPosition
+		RequiresCondition: airborne
+	RevealsShroud@Ground:
+		MinRange: 4c0
+		Range: 5c0
+		Type: GroundPosition
+		RevealGeneratedShroud: False
+		RequiresCondition: !airborne
+	RevealsShroud@GroundGAP:
+		Range: 4c0
+		Type: GroundPosition
+		RequiresCondition: !airborne
+	Armament@PRIMARY:
+		Weapon: KirovBomb
+		LocalOffset: -20,0,0
+		PauseOnCondition: !ammo
+	AttackAircraft:
+		FacingTolerance: 512
+		PersistentTargeting: false
+		AttackType: Hover
+		OpportunityFire: False
+		Voice: Attack
+	Aircraft:
+		CruiseAltitude: 2560
+		WaitDistanceFromResupplyBase: 4c0
+		TakeOffOnResupply: true
+		InitialFacing: 224
+		TurnSpeed: 12
+		Speed: 64
+		AltitudeVelocity: 0c50
+		LandableTerrainTypes: Clear,Rough,Road,Ore,Beach,Gems
+		CanForceLand: False
+	AmmoPool:
+		Ammo: 8
+		AmmoCondition: ammo
+		ReloadDelay: 9
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		PipCount: 8
+		FullSequence: pip-yellow
+		RequiresSelection: true
+	ReloadAmmoPool:
+		Delay: 300
+		Count: 8
+		RequiresCondition: !ammo
+	WithDecoration@ammoreplenish:
+		RequiresSelection: false
+		Image: pips
+		Sequence: tag-reload
+		Position: Top
+		Margin: 0, 4
+		RequiresCondition: !ammo
+	SpawnActorOnDeath:
+		Actor: KROV.Husk
+		RequiresCondition: airborne && ammo && !empdisable
+	SpawnActorOnDeath@Empty:
+		Actor: KROV.Husk.Empty
+		RequiresCondition: airborne && !ammo && !empdisable
+	SpawnActorOnDeath@EMP:
+		Actor: KROV.Husk.EMP
+		RequiresCondition: airborne && ammo && empdisable
+	SpawnActorOnDeath@EMPEmpty:
+		Actor: KROV.Husk.EMP.Empty
+		RequiresCondition: airborne && !ammo && empdisable
+	WithIdleOverlay@ROTOR1AIR:
+		Offset: -180,597,250
+		Sequence: rotor
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTOR1GROUND:
+		Offset: -180,597,250
+		Sequence: slow-rotor
+		RequiresCondition: !airborne
+	WithIdleOverlay@ROTOR2AIR:
+		Offset: -180,-597,250
+		Sequence: rotor
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTOR2GROUND:
+		Offset: -180,-597,250
+		Sequence: slow-rotor
+		RequiresCondition: !airborne
+	SmokeTrailWhenDamaged@1:
+		Offset: -100,500,100
+	SmokeTrailWhenDamaged@2:
+		Offset: -100,-500,100
+	ChangesHealth:
+		Step: 5
+		Delay: 7
+		StartIfBelow: 50
+		DamageCooldown: 150
+	AmbientSoundCA:
+		SoundFiles: vkirlo2a.aud, vkirlo2b.aud, vkirlo2c.aud
+		Interval: 2
+		VolumeMultiplier: 0.05
+	Voiced:
+		VoiceSet: KirovVoice
+
+KROC:
+	Inherits: ^Helicopter
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: HoldFire
+	Buildable:
+		Queue: Aircraft, MWFHeli
+		BuildAtProductionType: Helicopter
+		BuildPaletteOrder: 11
+		BuildLimit: 1
+		Prerequisites: ~hpad, stek, ~aircraft.soviet, ~player.caucasia, ~techlevel.high
+		Description: Heavily armored Carrier in the Sky.\nSends waves of Mini-Migs against it's target.\nSelf-repairs when under 50% Health\n  Strong vs Structures\n  Weak vs Anti-Air
+	Tooltip:
+		Name: Carrier Airship
+	Valued:
+		Cost: 3400
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Selectable:
+		Bounds: 46,28,0,2
+		DecorationBounds: 50,29,0,1
+	Health:
+		HP: 600
+	Armor:
+		Type: Heavy
+	RevealsShroud@Air:
+		MinRange: 8c0
+		Range: 10c0
+		Type: GroundPosition
+		RevealGeneratedShroud: False
+		RequiresCondition: airborne
+	RevealsShroud@AirGAP:
+		Range: 8c0
+		Type: GroundPosition
+		RequiresCondition: airborne
+	RevealsShroud@Ground:
+		MinRange: 4c0
+		Range: 5c0
+		Type: GroundPosition
+		RevealGeneratedShroud: False
+		RequiresCondition: !airborne
+	RevealsShroud@GroundGAP:
+		Range: 4c0
+		Type: GroundPosition
+		RequiresCondition: !airborne
+	Aircraft:
+		CruiseAltitude: 2560
+		WaitDistanceFromResupplyBase: 4c0
+		TakeOffOnResupply: true
+		InitialFacing: 224
+		TurnSpeed: 12
+		Speed: 64
+		AltitudeVelocity: 0c50
+		LandableTerrainTypes: Clear,Rough,Road,Ore,Beach,Gems
+		CanForceLand: False
+		Voice: Move
+	AttackOmni:
+		PauseOnCondition: empdisable
+		Voice: Attack
+	CarrierMaster:
+		Actors: migm, migm, migm
+		RearmTicks: 150
+		RespawnTicks: 500
+		InstantRepair: true
+		SlaveDisposalOnKill: KillSlaves
+		SpawnAllAtOnce: false
+		RequiresCondition: !empdisable
+	WithSpawnerMasterPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		RequiresSelection: true
+	Exit@0:
+		#	SpawnOffset: -1240,0,360
+		SpawnOffset: 0,0,0
+		Facing: 0
+	Exit@1:
+		#	SpawnOffset: -1240,0,360
+		SpawnOffset: 0,0,0
+		Facing: 20
+	Exit@2:
+		#	SpawnOffset: -1240,0,360
+		SpawnOffset: 0,0,0
+		Facing: -20
+	Armament:
+		Weapon: MiniMigLauncher
+	WithRangeCircle@Attack:
+		Type: jammer
+		Range: 18c0
+		Color: 0000FF80
+	SpawnActorOnDeath:
+		Actor: KROC.Husk
+		RequiresCondition: airborne && !empdisable
+	SpawnActorOnDeath@EMP:
+		Actor: KROC.Husk.EMP
+		RequiresCondition: airborne && empdisable
+	WithIdleOverlay@ROTOR1AIR:
+		Offset: -460,632,180
+		Sequence: rotor
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTOR1GROUND:
+		Offset: -460,632,180
+		Sequence: slow-rotor
+		RequiresCondition: !airborne
+	WithIdleOverlay@ROTOR2AIR:
+		Offset: -490,-632,180
+		Sequence: rotor
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTOR2GROUND:
+		Offset: -490,-632,180
+		Sequence: slow-rotor
+		RequiresCondition: !airborne
+	WithIdleOverlay@ROTOR3AIR:
+		Offset: -1240,992,180
+		Sequence: rotor-rear
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTOR3GROUND:
+		Offset: -1240,992,180
+		Sequence: slow-rotor-rear
+		RequiresCondition: !airborne
+	WithIdleOverlay@ROTOR4AIR:
+		Offset: -1240,-992,180
+		Sequence: rotor-rear
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTOR4GROUND:
+		Offset: -1240,-992,180
+		Sequence: slow-rotor-rear
+		RequiresCondition: !airborne
+	SmokeTrailWhenDamaged@1:
+		Offset: -100,500,100
+	SmokeTrailWhenDamaged@2:
+		Offset: -100,-500,100
+	ChangesHealth:
+		Step: 5
+		Delay: 7
+		StartIfBelow: 50
+		DamageCooldown: 150
+	AmbientSoundCA:
+		SoundFiles: vkirlo2a.aud, vkirlo2b.aud, vkirlo2c.aud
+		Interval: 2
+		VolumeMultiplier: 0.05
+	Voiced:
+		VoiceSet: KirovVoice
+
+MIGM:
+	Inherits@CarrierBound: ^CarrierCraft
+	Valued:
+		Cost: 50
+	Tooltip:
+		Name: Mini MiG
+	Health:
+		HP: 70
+	Armament:
+		Weapon: Maverick.Short
+		PauseOnCondition: !ammo
+	AttackAircraft:
+		FacingTolerance: 80
+		PersistentTargeting: false
+		OpportunityFire: false
+		PauseOnCondition: empdisable
+	Rearmable:
+		RearmActors: acar
+	AmmoPool:
+		Ammo: 4
+		AmmoCondition: ammo
+	SpawnActorOnDeath@NORMAL:
+		Actor: MIGM.Husk
+		RequiresCondition: !empdisable
+	SpawnActorOnDeath@EMP:
+		Actor: MIGM.Husk.EMP
+		RequiresCondition: empdisable
+	SmokeTrailWhenDamaged:
+		Offset: -253,0,171
+		Interval: 2
+	Contrail@1:
+		Offset: -432,0,0
+		TrailLength: 8
+		UsePlayerColor: false
+	RenderSprites:
+		Image: minimig

@@ -414,7 +414,7 @@ RMBO:
 	Inherits@ROT: ^RottingInfantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
-		Cost: 1000
+		Cost: 1200
 	Tooltip:
 		Name: Commando
 	Buildable:
@@ -423,10 +423,11 @@ RMBO:
 		BuildPaletteOrder: 9
 		BuildLimit: 1
 		Prerequisites: atek, ~infantry.allies, ~player.swiss, ~techlevel.high
-		Description: Elite commando infantry.\nArmed with assault rifle and C4.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
+		Description: Elite commando infantry.\nArmed with assault rifle and C4.\nSpecial Ability: Climbing\nCan traverse over Cliffs and Rocks.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
 	Mobile:
 		Speed: 68
 		Voice: Move
+		Locomotor: foot-climber
 	Guard:
 		Voice: Move
 	Health:
@@ -465,11 +466,11 @@ RMBO:
 	DetectCloaked:
 		CloakTypes: Cloak
 		Range: 3c0
+	GrantConditionOnTerrain@Rock:
+		TerrainTypes: Rock
+		Condition: iscrawling
 	TakeCover:
 		RequiresCondition: !iscrawling
-	GrantConditionOnDeploy:
-		DeployedCondition: iscrawling
-		SkipMakeAnimation: true
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 		StandSequences: stand
@@ -484,7 +485,7 @@ RMBO:
 		Modifier: 50
 		RequiresCondition: iscrawling
 	DeliversCash:
-		Payload: 250
+		Payload: 300
 		Type: InfantryRefund
 	GpsDot:
 		String: Commando

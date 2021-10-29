@@ -381,13 +381,13 @@ CARR:
 		Margin: 4, 3
 		RequiresSelection: true
 	Exit@0:
-		SpawnOffset: 0,0,120
+		SpawnOffset: 0,0,360
 		Facing: 0
 	Exit@1:
-		SpawnOffset: 0,0,120
+		SpawnOffset: 0,0,360
 		Facing: 20
 	Exit@2:
-		SpawnOffset: 0,0,120
+		SpawnOffset: 0,0,360
 		Facing: -20
 	Armament:
 		Weapon: HindLauncher

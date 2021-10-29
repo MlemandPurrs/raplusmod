@@ -41,7 +41,7 @@ Vulcan.bomber:
 			Light: 100
 			Heavy: 50
 
-ChainGun.Ground:
+ChainGun.AG:
 	Inherits: ChainGun
 	Projectile: InstantHit
 		Blockable: true
@@ -246,6 +246,11 @@ RedEye.2shot:
 		Inaccuracy: 512
 		RangeLimit: 14c410
 
+RedEye.dual:
+	Inherits: RedEye
+	Burst: 2
+	BurstDelays: 7
+
 APTusk.stnk:
 	Inherits: APTusk
 	ReloadDelay: 96
@@ -321,3 +326,9 @@ Sniper.chem:
 		Condition: hitbychem
 		ValidTargets: Infantry
 		InvalidTargets: Cyborg, Chem, HasPoison
+
+Maverick.Short:
+	Inherits: Maverick
+	Range: 7c0
+	Projectile: MissileCA
+		RangeLimit: 9c512

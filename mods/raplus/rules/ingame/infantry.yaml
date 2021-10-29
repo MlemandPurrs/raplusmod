@@ -63,7 +63,7 @@ E2:
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 3
 		Prerequisites: ~barracks, ~!player.turkey, ~techlevel.infonly
-		Description: Infantry armed with grenades.\nAlways explodes on death.\n  Strong vs Buildings, Infantry\n  Weak vs Vehicles, Aircraft
+		Description: Infantry armed with grenades.\nGrenades will bounce incase of missing.\nAlways explodes on death.\n  Strong vs Buildings, Infantry\n  Weak vs Vehicles, Aircraft
 	Tooltip:
 		Name: Grenadier
 	Valued:

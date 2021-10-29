@@ -2,6 +2,7 @@ HARV:
 	Inherits: ^Vehicle
 	Inherits@selection: ^SelectableEconomicUnit
 	Inherits@HARVBALANCE: ^HarvesterBalancer
+	Inherits@SLOWCRUSH: ^SlowedByCrushing
 	Targetable@DefectorPrevention:
 		TargetTypes: MCImmune
 	-Tooltip:
@@ -74,6 +75,7 @@ HARV:
 		ImageByFullness: harvempty, harvhalf, harv
 	-WithFacingSpriteBody:
 	Passenger:
+		CargoType: HeavyVehicle
 		CustomPipType: pip-blue
 	ProximityExternalCondition@DOCKED:
 		Condition: dockinprocess
@@ -100,6 +102,7 @@ HARV.Crate:
 MCV:
 	Inherits: ^Vehicle
 	Inherits@selection: ^SelectableSupportUnit
+	Inherits@SLOWCRUSH: ^SlowedByCrushing
 	Targetable@DefectorPrevention:
 		TargetTypes: MCImmune
 	ProductionCostMultiplier@NLBONUS:
@@ -145,6 +148,7 @@ MCV:
 		Actor: MCV.Husk
 		OwnerType: InternalName
 	Passenger:
+		CargoType: HeavyVehicle
 		Weight: 4
 		CustomPipType: pip-blue
 	GpsDot:

@@ -82,7 +82,7 @@ smig:
 	Inherits: emp-overlay
 	idle:
 		Facings: 16
-	icon: migicon
+	icon: cmigicon
 
 ally-bdgr:
 	Inherits: emp-overlay
@@ -194,3 +194,59 @@ minihind:
 		Start: 4
 		Length: 8
 	icon: hindicon
+
+minimig:
+	Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	icon: migicon
+
+halo:
+	Inherits: emp-overlay
+	idle: 
+        Start: 0
+		Facings: 32
+		UseClassicFacings: True
+	idle-grounded:
+        Start: 32
+		Facings: 32
+		UseClassicFacings: True
+	rotor: yrotorhg
+		Length: 4
+	slow-rotor: yrotorhg
+		Start: 4
+		Length: 8
+	slow-rotor-shadow: yrotorhg
+		Start: 12
+		Length: 8
+	icon: haloicon
+
+krov:
+	Inherits: emp-overlay
+	idle: krov
+		Facings: 32
+		UseClassicFacings: True
+	rotor: krotor
+		Length: 4
+	slow-rotor: krotor
+		Start: 4
+		Length: 8
+	icon: krovicon
+
+kroc:
+	Inherits: emp-overlay
+	idle: kroc
+		Facings: 32
+		UseClassicFacings: True
+	rotor: krotor
+		Length: 4
+	slow-rotor: krotor
+		Start: 4
+		Length: 8
+	rotor-rear: lrotorlg
+		Length: 4
+	slow-rotor-rear: lrotorlg
+		Start: 4
+		Length: 8
+	icon: krocicon

@@ -39,6 +39,21 @@
 			Ford: 90
 			Water: 80
 			River: 80
+	Locomotor@FOOT_CLIMBER:
+		Name: foot-climber
+		Crushes: mine, crate
+		SharesCell: true
+		TerrainSpeeds:
+			Clear: 100
+			Rough: 90
+			Road: 110
+			Bridge: 110
+			Ore: 90
+			Gems: 90
+			Scraps: 90
+			Beach: 90
+			Ford: 90
+			Rock: 60
 	Locomotor@WHEELED:
 		Name: wheeled
 		Crushes: mine, crate
@@ -289,7 +304,8 @@
 		Name: Kazakhst.
 		InternalName: kazakh
 		Side: Soviet
-		Description: Kazakhstan\nFaction Variations:\n    - Tanks have +1 Range and take 10% longer to reload.\nAffected are both types of Heavy Tank and Mammoth Tanks.\n    - GPS Sattelite is prepared faster.\nGPS becomes available in 9:00 instead 12:00.\nThe timers given are for 'Normal' speed.\n    - Get one free Flak Truck with each War Factory built.\nVeterancy Bonus:\n    - MiG gets built as Veteran.\nUnique Support Powers:\n    - Tank Hunters (Service Depot)\nDelivers a trio of fast Tank Hunters at your primary War Factory.\n    - Communications Jam (Radar Dome with Space Program)\nObscures an area on the map with shroud and jams enemy Radar.\nSpecial Units:\n    - MI-2 Scout (Aircraft)\nFast Helicopter that can Heal infantry when landed.\n    - ICBM Launcher (Vehicle)\nNuclear rocket artillery with extreme range.
+		Description: Kazakhstan\nFaction Variations:\n    - Tanks have +1 Range and take 10% longer to reload.\nAffected are both types of Heavy Tank and Mammoth Tanks.\n    - GPS Sattelite is prepared faster.\nGPS becomes available in 9:00 instead 12:00.\nThe timers given are for 'Normal' speed.\n    - Get one free Flak Truck with each War Factory built.\nVeterancy Bonus:\n    - MiG gets built as Veteran.\nUnique Support Powers:\n    - Tank Hunters (Service Depot)\nDelivers a trio of fast Tank Hunters at your primary War Factory.\n    - Communications Jam (Radar Dome with Space Program)\nObscures an area on the map with shroud and jams enemy Radar.\nSpecial Units:\n    - Super Transport (Aircraft)\nFunctions like a Naval transport, on Air.\n    - ICBM Launcher (Vehicle)\nNuclear rocket artillery with extreme range.
+		#\n    - MI-2 Scout (Aircraft)\nFast Helicopter that can Heal infantry when landed.\n    - ICBM Launcher (Vehicle)\nNuclear rocket artillery with extreme range.
 	Faction@20:
 		Name: Uzbekist.
 		InternalName: uzbek

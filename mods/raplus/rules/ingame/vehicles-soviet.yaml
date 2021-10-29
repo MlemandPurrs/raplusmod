@@ -314,6 +314,7 @@ APC.Soviet:
 	Inherits@CARGOPIPS: ^CargoPips
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiInf
+	Inherits@SLOWCRUSH: ^SlowedByCrushing
 	Buildable:
 		Queue: Vehicle, MWFVehicle
 		BuildPaletteOrder: 3
@@ -401,6 +402,7 @@ APC.Soviet:
 	Inherits: ^TrackedVehicle
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiTank
+	Inherits@SLOWCRUSH: ^SlowedByCrushing
 	Buildable:
 		Queue: Vehicle, MWFVehicle
 		BuildPaletteOrder: 5
@@ -462,6 +464,7 @@ APC.Soviet:
 	Inherits: ^TrackedVehicle
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiTankandAir
+	Inherits@SLOWCRUSH: ^SlowedByCrushing
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 8
@@ -519,6 +522,7 @@ APC.Soviet:
 		StartIfBelow: 50
 		DamageCooldown: 150
 	Passenger:
+		CargoType: HeavyVehicle
 		Weight: 4
 		CustomPipType: pip-red
 	ProducibleWithLevel:
@@ -611,6 +615,7 @@ NRTY:
 	Inherits: ^TrackedVehicle
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@SLOWCRUSH: ^SlowedByCrushing
 	Targetable@DefectorPrevention:
 		TargetTypes: MCImmune
 	Buildable:
@@ -679,7 +684,7 @@ NRTY:
 	Selectable:
 		DecorationBounds: 42,42,0,-3
 	Passenger:
-		CargoType: Vehicle
+		CargoType: HeavyVehicle
 		Weight: 8
 		CustomPipType: pip-red
 	RenderRangeCircle:
@@ -770,6 +775,7 @@ TTNK:
 	Inherits: ^TrackedVehicle
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiStructure
+	Inherits@SLOWCRUSH: ^SlowedByCrushing
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 9
@@ -823,7 +829,8 @@ TTNK:
 SAML:
 	Inherits: ^TrackedVehicle
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@AUTOTARGET: ^AutoTargetAirAssaultMove
+	Inherits@SLOWCRUSH: ^SlowedByCrushing
 	Valued:
 		Cost: 1200
 	UpdatesPlayerStatistics:
@@ -891,6 +898,7 @@ SAML:
 
 QTNK:
 	Inherits: ^TrackedVehicle
+	Inherits@SLOWCRUSH: ^SlowedByCrushing
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 13
@@ -940,6 +948,7 @@ QTNK:
 		Color: FFFF0080
 		Range: 7c0
 	Passenger:
+		CargoType: HeavyVehicle
 		Weight: 4
 		CustomPipType: pip-red
 	GpsDot:
@@ -1007,6 +1016,10 @@ ICBM:
 	RevealOnDeath:
 		Duration: 100
 		Radius: 2c512
+	Passenger:
+		CargoType: HeavyVehicle
+		Weight: 4
+		CustomPipType: pip-red
 
 MWF:
 	Inherits: ^Vehicle
@@ -1043,6 +1056,7 @@ MWF:
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	Passenger:
+		CargoType: HeavyVehicle
 		Weight: 4
 		CustomPipType: pip-blue
 	TransferTimedExternalConditionOnTransform:
@@ -1052,6 +1066,7 @@ ISU:
 	Inherits: ^TrackedVehicle
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@SLOWCRUSH: ^SlowedByCrushing
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 13
@@ -1107,11 +1122,12 @@ GTNK:
 	Inherits: ^TrackedVehicle
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAir
+	Inherits@SLOWCRUSH: ^SlowedByCrushing
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 9
 		Prerequisites: stek, dome, ~vehicles.soviet, ~player.china, ~techlevel.high
-		Description: Tank with Anti-Air battery mounted on it.\nHas Chaingun against ground units.\n  Strong vs Aircraft. Infantry\n  Weak vs anything Else
+		Description: Tank with a large Chaingun mounted on it.\n  Strong vs Aircraft. Infantry\n  Weak vs anything Else
 	Valued:
 		Cost: 1200
 	Tooltip:
@@ -1132,19 +1148,24 @@ GTNK:
 		Range: 4c0
 	Turreted:
 		TurnSpeed: 28
-	Armament@AG:
-		Name: primary
-		Weapon: Chaingun.Ground
-		LocalOffset: 320,140,160
-		MuzzleSequence: muzzle-mg
+		Offset: 0,0,200
 	Armament@AA:
+		Name: primary
+		Weapon: ChainGun.AG
+		LocalOffset: 394, 0, 90
+		MuzzleSequence: muzzle-mg
+		PauseOnCondition: !(!reload-air && !empdisable) || !ammo
+		ReloadingCondition: reload-ground
+	Armament@AG:
 		Name: secondary
-		Weapon: ZSU-23
-		LocalOffset: 460,-100,400
+		Weapon: ChainGun.AA
+		LocalOffset: 394, 0, 260
+		#	LocalOffset: 460,-100,400
 		MuzzleSequence: muzzle
-		PauseOnCondition: !ammo
+		PauseOnCondition: !(!reload-ground && !empdisable) || !ammo
+		ReloadingCondition: reload-air
 	AmmoPool:
-		Armaments: secondary
+		Armaments: primary, secondary
 		Ammo: 24
 		AmmoCondition: ammo
 		ReloadDelay: 6
@@ -1165,8 +1186,21 @@ GTNK:
 		Margin: 0, -6
 		RequiresCondition: !ammo
 	AttackTurreted:
+		Armaments: primary, secondary
+		PauseOnCondition: empdisable
 	WithMuzzleOverlay:
 	WithSpriteTurret:
+		Sequence: turret-ag
+		RequiresCondition: !attack-air
+	WithSpriteTurret@AIR:
+		Sequence: turret-aa
+		RequiresCondition: attack-air
+	GrantConditionOnAttack:
+		Condition: attack-air
+		ArmamentNames: secondary
+		RevokeDelay: 18
+		RevokeOnNewTarget: False
+		RevokeAll: True
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
 	Selectable:

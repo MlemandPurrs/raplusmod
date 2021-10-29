@@ -834,7 +834,7 @@ GTUR:
 		RequiresCondition: !disabled && !build-incomplete
 	RenderDetectionCircle:
 	Turreted:
-		TurnSpeed: 20
+		TurnSpeed: 16
 		InitialFacing: 0
 		RealignDelay: -1
 		RequiresCondition: !build-incomplete

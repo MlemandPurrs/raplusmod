@@ -596,6 +596,14 @@
 	DetectCloaked:
 		CloakTypes: Cloak
 		Range: 1c0
+	GrantExternalConditionToCrusher@CRUSHATTEMPTSLOW:
+		WarnCrushCondition: crush-attempt-slow
+		WarnCrushDuration: 50
+		OnCrushCondition: crush-attempt-slow
+		OnCrushDuration: 100
+	GrantExternalConditionToCrusher@CRUSHSLOW:
+		OnCrushCondition: crush-slow
+		OnCrushDuration: 50
 
 ^Soldier:
 	Inherits: ^Infantry
@@ -1334,6 +1342,14 @@
 		DestroyedSounds: sandbag2.aud
 	Crushable:
 		CrushClasses: wall
+	GrantExternalConditionToCrusher@CRUSHATTEMPTSLOW:
+		WarnCrushCondition: crush-attempt-slow
+		WarnCrushDuration: 50
+		OnCrushCondition: crush-attempt-slow
+		OnCrushDuration: 100
+	GrantExternalConditionToCrusher@CRUSHSLOW:
+		OnCrushCondition: crush-slow
+		OnCrushDuration: 50
 	LineBuild:
 		Range: 8
 		NodeTypes: wall
@@ -1421,7 +1437,7 @@
 		BeingCapturedCondition: being-captured
 	Capturable:
 		Types: building
-	CapturableProgressBar:
+	CapturableProgressBar:	
 	CapturableProgressBlink:
 	EngineerRepairable:
 	MapEditorData:
@@ -1810,10 +1826,12 @@
 	Targetable:
 		TargetTypes: Ground, NoAutoTarget
 	CaptureManager:
+		BeingCapturedCondition: being-captured
 	Capturable:
 		Types: techbuilding-husk
 		RequiresCondition: !awaitcooldown
-	CapturableProgressBar:
+	CapturableProgressBar:	
+		RequiresCondition: being-captured
 	CapturableProgressBlink:
 	#	prevent instant restore
 	GrantTimedCondition@Cooldown:
@@ -2701,7 +2719,7 @@
 		RequiresSelection: true
 		Image: pips
 		Sequence: tag-explosive
-		Position: Center
+		Position: Top
 		Margin: 0, 4
 		ValidRelationships: Neutral
 		RequiresCondition: booby-trapped
@@ -2807,3 +2825,15 @@
 		Prerequisites: global-autorepair
 	ExternalCondition@ConyardRepairs:
 		Condition: within-conyard-radius
+
+^SlowedByCrushing:
+	ExternalCondition@CRUSHATTEMPTSLOW:
+		Condition: crush-attempt-slow
+	SpeedMultiplier@CRUSHATTEMPTSLOW:
+		RequiresCondition: crush-attempt-slow && !crush-slow
+		Modifier: 80
+	ExternalCondition@CRUSHSLOW:
+		Condition: crush-slow
+	SpeedMultiplier@CRUSHSLOW:
+		RequiresCondition: crush-slow
+		Modifier: 50

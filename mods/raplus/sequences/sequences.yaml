@@ -754,8 +754,12 @@ gtnk:
 	idle: gtnk
 		Facings: 32
 		UseClassicFacings: True
-	turret: gtnk
+	turret-ag: gtnk
 		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+	turret-aa: gtnk
+		Start: 64
 		Facings: 32
 		UseClassicFacings: True
 	muzzle-mg: minigun

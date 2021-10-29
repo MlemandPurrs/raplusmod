@@ -989,3 +989,31 @@ U2Camera:
 	Report: cspydram.aud
 	TargetActorCenter: true
 	Projectile: InstantHit
+
+MiniMigLauncher:
+	ReloadDelay: 175
+	Burst: 5
+	BurstDelays: 15
+	Range: 25c0
+	ValidTargets: Ground, Water
+	Projectile: InstantHit
+	Warhead@1Dam: TargetDamage
+		ValidTargets: Ground, Water
+
+KirovBomb:
+	Inherits: BlimpBomb
+	Warhead@5Tesla: FireShrapnel
+		Weapon: KirovTeslaArc
+		Amount: 3
+		AimChance: 85
+		AllowDirectHit: true
+		ThrowWithoutTarget: false
+
+KirovTeslaArc:
+	Inherits: TTankZap
+	Range: 4c0
+	Report: shktrop1.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: 30
+		ValidTargets: Infantry, Vehicle, Ship
+		ValidRelationships: Enemy, Neutral

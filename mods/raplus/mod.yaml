@@ -1,7 +1,7 @@
 
 Metadata:
 	Title: Red Alert Plus
-	Version: v.1.4.2-classicqueue
+	Version: v.1.4.2-classiqueue
 	Website: https://www.moddb.com/mods/ra-plus-mod
 	WebIcon32: https://www.openra.net/images/icons/ra_32x32.png
 
@@ -50,14 +50,16 @@ Packages:
 	raplus|bits/sounds/desolator
 	raplus|bits/sounds/gdisoldier
 	raplus|bits/sounds/commando
+	raplus|bits/sounds/terroist
+	raplus|bits/sounds/kirov
 	raplus|bits/temperate
     raplus|bits/vehicle
     raplus|uibits
 
 MapFolders:
 	raplus|maps: System
-	~^SupportDir|maps/raplus/v.1.4.2-classicqueue: User
-	~^SupportDir|maps/ra: User
+	~^SupportDir|maps/raplus/v.1.4.2-classiqueue: User
+	~^SupportDir|maps/ra/release: User
 
 Rules:
 	raplus|rules/misc.yaml
@@ -366,4 +368,4 @@ ModContent:
 
 ModCredits:
 	ModCreditsFile: raplus|credits.txt
-	ModTabTitle: RA Simple
+	ModTabTitle: RA + Mod
