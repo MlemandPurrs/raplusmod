@@ -2013,7 +2013,7 @@ STEK:
 	Health:
 		HP: 800
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure
+		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate, SabInfiltrate
 	Armor:
 		Type: Wood
 	RevealsShroud:
