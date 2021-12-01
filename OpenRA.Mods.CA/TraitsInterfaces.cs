@@ -41,6 +41,12 @@ namespace OpenRA.Mods.CA.Traits
 		int RandomRate { get; }
 	}
 
+	[RequireExplicitImplementation]
+	public interface IRemoveInfector
+	{
+		void RemoveInfector(Actor self, bool kill, AttackInfo e = null);
+	}
+
 	public interface INotifyActivate { void Launching(Actor self); }
 
 	[RequireExplicitImplementation]

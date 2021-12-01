@@ -1189,14 +1189,23 @@ WEAP:
 		InitialDelay: 0
 		Amount: 30
 		RequiresCondition: maintenance
+	#	neither of those caused a total bug out
 	Sellable:
 		RequiresCondition: !build-incomplete && !being-captured && !being-demolished && !maintenance
 		SellSounds: cashturn.aud
 	ToggleConditionOnOrder:
 		PauseOnCondition: maintenance
-	ProvidesPrerequisite@maintenance:
-		Prerequisite: weap.at.maintenance
-		RequiresCondition: maintenance
+	#	ok, this is causing the bug out
+	#	ProvidesPrerequisite@maintenance:
+	#	Prerequisite: weap.at.maintenance
+	#	RequiresCondition: maintenance	
+	#	.........
+	#	ah ok i see now:
+	#	A prerequisite that gets granted based on a condition
+	#	granted by a (temporary) prerequisite that is granted
+	#	by a GrantPrerequisiteChargeDrainPower causes bugs
+	#	and possibly CTD later on if game kept running in that
+	#	bugged state for too long
 	FreeActor@CountryBonus:
 		Actor: FTRK
 		SpawnOffset: 1,2
@@ -1208,7 +1217,7 @@ WEAP:
 	ProduceActorPowerCA@ReserveTanks:
 		OrderName: ReserveTanksAutoProduction
 		PauseOnCondition: disabled || indplowpower
-		RequiresCondition: primary
+		RequiresCondition: primary && !maintenance
 		Prerequisites: ~indp, ~fix, player.belarus
 		Description: Tank Reserves
 		LongDesc: Periodically obtain a free Heavy Tank.\nActivated automatically when ready.\nRequires functional Industrial Plant.
@@ -1516,9 +1525,9 @@ FIX.Soviet:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
-	GrantConditionOnPrerequisite@CheckforMaintenance:
+	GrantConditionOnPrerequisite@MAINTENANCE:
 		Condition: weap.in.maintenance
-		Prerequisites: weap.at.maintenance
+		Prerequisites: maintenance
 	SupportPowerChargeBar:
 	RenderSprites:
 		Image: fix

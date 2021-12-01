@@ -18,12 +18,12 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.CA.Traits
 {
-	public enum ActivityType { FlyAttack, Fly, ReturnToBase }
+	public enum ActivityType { FlyAttack, Fly, ReturnToBase, FindAndDeliverResources }
 
 	public class GrantConditionOnActivityInfo : TraitInfo
 	{
 		[Desc("Activity to grant condition on",
-			"Currently valid activities are `Fly`, `FlyAttack` and `ReturnToBase`.")]
+			"Currently valid activities are `Fly`, `FlyAttack`, `ReturnToBase` and `FindAndDeliverResources`.")]
 		public readonly ActivityType Activity = ActivityType.FlyAttack;
 
 		[GrantedConditionReference]
@@ -75,6 +75,9 @@ namespace OpenRA.Mods.CA.Traits
 				return true;
 
 			if (self.CurrentActivity is ReturnToBase && info.Activity == ActivityType.ReturnToBase)
+				return true;
+
+			if (self.CurrentActivity is FindAndDeliverResources && info.Activity == ActivityType.FindAndDeliverResources)
 				return true;
 
 			return false;

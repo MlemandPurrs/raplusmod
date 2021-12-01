@@ -8,6 +8,7 @@
  */
 #endregion
 
+using System.Collections.Generic;
 using System.Linq;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Traits;
@@ -17,27 +18,42 @@ namespace OpenRA.Mods.CA.Traits
 	[Desc("This actor can be mind controlled by other actors.")]
 	public class MindControllableInfo : PausableConditionalTraitInfo
 	{
-		[Desc("Condition to grant when under mindcontrol.")]
-		[GrantedConditionReference]
-		public readonly string Condition = null;
-
 		[Desc("The sound played when the mindcontrol is revoked.")]
 		public readonly string[] RevokeControlSounds = { };
 
 		[Desc("Map player to transfer this actor to if the owner lost the game.")]
 		public readonly string FallbackOwner = "Creeps";
 
+		[ActorReference(dictionaryReference: LintDictionaryReference.Keys)]
+		[Desc("Condition to grant when under mindcontrol.",
+			"A dictionary of [actor id]: [condition].")]
+		public readonly Dictionary<string, string> ControlledConditions = new Dictionary<string, string>();
+
+		[ActorReference(dictionaryReference: LintDictionaryReference.Keys)]
+		[Desc("Condition to grant when revoking mindcontrol.",
+			"A dictionary of [actor id]: [condition].")]
+		public readonly Dictionary<string, string> RevokingConditions = new Dictionary<string, string>();
+
+		[GrantedConditionReference]
+		public IEnumerable<string> LinterControlledConditions { get { return ControlledConditions.Values; } }
+
+		[GrantedConditionReference]
+		public IEnumerable<string> LinterRevokingConditions { get { return RevokingConditions.Values; } }
+
 		public override object Create(ActorInitializer init) { return new MindControllable(init.Self, this); }
 	}
 
-	public class MindControllable : PausableConditionalTrait<MindControllableInfo>, INotifyKilled, INotifyActorDisposing, INotifyOwnerChanged, INotifyTransform
+	public class MindControllable : PausableConditionalTrait<MindControllableInfo>, INotifyKilled, INotifyActorDisposing, INotifyOwnerChanged, INotifyTransform, ITick
 	{
 		readonly MindControllableInfo info;
 		Player creatorOwner;
 		bool controlChanging;
 		Actor oldSelf = null;
 
-		int token = Actor.InvalidConditionToken;
+		int controlledToken = Actor.InvalidConditionToken;
+		int revokingToken = Actor.InvalidConditionToken;
+		int revokeTicks;
+		bool revoking = false;
 
 		public Actor Master { get; private set; }
 
@@ -62,13 +78,19 @@ namespace OpenRA.Mods.CA.Traits
 			UnlinkMaster(self, Master);
 			Master = master;
 
-			if (token == Actor.InvalidConditionToken)
-				token = self.GrantCondition(Info.Condition);
+			var mindController = Master.Trait<MindController>();
+
+			if (controlledToken == Actor.InvalidConditionToken && Info.ControlledConditions.ContainsKey(Master.Info.Name))
+				controlledToken = self.GrantCondition(Info.ControlledConditions[Master.Info.Name]);
 
 			if (master.Owner == creatorOwner)
 				UnlinkMaster(self, master);
 
-			self.World.AddFrameEndTask(_ => controlChanging = false);
+			self.World.AddFrameEndTask(w =>
+			{
+				controlChanging = false;
+				revoking = false;
+			});
 		}
 
 		public void UnlinkMaster(Actor self, Actor master)
@@ -85,28 +107,63 @@ namespace OpenRA.Mods.CA.Traits
 			});
 
 			Master = null;
-
-			if (token != Actor.InvalidConditionToken)
-				token = self.RevokeCondition(token);
 		}
 
-		public void RevokeMindControl(Actor self)
+		public void RevokeMindControl(Actor self, int ticks)
+		{
+			controlChanging = true;
+
+			if (Master == null)
+				return;
+
+			var masterName = Master.Info.Name;
+			UnlinkMaster(self, Master);
+
+			if (ticks == 0)
+				RevokeComplete(self);
+			else
+			{
+				revokeTicks = ticks;
+				revoking = true;
+
+				if (revokingToken == Actor.InvalidConditionToken && Info.RevokingConditions.ContainsKey(masterName))
+					revokingToken = self.GrantCondition(Info.RevokingConditions[masterName]);
+			}
+		}
+
+		void RevokeComplete(Actor self)
 		{
 			self.CancelActivity();
-
-			controlChanging = true;
 
 			if (creatorOwner.WinState == WinState.Lost)
 				self.ChangeOwner(self.World.Players.First(p => p.InternalName == info.FallbackOwner));
 			else
 				self.ChangeOwner(creatorOwner);
 
-			UnlinkMaster(self, Master);
+			if (controlledToken != Actor.InvalidConditionToken)
+				controlledToken = self.RevokeCondition(controlledToken);
+
+			if (revokingToken != Actor.InvalidConditionToken)
+				revokingToken = self.RevokeCondition(revokingToken);
 
 			if (info.RevokeControlSounds.Any())
 				Game.Sound.Play(SoundType.World, info.RevokeControlSounds.Random(self.World.SharedRandom), self.CenterPosition);
 
 			self.World.AddFrameEndTask(_ => controlChanging = false);
+		}
+
+		void ITick.Tick(Actor self)
+		{
+			if (IsTraitPaused || IsTraitDisabled)
+				return;
+
+			if (!controlChanging || !revoking)
+				return;
+
+			if (--revokeTicks > 0)
+				return;
+
+			RevokeComplete(self);
 		}
 
 		void INotifyKilled.Killed(Actor self, AttackInfo e)
@@ -121,14 +178,19 @@ namespace OpenRA.Mods.CA.Traits
 
 		void INotifyOwnerChanged.OnOwnerChanged(Actor self, Player oldOwner, Player newOwner)
 		{
-			if (!controlChanging)
-				UnlinkMaster(self, Master);
+			if (controlChanging)
+				return;
+
+			UnlinkMaster(self, Master);
+
+			if (controlledToken != Actor.InvalidConditionToken)
+				controlledToken = self.RevokeCondition(controlledToken);
 		}
 
 		protected override void TraitDisabled(Actor self)
 		{
 			if (Master != null)
-				RevokeMindControl(self);
+				RevokeMindControl(self, 0);
 		}
 
 		void TransferMindControl(MindControllable mc)
