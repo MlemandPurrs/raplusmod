@@ -8,10 +8,8 @@ OILB.Husk:
 		Dimensions: 2,2
 	Tooltip:
 		Name: Oil Derrick (Destroyed)
-	#	ForceHealthPercentage is not working
 	TransformOnCapture:
 		IntoActor: oilb
-		ForceHealthPercentage: 25
 
 OILP.Husk:
 	Inherits: ^TechBuildingHusk
@@ -24,6 +22,7 @@ OILP.Husk:
 	Tooltip:
 		Name: Oil Platform (Destroyed)
 	#	high out on sea, how to capture ?
+    -TransformOnCapture:
 
 MISS.Husk:
 	Inherits: ^TechBuildingHusk
@@ -37,7 +36,6 @@ MISS.Husk:
 		Name: Communications Center (Destroyed)
 	TransformOnCapture:
 		IntoActor: miss
-		ForceHealthPercentage: 25
 
 HOSP.Husk:
 	Inherits: ^TechBuildingHusk
@@ -50,7 +48,6 @@ HOSP.Husk:
 		Name: Hospital (Destroyed)
 	TransformOnCapture:
 		IntoActor: hosp
-		ForceHealthPercentage: 25
 
 BIO.Husk:
 	Inherits: ^TechBuildingHusk
@@ -63,7 +60,6 @@ BIO.Husk:
 		Name: Nuclear Reactor (Destroyed)
 	TransformOnCapture:
 		IntoActor: bio
-		ForceHealthPercentage: 25
 
 FCOM.Husk:
 	Inherits: ^TechBuildingHusk
@@ -80,24 +76,22 @@ FCOM.Husk:
 		Image: acom.husk
 	TransformOnCapture:
 		IntoActor: fcom
-		ForceHealthPercentage: 25
 
 ACAD.Husk:
 	Inherits: ^TechBuildingHusk
-	Inherits@shape: ^3x2Shape
+	Inherits@shape: ^2x2Shape
 	Interactable:
 		Bounds: 72,72
 	Building:
-		Footprint: xxx xxx ===
-		Dimensions: 3,3
-		LocalCenterOffset: 0,-512,0
+		Footprint: xx xx
+		Dimensions: 2,2
+		#   LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Veteran Academy (Destroyed)
 	RenderSprites:
 		Image: acad.husk
 	TransformOnCapture:
 		IntoActor: acad
-		ForceHealthPercentage: 25
 
 BANK.Husk:
 	Inherits: ^TechBuildingHusk
@@ -112,7 +106,6 @@ BANK.Husk:
 		Name: Bank (Destroyed)
 	TransformOnCapture:
 		IntoActor: bank
-		ForceHealthPercentage: 25
 	RenderSprites:
 		Image: v92.husk
 
@@ -127,7 +120,6 @@ CPWR.Husk:
 		Name: Civ. Power Plant (Destroyed)
 	TransformOnCapture:
 		IntoActor: cpwr
-		ForceHealthPercentage: 25
 	RenderSprites:
 		Image: civpowr.husk
 
@@ -142,7 +134,6 @@ CFLD.Husk:
 		Name: Civ. Airfield (Destroyed)
 	TransformOnCapture:
 		IntoActor: cfld
-		ForceHealthPercentage: 25
 	RenderSprites:
 		Image: civafld.husk
 
@@ -157,4 +148,3 @@ MSHP.Husk:
 		Name: Machine Shop (Destroyed)
 	TransformOnCapture:
 		IntoActor: mshp
-		ForceHealthPercentage: 25

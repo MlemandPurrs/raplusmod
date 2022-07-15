@@ -50,7 +50,7 @@ PT:
 		Turret: primary
 		Name: primary
 		Weapon: 2Inch
-		LocalOffset: 216,0,48
+		LocalOffset: 432,0,48
 		MuzzleSequence: muzzle
 		PauseOnCondition: under-bridge || empdisable
 	Armament@SECONDARY:

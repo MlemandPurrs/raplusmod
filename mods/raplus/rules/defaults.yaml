@@ -1522,18 +1522,23 @@
 		Margin: 0, 4
 
 ^AmmoBox:
-	Inherits: ^TechBuilding
+	Inherits: ^BasicBuilding
 	-Selectable:
+	-ShakeOnDeath:
+	-SoundOnDamageTransition:
+	-Demolishable:
+	FrozenUnderFog:
 	Health:
 		HP: 10
 	Explodes:
 		Weapon: UnitExplode
 	Tooltip:
 		Name: Ammo Box
+        ShowOwnerRow: False
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NoAutoTarget
 	Armor:
-		Type: Light
+		Type: None
 	MapEditorData:
 		Categories: Decoration
 	Interactable:
@@ -1833,6 +1838,8 @@
 	CapturableProgressBar:	
 		RequiresCondition: being-captured
 	CapturableProgressBlink:
+	TransformOnCapture:
+		ForceHealthPercentage: 35
 	#	prevent instant restore
 	GrantTimedCondition@Cooldown:
 		Condition: awaitcooldown

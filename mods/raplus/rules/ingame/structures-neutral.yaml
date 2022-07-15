@@ -292,16 +292,16 @@ FCOM:
 
 ACAD:
 	Inherits: ^TechBuilding
-	Inherits@shape: ^3x2Shape
+	Inherits@shape: ^2x2Shape
 	AppearsOnMapPreview:
 	Selectable:
 		Bounds: 72,72
 	OwnerLostAction:
 		Action: ChangeOwner
 	Building:
-		Footprint: xxx xxx ===
-		Dimensions: 3,3
-		LocalCenterOffset: 0,-512,0
+		Footprint: xx xx
+		Dimensions: 2,2
+		#   LocalCenterOffset: 0,-512,0
 	Health:
 		HP: 600
 	Armor:

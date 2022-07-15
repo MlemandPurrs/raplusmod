@@ -147,29 +147,26 @@ oilp.husk:
 		Length: *
 
 acad:
-	idle: wwi-aus-hq
-		Start: 7
-		Length: 1
-		Offset: -2, 10
-	damaged-idle: wwi-aus-hq
-		Start: 7
-		Length: 1
-		Offset: -2, 10
-	make: wwi-aus-hq
+	idle:
 		Start: 0
-		Length: *
-		Offset: -2, 10
-	bib: bib2
+		Length: 1
+	damaged-idle:
+		Start: 1
+		Length: 1
+	dead: miss
+		Start: 2
+        Length: 1
+		Tick: 800
+	bib: bib3
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
 
 acad.husk:
-	idle: wwi-aus-hq
-		Start: 1
+	idle: acad
+		Start: 2
 		Length: 1
-		Offset: -2, 10
 
 v92:
 	idle: wwi-tax

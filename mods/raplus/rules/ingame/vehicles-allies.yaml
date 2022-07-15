@@ -225,6 +225,41 @@ RAPC:
 	WithSpriteTurret:
 		Sequence: turret-rocket
 
+MAPC:
+	Inherits: APC
+	-Tooltip@sidebar:
+	-Tooltip@ingame:
+	-ExternalCondition@PRODUCED:
+	-Armament:
+    -Cargo:
+	Buildable:
+		Queue: Vehicle, MWFVehicle
+		BuildPaletteOrder: 16
+		Prerequisites: tent, atek, ~vehicles.allies, ~player.greece, ~techlevel.high
+	Tooltip:
+		Name: Mortar Carrier
+    Mobile:
+        PauseOnCondition: !(!empdisable && !being-captured)
+	Armament:
+		Weapon: Mortar
+		LocalOffset: 0,0,155
+        FireDelay: 15
+		PauseOnCondition: empdisable
+	RenderSprites:
+		Image: mapc
+	Turreted:
+		Offset: -224,0,171
+	WithSpriteTurret:
+		Sequence: turret
+    Sellable:
+        RequiresCondition: unit.sellable
+    Capturable:
+		-RequiresCondition:
+	Carryable:
+		-RequiresCondition:
+    -Targetable@DefectorPrevention:
+    -WithCargoPipsDecoration:
+
 1TNK:
 	Inherits: ^TrackedVehicle
 	Inherits@GAINSEXPERIENCE: ^GainsExperience

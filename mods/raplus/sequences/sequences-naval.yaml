@@ -18,7 +18,7 @@ pt:
     Inherits: emp-overlay
 	idle:
 		Facings: 16
-	turret: pttur
+	turret: lgttur
 		Facings: 32
 	turret-dc: mgun
 		Facings: 32

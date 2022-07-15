@@ -239,6 +239,16 @@ apc:
 	hapcicon: hapcicon
 	rapcicon: rapcicon
 
+mapc:
+	Inherits: emp-overlay
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+    turret: mrtr
+        Facings: 8
+		UseClassicFacings: False
+	icon: mapcicon
+
 1tnk:
     Inherits: emp-overlay
 	idle:
