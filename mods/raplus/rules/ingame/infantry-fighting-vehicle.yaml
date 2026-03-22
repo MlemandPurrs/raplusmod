@@ -29,6 +29,9 @@ IFV:
 		CustomPipType: pip-red
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: vehicles.upgraded
 	WithMuzzleOverlay:
 	Turreted:
 		TurnSpeed: 10

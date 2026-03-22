@@ -19,7 +19,7 @@ LST:
 		Type: Heavy
 	SelectionDecorations:
 	Selectable:
-		DecorationBounds: 36,36
+		DecorationBounds: 1536, 1536
 	Mobile:
 		Locomotor: lcraft
 		Speed: 128
@@ -268,7 +268,7 @@ MINS:
 		Image: mins
 	Targetable:
 		TargetTypes: Underwater
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: ASMine
 	GrantExternalConditionToCrusher:
 		OnCrushCondition: minehit

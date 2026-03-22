@@ -66,8 +66,8 @@ Ant:
 		Prerequisites: ~disabled
 		Description: Irradiated insect that grew oversize.
 	Selectable:
-		Bounds: 24,24,0,-5
-		DecorationBounds: 30,30,0,-2
+		Bounds: 1024, 1024, 0, -213
+		DecorationBounds: 1280, 1280, 0, -85
 	Health:
 		HP: 75
 	Mobile:

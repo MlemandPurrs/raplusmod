@@ -4,6 +4,7 @@
 	ActorMap:
 	ScreenMap:
 	Selection:
+	ControlGroups:
 	MusicPlaylist:
 		VictoryMusic: score
 		DefeatMusic: map
@@ -326,43 +327,20 @@
 		InternalName: china
 		Side: Soviet
 		Description: People's Republic of China\n\nFaction Variations:\n    - Tanks* are cheaper to build but have less health.\n*Those Tanks being both types of Heavy Tanks.\n10% cheaper to build at the cost of having 10% less Hitpoints.\n    - Can build Flamer Truck instead Flak Truck, requires Flame Turret.\n    - Walls and Gates have +50% Hitpoints.\nUnique Support Powers:\n    - Cloning Facility (Tech Center)\nActivate to produce all basic Infantry in pairs until duration end.\n    - Nuclear Artillery (Service Depot with Tech Center)\nDelivers a Mammoth Artillery at your primary War Factory.\nVeterancy Bonus:\n    - Rifle Infantry gets trained as Veteran.\nSpecial Units:\n    - Gattling Tank (Vehicle)\nLethal Anti-Air Measure that is equally effective against Infantry.\n    - MiG Bomber (Aircraft)\nAircraft equipped with Napalm bombs.\n    - Helicarrier (Naval)\nCan be deployed to Produce, Repair and re-arm Helicopters.
-	ResourceType@ore:
-		Type: Ore
-		Name: Valuable Minerals
-		ResourceType: 1
-		TerrainType: Ore
-		Palette: player
-		Sequences: gold01,gold02,gold03,gold04
-		MaxDensity: 12
-		ValuePerUnit: 25
-		AllowedTerrainTypes: Clear,Road
-		AllowUnderActors: true
-	ResourceType@gem:
-		Type: Gems
-		Name: Valuable Minerals
-		ResourceType: 2
-		TerrainType: Gems
-		Palette: player
-		Sequences: gem01,gem02,gem03,gem04
-		MaxDensity: 3
-		ValuePerUnit: 50
-		AllowedTerrainTypes: Clear,Road
-		AllowUnderActors: true
-	ResourceType@scrap:
-		Type: Scraps
-		Name: Scrap Metal
-		ResourceType: 3
-		TerrainType: Scraps
-		Palette: player
-		Sequences: scrap01,scrap02,scrap03,scrap04,scrap05,scrap06,scrap07,scrap08,scrap09,scrap10,scrap11,scrap12,scrap13,scrap14,scrap15,scrap16,scrap17,scrap18,scrap19,scrap20
-		MaxDensity: 12
-		ValuePerUnit: 12
-		AllowedTerrainTypes: Clear,Road
-		AllowUnderActors: true
 	ResourceRenderer:
-		RenderTypes: Ore, Gems, Scraps
-	JumpjetActorLayer:
-		HeightOffset: 1c460
+		ResourceTypes:
+			Ore:
+				Sequences: gold01, gold02, gold03, gold04
+				Palette: player
+				Name: resource-minerals
+			Gems:
+				Sequences: gem01, gem02, gem03, gem04
+				Palette: player
+				Name: resource-minerals
+			Scraps:
+				Sequences: scrap01, scrap02, scrap03, scrap04, scrap05, scrap06, scrap07, scrap08, scrap09, scrap10, scrap11, scrap12, scrap13, scrap14, scrap15, scrap16, scrap17, scrap18, scrap19, scrap20
+				Palette: player
+				Name: resource-scraps
 
 World:
 	Inherits: ^BaseWorld
@@ -373,6 +351,8 @@ World:
 	HelpCommand:
 	ScreenShaker:
 	BuildingInfluence:
+	JumpjetActorLayer:
+		HeightOffset: 1c460
 	ProductionQueueFromSelection:
 		ProductionPaletteWidget: PRODUCTION_PALETTE
 	LegacyBridgeLayer:
@@ -387,7 +367,8 @@ World:
 		WaterChance: 20
 		InitialSpawnDelay: 1500
 		CheckboxDisplayOrder: 1
-	DomainIndex:
+	PathFinderOverlay:
+	HierarchicalPathFinderOverlay:
 	SmudgeLayer@SCORCH:
 		Type: Scorch
 		Sequence: scorches
@@ -401,6 +382,23 @@ World:
 		SmokeImage: smoke_m
 		SmokeSequences: idle
 	ResourceLayer:
+		RecalculateResourceDensity: true
+		ResourceTypes:
+			Ore:
+				ResourceIndex: 1
+				TerrainType: Ore
+				AllowedTerrainTypes: Clear, Road
+				MaxDensity: 12
+			Gems:
+				ResourceIndex: 2
+				TerrainType: Gems
+				AllowedTerrainTypes: Clear, Road
+				MaxDensity: 3
+			Scraps:
+				ResourceIndex: 3
+				TerrainType: Scraps
+				AllowedTerrainTypes: Clear, Road
+				MaxDensity: 12
 	ResourceClaimLayer:
 	TintedCellsLayer@RADSTRONG:
 		Color: 00FF00
@@ -434,24 +432,24 @@ World:
 		TechLevelDropdownDisplayOrder: 2
 		GameSpeedDropdownDisplayOrder: 3
 		GameSpeed: fast
-	CreateMPPlayers:
-	MPStartUnits@cratehunters:
+	CreateMapPlayers:
+	StartingUnits@cratehunters:
 		Class: mhq
 		ClassName: Crate Hunters
 		Factions: allies, usa, england, france, holland, germany, sweden, swiss, spain, italy, greece, turkey, soviet, russia, ukraine, belarus, karelia, moldova, caucasia, kazakh, uzbek, turkmen, afghan, china
 		BaseActor: MHQ.Start
-	MPStartUnits@mcvonly:
+	StartingUnits@mcvonly:
 		Class: mcv
 		ClassName: MCV Only
 		Factions: allies, usa, england, france, holland, germany, sweden, swiss, spain, italy, greece, turkey, soviet, russia, ukraine, belarus, karelia, moldova, caucasia, kazakh, uzbek, turkmen, afghan, china
 		BaseActor: mcv
-	MPStartUnits@doublemcv:
+	StartingUnits@doublemcv:
 		Class: doublemcv
 		ClassName: Double MCV
 		Factions: allies, usa, england, france, holland, germany, sweden, swiss, spain, italy, greece, turkey, soviet, russia, ukraine, belarus, karelia, moldova, caucasia, kazakh, uzbek, turkmen, afghan, china
 		BaseActor: mcv
 		SupportActors: mcv
-	MPStartUnits@lightalliesa:
+	StartingUnits@lightalliesa:
 		Class: light
 		ClassName: Light Support
 		Factions: allies, usa, england, france, holland, germany, sweden, swiss, spain, italy, greece, turkey
@@ -459,7 +457,7 @@ World:
 		SupportActors: e1,e1,e1,e3,e3,jeep,1tnk
 		InnerSupportRadius: 3
 		OuterSupportRadius: 5
-	MPStartUnits@lightalliesb:
+	StartingUnits@lightalliesb:
 		Class: light
 		ClassName: Light Support
 		Factions: allies, usa, england, france, holland, germany, sweden, swiss, spain, italy, greece, turkey
@@ -467,7 +465,7 @@ World:
 		SupportActors: e1,e1,e1,e3,e3,apc,jeep
 		InnerSupportRadius: 3
 		OuterSupportRadius: 5
-	MPStartUnits@lightsovieta:
+	StartingUnits@lightsovieta:
 		Class: light
 		ClassName: Light Support
 		Factions: soviet, russia, ukraine, belarus, karelia, moldova, caucasia, kazakh, uzbek, turkmen, afghan, china
@@ -475,7 +473,7 @@ World:
 		SupportActors: e1,e1,e1,e3,e3,apc.soviet,ftrk
 		InnerSupportRadius: 3
 		OuterSupportRadius: 5
-	MPStartUnits@lightsovietb:
+	StartingUnits@lightsovietb:
 		Class: light
 		ClassName: Light Support
 		Factions: soviet, russia, ukraine, belarus, karelia, moldova, caucasia, kazakh, uzbek, turkmen, afghan, china
@@ -483,7 +481,7 @@ World:
 		SupportActors: e1,e1,e1,e3,e3,ftrk,3tnk.1b
 		InnerSupportRadius: 3
 		OuterSupportRadius: 5
-	MPStartUnits@heavyalliesa:
+	StartingUnits@heavyalliesa:
 		Class: heavy
 		ClassName: Heavy Support
 		Factions: allies, usa, england, france, holland, germany, sweden, swiss, spain, italy, greece, turkey
@@ -491,7 +489,7 @@ World:
 		SupportActors: e1,e1,e1,e3,e3,jeep,1tnk,2tnk,1tnk,2tnk
 		InnerSupportRadius: 3
 		OuterSupportRadius: 5
-	MPStartUnits@heavyalliesb:
+	StartingUnits@heavyalliesb:
 		Class: heavy
 		ClassName: Heavy Support
 		Factions: allies, usa, england, france, holland, germany, sweden, swiss, spain, italy, greece, turkey
@@ -499,7 +497,7 @@ World:
 		SupportActors: e1,e1,e1,e3,e3,apc,jeep,2tnk,2tnk,1tnk
 		InnerSupportRadius: 3
 		OuterSupportRadius: 5
-	MPStartUnits@heavysovieta:
+	StartingUnits@heavysovieta:
 		Class: heavy
 		ClassName: Heavy Support
 		Factions: soviet, russia, ukraine, belarus, karelia, moldova, caucasia, kazakh, uzbek, turkmen, afghan, china
@@ -507,7 +505,7 @@ World:
 		SupportActors: e1,e1,e1,e3,e3,ftrk,ftrk,3tnk.1b,3tnk.1b
 		InnerSupportRadius: 3
 		OuterSupportRadius: 5
-	MPStartUnits@heavysovietb:
+	StartingUnits@heavysovietb:
 		Class: heavy
 		ClassName: Heavy Support
 		Factions: soviet, russia, ukraine, belarus, karelia, moldova, caucasia, kazakh, uzbek, turkmen, afghan, china
@@ -515,7 +513,7 @@ World:
 		SupportActors: e1,e1,e1,e3,e3,apc.soviet,ftrk,3tnk,ftrk
 		InnerSupportRadius: 3
 		OuterSupportRadius: 5
-	MPStartUnits@deployedallies:
+	StartingUnits@deployedallies:
 		Class: none
 		ClassName: Conyard + Scout
 		Factions: allies, usa, england, france, holland, germany, sweden, swiss, spain, italy, greece, turkey
@@ -523,7 +521,7 @@ World:
 		SupportActors: jeep.scout
 		InnerSupportRadius: 3
 		OuterSupportRadius: 5
-	MPStartUnits@deployedsoviet:
+	StartingUnits@deployedsoviet:
 		Class: none
 		ClassName: Conyard + Scout
 		Factions: soviet, russia, ukraine, belarus, karelia, moldova, caucasia, kazakh, uzbek, turkmen, afghan, china
@@ -531,11 +529,11 @@ World:
 		SupportActors: ftrk.scout
 		InnerSupportRadius: 3
 		OuterSupportRadius: 5
-	MPStartLocations:
+	MapStartingLocations:
 		SeparateTeamSpawnsCheckboxDisplayOrder: 6
 		SeparateTeamSpawnsCheckboxVisible: False
 		SeparateTeamSpawnsCheckboxLocked: True
-	SpawnMPUnits:
+	SpawnStartingUnits:
 		DropdownDisplayOrder: 1
 	PathFinder:
 	ValidateOrder:
@@ -588,6 +586,9 @@ World:
 			3: WarningThreeMinutesRemaining
 			2: WarningTwoMinutesRemaining
 			1: WarningOneMinuteRemaining
+	ColorPickerManager:
+		PreviewActor: fact.colorpicker
+		PresetColors: 391D1D, 98331F, F57606, F50606, DDB8FF, ACF218, 06F739, F2BC18, 200738, 280DF6, 79F2AA, 34BA93, F861A4, C718F2, 79CEF2, 2F86F2
 	ScriptLobbyDropdown@EcoSpeed:
 		ID: growthrate
 		Label: Ore Growth
@@ -604,6 +605,22 @@ EditorWorld:
 	EditorActorLayer:
 	EditorCursorLayer:
 	EditorResourceLayer:
-	EditorSelectionLayer:
+		RecalculateResourceDensity: true
+		ResourceTypes:
+			Ore:
+				ResourceIndex: 1
+				TerrainType: Ore
+				AllowedTerrainTypes: Clear, Road
+				MaxDensity: 12
+			Gems:
+				ResourceIndex: 2
+				TerrainType: Gems
+				AllowedTerrainTypes: Clear, Road
+				MaxDensity: 3
+			Scraps:
+				ResourceIndex: 3
+				TerrainType: Scraps
+				AllowedTerrainTypes: Clear, Road
+				MaxDensity: 12
 	LoadWidgetAtGameStart:
 	EditorActionManager:

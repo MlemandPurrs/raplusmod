@@ -160,8 +160,8 @@ V19.Husk:
 	-Targetable:
 	-HitShape:
 	-Health:
-	-Explodes:
-	-Explodes@CIVPANIC:
+	-FireWarheadsOnDeath:
+	-FireWarheadsOnDeath@CIVPANIC:
 	-ChangesHealth@BurnDamage:
 	-ExternalCondition@BurnDamage:
 	-WithDamageOverlay@SmallBurn:
@@ -346,7 +346,7 @@ LHUS:
 	MapEditorData:
 		RequireTilesets: TEMPERAT
 	Selectable:
-		Bounds: 24,48,0,-16
+		Bounds: 1024, 2048, 0, -682
 	Tooltip:
 		Name: Lighthouse
 	Building:
@@ -358,8 +358,8 @@ WINDMILL:
 	MapEditorData:
 		RequireTilesets: TEMPERAT
 	Selectable:
-		Bounds: 24,24,0,-14
-		DecorationBounds: 36,36,0,-14
+		Bounds: 1024, 1024, 0, -597
+		DecorationBounds: 1536, 1536, 0, -597
 	Tooltip:
 		Name: Windmill
 	Building:
@@ -433,8 +433,7 @@ BRIDGE1:
 		Actor: bridgehut
 		SpawnOffset: 0,1
 	Interactable:
-		Bounds: 120,72
-
+		Bounds: 5120, 3072
 BRIDGE2:
 	Inherits: ^Bridge
 	Bridge:
@@ -451,8 +450,7 @@ BRIDGE2:
 		Actor: bridgehut
 		SpawnOffset: 2,1
 	Interactable:
-		Bounds: 120,48
-
+		Bounds: 5120, 2048
 BRIDGE3:
 	Inherits: ^Bridge
 	Bridge:
@@ -469,8 +467,7 @@ BRIDGE3:
 		Actor: bridgehut
 		SpawnOffset: 0,1
 	Interactable:
-		Bounds: 96,48
-
+		Bounds: 4096, 2048
 BRIDGE4:
 	Inherits: ^Bridge
 	Bridge:
@@ -487,8 +484,7 @@ BRIDGE4:
 		Actor: bridgehut
 		SpawnOffset: 2,1
 	Interactable:
-		Bounds: 96,48
-
+		Bounds: 4096, 2048
 SBRIDGE1:
 	Inherits: ^Bridge
 	Bridge:
@@ -505,8 +501,7 @@ SBRIDGE1:
 		Actor: bridgehut.small
 		SpawnOffset: 1,1
 	Interactable:
-		Bounds: 72,48
-
+		Bounds: 3072, 2048
 SBRIDGE2:
 	Inherits: ^Bridge
 	Bridge:
@@ -523,8 +518,7 @@ SBRIDGE2:
 		Actor: bridgehut.small
 		SpawnOffset: 1,1
 	Interactable:
-		Bounds: 48,72
-
+		Bounds: 2048, 3072
 SBRIDGE3:
 	Inherits: ^Bridge
 	Bridge:
@@ -557,7 +551,7 @@ BRIDGEHUT:
 		Footprint: __ __
 		Dimensions: 2,2
 	Selectable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
 		Priority: 2
 	LegacyBridgeHut:
 	Targetable:
@@ -569,7 +563,7 @@ BRIDGEHUT.small:
 		Footprint: _
 		Dimensions: 1,1
 	Selectable:
-		Bounds: 24,24
+		Bounds: 1024, 1024
 		Priority: 2
 	LegacyBridgeHut:
 	Targetable:

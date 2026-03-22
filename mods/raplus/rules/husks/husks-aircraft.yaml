@@ -5,14 +5,20 @@ BADR.Husk:
 	Aircraft:
 		TurnSpeed: 5
 		Speed: 149
-	SmokeTrailWhenDamaged@0:
-		Offset: -432,560,0
-		Interval: 2
-		MinDamage: Undamaged
-	SmokeTrailWhenDamaged@1:
-		Offset: -432,-560,0
-		Interval: 2
-		MinDamage: Undamaged
+	LeavesTrails@0:
+		Offsets: -432,560,0
+		MovingInterval: 2
+		StationaryInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+	LeavesTrails@1:
+		Offsets: -432,-560,0
+		MovingInterval: 2
+		StationaryInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
 	RenderSprites:
 		Image: badr
 	-RevealOnDeath:
@@ -28,14 +34,20 @@ B52.Husk:
 	Aircraft:
 		TurnSpeed: 5
 		Speed: 149
-	SmokeTrailWhenDamaged@0:
-		Offset: -432,560,0
-		Interval: 2
-		MinDamage: Undamaged
-	SmokeTrailWhenDamaged@1:
-		Offset: -432,-560,0
-		Interval: 2
-		MinDamage: Undamaged
+	LeavesTrails@0:
+		Offsets: -432,560,0
+		MovingInterval: 2
+		StationaryInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+	LeavesTrails@1:
+		Offsets: -432,-560,0
+		MovingInterval: 2
+		StationaryInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
 	RenderSprites:
 		Image: ally-bdgr
 	-RevealOnDeath:
@@ -51,14 +63,20 @@ B2.Husk:
 	Aircraft:
 		TurnSpeed: 5
 		Speed: 149
-	SmokeTrailWhenDamaged@0:
-		Offset: -432,560,0
-		Interval: 2
-		MinDamage: Undamaged
-	SmokeTrailWhenDamaged@1:
-		Offset: -432,-560,0
-		Interval: 2
-		MinDamage: Undamaged
+	LeavesTrails@0:
+		Offsets: -432,560,0
+		MovingInterval: 2
+		StationaryInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+	LeavesTrails@1:
+		Offsets: -432,-560,0
+		MovingInterval: 2
+		StationaryInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
 	RenderSprites:
 		Image: b2
 	-RevealOnDeath:
@@ -90,10 +108,13 @@ YAK.Husk:
 	Aircraft:
 		TurnSpeed: 5
 		Speed: 149
-	SmokeTrailWhenDamaged:
-		Offset: -853,0,0
-		Interval: 2
-		MinDamage: Undamaged
+	LeavesTrails:
+		Offsets: -853,0,0
+		MovingInterval: 2
+		StationaryInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
 	RevealsShroud:
 		MinRange: 9c0
 		Range: 11c0
@@ -132,10 +153,13 @@ SPIT.Husk:
 	Aircraft:
 		TurnSpeed: 5
 		Speed: 149
-	SmokeTrailWhenDamaged:
-		Offset: -853,0,0
-		Interval: 2
-		MinDamage: Undamaged
+	LeavesTrails:
+		Offsets: -853,0,0
+		MovingInterval: 2
+		StationaryInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
 	RevealsShroud:
 		MinRange: 9c0
 		Range: 11c0
@@ -179,10 +203,13 @@ MIG.Husk:
 	Aircraft:
 		TurnSpeed: 5
 		Speed: 186
-	SmokeTrailWhenDamaged:
-		Offset: -853,0,171
-		Interval: 2
-		MinDamage: Undamaged
+	LeavesTrails:
+		Offsets: -853,0,171
+		MovingInterval: 2
+		StationaryInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
 	RevealsShroud:
 		MinRange: 11c0
 		Range: 13c0
@@ -226,10 +253,13 @@ TORN.Husk:
 	Aircraft:
 		TurnSpeed: 5
 		Speed: 186
-	SmokeTrailWhenDamaged:
-		Offset: -853,0,171
-		Interval: 2
-		MinDamage: Undamaged
+	LeavesTrails:
+		Offsets: -853,0,171
+		MovingInterval: 2
+		StationaryInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
 	RevealsShroud:
 		MinRange: 11c0
 		Range: 13c0
@@ -267,10 +297,13 @@ U2.Husk:
 		Offset: -725,683,0
 	Contrail@2:
 		Offset: -725,-683,0
-	SmokeTrailWhenDamaged:
-		Offset: -1c43,0,0
-		Interval: 2
-		MinDamage: Undamaged
+	LeavesTrails:
+		Offsets: -1c43,0,0
+		MovingInterval: 2
+		StationaryInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
 	RenderSprites:
 		Image: u2
 
@@ -289,10 +322,13 @@ U2.Allies.Husk:
 		Offset: -725,683,0
 	Contrail@2:
 		Offset: -725,-683,0
-	SmokeTrailWhenDamaged:
-		Offset: -1c43,0,0
-		Interval: 2
-		MinDamage: Undamaged
+	LeavesTrails:
+		Offsets: -1c43,0,0
+		MovingInterval: 2
+		StationaryInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
 	RenderSprites:
 		Image: ally-u2
 
@@ -317,10 +353,13 @@ NEBR.Husk:
 	Aircraft:
 		TurnSpeed: 5
 		Speed: 186
-	SmokeTrailWhenDamaged:
-		Offset: -853,0,171
-		Interval: 2
-		MinDamage: Undamaged
+	LeavesTrails:
+		Offsets: -853,0,171
+		MovingInterval: 2
+		StationaryInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
 	RevealsShroud:
 		MinRange: 11c0
 		Range: 13c0
@@ -402,9 +441,13 @@ IROQ.Husk:
 		Speed: 112
 	WithIdleOverlay:
 		Sequence: rotor
-	SmokeTrailWhenDamaged:
-		Offset: -427,0,0
-		MinDamage: Undamaged
+	LeavesTrails:
+		Offsets: -427,0,0
+		MovingInterval: 3
+		StationaryInterval: 3
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
 	RevealsShroud:
 		Range: 10c0
 		Type: GroundPosition
@@ -440,9 +483,13 @@ HELI.Husk:
 	WithIdleOverlay:
 		Offset: 0,0,85
 		Sequence: rotor
-	SmokeTrailWhenDamaged:
-		Offset: -427,0,0
-		MinDamage: Undamaged
+	LeavesTrails:
+		Offsets: -427,0,0
+		MovingInterval: 3
+		StationaryInterval: 3
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
 	RevealsShroud:
 		MinRange: 10c0
 		Range: 12c0
@@ -478,9 +525,13 @@ MI2.Husk:
 		Speed: 112
 	WithIdleOverlay:
 		Sequence: rotor
-	SmokeTrailWhenDamaged:
-		Offset: -427,0,0
-		MinDamage: Undamaged
+	LeavesTrails:
+		Offsets: -427,0,0
+		MovingInterval: 3
+		StationaryInterval: 3
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
 	RevealsShroud:
 		MinRange: 8c0
 		Range: 10c0
@@ -505,9 +556,13 @@ HIND.Husk:
 		Speed: 112
 	WithIdleOverlay:
 		Sequence: rotor
-	SmokeTrailWhenDamaged:
-		Offset: -427,0,0
-		MinDamage: Undamaged
+	LeavesTrails:
+		Offsets: -427,0,0
+		MovingInterval: 3
+		StationaryInterval: 3
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
 	RevealsShroud:
 		MinRange: 8c0
 		Range: 10c0
@@ -545,10 +600,13 @@ SMIG.Husk:
 		Offset: -725,683,0
 	Contrail@2:
 		Offset: -725,-683,0
-	SmokeTrailWhenDamaged:
-		Offset: -1c43,0,0
-		Interval: 2
-		MinDamage: Undamaged
+	LeavesTrails:
+		Offsets: -1c43,0,0
+		MovingInterval: 2
+		StationaryInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
 	RenderSprites:
 		Image: smig
 
@@ -563,9 +621,13 @@ HARR.Husk:
 	Aircraft:
 		TurnSpeed: 4
 		Speed: 149
-	SmokeTrailWhenDamaged:
-		Offset: -427,0,0
-		MinDamage: Undamaged
+	LeavesTrails:
+		Offsets: -427,0,0
+		MovingInterval: 3
+		StationaryInterval: 3
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
 	RevealsShroud:
 		Range: 2c0
 		MinRange: 1c0
@@ -600,10 +662,13 @@ CMIG.Husk:
 		TrailLength: 6
 		TrailWidth: 48
 		UsePlayerColor: false
-	SmokeTrailWhenDamaged:
-		Offset: -1c43,0,0
-		Interval: 2
-		MinDamage: Undamaged
+	LeavesTrails:
+		Offsets: -1c43,0,0
+		MovingInterval: 2
+		StationaryInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
 	RenderSprites:
 		Image: smig
 
@@ -676,9 +741,13 @@ BLMP.Husk:
 		TrailWidth: 96
 		Offset: -1620,0,0
 		UsePlayerColor: false
-	SmokeTrailWhenDamaged:
-		Offset: -427,0,-45
-		MinDamage: Undamaged
+	LeavesTrails:
+		Offsets: -427,0,-45
+		MovingInterval: 3
+		StationaryInterval: 3
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
 	RevealsShroud:
 		Range: 10c0
 		Type: GroundPosition
@@ -711,9 +780,13 @@ HIND.Mini.Husk:
 	Aircraft:
 		TurnSpeed: 4
 		Speed: 149
-	SmokeTrailWhenDamaged:
-		Offset: -171,0,0
-		MinDamage: Undamaged
+	LeavesTrails:
+		Offsets: -171,0,0
+		MovingInterval: 3
+		StationaryInterval: 3
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
 	RevealsShroud:
 		Range: 2c0
 		MinRange: 1c0
@@ -763,9 +836,13 @@ MIGM.Husk:
 	Aircraft:
 		TurnSpeed: 4
 		Speed: 149
-	SmokeTrailWhenDamaged:
-		Offset: -427,0,0
-		MinDamage: Undamaged
+	LeavesTrails:
+		Offsets: -427,0,0
+		MovingInterval: 3
+		StationaryInterval: 3
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
 	RevealsShroud:
 		Range: 2c0
 		MinRange: 1c0
@@ -792,12 +869,20 @@ KROV.Husk:
 	Aircraft:
 		TurnSpeed: 6
 		Speed: 64
-	SmokeTrailWhenDamaged@1:
-		Offset: -100,500,100
-		MinDamage: Undamaged
-	SmokeTrailWhenDamaged@2:
-		Offset: -100,-500,100
-		MinDamage: Undamaged
+	LeavesTrails@1:
+		Offsets: -100,500,100
+		MovingInterval: 3
+		StationaryInterval: 3
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+	LeavesTrails@2:
+		Offsets: -100,-500,100
+		MovingInterval: 3
+		StationaryInterval: 3
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
 	RevealsShroud:
 		Range: 10c0
 		Type: GroundPosition
@@ -832,12 +917,20 @@ KROC.Husk:
 	Aircraft:
 		TurnSpeed: 6
 		Speed: 64
-	SmokeTrailWhenDamaged@1:
-		Offset: -100,500,100
-		MinDamage: Undamaged
-	SmokeTrailWhenDamaged@2:
-		Offset: -100,-500,100
-		MinDamage: Undamaged
+	LeavesTrails@1:
+		Offsets: -100,500,100
+		MovingInterval: 3
+		StationaryInterval: 3
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+	LeavesTrails@2:
+		Offsets: -100,-500,100
+		MovingInterval: 3
+		StationaryInterval: 3
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
 	RevealsShroud:
 		Range: 10c0
 		Type: GroundPosition

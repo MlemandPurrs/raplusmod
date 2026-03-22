@@ -15,7 +15,7 @@ SS:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Selectable:
-		DecorationBounds: 38,38
+		DecorationBounds: 1621, 1621
 	Health:
 		HP: 250
 	Armor:
@@ -79,6 +79,9 @@ SS:
 		RequiresCondition: !underwater
 	ProducibleWithLevel:
 		Prerequisites: navy.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: navy.upgraded
 
 MSUB:
 	Inherits: ^Submarine
@@ -119,7 +122,7 @@ MSUB:
 		ForceFireIgnoresActors: True
 		PauseOnCondition: empdisable
 	Selectable:
-		DecorationBounds: 38,38
+		DecorationBounds: 1621, 1621
 	AutoTarget:
 		InitialStance: HoldFire
 		InitialStanceAI: ReturnFire
@@ -145,6 +148,9 @@ MSUB:
 			PointA: 0, -576
 			PointB: 0, 576
 	ProducibleWithLevel:
+		Prerequisites: navy.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
 		Prerequisites: navy.upgraded
 
 SSAM:
@@ -191,6 +197,9 @@ SSAM:
 			PointA: 0, -448
 			PointB: 0, 448
 	ProducibleWithLevel:
+		Prerequisites: navy.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
 		Prerequisites: navy.upgraded
 
 NSUB:
@@ -250,7 +259,7 @@ NSUB:
 		FallbackRange: 16c768
 	AttackFrontal:
 	Selectable:
-		DecorationBounds: 44,44
+		DecorationBounds: 1877, 1877
 	HitShape:
 		TargetableOffsets: 576,0,0, -576,0,0
 		Type: Capsule
@@ -269,6 +278,9 @@ NSUB:
 	GpsDot:
 		String: Nuke
 	ProducibleWithLevel:
+		Prerequisites: navy.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
 		Prerequisites: navy.upgraded
 
 FSUB:
@@ -306,7 +318,7 @@ FSUB:
 	AttackFrontal:
 		PauseOnCondition: empdisable
 	Selectable:
-		DecorationBounds: 38,38
+		DecorationBounds: 1621, 1621
 	AutoTarget:
 		InitialStance: ReturnFire
 		InitialStanceAI: ReturnFire
@@ -333,6 +345,9 @@ FSUB:
 			PointA: 0, -448
 			PointB: 0, 448
 	ProducibleWithLevel:
+		Prerequisites: navy.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
 		Prerequisites: navy.upgraded
 
 CARR:
@@ -361,7 +376,7 @@ CARR:
 	RevealsShroud@GAPGEN:
 		Range: 5c0
 	Selectable:
-		DecorationBounds: 48,48
+		DecorationBounds: 2048, 2048
 	Transforms:
 		IntoActor: carr.deployed
 		Offset: 0,0
@@ -404,7 +419,7 @@ CARR.Deployed:
 	-GivesBuildableArea:
 	-RepairableBuilding:
 	-WithBuildingRepairDecoration:
-	-EngineerRepairable:
+	-InstantlyRepairable:
 	-WithMakeAnimation:
 	-CaptureManager:
 	-Capturable:
@@ -415,7 +430,7 @@ CARR.Deployed:
 	-GpsDot:
 	-Demolishable:
 	-Sellable:
-	-Explodes:
+	-FireWarheadsOnDeath:
 	-RequiresBuildableArea:
 	-ShakeOnDeath:
 	-ChangesHealth@ConyardRepairs:
@@ -423,11 +438,11 @@ CARR.Deployed:
 	-ExternalCondition@ConyardRepairs:
 	GpsDot:
 		String: Ship
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplodeShip
 		EmptyWeapon: UnitExplodeShip
 	Selectable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
 	Valued:
 		Cost: 1200
 	Tooltip:
@@ -447,7 +462,7 @@ CARR.Deployed:
 	RevealsShroud@GAPGEN:
 		Range: 5c0
 	Selectable:
-		DecorationBounds: 48,48
+		DecorationBounds: 2048, 2048
 	Transforms:
 		IntoActor: carr
 		Offset: 0,0
@@ -552,7 +567,7 @@ MGNM:
 		Speed: 68
 	RevealsShroud:
 		Range: 4c0
-	Explodes@UNITEXPLODES:
+	FireWarheadsOnDeath@UNITEXPLODES:
 		Weapon: ASMineMagnetic
 		DamageSource: Killer
 	Armament:
@@ -563,7 +578,7 @@ MGNM:
 		Voice: Action
 		PauseOnCondition: attacking
 	Selectable:
-		DecorationBounds: 36,36
+		DecorationBounds: 1536, 1536
 	GrantConditionOnAttack:
 		Condition: triggered
 	GrantConditionOnDeploy:
@@ -660,6 +675,9 @@ SSML:
 			PointA: 0, -676
 			PointB: 0, 876
 	Selectable:
-		DecorationBounds: 38,38
+		DecorationBounds: 1621, 1621
 	ProducibleWithLevel:
+		Prerequisites: navy.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
 		Prerequisites: navy.upgraded

@@ -398,7 +398,7 @@
 	GrantConditionOnPrerequisite@SCRAPMETAL:
 		Condition: global-scraps
 		Prerequisites: global-scraps
-	Explodes@SCRAPS:
+	FireWarheadsOnDeath@SCRAPS:
 		RequiresCondition: global-scraps
 		Weapon: ScrapsExplosion
 
@@ -483,8 +483,8 @@
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:
-		Bounds: 18,18,0,-6
-		DecorationBounds: 12,18,0,-6
+		Bounds: 768, 853, 0, -256
+		DecorationBounds: 512, 768, 0, -341
 	Targetable:
 		RequiresCondition: !parachute
 		TargetTypes: Ground, Infantry, Disguise
@@ -524,6 +524,7 @@
 	Guard:
 	Guardable:
 	Tooltip:
+		Name: Soldier
 		GenericName: Soldier
 	ExternalCondition@barracks:
 		Condition: barracks
@@ -659,7 +660,7 @@
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:
-		Bounds: 24, 24
+		Bounds: 1024, 1024
 	Targetable:
 		RequiresCondition: !parachute
 		TargetTypes: Ground, Vehicle, VehicleDisguise
@@ -693,6 +694,7 @@
 	Guard:
 	Guardable:
 	Tooltip:
+		Name: Vehicle
 		GenericName: Vehicle
 	CaptureManager:
 		BeingCapturedCondition: being-captured
@@ -709,7 +711,7 @@
 		FallRate: 26
 		KilledOnImpassableTerrain: true
 		ParachutingCondition: parachute
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplodeSmall
 		EmptyWeapon: UnitExplodeSmall
 	WithFacingSpriteBody:
@@ -734,7 +736,7 @@
 	ExternalCondition@LaserDesignated:
 		Condition: laser-designated
 		TotalCap: 1
-	Explodes@RadExplode:
+	FireWarheadsOnDeath@RadExplode:
 		Weapon: GeneratedRadExplode
 		EmptyWeapon: GeneratedRadExplode
 		RequiresCondition: irradiated
@@ -860,7 +862,7 @@
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:
-		Bounds: 24,24
+		Bounds: 1024, 1024
 	Targetable:
 		TargetTypes: Ground, Water, Ship
 	Targetable@EMPTargeting:
@@ -888,13 +890,14 @@
 	GpsDot:
 		String: Ship
 	WithDamageOverlay:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplodeShip
 		EmptyWeapon: UnitExplodeShip
 		RequiresCondition: !under-bridge
 	Guard:
 	Guardable:
 	Tooltip:
+		Name: Ship
 		GenericName: Ship
 	MustBeDestroyed:
 	MapEditorData:
@@ -1000,7 +1003,7 @@
 		DeployedCondition: deployed
 	ExternalCondition@MINEHIT:
 		Condition: minehit
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplodeSubmarine
 		EmptyWeapon: UnitExplodeSubmarine
 		RequiresCondition: !under-bridge
@@ -1054,7 +1057,7 @@
 		UseLocation: true
 	WithSpriteControlGroupDecoration:
 	Selectable:
-		Bounds: 24,24
+		Bounds: 1024, 1024
 	Aircraft:
 		AirborneCondition: airborne
 		Crushes: airmine
@@ -1089,6 +1092,7 @@
 	GpsDot:
 		String: Plane
 	Tooltip:
+		Name: Plane
 		GenericName: Plane
 	WithShadow:
 		Offset: 43, 128, 0
@@ -1102,7 +1106,7 @@
 		Categories: Aircraft
 	SpawnActorOnDeath:
 		RequiresCondition: airborne
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
 	GrantConditionOnDamage@repairflash:
@@ -1136,6 +1140,7 @@
 	Inherits@InstantRepair: ^AffectedByHealupCrate
 	-BodyOrientation:
 	Tooltip:
+		Name: Helicopter
 		GenericName: Helicopter
 	Aircraft:
 		IdleBehavior: None
@@ -1213,7 +1218,7 @@
 		DamagedSounds: kaboom1.aud
 		DestroyedSounds: kaboom22.aud
 	WithSpriteBody:
-	Explodes:
+	FireWarheadsOnDeath:
 		Type: Footprint
 		Weapon: BuildingExplode
 		EmptyWeapon: BuildingExplode
@@ -1226,6 +1231,7 @@
 	FrozenUnderFog:
 	FrozenUnderFogUpdatedByGps:
 	Tooltip:
+		Name: Structure
 		GenericName: Structure
 	Demolishable:
 	MapEditorData:
@@ -1254,7 +1260,7 @@
 		PlayerExperience: 25
 		RepairingNotification: Repairing
 		RepairCondition: repairing
-	EngineerRepairable:
+	InstantlyRepairable:
 	WithMakeAnimation:
 		Condition: build-incomplete
 	CaptureManager:
@@ -1297,10 +1303,10 @@
 	Inherits@selection: ^SelectableCombatBuilding
 	-GivesBuildableArea:
 	-ProductionCostMultiplier@Russia:
-	-Explodes@RUMALUS:
+	-FireWarheadsOnDeath@RUMALUS:
 	-GrantConditionOnPrerequisite@RUMALUS:
 	Selectable:
-		Bounds: 24,24
+		Bounds: 1024, 1024
 	Building:
 		TerrainTypes: Clear,Road,Beach
 	Targetable:
@@ -1309,7 +1315,7 @@
 		RequiredForShortGame: false
 	DrawLineToTarget:
 	RenderRangeCircle:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: SmallBuildingExplode
 		EmptyWeapon: SmallBuildingExplode
 	MapEditorData:
@@ -1323,7 +1329,7 @@
 	Inherits@handicaps: ^PlayerHandicaps
 	-GivesExperience:
 	Interactable:
-		Bounds: 24,24
+		Bounds: 1024, 1024
 	OwnerLostAction:
 		Action: ChangeOwner
 	Building:
@@ -1378,7 +1384,7 @@
 	Inherits: ^Building
 	Inherits@handicaps: ^PlayerHandicaps
 	-WithSpriteBody:
-	-EngineerRepairable:
+	-InstantlyRepairable:
 	-Capturable:
 	-Capturable@2:
 	-SpawnActorsOnSell:
@@ -1389,7 +1395,7 @@
 	-GivesBuildableArea:
 	-GivesExperience:
 	-ProductionCostMultiplier@Russia:
-	-Explodes@RUMALUS:
+	-FireWarheadsOnDeath@RUMALUS:
 	-GrantConditionOnPrerequisite@RUMALUS:
 	-ProductionTimeMultiplier@Sweden:
 	-GrantConditionOnDamageState@LOWPOWERDMG:
@@ -1439,7 +1445,7 @@
 		Types: building
 	CapturableProgressBar:	
 	CapturableProgressBlink:
-	EngineerRepairable:
+	InstantlyRepairable:
 	MapEditorData:
 		Categories: Tech building
 
@@ -1455,7 +1461,7 @@
 		HP: 10
 	Armor:
 		Type: None
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: BarrelExplode
 	Tooltip:
 		Name: Explosive Barrel
@@ -1463,7 +1469,7 @@
 	Targetable:
 		TargetTypes: Ground, DemoTruck, Barrel, NoAutoTarget
 	Interactable:
-		Bounds: 24,24
+		Bounds: 1024, 1024
 	MapEditorData:
 		Categories: Decoration
 
@@ -1477,7 +1483,7 @@
 		AreaTypes: fake
 	Health:
 		HP: 100
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: Demolish
 		DamageThreshold: 70
 	RevealsShroud:
@@ -1530,7 +1536,7 @@
 	FrozenUnderFog:
 	Health:
 		HP: 10
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplode
 	Tooltip:
 		Name: Ammo Box
@@ -1542,7 +1548,7 @@
 	MapEditorData:
 		Categories: Decoration
 	Interactable:
-		Bounds: 24,24
+		Bounds: 1024, 1024
 
 ^CivBuilding:
 	Inherits: ^BasicBuilding
@@ -1570,17 +1576,17 @@
 	SpawnActorOnDeath@3:
 		Actor: c3
 		Probability: 15
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: SmallBuildingExplode
-	Explodes@CIVPANIC:
+	FireWarheadsOnDeath@CIVPANIC:
 		Weapon: CivPanicExplosion
 
 ^CivField:
 	Inherits: ^CivBuilding
 	-HitShape:
 	-Health:
-	-Explodes:
-	-Explodes@CIVPANIC:
+	-FireWarheadsOnDeath:
+	-FireWarheadsOnDeath@CIVPANIC:
 	-Selectable:
 	-SelectionDecorations:
 	-Targetable:
@@ -1714,6 +1720,7 @@
 		WarpOutSequence: disappear
 		Palette: effect
 	Tooltip:
+		Name: Destroyed Vehicle
 		GenericName: Destroyed Vehicle
 
 ^PlaneHusk:
@@ -1723,6 +1730,7 @@
 		Offset: 43, 128, 0
 		ZOffset: -129
 	Tooltip:
+		Name: Destroyed Plane
 		GenericName: Destroyed Plane
 	Aircraft:
 	FallsToEarth:
@@ -1742,6 +1750,7 @@
 		Offset: 43, 128, 0
 		ZOffset: -129
 	Tooltip:
+		Name: Destroyed Helicopter
 		GenericName: Destroyed Helicopter
 	Aircraft:
 		CanHover: True
@@ -1767,6 +1776,7 @@
 		Footprint: x
 	WithSpriteBody:
 	Tooltip:
+		Name: Civilian Building (Destroyed)
 		GenericName: Civilian Building (Destroyed)
 		GenericStancePrefix: false
 		ShowOwnerRow: false
@@ -1807,12 +1817,13 @@
 		TargetTypes: Ground, NoAutoTarget
 		RequiresForceFire: true
 	Tooltip:
+		Name: Destroyed Building
 		GenericName: Destroyed Building
 	HiddenUnderFog:
 		Type: CenterPosition
 		AlwaysVisibleRelationships: None
 	ScriptTriggers:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: BuildingExplode
 	MapEditorData:
 		Categories: Husk
@@ -1821,12 +1832,13 @@
 	Inherits@1: ^BuildingHusk
 	Health:
 		HP: 200
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: SmallBuildingExplode
 
 ^TechBuildingHusk:
 	Inherits: ^CivBuildingHusk
 	Tooltip:
+		Name: Tech Building (Destroyed)
 		GenericName: Tech Building (Destroyed)
 	Targetable:
 		TargetTypes: Ground, NoAutoTarget
@@ -1871,7 +1883,7 @@
 	BodyOrientation:
 		QuantizedFacings: 1
 	Interactable:
-		Bounds: 96,48
+		Bounds: 4096, 2048
 	ShakeOnDeath:
 		Duration: 15
 		Intensity: 6
@@ -1911,7 +1923,7 @@
 ^Crate:
 	Inherits@1: ^SpriteActor
 	Interactable:
-		Bounds: 24,24
+		Bounds: 1024, 1024
 	HiddenUnderFog:
 	Tooltip:
 		Name: Crate
@@ -1945,7 +1957,7 @@
 ^Mine:
 	Inherits: ^SpriteActor
 	Interactable:
-		Bounds: 24,24
+		Bounds: 1024, 1024
 	WithSpriteBody:
 	HiddenUnderFog:
 	Mine:
@@ -2325,6 +2337,7 @@
 	ProximityCaptor:
 		Types: Plane
 	Tooltip:
+		Name: You shouldnt be seeing this...
 		GenericName: You shouldnt be seeing this...
 	WithShadow:
 		Offset: 43, 128, 0
@@ -2349,8 +2362,8 @@
 		MaxWeight: 10
 	RejectsOrders:
 	Interactable:
-		Bounds: 1,1
-		DecorationBounds: 1,1
+		Bounds: 1024, 1024
+		DecorationBounds: 1024, 1024
 	SelectionDecorations:
 
 ^SummonBase:
@@ -2370,6 +2383,7 @@
 		CargoType: Vehicle
 	HiddenUnderFog:
 	Tooltip:
+		Name: Summoned Actor
 		GenericName: Summoned Actor
 	MustBeDestroyed:
 		RequiredForShortGame: false
@@ -2388,8 +2402,8 @@
 		RequiresCondition: parachute
 	HitShape:
 	Interactable:
-		Bounds: 1,1
-		DecorationBounds: 1,1		
+		Bounds: 1024, 1024
+		DecorationBounds: 1024, 1024
 	SelectionDecorations:
 	RejectsOrders:
 
@@ -2577,7 +2591,7 @@
 	ProductionCostMultiplier@Russia:
 		Multiplier: 90
 		Prerequisites: player.russia
-	Explodes@RUMALUS:
+	FireWarheadsOnDeath@RUMALUS:
 		Weapon: Demolish
 		DamageThreshold: 10
 		RequiresCondition: is.russian

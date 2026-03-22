@@ -34,6 +34,9 @@ E1:
 		RequiresCondition: parachute
 	ProducibleWithLevel:
 		Prerequisites: infantry.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: infantry.upgraded
 	Passenger:
 		CustomPipType: pip-green
 	Cloneable:
@@ -49,6 +52,9 @@ E1R1:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	UpdatesPlayerStatistics:
 		OverrideActor: e1
 	-Buildable:
@@ -92,11 +98,14 @@ E2:
 	WithInfantryBody@PARACHUTE:
 		StandSequences: parachute
 		RequiresCondition: parachute
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplodeSmall
 		EmptyWeapon: UnitExplodeSmall
 		DamageSource: Killer
 	ProducibleWithLevel:
+		Prerequisites: infantry.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
 		Prerequisites: infantry.upgraded
 	Passenger:
 		CustomPipType: pip-green
@@ -113,6 +122,9 @@ E2R1:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	UpdatesPlayerStatistics:
 		OverrideActor: e2
 	-Buildable:
@@ -169,6 +181,9 @@ E3:
 		RequiresCondition: parachute
 	ProducibleWithLevel:
 		Prerequisites: infantry.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: infantry.upgraded
 	Passenger:
 		CustomPipType: pip-green
 	Cloneable:
@@ -184,6 +199,9 @@ E3R1:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	UpdatesPlayerStatistics:
 		OverrideActor: e3
 	-Buildable:
@@ -207,8 +225,8 @@ DOG:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Selectable:
-		Bounds: 12,17,-1,-4
-		DecorationBounds: 12,17,-1,-4
+		Bounds: 512, 725, -42, -170
+		DecorationBounds: 512, 725, -42, -170
 	Health:
 		HP: 25
 	Mobile:
@@ -274,7 +292,7 @@ DOG:
 		StartIfBelow: 101
 		DamageCooldown: 0
 		RequiresCondition: eating
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplodeSmall
 		EmptyWeapon: UnitExplodeSmall
 		DamageSource: Killer
@@ -321,7 +339,7 @@ E6:
 	WithInfantryBody@PARACHUTE:
 		StandSequences: parachute
 		RequiresCondition: parachute
-	EngineerRepair:
+	InstantlyRepairs:
 	RepairsBridges:
 	CaptureManager:
 	Captures@CAPTURESPLAYERMULTI:

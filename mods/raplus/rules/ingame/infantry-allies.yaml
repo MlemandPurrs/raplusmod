@@ -383,6 +383,9 @@ E7:
 		VoiceSet: TanyaVoice
 	ProducibleWithLevel:
 		Prerequisites: infantry.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: infantry.upgraded
 	GrantConditionOnTerrain:
 		TerrainTypes: Water, River
 		Condition: swimming
@@ -526,6 +529,9 @@ SHOT:
 		DefaultAttackSequence: shoot
 	ProducibleWithLevel:
 		Prerequisites: infantry.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: infantry.upgraded
 	DeliversCash:
 		Payload: 56
 		Type: InfantryRefund
@@ -612,6 +618,9 @@ ATGM:
 			secondary: none
 	ProducibleWithLevel:
 		Prerequisites: infantry.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: infantry.upgraded
 	Passenger:
 		CustomPipType: pip-yellow
 	DeliversCash:
@@ -677,6 +686,9 @@ SNIP:
 		DefaultAttackSequence: shoot
 	ProducibleWithLevel:
 		Prerequisites: infantry.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: infantry.upgraded
 	RenderSprites:
 		Image: snip
 	RenderRangeCircle:
@@ -725,13 +737,16 @@ MRTR:
 		FireDelay: 15
 	WithInfantryBody:
 		DefaultAttackSequence: throw
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplodeSmall
 		EmptyWeapon: UnitExplodeSmall
 		Chance: 50
 	Passenger:
 		CustomPipType: pip-yellow
 	ProducibleWithLevel:
+		Prerequisites: infantry.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
 		Prerequisites: infantry.upgraded
 	RenderRangeCircle:
 	DeliversCash:
@@ -790,7 +805,7 @@ CINF:
 		StandSequences: parachute
 		RequiresCondition: parachute
 	WithMuzzleOverlay:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplodeSmall
 		EmptyWeapon: UnitExplodeSmall
 		DamageSource: Killer

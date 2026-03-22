@@ -4,7 +4,7 @@ FPWR:
 	Inherits@shape: ^2x2Shape
 	-ActorPreviewPlaceBuildingPreview:
 	Selectable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 640,-384,0, 640,512,0, -710,-512,0, -710,512,0
@@ -87,8 +87,8 @@ FAPW:
 			france: apwrgrey
 			germany: apwrgrey
 	Selectable:
-		Bounds: 72,48
-		DecorationBounds: 72,68,0,-10
+		Bounds: 3072, 2048
+		DecorationBounds: 3072, 2901, 0, -427
 	Valued:
 		Cost: 150
 	WithIdleOverlay@SMOKE:
@@ -113,7 +113,7 @@ TENF:
 	Inherits@shape: ^2x2Shape
 	-ActorPreviewPlaceBuildingPreview:
 	Selectable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
 	Tooltip:
 		Name: Fake Barracks
 		GenericName: Allied Barracks
@@ -159,7 +159,7 @@ BARF:
 	Inherits@shape: ^2x2Shape
 	-ActorPreviewPlaceBuildingPreview:
 	Selectable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
 	Tooltip:
 		Name: Fake Barracks
 		GenericName: Soviet Barracks
@@ -203,7 +203,7 @@ BARF:
 KENF:
 	Inherits: ^FakeBuilding
 	Selectable:
-		Bounds: 24,24
+		Bounds: 1024, 1024
 	Tooltip:
 		Name: Fake Kennel
 		GenericName: Kennel
@@ -238,8 +238,8 @@ PROF:
 		Sequence: idle
 		SequencePalette: placebuilding
 	Selectable:
-		Bounds: 72,45,0,-14
-		DecorationBounds: 72,77,0,-15
+		Bounds: 3072, 1920, 0, -597
+		DecorationBounds: 3072, 3285, 0, -640
 	Buildable:
 		BuildPaletteOrder: 4
 		Prerequisites: proc, ~structures.allies, ~allies.or.france, ~techlevel.low
@@ -290,7 +290,7 @@ WEAF:
 	Inherits@shape: ^3x2Shape
 	-ActorPreviewPlaceBuildingPreview:
 	Selectable:
-		Bounds: 72,48
+		Bounds: 3072, 2048
 	Buildable:
 		BuildPaletteOrder: 5
 		Prerequisites: anypower, ~structures.allies, ~allies.or.france, ~techlevel.low
@@ -337,8 +337,8 @@ WEAF:
 FIXF:
 	Inherits: ^FakeBuilding
 	Selectable:
-		Bounds: 68,34,0,3
-		DecorationBounds: 72,48
+		Bounds: 2901, 1451, 0, 128
+		DecorationBounds: 3072, 2048
 	Buildable:
 		BuildPaletteOrder: 8
 		Queue: Fakestructure
@@ -371,7 +371,7 @@ FIXF:
 SYRF:
 	Inherits: ^FakeBuilding
 	Selectable:
-		Bounds: 72,48
+		Bounds: 3072, 2048
 	Buildable:
 		BuildPaletteOrder: 3
 		Queue: Fakestructure
@@ -415,7 +415,7 @@ SYRF:
 SPEF:
 	Inherits: ^FakeBuilding
 	Selectable:
-		Bounds: 72,48
+		Bounds: 3072, 2048
 	Targetable:
 		TargetTypes: Ground, Water, Structure
 	Buildable:
@@ -459,7 +459,7 @@ AFLF:
 	Inherits: ^FakeBuilding
 	Inherits@shape: ^3x2Shape
 	Selectable:
-		Bounds: 72,48
+		Bounds: 3072, 2048
 	Tooltip:
 		Name: Fake Airfield
 		GenericName: Airfield
@@ -499,7 +499,7 @@ HPAF:
 	Inherits: ^FakeBuilding
 	Inherits@shape: ^2x2Shape
 	Selectable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
 	Tooltip:
 		Name: Fake Helipad
 		GenericName: Helipad
@@ -541,7 +541,7 @@ DOMF:
 	Inherits@IDISABLE: ^DisableOnLowPower
 	Inherits@shape: ^2x2Shape
 	Selectable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 630,-384,0, 630,384,0, -700,-512,0, -700,512,0
@@ -584,7 +584,7 @@ SPRF:
 	Inherits@IDISABLE: ^DisableOnLowPower
 	Inherits@shape: ^2x2Shape
 	Selectable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
 	Tooltip:
 		Name: Fake Space Program
 		GenericName: Space Program
@@ -624,7 +624,7 @@ ATEF:
 	Inherits: ^FakeBuilding
 	Inherits@shape: ^2x2Shape
 	Selectable:
-		Bounds: 72,48
+		Bounds: 3072, 2048
 	HitShape:
 		UseTargetableCellsOffsets: true
 		Type: Rectangle
@@ -670,7 +670,7 @@ STEF:
 	Inherits: ^FakeBuilding
 	Inherits@shape: ^3x2Shape
 	Selectable:
-		Bounds: 72,48
+		Bounds: 3072, 2048
 	HitShape:
 		TargetableOffsets: 420,-768,0, 420,768,0, -770,-768,0, -770,768,0
 	Tooltip:
@@ -713,7 +713,7 @@ PDOF:
 	Inherits@IDISABLE: ^DisableOnLowPower
 	Inherits@shape: ^2x2Shape
 	Selectable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
 	Tooltip:
 		Name: Fake Chronosphere
 		GenericName: Chronosphere
@@ -739,7 +739,7 @@ PDOF:
 		HP: 1000
 	Armor:
 		Type: Wood
-	Explodes:
+	FireWarheadsOnDeath:
 		DamageThreshold: 50
 
 IROF:
@@ -747,8 +747,8 @@ IROF:
 	Inherits@IDISABLE: ^DisableOnLowPower
 	Inherits@shape: ^2x1Shape
 	Selectable:
-		Bounds: 48,28,0,2
-		DecorationBounds: 50,50,0,-12
+		Bounds: 2048, 1195, 0, 85
+		DecorationBounds: 2133, 2133, 0, -512
 	Tooltip:
 		Name: Fake Iron Curtain
 		GenericName: Iron Curtain
@@ -774,7 +774,7 @@ IROF:
 		HP: 1000
 	Armor:
 		Type: Wood
-	Explodes:
+	FireWarheadsOnDeath:
 		DamageThreshold: 50
 
 MSLF:
@@ -782,7 +782,7 @@ MSLF:
 	Inherits@IDISABLE: ^DisableOnLowPower
 	Inherits@shape: ^2x1Shape
 	Selectable:
-		Bounds: 48,24
+		Bounds: 2048, 1024
 	Tooltip:
 		Name: Fake Missile Silo
 		GenericName: Missile Silo
@@ -816,7 +816,7 @@ MSLF:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
-	Explodes:
+	FireWarheadsOnDeath:
 		DamageThreshold: 50
 	NukePower@Fake:
 		OrderName: NukeMissileFake
@@ -847,7 +847,7 @@ MSLF:
 FACF:
 	Inherits: ^FakeBuilding
 	Selectable:
-		Bounds: 72,72
+		Bounds: 3072, 3072
 	Buildable:
 		BuildPaletteOrder: 3
 		Queue: Fakestructure
@@ -903,8 +903,8 @@ FGAP:
 		GenericVisibility: Enemy
 		GenericStancePrefix: False
 	Selectable:
-		Bounds: 24,24
-		DecorationBounds: 24,48,0,-12
+		Bounds: 1024, 1024
+		DecorationBounds: 1024, 2048, 0, -512
 	Health:
 		HP: 500
 	Armor:
@@ -943,7 +943,7 @@ FGAP:
 		Sequence: tag-fake
 		Position: Top
 		Margin: 0, 1
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: Demolish
 		DamageThreshold: 40
 	Armament@PRIMARY:
@@ -978,7 +978,7 @@ FGAP:
 		Sequence: tag-fake
 		Position: Top
 		Margin: 0, 1
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: Demolish
 		DamageThreshold: 40
 	Armament@PRIMARY:
@@ -1010,7 +1010,7 @@ ARTF:
 		Sequence: tag-fake
 		Position: Top
 		Margin: 0, 1
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: Demolish
 		DamageThreshold: 40
 	Armament:
@@ -1043,7 +1043,7 @@ MCVF:
 		Sequence: tag-fake
 		Position: Top
 		Margin: 0, 1
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: Demolish
 		DamageThreshold: 40
 	Transforms:
@@ -1079,7 +1079,7 @@ TRUF:
 		Sequence: tag-fake
 		Position: Top
 		Margin: 0, 1
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: Demolish
 		DamageThreshold: 40
 	RenderSprites:
@@ -1113,7 +1113,7 @@ MGGF:
 		Sequence: tag-fake
 		Position: Top
 		Margin: 0, 1
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: Demolish
 		DamageThreshold: 40
 	WithIdleOverlay@SPINNER:

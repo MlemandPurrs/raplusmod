@@ -18,7 +18,7 @@ PT:
 	Armor:
 		Type: Heavy
 	Selectable:
-		DecorationBounds: 36,36
+		DecorationBounds: 1536, 1536
 	Mobile:
 		TurnSpeed: 16
 		Speed: 72
@@ -85,6 +85,9 @@ PT:
 			PointB: 0, 341
 	ProducibleWithLevel:
 		Prerequisites: navy.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: navy.upgraded
 
 RSHP:
 	Inherits: ^Ship
@@ -106,7 +109,7 @@ RSHP:
 	Armor:
 		Type: Heavy
 	Selectable:
-		DecorationBounds: 36,36
+		DecorationBounds: 1536, 1536
 	Mobile:
 		TurnSpeed: 16
 		Speed: 72
@@ -195,7 +198,7 @@ DD:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Selectable:
-		DecorationBounds: 38,38
+		DecorationBounds: 1621, 1621
 	Health:
 		HP: 400
 	Armor:
@@ -267,6 +270,9 @@ DD:
 			PointA: 0, -448
 			PointB: 0, 448
 	ProducibleWithLevel:
+		Prerequisites: navy.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
 		Prerequisites: navy.upgraded
 
 BSHP:
@@ -349,7 +355,7 @@ BSHP:
 		Condition: greece.player
 		Factions: greece
 	Selectable:
-		DecorationBounds: 38,38
+		DecorationBounds: 1621, 1621
 	HitShape:
 		TargetableOffsets: 448,0,0, -448,0,0
 		Type: Capsule
@@ -362,6 +368,9 @@ BSHP:
 	RenderRangeCircle:
 		FallbackRange: 20c0
 	ProducibleWithLevel:
+		Prerequisites: navy.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
 		Prerequisites: navy.upgraded
 
 CA:
@@ -380,7 +389,7 @@ CA:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Selectable:
-		DecorationBounds: 44,44
+		DecorationBounds: 1877, 1877
 	Health:
 		HP: 800
 	Armor:
@@ -440,6 +449,9 @@ CA:
 			PointB: 0, 576
 	ProducibleWithLevel:
 		Prerequisites: navy.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: navy.upgraded
 
 DRED:
 	Inherits: ^Ship
@@ -458,7 +470,7 @@ DRED:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Selectable:
-		DecorationBounds: 44,44
+		DecorationBounds: 1877, 1877
 	Health:
 		HP: 1200
 	Armor:
@@ -518,6 +530,9 @@ DRED:
 			PointB: 0, 576
 	ProducibleWithLevel:
 		Prerequisites: navy.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: navy.upgraded
 
 ACAR:
 	Inherits: ^Ship
@@ -545,7 +560,7 @@ ACAR:
 	RevealsShroud@GAPGEN:
 		Range: 5c0
 	Selectable:
-		DecorationBounds: 72,48
+		DecorationBounds: 3072, 2048
 	Transforms:
 		IntoActor: acar.deployed
 		Offset: -1,0
@@ -595,11 +610,11 @@ ACAR.Deployed:
 	Inherits: ^Building
 	Selectable:
 		Class: afld
-		Bounds: 72,48
+		Bounds: 3072, 2048
 	-GivesBuildableArea:
 	-RepairableBuilding:
 	-WithBuildingRepairDecoration:
-	-EngineerRepairable:
+	-InstantlyRepairable:
 	-WithMakeAnimation:
 	-CaptureManager:
 	-Capturable:
@@ -609,7 +624,7 @@ ACAR.Deployed:
 	-SpawnActorsOnSell:
 	-Demolishable:
 	-Sellable:
-	-Explodes:
+	-FireWarheadsOnDeath:
 	-RequiresBuildableArea:
 	-ShakeOnDeath:
 	-GpsDot:
@@ -618,7 +633,7 @@ ACAR.Deployed:
 	-ExternalCondition@ConyardRepairs:
 	GpsDot:
 		String: Ship
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplodeShip
 		EmptyWeapon: UnitExplodeShip
 	Valued:

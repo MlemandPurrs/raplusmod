@@ -23,18 +23,21 @@ HARV:
 	ExternalCondition@PRODUCED:
 		Condition: produced
 	Selectable:
-		DecorationBounds: 42,42
+		DecorationBounds: 1792, 1792
 	Targetable@ISHARVESTER:
 		TargetTypes: Harvester
 	Harvester:
-		Capacity: 30
 		Resources: Ore,Gems,Scraps
 		BaleUnloadDelay: 1
 		SearchFromProcRadius: 16
 		SearchFromHarvesterRadius: 8
 		HarvestFacings: 8
 		EmptyCondition: no-ore
-	WithHarvesterPipsDecoration:
+	StoresResources:
+		Capacity: 30
+		Resources: Ore,Gems,Scraps
+	DockClientManager:
+	WithStoresResourcesPipsDecoration:
 		Position: BottomLeft
 		Margin: 4, 3
 		RequiresSelection: true
@@ -68,7 +71,7 @@ HARV:
 		StartIfBelow: 50
 		DamageCooldown: 500
 		RequiresCondition: !empdisable
-	Explodes:
+	FireWarheadsOnDeath:
 		RequiresCondition: !no-ore
 		Weapon: OreExplosion
 	WithHarvesterSpriteBody:
@@ -122,7 +125,7 @@ MCV:
 	Tooltip:
 		Name: Mobile Construction Vehicle
 	Selectable:
-		DecorationBounds: 42,42
+		DecorationBounds: 1792, 1792
 	Health:
 		HP: 600
 	Armor:
@@ -259,7 +262,7 @@ DTRK:
 		Margin: 0, 1
 		RequiresCondition: disguise
 	IgnoresDisguise:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: MiniNuke
 		EmptyWeapon: MiniNuke
 		DamageSource: Killer
@@ -324,7 +327,7 @@ MNLY:
 		Range: 5c0
 		CloakTypes: Mine
 	RenderDetectionCircle:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: ATMine
 	Passenger:
 		CustomPipType: pip-blue
@@ -356,9 +359,9 @@ MNLY.Nuke:
 		Image: MNLYNUKE
 	ProvidesPrerequisite@LIMITING:
 		Prerequisite: has.nmnly
-	Explodes:
+	FireWarheadsOnDeath:
 		RequiresCondition: !ammo
-	Explodes@GG:
+	FireWarheadsOnDeath@GG:
 		Weapon: MiniNuke
 		EmptyWeapon: MiniNuke
 		DamageSource: Killer
@@ -479,7 +482,7 @@ MHQ.Start:
 	Passenger:
 		Weight: 4
 		CustomPipType: pip-red
-	Explodes@UNITEXPLODES:
+	FireWarheadsOnDeath@UNITEXPLODES:
 		Weapon: BarrelExplode
 	RenderSprites:
 		Image: mrj

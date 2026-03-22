@@ -16,7 +16,7 @@ TRAN:
 	Health:
 		HP: 150
 	Selectable:
-		DecorationBounds: 40,36
+		DecorationBounds: 1707, 1536
 	RevealsShroud@Air:
 		MinRange: 6c0
 		Range: 8c0

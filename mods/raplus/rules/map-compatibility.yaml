@@ -5,6 +5,9 @@ SPY.England:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	UpdatesPlayerStatistics:
 		OverrideActor: spy
 	RenderSprites:

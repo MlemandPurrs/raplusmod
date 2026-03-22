@@ -1,7 +1,7 @@
 FACT:
 	Inherits: ^Building
 	-ProductionCostMultiplier@Russia:
-	-Explodes@RUMALUS:
+	-FireWarheadsOnDeath@RUMALUS:
 	-GrantConditionOnPrerequisite@RUMALUS:
 	-ProductionTimeMultiplier@Sweden:
 	Inherits@ESPIONAGE: ^RevealStructureandDefenseProduction
@@ -15,7 +15,7 @@ FACT:
 		Condition: factundeploy
 		Prerequisites: global-factundeploy
 	Selectable:
-		Bounds: 72,72
+		Bounds: 3072, 3072
 	HitShape:
 		TargetableOffsets: 1273,939,0, -980,-640,0, -980,640,0
 		Type: Rectangle
@@ -175,7 +175,7 @@ POWR:
 		Sequence: place
 		SequencePalette: placebuilding
 	Selectable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 640,-384,0, 640,512,0, -710,-512,0, -710,512,0
@@ -245,8 +245,8 @@ APWR:
 		Sequence: place
 		SequencePalette: placebuilding
 	Selectable:
-		Bounds: 72,48
-		DecorationBounds: 72,68,0,-10
+		Bounds: 3072, 2048
+		DecorationBounds: 3072, 2901, 0, -427
 	HitShape:
 		TargetableOffsets: -355,-1024,0
 	Building:
@@ -312,7 +312,7 @@ TENT:
 	Inherits@ESPIONAGE: ^RevealInfantryProduction
 	-ActorPreviewPlaceBuildingPreview:
 	Selectable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 630,-512,0, 355,512,0, -281,-512,0, -630,512,0
@@ -437,7 +437,7 @@ BARR:
 	Inherits@ESPIONAGE: ^RevealInfantryProduction
 	-ActorPreviewPlaceBuildingPreview:
 	Selectable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 490,-470,0, 355,512,0, -355,-512,0, -630,512,0
@@ -576,7 +576,7 @@ BARR.Cloner:
 	Inherits@LOWPOWER: ^DisableOnLowPower
 	Inherits@shape: ^2x2Shape
 	Selectable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 490,-470,0, 355,512,0, -355,-512,0, -630,512,0		
@@ -673,7 +673,7 @@ KENN:
 	-CapturableProgressBar:
 	-CapturableProgressBlink:
 	Selectable:
-		Bounds: 24,24
+		Bounds: 1024, 1024
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 11
@@ -765,8 +765,8 @@ PROC:
 		Sequence: idle
 		SequencePalette: placebuilding
 	Selectable:
-		Bounds: 72,45,0,-14
-		DecorationBounds: 72,77,0,-15
+		Bounds: 3072, 1920, 0, -597
+		DecorationBounds: 3072, 3285, 0, -640
 	Building:
 		Footprint: =Xx x+= ===
 		Dimensions: 3,3
@@ -810,6 +810,10 @@ PROC:
 		DockAngle: 256
 		DockOffset: 1,1
 		DiscardExcessResources: true
+	DockHost:
+		Type: Unload
+		DockAngle: 256
+		DockOffset: 0, 1c0, 0
 	StoresResources:
 		Capacity: 2000
 	WithResourceStoragePipsDecoration:
@@ -852,11 +856,11 @@ PROC:
 	Power:
 		Amount: -30
 		RequiresCondition: !build-incomplete
-	Explodes:
+	FireWarheadsOnDeath:
 		Type: Footprint
 		Weapon: BuildingExplodeRef
 		EmptyWeapon: BuildingExplodeRef
-	Explodes@RESOURCES:
+	FireWarheadsOnDeath@RESOURCES:
 		RequiresCondition: contains-resources
 		Weapon: OreExplosion
 	WithDeathAnimation:
@@ -893,7 +897,7 @@ SILO:
 	-MustBeDestroyed:
 	-WithSpriteBody:
 	Selectable:
-		Bounds: 24,24
+		Bounds: 1024, 1024
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 3
@@ -949,10 +953,10 @@ SILO:
 	SpawnActorOnDeath:
 		Actor: silo.husk
 		OwnerType: InternalName
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: SmallBuildingExplode
 		EmptyWeapon: SmallBuildingExplode
-	Explodes@RESOURCES:
+	FireWarheadsOnDeath@RESOURCES:
 		RequiresCondition: contains-resources
 		Weapon: OreExplosion
 	CashTricklerMultiplier@BONUS:
@@ -968,8 +972,8 @@ OREP:
 	Inherits@shape: ^3x2Shape
 	Inherits@IDISABLE: ^DisableOnLowPower
 	Selectable:
-		Bounds: 72,56
-		DecorationBounds: 73,72
+		Bounds: 3072, 2389
+		DecorationBounds: 3115, 3072
 	HitShape:
 		TargetableOffsets: 420,-768,0, 420,768,0, -770,-768,0, -770,768,0
 	Buildable:
@@ -1034,8 +1038,8 @@ INDP:
 		Sequence: place
 		SequencePalette: placebuilding
 	Selectable:
-		Bounds: 72,56
-		DecorationBounds: 73,72
+		Bounds: 3072, 2389
+		DecorationBounds: 3115, 3072
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 640,-384,0, 640,512,0, -710,-512,0, -710,512,0
@@ -1101,7 +1105,7 @@ WEAP:
 		Sequence: place
 		SequencePalette: placebuilding
 	Selectable:
-		Bounds: 72,48
+		Bounds: 3072, 2048
 	Building:
 		Footprint: xxx xxx ===
 		Dimensions: 3,3
@@ -1312,14 +1316,13 @@ WEAP.MINI:
 		Actor: miniweap.husk
 		OwnerType: InternalName
 	Selectable:
-		Bounds: 72,48
-
+		Bounds: 3072, 2048
 FIX:
 	Inherits: ^Building
 	Inherits@IDISABLE: ^DisableOnPowerDown
 	Selectable:
-		Bounds: 68,34,0,3
-		DecorationBounds: 72,48
+		Bounds: 2901, 1451, 0, 128
+		DecorationBounds: 3072, 2048
 	HitShape:
 		TargetableOffsets: 840,0,0, 598,-640,0, 598,640,0, -1060,0,0, -768,-640,0, -768,640,0
 		Type: Polygon
@@ -1541,7 +1544,7 @@ DOME:
 	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
 	Inherits@shape: ^2x2Shape
 	Selectable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 630,-384,0, 630,384,0, -700,-512,0, -700,512,0
@@ -1773,7 +1776,7 @@ ATEK:
 	Inherits: ^ScienceBuilding
 	Inherits@shape: ^2x2Shape
 	Selectable:
-		Bounds: 72,48
+		Bounds: 3072, 2048
 	HitShape:
 		UseTargetableCellsOffsets: true
 		Type: Rectangle
@@ -2002,7 +2005,7 @@ STEK:
 	Inherits: ^ScienceBuilding
 	Inherits@shape: ^3x2Shape
 	Selectable:
-		Bounds: 72,48
+		Bounds: 3072, 2048
 	HitShape:
 		TargetableOffsets: 420,-768,0, 420,768,0, -770,-768,0, -770,768,0
 	Building:
@@ -2271,7 +2274,7 @@ SPRO:
 	Inherits@IDISABLE: ^DisableOnLowPower
 	Inherits@shape: ^2x2Shape
 	Selectable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
 	Buildable:
 		Queue: Building
 		BuildLimit: 1
@@ -2415,7 +2418,7 @@ AFLD:
 		Name: Airfield
 	Selectable:
 		Class: afld
-		Bounds: 72,48
+		Bounds: 3072, 2048
 	Health:
 		HP: 1000
 	Targetable:
@@ -2856,7 +2859,7 @@ HPAD:
 	Inherits@USAMalus: ^AffectedByUSAMalus
 	Inherits@ESPIONAGE: ^RevealAircraftProduction
 	Selectable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 768,-512,0, 768,512,0, -281,-512,0, -630,512,0
@@ -2981,7 +2984,7 @@ SYRD:
 	RequiresBuildableArea:
 		Adjacent: 8
 	Selectable:
-		Bounds: 72,48
+		Bounds: 3072, 2048
 	HitShape:
 		TargetableOffsets: 768,0,0, 768,-1024,0, 768,1024,0
 		Type: Rectangle
@@ -3160,7 +3163,7 @@ SPEN:
 		AreaTypes: building
 		Adjacent: 8
 	Selectable:
-		Bounds: 72,48
+		Bounds: 3072, 2048
 	HitShape:
 		Type: Rectangle
 			TopLeft: -1536, -598
@@ -3329,7 +3332,7 @@ FCOM.Soviet:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape
 	Selectable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 640,-384,0, 640,512,0, -710,-512,0, -710,512,0

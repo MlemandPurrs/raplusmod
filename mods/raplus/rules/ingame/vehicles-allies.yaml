@@ -18,10 +18,18 @@ HARV.Chrono:
 		HP: 800
 	Mobile:
 		Speed: 72
-	Harvester:
+	StoresResources:
 		Capacity: 20
-	WithHarvesterPipsDecoration:
+		Resources: Ore,Gems,Scraps
+	WithStoresResourcesPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		RequiresSelection: true
 		PipCount: 7
+		ResourceSequences:
+			Ore: pip-yellow
+			Gems: pip-red
+			Scraps: pip-gray
 	WithHarvesterSpriteBody:
 		ImageByFullness: charv, charv, charv
 	ChronoResourceDelivery:
@@ -88,6 +96,9 @@ JEEP:
 		LoadingCondition: notmobile
 		LoadedCondition: loaded
 	ProducibleWithLevel:
+		Prerequisites: vehicles.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
 		Prerequisites: vehicles.upgraded
 	Passenger:
 		CustomPipType: pip-green
@@ -180,6 +191,9 @@ APC:
 	Passenger:
 		CustomPipType: pip-green
 	ProducibleWithLevel:
+		Prerequisites: vehicles.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
 		Prerequisites: vehicles.upgraded
 	Sellable:
 		RequiresCondition: unit.sellable && !loaded
@@ -320,6 +334,9 @@ MAPC:
 		CustomPipType: pip-green
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: vehicles.upgraded
 
 1TNK.R1:
 	Inherits: 1TNK
@@ -329,6 +346,9 @@ MAPC:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	-MapEditorData:
 
 2TNK:
@@ -349,7 +369,7 @@ MAPC:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Selectable:
-		DecorationBounds: 28,28
+		DecorationBounds: 1195, 1195
 	Health:
 		HP: 450
 	Armor:
@@ -390,6 +410,9 @@ MAPC:
 		CustomPipType: pip-yellow
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: vehicles.upgraded
 
 2TNK.R1:
 	Inherits: 2TNK
@@ -399,6 +422,9 @@ MAPC:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	-MapEditorData:
 
 2TNK.Stealth:
@@ -500,13 +526,16 @@ ARTY:
 		PauseOnCondition: empdisable
 	WithMuzzleOverlay:
 	RenderRangeCircle:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: ArtilleryExplode
 		EmptyWeapon: UnitExplodeSmall
 		LoadedChance: 75
 	Passenger:
 		CustomPipType: pip-yellow
 	ProducibleWithLevel:
+		Prerequisites: vehicles.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
 		Prerequisites: vehicles.upgraded
 
 MSAM:
@@ -526,7 +555,7 @@ MSAM:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Selectable:
-		DecorationBounds: 28,28
+		DecorationBounds: 1195, 1195
 	Health:
 		HP: 220
 	Armor:
@@ -562,6 +591,9 @@ MSAM:
 	WithSpriteTurret:
 	RenderRangeCircle:
 	ProducibleWithLevel:
+		Prerequisites: vehicles.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
 		Prerequisites: vehicles.upgraded
 	RenderSprites:
 		Image: mgg
@@ -626,6 +658,9 @@ ATNK:
 		RevokeOnNewTarget: False
 		RevokeAll: True
 	ProducibleWithLevel:
+		Prerequisites: vehicles.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
 		Prerequisites: vehicles.upgraded
 	WithMuzzleOverlay:
 	DetectCloaked:
@@ -742,7 +777,7 @@ CTNK:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Selectable:
-		DecorationBounds: 30,30
+		DecorationBounds: 1280, 1280
 	Health:
 		HP: 400
 	Armor:
@@ -774,6 +809,9 @@ CTNK:
 		ChargeDelay: 250
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: vehicles.upgraded
 	Passenger:
 		CustomPipType: pip-red
 	RenderRangeCircle:
@@ -781,7 +819,7 @@ CTNK:
 CTNK.Chrono:
 	Inherits: CTNK
 	-Buildable:
-	-Explodes:
+	-FireWarheadsOnDeath:
 	-ActorLostNotification:
 	RenderSprites:
 		Image: ctnk
@@ -792,7 +830,7 @@ CTNK.Chrono:
 	KillsSelf@warpout:
 		GrantsCondition: warpout
 		RequiresCondition: !warpin
-	Explodes@warpout:
+	FireWarheadsOnDeath@warpout:
 		Weapon: UnitExplodeWarpOut
 		EmptyWeapon: UnitExplodeWarpOut
 		RequiresCondition: warpout
@@ -877,6 +915,9 @@ STNK:
 		RequiresCondition: unit.sellable && !loaded
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: vehicles.upgraded
 	Capturable:
 		RequiresCondition: !loaded
 	Targetable@DefectorPrevention:
@@ -923,6 +964,9 @@ TNKD:
 		OwnerType: InternalName
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: vehicles.upgraded
 	Passenger:
 		CustomPipType: pip-red
 
@@ -955,7 +999,7 @@ PRSM:
 	RevealsShroud@GAPGEN:
 		Range: 4c0
 	Selectable:
-		DecorationBounds: 28,28
+		DecorationBounds: 1195, 1195
 	Turreted:
 		TurnSpeed: 20
 		Offset: 100,0,0
@@ -969,6 +1013,9 @@ PRSM:
 		PauseOnCondition: empdisable
 	WithSpriteTurret:
 	ProducibleWithLevel:
+		Prerequisites: vehicles.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
 		Prerequisites: vehicles.upgraded
 
 GCAN:
@@ -1008,14 +1055,17 @@ GCAN:
 		TargetFrozenActors: True
 		ForceFireIgnoresActors: True
 	WithMuzzleOverlay:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: ArtilleryExplode
 		EmptyWeapon: UnitExplodeSmall
 		LoadedChance: 75
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: vehicles.upgraded
 	Selectable:
-		DecorationBounds: 28,28
+		DecorationBounds: 1195, 1195
 	RenderRangeCircle:
 
 BATF:
@@ -1079,7 +1129,7 @@ BATF:
 		Weight: 4
 		CustomPipType: pip-red
 	Selectable:
-		DecorationBounds: 28,28
+		DecorationBounds: 1195, 1195
 	-Crushable:
 	Capturable:
 		RequiresCondition: !loaded

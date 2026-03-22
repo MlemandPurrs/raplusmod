@@ -35,19 +35,15 @@ HARV.Soviet:
 	WithMuzzleOverlay:
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: vehicles.upgraded
 	SpawnActorOnDeath:
 		Actor: HARV.Soviet.EmptyHusk
 		OwnerType: InternalName
 	HarvesterHuskModifier:
 		FullHuskActor: HARV.Soviet.FullHusk
 		FullnessThreshold: 50
-	HarvesterResourceMultiplier@BONUS:
-		Modifier: 120
-		RequiresCondition: turkmen.player
-	GrantConditionOnFaction@BONUS:
-		Condition: turkmen.player
-		Factions: turkmen
-		ResetOnOwnerChange: True
 
 HARV.Soviet.Crate:
 	Inherits: HARV.Soviet
@@ -112,8 +108,11 @@ FTRK:
 	WithSpriteTurret:
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: vehicles.upgraded
 	Selectable:
-		DecorationBounds: 28,28
+		DecorationBounds: 1195, 1195
 	Cargo:
 		Types: Infantry, Engineer
 		MaxWeight: 1
@@ -358,6 +357,9 @@ APC.Soviet:
 		LoadingCondition: notmobile
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: vehicles.upgraded
 	Passenger:
 		CustomPipType: pip-green
 	RenderSprites:
@@ -416,7 +418,7 @@ APC.Soviet:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Selectable:
-		DecorationBounds: 28,28
+		DecorationBounds: 1195, 1195
 	Health:
 		HP: 600
 	Armor:
@@ -449,6 +451,9 @@ APC.Soviet:
 		CustomPipType: pip-yellow
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: vehicles.upgraded
 
 3TNK.R1:
 	Inherits: 3TNK
@@ -458,6 +463,9 @@ APC.Soviet:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	-MapEditorData:
 
 4TNK:
@@ -478,7 +486,7 @@ APC.Soviet:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Selectable:
-		DecorationBounds: 44,38,0,-4
+		DecorationBounds: 1877, 1621, 0, -171
 	Health:
 		HP: 900
 	Armor:
@@ -527,6 +535,9 @@ APC.Soviet:
 		CustomPipType: pip-red
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: vehicles.upgraded
 	GpsDot:
 		String: Heavy
 	-Crushable:
@@ -556,7 +567,7 @@ NRTY:
 	-WithMuzzleOverlay:
 	-Armament@PRIMARY:
 	-Armament@SECONDARY:
-	-Explodes:
+	-FireWarheadsOnDeath:
 	-AttackTurreted:
 	-SpawnActorOnDeath:
 	Buildable:
@@ -578,7 +589,7 @@ NRTY:
 		PauseOnCondition: empdisable
 	Turreted:
 		Offset: 0,0,160
-	Explodes@UNITEXPLODES:
+	FireWarheadsOnDeath@UNITEXPLODES:
 		Weapon: MiniNuke
 		EmptyWeapon: UnitExplode
 	RenderSprites:
@@ -681,14 +692,17 @@ NRTY:
 		DamageCooldown: 150
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: vehicles.upgraded
 	Selectable:
-		DecorationBounds: 42,42,0,-3
+		DecorationBounds: 1792, 1792, 0, -128
 	Passenger:
 		CargoType: HeavyVehicle
 		Weight: 8
 		CustomPipType: pip-red
 	RenderRangeCircle:
-	Explodes@UNITEXPLODES:
+	FireWarheadsOnDeath@UNITEXPLODES:
 		Weapon: TankNuke
 		EmptyWeapon: TankNuke
 		DamageSource: Killer
@@ -740,7 +754,7 @@ V2RL:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Selectable:
-		DecorationBounds: 28,28
+		DecorationBounds: 1195, 1195
 	Health:
 		HP: 200
 	Armor:
@@ -764,11 +778,14 @@ V2RL:
 		ForceFireIgnoresActors: True
 		PauseOnCondition: empdisable
 	RenderRangeCircle:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: V2Explode
 	Passenger:
 		CustomPipType: pip-yellow
 	ProducibleWithLevel:
+		Prerequisites: vehicles.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
 		Prerequisites: vehicles.upgraded
 
 TTNK:
@@ -789,7 +806,7 @@ TTNK:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Selectable:
-		DecorationBounds: 30,30
+		DecorationBounds: 1280, 1280
 	Health:
 		HP: 400
 	Targetable@DontEMP:
@@ -819,6 +836,9 @@ TTNK:
 		Condition: is-shooting
 		RevokeDelay: 32
 	ProducibleWithLevel:
+		Prerequisites: vehicles.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
 		Prerequisites: vehicles.upgraded
 	Passenger:
 		CustomPipType: pip-red
@@ -878,7 +898,7 @@ SAML:
 		RequiresCondition: !ammo
 		Sequence: turret0
 	AutoTarget:
-	Explodes@UNITEXPLODES:
+	FireWarheadsOnDeath@UNITEXPLODES:
 		Weapon: BarrelExplode
 	ReloadAmmoPool@1:
 		Delay: 120
@@ -888,8 +908,11 @@ SAML:
 		Color: FFFF00
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: vehicles.upgraded
 	Selectable:
-		DecorationBounds: 28,28
+		DecorationBounds: 1195, 1195
 	RenderRangeCircle:
 	Passenger:
 		CustomPipType: pip-red
@@ -912,7 +935,7 @@ QTNK:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Selectable:
-		DecorationBounds: 44,38,0,-4
+		DecorationBounds: 1877, 1621, 0, -171
 	Health:
 		HP: 800
 	Targetable:
@@ -957,7 +980,7 @@ QTNK:
 ICBM:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiStructure
-	-Explodes:
+	-FireWarheadsOnDeath:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 9
@@ -999,7 +1022,7 @@ ICBM:
 		RequiresCondition: reloading
 		Sequence: empty-idle
 		Name: reloading
-	Explodes@UNITEXPLODES:
+	FireWarheadsOnDeath@UNITEXPLODES:
 		Weapon: MiniNuke
 		EmptyWeapon: UnitExplode
 	RenderRangeCircle:
@@ -1103,10 +1126,13 @@ ISU:
 	AutoTarget:
 		ScanRadius: 10
 	WithMuzzleOverlay:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: ArtilleryExplode
 		LoadedChance: 75
 	ProducibleWithLevel:
+		Prerequisites: vehicles.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
 		Prerequisites: vehicles.upgraded
 	Passenger:
 		Weight: 4
@@ -1115,7 +1141,7 @@ ISU:
 		Actor: ISU.Husk
 		OwnerType: InternalName
 	RenderRangeCircle:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: V2Explode
 
 GTNK:
@@ -1203,8 +1229,11 @@ GTNK:
 		RevokeAll: True
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: vehicles.upgraded
 	Selectable:
-		DecorationBounds: 28,28
+		DecorationBounds: 1195, 1195
 	Passenger:
 		CustomPipType: pip-yellow
 	SpawnActorOnDeath:
