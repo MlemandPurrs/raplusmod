@@ -1,5 +1,7 @@
 lst:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: lst.shp
 	idle:
 	open:
 		Start: 1
@@ -12,178 +14,257 @@ lst:
 	unload:
 		Start: 4
 		ZOffset: -511
-	icon: lsticon
+	icon:
+		Filename: lsticon.shp
 
 pt:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: pt.shp
 	idle:
 		Facings: 16
-	turret: lgttur
+	turret:
+		Filename: lgttur.shp
 		Facings: 32
-	turret-dc: mgun
+	turret-dc:
+		Filename: mgun.shp
 		Facings: 32
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 5
-	mg-muzzle: minigun
+	mg-muzzle:
+		Filename: minigun.shp
 		Length: 6
 		Facings: 8
-	icon: pticon
+	icon:
+		Filename: pticon.shp
 
 rshp:
-    Inherits: emp-overlay
-	idle: pt
+	Inherits: emp-overlay
+	Defaults:
+		Filename: pt.shp
+	idle:
 		Facings: 16
-	turret: repair-tur
+	turret:
+		Filename: repair-tur.shp
 		Facings: 32
-	icon: rshpicon
+	icon:
+		Filename: rshpicon.shp
 
 dd:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: dd.shp
 	idle:
 		Facings: 16
-	turret: ssam
+	turret:
+		Filename: ssam.shp
 		Facings: 32
-	turret-dc: mgun
+	turret-dc:
+		Filename: mgun.shp
 		Facings: 32
-	mg-muzzle: minigun
+	mg-muzzle:
+		Filename: minigun.shp
 		Length: 6
 		Facings: 8
-	icon: ddicon
+	icon:
+		Filename: ddicon.shp
 
 bshp:
-    Inherits: emp-overlay
-	idle: dd
+	Inherits: emp-overlay
+	Defaults:
+		Filename: dd.shp
+	idle:
+		Filename: dd.shp
 		Facings: 16
-	turret: pttur
+	turret:
+		Filename: pttur.shp
 		Facings: 32
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 5
-	turret-dc: mgun
+	turret-dc:
+		Filename: mgun.shp
 		Facings: 32
-	mg-muzzle: minigun
+	mg-muzzle:
+		Filename: minigun.shp
 		Length: 6
 		Facings: 8
-	icon: bshpicon
+	icon:
+		Filename: bshpicon.shp
 
 ca:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: ca.shp
 	idle:
 		Facings: 16
-	turret: turr
+	turret:
+		Filename: turr.shp
 		Facings: 32
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 5
-	icon: caicon
+	icon:
+		Filename: caicon.shp
 
 ss:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: ss.shp
 	idle:
 		Facings: 16
-	turret: jeep
+	turret:
+		Filename: jeep.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 2
-	icon: ssicon
+	icon:
+		Filename: ssicon.shp
 
 msub:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: msub.shp
 	idle:
 		Facings: 16
-	turret: ssam-mini
+	turret:
+		Filename: ssam-mini.shp
 		Facings: 32
 		UseClassicFacings: True
-	icon: ssubicon
+	icon:
+		Filename: ssubicon.shp
 
 fsub:
 	Inherits: emp-overlay
+	Defaults:
+		Filename: fsub.shp
 	idle:
 		Facings: 16
-	turret: flame-tur
+	turret:
+		Filename: flame-tur.shp
 		Facings: 32
 		UseClassicFacings: True
-	icon: fsubicon
+	icon:
+		Filename: fsubicon.shp
 
 advmsub:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: advmsub.shp
 	idle:
 		Facings: 16
 	move:
 		Start: 16
 		Length: 8
 		Facings: 16
-	icon: msubicon
+	icon:
+		Filename: msubicon.shp
 
 carr:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: carr.shp
 	idle:
 		Start: 0
 		Length: 1
-	icon: carricon
+	icon:
+		Filename: carricon.shp
 
 carr.deployed:
-    Inherits: emp-overlay
-	idle: carr
+	Inherits: emp-overlay
+	Defaults:
+		Filename: carr.shp
+	idle:
+		Filename: carr.shp
 		Start: 0
 		Length: 1
 		ZOffset: -1023
-	active: carr
+	active:
+		Filename: carr.shp
 		Start: 0
 		Length: 9
 		Tick: 100
 		ZOffset: -1023
-	turret: repair-tur
+	turret:
+		Filename: repair-tur.shp
 		Facings: 32
 		ZOffset: -1023
-	icon: carricon
+	icon:
+		Filename: carricon.shp
 
 nsub:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: nsub.shp
 	idle:
 		Facings: 16
-	icon: nsubicon
+	icon:
+		Filename: nsubicon.shp
 
 mgnm:
 	Inherits: emp-overlay
+	Defaults:
+		Filename: mgnm.shp
 	idle:
 		Facings: 16
 	move:
 		Start: 16
 		Facings: 16
 		Length: 8
-	icon: mgnmicon
+	icon:
+		Filename: mgnmicon.shp
 
 acar:
 	Inherits: emp-overlay
+	Defaults:
+		Filename: acar.shp
 	idle:
 		Facings: 32
-	icon: acaricon
+	icon:
+		Filename: acaricon.shp
 
 acar.deployed:
-    Inherits: emp-overlay
-	idle: acar
+	Inherits: emp-overlay
+	Defaults:
+		Filename: acar.shp
+	idle:
+		Filename: acar.shp
 		Start: 24
 		Length: 1
 		ZOffset: -1023
-	active: acar
+	active:
+		Filename: acar.shp
 		Start: 24
 		Length: 1
 		ZOffset: -1023
-	icon: acaricon
+	icon:
+		Filename: acaricon.shp
 
 ssml:
 	Inherits: emp-overlay
+	Defaults:
+		Filename: ssml.shp
 	idle:
 		Facings: 16
-	icon: ssmlicon
+	icon:
+		Filename: ssmlicon.shp
 
 dred:
-    Inherits: emp-overlay
-	idle: cs
+	Inherits: emp-overlay
+	Defaults:
+		Filename: dd.shp
+	idle:
+		Filename: cs.shp
 		Facings: 16
-	turret: triple-tur
+	turret:
+		Filename: triple-tur.shp
 		Facings: 32
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 5
-	icon: dredicon
+	icon:
+		Filename: dredicon.shp

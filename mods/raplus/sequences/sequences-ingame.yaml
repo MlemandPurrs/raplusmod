@@ -1,264 +1,174 @@
-120mm:
-	idle:
-		ZOffset: 1023
-
-50cal:
-	idle:
-		ZOffset: 1023
-
-v2:
-	idle:
-		Facings: 32
-		ZOffset: 1023
-
-dragon:
-	idle:
-		Facings: 32
-		ZOffset: 1023
-
-smokey:
-	idle:
-		Length: *
-		ZOffset: 1023
-
-bomb:
-	idle:
-		Length: *
-		ZOffset: 1023
-
-missile:
-	idle:
-		Facings: 32
-		ZOffset: 1023
-
-torpedo:
-	idle: missile
-		Facings: 32
-		ZOffset: -1023
-
-litning:
-	bright:
-		Length: 4
-		ZOffset: 1023
-	dim:
-		Start: 4
-		Length: 4
-		ZOffset: 1023
-
-fb1:
-	idle:
-		Length: *
-		ZOffset: 1023
-
-fb2:
-	idle:
-		Length: *
-		ZOffset: 1023
-
-fb3:
-	idle:
-		Facings: 32
-		ZOffset: 1023
-
-fb4:
-	idle:
-		Length: *
-		ZOffset: 1023
-
-burn-l:
-	idle:
-		Length: *
-		ZOffset: 512
-	loop:
-		Start: 16
-		Length: 44
-		ZOffset: 512
-	end:
-		Start: 60
-		Length: 6
-		ZOffset: 512
-
-burn-m:
-	idle:
-		Length: *
-		ZOffset: 512
-	loop:
-		Start: 16
-		Length: 44
-		ZOffset: 512
-	end:
-		Start: 60
-		Length: 6
-		ZOffset: 512
-
-burn-s:
-	idle:
-		Length: *
-		ZOffset: 512
-	loop:
-		Start: 12
-		Length: 46
-		ZOffset: 512
-	end:
-		Start: 59
-		Length: 5
-		ZOffset: 512
 
 explosion:
 	Defaults:
 		Length: *
 		ZOffset: 2047
-	piff: piff
-	piffs: piffpiff
-	water_piff: wpiff
-	water_piffs: wpifpif
-	small_explosion: veh-hit3
-	med_explosion: veh-hit2
-	flak_explosion_ground: flak
-	small_explosion_air: flak
+	piff:
+		Filename: piff.shp
+	piffs:
+		Filename: piffpiff.shp
+	water_piff:
+		Filename: wpiff.shp
+	water_piffs:
+		Filename: wpifpif.shp
+	small_explosion:
+		Filename: veh-hit3.shp
+	med_explosion:
+		Filename: veh-hit2.shp
+	flak_explosion_ground:
+		Filename: flak.shp
+	small_explosion_air:
+		Filename: flak.shp
 		ZOffset: 511
-	med_explosion_air: veh-hit1
+	med_explosion_air:
+		Filename: veh-hit1.shp
 		ZOffset: 511
-	large_splash: h2o_exp1
-	napalm: napalm2
-	building_napalm: napalm2
+	large_splash:
+		Filename: h2o_exp1.shp
+	napalm:
+		Filename: napalm2.shp
+	building_napalm:
+		Filename: napalm2.shp
 		FlipX: true
-	nuke: atomsfx
-	med_splash: h2o_exp2
-	self_destruct: art-exp1
-	artillery_explosion: art-exp1
-	building: fball1
+	nuke:
+		Filename: atomsfx.shp
+	med_splash:
+		Filename: h2o_exp2.shp
+	self_destruct:
+		Filename: art-exp1.shp
+	artillery_explosion:
+		Filename: art-exp1.shp
+	building:
+		Filename: fball1.shp
 		Offset: 0,-9
-	small_splash: h2o_exp3
-	large_explosion: frag1
+	small_splash:
+		Filename: h2o_exp3.shp
+	large_explosion:
+		Filename: frag1.shp
 		Offset: -2,0
-	small_napalm: napalm1
-	offseted_napalm: napalm1
+	small_napalm:
+		Filename: napalm1.shp
+	offset_napalm:
+		Filename: napalm1.shp
 		Offset: 0, -6
-	large_napalm: napalm3
-	corpse: corpse1
+	offseted_napalm:
+		Filename: napalm1.shp
+		Offset: 0, -6
+	large_napalm:
+		Filename: napalm3.shp
+	corpse:
+		Filename: corpse1.tem
+		TilesetFilenames:
+			SNOW: corpse1.sno
 		ZOffset: -512
 		Tick: 1600
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-	invisblank: blank1
-	mininuke: miniatomsfx
+	invisblank:
+		Filename: blank1.shp
+		Length: 1
+	mininuke:
+		Filename: miniatomsfx.shp
 		Length: *
-	pulse_explosion: pulsefx2
+	pulse_explosion:
+		Filename: pulsefx2.shp
 		BlendMode: Additive
 		Tick: 80
-	pulse_explosion_small: pulsefx1
+	pulse_explosion_small:
+		Filename: pulsefx1.shp
 		BlendMode: Alpha
 		Tick: 80
-	hvnd: hvnd
+	hvnd:
+		Filename: hvnd.shp
 		Tick: 200
 		ZOffset: 512
-    small_chem: chemball
-    medium_chem: chemball-medium
-    large_chem: chemball-large
+	small_chem:
+		Filename: chemball.shp
+	medium_chem:
+		Filename: chemball-medium.shp
+	large_chem:
+		Filename: chemball-large.shp
 
 emp-overlay:
-	emp-overlay: empfx01
+	emp-overlay:
+		Filename: empfx01.shp
 		Length: *
 		BlendMode: Additive
 		Offset: 0, 0
 		UseTilesetCode: false
-		UseTilesetExtension: false
 		ZOffset: 512
 
 maxichute:
+	Defaults:
+		Filename: maxichute.shp
 	open:
 		ZOffset: 512
 	idle:
 		Length: 20
 		ZOffset: 512
-
-parach:
-	open:
-		Length: 5
-	idle:
-		Start: 5
-		Length: 11
-
-parach-shadow:
-	idle:
-		Length: *
-
-bomblet:
-	idle:
-		Length: *
-		ZOffset: 1023
-
-parabomb:
-	open:
-		Length: 8
-		ZOffset: 1023
-	idle:
-		Start: 8
-		Length: 5
-		ZOffset: 1023
-
-smokland:
-	open: playersmoke
-		Length: 72
-		Tick: 120
-		ZOffset: 1023
-	idle: playersmoke
-		Start: 72
-		Length: 20
-		Tick: 120
-		ZOffset: 1023
 
 fire:
 	Defaults:
 		Length: *
 		Offset: 0,-3
-		Tick: 105	
+		Tick: 105
 		ZOffset: 511
-	1: fire1
-	2: fire2
-	3: fire7
-	4: fire4
-	5: fire5
-	6: fire6
-	7: fire6
+	1:
+		Filename: fire1.shp
+	2:
+		Filename: fire2.shp
+	3:
+		Filename: fire7.shp
+	4:
+		Filename: fire4.shp
+	5:
+		Filename: fire5.shp
+	6:
+		Filename: fire6.shp
+	7:
+		Filename: fire6.shp
 		FlipX: true
-	8: fire7
+	8:
+		Filename: fire7.shp
 		FlipX: true
 
 laserfire:
-	idle: veh-hit3
+	idle:
+		Filename: veh-hit3.shp
 		Length: *
 		ZOffset: 511
 
 ionsfx:
 	idle:
+		Filename: ionsfx.shp
 		Length: *
 		Offset: 0, -78
 		ZOffset: 1023
 
 patriot:
 	idle:
+		Filename: patriot.shp
 		Facings: 32
 		ZOffset: 1023
 
 atomicfake:
-	up: atomicup
+	up:
+		Filename: atomicup.shp
 		Length: *
 		ZOffset: 1023
-	down: atomicdn
+	down:
+		Filename: atomicdn.shp
 		Length: *
 		ZOffset: 1023
 
 twake:
-	idle: twake
+	idle:
+		Filename: twake.shp
 		Length: *
 		Tick: 300
 		ZOffset: -511
 
 smoke_m:
+	Defaults:
+		Filename: smoke_m.shp
 	idle:
 		Length: *
 		Offset: 2, -5
@@ -269,178 +179,97 @@ smoke_m:
 		Offset: 2, -5
 		ZOffset: 512
 	end:
-		Start: 26
-		Length: -26
+		Frames: 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0
 		Offset: 2, -5
 		ZOffset: 512
 
-sputnik:
-	idle:
-		Length: *
-		Offset: -4,0
-		ZOffset: 1023
-
-atomic:
-	up: atomicup
-		Length: *
-		ZOffset: 1023
-	down: atomicdn
-		Length: *
-		ZOffset: 1023
-
-bubbles:
-	idle:
-		Length: *
-		Tick: 220
-
-scrate:
-	Defaults:
-		ZOffset: -511
-	idle:
-	land:
-		Start: 1
-	water:
-		Start: 2
-		Length: 4
-		Tick: 500
-
-scrate-healup:
-	Defaults:
-		ZOffset: -511
-	idle:
-	land:
-		Start: 1
-	water:
-		Start: 2
-		Length: 4
-		Tick: 500
-
-wcrate:
-	Defaults:
-		ZOffset: -511
-	idle:
-	land:
-	water: wwcrate
-		Length: *
-		Tick: 500
-
-xcratea:
-	idle:
-		ZOffset: -511
-	land:
-		Start: 1
-		ZOffset: -511
-	water:
-		Start: 2
-		Length: 4
-		Tick: 500
-		ZOffset: -511
-
-xcrateb:
-	idle:
-		ZOffset: -511
-	land:
-		Start: 1
-		ZOffset: -511
-	water:
-		Start: 2
-		Length: 4
-		Tick: 500
-		ZOffset: -511
-
-xcratec:
-	idle:
-		ZOffset: -511
-	land:
-		Start: 1
-		ZOffset: -511
-	water:
-		Start: 2
-		Length: 4
-		Tick: 500
-		ZOffset: -511
-
-xcrated:
-	idle:
-		ZOffset: -511
-	land:
-		Start: 1
-		ZOffset: -511
-	water:
-		Start: 2
-		Length: 4
-		Tick: 500
-		ZOffset: -511
-
-minp:
-	idle:
-		ZOffset: -512
-	icon: jmin
-
-minv:
-	idle:
-		ZOffset: -512
-	icon: jmin
-
-mins:
-	idle:
-		Length: *
-		ZOffset: -512
-		Tick: 250
-	icon: jmin
-
 mina:
-	emp-overlay: blank1
+	emp-overlay:
+		Filename: blank1.shp
 		Length: *
 	idle:
+		Filename: mina.shp
 		Length: *
-	chute: parach
+	chute:
+		Filename: parach.shp
 		Start: 5
 		Length: 11
 		Tick: 120
-	icon: bminicon
+	icon:
+		Filename: bminicon.shp
+
+mins:
+	idle:
+		Filename: mins.shp
+		Length: *
+		ZOffset: -512
+		Tick: 250
+	icon:
+		Filename: jmin.shp
 
 minn:
 	idle:
+		Filename: minn.shp
 		ZOffset: -512
 	active:
+		Filename: minn.shp
 		Length: *
 		Tick: 90
 		ZOffset: -512
 
+scrate-healup:
+	Defaults:
+		Filename: scrate.shp
+		ZOffset: -511
+	idle:
+	land:
+		Start: 1
+	water:
+		Start: 2
+		Length: 4
+		Tick: 500
+
 hjm:
 	idle:
+		Filename: hjm.shp
 		Facings: 32
 		ZOffset: 1023
 
 icbmmiss:
 	idle:
+		Filename: icbmmiss.shp
 		Facings: 32
 		ZOffset: 1023
 
 380mm:
-	idle: 380mm
+	idle:
+		Filename: 380mm.shp
 		ZOffset: 1023
 		IgnoreWorldTint: true
 
 chronoappear:
 	Defaults:
 		IgnoreWorldTint: true
-	idle: chronofade
+	idle:
+		Filename: chronofade.shp
 		Length: *
 
 chronodisappear:
 	Defaults:
 		IgnoreWorldTint: true
-	idle: chronofade-sml
+	idle:
+		Filename: chronofade-sml.shp
 		Length: *
 
 chronoteleport:
 	Defaults:
 		IgnoreWorldTint: true
-	appear: chronofade
+	appear:
+		Filename: chronofade.shp
 		Length: *
-	disappear: chronofade-sml
+	disappear:
+		Filename: chronofade-sml.shp
 		Length: *
-	disappear-flip: chronofade-sml-rev
+	disappear-flip:
+		Filename: chronofade-sml-rev.shp
 		Length: *

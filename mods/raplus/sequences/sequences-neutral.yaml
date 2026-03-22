@@ -1,27 +1,39 @@
 acom:
+	Defaults:
+		Filename: acom.shp
 	idle:
 	damaged-idle:
 		Start: 1
-	make: acommake
+	make:
+		Filename: acommake.shp
 		Length: *
 		Tick: 80
-	bib: bib3
+	bib:
+		Filename: bib3.tem
+		TilesetFilenames:
+			SNOW: bib3.sno
+			DESERT: bib3.des
+			TEMPERAT: bib3.tem
+			INTERIOR: bib3.tem
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
 
 acom.husk:
-	idle: acom
+	idle:
+		Filename: acom.shp
 		Start: 1
-	bib: bib3
+	bib:
+		Filename: bib3.tem
+		TilesetFilenames:
+			SNOW: bib3.sno
+			DESERT: bib3.des
+			TEMPERAT: bib3.tem
+			INTERIOR: bib3.tem
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
 
 hosp:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: hosp.shp
     idle:
 		Length: 4
         Tick: 100
@@ -35,26 +47,35 @@ hosp:
 	make: hospmake
 		Length: *
 		Tick: 80
-	bib: mbHOSP
+	bib:
+		Filename: mbHOSP.tem
+		TilesetFilenames:
+			SNOW: mbHOSP.sno
+			INTERIOR: mbHOSP.int
+			TEMPERAT: mbHOSP.tem
+			DESERT: mbHOSP.des
 		Length: *
 		Offset: 0,1
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
-	icon: hospicon
+	icon:
+		Filename: hospicon.shp
 
 hosp.husk:
-	idle: hosp
+	idle:
+		Filename: hosp.shp
 		Start: 8
-	bib: bib3
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+	bib:
+		Filename: bib3.tem
+		TilesetFilenames:
+			SNOW: bib3.sno
+			DESERT: bib3.des
+			TEMPERAT: bib3.tem
+			INTERIOR: bib3.tem
 		Length: *
 
 bio:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
 	Defaults:
+		Filename: bio.shp
 		Offset: 0,-2
 	idle:
 	damaged-idle:
@@ -62,76 +83,98 @@ bio:
 	dead:
 		Start: 2
 		Tick: 800
-	make: biomake
+	make:
+		Filename: biomake.shp
 		Length: *
 		Tick: 80
-	idle-smoke: bio-smoke
+	idle-smoke:
+		Filename: bio-smoke.shp
 		Length: 40
 		Tick: 160
 		Offset: 0,-22
-	damaged-idle-smoke: bio-smoke-d
+	damaged-idle-smoke:
+		Filename: bio-smoke-d.shp
 		Length: 40
 		Tick: 160
 		Offset: 0,-22
-	none: blank32
+	none:
+		Filename: blank32.shp
 		Length: 1
 
 bio.husk:
-	idle: bio
+	idle:
+		Filename: bio.shp
 		Start: 2
 		Offset: 0,-2
 
 miss:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: miss.shp
 	idle:
 	damaged-idle:
 		Start: 1
-	dead: miss
+	dead:
+		Filename: miss.shp
 		Start: 2
 		Tick: 800
-	make: missmake
+	make:
+		Filename: missmake.shp
 		Length: *
-        Tick: 80
-	bib: bib2
+		Tick: 80
+	bib:
+		Filename: bib2.tem
+		TilesetFilenames:
+			SNOW: bib2.sno
+			DESERT: bib2.des
+			TEMPERAT: bib2.tem
+			INTERIOR: bib2.tem
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
 
 miss.husk:
-	idle: miss
+	idle:
+		Filename: miss.shp
 		Start: 2
 
 oilb:
 	Defaults:
+		Filename: oilb.shp
 		Offset: 0,-6
 	idle:
 	damaged-idle:
 		Start: 1
 		Length: *
 	make:
-	bib: bib3
+	bib:
+		Filename: bib3.tem
+		TilesetFilenames:
+			SNOW: bib3.sno
+			DESERT: bib3.des
+			TEMPERAT: bib3.tem
+			INTERIOR: bib3.tem
 		Length: *
 		Offset: 0,0
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
 
 oilb.husk:
 	Defaults:
+		Filename: oilb.shp
 		Offset: 0,-6
-	idle: oilb
+	idle:
 		Start: 1
 		Length: *
-	bib: bib3
+	bib:
+		Filename: bib3.tem
+		TilesetFilenames:
+			SNOW: bib3.sno
+			DESERT: bib3.des
+			TEMPERAT: bib3.tem
+			INTERIOR: bib3.tem
 		Length: *
 		Offset: 0,0
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
 
 oilp:
 	Defaults:
+		Filename: oilp.shp
 		Offset: 0,-6
 	idle:
 	damaged-idle:
@@ -141,80 +184,108 @@ oilp:
 
 oilp.husk:
 	Defaults:
+		Filename: oilp.shp
 		Offset: 0,-6
-	idle: oilp
+	idle:
 		Start: 0
 		Length: *
 
 acad:
+	Defaults:
+		Filename: acad.shp
 	idle:
 		Start: 0
 		Length: 1
 	damaged-idle:
 		Start: 1
 		Length: 1
-	dead: miss
+	dead:
+		Filename: miss.shp
 		Start: 2
-        Length: 1
+		Length: 1
 		Tick: 800
-	bib: bib3
+	bib:
+		Filename: bib3.tem
+		TilesetFilenames:
+			SNOW: bib3.sno
+			DESERT: bib3.des
+			TEMPERAT: bib3.tem
+			INTERIOR: bib3.tem
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
 
 acad.husk:
-	idle: acad
+	idle:
+		Filename: acad.shp
 		Start: 2
 		Length: 1
 
 v92:
-	idle: wwi-tax
+	Defaults:
+		Filename: wwi-tax.shp
+	idle:
 		Start: 9
 		Length: 1
-	damaged-idle: wwi-tax
+	damaged-idle:
 		Start: 9
 		Length: 1
-	make: wwi-tax
+	make:
 		Start: 0
 		Length: *
-	bib: bib3
+	bib:
+		Filename: bib3.tem
+		TilesetFilenames:
+			SNOW: bib3.sno
+			DESERT: bib3.des
+			TEMPERAT: bib3.tem
+			INTERIOR: bib3.tem
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
 
 v92.husk:
-	idle: wwi-tax
+	idle:
+		Filename: wwi-tax.shp
 		Start: 2
 		Length: 1
 
 civpowr:
+	Defaults:
+		Filename: civpowr.shp
 	idle:
 	damaged-idle:
 		Start: 1
-	place: civpowrmake
+	place:
+		Filename: civpowrmake.shp
 		Start: 19
-	make: civpowrmake
+	make:
+		Filename: civpowrmake.shp
 		Length: *
 		Tick: 80
-	bib: bib3
+	bib:
+		Filename: bib3.tem
+		TilesetFilenames:
+			SNOW: bib3.sno
+			DESERT: bib3.des
+			TEMPERAT: bib3.tem
+			INTERIOR: bib3.tem
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
-	icon: civpowricon
+	icon:
+		Filename: civpowricon.shp
 
 civpowr.husk:
-	idle: civpowr
+	idle:
+		Filename: civpowr.shp
 		Start: 2
-	bib: bib3
+	bib:
+		Filename: bib3.tem
+		TilesetFilenames:
+			SNOW: bib3.sno
+			DESERT: bib3.des
+			TEMPERAT: bib3.tem
+			INTERIOR: bib3.tem
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
 
 civafld:
+	Defaults:
+		Filename: civafld.shp
 	idle:
 		Length: 8
 		Tick: 160
@@ -239,14 +310,17 @@ civafld:
 		Offset: 0,-4
 
 civafld.husk:
-	idle: civafld
+	idle:
+		Filename: civafld.shp
 		Start: 8
 		Length: 1
 		ZOffset: -1023
 		Offset: 0,-4
 
 mshp:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: mshp.shp
     idle:
 		Start: 0
 		Length: 1
@@ -255,10 +329,12 @@ mshp:
 		Start: 1
 		Length: 1
         Tick: 100
-	none: blank32
+	none:
+		Filename: blank32.shp
 		Length: 1
 
 mshp.husk:
-	idle: mshp
+	idle:
+		Filename: mshp.shp
 		Start: 1
 		Length: 1

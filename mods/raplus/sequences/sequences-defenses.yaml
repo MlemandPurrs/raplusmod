@@ -1,6 +1,8 @@
 
 gap:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: gap.shp
     fake-icon: gapficon
     idle:
 		Length: 32
@@ -18,95 +20,138 @@ gap:
 	place: gapmake
 		Start: 12
 		Offset: 0,-14
-	bib: mbGAP
+	bib:
+		TilesetFilenames:
+			SNOW: mbGAP.sno
+			INTERIOR: mbGAP.int
+			TEMPERAT: mbGAP.tem
+			DESERT: mbGAP.des
 		Length: *
-		UseTilesetExtension: true
-	icon: gapicon
+	icon:
+		Filename: gapicon.shp
 
 gap.husk:
-	idle: gap
+	idle:
+		Filename: gap.shp
 		Start: 62
 		Length: 1
 		Offset: 0,-14
-	bib: mbGAP
+	bib:
+		TilesetFilenames:
+			SNOW: mbGAP.sno
+			INTERIOR: mbGAP.int
+			TEMPERAT: mbGAP.tem
+			DESERT: mbGAP.des
 		Length: *
-		UseTilesetExtension: true
 
 pbox:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: pbox.shp
 	idle:
 	damaged-idle:
 		Start: 1
 	make: pboxmake
 		Length: *
         Tick: 80
-	muzzle: minigun
+	muzzle:
+		Filename: minigun.shp
 		Length: 6
 		Facings: 8
-	fbox-muzzle: gunfire2
+	fbox-muzzle:
+		Filename: gunfire2.shp
 		Length: 2
-	fbox-turret: ftrk
+	fbox-turret:
+		Filename: ftrk.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	bib: mbPBOX
+	bib:
+		TilesetFilenames:
+			SNOW: mbPBOX.sno
+			INTERIOR: mbPBOX.int
+			TEMPERAT: mbPBOX.tem
+			DESERT: mbPBOX.des
 		Length: *
 		Offset: 0,-2
-		UseTilesetExtension: true
-	icon: pboxicon
-	fboxicon: fboxicon
+	icon:
+		Filename: pboxicon.shp
+	fboxicon:
+		Filename: fboxicon.shp
 
 pbox.husk:
-	idle: pbox-dead
+	idle:
+		Filename: pbox-dead.shp
 
 hbox:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
 	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+		Filename: hbox.tem
+		TilesetFilenames:
+			SNOW: hbox.sno
+			DESERT: hbox.des
 	idle:
 	damaged-idle:
 		Start: 2
-	make: hboxmake
+	make:
+		Filename: hboxmake.tem
+		TilesetFilenames:
+			SNOW: hboxmake.sno
+			DESERT: hboxmake.des
 		Length: *
-        Tick: 80
-	muzzle: minigun
+		Tick: 80
+	muzzle:
+		Filename: minigun.shp
+		TilesetFilenames:
 		Length: 6
 		Facings: 8
-		UseTilesetExtension: false
-	icon: hboxicon
-		UseTilesetExtension: false
+	icon:
+		Filename: hboxicon.shp
+		TilesetFilenames:
 
 hbox.husk:
-	idle: hbox-dead
+	idle:
+		Filename: hbox-dead.shp
 
 fbox.husk:
-	idle: pbox-dead
-	turret: ftrk
+	idle:
+		Filename: pbox-dead.shp
+	turret:
+		Filename: ftrk.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
 
 prop:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: prop.shp
 	idle:
 	damaged-idle:
-	make: pboxmake
+	make:
+		Filename: pboxmake.shp
 		Length: *
 		Tick: 80
-	spinner: mrj
+	spinner:
+		Filename: mrj.shp
 		Start: 32
 		Length: 32
-	bib: mbPBOX
+	bib:
+		TilesetFilenames:
+			SNOW: mbPBOX.sno
+			INTERIOR: mbPBOX.int
+			TEMPERAT: mbPBOX.tem
+			DESERT: mbPBOX.des
 		Length: *
 		Offset: 0,-2
-		UseTilesetExtension: true
-	icon: propicon
+	icon:
+		Filename: propicon.shp
 
 ftur:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: ftur.shp
 	idle:
 		Offset: 0,-2
 	damaged-idle:
@@ -116,50 +161,71 @@ ftur:
 		Length: *
 		Offset: 0,-2
         Tick: 50
-	bib: mbFTUR
+	bib:
+		TilesetFilenames:
+			SNOW: mbFTUR.sno
+			INTERIOR: mbFTUR.int
+			TEMPERAT: mbFTUR.tem
+			DESERT: mbFTUR.des
 		Length: *
-		UseTilesetExtension: true
 	muzzle-spray:
+		Filename:
 		Combine:
-			flame-n:
+			0:
+				Filename: flame-n.shp
 				Length: *
 				Offset: 3,6
-			flame-nw:
+			1:
+				Filename: flame-nw.shp
 				Length: *
 				Offset: 8,7
-			flame-w:
+			2:
+				Filename: flame-w.shp
 				Length: *
 				Offset: 8,2
-			flame-sw:
+			3:
+				Filename: flame-sw.shp
 				Length: *
 				Offset: 7,-2
-			flame-s:
+			4:
+				Filename: flame-s.shp
 				Length: *
 				Offset: 3,-2
-			flame-se:
+			5:
+				Filename: flame-se.shp
 				Length: *
 				Offset: -5,-2
-			flame-e:
+			6:
+				Filename: flame-e.shp
 				Length: *
 				Offset: -7,2
-			flame-ne:
+			7:
+				Filename: flame-ne.shp
 				Length: *
 				Offset: -7,8
 		Facings: 8
 		Length: 13
-	icon: fturicon
+	icon:
+		Filename: fturicon.shp
 
 ftur.husk:
-	idle: ftur
+	idle:
+		Filename: ftur.shp
 		Start: 1
 		Length: 1
 		Offset: 0,-2
-	bib: mbFTUR
+	bib:
+		TilesetFilenames:
+			SNOW: mbFTUR.sno
+			INTERIOR: mbFTUR.int
+			TEMPERAT: mbFTUR.tem
+			DESERT: mbFTUR.des
 		Length: *
-		UseTilesetExtension: true
 
 gun:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: gun.shp
 	idle: gunmake
 	turret:
 		Facings: 32
@@ -182,23 +248,36 @@ gun:
 	place: gunmake
 		Start: 19
 		Length: 1
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 5
-	bib: mbGUN
+	bib:
+		TilesetFilenames:
+			SNOW: mbGUN.sno
+			INTERIOR: mbGUN.int
+			TEMPERAT: mbGUN.tem
+			DESERT: mbGUN.des
 		Length: *
 		Offset: -1,-1
-		UseTilesetExtension: true
-	icon: gunicon
+	icon:
+		Filename: gunicon.shp
 
 gun.husk:
-	idle: gun-dead
-	bib: mbGUN
+	idle:
+		Filename: gun-dead.shp
+	bib:
+		TilesetFilenames:
+			SNOW: mbGUN.sno
+			INTERIOR: mbGUN.int
+			TEMPERAT: mbGUN.tem
+			DESERT: mbGUN.des
 		Length: *
 		Offset: -1,-1
-		UseTilesetExtension: true
 
 gtur:
 	Inherits: emp-overlay
+	Defaults:
+		Filename: gtur.shp
 	idle: gunmake
 	turret:
 		Facings: 32
@@ -213,14 +292,19 @@ gtur:
 		Length: *
 		Offset: 0,-5
 		Tick: 70
-	muzzle: cruiser-muzzle
+	muzzle:
+		Filename: cruiser-muzzle.shp
 		Length: 20
 		Facings: 8
 		Offset: 0,-5
-	bib: mbSAM
+	bib:
+		TilesetFilenames:
+			SNOW: mbSAM.sno
+			INTERIOR: mbSAM.int
+			TEMPERAT: mbSAM.tem
+			DESERT: mbSAM.des
 		Length: *
 		Offset: 0,-5
-		UseTilesetExtension: true
 	dead: gturmake
 		Start: 8
 		Length: 1
@@ -229,10 +313,13 @@ gtur:
 		Start: 11
 		Length: 1
 		Offset: 0,-5
-	icon: gturicon
+	icon:
+		Filename: gturicon.shp
 
 tsla:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: tsla.shp
 	idle:
 		Offset: 0,-13
 	damaged-idle:
@@ -252,20 +339,32 @@ tsla:
 		Length: 9
 		Tick: 100
 		Offset: 0,-13
-	bib: mbTSLA
+	bib:
+		TilesetFilenames:
+			SNOW: mbTSLA.sno
+			INTERIOR: mbTSLA.int
+			TEMPERAT: mbTSLA.tem
+			DESERT: mbTSLA.des
 		Length: *
-		UseTilesetExtension: true
-	icon: tslaicon
+	icon:
+		Filename: tslaicon.shp
 
 tsla.husk:
-	idle: tsla-dead
+	idle:
+		Filename: tsla-dead.shp
 		Offset: 0,-13
-	bib: mbTSLA
+	bib:
+		TilesetFilenames:
+			SNOW: mbTSLA.sno
+			INTERIOR: mbTSLA.int
+			TEMPERAT: mbTSLA.tem
+			DESERT: mbTSLA.des
 		Length: *
-		UseTilesetExtension: true
 
 agun:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: agun.shp
 	idle: gunmake
 	turret:
 		Facings: 32
@@ -294,66 +393,97 @@ agun:
 		Start: 9
 		Length: 1
 		Offset: 0,-13
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Start: 1
 		Length: 4
-	bib: mbAGUN
+	bib:
+		TilesetFilenames:
+			SNOW: mbAGUN.sno
+			INTERIOR: mbAGUN.int
+			TEMPERAT: mbAGUN.tem
+			DESERT: mbAGUN.des
 		Length: *
-		UseTilesetExtension: true
-	icon: agunicon
+	icon:
+		Filename: agunicon.shp
 
 agun.husk:
-    idle: agun
+	idle:
+		Filename: agun.shp
 		Start: 64
 		Facings: 32
 		UseClassicFacings: True
 		Offset: 0,-13
-	bib: mbAGUN
+	bib:
+		TilesetFilenames:
+			SNOW: mbAGUN.sno
+			INTERIOR: mbAGUN.int
+			TEMPERAT: mbAGUN.tem
+			DESERT: mbAGUN.des
 		Length: *
-		UseTilesetExtension: true
 
 sam:
-    Inherits: emp-overlay
-	idle:  gunmake
-	turret: sam2
+	Inherits: emp-overlay
+	Defaults:
+		Filename: sam.shp
+	idle:
+		Filename: gunmake.shp
+	turret:
+		Filename: sam2.shp
 		Facings: 32
 		UseClassicFacings: True
 		Offset: -1,-2
-	damaged-turret: sam2
+	damaged-turret:
+		Filename: sam2.shp
 		Start: 34
 		Facings: 32
 		UseClassicFacings: True
 		Offset: -1,-2
-	make: sammake
+	make:
+		Filename: sammake.shp
 		Length: *
 		Offset: -1,-2
-        Tick: 80
-	place: sammake
+		Tick: 80
+	place:
+		Filename: sammake.shp
 		Start: 17
 		Length: 1
 		Offset: -1,-2
-	muzzle: samfire
+	muzzle:
+		Filename: samfire.shp
 		Length: 18
 		Facings: 8
 		Offset: -1,6
-	bib: mbSAM
+	bib:
+		TilesetFilenames:
+			SNOW: mbSAM.sno
+			INTERIOR: mbSAM.int
+			TEMPERAT: mbSAM.tem
+			DESERT: mbSAM.des
 		Length: *
 		Offset: 0,1
-		UseTilesetExtension: true
-	icon: samicon
+	icon:
+		Filename: samicon.shp
 
 sam.husk:
-	idle: sam2
+	idle:
+		Filename: sam2.shp
 		Start: 67
 		Length: 1
 		Offset: -1,-2
-	bib: mbSAM
+	bib:
+		TilesetFilenames:
+			SNOW: mbSAM.sno
+			INTERIOR: mbSAM.int
+			TEMPERAT: mbSAM.tem
+			DESERT: mbSAM.des
 		Length: *
 		Offset: 0,1
-		UseTilesetExtension: true
 
 hsam:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: hsam.shp
 	closed-idle:
 		Start: 0
 	opening:
@@ -391,18 +521,23 @@ hsam:
 	place: hsammake
 		Start: 29
 		Length: 1
-	muzzle: samfire
+	muzzle:
+		Filename: samfire.shp
 		Length: 18
 		Facings: 8
-	icon: hsamicon
+	icon:
+		Filename: hsamicon.shp
 
 hsam.husk:
-	idle: hsam
+	idle:
+		Filename: hsam.shp
 		Start: 67
 		Length: 1
 
 pdox:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: pdox.shp
 	idle:
 	damaged-idle:
 		Start: 29
@@ -414,24 +549,37 @@ pdox:
 	make: pdoxmake
 		Length: *
         Tick: 80
-	bib: mbPDOX
+	bib:
+		TilesetFilenames:
+			SNOW: mbPDOX.sno
+			INTERIOR: mbPDOX.int
+			TEMPERAT: mbPDOX.tem
+			DESERT: mbPDOX.des
 		Length: *
 		Offset: 0,-4
-		UseTilesetExtension: true
-	icon: pdoxicon
-	fake-icon: pdoficon
+	icon:
+		Filename: pdoxicon.shp
+	fake-icon:
+		Filename: pdoficon.shp
 
 pdox.husk:
-	idle: pdox
+	idle:
+		Filename: pdox.shp
 		Start: 29
 		Length: 1
-	bib: mbPDOX
+	bib:
+		TilesetFilenames:
+			SNOW: mbPDOX.sno
+			INTERIOR: mbPDOX.int
+			TEMPERAT: mbPDOX.tem
+			DESERT: mbPDOX.des
 		Length: *
 		Offset: 0,-4
-		UseTilesetExtension: true
 
 iron:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: iron.shp
 	idle:
 		Offset: 0,-12
 	active:
@@ -448,35 +596,51 @@ iron:
 		Length: *
 		Offset: 0,-12
         Tick: 80
-	bib: mbIRON
+	bib:
+		TilesetFilenames:
+			SNOW: mbIRON.sno
+			INTERIOR: mbIRON.int
+			TEMPERAT: mbIRON.tem
+			DESERT: mbIRON.des
 		Length: *
 		Offset: 0,2
-		UseTilesetExtension: true
-	icon: ironicon
-    fake-icon: iroficon
+	icon:
+		Filename: ironicon.shp
+	fake-icon:
+		Filename: iroficon.shp
 
 iron.husk:
-	idle: iron
+	idle:
+		Filename: iron.shp
 		Start: 11
 		Length: 1
 		Offset: 0,-12
-	bib: mbIRON
+	bib:
+		TilesetFilenames:
+			SNOW: mbIRON.sno
+			INTERIOR: mbIRON.int
+			TEMPERAT: mbIRON.tem
+			DESERT: mbIRON.des
 		Length: *
 		Offset: 0,2
-		UseTilesetExtension: true
 
 mslo:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
 	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+		Filename: mslo.tem
+		TilesetFilenames:
+			SNOW: mslo.sno
+			DESERT: mslo.des
 	idle:
 	damaged-idle:
 		Start: 8
-	make: mslomake
+	make:
+		Filename: mslomake.tem
+		TilesetFilenames:
+			SNOW: mslomake.sno
+			DESERT: mslomake.des
 		Length: *
-	    Tick: 80
+		Tick: 80
 	active:
 		Start: 1
 		Length: 7
@@ -484,39 +648,50 @@ mslo:
 	damaged-active:
 		Start: 9
 		Length: 7
-	icon: msloicon
-		UseTilesetExtension: false
-	fake-icon: mslficon
-		UseTilesetExtension: false
+	# msloicon2.shp / mslficon.shp fehlen je nach Content-Paket; siloicon ist zuverlässig gemountet.
+	icon:
+		Filename: siloicon.shp
+	fake-icon:
+		Filename: siloicon.shp
 
 mslo.husk:
 	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
-	idle: mslo
+		Filename: mslo.tem
+		TilesetFilenames:
+			SNOW: mslo.sno
+			DESERT: mslo.des
+	idle:
 		Start: 12
 		Length: 1
 
 sbag:
 	idle:
+		Filename: sbag.shp
 		Length: 16
-	icon: sbagicon
+	icon:
+		Filename: sbagicon.shp
 
 fenc:
 	idle:
+		Filename: fenc.shp
 		Length: 16
-	icon: fencicon
+	icon:
+		Filename: fencicon.shp
 
 barb:
+	Defaults:
+		Filename: barb.shp
 	idle:
 		Length: 16
 	damaged-idle:
 		Start: 16
 		Length: 16
-	icon: barbicon
+	icon:
+		Filename: barbicon.shp
 
 cycl:
+	Defaults:
+		Filename: cycl.shp
 	idle:
 		Length: 16
 	damaged-idle:
@@ -524,6 +699,8 @@ cycl:
 		Length: 16
 
 brik:
+	Defaults:
+		Filename: brik.shp
 	idle:
 		Length: 16
 	scratched-idle:
@@ -532,10 +709,13 @@ brik:
 	damaged-idle:
 		Start: 32
 		Length: 16
-	icon: brikicon
+	icon:
+		Filename: brikicon.shp
 
 vgate:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: vgate.shp
 	open:
 		Frames: 6, 5, 4, 3, 2, 1, 0
 		Length: 7
@@ -552,10 +732,13 @@ vgate:
 		Frames: 6, 5, 4, 3, 2, 1, 0
 		Length: 7
 		ZOffset: -1c511
-	icon: vgateicon
+	icon:
+		Filename: vgateicon.shp
 
 hgate:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: hgate.shp
 	open:
 		Frames: 6, 5, 4, 3, 2, 1, 0
 		Length: 7
@@ -572,10 +755,13 @@ hgate:
 		Frames: 6, 5, 4, 3, 2, 1, 0
 		Length: 7
 		ZOffset: -1c511
-	icon: hgateicon
+	icon:
+		Filename: hgateicon.shp
 
 hgate-allies:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: hgate-allies.shp
 	open:
 		Frames: 6, 5, 4, 3, 2, 1, 0
 		Length: 7
@@ -592,10 +778,13 @@ hgate-allies:
 		Frames: 6, 5, 4, 3, 2, 1, 0
 		Length: 7
 		ZOffset: -1c511
-	icon: hgateicon
+	icon:
+		Filename: hgateicon.shp
 
 hgate-soviet:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: hgate-soviet.shp
 	open:
 		Frames: 6, 5, 4, 3, 2, 1, 0
 		Length: 7
@@ -612,10 +801,13 @@ hgate-soviet:
 		Frames: 6, 5, 4, 3, 2, 1, 0
 		Length: 7
 		ZOffset: -1c511
-	icon: hgateicon
+	icon:
+		Filename: hgateicon.shp
 
 spmst:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: spmst.shp
 	idle:
 		Offset: 0,-14
 	damaged-idle:
@@ -629,305 +821,333 @@ spmst:
 		Start: 1
 		Tick: 800
 		Offset: 0,-14
-	tree01: t01
+	tree01:
+		Defaults:
+			Filename: t01.tem
+			TilesetFilenames:
+				SNOW: t01.sno
 		idle:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-		Offset: 13, -12
-	tree02: t02
+			Offset: 13, -12
+	tree02:
+		Defaults:
+			Filename: t02.tem
+			TilesetFilenames:
+				SNOW: t02.sno
 		idle:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-		Offset: 16, -13
-	tree03: t03
+			Offset: 16, -13
+	tree03:
+		Defaults:
+			Filename: t03.tem
+			TilesetFilenames:
+				SNOW: t03.sno
 		idle:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-		Offset: 12, -12
-	tree05: t05
+			Offset: 12, -12
+	tree05:
+		Defaults:
+			Filename: t05.tem
+			TilesetFilenames:
+				SNOW: t05.sno
 		idle:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-		Offset: 13, -14
-	tree06: t06
+			Offset: 13, -14
+	tree06:
+		Defaults:
+			Filename: t06.tem
+			TilesetFilenames:
+				SNOW: t06.sno
 		idle:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-		Offset: 8, -12
-	tree07: t07
+			Offset: 8, -12
+	tree07:
+		Defaults:
+			Filename: t07.tem
+			TilesetFilenames:
+				SNOW: t07.sno
 		idle:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-		Offset: 12, -12
-	tree08: t08
+			Offset: 12, -12
+	tree08:
+		Defaults:
+			Filename: t08.tem
+			TilesetFilenames:
+				SNOW: t08.sno
+				DESERT: t08.des
 		idle:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
-		Offset: 14, 0
-	tree10: t10
+			Offset: 14, 0
+	tree10:
+		Defaults:
+			Filename: t10.tem
+			TilesetFilenames:
+				SNOW: t10.sno
 		idle:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-		Offset: 0, -12
-	tree11: t11
+			Offset: 0, -12
+	tree11:
+		Defaults:
+			Filename: t11.tem
+			TilesetFilenames:
+				SNOW: t11.sno
 		idle:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-		Offset: 2, -12
-	tree12: t12
+			Offset: 2, -12
+	tree12:
+		Defaults:
+			Filename: t12.tem
+			TilesetFilenames:
+				SNOW: t12.sno
 		idle:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-		Offset: 13, -12
-	tree13: t13
+			Offset: 13, -12
+	tree13:
+		Defaults:
+			Filename: t13.tem
+			TilesetFilenames:
+				SNOW: t13.sno
 		idle:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-		Offset: 5, -12
-	tree14: t14
+			Offset: 5, -12
+	tree14:
+		Defaults:
+			Filename: t14.tem
+			TilesetFilenames:
+				SNOW: t14.sno
 		idle:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-		Offset: 5, -12
-	tree15: t15
+			Offset: 5, -12
+	tree15:
+		Defaults:
+			Filename: t15.tem
+			TilesetFilenames:
+				SNOW: t15.sno
 		idle:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-		Offset: 2, -12
-	tree16: t16
+			Offset: 2, -12
+	tree16:
+		Defaults:
+			Filename: t16.tem
+			TilesetFilenames:
+				SNOW: t16.sno
 		idle:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-		Offset: 12, -12
-	tree17: t17
+			Offset: 12, -12
+	tree17:
+		Defaults:
+			Filename: t17.tem
+			TilesetFilenames:
+				SNOW: t17.sno
 		idle:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-		Offset: 6, -12
-	tree01husk: t01
-		idle:
-			Start: 1
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-		Offset: 13, -12
-	tree02husk: t02
+			Offset: 6, -12
+	tree01husk:
+		Defaults:
+			Filename: t01.tem
+			TilesetFilenames:
+				SNOW: t01.sno
 		idle:
 			Start: 1
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-		Offset: 16, -13
-	tree03husk: t03
+			Offset: 13, -12
+	tree02husk:
+		Defaults:
+			Filename: t02.tem
+			TilesetFilenames:
+				SNOW: t02.sno
 		idle:
 			Start: 1
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-		Offset: 12, -12
-	tree05husk: t05
+			Offset: 16, -13
+	tree03husk:
+		Defaults:
+			Filename: t03.tem
+			TilesetFilenames:
+				SNOW: t03.sno
 		idle:
 			Start: 1
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-		Offset: 13, -14
-	tree06husk: t06
+			Offset: 12, -12
+	tree05husk:
+		Defaults:
+			Filename: t05.tem
+			TilesetFilenames:
+				SNOW: t05.sno
 		idle:
 			Start: 1
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-		Offset: 8, -12
-	tree07husk: t07
+			Offset: 13, -14
+	tree06husk:
+		Defaults:
+			Filename: t06.tem
+			TilesetFilenames:
+				SNOW: t06.sno
 		idle:
 			Start: 1
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-		Offset: 12, -12
-	tree08husk: t08
+			Offset: 8, -12
+	tree07husk:
+		Defaults:
+			Filename: t07.tem
+			TilesetFilenames:
+				SNOW: t07.sno
 		idle:
 			Start: 1
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
-		Offset: 14, 0
-	tree10husk: t10
+			Offset: 12, -12
+	tree08husk:
+		Defaults:
+			Filename: t08.tem
+			TilesetFilenames:
+				SNOW: t08.sno
+				DESERT: t08.des
 		idle:
 			Start: 1
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-		Offset: 0, -12
-	tree11husk: t11
+			Offset: 14, 0
+	tree10husk:
+		Defaults:
+			Filename: t10.tem
+			TilesetFilenames:
+				SNOW: t10.sno
 		idle:
 			Start: 1
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-		Offset: 2, -12
-	tree12husk: t12
+			Offset: 0, -12
+	tree11husk:
+		Defaults:
+			Filename: t11.tem
+			TilesetFilenames:
+				SNOW: t11.sno
 		idle:
 			Start: 1
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-		Offset: 0, -12
-	tree13husk: t13
+			Offset: 2, -12
+	tree12husk:
+		Defaults:
+			Filename: t12.tem
+			TilesetFilenames:
+				SNOW: t12.sno
 		idle:
 			Start: 1
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-		Offset: 5, -12
-	tree14husk: t14
+			Offset: 0, -12
+	tree13husk:
+		Defaults:
+			Filename: t13.tem
+			TilesetFilenames:
+				SNOW: t13.sno
 		idle:
 			Start: 1
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-		Offset: 5, -12
-	tree15husk: t15
+			Offset: 5, -12
+	tree14husk:
+		Defaults:
+			Filename: t14.tem
+			TilesetFilenames:
+				SNOW: t14.sno
 		idle:
 			Start: 1
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-		Offset: 2, -12
-	tree16husk: t16
+			Offset: 5, -12
+	tree15husk:
+		Defaults:
+			Filename: t15.tem
+			TilesetFilenames:
+				SNOW: t15.sno
 		idle:
 			Start: 1
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-		Offset: 12, -12
-	tree17husk: t17
+			Offset: 2, -12
+	tree16husk:
+		Defaults:
+			Filename: t16.tem
+			TilesetFilenames:
+				SNOW: t16.sno
 		idle:
 			Start: 1
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-		Offset: 6, -12
-	icon: spmsticon
+			Offset: 12, -12
+	tree17husk:
+		Defaults:
+			Filename: t17.tem
+			TilesetFilenames:
+				SNOW: t17.sno
+		idle:
+			Start: 1
+			Offset: 6, -12
+	icon:
+		Filename: spmsticon.shp
 
 ftur.hidden:
-    Inherits: emp-overlay
-	make: fturmake
+	Inherits: emp-overlay
+	Defaults:
+		Filename: ftur.shp
+	make:
+		Filename: fturmake.shp
 		Length: *
 		Offset: 0,-2
         Tick: 60
-	idle: ftur-sub-extra
+	idle:
+		Filename: ftur-sub-extra.shp
 		Start: 0
 		Facings: 32
 		Offset: 0,-2
-	damaged-idle: ftur-sub-extra
+	damaged-idle:
+		Filename: ftur-sub-extra.shp
 		Start: 32
 		Facings: 32
 		Offset: 0,-2
-	closed-idle: ftur-sub
+	closed-idle:
+		Filename: ftur-sub.shp
 		Start: 0
 		Length: 1
 		Offset: 0,-2
-	damaged-closed-idle: ftur-sub
+	damaged-closed-idle:
+		Filename: ftur-sub.shp
 		Start: 57
 		Length: 1
 		Offset: 0,-2
-	opening: ftur-sub
+	opening:
+		Filename: ftur-sub.shp
 		Start: 0
 		Length: 20
 		Tick: 60
 		Offset: 0,-2
-	damaged-opening: ftur-sub
+	damaged-opening:
+		Filename: ftur-sub.shp
 		Start: 29
 		Length: 20
 		Tick: 60
 		Offset: 0,-2
-	closing: ftur-sub
+	closing:
+		Filename: ftur-sub.shp
 		Start: 21
 		Length: 8
 		Tick: 60
 		Offset: 0,-2
-	damaged-closing: ftur-sub
+	damaged-closing:
+		Filename: ftur-sub.shp
 		Start: 50
 		Length: 8
 		Tick: 60
 		Offset: 0,-2
 	muzzle-spray:
+		Filename:
 		Combine:
-			flame-n:
+			0:
+				Filename: flame-n.shp
 				Length: *
 				Offset: 3,6
-			flame-nw:
+			1:
+				Filename: flame-nw.shp
 				Length: *
 				Offset: 8,7
-			flame-w:
+			2:
+				Filename: flame-w.shp
 				Length: *
 				Offset: 8,2
-			flame-sw:
+			3:
+				Filename: flame-sw.shp
 				Length: *
 				Offset: 7,-2
-			flame-s:
+			4:
+				Filename: flame-s.shp
 				Length: *
 				Offset: 3,-2
-			flame-se:
+			5:
+				Filename: flame-se.shp
 				Length: *
 				Offset: -5,-2
-			flame-e:
+			6:
+				Filename: flame-e.shp
 				Length: *
 				Offset: -7,2
-			flame-ne:
+			7:
+				Filename: flame-ne.shp
 				Length: *
 				Offset: -7,8
 		Facings: 8
 		Length: 13
-	icon: fturicon
+	icon:
+		Filename: fturicon.shp
 
 pbat:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: pbat.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
@@ -937,11 +1157,17 @@ pbat:
 		Facings: 32
 		UseClassicFacings: True
 		Offset: 0,-11
-	make: blank32
+	make:
+		Filename: blank32.shp
 		Length: *
 		Offset: 0,-11
-	bib: mbSAM
+	bib:
+		TilesetFilenames:
+			SNOW: mbSAM.sno
+			INTERIOR: mbSAM.int
+			TEMPERAT: mbSAM.tem
+			DESERT: mbSAM.des
 		Length: *
 		Offset: 0,1
-		UseTilesetExtension: true
-	icon: pbaticon
+	icon:
+		Filename: pbaticon.shp

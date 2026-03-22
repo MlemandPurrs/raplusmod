@@ -1,252 +1,357 @@
 tran:
 	Inherits: emp-overlay
-	idle: tran2
+	idle:
+		Filename: tran2.shp
 		Facings: 32
 		UseClassicFacings: True
-	rotor: lrotor
+	rotor:
+		Filename: lrotor.shp
 		Length: 4
-	rotor2: rrotor
+	rotor2:
+		Filename: rrotor.shp
 		Length: 4
-	slow-rotor: lrotor
+	slow-rotor:
+		Filename: lrotor.shp
 		Start: 4
 		Length: 8
-	slow-rotor2: rrotor
+	slow-rotor2:
+		Filename: rrotor.shp
 		Start: 4
 		Length: 8
-	open: tran2
+	open:
+		Filename: tran2.shp
 		Start: 32
 		Length: 4
-	unload: tran2
+	unload:
+		Filename: tran2.shp
 		Start: 35
-	icon: tranicon
-    svyt-icon: tran2icon
+	icon:
+		Filename: tranicon.shp
+	svyt-icon:
+		Filename: tranicon.shp
 
 iroq:
 	Inherits: emp-overlay
+	Defaults:
+		Filename: iroq.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
-	rotor: lrotor2blade
+	rotor:
+		Filename: lrotor2blade.shp
 		Length: 4
-	slow-rotor: lrotor2blade
+	slow-rotor:
+		Filename: lrotor2blade.shp
 		Start: 4
 		Length: 8
-	muzzle: minigun
+	muzzle:
+		Filename: minigun.shp
 		Length: 6
 		Facings: 8
-	icon: iroqicon
+	icon:
+		Filename: iroqicon.shp
 
 mi2:
 	Inherits: emp-overlay
+	Defaults:
+		Filename: mi2.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
-	rotor: lrotor2blade
+	rotor:
+		Filename: lrotor2blade.shp
 		Length: 4
-	slow-rotor: lrotor2blade
+	slow-rotor:
+		Filename: lrotor2blade.shp
 		Start: 4
 		Length: 8
-	icon: mi2icon
+	icon:
+		Filename: mi2icon.shp
 
 heli:
 	Inherits: emp-overlay
+	Defaults:
+		Filename: heli.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: minigun
+	muzzle:
+		Filename: minigun.shp
 		Length: 6
 		Facings: 8
-	rotor: lrotor
+	rotor:
+		Filename: lrotor.shp
 		Length: 4
-	slow-rotor: lrotor
+	slow-rotor:
+		Filename: lrotor.shp
 		Start: 4
 		Length: 8
-	icon: heliicon
+	icon:
+		Filename: heliicon.shp
 
 hind:
 	Inherits: emp-overlay
+	Defaults:
+		Filename: hind.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
-	rotor: lrotorlg
+	rotor:
+		Filename: lrotorlg.shp
 		Length: 4
-	slow-rotor: lrotorlg
+	slow-rotor:
+		Filename: lrotorlg.shp
 		Start: 4
 		Length: 8
-	muzzle: minigun
+	muzzle:
+		Filename: minigun.shp
 		Length: 6
 		Facings: 8
-	icon: hindicon
+	icon:
+		Filename: hindicon.shp
 
 smig:
 	Inherits: emp-overlay
+	Defaults:
+		Filename: smig.shp
 	idle:
 		Facings: 16
-	icon: cmigicon
+	icon:
+		Filename: cmigicon.shp
 
 ally-bdgr:
 	Inherits: emp-overlay
+	Defaults:
+		Filename: ally-bdgr.shp
 	idle:
 		Facings: 16
-	turret1: btr-tur-flip
+	turret1:
+		Filename: btr-tur-flip.shp
 		Start: 0
 		Facings: 32
 		ZOffset: -24
-	turret2: apc-tur-flip
+	turret2:
+		Filename: apc-tur-flip.shp
 		Start: 0
 		Facings: 32
 		ZOffset: -24
-	turret3: arty-tur-flip
+	turret3:
+		Filename: arty-tur-flip.shp
 		Start: 0
 		Facings: 32
 		ZOffset: -24
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 2
-	muzzle-mg: minigun
+	muzzle-mg:
+		Filename: minigun.shp
 		Length: 6
 		Facings: 8
-	icon: b52icon
+	icon:
+		Filename: b52icon.shp
 
 ally-yak:    
 	Inherits: emp-overlay
+	Defaults:
+		Filename: ally-yak.shp
 	idle:
 		Facings: 16
-	muzzle: minigun
+	muzzle:
+		Filename: minigun.shp
 		Length: 6
 		Facings: 8
-	icon: yakallyicon
+	icon:
+		Filename: yakallyicon.shp
 
 ally-mig:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: ally-mig.shp
 	idle:
 		Facings: 16
-	icon: migallyicon
+	icon:
+		Filename: migallyicon.shp
 
 ally-u2:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: ally-u2.shp
 	idle:
 		Facings: 16
 
 badr:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: badr.shp
 	idle:
 		Facings: 16
-	icon: badricon
+	icon:
+		Filename: badricon.shp
 
 yak:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: yak.shp
 	idle:
 		Facings: 16
-	muzzle: minigun
+	muzzle:
+		Filename: minigun.shp
 		Length: 6
 		Facings: 8
-	icon: yakicon
+	icon:
+		Filename: yakicon.shp
 
 mig:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: mig.shp
 	idle:
 		Facings: 16
-	icon: migicon
+	icon:
+		Filename: migicon.shp
 
 u2:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: u2.shp
 	idle:
 		Facings: 16
 
 nebr:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: nebr.shp
 	idle:
 		Facings: 16
-	icon: nebricon
+	icon:
+		Filename: nebricon.shp
 
 smig:
 	Inherits: emp-overlay
+	Defaults:
+		Filename: smig.shp
 	idle:
 		Facings: 16
 
 b2:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: b2.shp
 	idle:
 		Facings: 32
 
 harr:
 	Inherits: emp-overlay
+	Defaults:
+		Filename: harr.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
-	icon: harricon
+	icon:
+		Filename: harricon.shp
 
 blmp:
 	Inherits: emp-overlay
+	Defaults:
+		Filename: blmp.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
-	icon: blmpicon
+	icon:
+		Filename: blmpicon.shp
 
 minihind:
 	Inherits: emp-overlay
+	Defaults:
+		Filename: minihind.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
-	rotor: lbrotor2blademini
+	rotor:
+		Filename: lbrotor2blademini.shp
 		Length: 4
-	slow-rotor: lbrotor2blademini
+	slow-rotor:
+		Filename: lbrotor2blademini.shp
 		Start: 4
 		Length: 8
-	icon: hindicon
+	icon:
+		Filename: hindicon.shp
 
 minimig:
 	Inherits: emp-overlay
+	Defaults:
+		Filename: minimig.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
-	icon: migicon
+	icon:
+		Filename: migicon.shp
 
 halo:
 	Inherits: emp-overlay
-	idle: 
-        Start: 0
+	Defaults:
+		Filename: halo.shp
+	idle:
+		Start: 0
 		Facings: 32
 		UseClassicFacings: True
 	idle-grounded:
-        Start: 32
+		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	rotor: yrotorhg
+	rotor:
+		Filename: yrotorhg.shp
 		Length: 4
-	slow-rotor: yrotorhg
+	slow-rotor:
+		Filename: yrotorhg.shp
 		Start: 4
 		Length: 8
-	slow-rotor-shadow: yrotorhg
+	slow-rotor-shadow:
+		Filename: yrotorhg.shp
 		Start: 12
 		Length: 8
-	icon: haloicon
+	icon:
+		Filename: haloicon.shp
 
 krov:
 	Inherits: emp-overlay
-	idle: krov
+	Defaults:
+		Filename: krov.shp
+	idle:
+		Filename: krov.shp
 		Facings: 32
 		UseClassicFacings: True
-	rotor: krotor
+	rotor:
+		Filename: krotor.shp
 		Length: 4
-	slow-rotor: krotor
+	slow-rotor:
+		Filename: krotor.shp
 		Start: 4
 		Length: 8
-	icon: krovicon
+	icon:
+		Filename: krovicon.shp
 
 kroc:
 	Inherits: emp-overlay
-	idle: kroc
+	Defaults:
+		Filename: kroc.shp
+	idle:
+		Filename: kroc.shp
 		Facings: 32
 		UseClassicFacings: True
-	rotor: krotor
+	rotor:
+		Filename: krotor.shp
 		Length: 4
-	slow-rotor: krotor
+	slow-rotor:
+		Filename: krotor.shp
 		Start: 4
 		Length: 8
-	rotor-rear: lrotorlg
+	rotor-rear:
+		Filename: lrotorlg.shp
 		Length: 4
-	slow-rotor-rear: lrotorlg
+	slow-rotor-rear:
+		Filename: lrotorlg.shp
 		Start: 4
 		Length: 8
-	icon: krocicon
+	icon:
+		Filename: krocicon.shp

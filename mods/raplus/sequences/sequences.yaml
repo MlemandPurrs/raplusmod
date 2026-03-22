@@ -1,20 +1,28 @@
 
 mcv:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: mcv.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
-	icon: mcvicon
-    fake-icon: mcvficon
+	icon:
+		Filename: mcvicon.shp
+	fake-icon:
+		Filename: mcvficon.shp
 
 mcvhusk:
+	Defaults:
+		Filename: mcvhusk.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -1023
 
 harv:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: harv.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
@@ -22,129 +30,172 @@ harv:
 		Start: 32
 		Length: 8
 		Facings: 8
-	dock: harv
+	dock:
+		Filename: harv.shp
 		Start: 96
 		Length: 8
-	dock-loop: harv
+	dock-loop:
+		Filename: harv.shp
 		Start: 104
 		Length: 7
-	icon: harvicon
+	icon:
+		Filename: harvicon.shp
 
 harvempty:
 	Inherits: harv
+	Defaults:
+		Filename: harvempty.shp
 
 harvhalf:
 	Inherits: harv
+	Defaults:
+		Filename: harvhalf.shp
 
 harv.soviet:
-    Inherits: emp-overlay
-	idle: harvempty
+	Inherits: emp-overlay
+	idle:
+		Filename: harvempty.shp
 		Facings: 32
 		UseClassicFacings: True
-	harvest: harvempty
+	harvest:
+		Filename: harvempty.shp
 		Start: 32
 		Length: 8
 		Facings: 8
-	empty-idle: harvempty
+	empty-idle:
+		Filename: harvempty.shp
 		Facings: 32
 		UseClassicFacings: True
-	empty-harvest: harvempty
+	empty-harvest:
+		Filename: harvempty.shp
 		Start: 32
 		Length: 8
 		Facings: 8
-	half-idle: harvhalf
+	half-idle:
+		Filename: harvhalf.shp
 		Facings: 32
 		UseClassicFacings: True
-	half-harvest: harvhalf
+	half-harvest:
+		Filename: harvhalf.shp
 		Start: 32
 		Length: 8
 		Facings: 8
-	full-idle: harv
+	full-idle:
+		Filename: harv.shp
 		Facings: 32
 		UseClassicFacings: True
-	full-harvest: harv
+	full-harvest:
+		Filename: harv.shp
 		Start: 32
 		Length: 8
 		Facings: 8
-	dock: harv
+	dock:
+		Filename: harv.shp
 		Start: 96
 		Length: 8
-	dock-loop: harv
+	dock-loop:
+		Filename: harv.shp
 		Start: 104
 		Length: 7
-	turret: btr-tur
+	turret:
+		Filename: btr-tur.shp
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: minigun
+	muzzle:
+		Filename: minigun.shp
 		Length: 6
 		Facings: 8
-	icon: sovharvicon
+	icon:
+		Filename: sovharvicon.shp
 
 hhusk:
+	Defaults:
+		Filename: hhusk.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -1023
 
 hhusk2:
+	Defaults:
+		Filename: hhusk2.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -1023
 
 hhusk.soviet:
-	idle: hhusk
+	idle:
+		Filename: hhusk.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -1023
-	turret: btr-tur
+	turret:
+		Filename: btr-tur.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
 
 hhusk2.soviet:
-	idle: hhusk2
+	idle:
+		Filename: hhusk2.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -1023
-	turret: btr-tur
+	turret:
+		Filename: btr-tur.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
 
 charv:
 	Inherits: emp-overlay
-	idle: charv
+	Defaults:
+		Filename: charv.shp
+	idle:
+		Filename: charv.shp
 		Facings: 32
 		UseClassicFacings: True
-	harvest: charv
+	harvest:
+		Filename: charv.shp
 		Start: 32
 		Length: 8
 		Facings: 8
-	dock: charv
+	dock:
+		Filename: charv.shp
 		Start: 96
 		Length: 8
-	dock-loop: charv
+	dock-loop:
+		Filename: charv.shp
 		Start: 104
 		Length: 7
-	icon: charvicon
+	icon:
+		Filename: charvicon.shp
 
 charv.husk:
-	idle: charv
+	Defaults:
+		Filename: charv.shp
+	idle:
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
 
 truk:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: truk.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
-	icon: trukicon
-	fake-icon: truficon
+	icon:
+		Filename: trukicon.shp
+	fake-icon:
+		Filename: truficon.shp
 
 jeep:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: jeep.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
@@ -152,13 +203,17 @@ jeep:
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: minigun
+	muzzle:
+		Filename: minigun.shp
 		Length: 6
 		Facings: 8
-	icon: jeepicon
+	icon:
+		Filename: jeepicon.shp
 
 ftrk:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: ftrk.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
@@ -179,49 +234,66 @@ ftrk:
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True	
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 2
-	muzzle-mg: minigun
+	muzzle-mg:
+		Filename: minigun.shp
 		Length: 6
 		Facings: 8
 	muzzle-flamer:
+		Filename:
 		Combine:
-			flame-n:
+			0:
+				Filename: flame-n.shp
 				Length: *
 				Offset: 1,6
-			flame-nw:
+			1:
+				Filename: flame-nw.shp
 				Length: *
 				Offset: 8,7
-			flame-w:
+			2:
+				Filename: flame-w.shp
 				Length: *
 				Offset: 8,2
-			flame-sw:
+			3:
+				Filename: flame-sw.shp
 				Length: *
 				Offset: 7,-2
-			flame-s:
+			4:
+				Filename: flame-s.shp
 				Length: *
 				Offset: 1,-2
-			flame-se:
+			5:
+				Filename: flame-se.shp
 				Length: *
 				Offset: -5,-2
-			flame-e:
+			6:
+				Filename: flame-e.shp
 				Length: *
 				Offset: -7,2
-			flame-ne:
+			7:
+				Filename: flame-ne.shp
 				Length: *
 				Offset: -7,8
 		Facings: 8
 		Length: 13
-	icon: ftrkicon
-	repicon: rtrkicon
-	flameicon: ftrk-flame-icon
+	icon:
+		Filename: ftrkicon.shp
+	repicon:
+		Filename: rtrkicon.shp
+	flameicon:
+		Filename: ftrk-flame-icon.shp
 
 apc:
 	Inherits: emp-overlay
+	Defaults:
+		Filename: apc.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: minigun
+	muzzle:
+		Filename: minigun.shp
 		Length: 6
 		Facings: 8
 	open:
@@ -235,22 +307,30 @@ apc:
 	turret-rocket: rapc-tur
 		Facings: 32
 		UseClassicFacings: True
-	icon: apcicon
-	hapcicon: hapcicon
-	rapcicon: rapcicon
+	icon:
+		Filename: apcicon.shp
+	hapcicon:
+		Filename: hapcicon.shp
+	rapcicon:
+		Filename: rapcicon.shp
 
 mapc:
 	Inherits: emp-overlay
+	Defaults:
+		Filename: mapc.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
     turret: mrtr
         Facings: 8
 		UseClassicFacings: False
-	icon: mapcicon
+	icon:
+		Filename: mapcicon.shp
 
 1tnk:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: 1tnk.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
@@ -266,41 +346,52 @@ mapc:
 		Start: 0
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 2
-	muzzle-flak: minigun
+	muzzle-flak:
+		Filename: minigun.shp
 		Length: 6
 		Facings: 8
 	idle-float: 1tnk-float
 		Facings: 32
 		UseClassicFacings: True
-	icon: 1tnkicon
-	fake-icon: 1tnficon
-	flak-icon: atnkicon
+	icon:
+		Filename: 1tnkicon.shp
+	fake-icon:
+		Filename: 1tnficon.shp
+	flak-icon:
+		Filename: atnkicon.shp
 
 1tnk.destroyed:
-	idle: 1tnk
+	idle:
+		Filename: 1tnk.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
-	turret: 1tnk
+	turret:
+		Filename: 1tnk.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
 
 atnk.destroyed:
-	idle: 1tnk
+	idle:
+		Filename: 1tnk.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
-	turret: gapc-tur
+	turret:
+		Filename: gapc-tur.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
 
 2tnk:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: 2tnk.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
@@ -308,27 +399,35 @@ atnk.destroyed:
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 5
-	mg-muzzle: minigun
+	mg-muzzle:
+		Filename: minigun.shp
 		Length: 6
 		Facings: 8
-	icon: 2tnkicon
-	fake-icon: 2tnficon
+	icon:
+		Filename: 2tnkicon.shp
+	fake-icon:
+		Filename: 2tnficon.shp
 
 2tnk.destroyed:
-	idle: 2tnk
+	idle:
+		Filename: 2tnk.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
-	turret: 2tnk
+	turret:
+		Filename: 2tnk.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
 
 2tnks:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: 2tnks.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
@@ -336,16 +435,20 @@ atnk.destroyed:
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: *
-	icon: 2tnksicon
+	icon:
+		Filename: 2tnksicon.shp
 
 2tnks.destroyed:
-	idle: 2tnks
+	idle:
+		Filename: 2tnks.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
-	turret: 2tnks
+	turret:
+		Filename: 2tnks.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
@@ -353,30 +456,8 @@ atnk.destroyed:
 
 3tnk.1b:
 	Inherits: emp-overlay
-	idle: 3tnk-1b
-		Facings: 32
-		UseClassicFacings: True
-	turret: 3tnk-1b
-		Start: 32
-		Facings: 32
-		UseClassicFacings: True
-	muzzle: gunfire2
-		Length: 5
-	icon: 3tnkonebarlicon
-
-3tnk.1b.destroyed:
-	idle: 3tnk-1b
-		Facings: 32
-		UseClassicFacings: True
-		ZOffset: -512
-	turret: 3tnk-1b
-		Start: 32
-		Facings: 32
-		UseClassicFacings: True
-		ZOffset: -512
-  
-3tnk:
-    Inherits: emp-overlay   
+	Defaults:
+		Filename: 3tnk-1b.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
@@ -384,23 +465,59 @@ atnk.destroyed:
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 5
-	icon: 3tnkicon
+	icon:
+		Filename: 3tnkonebarlicon.shp
 
-3tnk.destroyed:
-	idle: 3tnk
+3tnk.1b.destroyed:
+	idle:
+		Filename: 3tnk-1b.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
-	turret: 3tnk
+	turret:
+		Filename: 3tnk-1b.shp
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+
+3tnk:
+	Inherits: emp-overlay
+	Defaults:
+		Filename: 3tnk.shp
+	idle:
+		Facings: 32
+		UseClassicFacings: True
+	turret:
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+	muzzle:
+		Filename: gunfire2.shp
+		Length: 5
+	icon:
+		Filename: 3tnkicon.shp
+
+3tnk.destroyed:
+	idle:
+		Filename: 3tnk.shp
+		Facings: 32
+		UseClassicFacings: True
+		ZOffset: -512
+	turret:
+		Filename: 3tnk.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
 
 4tnk:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: 4tnk.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
@@ -408,23 +525,29 @@ atnk.destroyed:
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 5
-	icon: 4tnkicon
+	icon:
+		Filename: 4tnkicon.shp
 
 4tnk.destroyed:
-	idle: 4tnk
+	idle:
+		Filename: 4tnk.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
-	turret: 4tnk
+	turret:
+		Filename: 4tnk.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
 
 4tnk-flame:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: 4tnk-flame.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
@@ -432,69 +555,90 @@ atnk.destroyed:
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	icon: 4tnk-flame-icon
+	icon:
+		Filename: 4tnk-flame-icon.shp
 
 4tnk-flame.destroyed:
-	idle: 4tnk-flame
+	idle:
+		Filename: 4tnk-flame.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
-	turret: 4tnk-flame
+	turret:
+		Filename: 4tnk-flame.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
 
 4tnk-arty:
-    Inherits: emp-overlay
-	idle: 4tnk
+	Inherits: emp-overlay
+	idle:
+		Filename: 4tnk.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: arty-tur-xl
+	turret:
+		Filename: arty-tur-xl.shp
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 5
-	icon: 4tnk-arty-icon
+	icon:
+		Filename: 4tnk-arty-icon.shp
 
 5tnk:
 	Inherits: emp-overlay
-	idle: behe
+	idle:
+		Filename: behe.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: 5tnk-tur
+	turret:
+		Filename: 5tnk-tur.shp
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: cruiser-muzzle
+	muzzle:
+		Filename: cruiser-muzzle.shp
 		Length: 20
 		Facings: 8
-	muzzle-mg: minigun
+	muzzle-mg:
+		Filename: minigun.shp
 		Length: 6
 		Facings: 8
-	icon: 5tnkicon
+	icon:
+		Filename: 4tnkicon.shp
 
 5tnk.destroyed:
-	idle: behe
+	idle:
+		Filename: behe.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
-	turret: 5tnk-tur
+	turret:
+		Filename: 5tnk-tur.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
 
 arty:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: arty.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 5
-	icon: artyicon
-	fake-icon: artficon
+	icon:
+		Filename: artyicon.shp
+	fake-icon:
+		Filename: artficon.shp
 
 v2rl:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: v2rl.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
@@ -502,10 +646,13 @@ v2rl:
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	icon: v2rlicon
+	icon:
+		Filename: v2rlicon.shp
 
 mnly:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: mnly.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
@@ -514,70 +661,95 @@ mnly:
 		UseClassicFacings: True
 	rep-tur: repair-tur
 		Facings: 32
-	muzzle: minigun
+	muzzle:
+		Filename: minigun.shp
 		Length: 6
 		Facings: 8
-	icon: mnlyicon
-	sprticon: gdimnlyicon
+	icon:
+		Filename: mnlyicon.shp
+	sprticon:
+		Filename: gdimnlyicon.shp
 
 mnlynuke:
-    Inherits: emp-overlay
-	idle: mnly-nuke
+	Inherits: emp-overlay
+	idle:
+		Filename: mnly-nuke.shp
 		Facings: 32
 		UseClassicFacings: True
-	icon: mnlynukeicon
+	icon:
+		Filename: mnlyicon.shp
 
 mrj:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: mrj.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
-	turret: mgun
+	turret:
+		Filename: mgun.shp
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: minigun
+	muzzle:
+		Filename: minigun.shp
 		Length: 6
 		Facings: 8
 	spinner:
 		Start: 32
 		Length: 32
-	turret2: ssm
+	turret2:
+		Filename: ssm.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	turret1: ssm
+	turret1:
+		Filename: ssm.shp
 		Start: 64
 		Facings: 32
 		UseClassicFacings: True
-	turret0: ssm
+	turret0:
+		Filename: ssm.shp
 		Start: 96
 		Facings: 32
 		UseClassicFacings: True
-	icon: mrjicon
-	mhqicon: mhqicon
-	samlicon: samlicon
+	icon:
+		Filename: mrjicon.shp
+	mhqicon:
+		Filename: mhqicon.shp
+	samlicon:
+		Filename: samlicon.shp
 
 stnk:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: stnk.shp
 	idle: papc
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: minigun
+	muzzle:
+		Filename: minigun.shp
 		Length: 6
 		Facings: 8
-	icon: stnkicon
+	icon:
+		Filename: stnkicon.shp
 
 ctnk:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: ctnk.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 5
-	icon: ctnkicon
+	icon:
+		Filename: ctnkicon.shp
 
 ttnk:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: ttnk.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
@@ -587,10 +759,13 @@ ttnk:
 	spinner-not:
 		Start: 32
 		Length: 1
-	icon: ttnkicon
+	icon:
+		Filename: ttnkicon.shp
 
 qtnk:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: qtnk.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
@@ -598,20 +773,26 @@ qtnk:
 		Start: 32
 		Facings: 8
 		Length: 8
-	icon: qtnkicon
+	icon:
+		Filename: qtnkicon.shp
 
 dtrk:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: dtrk.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
     truk-body: truk
 		Facings: 32
 		UseClassicFacings: True
-	icon: dtrkicon
+	icon:
+		Filename: dtrkicon.shp
 
 mgg:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: mgg.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
@@ -626,66 +807,87 @@ mgg:
     turret: ssam
         Facings: 32
         UseClassicFacings: False
-    muzzle: mgg
-        Length: 2
-	icon: mggicon
-	msam-icon: msamicon
-	fake-icon: mggficon
+	muzzle:
+		Filename: mgg.shp
+		Length: 2
+	icon:
+		Filename: mggicon.shp
+	msam-icon:
+		Filename: msamicon.shp
+	fake-icon:
+		Filename: mggficon.shp
 
 mgg.destroyed:
-	idle: mgg
+	idle:
+		Filename: mgg.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
-	spinner: mgg
+	spinner:
+		Filename: mgg.shp
 		Start: 32
 		Length: 8
 		ZOffset: -512
-	spinner-idle: mgg
+	spinner-idle:
+		Filename: mgg.shp
 		Start: 32
 
 tnkd:
 	Inherits: emp-overlay
+	Defaults:
+		Filename: tnkd.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 2
-	icon: tnkdicon
+	icon:
+		Filename: tnkdicon.shp
 
 tnkd.destroyed:
-	idle: tnkd
+	idle:
+		Filename: tnkd.shp
 		Facings: 32
 		UseClassicFacings: True
 
 prsm:
 	Inherits: emp-overlay
+	Defaults:
+		Filename: prsm.shp
 	idle: prsm
 		Facings: 32
 		UseClassicFacings: True
 	turret: prsm-tur
 		Facings: 32
 		UseClassicFacings: True
-	icon: prsmicon
+	icon:
+		Filename: prsmicon.shp
 
 prsm.destroyed:
-	idle: prsm
+	idle:
+		Filename: prsm.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
-	turret: prsm-tur
+	turret:
+		Filename: prsm-tur.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
 
 tran1husk:
 	idle:
+		Filename: tran1husk.shp
 
 tran2husk:
 	idle:
+		Filename: tran2husk.shp
 
 icbm:
 	Inherits: emp-overlay
+	Defaults:
+		Filename: icbm.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
@@ -693,36 +895,50 @@ icbm:
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	icon: icbmicon
+	icon:
+		Filename: icbmicon.shp
 
 gcan:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: gcan.shp
 	idle: 
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 5
-	icon: gcanicon
+	icon:
+		Filename: gcanicon.shp
 
 batf:
 	Inherits: emp-overlay
+	Defaults:
+		Filename: batf.shp
 	idle: batf
 		Facings: 32
         UseClassicFacings: True
-	muzzle: minigun
+	muzzle:
+		Filename: minigun.shp
 		Length: 6
 		Facings: 8
-	icon: batficon
+	icon:
+		Filename: batficon.shp
 
 mwf:
 	Inherits: emp-overlay
+	Defaults:
+		Filename: mwf.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
-	icon: mwfsvyticon
+	icon:
+		Filename: mwfsvyticon.shp
 
 mgnt:
 	Inherits: emp-overlay
+	Defaults:
+		Filename: mgnt.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
@@ -730,14 +946,17 @@ mgnt:
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	icon: 4tnkicon
+	icon:
+		Filename: 4tnkicon.shp
 
 mgnt.destroyed:
-	idle: mgnt
+	idle:
+		Filename: mgnt.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
-	turret: mgnt
+	turret:
+		Filename: mgnt.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
@@ -745,22 +964,29 @@ mgnt.destroyed:
 
 isu:
 	Inherits: emp-overlay
+	Defaults:
+		Filename: isu.shp
 	idle: isu
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: smokeygun
+	muzzle:
+		Filename: smokeygun.shp
 		Length: 12
 		Tick: 30
-	icon: isuicon
+	icon:
+		Filename: isuicon.shp
 
 isu.destroyed:
-	idle: isu
+	idle:
+		Filename: isu.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
 
 gtnk:
-    Inherits: emp-overlay
+	Inherits: emp-overlay
+	Defaults:
+		Filename: gtnk.shp
 	idle: gtnk
 		Facings: 32
 		UseClassicFacings: True
@@ -772,19 +998,24 @@ gtnk:
 		Start: 64
 		Facings: 32
 		UseClassicFacings: True
-	muzzle-mg: minigun
+	muzzle-mg:
+		Filename: minigun.shp
 		Length: 6
 		Facings: 8
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 2
-	icon: gtnkicon
+	icon:
+		Filename: gtnkicon.shp
 
 gtnk.destroyed:
-	idle: gtnk
+	idle:
+		Filename: gtnk.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
-	turret: gtnk
+	turret:
+		Filename: gtnk.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True

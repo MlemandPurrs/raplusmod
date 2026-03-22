@@ -1,5 +1,7 @@
 ifv:
 	Inherits: emp-overlay
+	Defaults:
+		Filename: ifv.shp
 	idle: 0tnk
 		Facings: 32
 		UseClassicFacings: True
@@ -33,7 +35,8 @@ ifv:
 	turret-mortar: gapc-tur
 		Facings: 32
 		UseClassicFacings: True
-	icon: ifvicon
+	icon:
+		Filename: ifvicon.shp
 
 dtnk.destroyed:
 	idle: mnly
