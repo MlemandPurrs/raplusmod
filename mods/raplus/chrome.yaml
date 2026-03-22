@@ -4,10 +4,24 @@
 ^Dialog:
 	Image: dialog.png
 
+# Explizit Vanilla-RA-Glyphs (raplus|uibits kann veraltete/falsche PNGs enthalten → wirkte wie C&C1-UI)
 ^Glyphs:
-	Image: glyphs.png
-	Image2x: glyphs-2x.png
-	Image3x: glyphs-3x.png
+	Image: ra|uibits/glyphs.png
+	Image2x: ra|uibits/glyphs-2x.png
+	Image3x: ra|uibits/glyphs-3x.png
+
+# Debug-Menü-Button: Koordinaten passen zur Raplus-Glyph-Tafel, nicht zu ra|glyphs (sonst z.B. UK-Flagge).
+^GlyphsRaplusDebug:
+	Image: raplus|uibits/glyphs.png
+	Image2x: raplus|uibits/glyphs-2x.png
+	Image3x: raplus|uibits/glyphs-3x.png
+
+debug-order-icons:
+	Inherits: ^GlyphsRaplusDebug
+	Regions:
+		debug: 221, 51, 16, 16
+		debug-disabled: 221, 67, 16, 16
+		debug-active: 221, 83, 16, 16
 
 ^LoadScreen:
 	Image: loadscreen.png
@@ -193,9 +207,6 @@ order-icons:
 		stats: 204, 68, 16, 16
 		stats-disabled: 204, 85, 16, 16
 		stats-active: 204, 102, 16, 16
-		debug: 221, 51, 16, 16
-		debug-disabled: 221, 67, 16, 16
-		debug-active: 221, 83, 16, 16
 
 power-icons:
 	Inherits: ^Glyphs
@@ -225,6 +236,14 @@ stance-icons:
 		hold-fire-disabled: 51, 136, 16, 16
 		hold-fire-active: 51, 153, 16, 16
 
+stance-icons-highlighted:
+	Inherits: stance-icons
+	Regions:
+		attack-anything: 0, 153, 16, 16
+		defend: 17, 153, 16, 16
+		return-fire: 34, 153, 16, 16
+		hold-fire: 51, 153, 16, 16
+
 command-icons:
 	Inherits: ^Glyphs
 	Regions:
@@ -244,6 +263,9 @@ command-icons:
 		stop-disabled: 150, 232, 24, 24
 		queue-orders: 175, 207, 24, 24
 		queue-orders-disabled: 175, 232, 24, 24
+
+command-icons-highlighted:
+	Inherits: command-icons
 
 sidebar-observer:
 	Inherits: ^Sidebar
@@ -292,14 +314,22 @@ observer-scrollpanel-button-disabled:
 	Inherits: ^Dialog
 	PanelRegion: 769, 385, 2, 2, 122, 122, 2, 2
 
-observer-scrollheader-selected:
+observer-scrollheader:
 	Inherits: observer-scrollpanel-button-disabled
 
-observer-scrollitem-selected:
-	Inherits: observer-scrollpanel-button-pressed
+observer-scrollheader-highlighted:
+	Inherits: observer-scrollpanel-button-disabled
+
+observer-scrollitem:
 
 observer-scrollitem-hover:
 	Inherits: observer-scrollpanel-button
+
+observer-scrollitem-pressed:
+	Inherits: observer-scrollpanel-button
+
+observer-scrollitem-highlighted:
+	Inherits: observer-scrollpanel-button-pressed
 
 dialog:
 	Inherits: ^Dialog
@@ -336,6 +366,7 @@ lobby-bits:
 		spawn-unclaimed: 91, 119, 22, 22
 		spawn-disabled: 114, 119, 22, 22
 		admin: 170, 0, 6, 5
+		bot: 170, 51, 16, 16
 		colorpicker: 68, 119, 22, 22
 		huepicker: 136, 0, 7, 15
 		kick: 153, 0, 11, 11
@@ -523,6 +554,39 @@ slider-thumb-disabled:
 checkbox:
 	Inherits: button-pressed
 
+checkmark-tick:
+	Inherits: ^Glyphs
+	Regions:
+		checked: 187, 0, 16, 16
+		checked-pressed: 204, 0, 16, 16
+		unchecked: 0, 0, 0, 0
+		unchecked-pressed: 204, 0, 16, 16
+
+checkmark-tick-highlighted:
+	Inherits: checkmark-tick
+
+checkmark-cross:
+	Inherits: ^Glyphs
+	Regions:
+		checked: 221, 0, 16, 16
+		checked-pressed: 238, 0, 16, 16
+		unchecked: 0, 0, 0, 0
+		unchecked-pressed: 238, 0, 16, 16
+
+checkmark-cross-highlighted:
+	Inherits: checkmark-cross
+
+checkmark-mute:
+	Inherits: ^Glyphs
+	Regions:
+		unchecked: 0, 170, 16, 16
+		unchecked-pressed: 17, 170, 16, 16
+		checked: 17, 170, 16, 16
+		checked-pressed: 0, 170, 16, 16
+
+checkmark-mute-highlighted:
+	Inherits: checkmark-mute
+
 checkbox-bits:
 	Inherits: ^Glyphs
 	Regions:
@@ -549,16 +613,26 @@ checkbox-highlighted-hover:
 checkbox-highlighted-disabled:
 	Inherits: checkbox-disabled
 
-scrollitem-selected:
-	Inherits: button-pressed
+scrollitem:
 
 scrollitem-hover:
 	Inherits: button
 
-scrollheader-selected:
+scrollitem-pressed:
 	Inherits: button
 
+scrollitem-highlighted:
+	Inherits: button-pressed
+
 scrollitem-nohover:
+
+scrollitem-nohover-highlighted:
+
+scrollheader:
+	Inherits: button
+
+scrollheader-highlighted:
+	Inherits: button
 
 logos:
 	Inherits: ^LoadScreen
