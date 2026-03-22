@@ -289,7 +289,13 @@ if (Test-Path "user.config")
 
 $modID = $env:MOD_ID
 
-$env:MOD_SEARCH_PATHS = (Get-Item -Path ".\" -Verbose).FullName + "\mods,./mods"
+# Mod-Abhängigkeiten (z. B. raplus -> ra) liegen unter engine/mods; beide Pfade müssen gesetzt sein.
+$repoRoot = (Get-Item -Path ".\" -Verbose).FullName
+$repoMods = Join-Path $repoRoot "mods"
+$engineDirRel = $env:ENGINE_DIRECTORY.TrimStart('.', '\', '/')
+$engineDirAbs = [System.IO.Path]::GetFullPath((Join-Path $repoRoot $engineDirRel))
+$engineMods = Join-Path $engineDirAbs "mods"
+$env:MOD_SEARCH_PATHS = "$repoMods,$engineMods"
 $env:ENGINE_DIR = ".."
 
 # Fetch the engine if required
