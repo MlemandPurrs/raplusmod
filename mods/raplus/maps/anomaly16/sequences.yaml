@@ -1,15 +1,19 @@
 anomaly:
-	idle: litning
+	idle:
+		Filename: litning
 		Length: 4
 		ZOffset: 1023
 
 anomalytrail:
-	idle: litning
+	idle:
+		Filename: litning
 		Length: 8
 		ZOffset: 1023
 
 rock3:
-	idle: rock3.des
+	idle:
+		Filename: rock3.des
 		AddExtension: false
-	active: rock3.des
+	active:
+		Filename: rock3.des
 		AddExtension: false
