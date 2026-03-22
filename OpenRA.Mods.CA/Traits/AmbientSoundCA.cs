@@ -1,4 +1,4 @@
-﻿#region Copyright & License Information
+#region Copyright & License Information
 /*
  * Copyright 2007-2020 The OpenRA Developers (see AUTHORS)
  * This file is part of OpenRA, which is free software. It is made
@@ -9,6 +9,7 @@
  */
 #endregion
 
+using System;
 using System.Collections.Generic;
 using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Traits;
@@ -49,7 +50,7 @@ namespace OpenRA.Mods.CA.Traits.Sound
 		public AmbientSoundCA(Actor self, AmbientSoundCAInfo info)
 			: base(info)
 		{
-			delay = Util.RandomDelay(self.World, info.Delay);
+			delay = RandomDelay(self.World, info.Delay);
 			loop = Info.Interval.Length == 0 || (Info.Interval.Length == 1 && Info.Interval[0] == 0);
 		}
 
@@ -79,7 +80,7 @@ namespace OpenRA.Mods.CA.Traits.Sound
 			{
 				StartSound(self);
 				if (!loop)
-					delay = Util.RandomDelay(self.World, Info.Interval);
+					delay = RandomDelay(self.World, Info.Interval);
 			}
 		}
 
@@ -110,9 +111,27 @@ namespace OpenRA.Mods.CA.Traits.Sound
 			currentSounds.Clear();
 		}
 
-		protected override void TraitEnabled(Actor self) { delay = Util.RandomDelay(self.World, Info.Delay); }
+		protected override void TraitEnabled(Actor self) { delay = RandomDelay(self.World, Info.Delay); }
 		protected override void TraitDisabled(Actor self) { StopSound(); }
 
 		void INotifyRemovedFromWorld.RemovedFromWorld(Actor self) { StopSound(); }
+
+		static int RandomDelay(OpenRA.World world, int[] range)
+		{
+			if (range == null || range.Length == 0)
+				return 0;
+
+			if (range.Length == 1)
+				return range[0];
+
+			var min = Math.Min(range[0], range[1]);
+			var max = Math.Max(range[0], range[1]);
+
+			if (min == max)
+				return min;
+
+			// Match existing usage of MersenneTwister.Next(min, max) (upper bound exclusive).
+			return world.SharedRandom.Next(min, max);
+		}
 	}
 }

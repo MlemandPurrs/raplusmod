@@ -1,4 +1,4 @@
-﻿#region Copyright & License Information
+#region Copyright & License Information
 /*
  * Copyright 2007-2020 The OpenRA Developers (see AUTHORS)
  * This file is part of OpenRA, which is free software. It is made
@@ -53,7 +53,7 @@ namespace OpenRA.Mods.CA.Traits.Render
 				{
 					var renderSprites = disguiseActor.TraitInfoOrDefault<RenderSpritesInfo>();
 					if (renderSprites != null)
-						disguiseImage = renderSprites.GetImage(disguiseActor, self.World.Map.Rules.Sequences, disguisePlayer.Faction.InternalName);
+						disguiseImage = renderSprites.GetImage(disguiseActor, disguisePlayer.Faction.InternalName);
 				}
 
 				var withSpriteBody = disguiseActor.TraitInfoOrDefault<WithSpriteBodyInfo>();

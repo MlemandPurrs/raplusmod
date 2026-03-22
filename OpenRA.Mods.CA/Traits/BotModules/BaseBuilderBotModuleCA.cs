@@ -179,10 +179,12 @@ namespace OpenRA.Mods.CA.Traits
 
 		protected override void TraitEnabled(Actor self)
 		{
-			var tileset = world.Map.Rules.TileSet;
-			resourceTypeIndices = new BitArray(tileset.TerrainInfo.Length); // Big enough
-			foreach (var t in world.Map.Rules.Actors["world"].TraitInfos<ResourceTypeInfo>())
-				resourceTypeIndices.Set(tileset.GetTerrainIndex(t.TerrainType), true);
+			var terrainInfo = world.Map.Rules.TerrainInfo;
+			resourceTypeIndices = new BitArray(terrainInfo.TerrainTypes.Length); // Big enough
+			var resourceLayerInfo = world.Map.Rules.Actors["world"].TraitInfoOrDefault<ResourceLayerInfo>();
+			if (resourceLayerInfo?.ResourceTypes != null)
+				foreach (var t in resourceLayerInfo.ResourceTypes.Values)
+					resourceTypeIndices.Set(terrainInfo.GetTerrainIndex(t.TerrainType), true);
 
 			foreach (var building in Info.BuildingQueues)
 				builders.Add(new BaseBuilderQueueManagerCA(this, building, player, playerPower, playerResources, resourceTypeIndices));
@@ -322,16 +324,16 @@ namespace OpenRA.Mods.CA.Traits
 			};
 		}
 
-		void IGameSaveTraitData.ResolveTraitData(Actor self, List<MiniYamlNode> data)
+		void IGameSaveTraitData.ResolveTraitData(Actor self, MiniYaml data)
 		{
 			if (self.World.IsReplay)
 				return;
 
-			var initialBaseCenterNode = data.FirstOrDefault(n => n.Key == "InitialBaseCenter");
+			var initialBaseCenterNode = data.NodeWithKeyOrDefault("InitialBaseCenter");
 			if (initialBaseCenterNode != null)
 				initialBaseCenter = FieldLoader.GetValue<CPos>("InitialBaseCenter", initialBaseCenterNode.Value.Value);
 
-			var defenseCenterNode = data.FirstOrDefault(n => n.Key == "DefenseCenter");
+			var defenseCenterNode = data.NodeWithKeyOrDefault("DefenseCenter");
 			if (defenseCenterNode != null)
 				defenseCenter = FieldLoader.GetValue<CPos>("DefenseCenter", defenseCenterNode.Value.Value);
 		}

@@ -1,4 +1,4 @@
-﻿#region Copyright & License Information
+#region Copyright & License Information
 /*
  * Copyright 2015- OpenRA.Mods.AS Developers (see AUTHORS)
  * This file is a part of a third-party plugin for OpenRA, which is
@@ -9,6 +9,7 @@
 #endregion
 
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using OpenRA.Activities;
 using OpenRA.Mods.CA.Activities;
@@ -43,7 +44,8 @@ namespace OpenRA.Mods.CA.Traits
 
 		public override object Create(ActorInitializer init) { return new BallisticMissile(init, this); }
 
-		public IReadOnlyDictionary<CPos, SubCell> OccupiedCells(ActorInfo info, CPos location, SubCell subCell = SubCell.Any) { return new ReadOnlyDictionary<CPos, SubCell>(); }
+		public IReadOnlyDictionary<CPos, SubCell> OccupiedCells(ActorInfo info, CPos location, SubCell subCell = SubCell.Any)
+			{ return new ReadOnlyDictionary<CPos, SubCell>(new Dictionary<CPos, SubCell>()); }
 		bool IOccupySpaceInfo.SharesCell { get { return false; } }
 		public bool CanEnterCell(World world, Actor self, CPos cell, SubCell subCell = SubCell.FullCell, Actor ignoreActor = null, BlockedByActor check = BlockedByActor.All)
 		{
@@ -161,6 +163,8 @@ namespace OpenRA.Mods.CA.Traits
 
 		public void SetVisualPosition(Actor self, WPos pos) { SetPosition(self, pos); }
 
+		public void SetCenterPosition(Actor self, WPos pos) { SetPosition(self, pos); }
+
 		// Changes position, but not altitude
 		public void SetPosition(Actor self, CPos cell, SubCell subCell = SubCell.Any)
 		{
@@ -231,6 +235,16 @@ namespace OpenRA.Mods.CA.Traits
 		public Activity VisualMove(Actor self, WPos fromPos, WPos toPos)
 		{
 			return new BallisticMissileFly(self, Target.FromPos(toPos), this);
+		}
+
+		public Activity LocalMove(Actor self, WPos fromPos, WPos toPos)
+		{
+			return new BallisticMissileFly(self, Target.FromPos(toPos), this);
+		}
+
+		public Activity MoveOntoTarget(Actor self, in Target target, in WVec offset, WAngle? facing, Color? targetLineColor = null)
+		{
+			return new BallisticMissileFly(self, target, this);
 		}
 
 		public int EstimatedMoveDuration(Actor self, WPos fromPos, WPos toPos)

@@ -1,4 +1,4 @@
-﻿#region Copyright & License Information
+#region Copyright & License Information
 /*
  * Copyright 2015- OpenRA.Mods.AS Developers (see AUTHORS)
  * This file is a part of a third-party plugin for OpenRA, which is
@@ -50,7 +50,7 @@ namespace OpenRA.Mods.CA.Traits
 		public override object Create(ActorInitializer init) { return new ChronoResourceDelivery(init.Self, this); }
 	}
 
-	public class ChronoResourceDelivery : ConditionalTrait<ChronoResourceDeliveryInfo>, INotifyHarvesterAction, ITick
+	public class ChronoResourceDelivery : ConditionalTrait<ChronoResourceDeliveryInfo>, INotifyHarvestAction, INotifyDockClient, INotifyDockClientMoving, ITick
 	{
 		CPos? destination = null;
 		CPos harvestedField;
@@ -74,31 +74,36 @@ namespace OpenRA.Mods.CA.Traits
 				ticksTillCheck--;
 		}
 
-		public void MovingToResources(Actor self, CPos targetCell)
+		void INotifyHarvestAction.MovingToResources(Actor self, CPos targetCell)
 		{
 			Reset();
 		}
 
-		public void MovingToRefinery(Actor self, Actor refineryActor)
+		void INotifyDockClientMoving.MovingToDock(Actor self, Actor hostActor, IDockHost host)
 		{
-			var deliverypos = refineryActor.Location + refineryActor.Trait<IAcceptResources>().DeliveryOffset;
+			var deliveryPos = self.World.Map.CellContaining(host.DockPosition);
 
-			if (destination != null && destination.Value != deliverypos)
+			if (destination != null && destination.Value != deliveryPos)
 				ticksTillCheck = 0;
 
 			harvestedField = self.World.Map.CellContaining(self.CenterPosition);
 
-			destination = deliverypos;
+			destination = deliveryPos;
 		}
 
-		public void MovementCancelled(Actor self)
+		void INotifyHarvestAction.MovementCancelled(Actor self)
 		{
 			Reset();
 		}
 
-		public void Harvested(Actor self, ResourceType resource) { }
-		public void Docked() { }
-		public void Undocked() { }
+		void INotifyDockClientMoving.MovementCancelled(Actor self)
+		{
+			Reset();
+		}
+
+		void INotifyHarvestAction.Harvested(Actor self, string resourceType) { }
+		void INotifyDockClient.Docked(Actor self, Actor host) { }
+		void INotifyDockClient.Undocked(Actor self, Actor host) { }
 
 		void TeleportIfPossible(Actor self)
 		{

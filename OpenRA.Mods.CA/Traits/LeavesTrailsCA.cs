@@ -1,4 +1,4 @@
-﻿#region Copyright & License Information
+#region Copyright & License Information
 /*
  * Copyright 2007-2020 The OpenRA Developers (see AUTHORS)
  * This file is part of OpenRA, which is free software. It is made
@@ -119,7 +119,7 @@ namespace OpenRA.Mods.CA.Traits.Render
 				if (++offset >= Info.Offsets.Length)
 					offset = 0;
 
-				var offsetRotation = Info.Offsets[offset].Rotate(body.QuantizeOrientation(self, self.Orientation));
+				var offsetRotation = Info.Offsets[offset].Rotate(body.QuantizeOrientation(self.Orientation));
 				var spawnPosition = Info.SpawnAtLastPosition ? cachedPosition : self.CenterPosition;
 
 				var pos = Info.Type == TrailType.CenterPosition ? spawnPosition + body.LocalToWorld(offsetRotation) :

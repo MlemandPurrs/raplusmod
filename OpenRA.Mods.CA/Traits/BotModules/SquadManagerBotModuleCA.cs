@@ -446,16 +446,16 @@ namespace OpenRA.Mods.CA.Traits
 			};
 		}
 
-		void IGameSaveTraitData.ResolveTraitData(Actor self, List<MiniYamlNode> data)
+		void IGameSaveTraitData.ResolveTraitData(Actor self, MiniYaml data)
 		{
 			if (self.World.IsReplay)
 				return;
 
-			var initialBaseCenterNode = data.FirstOrDefault(n => n.Key == "InitialBaseCenter");
+			var initialBaseCenterNode = data.NodeWithKeyOrDefault("InitialBaseCenter");
 			if (initialBaseCenterNode != null)
 				initialBaseCenter = FieldLoader.GetValue<CPos>("InitialBaseCenter", initialBaseCenterNode.Value.Value);
 
-			var unitsHangingAroundTheBaseNode = data.FirstOrDefault(n => n.Key == "UnitsHangingAroundTheBase");
+			var unitsHangingAroundTheBaseNode = data.NodeWithKeyOrDefault("UnitsHangingAroundTheBase");
 			if (unitsHangingAroundTheBaseNode != null)
 			{
 				unitsHangingAroundTheBase.Clear();
@@ -463,7 +463,7 @@ namespace OpenRA.Mods.CA.Traits
 					.Select(a => self.World.GetActorById(a)).Where(a => a != null));
 			}
 
-			var activeUnitsNode = data.FirstOrDefault(n => n.Key == "ActiveUnits");
+			var activeUnitsNode = data.NodeWithKeyOrDefault("ActiveUnits");
 			if (activeUnitsNode != null)
 			{
 				activeUnits.Clear();
@@ -471,23 +471,23 @@ namespace OpenRA.Mods.CA.Traits
 					.Select(a => self.World.GetActorById(a)).Where(a => a != null));
 			}
 
-			var rushTicksNode = data.FirstOrDefault(n => n.Key == "RushTicks");
+			var rushTicksNode = data.NodeWithKeyOrDefault("RushTicks");
 			if (rushTicksNode != null)
 				rushTicks = FieldLoader.GetValue<int>("RushTicks", rushTicksNode.Value.Value);
 
-			var assignRolesTicksNode = data.FirstOrDefault(n => n.Key == "AssignRolesTicks");
+			var assignRolesTicksNode = data.NodeWithKeyOrDefault("AssignRolesTicks");
 			if (assignRolesTicksNode != null)
 				assignRolesTicks = FieldLoader.GetValue<int>("AssignRolesTicks", assignRolesTicksNode.Value.Value);
 
-			var attackForceTicksNode = data.FirstOrDefault(n => n.Key == "AttackForceTicks");
+			var attackForceTicksNode = data.NodeWithKeyOrDefault("AttackForceTicks");
 			if (attackForceTicksNode != null)
 				attackForceTicks = FieldLoader.GetValue<int>("AttackForceTicks", attackForceTicksNode.Value.Value);
 
-			var minAttackForceDelayTicksNode = data.FirstOrDefault(n => n.Key == "MinAttackForceDelayTicks");
+			var minAttackForceDelayTicksNode = data.NodeWithKeyOrDefault("MinAttackForceDelayTicks");
 			if (minAttackForceDelayTicksNode != null)
 				minAttackForceDelayTicks = FieldLoader.GetValue<int>("MinAttackForceDelayTicks", minAttackForceDelayTicksNode.Value.Value);
 
-			var squadsNode = data.FirstOrDefault(n => n.Key == "Squads");
+			var squadsNode = data.NodeWithKeyOrDefault("Squads");
 			if (squadsNode != null)
 			{
 				SquadsCA.Clear();

@@ -1,4 +1,4 @@
-﻿#region Copyright & License Information
+#region Copyright & License Information
 /*
  * Copyright 2007-2020 The OpenRA Developers (see AUTHORS)
  * This file is part of OpenRA, which is free software. It is made
@@ -9,7 +9,6 @@
  */
 #endregion
 
-using System;
 using System.Linq;
 using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Traits;
@@ -31,21 +30,13 @@ namespace OpenRA.Mods.CA.Traits
 	{
 		public new readonly SeedsResourceCAInfo Info;
 
-		readonly ResourceType resourceType;
-		readonly ResourceLayer resLayer;
+		readonly IResourceLayer resourceLayer;
 
 		public SeedsResourceCA(Actor self, SeedsResourceCAInfo info)
 			: base(info)
 		{
 			Info = info;
-
-			resourceType = self.World.WorldActor.TraitsImplementing<ResourceType>()
-				.FirstOrDefault(t => t.Info.Type == info.ResourceType);
-
-			if (resourceType == null)
-				throw new InvalidOperationException("No such resource type `{0}`".F(info.ResourceType));
-
-			resLayer = self.World.WorldActor.Trait<ResourceLayer>();
+			resourceLayer = self.World.WorldActor.Trait<IResourceLayer>();
 		}
 
 		int ticks;
@@ -66,12 +57,11 @@ namespace OpenRA.Mods.CA.Traits
 		{
 			var cell = Util.RandomWalk(self.Location, self.World.SharedRandom)
 				.Take(Info.MaxRange)
-				.SkipWhile(p => !self.World.Map.Contains(p) ||
-					(resLayer.GetResourceType(p) == resourceType && resLayer.IsFull(p)))
+				.SkipWhile(p => resourceLayer.GetResource(p).Type == Info.ResourceType && !resourceLayer.CanAddResource(Info.ResourceType, p))
 				.Cast<CPos?>().FirstOrDefault();
 
-			if (cell != null && resLayer.CanSpawnResourceAt(resourceType, cell.Value))
-				resLayer.AddResource(resourceType, cell.Value, 1);
+			if (cell != null && resourceLayer.CanAddResource(Info.ResourceType, cell.Value))
+				resourceLayer.AddResource(Info.ResourceType, cell.Value);
 		}
 	}
 }

@@ -1,4 +1,4 @@
-﻿#region Copyright & License Information
+#region Copyright & License Information
 /*
  * Copyright 2015- OpenRA.Mods.AS Developers (see AUTHORS)
  * This file is a part of a third-party plugin for OpenRA, which is
@@ -109,7 +109,7 @@ namespace OpenRA.Mods.CA.Traits
 
 		WVec PortOffset(Actor self, WVec offset)
 		{
-			var bodyOrientation = coords.Value.QuantizeOrientation(self, self.Orientation);
+			var bodyOrientation = coords.Value.QuantizeOrientation(self.Orientation);
 			return coords.Value.LocalToWorld(offset.Rotate(bodyOrientation));
 		}
 
@@ -133,8 +133,7 @@ namespace OpenRA.Mods.CA.Traits
 				paxFacing[a.Actor].Facing = muzzleFacing;
 				paxPos[a.Actor].SetVisualPosition(a.Actor, pos + PortOffset(self, port));
 
-				var barrel = a.CheckFire(a.Actor, facing, target);
-				if (barrel == null)
+				if (!a.CheckFire(a.Actor, facing, target))
 					continue;
 
 				if (a.Info.MuzzleSequence != null)
@@ -154,8 +153,6 @@ namespace OpenRA.Mods.CA.Traits
 					muzzleAnim.PlayThen(sequence, () => muzzles.Remove(pair));
 				}
 
-				foreach (var npa in self.TraitsImplementing<INotifyAttack>())
-					npa.Attacking(self, target, a, barrel);
 			}
 		}
 
@@ -163,7 +160,7 @@ namespace OpenRA.Mods.CA.Traits
 		{
 			// Display muzzle flashes
 			foreach (var m in muzzles)
-				foreach (var r in m.MuzzleFlash.Render(self, wr, wr.Palette(m.Palette), 1f))
+				foreach (var r in m.MuzzleFlash.Render(self, wr.Palette(m.Palette)))
 					yield return r;
 		}
 

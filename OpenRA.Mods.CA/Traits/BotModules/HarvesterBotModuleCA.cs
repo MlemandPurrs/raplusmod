@@ -70,8 +70,7 @@ namespace OpenRA.Mods.CA.Traits
 		readonly Func<Actor, bool> unitCannotBeOrdered;
 		readonly Dictionary<Actor, HarvesterTraitWrapper> harvesters = new Dictionary<Actor, HarvesterTraitWrapper>();
 
-		IPathFinder pathfinder;
-		DomainIndex domainIndex;
+		// Pathfinding is performed via `PathSearch` helper methods.
 		ResourceLayer resLayer;
 		ResourceClaimLayer claimLayer;
 		IBotRequestUnitProduction[] requestUnitProduction;
@@ -97,8 +96,7 @@ namespace OpenRA.Mods.CA.Traits
 
 		protected override void TraitEnabled(Actor self)
 		{
-			pathfinder = world.WorldActor.Trait<IPathFinder>();
-			domainIndex = world.WorldActor.Trait<DomainIndex>();
+			// Intentionally unused after migration to direct `PathSearch` calls.
 			resLayer = world.WorldActor.TraitOrDefault<ResourceLayer>();
 			claimLayer = world.WorldActor.TraitOrDefault<ResourceClaimLayer>();
 			scanForIdleHarvestersTicks = Info.ScanForIdleHarvestersInterval;
@@ -108,7 +106,7 @@ namespace OpenRA.Mods.CA.Traits
 
 		void IBotTick.BotTick(IBot bot)
 		{
-			if (resLayer == null || resLayer.IsResourceLayerEmpty)
+			if (resLayer == null || ((IResourceLayer)resLayer).IsEmpty)
 				return;
 
 			if (--scanForIdleHarvestersTicks > 0)
@@ -176,16 +174,23 @@ namespace OpenRA.Mods.CA.Traits
 		Target FindNextResource(Actor actor, HarvesterTraitWrapper harv)
 		{
 			Func<CPos, bool> isValidResource = cell =>
-				domainIndex.IsPassable(actor.Location, cell, harv.Locomotor) &&
-				harv.Harvester.CanHarvestCell(actor, cell) &&
+				harv.Harvester.CanHarvestCell(cell) &&
 				claimLayer.CanClaimCell(actor, cell);
 
-			var path = pathfinder.FindPath(
-				PathSearch.Search(world, harv.Locomotor, actor, BlockedByActor.Stationary, isValidResource)
-					.WithCustomCost(loc => world.FindActorsInCircle(world.Map.CenterOfCell(loc), Info.HarvesterEnemyAvoidanceRadius)
-						.Where(u => !u.IsDead && actor.Owner.RelationshipWith(u.Owner) == PlayerRelationship.Enemy)
-						.Sum(u => Math.Max(WDist.Zero.Length, Info.HarvesterEnemyAvoidanceRadius.Length - (world.Map.CenterOfCell(loc) - u.CenterPosition).Length)))
-					.FromPoint(actor.Location));
+			var path = PathSearch.ToTargetCellByPredicate(
+					world,
+					harv.Locomotor,
+					actor,
+					new[] { actor.Location },
+					isValidResource,
+					BlockedByActor.Stationary,
+					loc =>
+						world.FindActorsInCircle(world.Map.CenterOfCell(loc), Info.HarvesterEnemyAvoidanceRadius)
+							.Where(u => !u.IsDead && actor.Owner.RelationshipWith(u.Owner) == PlayerRelationship.Enemy)
+							.Sum(u =>
+								Math.Max(WDist.Zero.Length,
+									Info.HarvesterEnemyAvoidanceRadius.Length - (world.Map.CenterOfCell(loc) - u.CenterPosition).Length)))
+				.FindPath();
 
 			if (path.Count == 0)
 				return Target.Invalid;

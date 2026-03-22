@@ -1,4 +1,4 @@
-﻿#region Copyright & License Information
+#region Copyright & License Information
 /*
  * Copyright 2015- OpenRA.Mods.AS Developers (see AUTHORS)
  * This file is a part of a third-party plugin for OpenRA, which is
@@ -33,9 +33,8 @@ namespace OpenRA.Mods.CA.Traits
 			{
 				// HACK: RefreshState updated *all* actor state, not just the owner
 				// This is generally bogus, and specifically breaks cursors and tooltips by setting Hidden to false
-				var hidden = fa.Hidden;
 				fa.RefreshState();
-				fa.Hidden = hidden;
+				fa.RefreshHidden();
 				fa.NeedRenderables = true;
 			}
 		};

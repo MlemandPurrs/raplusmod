@@ -24,7 +24,7 @@ namespace OpenRA.Mods.CA.Traits
 		public override object Create(ActorInitializer init) { return new GrantConditionOnFullHarvester(init, this); }
 	}
 
-	public class GrantConditionOnFullHarvester : INotifyHarvesterAction
+	public class GrantConditionOnFullHarvester : INotifyHarvestAction, INotifyDockClient
 	{
 		readonly Harvester harvester;
 		readonly string conditionToGrant;
@@ -38,23 +38,22 @@ namespace OpenRA.Mods.CA.Traits
 			harvester = init.Self.Trait<Harvester>();
 		}
 
-		void INotifyHarvesterAction.Harvested(Actor self, ResourceType resource)
+		void INotifyHarvestAction.Harvested(Actor self, string resourceType)
 		{
 			if (harvester.IsFull)
 				token = self.GrantCondition(conditionToGrant);
 		}
 
-		void INotifyHarvesterAction.MovingToResources(Actor self, CPos targetCell) { }
-		void INotifyHarvesterAction.MovingToRefinery(Actor self, Actor refineryActor) { }
-		void INotifyHarvesterAction.MovementCancelled(Actor self) { }
+		void INotifyHarvestAction.MovingToResources(Actor self, CPos targetCell) { }
+		void INotifyHarvestAction.MovementCancelled(Actor self) { }
 
-		void INotifyHarvesterAction.Docked()
+		void INotifyDockClient.Docked(Actor self, Actor host)
 		{
 			if (!harvester.IsFull && token != Actor.InvalidConditionToken)
 				token = self.RevokeCondition(token);
 		}
 
-		void INotifyHarvesterAction.Undocked()
+		void INotifyDockClient.Undocked(Actor self, Actor host)
 		{
 			if (!harvester.IsFull && token != Actor.InvalidConditionToken)
 				token = self.RevokeCondition(token);
