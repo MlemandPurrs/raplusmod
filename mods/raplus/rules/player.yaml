@@ -110,9 +110,8 @@ Player:
 		LoseNotification: Lose
 		LeaveNotification: Leave
 	ConquestVictoryConditions:
-	# Millisekunden: 750 = Low-Power-Spruch ~8×/s. OpenRA-Standard: 10000 (10 s).
 	PowerManager:
-		AdviceInterval: 10000
+		AdviceInterval: 750
 		SpeechNotification: LowPower
 	AllyRepair:
 	PlayerResources:
@@ -175,9 +174,8 @@ Player:
 		Type: Veterancy
 		Image: iconchevrons
 		Sequence: veteran
-	# Millisekunden (nicht Ticks). 30000 = Silo-Hinweis höchstens alle 30 s.
 	ResourceStorageWarning:
-		AdviceInterval: 30000
+		AdviceInterval: 750
 	PlayerExperience:
 	ProvidesPrerequisite@Allies:
 		Factions: allies, usa, england, holland, france, germany, sweden, swiss, spain, italy, greece, turkey
