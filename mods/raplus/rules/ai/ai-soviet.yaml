@@ -387,8 +387,8 @@ Player:
 		EnemyAvoidanceRadius: 1
 	SquadManagerBotModule@soviet.land:
 		RequiresCondition: enable-ai-player && player.soviet
-		SquadSize: 20
-		SquadSizeRandomBonus: 30
+		SquadSize: 12
+		SquadSizeRandomBonus: 6
 		RushInterval: 400
 		AttackScanRadius: 16
 		ExcludeFromSquadsTypes: e6, sab, dog, dog.moldova, ftrk.scout, harv.soviet, harv.soviet.crate, mcv, mcv.ai, ss, ss.ukraine, msub, msub.karelia, ssam, fsub, nsub, ssml, yak.ai, yak.belarus.ai, mig, mig.kazakh, hind, hind.afghan, cmig
@@ -421,46 +421,46 @@ Player:
 		UnitDelays:
 			mcv.ai: 13500
 		UnitsToBuild:
-			e1: 15
-			e1.china: 15
-			e2: 5
-			e3: 10
-			e3.china: 10
-			e4: 5
-			e5: 5
-			dog: 5
-			dog.moldova: 5
-			shok: 5
-			rpg: 5
+			e1: 65
+			e1.china: 65
+			e2: 15
+			e3: 30
+			e3.china: 30
+			e4: 15
+			e5: 15
+			dog: 15
+			dog.moldova: 15
+			shok: 15
+			rpg: 15
 			deso: 5
 			harv.soviet: 15
-			ftrk: 10
-			ftrk.belarus: 10
+			ftrk: 30
+			ftrk.belarus: 30
 			ftrk.repair: 10
-			ftrk.flamer: 5
-			apc.soviet: 10
-			apc.turkmen: 10
-			apc.moldova: 10
-			3tnk.1b: 50
-			3tnk.1b.russia: 50
-			3tnk.1b.ukraine: 50
-			3tnk.1b.china: 50
-			3tnk.1b.kazakh: 50
-			3tnk.1b.turkmen: 50
-			3tnk.1b.afghan: 50
-			3tnk: 75
-			3tnk.russia: 75
-			3tnk.ukraine: 75
-			3tnk.china: 75
-			3tnk.kazakh: 75
-			3tnk.turkmen: 75
-			3tnk.afghan: 75
-			4tnk: 60
-			4tnk.ukraine: 60
-			4tnk.flame: 60
-			v2rl: 20
-			v2rl.turkmen: 20
-			ttnk: 50
+			ftrk.flamer: 15
+			apc.soviet: 15
+			apc.turkmen: 15
+			apc.moldova: 15
+			3tnk.1b: 30
+			3tnk.1b.russia: 30
+			3tnk.1b.ukraine: 30
+			3tnk.1b.china: 30
+			3tnk.1b.kazakh: 30
+			3tnk.1b.turkmen: 30
+			3tnk.1b.afghan: 30
+			3tnk: 45
+			3tnk.russia: 45
+			3tnk.ukraine: 45
+			3tnk.china: 45
+			3tnk.kazakh: 45
+			3tnk.turkmen: 45
+			3tnk.afghan: 45
+			4tnk: 25
+			4tnk.ukraine: 25
+			4tnk.flame: 25
+			v2rl: 40
+			v2rl.turkmen: 40
+			ttnk: 25
 			volk: 1
 			volk.uzbek: 1
 			e6: 2

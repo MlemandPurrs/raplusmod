@@ -402,8 +402,8 @@ Player:
 		EnemyAvoidanceRadius: 3
 	SquadManagerBotModule@allies.land:
 		RequiresCondition: enable-ai-player && player.allies
-		SquadSize: 20
-		SquadSizeRandomBonus: 30
+		SquadSize: 12
+		SquadSizeRandomBonus: 6
 		RushInterval: 400
 		AttackScanRadius: 16
 		ExcludeFromSquadsTypes: e6, mech, dog, jeep.scout, harv, harv.crate, harv.chrono, mcv, mcv.ai, pt, pt.greece, dd, dd.germany, ca, ca.italy, bshp, iroq.ai, iroq.ai.greece, heli, heli.usa, spit, spit.turkey, thf
@@ -436,47 +436,47 @@ Player:
 		UnitDelays:
 			mcv.ai: 13500
 		UnitsToBuild:
-			e1: 15
-			e1.england: 15
-			mgi: 10
-			e2: 5
-			e2.turkey: 5
-			e3: 10
-			e4.italy: 5
+			e1: 65
+			e1.england: 65
+			mgi: 30
+			e2: 15
+			e2.turkey: 15
+			e3: 30
+			e4.italy: 15
 			e6: 2
 			e7: 1
 			e7.usa: 1
 			medi: 2
 			mech: 2
-			dog: 5
-			shot: 5
-			atgm: 5
-			snip: 5
-			mrtr: 5
-			cinf: 5
+			dog: 15
+			shot: 15
+			atgm: 15
+			snip: 15
+			mrtr: 15
+			cinf: 15
 			harv: 15
-			jeep: 10
-			jeep.england: 10
-			apc: 15
-			apc.germany: 15
-			rapc: 15
-			1tnk: 60
-			1tnk.england: 60
-			1tnk.france: 60
-			1tnk.germany: 60
-			1tnk.sweden: 60
-			1tnk.spain: 60
-			1tnk.italy: 60
-			2tnk: 80
-			2tnk.england: 80
-			2tnk.france: 80
-			2tnk.germany: 80
-			2tnk.spain: 80
-			2tnk.italy: 80
+			jeep: 20
+			jeep.england: 20
+			apc: 30
+			apc.germany: 30
+			rapc: 30
+			1tnk: 40
+			1tnk.england: 40
+			1tnk.france: 40
+			1tnk.germany: 40
+			1tnk.sweden: 40
+			1tnk.spain: 40
+			1tnk.italy: 40
+			2tnk: 50
+			2tnk.england: 50
+			2tnk.france: 50
+			2tnk.germany: 50
+			2tnk.spain: 50
+			2tnk.italy: 50
 			2tnk.stealth: 15
-			2tnk.sweden: 80
-			arty: 10
-			arty.france: 10
+			2tnk.sweden: 50
+			arty: 15
+			arty.france: 15
 			gcan: 5
 			msam: 1
 			atnk: 15

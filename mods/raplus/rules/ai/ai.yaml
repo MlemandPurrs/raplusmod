@@ -38,11 +38,7 @@ Player:
 	GrantConditionOnPrerequisite@NAVYDISABLER:
 		Condition: global-disablenavy
 		Prerequisites: global-disablenavy
-	CycleConditionsOnTimer@WimpAIVarietyAllies:
-		RequiresCondition: enable-wimp-ai && player.allies
+	GrantRandomCondition@WimpAIVarietyAllies:
 		Conditions: rush-strat, heli-strat, bomb-strat
-		Duration: 15000
-	CycleConditionsOnTimer@WimpAIVarietySoviet:
-		RequiresCondition: enable-wimp-ai && player.soviet
+	GrantRandomCondition@WimpAIVarietySoviet:
 		Conditions: tank-strat, mamy-strat, flak-strat
-		Duration: 15000

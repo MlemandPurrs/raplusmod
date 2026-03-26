@@ -270,8 +270,8 @@ Player:
 		EnemyAvoidanceRadius: 1
 	SquadManagerBotModule@wimp-soviet:
 		RequiresCondition: enable-wimp-ai && player.soviet
-		SquadSize: 20
-		SquadSizeRandomBonus: 30
+		SquadSize: 16
+		SquadSizeRandomBonus: 8
 		RushInterval: 400
 		AttackScanRadius: 16
 		ExcludeFromSquadsTypes: harv,harv.crate,harv.soviet,harv.soviet.crate,mcv,mcv.ai,e6,sab,ftrk.scout
