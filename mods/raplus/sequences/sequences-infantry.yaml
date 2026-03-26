@@ -155,7 +155,7 @@ e1:
 		Length: *
 		Tick: 1600
 		ZOffset: -511
-	garrison-muzzle: minigun
+	garrison-muzzle:
 		Filename:
 		Length: 12
 		Facings: 8
@@ -280,7 +280,7 @@ e1gren:
 		Length: *
 		Tick: 1600
 		ZOffset: -511
-	garrison-muzzle: minigun
+	garrison-muzzle:
 		Filename:
 		Length: 12
 		Facings: 8
@@ -890,7 +890,7 @@ spy:
 		Start: 64
 		Length: 8
 		Facings: 8
-	garrison-muzzle: minigun
+	garrison-muzzle:
 		Filename:
 		Length: 12
 		Facings: 8
@@ -1368,7 +1368,7 @@ volk:
 	Defaults:
 		Filename: gnrl.shp
 	Inherits: gnrl
-	garrison-muzzle: minigun
+	garrison-muzzle:
 		Filename:
 		Length: 12
 		Facings: 8
@@ -1558,7 +1558,7 @@ tecn:
 		Length: *
 		Tick: 1600
 		ZOffset: -511
-	garrison-muzzle: minigun
+	garrison-muzzle:
 		Filename:
 		Length: 12
 		Facings: 8
@@ -2586,7 +2586,7 @@ shot:
 		Length: *
 		Tick: 1600
 		ZOffset: -511
-	garrison-muzzle: minigun
+	garrison-muzzle:
 		Filename:
 		Length: 12
 		Facings: 8
@@ -2896,7 +2896,7 @@ snip:
 		Length: *
 		Tick: 1600
 		ZOffset: -511
-	garrison-muzzle: minigun
+	garrison-muzzle:
 		Filename:
 		Length: 12
 		Facings: 8
@@ -3038,10 +3038,12 @@ deso:
 	stand2:
 		Start: 8
 		Facings: 8
-	deploy: deso-deployed
+	deploy:
+		Filename: deso-deployed.shp
 		Length: 4
 		Tick: 180
-	deployed: deso-deployed
+	deployed:
+		Filename: deso-deployed.shp
 		Start: 4
 		Length: 3
 		Tick: 420
@@ -3205,7 +3207,7 @@ rmbo:
 		Length: *
 		Tick: 1600
 		ZOffset: -511
-	garrison-muzzle: minigun
+	garrison-muzzle:
 		Filename:
 		Length: 12
 		Facings: 8
@@ -3470,7 +3472,8 @@ cinf:
 		Length: *
 		Tick: 1600
 		ZOffset: -511
-	muzzle-emp: empfx02
+	muzzle-emp:
+		Filename: empfx02.shp
 		Length: *
 		BlendMode: Additive
 		Offset: 0, 0

@@ -34,17 +34,18 @@ hosp:
 	Inherits: emp-overlay
 	Defaults:
 		Filename: hosp.shp
-    idle:
+	idle:
 		Length: 4
-        Tick: 100
-    damaged-idle:
+		Tick: 100
+	damaged-idle:
 		Start: 4
 		Length: 4
-        Tick: 100
+		Tick: 100
 	dead:
 		Start: 8
 		Tick: 800
-	make: hospmake
+	make:
+		Filename: hospmake.shp
 		Length: *
 		Tick: 80
 	bib:
@@ -321,14 +322,14 @@ mshp:
 	Inherits: emp-overlay
 	Defaults:
 		Filename: mshp.shp
-    idle:
+	idle:
 		Start: 0
 		Length: 1
-        Tick: 100
-    damaged-idle:
+		Tick: 100
+	damaged-idle:
 		Start: 1
 		Length: 1
-        Tick: 100
+		Tick: 100
 	none:
 		Filename: blank32.shp
 		Length: 1

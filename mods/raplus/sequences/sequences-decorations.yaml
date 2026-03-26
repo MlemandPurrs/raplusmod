@@ -516,10 +516,10 @@ v12:
 		TilesetFilenames:
 			SNOW: v12.sno
 	idle:
-		ZOffset: -2c512
+		ZOffset: -512
 	damaged-idle:
 		Start: 1
-		ZOffset: -2c512
+		ZOffset: -512
 
 v13:
 	Defaults:
@@ -536,10 +536,10 @@ v14:
 		TilesetFilenames:
 			SNOW: v14.sno
 	idle:
-		ZOffset: -2c512
+		ZOffset: -512
 	damaged-idle:
 		Start: 1
-		ZOffset: -2c512
+		ZOffset: -512
 
 v15:
 	Defaults:
@@ -547,10 +547,10 @@ v15:
 		TilesetFilenames:
 			SNOW: v15.sno
 	idle:
-		ZOffset: -2c512
+		ZOffset: -512
 	damaged-idle:
 		Start: 1
-		ZOffset: -2c512
+		ZOffset: -512
 
 v16:
 	Defaults:
@@ -558,10 +558,10 @@ v16:
 		TilesetFilenames:
 			SNOW: v16.sno
 	idle:
-		ZOffset: -2c512
+		ZOffset: -512
 	damaged-idle:
 		Start: 1
-		ZOffset: -2c512
+		ZOffset: -512
 
 v17:
 	Defaults:
@@ -569,10 +569,10 @@ v17:
 		TilesetFilenames:
 			SNOW: v17.sno
 	idle:
-		ZOffset: -2c512
+		ZOffset: -512
 	damaged-idle:
 		Start: 1
-		ZOffset: -2c512
+		ZOffset: -512
 
 v18:
 	Defaults:
@@ -580,19 +580,19 @@ v18:
 		TilesetFilenames:
 			SNOW: v18.sno
 	idle:
-		ZOffset: -2c512
+		ZOffset: -512
 	damaged-idle:
 		Start: 1
-		ZOffset: -2c512
+		ZOffset: -512
 
 rice:
 	idle:
 		Filename: rice.tem
-		ZOffset: -2c512
+		ZOffset: -512
 	damaged-idle:
 		Filename: rice.tem
 		Start: 1
-		ZOffset: -2c512
+		ZOffset: -512
 
 v19:
 	idle:

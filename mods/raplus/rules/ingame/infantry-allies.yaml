@@ -38,6 +38,7 @@ MGI:
 		Count: 1
 		ResetOnFire: False
 	AttackFrontal:
+		FacingTolerance: 0
 		Voice: Attack
 	AttackMove:
 		Voice: Attack
@@ -170,6 +171,7 @@ MECH:
 		TargetRelationships: Ally
 		ForceTargetRelationships: None
 	AttackFrontal:
+		FacingTolerance: 0
 		Voice: Action
 	CaptureManager:
 	Captures:
@@ -452,6 +454,7 @@ RMBO:
 		Weapon: Vulcan
 		MuzzleSequence: garrison-muzzle
 	AttackFrontal:
+		FacingTolerance: 0
 		Voice: Attack
 	AttackMove:
 	WithDeathAnimation:
@@ -524,6 +527,7 @@ SHOT:
 		MuzzleSequence: garrison-muzzle
 	TakeCover:
 	AttackFrontal:
+		FacingTolerance: 0
 	WithInfantryBody:
 		IdleSequences: idle1,idle2
 		DefaultAttackSequence: shoot
@@ -682,6 +686,7 @@ SNIP:
 		Margin: 0, 4
 		RequiresCondition: !ammo
 	AttackFrontal:
+		FacingTolerance: 0
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	ProducibleWithLevel:

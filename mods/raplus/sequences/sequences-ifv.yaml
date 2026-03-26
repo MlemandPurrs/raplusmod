@@ -5,41 +5,49 @@ ifv:
 	idle: 0tnk
 		Facings: 32
 		UseClassicFacings: True
-	turret-default: ifv-tur
+	turret-default:
+		Filename: ifv-tur.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret-mg: apc-tur3
+	turret-mg:
+		Filename: apc-tur3.shp
 		Facings: 32
 		UseClassicFacings: True
 	turret-gren: 1tnk
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	turret-flamer: flame-tur
+	turret-flamer:
+		Filename: flame-tur.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret-chem: chem-tur
+	turret-chem:
+		Filename: chem-tur.shp
 		Facings: 32
 		UseClassicFacings: True	
-	turret-repair: repair-tur
+	turret-repair:
+		Filename: repair-tur.shp
 		Facings: 32
 		UseClassicFacings: True
 	turret-sniper: 0tnk
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	turret-autocannon: gapc-tur
+	turret-autocannon:
+		Filename: gapc-tur.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	turret-mortar: gapc-tur
+	turret-mortar:
+		Filename: gapc-tur.shp
 		Facings: 32
 		UseClassicFacings: True
 	icon:
 		Filename: ifvicon.shp
 
 dtnk.destroyed:
-	idle: mnly
+	idle:
+		Filename: mnly.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512

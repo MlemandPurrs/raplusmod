@@ -337,7 +337,7 @@ ercc-proc:
 		Filename: ercc-make.shp
 		Offset: 5, -13
 		Length: *
-        Tick: 80
+		Tick: 80
 	place:
 		Filename: ercc-bot.shp
 		Offset: 5, -13
@@ -482,24 +482,26 @@ barr:
 	Inherits: emp-overlay
 	Defaults:
 		Filename: barr.shp
-    idle:
+	idle:
 		Length: 10
 		Offset: 0,-6
-        Tick: 100
-    idle-cybr: cybr-barr
+		Tick: 100
+	idle-cybr:
+		Filename: cybr-barr.shp
 		Length: 10
 		Offset: 0,-6
-        Tick: 100
-    damaged-idle:
+		Tick: 100
+	damaged-idle:
 		Start: 10
 		Length: 10
 		Offset: 0,-6
-        Tick: 100
-	damaged-idle-cybr: cybr-barr
+		Tick: 100
+	damaged-idle-cybr:
+		Filename: cybr-barr.shp
 		Start: 10
 		Length: 10
 		Offset: 0,-6
-        Tick: 100
+		Tick: 100
 	place:
 		Filename: barrmake.shp
 		Start: 12
@@ -508,8 +510,9 @@ barr:
 		Filename: barrmake.shp
 		Length: *
 		Offset: 0,-6
-        Tick: 80
-	make-cybr: cybr-barr-make
+		Tick: 80
+	make-cybr:
+		Filename: cybr-barr-make.shp
 	bib:
 		Filename: bib3.tem
 		TilesetFilenames:
@@ -552,11 +555,11 @@ cybr-barr:
 	Inherits: emp-overlay
 	Defaults:
 		Filename: cybr-barr.shp
-    idle:
+	idle:
 		Start: 0
 		Length: 1
 		Offset: 0,-6
-    damaged-idle:
+	damaged-idle:
 		Start: 10
 		Length: 1
 		Offset: 0,-6
@@ -564,12 +567,12 @@ cybr-barr:
 		Start: 0
 		Length: 10
 		Offset: 0,-6
-        Tick: 100	
+		Tick: 100	
 	damaged-idle-litning:
 		Start: 10
 		Length: 10
 		Offset: 0,-6
-        Tick: 100
+		Tick: 100
 	place:
 		Filename: cybr-barr-make.shp
 		Start: 24
@@ -578,7 +581,7 @@ cybr-barr:
 		Filename: cybr-barr-make.shp
 		Length: *
 		Offset: 0,-6
-    	Tick: 80	
+		Tick: 80	
 	bib:
 		Filename: bib3.tem
 		TilesetFilenames:
@@ -715,7 +718,8 @@ fix:
 		Filename: fix-dead.shp
 		Offset: 0,1
 		Tick: 800
-	none: blank32
+	none:
+		Filename: blank32.shp
 		Length: 1
 	bib:
 		TilesetFilenames:
@@ -794,12 +798,14 @@ afld:
 	Inherits: emp-overlay
 	Defaults:
 		Filename: afld.shp
-	idle: afldidle
+	idle:
+		Filename: afldidle.shp
 		Length: 8
 		Tick: 160
 		ZOffset: -1023
 		Offset: 0,-4
-	damaged-idle: afldidle
+	damaged-idle:
+		Filename: afldidle.shp
 		Start: 8
 		Length: 8
 		Tick: 160
@@ -825,7 +831,8 @@ afld:
 		Length: *
 		Offset: 0,-4
 		Tick: 80
-    dead: afld
+	dead:
+		Filename: afld.shp
 		Start: 8
 		Length: 1
 		Tick: 800
@@ -869,7 +876,7 @@ hpad:
 	make:
 		Filename: hpadmake.shp
 		Length: *
-        Tick: 80
+		Tick: 80
 	bib:
 		Filename: bib3.tem
 		TilesetFilenames:
@@ -912,7 +919,8 @@ atek:
 	dead:
 		Filename: atek-dead.shp
 		Tick: 800
-	none: blank32
+	none:
+		Filename: blank32.shp
 		Length: 1
 	icon:
 		Filename: atekicon.shp
@@ -944,7 +952,8 @@ ateknew:
 		Filename: atek2.shp
 		Start: 1
 		Tick: 800
-	none: blank32
+	none:
+		Filename: blank32.shp
 		Length: 1
 	icon:
 		Filename: atekicon.shp
@@ -976,7 +985,8 @@ stek:
 	dead:
 		Filename: stek-dead.shp
 		Tick: 800
-	none: blank32
+	none:
+		Filename: blank32.shp
 		Length: 1
 	icon:
 		Filename: stekicon.shp
@@ -1048,8 +1058,10 @@ orep:
 	Inherits: emp-overlay
 	Defaults:
 		Filename: orep.shp
-	idle: orep
-	damaged-idle: orep
+	idle:
+		Filename: orep.shp
+	damaged-idle:
+		Filename: orep.shp
 		Start: 1
 	make:
 		Filename: orepmake.shp
@@ -1072,11 +1084,13 @@ indp:
 	Inherits: emp-overlay
 	Defaults:
 		Filename: indp.shp
-	idle: indp
+	idle:
+		Filename: indp.shp
 		Length: 4
 		Tick: 200
 		Offset: 0,-10
-	damaged-idle: indp
+	damaged-idle:
+		Filename: indp.shp
 		Start: 4
 		Length: 4
 		Tick: 200

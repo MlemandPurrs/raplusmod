@@ -207,6 +207,21 @@ mins:
 	icon:
 		Filename: jmin.shp
 
+# Minen (LayMines): MINV / MINP – sonst Crash „Image minv does not have any sequences“
+minp:
+	idle:
+		Filename: minp.shp
+		ZOffset: -512
+	icon:
+		Filename: jmin.shp
+
+minv:
+	idle:
+		Filename: minv.shp
+		ZOffset: -512
+	icon:
+		Filename: jmin.shp
+
 minn:
 	idle:
 		Filename: minn.shp

@@ -36,6 +36,7 @@ SS:
 		MuzzleSequence: muzzle
 		PauseOnCondition: empdisable || under-bridge
 	AttackFrontal:
+		FacingTolerance: 0
 		Armaments: primary, secondary
 		PauseOnCondition: empdisable
 	WithMuzzleOverlay:
@@ -118,6 +119,7 @@ MSUB:
 		FireDelay: 2
 		PauseOnCondition: empdisable || under-bridge
 	AttackFrontal:
+		FacingTolerance: 0
 		TargetFrozenActors: True
 		ForceFireIgnoresActors: True
 		PauseOnCondition: empdisable
@@ -258,6 +260,7 @@ NSUB:
 	RenderRangeCircle:
 		FallbackRange: 16c768
 	AttackFrontal:
+		FacingTolerance: 0
 	Selectable:
 		DecorationBounds: 1877, 1877
 	HitShape:
@@ -316,6 +319,7 @@ FSUB:
 	WithSpriteTurret:
 		RequiresCondition: !underwater
 	AttackFrontal:
+		FacingTolerance: 0
 		PauseOnCondition: empdisable
 	Selectable:
 		DecorationBounds: 1621, 1621

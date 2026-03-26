@@ -178,6 +178,7 @@ APC:
 		MuzzleSequence: muzzle
 		PauseOnCondition: empdisable
 	AttackFrontal:
+		FacingTolerance: 0
 		PauseOnCondition: empdisable
 	WithMuzzleOverlay:
 	Cargo:
@@ -521,6 +522,7 @@ ARTY:
 		MuzzleSequence: muzzle
 		PauseOnCondition: empdisable
 	AttackFrontal:
+		FacingTolerance: 0
 		TargetFrozenActors: True
 		ForceFireIgnoresActors: True
 		PauseOnCondition: empdisable
@@ -734,6 +736,7 @@ MRJ:
 		LocalOffset: 128,0,43
 		PauseOnCondition: empdisable
 	AttackFrontal:
+		FacingTolerance: 0
 		PauseOnCondition: empdisable
 	WithSpriteTurret:
 	WithMuzzleOverlay:
@@ -802,6 +805,7 @@ CTNK:
 		LocalYaw: -60
 		PauseOnCondition: empdisable
 	AttackFrontal:
+		FacingTolerance: 0
 		PauseOnCondition: empdisable
 	ChronoshiftableWithSpriteEffect:
 		ReturnToOrigin: False
@@ -887,6 +891,7 @@ STNK:
 		MuzzleSequence: muzzle
 	WithMuzzleOverlay:
 	AttackFrontal:
+		FacingTolerance: 0
 		PauseOnCondition: empdisable
 	Cloak:
 		InitialDelay: 150
@@ -957,6 +962,7 @@ TNKD:
 		MuzzleSequence: muzzle
 		PauseOnCondition: empdisable
 	AttackFrontal:
+		FacingTolerance: 0
 		PauseOnCondition: empdisable
 	WithMuzzleOverlay:
 	SpawnActorOnDeath:
@@ -1052,6 +1058,7 @@ GCAN:
 		LocalOffset: 826,0,356
 		MuzzleSequence: muzzle
 	AttackFrontal:
+		FacingTolerance: 0
 		TargetFrozenActors: True
 		ForceFireIgnoresActors: True
 	WithMuzzleOverlay:

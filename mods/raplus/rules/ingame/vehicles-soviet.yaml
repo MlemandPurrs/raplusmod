@@ -199,6 +199,7 @@ FTRK.Repair:
 		TurnSpeed: 28
 		Offset: -178,0,120
 	AttackFrontal:
+		FacingTolerance: 0
 		PauseOnCondition: empdisable
 	Armament:
 		Weapon: Repair
@@ -302,6 +303,7 @@ FTRK.Hunter:
 		TurnSpeed: 28
 		Offset: -178,0,178
 	AttackFrontal:
+		FacingTolerance: 0
 		Armaments: primary
 	WithSpriteTurret:
 		Sequence: turret-gun
@@ -586,6 +588,7 @@ NRTY:
 		InitialStanceAI: HoldFire
 		ScanRadius: 15
 	AttackFrontal:
+		FacingTolerance: 0
 		PauseOnCondition: empdisable
 	Turreted:
 		Offset: 0,0,160
@@ -774,6 +777,7 @@ V2RL:
 	AutoTarget:
 		ScanRadius: 10
 	AttackFrontal:
+		FacingTolerance: 0
 		TargetFrozenActors: True
 		ForceFireIgnoresActors: True
 		PauseOnCondition: empdisable
@@ -887,6 +891,7 @@ SAML:
 		Ammo: 2
 		AmmoCondition: ammo
 	AttackFrontal:
+		FacingTolerance: 0
 		PauseOnCondition: empdisable
 	WithSpriteTurret:
 		RequiresCondition: ammo > 1
@@ -1014,6 +1019,7 @@ ICBM:
 		InitialStanceAI: HoldFire
 		ScanRadius: 15
 	AttackFrontal:
+		FacingTolerance: 0
 		PauseOnCondition: empdisable
 	WithFacingSpriteBody:
 		RequiresCondition: !reloading
@@ -1120,6 +1126,7 @@ ISU:
 		LocalOffset: 824,0,208
 		MuzzleSequence: muzzle
 	AttackFrontal:
+		FacingTolerance: 0
 		TargetFrozenActors: True
 		ForceFireIgnoresActors: True
 		PauseOnCondition: empdisable

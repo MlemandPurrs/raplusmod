@@ -408,6 +408,7 @@ GNRL:
 	Mobile:
 		Voice: Move
 	AttackFrontal:
+		FacingTolerance: 0
 		Voice: Attack
 	AttackMove:
 		Voice: Move

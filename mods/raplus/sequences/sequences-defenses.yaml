@@ -3,21 +3,24 @@ gap:
 	Inherits: emp-overlay
 	Defaults:
 		Filename: gap.shp
-    fake-icon: gapficon
-    idle:
+	fake-icon:
+		Filename: gapficon.shp
+	idle:
 		Length: 32
 		Offset: 0,-14
-        Tick: 90
-    damaged-idle:
+		Tick: 90
+	damaged-idle:
 		Start: 32
 		Length: 32
 		Offset: 0,-14
-        Tick: 90
-	make: gapmake
+		Tick: 90
+	make:
+		Filename: gapmake.shp
 		Length: *
 		Offset: 0,-14
-        Tick: 80
-	place: gapmake
+		Tick: 80
+	place:
+		Filename: gapmake.shp
 		Start: 12
 		Offset: 0,-14
 	bib:
@@ -51,9 +54,10 @@ pbox:
 	idle:
 	damaged-idle:
 		Start: 1
-	make: pboxmake
+	make:
+		Filename: pboxmake.shp
 		Length: *
-        Tick: 80
+		Tick: 80
 	muzzle:
 		Filename: minigun.shp
 		Length: 6
@@ -157,10 +161,11 @@ ftur:
 	damaged-idle:
 		Start: 1
 		Offset: 0,-2
-	make: fturmake
+	make:
+		Filename: fturmake.shp
 		Length: *
 		Offset: 0,-2
-        Tick: 50
+		Tick: 50
 	bib:
 		TilesetFilenames:
 			SNOW: mbFTUR.sno
@@ -226,7 +231,8 @@ gun:
 	Inherits: emp-overlay
 	Defaults:
 		Filename: gun.shp
-	idle: gunmake
+	idle:
+		Filename: gunmake.shp
 	turret:
 		Facings: 32
 		UseClassicFacings: True
@@ -242,10 +248,12 @@ gun:
 		Start: 96
 		Facings: 32
 		UseClassicFacings: True
-	make: gunmake
+	make:
+		Filename: gunmake.shp
 		Length: *
-        Tick: 70
-	place: gunmake
+		Tick: 70
+	place:
+		Filename: gunmake.shp
 		Start: 19
 		Length: 1
 	muzzle:
@@ -278,7 +286,8 @@ gtur:
 	Inherits: emp-overlay
 	Defaults:
 		Filename: gtur.shp
-	idle: gunmake
+	idle:
+		Filename: gunmake.shp
 	turret:
 		Facings: 32
 		UseClassicFacings: True
@@ -288,7 +297,8 @@ gtur:
 		Facings: 32
 		UseClassicFacings: True
 		Offset: 0,-5
-	make: gturmake
+	make:
+		Filename: gturmake.shp
 		Length: *
 		Offset: 0,-5
 		Tick: 70
@@ -305,11 +315,13 @@ gtur:
 			DESERT: mbSAM.des
 		Length: *
 		Offset: 0,-5
-	dead: gturmake
+	dead:
+		Filename: gturmake.shp
 		Start: 8
 		Length: 1
 		Offset: 0,-5
-	place: gturmake
+	place:
+		Filename: gturmake.shp
 		Start: 11
 		Length: 1
 		Offset: 0,-5
@@ -325,10 +337,11 @@ tsla:
 	damaged-idle:
 		Start: 10
 		Offset: 0,-13
-	make: tslamake
+	make:
+		Filename: tslamake.shp
 		Length: *
 		Offset: 0,-13
-        Tick: 70
+		Tick: 70
 	active:
 		Start: 1
 		Length: 9
@@ -365,7 +378,8 @@ agun:
 	Inherits: emp-overlay
 	Defaults:
 		Filename: agun.shp
-	idle: gunmake
+	idle:
+		Filename: gunmake.shp
 	turret:
 		Facings: 32
 		UseClassicFacings: True
@@ -385,11 +399,13 @@ agun:
 		Facings: 32
 		UseClassicFacings: True
 		Offset: 0,-13
-	make: agunmake
+	make:
+		Filename: agunmake.shp
 		Length: *
 		Offset: 0,-13
-        Tick: 80
-	place: agunmake
+		Tick: 80
+	place:
+		Filename: agunmake.shp
 		Start: 9
 		Length: 1
 		Offset: 0,-13
@@ -515,10 +531,12 @@ hsam:
 	dead:
 		Start: 128
 		Tick: 800
-	make: hsammake
+	make:
+		Filename: hsammake.shp
 		Length: 20
 		Tick: 80
-	place: hsammake
+	place:
+		Filename: hsammake.shp
 		Start: 29
 		Length: 1
 	muzzle:
@@ -546,9 +564,10 @@ pdox:
 	damaged-active:
 		Start: 29
 		Length: 29
-	make: pdoxmake
+	make:
+		Filename: pdoxmake.shp
 		Length: *
-        Tick: 80
+		Tick: 80
 	bib:
 		TilesetFilenames:
 			SNOW: mbPDOX.sno
@@ -592,10 +611,11 @@ iron:
 		Start: 11
 		Length: 11
 		Offset: 0,-12
-	make: ironmake
+	make:
+		Filename: ironmake.shp
 		Length: *
 		Offset: 0,-12
-        Tick: 80
+		Tick: 80
 	bib:
 		TilesetFilenames:
 			SNOW: mbIRON.sno
@@ -813,7 +833,8 @@ spmst:
 	damaged-idle:
 		Start: 1
 		Offset: 0,-14
-	make: spmstmake
+	make:
+		Filename: spmstmake.shp
 		Length: *
 		Tick: 80
 		Offset: 0,-14
@@ -1059,7 +1080,7 @@ ftur.hidden:
 		Filename: fturmake.shp
 		Length: *
 		Offset: 0,-2
-        Tick: 60
+		Tick: 60
 	idle:
 		Filename: ftur-sub-extra.shp
 		Start: 0

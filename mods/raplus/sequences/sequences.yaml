@@ -221,19 +221,23 @@ ftrk:
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	turret-mg: apc-tur3
+	turret-mg:
+		Filename: apc-tur3.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret-rep: repair-tur
+	turret-rep:
+		Filename: repair-tur.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret-flamer: flame-tur
+	turret-flamer:
+		Filename: flame-tur.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret-gun: 1tnk
+	turret-gun:
+		Filename: 1tnk.shp
 		Start: 32
 		Facings: 32
-		UseClassicFacings: True	
+		UseClassicFacings: True
 	muzzle:
 		Filename: gunfire2.shp
 		Length: 2
@@ -301,10 +305,12 @@ apc:
 		Length: 3
 	unload:
 		Start: 32
-	turret: apc-tur3
+	turret:
+		Filename: apc-tur3.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret-rocket: rapc-tur
+	turret-rocket:
+		Filename: rapc-tur.shp
 		Facings: 32
 		UseClassicFacings: True
 	icon:
@@ -321,8 +327,9 @@ mapc:
 	idle:
 		Facings: 32
 		UseClassicFacings: True
-    turret: mrtr
-        Facings: 8
+	turret:
+		Filename: mrtr.shp
+		Facings: 8
 		UseClassicFacings: False
 	icon:
 		Filename: mapcicon.shp
@@ -334,15 +341,18 @@ mapc:
 	idle:
 		Facings: 32
 		UseClassicFacings: True
-	turret: 1tnk-tur
+	turret:
+		Filename: 1tnk-tur.shp
 		Start: 0
 		Facings: 32
 		UseClassicFacings: True
-	turret-flak-ag: gapc-tur
+	turret-flak-ag:
+		Filename: gapc-tur.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	turret-flak-aa: gapc-tur
+	turret-flak-aa:
+		Filename: gapc-tur.shp
 		Start: 0
 		Facings: 32
 		UseClassicFacings: True
@@ -353,7 +363,8 @@ mapc:
 		Filename: minigun.shp
 		Length: 6
 		Facings: 8
-	idle-float: 1tnk-float
+	idle-float:
+		Filename: 1tnk-float.shp
 		Facings: 32
 		UseClassicFacings: True
 	icon:
@@ -656,10 +667,12 @@ mnly:
 	idle:
 		Facings: 32
 		UseClassicFacings: True
-	turret: apc-tur3
+	turret:
+		Filename: apc-tur3.shp
 		Facings: 32
 		UseClassicFacings: True
-	rep-tur: repair-tur
+	rep-tur:
+		Filename: repair-tur.shp
 		Facings: 32
 	muzzle:
 		Filename: minigun.shp
@@ -723,7 +736,8 @@ stnk:
 	Inherits: emp-overlay
 	Defaults:
 		Filename: stnk.shp
-	idle: papc
+	idle:
+		Filename: papc.shp
 		Facings: 32
 		UseClassicFacings: True
 	muzzle:
@@ -783,7 +797,8 @@ dtrk:
 	idle:
 		Facings: 32
 		UseClassicFacings: True
-    truk-body: truk
+	truk-body:
+		Filename: truk.shp
 		Facings: 32
 		UseClassicFacings: True
 	icon:
@@ -803,10 +818,11 @@ mgg:
 	spinner-idle:
 		Start: 32
 		Length: 1
-        Tick: 90
-    turret: ssam
-        Facings: 32
-        UseClassicFacings: False
+		Tick: 90
+	turret:
+		Filename: ssam.shp
+		Facings: 32
+		UseClassicFacings: False
 	muzzle:
 		Filename: mgg.shp
 		Length: 2
@@ -855,10 +871,12 @@ prsm:
 	Inherits: emp-overlay
 	Defaults:
 		Filename: prsm.shp
-	idle: prsm
+	idle:
+		Filename: prsm.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: prsm-tur
+	turret:
+		Filename: prsm-tur.shp
 		Facings: 32
 		UseClassicFacings: True
 	icon:
@@ -915,9 +933,10 @@ batf:
 	Inherits: emp-overlay
 	Defaults:
 		Filename: batf.shp
-	idle: batf
+	idle:
+		Filename: batf.shp
 		Facings: 32
-        UseClassicFacings: True
+		UseClassicFacings: True
 	muzzle:
 		Filename: minigun.shp
 		Length: 6
@@ -966,7 +985,8 @@ isu:
 	Inherits: emp-overlay
 	Defaults:
 		Filename: isu.shp
-	idle: isu
+	idle:
+		Filename: isu.shp
 		Facings: 32
 		UseClassicFacings: True
 	muzzle:
@@ -987,14 +1007,17 @@ gtnk:
 	Inherits: emp-overlay
 	Defaults:
 		Filename: gtnk.shp
-	idle: gtnk
+	idle:
+		Filename: gtnk.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret-ag: gtnk
+	turret-ag:
+		Filename: gtnk.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	turret-aa: gtnk
+	turret-aa:
+		Filename: gtnk.shp
 		Start: 64
 		Facings: 32
 		UseClassicFacings: True

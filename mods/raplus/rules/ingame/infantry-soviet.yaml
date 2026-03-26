@@ -228,6 +228,7 @@ VOLK:
 		CustomPipType: pip-red
 		Voice: Move
 	AttackFrontal:
+		FacingTolerance: 0
 	Voiced:
 		VoiceSet: VolkovVoice
 	Armament:
@@ -312,6 +313,7 @@ SHOK:
 	TakeCover:
 		ProneOffset: 227,0,-245
 	AttackFrontal:
+		FacingTolerance: 0
 		Voice: Attack
 	AttackMove:
 		Voice: Move
@@ -383,6 +385,7 @@ RPG:
 	TakeCover:
 		ProneOffset: 180,0,-200
 	AttackFrontal:
+		FacingTolerance: 0
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	ProducibleWithLevel:
@@ -438,6 +441,7 @@ DESO:
 	TakeCover:
 		ProneOffset: 384,0,-395
 	AttackFrontal:
+		FacingTolerance: 0
 		Voice: Attack
 		PauseOnCondition: !undeployed
 	AttackMove:
@@ -536,6 +540,7 @@ DEMO:
 	TakeCover:
 		ProneOffset: 256,64,-331
 	AttackFrontal:
+		FacingTolerance: 0
 		Voice: Attack
 	FireWarheadsOnDeath:
 		Weapon: ArtilleryExplode
@@ -690,6 +695,7 @@ MARK:
 		Position: Top
 		RequiresCondition: !ammo
 	AttackFrontal:
+		FacingTolerance: 0
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	ProducibleWithLevel:

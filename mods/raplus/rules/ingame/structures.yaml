@@ -814,7 +814,9 @@ PROC:
 		Type: Unload
 		DockAngle: 256
 		DockOffset: 0, 1c0, 0
-	StoresResources:
+	# Muss StoresPlayerResources sein: Refinery nutzt PlayerResources.ResourceCapacity.
+	# StoresResources erhöht die Spieler-Kapazität nicht → bei DiscardExcessResources bleibt alles 0.
+	StoresPlayerResources:
 		Capacity: 2000
 	WithResourceStoragePipsDecoration:
 		Position: BottomLeft
@@ -919,7 +921,7 @@ SILO:
 		HasMinibib: true
 	WithResourceLevelSpriteBody:
 		Sequence: stages
-	StoresResources:
+	StoresPlayerResources:
 		Capacity: 3000
 	WithResourceStoragePipsDecoration:
 		Position: BottomLeft
