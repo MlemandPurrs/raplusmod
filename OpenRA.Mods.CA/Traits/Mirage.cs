@@ -1,4 +1,4 @@
-﻿#region Copyright & License Information
+#region Copyright & License Information
 /*
  * Copyright 2007-2020 The OpenRA Developers (see AUTHORS)
  * This file is part of OpenRA, which is free software. It is made
@@ -94,8 +94,8 @@ namespace OpenRA.Mods.CA.Traits
 		public override object Create(ActorInitializer init) { return new Mirage(init, this); }
 	}
 
-	public class Mirage : PausableConditionalTrait<MirageInfo>, INotifyDamage, IEffectiveOwner, INotifyUnload, INotifyDemolition, INotifyInfiltration,
-		INotifyAttack, ITick, INotifyCreated, INotifyHarvesterAction
+	public class Mirage : PausableConditionalTrait<MirageInfo>, INotifyDamage, IEffectiveOwner, INotifyUnloadCargo, INotifyDemolition, INotifyInfiltration,
+		INotifyAttack, ITick, INotifyCreated, INotifyHarvestAction, INotifyDockClient
 	{
 		[Sync]
 		private int remainingTime;
@@ -203,15 +203,13 @@ namespace OpenRA.Mods.CA.Traits
 
 		protected override void TraitDisabled(Actor self) { Reveal(); }
 
-		void INotifyHarvesterAction.MovingToResources(Actor self, CPos targetCell) { }
+		void INotifyHarvestAction.MovingToResources(Actor self, CPos targetCell) { }
 
-		void INotifyHarvesterAction.MovingToRefinery(Actor self, Actor refineryActor) { }
+		void INotifyHarvestAction.MovementCancelled(Actor self) { }
 
-		void INotifyHarvesterAction.MovementCancelled(Actor self) { }
+		void INotifyHarvestAction.Harvested(Actor self, string resourceType) { }
 
-		void INotifyHarvesterAction.Harvested(Actor self, ResourceType resource) { }
-
-		void INotifyHarvesterAction.Docked()
+		void INotifyDockClient.Docked(Actor self, Actor host)
 		{
 			if (Info.RevealOn.HasFlag(MirageRevealType.Dock))
 			{
@@ -220,12 +218,12 @@ namespace OpenRA.Mods.CA.Traits
 			}
 		}
 
-		void INotifyHarvesterAction.Undocked()
+		void INotifyDockClient.Undocked(Actor self, Actor host)
 		{
 			isDocking = false;
 		}
 
-		void INotifyUnload.Unloading(Actor self)
+		void INotifyUnloadCargo.Unloading(Actor self)
 		{
 			if (Info.RevealOn.HasFlag(MirageRevealType.Unload))
 				Reveal();

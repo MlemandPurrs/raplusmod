@@ -1,64 +1,96 @@
 
 Metadata:
 	Title: Red Alert Plus
-	Version: v.1.4.2-classiqueue
+	Version: v.1.4.3-classicqueue
 	Website: https://www.moddb.com/mods/ra-plus-mod
 	WebIcon32: https://www.openra.net/images/icons/ra_32x32.png
 
 PackageFormats: Mix
 
-Packages:
-	~^SupportDir|Content/ra/v2/
-	~^SupportDir|Content/ra/v2/expand
-	~^SupportDir|Content/ra/v2/cnc
-	~^SupportDir|Content/ra/v2/movies
-	^EngineDir
-    $raplus: raplus
-	^EngineDir|mods/common: common
-	~main.mix
-	~conquer.mix
-	~lores.mix: lores
-	~hires.mix
-	~local.mix
-	~sounds.mix
-	~speech.mix
-	~allies.mix
-	~russian.mix
-	~temperat.mix
-	~snow.mix
-	~interior.mix
-	~scores.mix
-	~expand2.mix
-	~hires1.mix
-	~desert.mix
-	~./v2/cnc/scores.mix
-    raplus|bits
-    raplus|bits/aircraft
-    raplus|bits/buildings
-	raplus|bits/desert
-    raplus|bits/icons
-    raplus|bits/icons/lores
-    raplus|bits/infantry
-	raplus|bits/interior
-    raplus|bits/music
-    raplus|bits/naval
-    raplus|bits/resources
-	raplus|bits/snow
-    raplus|bits/sounds
-	raplus|bits/sounds/robot
-    raplus|bits/sounds/volkov
-	raplus|bits/sounds/desolator
-	raplus|bits/sounds/gdisoldier
-	raplus|bits/sounds/commando
-	raplus|bits/sounds/terroist
-	raplus|bits/sounds/kirov
-	raplus|bits/temperate
-    raplus|bits/vehicle
-    raplus|uibits
+# OpenRA release-20250330+: FileSystem ist Pflicht (alter "Packages:"-Block würde Manifest-Laden scheitern).
+FileSystem: ContentInstallerFileSystem
+	SystemPackages:
+		^EngineDir
+		# Fluent/UI-Basis aus dem Vanilla-RA-Mod (ra|fluent/*.ftl).
+		$ra: ra
+		$raplus: raplus
+		^EngineDir|mods/common: common
+		~^SupportDir|Content/ra/v2/: content
+		common|scripts
+		raplus|uibits
+	ContentPackages:
+		content|allies.mix
+		content|conquer.mix
+		content|interior.mix
+		content|lores.mix: lores
+		content|hires.mix
+		content|local.mix
+		content|russian.mix
+		content|snow.mix
+		content|sounds.mix
+		content|speech.mix
+		content|temperat.mix
+		content|expand
+		content|expand/expand2.mix
+		content|expand/lores1.mix
+		content|expand/hires1.mix
+		content|cnc/desert.mix
+		~content|movies
+		~content|scores.mix
+		~content|general.mix
+		# Mod-Assets nach den Content-Paketen (überschreiben Vanilla).
+		raplus|bits
+		raplus|bits/aircraft
+		raplus|bits/buildings
+		raplus|bits/desert
+		raplus|bits/icons
+		raplus|bits/icons/lores
+		raplus|bits/infantry
+		raplus|bits/interior
+		raplus|bits/music
+		raplus|bits/naval
+		raplus|bits/resources
+		raplus|bits/snow
+		raplus|bits/sounds
+		raplus|bits/sounds/robot
+		raplus|bits/sounds/volkov
+		raplus|bits/sounds/desolator
+		raplus|bits/sounds/gdisoldier
+		raplus|bits/sounds/commando
+		raplus|bits/sounds/terroist
+		raplus|bits/sounds/kirov
+		raplus|bits/temperate
+		raplus|bits/vehicle
+	RequiredContentFiles:
+		content|expand/chrotnk1.aud
+		content|expand/fixit1.aud
+		content|expand/jburn1.aud
+		content|expand/jchrge1.aud
+		content|expand/jcrisp1.aud
+		content|expand/jdance1.aud
+		content|expand/jjuice1.aud
+		content|expand/jjump1.aud
+		content|expand/jlight1.aud
+		content|expand/jpower1.aud
+		content|expand/jshock1.aud
+		content|expand/jyes1.aud
+		content|expand/madchrg2.aud
+		content|expand/madexplo.aud
+		content|expand/mboss1.aud
+		content|expand/mhear1.aud
+		content|expand/mhotdig1.aud
+		content|expand/mhowdy1.aud
+		content|expand/mhuh1.aud
+		content|expand/mlaff1.aud
+		content|expand/mrise1.aud
+		content|expand/mwrench1.aud
+		content|expand/myeehaw1.aud
+		content|expand/myes1.aud
+	ContentInstallerMod: ra-content
 
 MapFolders:
 	raplus|maps: System
-	~^SupportDir|maps/raplus/v.1.4.2-classiqueue: User
+	~^SupportDir|maps/raplus/v.1.4.3-classicqueue: User
 	~^SupportDir|maps/ra/release: User
 
 Rules:
@@ -131,20 +163,20 @@ Cursors:
 Chrome:
 	raplus|chrome.yaml
 
-Assemblies:
-	^BinDir|OpenRA.Mods.Common.dll
-	^BinDir|OpenRA.Mods.Cnc.dll
-	^BinDir|OpenRA.Mods.CA.dll
+# Nur Dateinamen: ObjectCreator lädt aus Platform.BinDir (siehe engine ObjectCreator.cs).
+Assemblies: OpenRA.Mods.Common.dll, OpenRA.Mods.Cnc.dll, OpenRA.Mods.CA.dll
 
 ChromeLayout:
 	common|chrome/ingame.yaml
 	common|chrome/ingame-chat.yaml
+	common|chrome/ingame-transients.yaml
 	common|chrome/ingame-fmvplayer.yaml
 	common|chrome/ingame-info.yaml
 	common|chrome/ingame-infoscripterror.yaml
 	common|chrome/ingame-infobriefing.yaml
 	common|chrome/ingame-infoobjectives.yaml
 	common|chrome/ingame-infostats.yaml
+	common|chrome/ingame-info-lobby-options.yaml
 	common|chrome/ingame-menu.yaml
 	raplus|chrome/ingame-observer.yaml
 	raplus|chrome/ingame-player.yaml
@@ -156,6 +188,7 @@ ChromeLayout:
 	common|chrome/mainmenu-prompts.yaml
 	common|chrome/settings.yaml
 	common|chrome/credits.yaml
+	common|chrome/text-notifications.yaml
 	common|chrome/lobby.yaml
 	common|chrome/lobby-mappreview.yaml
 	common|chrome/lobby-players.yaml
@@ -201,8 +234,19 @@ Notifications:
 Music:
     raplus|rules/sound/music.yaml
 
-Translations:
-	raplus|languages/english.yaml
+# OpenRA nutzt Fluent (.ftl) statt des alten "Translations:"-Blocks.
+FluentMessages:
+	common|fluent/common.ftl
+	common|fluent/chrome.ftl
+	common|fluent/hotkeys.ftl
+	common|fluent/rules.ftl
+	ra|fluent/ra.ftl
+	ra|fluent/chrome.ftl
+	ra|fluent/hotkeys.ftl
+	ra|fluent/rules.ftl
+	raplus|fluent/rules.ftl
+
+AllowUnusedFluentMessagesInExternalPackages: false
 
 Hotkeys:
 	common|hotkeys/game.yaml
@@ -210,6 +254,7 @@ Hotkeys:
 	common|hotkeys/production-common.yaml
 	common|hotkeys/supportpowers.yaml
 	common|hotkeys/viewport.yaml
+	common|hotkeys/control-groups.yaml
 	raplus|hotkeys.yaml
 
 LoadScreen: LogoStripeLoadScreen
@@ -269,11 +314,17 @@ MapGrid:
 	TileSize: 24,24
 	Type: Rectangular
 
+DefaultOrderGenerator: UnitOrderGenerator
+
 SupportsMapsFrom: ra, raplus
 
 SoundFormats: Aud, Wav
 
 SpriteFormats: ShpD2, ShpTD, TmpRA, TmpTD, ShpTS
+
+VideoFormats: Vqa, Wsa
+
+TerrainFormat: DefaultTerrain
 
 SpriteSequenceFormat: ClassicTilesetSpecificSpriteSequence
 	TilesetExtensions:
@@ -282,41 +333,42 @@ SpriteSequenceFormat: ClassicTilesetSpecificSpriteSequence
 		INTERIOR: .int
 		DESERT: .des
 
-ModelSequenceFormat: PlaceholderModelSequence
-
 AssetBrowser:
-	SupportedExtensions: .shp, .tmp, .tem, .des, .sno, .int, .vqa
+	SpriteExtensions: .shp, .tmp, .tem, .des, .sno, .int
+	AudioExtensions: .aud, .wav, .r00, .r01, .r02, .r03, .v00, .v01, .v02, .v03
+	VideoExtensions: .vqa, .wsa
 
 GameSpeeds:
-	slowest:
-		Name: Slowest
-		Timestep: 80
-		OrderLatency: 2
-	slower:
-		Name: Slower
-		Timestep: 50
-		OrderLatency: 2
-	default:
-		Name: Normal
-		Timestep: 40
-		OrderLatency: 2
-	fast:
-		Name: Fast
-		Timestep: 35
-		OrderLatency: 2
-	faster:
-		Name: Faster
-		Timestep: 30
-		OrderLatency: 2
-	fastest:
-		Name: Fastest
-		Timestep: 20
-		OrderLatency: 2
-
-ColorValidator:
-	TeamColorPresets: C4B060, EC0000, 702C24, FC8800, F7BB06, F861A4, A800A8, AB7B84, 00C400, A0F08C, D1987C, 253D8C, 4494E4, 7EBFF1, 44907C, 00A8A8
+	DefaultSpeed: default
+	Speeds:
+		slowest:
+			Name: options-game-speed.slowest
+			Timestep: 80
+			OrderLatency: 2
+		slower:
+			Name: options-game-speed.slower
+			Timestep: 50
+			OrderLatency: 3
+		default:
+			Name: options-game-speed.normal
+			Timestep: 40
+			OrderLatency: 3
+		fast:
+			Name: options-game-speed.fast
+			Timestep: 35
+			OrderLatency: 4
+		faster:
+			Name: options-game-speed.faster
+			Timestep: 30
+			OrderLatency: 4
+		fastest:
+			Name: options-game-speed.fastest
+			Timestep: 20
+			OrderLatency: 6
 
 ModContent:
+	# Nach Content-Installation wieder diesen Mod starten (siehe ModContentLogic).
+	Mod: raplus
 	InstallPromptMessage: RA Simple requires artwork and audio from the original game.\n\nQuick Install will automatically download this content (without music\nor videos) from a mirror of the 2008 Red Alert freeware release.\n\nAdvanced Install includes options for copying the music, videos, and\nother content from an original game disc or digital installation.
 	QuickDownload: quickinstall
 	HeaderMessage: Game content may be extracted from the original game discs or an\nexisting digital install. OpenRA can also download the base game\nfiles from an online mirror of the 2008 freeware release of RA.

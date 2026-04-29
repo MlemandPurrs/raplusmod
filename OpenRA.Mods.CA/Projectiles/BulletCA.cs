@@ -176,8 +176,19 @@ namespace OpenRA.Mods.CA.Projectiles
 
 			if (info.ContrailLength > 0)
 			{
-				var color = info.ContrailUsePlayerColor ? ContrailRenderable.ChooseColor(args.SourceActor) : info.ContrailColor;
-				contrail = new ContrailRenderable(world, color, info.ContrailWidth, info.ContrailLength, info.ContrailDelay, info.ContrailZOffset);
+				// Engine API migration: `ContrailRenderable` now takes owner + start/end width and player-color flags.
+				contrail = new ContrailRenderable(
+					world,
+					args.SourceActor,
+					info.ContrailColor,
+					info.ContrailUsePlayerColor,
+					info.ContrailColor,
+					info.ContrailUsePlayerColor,
+					info.ContrailWidth,
+					info.ContrailWidth,
+					info.ContrailLength,
+					info.ContrailDelay,
+					info.ContrailZOffset);
 			}
 
 			trailPalette = info.TrailPalette;
@@ -217,7 +228,7 @@ namespace OpenRA.Mods.CA.Projectiles
 		bool ShouldExplode(World world)
 		{
 			// Check for walls or other blocking obstacles
-			if (info.Blockable && BlocksProjectiles.AnyBlockingActorsBetween(world, lastPos, pos, info.Width, out var blockedPos))
+			if (info.Blockable && BlocksProjectiles.AnyBlockingActorsBetween(world, args.SourceActor.Owner, lastPos, pos, info.Width, out var blockedPos))
 			{
 				pos = blockedPos;
 				return true;

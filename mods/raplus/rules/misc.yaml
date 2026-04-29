@@ -2,19 +2,19 @@ MINV:
 	Inherits: ^Mine
 	RenderSprites:
 		Image: minv
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: ATMine
 
 MINP:
 	Inherits: MINV
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: APMine
 
 MINN:
 	Inherits: ^Mine
 	RenderSprites:
 		Image: minn
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: MiniNuke
 	Tooltip:
 		Name: Nuclear Mine
@@ -75,7 +75,7 @@ CRATE:
 		MaxAmount: 5
 		MinAmount: 1
 		MaxDuplicateValue: 1500
-	GiveMcvCrateAction@ra:
+	GiveBaseBuilderCrateAction@ra:
 		SelectionShares: 0
 		NoBaseSelectionShares: 100
 		Units: mcv
@@ -353,7 +353,7 @@ BOMBCRATE:
 	KillsSelf:
 		Delay: 750
 		RemoveInstead: false
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: CrateExplosionBeep
 		DamageSource: Killer
 	WithParachute:
@@ -821,8 +821,8 @@ CTFLAG:
 	Inherits: ^CivBuilding
 	-HitShape:
 	-Health:
-	-Explodes:
-	-Explodes@CIVPANIC:
+	-FireWarheadsOnDeath:
+	-FireWarheadsOnDeath@CIVPANIC:
 	-Selectable:
 	-SelectionDecorations:
 	-Targetable:
@@ -886,7 +886,7 @@ Artillery.Hack:
 	-TimedConditionBar@EMPDISABLE:
 	-WithIdleOverlay@EMPDISABLE:
 	-ExternalCondition@EMPDISABLE:
-	-Explodes:
+	-FireWarheadsOnDeath:
 	-KillsSelf@EMPONAIR:
 	-Aircraft:
 	Armament@1:
@@ -909,8 +909,8 @@ Artillery.Hack:
 	RenderSprites:
 		Image: dummy.visual
 	Interactable:
-		Bounds: 1,1
-		DecorationBounds: 1,1
+		Bounds: 1024, 1024
+		DecorationBounds: 1024, 1024
 
 dummy.moneyprinter:
 	Inherits: CAMERA
@@ -918,6 +918,7 @@ dummy.moneyprinter:
 	Buildable:
 		Queue: Fakestructure
 	Tooltip:
+		Name: You shouldnt be seeing this...
 		GenericName: You shouldnt be seeing this...
 	EditorOnlyTooltip:
 		Name: (Cashreserve sp proxy)

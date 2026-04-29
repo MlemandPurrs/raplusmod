@@ -3,17 +3,20 @@ Player:
 	LobbyPrerequisiteCheckbox@GLOBALBOUNTY:
 		Enabled: False
 		Locked: True
+	PlayerResources:
+		ResourceValues:
+			Ore: 0
+			Gems: 50
+			Scraps: 12
 
 World:
 	-CrateSpawner:
-	-SpawnMPUnits:
-	-MPStartLocations:
+	-SpawnStartingUnits:
+	-MapStartingLocations:
 	MusicPlaylist:
 		BackgroundMusic: intro
 		AllowMuteBackgroundMusic: true
 		DisableWorldSounds: true
-	ResourceType@ore:
-		ValuePerUnit: 0
 	LuaScript:
 		Scripts: temperat-shellmap.lua
 	-StartGameNotification:

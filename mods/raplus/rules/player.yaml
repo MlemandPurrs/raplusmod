@@ -1,6 +1,11 @@
 ^BasePlayer:
 	AlwaysVisible:
 	Shroud:
+	PlayerResources:
+		ResourceValues:
+			Ore: 25
+			Gems: 50
+			Scraps: 12
 
 EditorPlayer:
 	Inherits: ^BasePlayer
@@ -110,6 +115,10 @@ Player:
 		SpeechNotification: LowPower
 	AllyRepair:
 	PlayerResources:
+		ResourceValues:
+			Ore: 25
+			Gems: 50
+			Scraps: 12
 		SelectableCash: 5000, 10000, 25000
 		DefaultCash: 10000
 		InsufficientFundsNotification: InsufficientFunds
@@ -161,7 +170,8 @@ Player:
 		Id: unrestricted
 	GrantConditionOnPrerequisiteManager:
 	EnemyWatcher:
-	VeteranProductionIconOverlay:
+	ProductionIconOverlayManager:
+		Type: Veterancy
 		Image: iconchevrons
 		Sequence: veteran
 	ResourceStorageWarning:

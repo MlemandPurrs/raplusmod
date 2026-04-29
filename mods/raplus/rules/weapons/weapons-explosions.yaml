@@ -279,7 +279,7 @@ CrateNuke:
 		Duration: 65
 		Condition: onfire
 		ValidTargets: Structure, Trees
-	Warhead@22FlashEffect: FlashPaletteEffect
+	Warhead@22FlashEffect: FlashEffect
 		Duration: 10
 		FlashType: Nuke
 	Warhead@18Radio: CreateTintedCells
@@ -371,7 +371,7 @@ MiniNuke:
 		InvalidTargets: Vehicle, Structure, Wall, Trees
 		Size: 4
 		Delay: 15
-	Warhead@22FlashEffect: FlashPaletteEffect
+	Warhead@22FlashEffect: FlashEffect
 		Duration: 10
 		FlashType: Nuke
 	Warhead@18Radio: CreateTintedCells

@@ -38,6 +38,7 @@ MGI:
 		Count: 1
 		ResetOnFire: False
 	AttackFrontal:
+		FacingTolerance: 0
 		Voice: Attack
 	AttackMove:
 		Voice: Attack
@@ -170,6 +171,7 @@ MECH:
 		TargetRelationships: Ally
 		ForceTargetRelationships: None
 	AttackFrontal:
+		FacingTolerance: 0
 		Voice: Action
 	CaptureManager:
 	Captures:
@@ -383,6 +385,9 @@ E7:
 		VoiceSet: TanyaVoice
 	ProducibleWithLevel:
 		Prerequisites: infantry.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: infantry.upgraded
 	GrantConditionOnTerrain:
 		TerrainTypes: Water, River
 		Condition: swimming
@@ -449,6 +454,7 @@ RMBO:
 		Weapon: Vulcan
 		MuzzleSequence: garrison-muzzle
 	AttackFrontal:
+		FacingTolerance: 0
 		Voice: Attack
 	AttackMove:
 	WithDeathAnimation:
@@ -521,10 +527,14 @@ SHOT:
 		MuzzleSequence: garrison-muzzle
 	TakeCover:
 	AttackFrontal:
+		FacingTolerance: 0
 	WithInfantryBody:
 		IdleSequences: idle1,idle2
 		DefaultAttackSequence: shoot
 	ProducibleWithLevel:
+		Prerequisites: infantry.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
 		Prerequisites: infantry.upgraded
 	DeliversCash:
 		Payload: 56
@@ -612,6 +622,9 @@ ATGM:
 			secondary: none
 	ProducibleWithLevel:
 		Prerequisites: infantry.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: infantry.upgraded
 	Passenger:
 		CustomPipType: pip-yellow
 	DeliversCash:
@@ -673,9 +686,13 @@ SNIP:
 		Margin: 0, 4
 		RequiresCondition: !ammo
 	AttackFrontal:
+		FacingTolerance: 0
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	ProducibleWithLevel:
+		Prerequisites: infantry.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
 		Prerequisites: infantry.upgraded
 	RenderSprites:
 		Image: snip
@@ -725,13 +742,16 @@ MRTR:
 		FireDelay: 15
 	WithInfantryBody:
 		DefaultAttackSequence: throw
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplodeSmall
 		EmptyWeapon: UnitExplodeSmall
 		Chance: 50
 	Passenger:
 		CustomPipType: pip-yellow
 	ProducibleWithLevel:
+		Prerequisites: infantry.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
 		Prerequisites: infantry.upgraded
 	RenderRangeCircle:
 	DeliversCash:
@@ -790,7 +810,7 @@ CINF:
 		StandSequences: parachute
 		RequiresCondition: parachute
 	WithMuzzleOverlay:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplodeSmall
 		EmptyWeapon: UnitExplodeSmall
 		DamageSource: Killer

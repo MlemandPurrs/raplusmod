@@ -6,7 +6,7 @@ OILB:
 		TargetableOffsets: 0,0,0, 630,-300,0, 420,512,0, -420,-512,0, -630,300,0
 	Selectable:
 		Priority: 0
-		Bounds: 48,48
+		Bounds: 2048, 2048
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -25,7 +25,7 @@ OILB:
 	TooltipDescription@other:
 		Description: Capture to receive additional funds.
 		ValidRelationships: Neutral, Enemy
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: BarrelExplode
 	GpsDot:
 		String: Oil
@@ -59,7 +59,7 @@ MISS:
 		TargetableOffsets: 0,0,0, 840,0,0, 840,-1024,0, 420,768,0, -840,0,0, -840,-1024,0, -840,1024,0
 	Selectable:
 		Priority: 0
-		Bounds: 72,48
+		Bounds: 3072, 2048
 	Building:
 		Footprint: xxx xxx ===
 		Dimensions: 3,3
@@ -99,7 +99,7 @@ HOSP:
 	Inherits@shape: ^2x2Shape
 	Selectable:
 		Priority: 0
-		Bounds: 48,48
+		Bounds: 2048, 2048
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -181,7 +181,7 @@ BIO:
 	Inherits@shape: ^2x2Shape
 	Inherits@POWER_OUTAGE: ^DisabledByPowerOutage
 	Selectable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -239,7 +239,7 @@ FCOM:
 	Inherits: ^TechBuilding
 	Inherits@shape: ^2x2Shape
 	Selectable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
 	OwnerLostAction:
 		Action: ChangeOwner
 	Building:
@@ -295,7 +295,7 @@ ACAD:
 	Inherits@shape: ^2x2Shape
 	AppearsOnMapPreview:
 	Selectable:
-		Bounds: 72,72
+		Bounds: 3072, 3072
 	OwnerLostAction:
 		Action: ChangeOwner
 	Building:
@@ -345,10 +345,10 @@ BANK:
 	Inherits: ^TechBuilding
 	Inherits@CARGOPIPS: ^CargoPips
 	Inherits@shape: ^2x2Shape
-	-EngineerRepairable:
+	-InstantlyRepairable:
 	AppearsOnMapPreview:
 	Selectable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
 	OwnerLostAction:
 		Action: ChangeOwner
 	Building:
@@ -395,7 +395,7 @@ CPWR:
 	Inherits@shape: ^2x2Shape
 	AppearsOnMapPreview:
 	Selectable:
-		Bounds: 48,48	
+		Bounds: 2048, 2048
 	OwnerLostAction:
 		Action: ChangeOwner
 	Building:
@@ -448,7 +448,7 @@ CFLD:
 		ValidRelationships: Neutral, Enemy
 	Selectable:
 		Class: afld
-		Bounds: 72,48
+		Bounds: 3072, 2048
 	Health:
 		HP: 1000		
 	Armor:
@@ -608,7 +608,7 @@ MSHP:
 	Inherits@shape: ^2x2Shape
 	Inherits@POWER_OUTAGE: ^DisabledByPowerOutage
 	Selectable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2

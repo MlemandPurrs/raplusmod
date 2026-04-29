@@ -1,4 +1,4 @@
-﻿#region Copyright & License Information
+#region Copyright & License Information
 /*
  * Copyright 2007-2019 The OpenRA Developers (see AUTHORS)
  * This file is part of OpenRA, which is free software. It is made
@@ -21,7 +21,7 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.CA.Traits
 {
-	public class InterceptorPowerInfo : SupportPowerInfo
+	public class InterceptorPowerInfo : DirectionalSupportPowerInfo
 	{
 		[ActorReference(typeof(AircraftInfo))]
 		public readonly string UnitType = "yf23";
@@ -38,14 +38,7 @@ namespace OpenRA.Mods.CA.Traits
 		[Desc("Amount of time to keep the camera alive after the aircraft have finished attacking")]
 		public readonly int CameraRemoveDelay = 25;
 
-		[Desc("Enables the player directional targeting")]
-		public readonly bool UseDirectionalTarget = false;
-
-		[Desc("Animation used to render the direction arrows.")]
-		public readonly string DirectionArrowAnimation = null;
-
-		[Desc("Palette for direction cursor animation.")]
-		public readonly string DirectionArrowPalette = "chrome";
+		// Directional targeting flags live on `DirectionalSupportPowerInfo`.
 
 		[Desc("Weapon range offset to apply during the beacon clock calculation")]
 		public readonly WDist BeaconDistanceOffset = WDist.FromCells(6);
@@ -68,7 +61,7 @@ namespace OpenRA.Mods.CA.Traits
 		public override void SelectTarget(Actor self, string order, SupportPowerManager manager)
 		{
 			if (info.UseDirectionalTarget)
-				self.World.OrderGenerator = new SelectDirectionalTarget(self.World, order, manager, Info.Cursor, info.DirectionArrowAnimation, info.DirectionArrowPalette);
+				self.World.OrderGenerator = new SelectDirectionalTarget(self.World, order, manager, info);
 			else
 				base.SelectTarget(self, order, manager);
 		}

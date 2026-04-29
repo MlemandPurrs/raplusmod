@@ -35,12 +35,22 @@ BADR:
 	SpawnActorOnDeath@EMP:
 		Actor: BADR.Husk.EMP
 		RequiresCondition: airborne && empdisable
-	SmokeTrailWhenDamaged@0:
-		Offset: -432,560,0
-		Interval: 2
-	SmokeTrailWhenDamaged@1:
-		Offset: -432,-560,0
-		Interval: 2
+	LeavesTrails@0:
+		Offsets: -432,560,0
+		MovingInterval: 2
+		StationaryInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
+	LeavesTrails@1:
+		Offsets: -432,-560,0
+		MovingInterval: 2
+		StationaryInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
 	RejectsOrders:
 	GivesExperience:
 		Experience: 1000
@@ -48,6 +58,8 @@ BADR:
 	GpsDot:
 		String: BigPlane
 
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
 BADR.Bomber:
 	Inherits: ^NeutralPlane
 	-Selectable:
@@ -80,12 +92,22 @@ BADR.Bomber:
 		UsePlayerColor: false
 	SpawnActorOnDeath:
 		Actor: BADR.Husk
-	SmokeTrailWhenDamaged@0:
-		Offset: -432,560,0
-		Interval: 2
-	SmokeTrailWhenDamaged@1:
-		Offset: -432,-560,0
-		Interval: 2
+	LeavesTrails@0:
+		Offsets: -432,560,0
+		MovingInterval: 2
+		StationaryInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
+	LeavesTrails@1:
+		Offsets: -432,-560,0
+		MovingInterval: 2
+		StationaryInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
 	RejectsOrders:
 	RenderSprites:
 		Image: badr
@@ -96,6 +118,8 @@ BADR.Bomber:
 	GpsDot:
 		String: BigPlane
 
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
 BADR.Crate:
 	Inherits: BADR
 	ParaDrop:
@@ -147,8 +171,8 @@ BADR.buildable:
 	Health:
 		HP: 200
 	Selectable:
-		Bounds: 36,28,0,2
-		DecorationBounds: 40,29,0,1
+		Bounds: 1536, 1195, 0, 85
+		DecorationBounds: 1707, 1237, 0, 43
 	RevealsShroud@Air:
 		MinRange: 11c0
 		Range: 13c0
@@ -227,21 +251,36 @@ BADR.buildable:
 	SpawnActorOnDeath@EMP:
 		Actor: BADR.Husk.EMP
 		RequiresCondition: airborne && empdisable
-	SmokeTrailWhenDamaged@0:
-		Offset: -432,560,0
-		Interval: 2
-	SmokeTrailWhenDamaged@1:
-		Offset: -432,-560,0
-		Interval: 2
+	LeavesTrails@0:
+		Offsets: -432,560,0
+		MovingInterval: 2
+		StationaryInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
+	LeavesTrails@1:
+		Offsets: -432,-560,0
+		MovingInterval: 2
+		StationaryInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
 	GivesExperience:
 		Experience: 1500
 	ProducibleWithLevel:
+		Prerequisites: aircraft.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
 		Prerequisites: aircraft.upgraded
 	RenderSprites:
 		Image: badr
 	GpsDot:
 		String: BigPlane
 
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
 TRAN.Soviet:
 	Inherits: TRAN
 	Buildable:
@@ -334,7 +373,7 @@ HALO:
 		Actor: HALO.Husk.EMP
 		RequiresCondition: airborne && empdisable
 	Selectable:
-		DecorationBounds: 40,36
+		DecorationBounds: 1707, 1536
 	Cargo:
 		Types: Infantry, Engineer, Vehicle
 		MaxWeight: 12
@@ -518,7 +557,7 @@ MI2:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Selectable:
-		DecorationBounds: 38,32
+		DecorationBounds: 1621, 1365
 	Health:
 		HP: 80
 	RevealsShroud@Air:
@@ -564,8 +603,14 @@ MI2:
 		Offset: 0,0,85
 		Sequence: slow-rotor
 		RequiresCondition: !airborne
-	SmokeTrailWhenDamaged:
-		Offset: -427,0,0
+	LeavesTrails:
+		Offsets: -427,0,0
+		MovingInterval: 3
+		StationaryInterval: 3
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
 	ProximityExternalCondition@barracksheal:
 		Condition: barracks
 		ValidRelationships: Ally
@@ -578,6 +623,8 @@ MI2:
 		Range: 3c768
 	RenderDetectionCircle:
 
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
 HIND:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
@@ -597,7 +644,7 @@ HIND:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Selectable:
-		DecorationBounds: 38,32
+		DecorationBounds: 1621, 1365
 	Health:
 		HP: 120
 	RevealsShroud@Air:
@@ -695,9 +742,18 @@ HIND:
 	WithIdleOverlay@ROTORGROUND:
 		Sequence: slow-rotor
 		RequiresCondition: !airborne
-	SmokeTrailWhenDamaged:
-		Offset: -427,0,0
+	LeavesTrails:
+		Offsets: -427,0,0
+		MovingInterval: 3
+		StationaryInterval: 3
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
 	ProducibleWithLevel:
+		Prerequisites: aircraft.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
 		Prerequisites: aircraft.upgraded
 	SpawnActorOnDeath:
 		Actor: HIND.Husk
@@ -712,6 +768,8 @@ HIND:
 		Actor: HIND.Husk.EMP.Empty
 		RequiresCondition: airborne && !ammo && empdisable
 
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
 U2:
 	Inherits: ^NeutralPlane
 	-Selectable:
@@ -742,9 +800,14 @@ U2:
 		TrailLength: 6
 		TrailWidth: 48
 		UsePlayerColor: false
-	SmokeTrailWhenDamaged:
-		Offset: -1c43,0,0
-		Interval: 2
+	LeavesTrails:
+		Offsets: -1c43,0,0
+		MovingInterval: 2
+		StationaryInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
 	SpawnActorOnDeath:
 		Actor: U2.Husk
 		RequiresCondition: airborne && !empdisable
@@ -753,6 +816,8 @@ U2:
 		RequiresCondition: airborne && empdisable
 	-MapEditorData:
 
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
 YAK:
 	Inherits: ^Plane
 	Inherits@AUTOTARGET: ^AutoTargetGroundAntiInf
@@ -773,7 +838,7 @@ YAK:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Selectable:
-		DecorationBounds: 30,28,0,2
+		DecorationBounds: 1280, 1195, 0, 85
 	Health:
 		HP: 80
 	RevealsShroud@Air:
@@ -872,10 +937,18 @@ YAK:
 		TrailLength: 10
 		TrailWidth: 48
 		UsePlayerColor: false
-	SmokeTrailWhenDamaged:
-		Offset: -853,0,0
-		Interval: 2
+	LeavesTrails:
+		Offsets: -853,0,0
+		MovingInterval: 2
+		StationaryInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
 	ProducibleWithLevel:
+		Prerequisites: aircraft.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
 		Prerequisites: aircraft.upgraded
 	SpawnActorOnDeath:
 		Actor: YAK.Husk
@@ -890,6 +963,8 @@ YAK:
 		Actor: YAK.Husk.EMP.Empty
 		RequiresCondition: airborne && !ammo && empdisable
 
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
 YAK.AI:
 	Inherits: YAK
 	-Armament@TERTIARY:
@@ -923,8 +998,8 @@ MIG:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Selectable:
-		Bounds: 36,28,0,2
-		DecorationBounds: 40,29,0,1
+		Bounds: 1536, 1195, 0, 85
+		DecorationBounds: 1707, 1237, 0, 43
 	Health:
 		HP: 100
 	RevealsShroud@Air:
@@ -1013,10 +1088,18 @@ MIG:
 		TrailLength: 6
 		TrailWidth: 48
 		UsePlayerColor: false
-	SmokeTrailWhenDamaged:
-		Offset: -853,0,171
-		Interval: 2
+	LeavesTrails:
+		Offsets: -853,0,171
+		MovingInterval: 2
+		StationaryInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
 	ProducibleWithLevel:
+		Prerequisites: aircraft.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
 		Prerequisites: aircraft.upgraded
 	SpawnActorOnDeath:
 		Actor: MIG.Husk
@@ -1037,6 +1120,8 @@ MIG:
 		Condition: karelia.player
 		Factions: karelia
 
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
 NEBR:
 	Inherits: ^Plane
 	Buildable:
@@ -1053,8 +1138,8 @@ NEBR:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Selectable:
-		Bounds: 36,28,0,2
-		DecorationBounds: 40,29,0,1
+		Bounds: 1536, 1195, 0, 85
+		DecorationBounds: 1707, 1237, 0, 43
 	Health:
 		HP: 60
 	Armor:
@@ -1118,9 +1203,14 @@ NEBR:
 		TrailWidth: 48
 		UsePlayerColor: false
 		Offset: -598,683,0
-	SmokeTrailWhenDamaged:
-		Offset: -853,0,171
-		Interval: 2
+	LeavesTrails:
+		Offsets: -853,0,171
+		MovingInterval: 2
+		StationaryInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
 	RenderSprites:
 		Image: nebr
 	SpawnActorOnDeath:
@@ -1136,6 +1226,8 @@ NEBR:
 		Actor: NEBR.Husk.EMP.Empty
 		RequiresCondition: airborne && !ammo && empdisable
 
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
 SMIG:
 	Inherits: U2
 	-EjectOnDeath:
@@ -1151,9 +1243,14 @@ SMIG:
 		Offset: -598,-683,0
 	Contrail@2:
 		Offset: -598,683,0
-	SmokeTrailWhenDamaged:
-		Offset: -853,0,171
-		Interval: 2
+	LeavesTrails:
+		Offsets: -853,0,171
+		MovingInterval: 2
+		StationaryInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
 	SpawnActorOnDeath:
 		Actor: SMIG.Husk
 		RequiresCondition: airborne && !empdisable
@@ -1168,6 +1265,8 @@ SMIG:
 	RenderSprites:
 		Image: smig
 
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
 SMIG.jam:
 	Inherits: SMIG
 	-Armament:
@@ -1201,8 +1300,8 @@ CMIG:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Selectable:
-		Bounds: 36,28,0,2
-		DecorationBounds: 40,29,0,1
+		Bounds: 1536, 1195, 0, 85
+		DecorationBounds: 1707, 1237, 0, 43
 	Health:
 		HP: 100
 	RevealsShroud@Air:
@@ -1264,10 +1363,18 @@ CMIG:
 		TrailLength: 6
 		TrailWidth: 48
 		UsePlayerColor: false
-	SmokeTrailWhenDamaged:
-		Offset: -853,0,171
-		Interval: 2
+	LeavesTrails:
+		Offsets: -853,0,171
+		MovingInterval: 2
+		StationaryInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
 	ProducibleWithLevel:
+		Prerequisites: aircraft.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
 		Prerequisites: aircraft.upgraded
 	SpawnActorOnDeath:
 		Actor: CMIG.Husk
@@ -1284,6 +1391,8 @@ CMIG:
 	RenderSprites:
 		Image: smig
 
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
 V3:
 	Inherits: ^NeutralPlane
 	-ActorLostNotification:
@@ -1379,12 +1488,19 @@ HIND.Mini:
 	WithIdleOverlay@ROTORGROUND:
 		Sequence: slow-rotor
 		RequiresCondition: !airborne
-	SmokeTrailWhenDamaged:
-		Offset: -171,0,0
-		Interval: 2
+	LeavesTrails:
+		Offsets: -171,0,0
+		MovingInterval: 2
+		StationaryInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
 	RenderSprites:
 		Image: minihind
 
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
 KROV:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
@@ -1404,8 +1520,8 @@ KROV:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Selectable:
-		Bounds: 36,28,0,2
-		DecorationBounds: 40,29,0,1
+		Bounds: 1536, 1195, 0, 85
+		DecorationBounds: 1707, 1237, 0, 43
 	Health:
 		HP: 600
 	Armor:
@@ -1499,10 +1615,22 @@ KROV:
 		Offset: -180,-597,250
 		Sequence: slow-rotor
 		RequiresCondition: !airborne
-	SmokeTrailWhenDamaged@1:
-		Offset: -100,500,100
-	SmokeTrailWhenDamaged@2:
-		Offset: -100,-500,100
+	LeavesTrails@1:
+		Offsets: -100,500,100
+		MovingInterval: 3
+		StationaryInterval: 3
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
+	LeavesTrails@2:
+		Offsets: -100,-500,100
+		MovingInterval: 3
+		StationaryInterval: 3
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
 	ChangesHealth:
 		Step: 5
 		Delay: 7
@@ -1515,6 +1643,8 @@ KROV:
 	Voiced:
 		VoiceSet: KirovVoice
 
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
 KROC:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
@@ -1535,8 +1665,8 @@ KROC:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Selectable:
-		Bounds: 46,28,0,2
-		DecorationBounds: 50,29,0,1
+		Bounds: 1963, 1195, 0, 85
+		DecorationBounds: 2133, 1237, 0, 43
 	Health:
 		HP: 600
 	Armor:
@@ -1643,10 +1773,22 @@ KROC:
 		Offset: -1240,-992,180
 		Sequence: slow-rotor-rear
 		RequiresCondition: !airborne
-	SmokeTrailWhenDamaged@1:
-		Offset: -100,500,100
-	SmokeTrailWhenDamaged@2:
-		Offset: -100,-500,100
+	LeavesTrails@1:
+		Offsets: -100,500,100
+		MovingInterval: 3
+		StationaryInterval: 3
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
+	LeavesTrails@2:
+		Offsets: -100,-500,100
+		MovingInterval: 3
+		StationaryInterval: 3
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
 	ChangesHealth:
 		Step: 5
 		Delay: 7
@@ -1659,6 +1801,8 @@ KROC:
 	Voiced:
 		VoiceSet: KirovVoice
 
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
 MIGM:
 	Inherits@CarrierBound: ^CarrierCraft
 	Valued:
@@ -1686,12 +1830,19 @@ MIGM:
 	SpawnActorOnDeath@EMP:
 		Actor: MIGM.Husk.EMP
 		RequiresCondition: empdisable
-	SmokeTrailWhenDamaged:
-		Offset: -253,0,171
-		Interval: 2
+	LeavesTrails:
+		Offsets: -253,0,171
+		MovingInterval: 2
+		StationaryInterval: 2
+		Image: smokey
+		SpawnAtLastPosition: False
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
 	Contrail@1:
 		Offset: -432,0,0
 		TrailLength: 8
 		UsePlayerColor: false
 	RenderSprites:
 		Image: minimig
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke

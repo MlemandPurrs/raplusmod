@@ -151,7 +151,7 @@ Atomic:
 		Duration: 20
 		Intensity: 5
 		Multiplier: 1,1
-	Warhead@22FlashEffect: FlashPaletteEffect
+	Warhead@22FlashEffect: FlashEffect
 		Duration: 20
 		FlashType: Nuke
 	Warhead@23Radio: CreateTintedCells
@@ -247,7 +247,7 @@ TorpNuke:
 			Concrete: 75
 		AffectsParent: true
 		DamageTypes: Prone50Percent, TriggerProne, FireDeath
-	Warhead@22FlashEffect: FlashPaletteEffect
+	Warhead@22FlashEffect: FlashEffect
 		Duration: 10
 		FlashType: Nuke
 
@@ -332,7 +332,7 @@ SubNuke:
 	Warhead@8Res_Areanuke: DestroyResource
 		Size: 2
 		Delay: 15
-	Warhead@22FlashEffect: FlashPaletteEffect
+	Warhead@22FlashEffect: FlashEffect
 		Duration: 10
 		FlashType: Nuke
 	Warhead@23Radio: CreateTintedCells
@@ -343,7 +343,7 @@ SubNuke:
 		LayerName: radioactivity.strong
 
 ParaNuke:
-	ReloadDelay: 0
+	ReloadDelay: 1
 	Range: 0c938
 	Report: chute1.aud
 	ValidTargets: Ground, Water, Bridge
@@ -417,7 +417,7 @@ ParaNuke:
 	Warhead@8Res_Areanuke: DestroyResource
 		Size: 2
 		Delay: 15
-	Warhead@22FlashEffect: FlashPaletteEffect
+	Warhead@22FlashEffect: FlashEffect
 		Duration: 10
 		FlashType: Nuke
 	Warhead@18Radio: CreateTintedCells
@@ -494,7 +494,7 @@ TankNuke:
 	Warhead@8Res_Areanuke: DestroyResource
 		Size: 2
 		Delay: 15
-	Warhead@22FlashEffect: FlashPaletteEffect
+	Warhead@22FlashEffect: FlashEffect
 		Duration: 10
 		FlashType: Nuke
 	Warhead@18Radio: CreateTintedCells
@@ -532,7 +532,7 @@ AtomicFake:
 		Duration: 20
 		Intensity: 1
 		Multiplier: 1,1
-	Warhead@22FlashEffect: FlashPaletteEffect
+	Warhead@22FlashEffect: FlashEffect
 		Duration: 20
 		FlashType: Nuke
 
@@ -669,7 +669,7 @@ ICBM:
 		Duration: 10
 		Intensity: 1
 		Multiplier: 1,1
-	Warhead@22FlashEffect: FlashPaletteEffect
+	Warhead@22FlashEffect: FlashEffect
 		Duration: 10
 		FlashType: Nuke
 	Warhead@18Radio: CreateTintedCells
@@ -767,7 +767,7 @@ ArtyNuke:
 		Duration: 10
 		Intensity: 1
 		Multiplier: 1,1
-	Warhead@22FlashEffect: FlashPaletteEffect
+	Warhead@22FlashEffect: FlashEffect
 		Duration: 10
 		FlashType: Nuke
 	Warhead@18Radio: CreateTintedCells

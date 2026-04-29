@@ -403,17 +403,17 @@ PROP:
 	-SpawnActorsOnSell:
 	-GivesBuildableArea:
 	-ProductionCostMultiplier@Russia:
-	-Explodes@RUMALUS:
+	-FireWarheadsOnDeath@RUMALUS:
 	-GrantConditionOnPrerequisite@RUMALUS:
 	Selectable:
-		Bounds: 24,24
+		Bounds: 1024, 1024
 	Building:
 		TerrainTypes: Clear,Road,Beach
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, Defense
 	MustBeDestroyed:
 		RequiredForShortGame: false
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: SmallBuildingExplode
 		EmptyWeapon: SmallBuildingExplode
 	MapEditorData:
@@ -524,7 +524,7 @@ FTUR:
 	Power:
 		Amount: -40
 		RequiresCondition: !build-incomplete
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: BuildingExplode
 		EmptyWeapon: BuildingExplode
 	SpawnActorOnDeath:
@@ -537,8 +537,8 @@ TSLA:
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	-SpawnActorsOnSell:
 	Selectable:
-		Bounds: 24,24
-		DecorationBounds: 24,40,0,-8
+		Bounds: 1024, 1024
+		DecorationBounds: 1024, 1707, 0, -341
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 5
@@ -632,7 +632,7 @@ PRIS:
 		Name: Prism Tower
 	Building:
 	Selectable:
-		DecorationBounds: 24,46,0,-10
+		DecorationBounds: 1024, 1963, 0, -427
 	Health:
 		HP: 350
 	Armor:
@@ -804,7 +804,7 @@ GTUR:
 		SequencePalette: placebuilding
 	ClassicFacingBodyOrientation:
 	Selectable:
-		DecorationBounds: 34,22
+		DecorationBounds: 1451, 939
 	Building:
 		Footprint: xx
 		Dimensions: 2,1
@@ -857,7 +857,7 @@ GTUR:
 	Power:
 		Amount: -80
 		RequiresCondition: !build-incomplete
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: BuildingExplode
 		EmptyWeapon: BuildingExplode
 	WithDeathAnimation:
@@ -880,8 +880,8 @@ GAP:
 	WithSpriteBody:
 		PauseOnCondition: disabled
 	Selectable:
-		Bounds: 24,24
-		DecorationBounds: 24,48,0,-12
+		Bounds: 1024, 1024
+		DecorationBounds: 1024, 2048, 0, -512
 	HitShape:
 		Type: Rectangle
 			TopLeft: -512, -512
@@ -936,7 +936,7 @@ GAP:
 		RequiresCondition: !build-incomplete && deployed
 	MustBeDestroyed:
 		RequiredForShortGame: false
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: SmallBuildingExplode
 		EmptyWeapon: SmallBuildingExplode
 	SpawnActorOnDeath:
@@ -965,7 +965,7 @@ PDOX:
 	Inherits@shape: ^2x2Shape
 	-ProductionTimeMultiplier@Sweden:
 	Selectable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -1060,8 +1060,8 @@ IRON:
 	Inherits@shape: ^2x1Shape
 	-SpawnActorsOnSell:
 	Selectable:
-		Bounds: 48,28,0,2
-		DecorationBounds: 50,50,0,-12
+		Bounds: 2048, 1195, 0, 85
+		DecorationBounds: 2133, 2133, 0, -512
 	Building:
 		Footprint: xx
 		Dimensions: 2,1
@@ -1134,7 +1134,7 @@ MSLO:
 	-SpawnActorsOnSell:
 	-ProductionTimeMultiplier@Sweden:
 	Selectable:
-		Bounds: 48,24
+		Bounds: 2048, 1024
 	Building:
 		Footprint: xx
 		Dimensions: 2,1
@@ -1267,8 +1267,8 @@ AGUN:
 		SequencePalette: placebuilding
 	ClassicFacingBodyOrientation:
 	Selectable:
-		Bounds: 24,24
-		DecorationBounds: 24,32,0,-4
+		Bounds: 1024, 1024
+		DecorationBounds: 1024, 1365, 0, -170
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 6
@@ -1360,8 +1360,8 @@ PBAT:
 	Tooltip:
 		Name: Patriot Battery
 	Selectable:
-		Bounds: 24,24
-		DecorationBounds: 24,32,0,-4
+		Bounds: 1024, 1024
+		DecorationBounds: 1024, 1365, 0, -170
 	Building:
 		Footprint: x
 		Dimensions: 1,1
@@ -1419,7 +1419,7 @@ SAM:
 		Sequence: place
 		SequencePalette: placebuilding
 	Selectable:
-		Bounds: 48,24
+		Bounds: 2048, 1024
 	HitShape:
 		Type: Rectangle
 			TopLeft: -768,-512
@@ -1562,7 +1562,7 @@ SPMST:
 	-SpawnActorsOnSell:
 	-ShakeOnDeath:
 	-RepairableBuilding:
-	-EngineerRepairable:
+	-InstantlyRepairable:
 	-WithBuildingRepairDecoration:
 	-GpsDot:
 	-Demolishable:
@@ -1572,7 +1572,7 @@ SPMST:
 	-ChangesHealth@ConyardRepairs:
 	-GrantConditionOnPrerequisite@ConyardRepairs:
 	-ExternalCondition@ConyardRepairs:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: SmallBuildingExplode
 		EmptyWeapon: SmallBuildingExplode
 	RevealsShroud:
@@ -1764,7 +1764,7 @@ SPMST:
 		Sequence: tree17husk
 		RequiresCondition: isatree17husk
 	Selectable:
-		Bounds: 24,48,0,-12
+		Bounds: 1024, 2048, 0, -512
 	MustBeDestroyed:
 		RequiredForShortGame: false
 	Targetable@AIFixer:
@@ -1884,7 +1884,7 @@ PBOX.empty:
 		TurnSpeed: 255
 	BodyOrientation:
 		QuantizedFacings: 8
-	EngineerRepairable:
+	InstantlyRepairable:
 		RequiresCondition: damaged
 	GrantConditionOnDamageState@DAMAGED:
 		Condition: damaged

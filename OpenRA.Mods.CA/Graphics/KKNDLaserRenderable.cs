@@ -1,4 +1,4 @@
-﻿#region Copyright & License Information
+#region Copyright & License Information
 /*
  * Copyright 2015- OpenRA.Mods.AS Developers (see AUTHORS)
  * This file is a part of a third-party plugin for OpenRA, which is
@@ -36,7 +36,12 @@ namespace OpenRA.Mods.CA.Graphics
 
 		public IRenderable WithPalette(PaletteReference newPalette) { return this; }
 		public IRenderable WithZOffset(int newOffset) { return new KKNDLaserRenderable(offsets, newOffset, width, color); }
-		public IRenderable OffsetBy(WVec vec) { return new KKNDLaserRenderable(offsets.Select(offset => offset + vec).ToArray(), zOffset, width, color); }
+		public IRenderable OffsetBy(in WVec vec)
+		{
+			// C# restriction: `in` params can't be captured by lambdas.
+			var v = vec;
+			return new KKNDLaserRenderable(offsets.Select(offset => offset + v).ToArray(), zOffset, width, color);
+		}
 		public IRenderable AsDecoration() { return this; }
 
 		public IFinalizedRenderable PrepareRender(WorldRenderer wr) { return this; }

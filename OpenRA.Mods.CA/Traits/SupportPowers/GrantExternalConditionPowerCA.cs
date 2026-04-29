@@ -1,4 +1,4 @@
-﻿#region Copyright & License Information
+#region Copyright & License Information
 /*
  * Copyright 2007-2019 The OpenRA Developers (see AUTHORS)
  * This file is part of OpenRA, which is free software. It is made
@@ -52,7 +52,7 @@ namespace OpenRA.Mods.CA.Traits
 		public readonly string Sequence = "active";
 
 		[Desc("Cursor to display when there are no units to apply the condition in range.")]
-		public readonly string BlockedCursor = "move-blocked";
+		public new readonly string BlockedCursor = "move-blocked";
 
 		[WeaponReference]
 		[FieldLoader.Require]
@@ -130,7 +130,7 @@ namespace OpenRA.Mods.CA.Traits
 
 			foreach (var a in UnitsInRange(self.World.Map.CellContaining(order.Target.CenterPosition)))
 				a.TraitsImplementing<ExternalCondition>()
-					.FirstOrDefault(t => t.Info.Condition == info.Condition && t.CanGrantCondition(a, self))
+					.FirstOrDefault(t => t.Info.Condition == info.Condition && t.CanGrantCondition(self))
 					?.GrantCondition(a, self, info.Duration);
 
 			if (info.Weapon != null)
@@ -156,7 +156,7 @@ namespace OpenRA.Mods.CA.Traits
 					return false;
 
 				return a.TraitsImplementing<ExternalCondition>()
-					.Any(t => t.Info.Condition == info.Condition && t.CanGrantCondition(a, Self));
+					.Any(t => t.Info.Condition == info.Condition && t.CanGrantCondition(Self));
 			});
 		}
 
@@ -206,7 +206,7 @@ namespace OpenRA.Mods.CA.Traits
 				this.power = power;
 				footprint = power.info.Footprint.Where(c => !char.IsWhiteSpace(c)).ToArray();
 				dimensions = power.info.Dimensions;
-				tile = world.Map.Rules.Sequences.GetSequence("overlay", "target-select").GetSprite(0);
+				tile = world.Map.Sequences.GetSequence("overlay", "target-select").GetSprite(0);
 			}
 
 			protected override IEnumerable<Order> OrderInner(World world, CPos cell, int2 worldPixel, MouseInput mi)
@@ -243,7 +243,8 @@ namespace OpenRA.Mods.CA.Traits
 				var pal = wr.Palette(TileSet.TerrainPaletteInternalName);
 
 				foreach (var t in power.CellsMatching(xy, footprint, dimensions))
-					yield return new SpriteRenderable(tile, wr.World.Map.CenterOfCell(t), WVec.Zero, -511, pal, 1f, true, true);
+					yield return new SpriteRenderable(tile, wr.World.Map.CenterOfCell(t), WVec.Zero, -511,
+						pal, 1f, 1f, float3.Zero, default(TintModifiers), true, WAngle.Zero);
 			}
 
 			protected override string GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)

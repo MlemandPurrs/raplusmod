@@ -2616,7 +2616,7 @@ Rules:
 			ParticleColors: 304074, 28386C, 202C60, 182C54
 			LineTailAlphaValue: 150
 			ParticleSize: 2, 3
-		GlobalLightingPaletteEffect:
+		TintPostProcessEffect:
 			Red: 0.9
 			Green: 0.9
 			Blue: 1.2

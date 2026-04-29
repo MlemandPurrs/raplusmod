@@ -112,7 +112,7 @@ namespace OpenRA.Mods.CA.Traits
 			var randomFactor = world.LocalRandom.Next(0, baseBuilder.Info.StructureProductionRandomBonusDelay);
 
 			// Needs to be at least 4 * OrderLatency because otherwise the AI frequently duplicates build orders (i.e. makes the same build decision twice)
-			waitTicks = active ? 4 * world.LobbyInfo.GlobalSettings.OrderLatency + baseBuilder.Info.StructureProductionActiveDelay + randomFactor
+			waitTicks = active ? 4 * world.GameSpeed.OrderLatency + baseBuilder.Info.StructureProductionActiveDelay + randomFactor
 				: baseBuilder.Info.StructureProductionInactiveDelay + randomFactor;
 		}
 
@@ -147,9 +147,10 @@ namespace OpenRA.Mods.CA.Traits
 				if (plugInfo != null)
 				{
 					var possibleBuilding = world.ActorsWithTrait<Pluggable>().FirstOrDefault(a =>
-						a.Actor.Owner == player && a.Trait.AcceptsPlug(a.Actor, plugInfo.Type));
+						a.Actor.Owner == player && a.Trait.AcceptsPlug(plugInfo.Type));
 
-					if (possibleBuilding != null)
+					// `TraitPair<T>` is a struct: `FirstOrDefault` yields `default` when empty, never `null`.
+					if (possibleBuilding.Actor != null)
 					{
 						orderString = "PlacePlug";
 						location = possibleBuilding.Actor.Location + possibleBuilding.Trait.Info.Offset;

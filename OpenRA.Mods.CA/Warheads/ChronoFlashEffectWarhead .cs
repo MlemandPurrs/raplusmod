@@ -1,4 +1,4 @@
-﻿#region Copyright & License Information
+#region Copyright & License Information
 /*
  * Copyright 2015- OpenRA.Mods.AS Developers (see AUTHORS)
  * This file is a part of a third-party plugin for OpenRA, which is
@@ -27,7 +27,7 @@ namespace OpenRA.Mods.CA.Warheads
 				return;
 
 			if (target.IsValidFor(firedBy))
-				foreach (var a in firedBy.World.ActorsWithTrait<ChronoshiftPaletteEffect>())
+				foreach (var a in firedBy.World.ActorsWithTrait<ChronoshiftPostProcessEffect>())
 					a.Trait.Enable();
 		}
 	}

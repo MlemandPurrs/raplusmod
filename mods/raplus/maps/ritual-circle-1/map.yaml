@@ -873,7 +873,7 @@ Actors:
 
 Rules:
 	World:
-		GlobalLightingPaletteEffect:
+		TintPostProcessEffect:
 			Red: 1.06
 			Green: 0.92
 			Blue: 0.88

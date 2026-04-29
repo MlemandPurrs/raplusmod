@@ -143,7 +143,8 @@ namespace OpenRA.Mods.CA.Traits
 						var mobile = Infector.Item1.TraitOrDefault<Mobile>();
 						if (mobile != null)
 						{
-							mobile.Nudge(Infector.Item1);
+							// Engine migration: Nudge is now an Activity queued on the actor.
+							Infector.Item1.QueueActivity(false, new Nudge(Infector.Item1));
 						}
 					}
 

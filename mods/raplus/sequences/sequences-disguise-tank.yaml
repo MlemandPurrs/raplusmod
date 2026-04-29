@@ -1,219 +1,285 @@
 dtnk:
 	Inherits: emp-overlay
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 2
-	idle: mnly
+	idle:
+		Filename: mnly.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret-default: 2tnk
+	turret-default:
+		Filename: 2tnk.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	turret-mg: jeep
+	turret-mg:
+		Filename: jeep.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True		
-	turret-ftrk: ftrk
+	turret-ftrk:
+		Filename: ftrk.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True		
-	turret-rep: repair-tur
+	turret-rep:
+		Filename: repair-tur.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret-flam: flame-tur
+	turret-flam:
+		Filename: flame-tur.shp
 		Facings: 32
 		UseClassicFacings: True	
-	turret-apc: apc-tur3
+	turret-apc:
+		Filename: apc-tur3.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret-rapc: rapc-tur
+	turret-rapc:
+		Filename: rapc-tur.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret-hmmv: btr-tur
+	turret-hmmv:
+		Filename: btr-tur.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret-gapc: gapc-tur
+	turret-gapc:
+		Filename: gapc-tur.shp
 		Facings: 32
 		UseClassicFacings: True	
-	turret-1tnk: 1tnk-tur
+	turret-1tnk:
+		Filename: 1tnk-tur.shp
 		Start: 0
 		Facings: 32
 		UseClassicFacings: True
-	turret-1tnk-classic: 1tnk
+	turret-1tnk-classic:
+		Filename: 1tnk.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	turret-2tnk: 2tnk
+	turret-2tnk:
+		Filename: 2tnk.shp
         Start: 32
 		Facings: 32
 		UseClassicFacings: True		
-	turret-2tnks: 2tnks
+	turret-2tnks:
+		Filename: 2tnks.shp
         Start: 32
 		Facings: 32
 		UseClassicFacings: True		
-	turret-3tnk1b: 3tnk-1b
+	turret-3tnk1b:
+		Filename: 3tnk-1b.shp
         Start: 32
 		Facings: 32
 		UseClassicFacings: True	
-	turret-3tnk: 3tnk
+	turret-3tnk:
+		Filename: 3tnk.shp
         Start: 32
 		Facings: 32
 		UseClassicFacings: True		
-	turret-4tnk: 4tnk
+	turret-4tnk:
+		Filename: 4tnk.shp
         Start: 32
 		Facings: 32
 		UseClassicFacings: True	
-	turret-4tnkflam: 4tnk-flame
+	turret-4tnkflam:
+		Filename: 4tnk-flame.shp
         Start: 32
 		Facings: 32
 		UseClassicFacings: True			
-	turret-nrty: arty-tur-xl
+	turret-nrty:
+		Filename: arty-tur-xl.shp
         Start: 0
 		Facings: 32
 		UseClassicFacings: True	
-	turret-5tnk: 5tnk-tur
+	turret-5tnk:
+		Filename: 5tnk-tur.shp
         Start: 0
 		Facings: 32
 		UseClassicFacings: True	
-	turret-prsm: prsm-tur
+	turret-prsm:
+		Filename: prsm-tur.shp
         Start: 0
 		Facings: 32
 		UseClassicFacings: True	
-	turret-msam: ssam
+	turret-msam:
+		Filename: ssam.shp
         Facings: 32
         UseClassicFacings: False
-	turret-saml: ssm
+	turret-saml:
+		Filename: ssm.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	turret-gtnk: gtnk
+	turret-gtnk:
+		Filename: gtnk.shp
         Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	turret-invis: blank32
+	turret-invis:
+		Filename: blank32.shp
 		Facings: 32
 		UseClassicFacings: True
-	mcv-body: mcv
+	mcv-body:
+		Filename: mcv.shp
 		Facings: 32
 		UseClassicFacings: True
-	harv-body: harv
+	harv-body:
+		Filename: harv.shp
 		Facings: 32
 		UseClassicFacings: True
-	harvchrn-body: charv
+	harvchrn-body:
+		Filename: charv.shp
 		Facings: 32
 		UseClassicFacings: True
-	truk-body: truk
+	truk-body:
+		Filename: truk.shp
 		Facings: 32
 		UseClassicFacings: True
-	dtrk-body: dtrk
+	dtrk-body:
+		Filename: dtrk.shp
 		Facings: 32
 		UseClassicFacings: True
-	mwf-body: mwf
+	mwf-body:
+		Filename: mwf.shp
 		Facings: 32
 		UseClassicFacings: True
-	jeep-body: jeep
+	jeep-body:
+		Filename: jeep.shp
 		Facings: 32
 		UseClassicFacings: True
-	ftrk-body: ftrk
+	ftrk-body:
+		Filename: ftrk.shp
 		Facings: 32
 		UseClassicFacings: True
-	apc-body: apc
+	apc-body:
+		Filename: apc.shp
 		Facings: 32
 		UseClassicFacings: True
-	batf-body: batf
+	batf-body:
+		Filename: batf.shp
 		Facings: 32
 		UseClassicFacings: True
-	1tnk-body: 1tnk
+	1tnk-body:
+		Filename: 1tnk.shp
 		Facings: 32
 		UseClassicFacings: True
-	2tnk-body: 2tnk
+	2tnk-body:
+		Filename: 2tnk.shp
 		Facings: 32
 		UseClassicFacings: True
-	2tnks-body: 2tnks
+	2tnks-body:
+		Filename: 2tnks.shp
 		Facings: 32
 		UseClassicFacings: True
-	3tnk-body: 3tnk
+	3tnk-body:
+		Filename: 3tnk.shp
 		Facings: 32
 		UseClassicFacings: True
-	4tnk-body: 4tnk
+	4tnk-body:
+		Filename: 4tnk.shp
 		Facings: 32
 		UseClassicFacings: True
-	4tnk-flame-body: 4tnk-flame
+	4tnk-flame-body:
+		Filename: 4tnk-flame.shp
 		Facings: 32
 		UseClassicFacings: True
-	5tnk-body: behe
+	5tnk-body:
+		Filename: behe.shp
 		Facings: 32
 		UseClassicFacings: True
-	prsm-body: prsm
+	prsm-body:
+		Filename: prsm.shp
 		Facings: 32
 		UseClassicFacings: True
-	arty-body: arty
+	arty-body:
+		Filename: arty.shp
 		Facings: 32
 		UseClassicFacings: True
-	gcan-body: gcan
+	gcan-body:
+		Filename: gcan.shp
 		Facings: 32
 		UseClassicFacings: True
-	v2rl-body: v2rl
+	v2rl-body:
+		Filename: v2rl.shp
 		Facings: 32
 		UseClassicFacings: True
-	icbm-body: icbm
+	icbm-body:
+		Filename: icbm.shp
 		Facings: 32
 		UseClassicFacings: True
-	mnly-body: mnly
+	mnly-body:
+		Filename: mnly.shp
 		Facings: 32
 		UseClassicFacings: True
-	mnly-nuke-body: mnly-nuke
+	mnly-nuke-body:
+		Filename: mnly-nuke.shp
 		Facings: 32
 		UseClassicFacings: True
-	mrj-body: mrj
+	mrj-body:
+		Filename: mrj.shp
 		Facings: 32
 		UseClassicFacings: True
-	spinner-mrj: mrj
+	spinner-mrj:
+		Filename: mrj.shp
 		Start: 32
 		Length: 32
-    mgg-body: mgg
+	mgg-body:
+		Filename: mgg.shp
 		Facings: 32
 		UseClassicFacings: True
-	spinner-mgg: mgg
+	spinner-mgg:
+		Filename: mgg.shp
 		Start: 32
 		Length: 8
         Tick: 90
-	spinner-mgg-idle: mgg
+	spinner-mgg-idle:
+		Filename: mgg.shp
 		Start: 32
 		Length: 1
         Tick: 90
-    tnkd-body: tnkd
+	tnkd-body:
+		Filename: tnkd.shp
 		Facings: 32
 		UseClassicFacings: True
-	ctnk-body: ctnk
+	ctnk-body:
+		Filename: ctnk.shp
 		Facings: 32
 		UseClassicFacings: True
-	stnk-body: papc
+	stnk-body:
+		Filename: papc.shp
 		Facings: 32
 		UseClassicFacings: True
-	ttnk-body: ttnk
+	ttnk-body:
+		Filename: ttnk.shp
 		Facings: 32
 		UseClassicFacings: True
-	spinner-ttnk: ttnk
+	spinner-ttnk:
+		Filename: ttnk.shp
 		Start: 32
 		Length: 1
-	qtnk-body: qtnk
+	qtnk-body:
+		Filename: qtnk.shp
 		Facings: 32
 		UseClassicFacings: True
-    isu-body: isu
+	isu-body:
+		Filename: isu.shp
 		Facings: 32
 		UseClassicFacings: True
-	gtnk-body: gtnk
+	gtnk-body:
+		Filename: gtnk.shp
 		Facings: 32
 		UseClassicFacings: True
-	icon: dtnkicon
+	icon:
+		Filename: mnlyicon.shp
 
 dtnk.destroyed:
-	idle: mnly
+	idle:
+		Filename: mnly.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
-	turret: 2tnk
+	turret:
+		Filename: 2tnk.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True

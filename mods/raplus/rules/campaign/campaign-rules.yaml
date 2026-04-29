@@ -8,6 +8,10 @@ Player:
 		ExploredMapCheckboxLocked: True
 		ExploredMapCheckboxEnabled: False
 	PlayerResources:
+		ResourceValues:
+			Ore: 25
+			Gems: 50
+			Scraps: 12
 		DefaultCashDropdownLocked: True
 		DefaultCash: 0
 	ModularBot@CampaignAI:
@@ -18,8 +22,8 @@ World:
 	CrateSpawner:
 		CheckboxEnabled: False
 		CheckboxLocked: True
-	-SpawnMPUnits:
-	-MPStartLocations:
+	-SpawnStartingUnits:
+	-MapStartingLocations:
 	ObjectivesPanel:
 		PanelName: MISSION_OBJECTIVES
 	MapBuildRadius:

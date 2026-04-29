@@ -1,10 +1,10 @@
 World:
-	GlobalLightingPaletteEffect:
+	TintPostProcessEffect:
 		Red: 0.94
 		Green: 0.94
 		Blue: 1.15
 		Ambient: 0.88
-	FlashPaletteEffect@LIGHTNINGSTRIKE:
+	FlashPostProcessEffect@LIGHTNINGSTRIKE:
 		Type: LightningStrike
 	LuaScript:
 		Scripts: thunder.lua

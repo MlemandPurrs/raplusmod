@@ -1,4 +1,4 @@
-﻿#region Copyright & License Information
+#region Copyright & License Information
 /*
  * Copyright 2007-2020 The OpenRA Developers (see AUTHORS)
  * This file is part of OpenRA, which is free software. It is made
@@ -60,11 +60,13 @@ namespace OpenRA.Mods.CA.Traits
 			if (distanceToBaseIsImportant == false)
 				return initialBaseCenter;
 
-			var tileset = world.Map.Rules.TileSet;
-			var resourceTypeIndices = new BitArray(tileset.TerrainInfo.Length);
+			var terrainInfo = world.Map.Rules.TerrainInfo;
+			var resourceTypeIndices = new BitArray(terrainInfo.TerrainTypes.Length);
 
-			foreach (var t in world.Map.Rules.Actors["world"].TraitInfos<ResourceTypeInfo>())
-				resourceTypeIndices.Set(tileset.GetTerrainIndex(t.TerrainType), true);
+			var resourceLayerInfo = world.Map.Rules.Actors["world"].TraitInfoOrDefault<ResourceLayerInfo>();
+			if (resourceLayerInfo?.ResourceTypes != null)
+				foreach (var t in resourceLayerInfo.ResourceTypes.Values)
+					resourceTypeIndices.Set(terrainInfo.GetTerrainIndex(t.TerrainType), true);
 
 			var randomConstructionYard = world.Actors.Where(a => a.Owner == player &&
 				Info.ConstructionYardTypes.Contains(a.Info.Name))
@@ -261,12 +263,12 @@ namespace OpenRA.Mods.CA.Traits
 			};
 		}
 
-		void IGameSaveTraitData.ResolveTraitData(Actor self, List<MiniYamlNode> data)
+		void IGameSaveTraitData.ResolveTraitData(Actor self, MiniYaml data)
 		{
 			if (self.World.IsReplay)
 				return;
 
-			var initialBaseCenterNode = data.FirstOrDefault(n => n.Key == "InitialBaseCenter");
+			var initialBaseCenterNode = data.NodeWithKeyOrDefault("InitialBaseCenter");
 			if (initialBaseCenterNode != null)
 				initialBaseCenter = FieldLoader.GetValue<CPos>("InitialBaseCenter", initialBaseCenterNode.Value.Value);
 		}

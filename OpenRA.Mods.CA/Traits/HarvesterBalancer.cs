@@ -1,4 +1,4 @@
-﻿#region Copyright & License Information
+#region Copyright & License Information
 /*
  * By Boolbada of OP Mod
  * Follows OpenRA's license as follows:
@@ -38,7 +38,7 @@ namespace OpenRA.Mods.CA.Traits
 		public override object Create(ActorInitializer init) { return new HarvesterBalancer(this); }
 	}
 
-	public class HarvesterBalancer : ConditionalTrait<HarvesterBalancerInfo>, INotifyCreated, ITick, INotifyHarvesterAction, INotifyDamage
+	public class HarvesterBalancer : ConditionalTrait<HarvesterBalancerInfo>, INotifyCreated, ITick, INotifyHarvestAction, INotifyDockClient, INotifyDockClientMoving, INotifyDamage
 	{
 		int conditionToken = Actor.InvalidConditionToken;
 		Actor destinationRefinery;
@@ -134,31 +134,36 @@ namespace OpenRA.Mods.CA.Traits
 				unlinkedBuffTicks--;
 		}
 
-		public void MovingToResources(Actor self, CPos targetCell)
+		void INotifyHarvestAction.MovingToResources(Actor self, CPos targetCell) { }
+
+		void INotifyHarvestAction.MovementCancelled(Actor self)
 		{
+			movingToRefinery = false;
+			movingToResources = false;
 		}
 
-		public void MovingToRefinery(Actor self, Actor refineryActor)
+		void INotifyHarvestAction.Harvested(Actor self, string resourceType)
+		{
+			movingToRefinery = false;
+			movingToResources = false;
+		}
+
+		void INotifyDockClientMoving.MovingToDock(Actor self, Actor hostActor, IDockHost host)
 		{
 			movingToResources = false;
 			movingToRefinery = true;
-			destinationRefinery = refineryActor;
+			destinationRefinery = hostActor;
 		}
 
-		public void MovementCancelled(Actor self)
+		void INotifyDockClientMoving.MovementCancelled(Actor self)
 		{
 			movingToRefinery = false;
 			movingToResources = false;
 		}
 
-		public void Harvested(Actor self, ResourceType resource)
-		{
-			movingToRefinery = false;
-			movingToResources = false;
-		}
+		void INotifyDockClient.Docked(Actor self, Actor host) { }
 
-		public void Docked() { }
-		public void Undocked()
+		void INotifyDockClient.Undocked(Actor self, Actor host)
 		{
 			movingToRefinery = false;
 			movingToResources = true;

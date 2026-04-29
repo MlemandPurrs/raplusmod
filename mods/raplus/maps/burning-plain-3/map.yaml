@@ -556,7 +556,7 @@ Rules:
 			SwingAmplitude: 0.2, 0.3
 			ParticleColors: 686064, 986854, B48854, BD8D7E, CAA264, CB9367
 			LineTailAlphaValue: 150
-		GlobalLightingPaletteEffect:
+		TintPostProcessEffect:
 			Red: 1.06
 			Green: 0.92
 			Blue: 0.88

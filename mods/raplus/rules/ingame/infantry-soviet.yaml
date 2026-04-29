@@ -38,7 +38,7 @@ E4:
 		RevokeAll: True
 	TakeCover:
 		ProneOffset: 160,0,-288
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplodeSmall
 		EmptyWeapon: UnitExplodeSmall
 		DamageSource: Killer
@@ -50,6 +50,9 @@ E4:
 		StandSequences: parachute
 		RequiresCondition: parachute
 	ProducibleWithLevel:
+		Prerequisites: infantry.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
 		Prerequisites: infantry.upgraded
 	Passenger:
 		CustomPipType: pip-yellow
@@ -106,11 +109,14 @@ E5:
 		StandSequences: parachute
 		RequiresCondition: parachute
 	WithMuzzleOverlay:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplodeChemSmall
 		EmptyWeapon: UnitExplodeChemSmall
 		Chance: 30
 	ProducibleWithLevel:
+		Prerequisites: infantry.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
 		Prerequisites: infantry.upgraded
 	RenderSprites:
 		Image: e5
@@ -222,6 +228,7 @@ VOLK:
 		CustomPipType: pip-red
 		Voice: Move
 	AttackFrontal:
+		FacingTolerance: 0
 	Voiced:
 		VoiceSet: VolkovVoice
 	Armament:
@@ -242,6 +249,9 @@ VOLK:
 		ReturnToOrigin: False
 		TimeBarColor: ABB7E4
 	ProducibleWithLevel:
+		Prerequisites: infantry.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
 		Prerequisites: infantry.upgraded
 	RenderSprites:
 		Image: VOLK
@@ -303,6 +313,7 @@ SHOK:
 	TakeCover:
 		ProneOffset: 227,0,-245
 	AttackFrontal:
+		FacingTolerance: 0
 		Voice: Attack
 	AttackMove:
 		Voice: Move
@@ -321,6 +332,9 @@ SHOK:
 		VoiceSet: ShokVoice
 	ProducibleWithLevel:
 		Prerequisites: infantry.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: infantry.upgraded
 	DeliversCash:
 		Payload: 118
 		Type: InfantryRefund
@@ -333,6 +347,9 @@ SHOKR1:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	UpdatesPlayerStatistics:
 		OverrideActor: shok
 	-Buildable:
@@ -368,13 +385,17 @@ RPG:
 	TakeCover:
 		ProneOffset: 180,0,-200
 	AttackFrontal:
+		FacingTolerance: 0
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	ProducibleWithLevel:
 		Prerequisites: infantry.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: infantry.upgraded
 	Passenger:
 		CustomPipType: pip-red
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplodeSmall
 		EmptyWeapon: UnitExplodeSmall
 		DamageSource: Killer
@@ -420,6 +441,7 @@ DESO:
 	TakeCover:
 		ProneOffset: 384,0,-395
 	AttackFrontal:
+		FacingTolerance: 0
 		Voice: Attack
 		PauseOnCondition: !undeployed
 	AttackMove:
@@ -431,6 +453,9 @@ DESO:
 	Voiced:
 		VoiceSet: DesolatorVoice
 	ProducibleWithLevel:
+		Prerequisites: infantry.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
 		Prerequisites: infantry.upgraded
 	-Crushable:
 	PeriodicExplosion:
@@ -515,13 +540,17 @@ DEMO:
 	TakeCover:
 		ProneOffset: 256,64,-331
 	AttackFrontal:
+		FacingTolerance: 0
 		Voice: Attack
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: ArtilleryExplode
 		EmptyWeapon: ArtilleryExplode
 		Chance: 100
 		DamageSource: Killer
 	ProducibleWithLevel:
+		Prerequisites: infantry.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
 		Prerequisites: infantry.upgraded
 	Voiced:
 		VoiceSet: CommandoVoice
@@ -608,6 +637,9 @@ GREN:
 		RequiresCondition: parachute
 	ProducibleWithLevel:
 		Prerequisites: infantry.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: infantry.upgraded
 	DeliversCash:
 		Payload: 100
 		Type: InfantryRefund
@@ -663,9 +695,13 @@ MARK:
 		Position: Top
 		RequiresCondition: !ammo
 	AttackFrontal:
+		FacingTolerance: 0
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	ProducibleWithLevel:
+		Prerequisites: infantry.upgraded
+	WithProductionIconOverlay:
+		Types: Veterancy
 		Prerequisites: infantry.upgraded
 	RenderSprites:
 		Image: snip
@@ -702,7 +738,7 @@ TERR:
 		Speed: 142
 		Voice: Attack
 		PauseOnCondition: attacking 		
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplodeSmall.suicide
 		EmptyWeapon: UnitExplodeSmall.suicide
 		DamageSource: Killer

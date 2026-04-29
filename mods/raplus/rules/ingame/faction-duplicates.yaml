@@ -121,6 +121,9 @@ E7.Usa:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	-MapEditorData:
 
 HELI.Usa:
@@ -132,6 +135,9 @@ HELI.Usa:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	-MapEditorData:
 
 E1.England:
@@ -141,6 +147,9 @@ E1.England:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	RenderSprites:
 		Image: e1
 	UpdatesPlayerStatistics:
@@ -154,6 +163,9 @@ JEEP.England:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	UpdatesPlayerStatistics:
 		OverrideActor: jeep
 	RenderSprites:
@@ -310,6 +322,9 @@ ARTY.France:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	UpdatesPlayerStatistics:
 		OverrideActor: arty
 	RenderSprites:
@@ -383,6 +398,9 @@ APC.Germany:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	UpdatesPlayerStatistics:
 		OverrideActor: apc
 	RenderSprites:
@@ -398,6 +416,9 @@ DD.Germany:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	UpdatesPlayerStatistics:
 		OverrideActor: dd
 	-MapEditorData:
@@ -484,6 +505,9 @@ PDOX.Germany:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	RenderSprites:
 		Image: 2tnk
 	UpdatesPlayerStatistics:
@@ -497,6 +521,9 @@ TORN.Sweden:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	RenderSprites:
 		Image: ally-mig
 	UpdatesPlayerStatistics:
@@ -757,6 +784,9 @@ E4.Italy:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	Mobile:
 		Speed: 129
 	Health:
@@ -823,6 +853,9 @@ CA.Italy:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	RenderSprites:
 		Image: ca
 	-MapEditorData:
@@ -834,6 +867,9 @@ IROQ.Greece:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	UpdatesPlayerStatistics:
 		OverrideActor: iroq
 	RenderSprites:
@@ -847,6 +883,9 @@ IROQ.AI.Greece:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	UpdatesPlayerStatistics:
 		OverrideActor: iroq
 	RenderSprites:
@@ -859,6 +898,9 @@ PT.Greece:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	UpdatesPlayerStatistics:
 		OverrideActor: pt
 	RenderSprites:
@@ -894,6 +936,9 @@ E2.Turkey:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	UpdatesPlayerStatistics:
 		OverrideActor: e2
 	RenderSprites:
@@ -907,6 +952,9 @@ SPIT.Turkey:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	UpdatesPlayerStatistics:
 		OverrideActor: spit
 	RenderSprites:
@@ -958,6 +1006,9 @@ APWR.Turkey:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	UpdatesPlayerStatistics:
 		OverrideActor: 3tnk.1b
 	-MapEditorData:
@@ -971,6 +1022,9 @@ APWR.Turkey:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	UpdatesPlayerStatistics:
 		OverrideActor: 3tnk
 	-MapEditorData:
@@ -1042,6 +1096,9 @@ APWR.Turkey:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	UpdatesPlayerStatistics:
 		OverrideActor: 4tnk
 	-MapEditorData:
@@ -1055,6 +1112,9 @@ SS.Ukraine:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	UpdatesPlayerStatistics:
 		OverrideActor: ss
 	-MapEditorData:
@@ -1066,6 +1126,9 @@ FTRK.Belarus:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	RenderSprites:
 		Image: ftrk
 	-MapEditorData:
@@ -1077,6 +1140,9 @@ YAK.Belarus:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	UpdatesPlayerStatistics:
 		OverrideActor: yak
 	RenderSprites:
@@ -1105,6 +1171,9 @@ MSUB.Karelia:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	UpdatesPlayerStatistics:
 		OverrideActor: msub
 	RenderSprites:
@@ -1209,6 +1278,9 @@ APC.Moldova:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	RenderSprites:
 		Image: apc
 	UpdatesPlayerStatistics:
@@ -1292,6 +1364,9 @@ APC.Soviet.Loaded:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	UpdatesPlayerStatistics:
 		OverrideActor: apc.soviet
 	Cargo:
@@ -1307,6 +1382,9 @@ MIG.Kazakh:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	UpdatesPlayerStatistics:
 		OverrideActor: mig
 	RenderSprites:
@@ -1350,6 +1428,9 @@ VOLK.Uzbek:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	UpdatesPlayerStatistics:
 		OverrideActor: volk
 	RenderSprites:
@@ -1435,6 +1516,9 @@ V2RL.Turkmen:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	UpdatesPlayerStatistics:
 		OverrideActor: v2rl
 	RenderSprites:
@@ -1530,6 +1614,9 @@ HIND.Afghan:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	UpdatesPlayerStatistics:
 		OverrideActor: hind
 	RenderSprites:
@@ -1543,6 +1630,9 @@ E1.China:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	RenderSprites:
 		Image: e1
 	UpdatesPlayerStatistics:
@@ -1556,6 +1646,9 @@ E3.China:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: techlevel.infonly
 	RenderSprites:
 		Image: e3
 	UpdatesPlayerStatistics:

@@ -59,8 +59,7 @@ namespace OpenRA.Mods.CA.Traits
 		readonly List<Actor> activeCapturers = new List<Actor>();
 
 		int minCaptureDelayTicks;
-		IPathFinder pathfinder;
-		DomainIndex domainIndex;
+		// Pathfinding is performed via `PathSearch` helper methods.
 
 		public CaptureManagerBotModuleCA(Actor self, CaptureManagerBotModuleCAInfo info)
 			: base(info)
@@ -81,8 +80,7 @@ namespace OpenRA.Mods.CA.Traits
 			// Avoid all AIs reevaluating assignments on the same tick, randomize their initial evaluation delay.
 			minCaptureDelayTicks = world.LocalRandom.Next(0, Info.MinimumCaptureDelay);
 
-			pathfinder = world.WorldActor.Trait<IPathFinder>();
-			domainIndex = world.WorldActor.Trait<DomainIndex>();
+			// Intentionally unused after migration to direct `PathSearch` calls.
 		}
 
 		void IBotTick.BotTick(IBot bot)
@@ -175,15 +173,21 @@ namespace OpenRA.Mods.CA.Traits
 		{
 			var locomotor = capturer.Trait<Mobile>().Locomotor;
 
-			if (!domainIndex.IsPassable(capturer.Location, target.Location, locomotor))
-				return Target.Invalid;
-
-			var path = pathfinder.FindPath(
-				PathSearch.FromPoint(world, locomotor, capturer, capturer.Location, target.Location, BlockedByActor.None)
-					.WithCustomCost(loc => world.FindActorsInCircle(world.Map.CenterOfCell(loc), Info.EnemyAvoidanceRadius)
-						.Where(u => !u.IsDead && capturer.Owner.RelationshipWith(u.Owner) == PlayerRelationship.Enemy && capturer.IsTargetableBy(u))
-						.Sum(u => Math.Max(WDist.Zero.Length, Info.EnemyAvoidanceRadius.Length - (world.Map.CenterOfCell(loc) - u.CenterPosition).Length)))
-					.FromPoint(capturer.Location));
+			var path = PathSearch.ToTargetCell(
+					world,
+					locomotor,
+					capturer,
+					new[] { capturer.Location },
+					target.Location,
+					BlockedByActor.None,
+					100,
+					loc =>
+						world.FindActorsInCircle(world.Map.CenterOfCell(loc), Info.EnemyAvoidanceRadius)
+							.Where(u => !u.IsDead && capturer.Owner.RelationshipWith(u.Owner) == PlayerRelationship.Enemy && capturer.IsTargetableBy(u))
+							.Sum(u =>
+								Math.Max(WDist.Zero.Length,
+									Info.EnemyAvoidanceRadius.Length - (world.Map.CenterOfCell(loc) - u.CenterPosition).Length)))
+				.FindPath();
 
 			if (path.Count == 0)
 				return Target.Invalid;

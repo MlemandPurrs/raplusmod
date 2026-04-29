@@ -416,7 +416,7 @@ Player:
 		SquadSizeRandomBonus: 4
 		RushInterval: 400
 		AttackScanRadius: 24
-		ExcludeFromSquadsTypes: harv, harv.crate, harv.chrono, mcv, mcv.ai, dog, e1, e1.england, e2, e2.turkey, e3, e4.italy, e6, e7, e7.usa, medi, mech, shot, atgm, snip, mrtr, cinf, jeep, jeep.england, jeep.scout, apc, apc.germany, rapc, 1tnk, 1tnk.england, 1tnk.france, 1tnk.germany, 1tnk.italy, 1tnk.spain, 1tnk.sweden, atnk, 2tnk, 2tnk.england, 2tnk.france, 2tnk.germany, 2tnk.spain, 2tnk.sweden, 2tnk.italy, 2tnk.stealth, arty, arty.france, gcan, msam, mrj, stnk, ctnk, tnkd, batf, heli, heli.usa, iroq.ai, iroq.greece.ai, spit, spit.turkey, 1tnf, 2tnf, artf, thf, prsm
+		ExcludeFromSquadsTypes: harv, harv.crate, harv.chrono, mcv, mcv.ai, dog, e1, e1.england, e2, e2.turkey, e3, e4.italy, e6, e7, e7.usa, medi, mech, shot, atgm, snip, mrtr, cinf, jeep, jeep.england, jeep.scout, apc, apc.germany, rapc, 1tnk, 1tnk.england, 1tnk.france, 1tnk.germany, 1tnk.italy, 1tnk.spain, 1tnk.sweden, atnk, 2tnk, 2tnk.england, 2tnk.france, 2tnk.germany, 2tnk.spain, 2tnk.sweden, 2tnk.italy, 2tnk.stealth, arty, arty.france, gcan, msam, mrj, stnk, ctnk, tnkd, batf, heli, heli.usa, iroq.ai, iroq.ai.greece, spit, spit.turkey, 1tnf, 2tnf, artf, thf, prsm
 		NavalUnitsTypes: pt,pt.greece,dd,dd.germany,ca,ca.italy,bshp
 		ConstructionYardTypes: fact
 		NavalProductionTypes: syrd
